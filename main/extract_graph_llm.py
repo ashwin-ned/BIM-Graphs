@@ -86,28 +86,48 @@ MODALITIES = X.ALL_MODALITIES
 # scripts. `kind` selects the backend; `pairs_with` records where a text and a
 # vision model share a language backbone, which is what makes a text-vs-vision
 # comparison a modality result rather than a model-family result.
+# `max_new_tokens` is per model because the requirement differs by an order of
+# magnitude, and the default that suits one truncates another. Measured
+# 21 Sep 2026 on the set-of-mark task: GLM-4.1V-9B-Thinking spends 92-100% of
+# its output on a `<think>` trace (traces 8-15k characters against answers of
+# 395-693), so it needs ~6k while a non-thinking model needs a fraction of
+# that. Prefilling a closed `</think>` does NOT suppress the trace -- the
+# model reasons in prose instead and emits nothing parseable -- so the cost is
+# intrinsic and budgeted for rather than worked around.
 MODELS = {
     # -- text --------------------------------------------------------------
     "glm-9b":     {"id": "zai-org/GLM-4-9B-0414", "kind": "text",
-                   "pairs_with": "glm-9b-v"},
+                   "pairs_with": "glm-9b-v", "max_new_tokens": 3072,
+                   "thinking": False},
     "qwen25-7b":  {"id": "Qwen/Qwen2.5-7B-Instruct", "kind": "text",
-                   "pairs_with": "qwen25-vl-7b"},
+                   "pairs_with": "qwen25-vl-7b", "max_new_tokens": 3072,
+                   "thinking": False},
     # Third text model. Llama-3.1-8B-Instruct and gemma-2-9b-it were the
     # obvious choices and are both gated on the Hub (HTTP 401 without a
     # token), so this is the strongest ungated model in the same weight class.
     # It also gives a within-family generation comparison against
     # Qwen2.5-7B on the same task.
-    "qwen3-8b":   {"id": "Qwen/Qwen3-8B", "kind": "text", "pairs_with": None},
+    # Qwen3 emits a reasoning trace of its own by default, hence the larger cap.
+    "qwen3-8b":   {"id": "Qwen/Qwen3-8B", "kind": "text", "pairs_with": None,
+                   "max_new_tokens": 6144, "thinking": True},
     # -- vision ------------------------------------------------------------
     "glm-9b-v":   {"id": "zai-org/GLM-4.1V-9B-Thinking", "kind": "vision",
-                   "pairs_with": "glm-9b"},
+                   "pairs_with": "glm-9b", "max_new_tokens": 6144,
+                   "thinking": True},
     "qwen25-vl-7b": {"id": "Qwen/Qwen2.5-VL-7B-Instruct", "kind": "vision",
-                     "pairs_with": "qwen25-7b"},
+                     "pairs_with": "qwen25-7b", "max_new_tokens": 3072,
+                     "thinking": False},
     # InternVL3-8B's language tower is Qwen2.5-7B, so its text counterpart is
     # already in the list rather than being a fourth download.
     "internvl3-8b": {"id": "OpenGVLab/InternVL3-8B", "kind": "vision",
-                     "pairs_with": "qwen25-7b"},
+                     "pairs_with": "qwen25-7b", "max_new_tokens": 3072,
+                     "thinking": False},
 }
+
+
+def cap_for(name: str, fallback: int) -> int:
+    """The model's own generation cap, or the caller's if it is not in the registry."""
+    return MODELS.get(name, {}).get("max_new_tokens") or fallback
 
 
 def resolve_model(name_or_id: str, kind: str) -> str:

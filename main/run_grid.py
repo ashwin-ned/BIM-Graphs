@@ -19,12 +19,21 @@ numbers:
   `detect_scale_correction`. All four are still run for the text modalities --
   they are the cheap ones, and the flatness is itself a result to show.
 
-That takes 88 naive cells to 55.
+That takes 88 naive cells to 56.
 
-Each cell is a separate process. A model reload costs about a minute against a
-cell that takes over an hour at the vision models' measured rate, so the
-simplicity is free. A cell whose scores file already exists is skipped, which
-makes the run resumable after an interruption without a bespoke checkpoint.
+The primary vision conditions are the **set-of-mark** ones, where each
+declared room carries a numbered disc and the model answers with the number.
+Asking for bare pixel coordinates measures coordinate regression rather than
+plan reading; the unmarked `plan` and `occ` cells are kept as that
+localisation result, and they are cheap because they need one cell each.
+
+Each cell is a separate process, and each model brings its own generation cap
+(`extract_graph_llm.cap_for`) because the requirement differs by an order of
+magnitude: a thinking model spends 92-100% of its output on a trace. A model
+reload costs about a minute against a vision cell that runs for hours at the
+measured rate, so the per-cell process is free. A cell whose scores file
+already exists is skipped, which makes the run resumable after an interruption
+without a bespoke checkpoint.
 
     python main/run_grid.py --buildings 30 --dry-run     # see the plan first
     python main/run_grid.py --buildings 30               # exploratory pass
@@ -42,7 +51,7 @@ import time
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 
-from extract_graph_llm import MODELS
+from extract_graph_llm import MODELS, cap_for
 
 LEVELS = ("synth150", "synth150_L2", "synth150_L3", "synth150_L4")
 CORPUS_ROOT = "dataset/synthetic_data"
@@ -183,7 +192,7 @@ def main(argv=None) -> int:
                "--backend", kind, "--model-id", c["model"],
                "--modality", c["modality"],
                "--limit", str(a.buildings * 2),
-               "--max-new-tokens", str(a.max_new_tokens),
+               "--max-new-tokens", str(cap_for(c["model"], a.max_new_tokens)),
                "--progress-every", "25", "--out", a.out]
         if c["mask"]:
             cmd.append("--mask-labels")
