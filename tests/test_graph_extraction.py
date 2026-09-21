@@ -340,8 +340,17 @@ def test_empty_prediction_scores_zero_not_perfect() -> None:
     ok(f"no prediction means no true positives (tp={sc['tp']})",
        sc["tp"] == 0)
     ok(f"...recall is 0, not None ({sc['recall']})", sc["recall"] == 0.0)
-    ok(f"...and no room is scored as labelled ({sl['scored']})",
-       sl["scored"] == 0 and sl["correct"] == 0)
+    # The building's 2 labelled rooms stay in the denominator. Scoring an
+    # empty prediction as "nothing scorable" would be indistinguishable from
+    # "this building has no ground truth", and a model that answers nothing
+    # would leave the comparison rather than losing it.
+    ok(f"the building's labelled rooms stay in the denominator "
+       f"({sl['correct']}/{sl['scored']})",
+       sl["scored"] == 2 and sl["correct"] == 0)
+    ok(f"...so the comparable accuracy is 0.000, not undefined "
+       f"({sl['accuracy_strict']})", sl["accuracy_strict"] == 0.0)
+    ok("...and both rooms are charged as a missing prediction",
+       sl["pred_missing"] == 2 and sl["scored_matched"] == 0)
     ok("an empty prediction is not flagged unscorable -- it IS a failure",
        m.unscorable is None or "reference" not in (m.unscorable or ""))
 
@@ -483,6 +492,56 @@ def test_set_of_mark() -> None:
            "number printed" in user)
 
 
+def test_label_denominator_is_the_buildings_not_the_models() -> None:
+    print("\n-- label accuracy must not be scored on a denominator the model chose --")
+    # Iterating the matching makes the denominator the model's own matching
+    # success: a model that places 2 of 27 rooms is scored on 2 labels, and
+    # those 2 are the ones it was confident enough to place. Measured on real
+    # runs this INVERTED a comparison -- Qwen2.5-VL on a bare plan scored
+    # 0.250 over 12 matched rooms against InternVL3 on text+plan_som at 0.185
+    # over 27, so the model scored on half as many rooms looked better.
+    gt = S.GroundTruth(
+        building="b", provenance="annotated", identity=S.IDENTITY_NODE_ID,
+        rooms={f"gid-{i}": S.Room(f"gid-{i}", label="Kitchen")
+               for i in range(10)},
+        positives={})
+
+    # A prediction that finds ONE room and labels it correctly.
+    ex = X.parse_response(json.dumps({
+        "rooms": [{"id": "gid-0", "label": "kitchen"}], "edges": []}), False)
+    g = X.to_graph(ex)
+    m = M.match_rooms(g, gt)
+    sl = SC.score_labels(g, gt, m)
+
+    ok(f"it matched only 1 of 10 reference rooms ({sl['scored_matched']}/"
+       f"{sl['scored']})",
+       sl["scored_matched"] == 1 and sl["scored"] == 10)
+    ok(f"the comparable accuracy is over the BUILDING's 10 rooms "
+       f"({sl['accuracy_strict']:.2f})",
+       abs(sl["accuracy_strict"] - 0.1) < 1e-9)
+    ok(f"the matched-only accuracy is 1.000 and must never be quoted alone "
+       f"({sl['accuracy']:.2f})", sl["accuracy"] == 1.0)
+    ok(f"the 9 unreached reference rooms are counted "
+       f"({sl['unmatched_reference_rooms']})",
+       sl["unmatched_reference_rooms"] == 9)
+    ok("...and each is charged as a missing prediction",
+       sl["pred_missing"] == 9)
+
+    # The inversion, reproduced in miniature: model A finds 1 room and gets it
+    # right; model B finds all 10 and gets 5 right. B is plainly better.
+    exB = X.parse_response(json.dumps({
+        "rooms": [{"id": f"gid-{i}", "label": "kitchen" if i < 5 else "office"}
+                  for i in range(10)], "edges": []}), False)
+    gB = X.to_graph(exB)
+    slB = SC.score_labels(gB, gt, M.match_rooms(gB, gt))
+    ok(f"matched-only ranks the worse model HIGHER "
+       f"(A {sl['accuracy']:.2f} vs B {slB['accuracy']:.2f})",
+       sl["accuracy"] > slB["accuracy"])
+    ok(f"the comparable figure ranks them correctly "
+       f"(A {sl['accuracy_strict']:.2f} vs B {slB['accuracy_strict']:.2f})",
+       sl["accuracy_strict"] < slB["accuracy_strict"])
+
+
 def test_output_tag_agreement() -> None:
     print("\n-- the writer and the resume check name files identically --")
     # These were briefly two separate f-strings that disagreed, so every text
@@ -526,6 +585,7 @@ def main() -> int:
     test_prompts()
     test_set_of_mark()
     test_output_tag_agreement()
+    test_label_denominator_is_the_buildings_not_the_models()
     print()
     return failures
 

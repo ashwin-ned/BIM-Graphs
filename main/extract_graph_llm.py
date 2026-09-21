@@ -798,7 +798,9 @@ def run(args) -> int:
         conn["unit"] = u["unit"]
         conn["extraction_status"] = ex.status
         conn["label_accuracy"] = lab["accuracy"]
+        conn["label_accuracy_strict"] = lab["accuracy_strict"]
         conn["label_scored"] = lab["scored"]
+        conn["label_scored_matched"] = lab["scored_matched"]
         conn["label_correct"] = lab["correct"]
         conn["label_pred_missing"] = lab["pred_missing"]
         conn["label_pred_unmapped"] = lab["pred_unmapped"]
@@ -858,7 +860,15 @@ def run(args) -> int:
               f"missed {agg['rooms_unmatched_gt']}, "
               f"invented {agg['rooms_unmatched_pred']}")
         if n_lab:
-            print(f"\n  labels: {n_lab_ok}/{n_lab} = {n_lab_ok/n_lab:.3f}")
+            n_match = sum(r["label_scored_matched"] for r in rows)
+            print(f"\n  labels, over every labelled reference room "
+                  f"(comparable):      {n_lab_ok}/{n_lab} = {n_lab_ok/n_lab:.3f}")
+            print(f"  labels, over rooms the prediction reached "
+                  f"(NOT comparable):  {n_lab_ok}/{n_match} = "
+                  f"{(n_lab_ok/n_match if n_match else 0):.3f}")
+            if n_match < n_lab:
+                print(f"    {n_lab - n_match} labelled reference room(s) had no "
+                      f"matching prediction at all")
         else:
             print("\n  labels: nothing scorable")
     else:

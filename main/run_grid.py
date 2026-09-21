@@ -62,7 +62,23 @@ VISION_MODELS = [k for k, v in MODELS.items() if v["kind"] == "vision"]
 # The comparison the paper leads with: one model family whose text and vision
 # towers share a backbone, so a text-vs-vision difference is a modality result
 # and not a model-family result. These cells get the full corpus.
-HEADLINE_MODELS = ("glm-9b", "glm-9b-v")
+#
+# Qwen2.5 and not GLM, on measured grounds. The GLM pair was the original
+# choice, but GLM-4.1V-9B-Thinking cannot complete the conditions the grid
+# needs: at a 6144-token cap it truncated 4 of 4 units on both occ_som and
+# text+plan_som, because its <think> trace is 92-100% of its output and cannot
+# be suppressed (a prefilled closed </think> makes it reason in prose and emit
+# nothing parseable). Qwen2.5-7B-Instruct and Qwen2.5-VL-7B-Instruct share a
+# backbone just as well, both answer every unit, and the vision one runs at
+# 7.7 s/unit against 161.
+HEADLINE_MODELS = ("qwen25-7b", "qwen25-vl-7b")
+
+# GLM-4.1V earns one cell, not eight: it is the paper's "does a reasoning
+# trace help structured extraction" data point, and the answer so far is that
+# it costs 21x and scores lower than a non-thinking model on the same units.
+# Restricted to the one modality it can actually finish.
+THINKING_VISION = "glm-9b-v"
+THINKING_MODALITIES = ("plan_som",)
 
 
 # Text damage has two regimes: L2, L3 and L4 declare an identical set of
@@ -92,11 +108,15 @@ def cells() -> list:
     # only vision condition that is damage-sensitive, because the marks follow
     # the *declared* rooms and half of those are gone from L2 on.
     for m in VISION_MODELS:
+        thinking = (m == THINKING_VISION)
         for corpus in REGIMES:
-            out.append({"model": m, "modality": "plan_som",
-                        "corpus": corpus, "mask": False})
-            out.append({"model": m, "modality": "occ_som",
-                        "corpus": corpus, "mask": False})
+            for modality in ("plan_som", "occ_som"):
+                if thinking and modality not in THINKING_MODALITIES:
+                    continue
+                out.append({"model": m, "modality": modality,
+                            "corpus": corpus, "mask": False})
+            if thinking and "text+plan_som" not in THINKING_MODALITIES:
+                continue
             for mask in (False, True):
                 out.append({"model": m, "modality": "text+plan_som",
                             "corpus": corpus, "mask": mask})
@@ -110,13 +130,17 @@ def cells() -> list:
     # damage and to masking (the renders are byte-identical and carry no
     # names), so one cell each plus one control.
     for m in VISION_MODELS:
+        if m == THINKING_VISION:
+            continue            # it cannot finish the marked ones; see above
         for modality in ("plan", "occ"):
             out.append({"model": m, "modality": modality,
                         "corpus": "synth150", "mask": False})
-    out.append({"model": VISION_MODELS[0], "modality": "plan",
+    # Controls use a model that answers, or they control nothing.
+    ctrl = HEADLINE_MODELS[1]
+    out.append({"model": ctrl, "modality": "plan",
                 "corpus": "synth150_L4", "mask": False,
                 "note": "invariance control: must match the synth150 plan cell"})
-    out.append({"model": VISION_MODELS[0], "modality": "plan_som",
+    out.append({"model": ctrl, "modality": "plan_som",
                 "corpus": "synth150_L3", "mask": False,
                 "note": "regime control: must match the synth150_L2 plan_som cell"})
     return out

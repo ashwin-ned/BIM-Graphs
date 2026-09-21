@@ -201,6 +201,24 @@ def score_labels(g, gt, matching) -> dict:
     A prediction is also charged when it is absent or outside the vocabulary:
     `pred_missing` and `pred_unmapped` keep a model that declines to answer from
     scoring the same as one that answers correctly.
+
+    **Two accuracies, and the second is the comparable one.** Iterating the
+    matching would make the denominator the model's own matching success: a
+    model that places 2 of 27 rooms is scored on 2 labels, and those 2 are the
+    ones it was confident enough to place. Measured on real runs, that inverts
+    a comparison -- Qwen2.5-VL on a bare plan matched 12 of 27 rooms and
+    scored 0.250, against InternVL3 on text+plan_som which matched 27 of 27 and
+    scored 0.185, so the model scored on half as many rooms looked better at
+    labelling. This iterates the *reference* instead, so:
+
+      accuracy         correct / rooms that matched AND carry a class
+                       -- "how good is it on rooms it found"
+      accuracy_strict  correct / every reference room that carries a class
+                       -- "how good is it on this building", comparable across
+                          models because the denominator is the building's
+
+    Exactly the distinction `score_connectivity` already draws between
+    `precision` and `precision_strict`, applied to labels.
     """
     from . import labels as L
 
@@ -210,10 +228,8 @@ def score_labels(g, gt, matching) -> dict:
     confusion = Counter()
     c = Counter()
 
-    for node, rid in matching.assign.items():
-        ref = rooms.get(rid)
-        if ref is None:
-            continue
+    for rid, ref in rooms.items():
+        node = matching.reverse.get(rid)
         outcome, truth, _ = L.classify(getattr(ref, "label", None))
         if outcome == L.UNNAMED:
             c["no_reference_label"] += 1
@@ -227,6 +243,8 @@ def score_labels(g, gt, matching) -> dict:
 
         c["scored"] += 1
         per_class[truth] += 1
+        if node is not None:
+            c["scored_matched"] += 1
 
         attrs = g.nodes[node] if node in g.nodes else {}
         # ONLY `predicted_label`. Falling back to the node's own `label` would
@@ -253,13 +271,22 @@ def score_labels(g, gt, matching) -> dict:
         else:
             confusion[(truth, pred)] += 1
 
-    scored = c["scored"]
+    scored = c["scored"]                  # every reference room with a class
+    matched = c["scored_matched"]          # of those, the ones a prediction met
     majority = (max(per_class.values()) / scored) if scored else 0.0
     return {
         "vocab_version": L.VOCAB_VERSION,
         "scored": scored,
+        "scored_matched": matched,
+        "unmatched_reference_rooms": scored - matched,
         "correct": c["correct"],
-        "accuracy": (c["correct"] / scored) if scored else 0.0,
+        # Over rooms the prediction actually reached. NOT comparable between
+        # models: the denominator is the model's own matching success.
+        "accuracy": (c["correct"] / matched) if matched else 0.0,
+        # Over every labelled room in the building, so the denominator belongs
+        # to the building and not to the model. This is the comparable figure
+        # and the one a cross-model table must use.
+        "accuracy_strict": (c["correct"] / scored) if scored else 0.0,
         # The floor any real method must clear. Reported here so a caller cannot
         # quote an accuracy without it.
         "majority_baseline": majority,
