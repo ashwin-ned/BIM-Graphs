@@ -1,0 +1,317 @@
+{
+  "building": "model_0",
+  "source": "derived:flood-fill",
+  "derivable": true,
+  "excluded_because": null,
+  "n_doors": 25,
+  "n_voids": 65,
+  "params": {
+    "res": 0.05,
+    "band_slack": 0.04,
+    "band_min": 0.1,
+    "adj_tol": 0.6,
+    "door_h": 1.0,
+    "min_room_area": 0.5,
+    "min_blocker_area": 0.01,
+    "min_void_area": 0.02,
+    "void_scale": 1.0,
+    "declared_unit_scale": 1
+  },
+  "rooms": [
+    {
+      "rid": "0MyMB1s_P4Zh6OoNQiQeMC",
+      "name": "100",
+      "long_name": "LIVING ROOM",
+      "storey": "2JF4e6axWHqu3u0C1FZlmi",
+      "area": 10.77
+    },
+    {
+      "rid": "0MyMB1s_P4Zh6OoNQiQeMB",
+      "name": "101",
+      "long_name": "LIVING ROOM",
+      "storey": "2JF4e6axWHqu3u0C1FZlmi",
+      "area": 11.11
+    },
+    {
+      "rid": "0MyMB1s_P4Zh6OoNQiQeMM",
+      "name": "102",
+      "long_name": "KITCHEN",
+      "storey": "2JF4e6axWHqu3u0C1FZlmi",
+      "area": 11.02
+    },
+    {
+      "rid": "0MyMB1s_P4Zh6OoNQiQeML",
+      "name": "103",
+      "long_name": "LIVING ROOM",
+      "storey": "2JF4e6axWHqu3u0C1FZlmi",
+      "area": 10.86
+    },
+    {
+      "rid": "0MyMB1s_P4Zh6OoNQiQeMG",
+      "name": "104",
+      "long_name": "Room Name",
+      "storey": "2JF4e6axWHqu3u0C1FZlmi",
+      "area": 11.02
+    },
+    {
+      "rid": "0MyMB1s_P4Zh6OoNQiQeMV",
+      "name": "105",
+      "long_name": "Room Name",
+      "storey": "2JF4e6axWHqu3u0C1FZlmi",
+      "area": 10.86
+    },
+    {
+      "rid": "0MyMB1s_P4Zh6OoNQiQeMQ",
+      "name": "106",
+      "long_name": "MASTER BEDROOM",
+      "storey": "2JF4e6axWHqu3u0C1FZlmi",
+      "area": 24.83
+    },
+    {
+      "rid": "0MyMB1s_P4Zh6OoNQiQeMZ",
+      "name": "107",
+      "long_name": "MASTER BEDROOM",
+      "storey": "2JF4e6axWHqu3u0C1FZlmi",
+      "area": 22.36
+    },
+    {
+      "rid": "0MyMB1s_P4Zh6OoNQiQeMk",
+      "name": "108",
+      "long_name": "BATHROOM",
+      "storey": "2JF4e6axWHqu3u0C1FZlmi",
+      "area": 5.22
+    },
+    {
+      "rid": "0MyMB1s_P4Zh6OoNQiQeMj",
+      "name": "109",
+      "long_name": "BATHROOM",
+      "storey": "2JF4e6axWHqu3u0C1FZlmi",
+      "area": 4.94
+    },
+    {
+      "rid": "0MyMB1s_P4Zh6OoNQiQeMe",
+      "name": "110",
+      "long_name": "MASTER BEDROOM",
+      "storey": "2JF4e6axWHqu3u0C1FZlmi",
+      "area": 23.1
+    },
+    {
+      "rid": "0MyMB1s_P4Zh6OoNQiQeMt",
+      "name": "111",
+      "long_name": "STAIRCASE",
+      "storey": "2JF4e6axWHqu3u0C1FZlmi",
+      "area": 14.99
+    },
+    {
+      "rid": "0MyMB1s_P4Zh6OoNQiQeM_",
+      "name": "112",
+      "long_name": "MASTER BEDROOM",
+      "storey": "2JF4e6axWHqu3u0C1FZlmi",
+      "area": 24.83
+    },
+    {
+      "rid": "0MyMB1s_P4Zh6OoNQiQeMz",
+      "name": "113",
+      "long_name": "STAIRCASE",
+      "storey": "2JF4e6axWHqu3u0C1FZlmi",
+      "area": 14.99
+    },
+    {
+      "rid": "0MyMB1s_P4Zh6OoNQiQeGp",
+      "name": "114",
+      "long_name": "LIVING ROOM",
+      "storey": "1ZGO8hrFCHqw0v0026FpFv",
+      "area": 10.03
+    },
+    {
+      "rid": "0MyMB1s_P4Zh6OoNQiQeG$",
+      "name": "115",
+      "long_name": "LIVING ROOM",
+      "storey": "1ZGO8hrFCHqw0v0026FpFv",
+      "area": 10.4
+    },
+    {
+      "rid": "0MyMB1s_P4Zh6OoNQiQeGw",
+      "name": "116",
+      "long_name": "BATH",
+      "storey": "1ZGO8hrFCHqw0v0026FpFv",
+      "area": 4.59
+    },
+    {
+      "rid": "0MyMB1s_P4Zh6OoNQiQeGv",
+      "name": "117",
+      "long_name": "WASH BASIN",
+      "storey": "1ZGO8hrFCHqw0v0026FpFv",
+      "area": 3.24
+    },
+    {
+      "rid": "0MyMB1s_P4Zh6OoNQiQeJ4",
+      "name": "118",
+      "long_name": "MASTER BEDROOM",
+      "storey": "1ZGO8hrFCHqw0v0026FpFv",
+      "area": 18.64
+    },
+    {
+      "rid": "0MyMB1s_P4Zh6OoNQiQeJ3",
+      "name": "119",
+      "long_name": "STAIRCASE",
+      "storey": "1ZGO8hrFCHqw0v0026FpFv",
+      "area": 11.09
+    },
+    {
+      "rid": "0MyMB1s_P4Zh6OoNQiQeI0",
+      "name": "120",
+      "long_name": "MASTER BEDROOM",
+      "storey": "1ZGO8hrFCHqw0v0026FpFv",
+      "area": 20.85
+    },
+    {
+      "rid": "0MyMB1s_P4Zh6OoNQiQeIF",
+      "name": "121",
+      "long_name": "MASTER BEDROOM",
+      "storey": "1ZGO8hrFCHqw0v0026FpFv",
+      "area": 20.31
+    },
+    {
+      "rid": "0MyMB1s_P4Zh6OoNQiQeD5",
+      "name": "123",
+      "long_name": "MASTER BEDROOM",
+      "storey": "1ZGO8hrFCHqw0v0026FpFv",
+      "area": 18.16
+    },
+    {
+      "rid": "0MyMB1s_P4Zh6OoNQiQeD0",
+      "name": "124",
+      "long_name": "LIVING ROOM",
+      "storey": "1ZGO8hrFCHqw0v0026FpFv",
+      "area": 7.58
+    },
+    {
+      "rid": "0MyMB1s_P4Zh6OoNQiQeDF",
+      "name": "125",
+      "long_name": "LIVING ROOM",
+      "storey": "1ZGO8hrFCHqw0v0026FpFv",
+      "area": 9.73
+    },
+    {
+      "rid": "0MyMB1s_P4Zh6OoNQiQeDA",
+      "name": "126",
+      "long_name": "LIVING ROOM",
+      "storey": "1ZGO8hrFCHqw0v0026FpFv",
+      "area": 9.38
+    }
+  ],
+  "edges": [
+    {
+      "a": "0MyMB1s_P4Zh6OoNQiQeMZ",
+      "b": "0MyMB1s_P4Zh6OoNQiQeMk"
+    },
+    {
+      "a": "0MyMB1s_P4Zh6OoNQiQeMe",
+      "b": "0MyMB1s_P4Zh6OoNQiQeMj"
+    },
+    {
+      "a": "0MyMB1s_P4Zh6OoNQiQeGv",
+      "b": "0MyMB1s_P4Zh6OoNQiQeGw"
+    }
+  ],
+  "adjacent_not_connected": [
+    {
+      "a": "0MyMB1s_P4Zh6OoNQiQeMB",
+      "b": "0MyMB1s_P4Zh6OoNQiQeMC"
+    },
+    {
+      "a": "0MyMB1s_P4Zh6OoNQiQeMB",
+      "b": "0MyMB1s_P4Zh6OoNQiQeM_"
+    },
+    {
+      "a": "0MyMB1s_P4Zh6OoNQiQeMG",
+      "b": "0MyMB1s_P4Zh6OoNQiQeMV"
+    },
+    {
+      "a": "0MyMB1s_P4Zh6OoNQiQeML",
+      "b": "0MyMB1s_P4Zh6OoNQiQeMM"
+    },
+    {
+      "a": "0MyMB1s_P4Zh6OoNQiQeML",
+      "b": "0MyMB1s_P4Zh6OoNQiQeMZ"
+    },
+    {
+      "a": "0MyMB1s_P4Zh6OoNQiQeML",
+      "b": "0MyMB1s_P4Zh6OoNQiQeMe"
+    },
+    {
+      "a": "0MyMB1s_P4Zh6OoNQiQeML",
+      "b": "0MyMB1s_P4Zh6OoNQiQeMk"
+    },
+    {
+      "a": "0MyMB1s_P4Zh6OoNQiQeMQ",
+      "b": "0MyMB1s_P4Zh6OoNQiQeMV"
+    },
+    {
+      "a": "0MyMB1s_P4Zh6OoNQiQeMQ",
+      "b": "0MyMB1s_P4Zh6OoNQiQeMz"
+    },
+    {
+      "a": "0MyMB1s_P4Zh6OoNQiQeMZ",
+      "b": "0MyMB1s_P4Zh6OoNQiQeMj"
+    },
+    {
+      "a": "0MyMB1s_P4Zh6OoNQiQeMZ",
+      "b": "0MyMB1s_P4Zh6OoNQiQeMz"
+    },
+    {
+      "a": "0MyMB1s_P4Zh6OoNQiQeM_",
+      "b": "0MyMB1s_P4Zh6OoNQiQeMt"
+    },
+    {
+      "a": "0MyMB1s_P4Zh6OoNQiQeMe",
+      "b": "0MyMB1s_P4Zh6OoNQiQeMk"
+    },
+    {
+      "a": "0MyMB1s_P4Zh6OoNQiQeMe",
+      "b": "0MyMB1s_P4Zh6OoNQiQeMt"
+    },
+    {
+      "a": "0MyMB1s_P4Zh6OoNQiQeMj",
+      "b": "0MyMB1s_P4Zh6OoNQiQeMk"
+    },
+    {
+      "a": "0MyMB1s_P4Zh6OoNQiQeD0",
+      "b": "0MyMB1s_P4Zh6OoNQiQeD5"
+    },
+    {
+      "a": "0MyMB1s_P4Zh6OoNQiQeD0",
+      "b": "0MyMB1s_P4Zh6OoNQiQeDF"
+    },
+    {
+      "a": "0MyMB1s_P4Zh6OoNQiQeDA",
+      "b": "0MyMB1s_P4Zh6OoNQiQeDF"
+    },
+    {
+      "a": "0MyMB1s_P4Zh6OoNQiQeG$",
+      "b": "0MyMB1s_P4Zh6OoNQiQeGp"
+    },
+    {
+      "a": "0MyMB1s_P4Zh6OoNQiQeG$",
+      "b": "0MyMB1s_P4Zh6OoNQiQeGw"
+    },
+    {
+      "a": "0MyMB1s_P4Zh6OoNQiQeGv",
+      "b": "0MyMB1s_P4Zh6OoNQiQeJ4"
+    },
+    {
+      "a": "0MyMB1s_P4Zh6OoNQiQeI0",
+      "b": "0MyMB1s_P4Zh6OoNQiQeIF"
+    },
+    {
+      "a": "0MyMB1s_P4Zh6OoNQiQeI0",
+      "b": "0MyMB1s_P4Zh6OoNQiQeJ3"
+    },
+    {
+      "a": "0MyMB1s_P4Zh6OoNQiQeJ3",
+      "b": "0MyMB1s_P4Zh6OoNQiQeJ4"
+    }
+  ],
+  "unknown": []
+}

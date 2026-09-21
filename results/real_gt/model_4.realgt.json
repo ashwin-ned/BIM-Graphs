@@ -1,0 +1,391 @@
+{
+  "building": "model_4",
+  "source": "derived:flood-fill",
+  "derivable": false,
+  "excluded_because": "no separated pair among candidates: blocking geometry may be absent",
+  "n_doors": 26,
+  "n_voids": 38,
+  "params": {
+    "res": 0.05,
+    "band_slack": 0.04,
+    "band_min": 0.1,
+    "adj_tol": 0.6,
+    "door_h": 1.0,
+    "min_room_area": 0.5,
+    "min_blocker_area": 0.01,
+    "min_void_area": 0.02,
+    "void_scale": 1.0,
+    "declared_unit_scale": 0.001
+  },
+  "rooms": [
+    {
+      "rid": "1CTEAr9_r4BuB1DeOdphRF",
+      "name": "100",
+      "long_name": "Rest room",
+      "storey": "2JF4e6axWHqu3u0C1FZlmi",
+      "area": 3.95
+    },
+    {
+      "rid": "1CTEAr9_r4BuB1DeOdphRA",
+      "name": "101",
+      "long_name": "Office",
+      "storey": "2JF4e6axWHqu3u0C1FZlmi",
+      "area": 10.05
+    },
+    {
+      "rid": "1CTEAr9_r4BuB1DeOdphR9",
+      "name": "102",
+      "long_name": "Open space",
+      "storey": "2JF4e6axWHqu3u0C1FZlmi",
+      "area": 23.3
+    },
+    {
+      "rid": "1CTEAr9_r4BuB1DeOdphR4",
+      "name": "103",
+      "long_name": "Office",
+      "storey": "2JF4e6axWHqu3u0C1FZlmi",
+      "area": 10.05
+    },
+    {
+      "rid": "1CTEAr9_r4BuB1DeOdphR3",
+      "name": "104",
+      "long_name": "Rest room",
+      "storey": "2JF4e6axWHqu3u0C1FZlmi",
+      "area": 3.95
+    },
+    {
+      "rid": "1CTEAr9_r4BuB1DeOdphS_",
+      "name": "105",
+      "long_name": "Open space",
+      "storey": "2JF4e6axWHqu3u0C1FZlmi",
+      "area": 151.44
+    },
+    {
+      "rid": "1CTEAr9_r4BuB1DeOdphSz",
+      "name": "106",
+      "long_name": "Reception",
+      "storey": "2JF4e6axWHqu3u0C1FZlmi",
+      "area": 38.38
+    },
+    {
+      "rid": "0biYiCXOj0dQdTBx7Pbzlu",
+      "name": "107",
+      "long_name": "Rest room",
+      "storey": "1f2TAiba5BzBwZcDChZa3W",
+      "area": 3.95
+    },
+    {
+      "rid": "0biYiCXOj0dQdTBx7Pbzl_",
+      "name": "108",
+      "long_name": "Office",
+      "storey": "1f2TAiba5BzBwZcDChZa3W",
+      "area": 10.05
+    },
+    {
+      "rid": "0biYiCXOj0dQdTBx7Pbzly",
+      "name": "109",
+      "long_name": "Open space",
+      "storey": "1f2TAiba5BzBwZcDChZa3W",
+      "area": 23.3
+    },
+    {
+      "rid": "0biYiCXOj0dQdTBx7Pbzlo",
+      "name": "110",
+      "long_name": "Office",
+      "storey": "1f2TAiba5BzBwZcDChZa3W",
+      "area": 10.05
+    },
+    {
+      "rid": "0biYiCXOj0dQdTBx7Pbzlm",
+      "name": "111",
+      "long_name": "Rest room",
+      "storey": "1f2TAiba5BzBwZcDChZa3W",
+      "area": 3.95
+    },
+    {
+      "rid": "0biYiCXOj0dQdTBx7Pbzls",
+      "name": "112",
+      "long_name": "Open space",
+      "storey": "1f2TAiba5BzBwZcDChZa3W",
+      "area": 151.44
+    },
+    {
+      "rid": "0biYiCXOj0dQdTBx7Pbzlq",
+      "name": "113",
+      "long_name": "Reception",
+      "storey": "1f2TAiba5BzBwZcDChZa3W",
+      "area": 38.38
+    },
+    {
+      "rid": "0biYiCXOj0dQdTBx7PbzJv",
+      "name": "121",
+      "long_name": "Rest room",
+      "storey": "1ZGO8hrFCHqw0v0026FpFv",
+      "area": 3.95
+    },
+    {
+      "rid": "0biYiCXOj0dQdTBx7PbzJ$",
+      "name": "122",
+      "long_name": "Office",
+      "storey": "1ZGO8hrFCHqw0v0026FpFv",
+      "area": 10.05
+    },
+    {
+      "rid": "0biYiCXOj0dQdTBx7PbzJz",
+      "name": "123",
+      "long_name": "Open space",
+      "storey": "1ZGO8hrFCHqw0v0026FpFv",
+      "area": 23.3
+    },
+    {
+      "rid": "0biYiCXOj0dQdTBx7PbzJp",
+      "name": "124",
+      "long_name": "Office",
+      "storey": "1ZGO8hrFCHqw0v0026FpFv",
+      "area": 10.05
+    },
+    {
+      "rid": "0biYiCXOj0dQdTBx7PbzJn",
+      "name": "125",
+      "long_name": "Rest room",
+      "storey": "1ZGO8hrFCHqw0v0026FpFv",
+      "area": 3.95
+    },
+    {
+      "rid": "0biYiCXOj0dQdTBx7PbzJt",
+      "name": "126",
+      "long_name": "Open space",
+      "storey": "1ZGO8hrFCHqw0v0026FpFv",
+      "area": 151.44
+    },
+    {
+      "rid": "0biYiCXOj0dQdTBx7PbzJr",
+      "name": "127",
+      "long_name": "Reception",
+      "storey": "1ZGO8hrFCHqw0v0026FpFv",
+      "area": 38.38
+    },
+    {
+      "rid": "0biYiCXOj0dQdTBx7PbzLw",
+      "name": "128",
+      "long_name": "Rest room",
+      "storey": "1f2TAiba5BzBwZcDChZaTm",
+      "area": 3.95
+    },
+    {
+      "rid": "0biYiCXOj0dQdTBx7PbzLu",
+      "name": "129",
+      "long_name": "Office",
+      "storey": "1f2TAiba5BzBwZcDChZaTm",
+      "area": 10.05
+    },
+    {
+      "rid": "0biYiCXOj0dQdTBx7PbzL_",
+      "name": "130",
+      "long_name": "Open space",
+      "storey": "1f2TAiba5BzBwZcDChZaTm",
+      "area": 23.3
+    },
+    {
+      "rid": "0biYiCXOj0dQdTBx7PbzLy",
+      "name": "131",
+      "long_name": "Office",
+      "storey": "1f2TAiba5BzBwZcDChZaTm",
+      "area": 10.05
+    },
+    {
+      "rid": "0biYiCXOj0dQdTBx7PbzLo",
+      "name": "132",
+      "long_name": "Rest room",
+      "storey": "1f2TAiba5BzBwZcDChZaTm",
+      "area": 3.95
+    },
+    {
+      "rid": "0biYiCXOj0dQdTBx7PbzLm",
+      "name": "133",
+      "long_name": "Open space",
+      "storey": "1f2TAiba5BzBwZcDChZaTm",
+      "area": 151.44
+    },
+    {
+      "rid": "0biYiCXOj0dQdTBx7PbzLs",
+      "name": "134",
+      "long_name": "Reception",
+      "storey": "1f2TAiba5BzBwZcDChZaTm",
+      "area": 38.38
+    },
+    {
+      "rid": "0biYiCXOj0dQdTBx7PbzNx",
+      "name": "135",
+      "long_name": "Rest room",
+      "storey": "1f2TAiba5BzBwZcDChZa27",
+      "area": 5.34
+    },
+    {
+      "rid": "0biYiCXOj0dQdTBx7PbzNv",
+      "name": "136",
+      "long_name": "Office",
+      "storey": "1f2TAiba5BzBwZcDChZa27",
+      "area": 11.84
+    },
+    {
+      "rid": "0biYiCXOj0dQdTBx7PbzN$",
+      "name": "137",
+      "long_name": "Open space",
+      "storey": "1f2TAiba5BzBwZcDChZa27",
+      "area": 26.87
+    },
+    {
+      "rid": "0biYiCXOj0dQdTBx7PbzNz",
+      "name": "138",
+      "long_name": "Office",
+      "storey": "1f2TAiba5BzBwZcDChZa27",
+      "area": 12.21
+    },
+    {
+      "rid": "0biYiCXOj0dQdTBx7PbzNp",
+      "name": "139",
+      "long_name": "Rest room",
+      "storey": "1f2TAiba5BzBwZcDChZa27",
+      "area": 5.34
+    },
+    {
+      "rid": "0biYiCXOj0dQdTBx7PbzNn",
+      "name": "140",
+      "long_name": "Open space",
+      "storey": "1f2TAiba5BzBwZcDChZa27",
+      "area": 162.23
+    },
+    {
+      "rid": "0biYiCXOj0dQdTBx7PbzNt",
+      "name": "141",
+      "long_name": "Reception",
+      "storey": "1f2TAiba5BzBwZcDChZa27",
+      "area": 42.68
+    }
+  ],
+  "edges": [
+    {
+      "a": "1CTEAr9_r4BuB1DeOdphR3",
+      "b": "1CTEAr9_r4BuB1DeOdphR4"
+    },
+    {
+      "a": "1CTEAr9_r4BuB1DeOdphR4",
+      "b": "1CTEAr9_r4BuB1DeOdphR9"
+    },
+    {
+      "a": "1CTEAr9_r4BuB1DeOdphR9",
+      "b": "1CTEAr9_r4BuB1DeOdphRA"
+    },
+    {
+      "a": "1CTEAr9_r4BuB1DeOdphR9",
+      "b": "1CTEAr9_r4BuB1DeOdphS_"
+    },
+    {
+      "a": "1CTEAr9_r4BuB1DeOdphRA",
+      "b": "1CTEAr9_r4BuB1DeOdphRF"
+    },
+    {
+      "a": "1CTEAr9_r4BuB1DeOdphS_",
+      "b": "1CTEAr9_r4BuB1DeOdphSz"
+    },
+    {
+      "a": "0biYiCXOj0dQdTBx7Pbzl_",
+      "b": "0biYiCXOj0dQdTBx7Pbzlu"
+    },
+    {
+      "a": "0biYiCXOj0dQdTBx7Pbzl_",
+      "b": "0biYiCXOj0dQdTBx7Pbzly"
+    },
+    {
+      "a": "0biYiCXOj0dQdTBx7Pbzlm",
+      "b": "0biYiCXOj0dQdTBx7Pbzlo"
+    },
+    {
+      "a": "0biYiCXOj0dQdTBx7Pbzlo",
+      "b": "0biYiCXOj0dQdTBx7Pbzly"
+    },
+    {
+      "a": "0biYiCXOj0dQdTBx7Pbzlq",
+      "b": "0biYiCXOj0dQdTBx7Pbzls"
+    },
+    {
+      "a": "0biYiCXOj0dQdTBx7Pbzls",
+      "b": "0biYiCXOj0dQdTBx7Pbzly"
+    },
+    {
+      "a": "0biYiCXOj0dQdTBx7PbzJ$",
+      "b": "0biYiCXOj0dQdTBx7PbzJv"
+    },
+    {
+      "a": "0biYiCXOj0dQdTBx7PbzJ$",
+      "b": "0biYiCXOj0dQdTBx7PbzJz"
+    },
+    {
+      "a": "0biYiCXOj0dQdTBx7PbzJn",
+      "b": "0biYiCXOj0dQdTBx7PbzJp"
+    },
+    {
+      "a": "0biYiCXOj0dQdTBx7PbzJp",
+      "b": "0biYiCXOj0dQdTBx7PbzJz"
+    },
+    {
+      "a": "0biYiCXOj0dQdTBx7PbzJr",
+      "b": "0biYiCXOj0dQdTBx7PbzJt"
+    },
+    {
+      "a": "0biYiCXOj0dQdTBx7PbzJt",
+      "b": "0biYiCXOj0dQdTBx7PbzJz"
+    },
+    {
+      "a": "0biYiCXOj0dQdTBx7PbzL_",
+      "b": "0biYiCXOj0dQdTBx7PbzLm"
+    },
+    {
+      "a": "0biYiCXOj0dQdTBx7PbzL_",
+      "b": "0biYiCXOj0dQdTBx7PbzLu"
+    },
+    {
+      "a": "0biYiCXOj0dQdTBx7PbzL_",
+      "b": "0biYiCXOj0dQdTBx7PbzLy"
+    },
+    {
+      "a": "0biYiCXOj0dQdTBx7PbzLm",
+      "b": "0biYiCXOj0dQdTBx7PbzLs"
+    },
+    {
+      "a": "0biYiCXOj0dQdTBx7PbzLo",
+      "b": "0biYiCXOj0dQdTBx7PbzLy"
+    },
+    {
+      "a": "0biYiCXOj0dQdTBx7PbzLu",
+      "b": "0biYiCXOj0dQdTBx7PbzLw"
+    },
+    {
+      "a": "0biYiCXOj0dQdTBx7PbzN$",
+      "b": "0biYiCXOj0dQdTBx7PbzNn"
+    },
+    {
+      "a": "0biYiCXOj0dQdTBx7PbzN$",
+      "b": "0biYiCXOj0dQdTBx7PbzNv"
+    },
+    {
+      "a": "0biYiCXOj0dQdTBx7PbzN$",
+      "b": "0biYiCXOj0dQdTBx7PbzNz"
+    },
+    {
+      "a": "0biYiCXOj0dQdTBx7PbzNn",
+      "b": "0biYiCXOj0dQdTBx7PbzNt"
+    },
+    {
+      "a": "0biYiCXOj0dQdTBx7PbzNp",
+      "b": "0biYiCXOj0dQdTBx7PbzNz"
+    },
+    {
+      "a": "0biYiCXOj0dQdTBx7PbzNv",
+      "b": "0biYiCXOj0dQdTBx7PbzNx"
+    }
+  ],
+  "adjacent_not_connected": [],
+  "unknown": []
+}

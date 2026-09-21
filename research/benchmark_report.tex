@@ -1,0 +1,446 @@
+\documentclass[11pt,a4paper]{article}
+
+\usepackage[margin=1in]{geometry}
+\usepackage{times}
+\usepackage{amsmath,amssymb}
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{array}
+\usepackage{xcolor}
+\usepackage{graphicx}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta,positioning}
+\usepackage{listings}
+\usepackage[hidelinks]{hyperref}
+\usepackage{caption}
+\captionsetup{font=small,labelfont=bf}
+\usepackage{enumitem}
+\setlist{itemsep=2pt,topsep=3pt}
+
+\definecolor{codebg}{RGB}{246,246,246}
+\lstset{basicstyle=\ttfamily\footnotesize, backgroundcolor=\color{codebg},
+        frame=single, rulecolor=\color{black!25}, breaklines=true,
+        columns=fullflexible, xleftmargin=4pt, framexleftmargin=4pt}
+
+\newcommand{\rr}[1]{\textcolor{red!70!black}{#1}}
+
+\title{\textbf{Zero-Shot Open-Vocabulary Scene Graph Pipelines on\\
+BIM-Derived RGB-D: A Controlled Study}\\[0.4em]
+\large BIM-Graphs Technical Report}
+\author{BIM-Graphs Project}
+\date{\today}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+\noindent
+We evaluate whether open-vocabulary 3D scene graph pipelines can be applied
+zero-shot to RGB-D flythroughs rendered from Building Information Models. Using
+IFC as a source gives something no existing benchmark has: \emph{exact} ground
+truth, since every pixel is traceable to a building element by construction. Our
+first result was that ConceptGraphs performs very poorly on such data. Our
+second, and more important, result is that this conclusion is \emph{not} safe
+without a control: a matched run on Replica shows the same detector firing 25
+objects per frame at confidence 0.49, against 1.93 at 0.26 on our renders, with
+32\% of our frames yielding no detection at all. The deficit decomposes into two
+independent causes. \textbf{(i)~Appearance}: IFC supplies one flat colour per
+element, leaving 79\% of each frame featureless against Replica's 21\%; adding
+procedural surface texture reduces empty frames from 31.7\% to 3.3\% and nearly
+triples detections per frame. \textbf{(ii)~Content}: Replica's top detections are
+pillow, sofa and coffee table, while ours are wall, door and window. A building
+model is largely unfurnished architecture, and object-centric pipelines discard
+walls and floors as background by construction --- so they search for precisely
+what BIM omits and ignore what it states exactly. This is a structural
+mismatch that no rendering fidelity can repair. We quantify both causes with a
+three-condition appearance ladder, release the benchmark generator, and argue
+that room- and topology-level metrics, not object recall, are the meaningful
+measure for building-scale scene graphs.
+\end{abstract}
+
+\section{Motivation}
+
+Open-vocabulary 3D scene graph methods are evaluated almost exclusively on
+ScanNet, Replica and Matterport, whose ground truth is hand-annotated and
+therefore imperfect and expensive. Evaluation consequently stops at object-level
+metrics, and \emph{connectivity} --- which room opens onto which, the property a
+robot actually navigates with --- is essentially never scored, because no
+dataset states it reliably.
+
+An IFC building model changes this. It provides exact geometry, exact element
+identity, and (after the topology recovery described in our companion
+literature review) exact room boundaries and connectivity. Rendering a
+flythrough from it therefore yields posed RGB-D \emph{with} pixel-perfect
+instance masks and a fully known scene graph. That makes controlled ablation
+possible: pose noise, depth noise, appearance realism and furnishing density can
+each be varied independently, which cannot be done on a real scan.
+
+This report asks the prerequisite question: \emph{do existing zero-shot pipelines
+work on such data at all, and if not, why not?}
+
+\section{Benchmark construction}
+
+\subsection{Ground truth generation}
+
+For each IFC model we build the hybrid hierarchical scene graph (rooms,
+elements, containment, door and passage connectivity), then plan a coverage
+trajectory that walks the recovered navigation graph. Two properties of the
+trajectory matter for fairness:
+
+\begin{itemize}
+\item It routes \emph{through doors} using the recovered topology. Straight
+segments between room centres pass through walls, producing frames pressed
+against masonry that would penalise any method for reasons unrelated to
+perception.
+\item Frames whose median depth falls below 0.8\,m are discarded, for the same
+reason.
+\end{itemize}
+
+Each frame stores RGB, uint16 depth in millimetres, a per-pixel instance mask
+keyed to the IFC \texttt{GlobalId}, the camera pose, and the room the camera
+occupied. Rendering is offscreen via EGL at $640\times480$ with a $58^\circ$
+vertical field of view, comparable to a RealSense D435.
+
+\subsection{Appearance conditions}
+
+Because we control the renderer, appearance realism becomes an experimental
+variable rather than a confound. We define three conditions:
+
+\begin{center}
+\small
+\begin{tabular}{@{}llp{8.2cm}@{}}
+\toprule
+\textbf{A} & \textsc{flat} & IFC diffuse colour only; one flat RGB per element. \\
+\textbf{B} & \textsc{textured} & Procedural surface textures (plaster, wood,
+tile, carpet, glass, metal) selected by IFC class and material name, with UVs in
+world metres so pattern scale is physically consistent, plus oblique fill
+lights. \\
+\textbf{C} & \textsc{textured+clutter} & As B, plus procedural furniture placed
+by room label. 98.5\% of rooms in the corpus carry a functional label, so a
+\textsc{kitchen} can be furnished differently from a \textsc{bedroom}. Every
+placed item is registered as a ground-truth instance. \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\subsection{Reference dataset}
+
+As a control we use Replica \texttt{room0} in the Nice-SLAM RGB-D rendering ---
+the dataset ConceptGraphs itself was developed against. It is run through the
+identical detector, class list and configuration.
+
+\section{Experimental setup}
+
+\paragraph{Baselines.} ConceptGraphs (object-centric open-vocabulary,
+YOLO-World + MobileSAM + CLIP ViT-H-14) and HOV-SG (hierarchical, with an
+explicit room layer). Both are the published implementations, not
+reimplementations.
+
+\paragraph{Metrics.} We report detector-level statistics (fraction of frames
+with no detection, detections per frame, mean confidence, distinct classes) and
+scene-graph-level statistics against exact ground truth.
+
+Two decisions make the scene-graph metrics meaningful:
+
+\begin{itemize}
+\item \textbf{Only observed ground truth is scored.} An element the camera never
+saw cannot be recovered by any method; counting it as a miss would measure the
+trajectory. Visibility is read from the rendered instance masks.
+\item \textbf{Objects and architecture are scored separately.} ConceptGraphs
+discards wall/floor/ceiling as background \emph{by design}, so scoring it against
+a ground-truth set dominated by walls measures a category mismatch, not method
+quality. We never merge the two buckets into one headline number.
+\end{itemize}
+
+We additionally report a \emph{hallucination rate}: the fraction of predicted
+objects whose label is impossible in a building model (\texttt{person},
+\texttt{dog}, \dots). This requires no matching and admits no ambiguity.
+
+\section{Results}
+
+\subsection{The control: is it the method or the renderer?}
+\label{sec:control}
+
+Table~\ref{tab:probe} is the central result of this report.
+
+\begin{table}[h]
+\centering
+\small
+\begin{tabular}{@{}lrrrrr@{}}
+\toprule
+\textbf{Source} & \textbf{Frames} & \textbf{Empty frames} &
+\textbf{Det./frame} & \textbf{Confidence} & \textbf{Classes} \\
+\midrule
+A \textsc{flat} (model\_0)   & 120 & 31.7\% & 1.93 & 0.26 & 27 \\
+B \textsc{textured}        &  60 &  3.3\% & 5.15 & 0.25 & 14 \\
+\midrule
+\textbf{Replica (reference)} & 120 & \textbf{0.0\%} & \textbf{25.02} &
+\textbf{0.49} & \textbf{60} \\
+\bottomrule
+\end{tabular}
+\caption{YOLO-World response under identical model, class list and thresholds.
+The detector never fails on Replica and fires 13$\times$ more often there than
+on flat BIM renders, at twice the confidence. A conclusion drawn from the flat
+condition alone would have been a statement about our renderer.}
+\label{tab:probe}
+\end{table}
+
+\subsection{Why: low-level image statistics}
+
+\begin{table}[h]
+\centering
+\small
+\begin{tabular}{@{}lrrr@{}}
+\toprule
+\textbf{Statistic} & \textbf{A \textsc{flat}} & \textbf{B \textsc{textured}} &
+\textbf{Replica} \\
+\midrule
+Gradient energy        & 0.0031 & 0.0103 & 0.0208 \\
+Local contrast         & 0.0177 & 0.0391 & 0.0763 \\
+Saturation             & 0.070  & 0.150  & 0.161 \\
+Distinct colours       & 35     & 91     & 306 \\
+Intensity entropy      & 3.59   & 3.96   & 5.40 \\
+\textbf{Featureless area} & \textbf{79\%} & \textbf{47\%} & \textbf{21\%} \\
+\bottomrule
+\end{tabular}
+\caption{Frame statistics (means over sampled frames). ``Featureless area'' is
+the fraction of $16\times16$ tiles with intensity standard deviation below
+0.02. An IFC element carries a single diffuse colour, so a naive render is
+overwhelmingly flat --- exactly the regime a detector trained on photographs has
+never seen. Texturing recovers roughly half the deficit in gradient and
+contrast, and matches Replica on saturation.}
+\label{tab:stats}
+\end{table}
+
+\subsection{Scene-graph accuracy against exact ground truth}
+
+\begin{table}[h]
+\centering
+\small
+\begin{tabular}{@{}llrrrrrr@{}}
+\toprule
+\textbf{Cond.} & \textbf{Model} & \textbf{GT obj.} & \textbf{Pred.} &
+\textbf{Recall} & \textbf{Prec.} & \textbf{Class acc.} & \textbf{Halluc.} \\
+\midrule
+A \textsc{flat}     & model\_0  &  87 &  40 & 0.333 & 0.725 & 0.241 & 0.075 \\
+B \textsc{textured} & model\_0  &  87 &  45 & 0.333 & 0.644 & \textbf{0.483} & 0.067 \\
+C \textsc{+clutter} & model\_0  & 161 &  88 & \textbf{0.466} & \textbf{0.852} & 0.440 & \textbf{0.011} \\
+\midrule
+A \textsc{flat}     & model\_17 & 104 &  59 & 0.406 & 0.729 & 0.209 & 0.000 \\
+B \textsc{textured} & model\_17 & 104 &  82 & \textbf{0.510} & 0.646 & \textbf{0.528} & 0.000 \\
+C \textsc{+clutter} & model\_17 & 169 & 118 & 0.509 & 0.729 & 0.419 & 0.000 \\
+\bottomrule
+\end{tabular}
+\caption{ConceptGraphs against exact IFC ground truth, restricted to the object
+bucket and to instances actually observed by the camera. Condition~C's ground
+truth is larger because injected furniture is itself registered as ground truth,
+so C-versus-B class accuracy is not like-for-like; recall, precision and
+hallucination are.}
+\label{tab:sg}
+\end{table}
+
+\paragraph{The two causes have distinct signatures.} Varying appearance and
+content independently separates effects that a single ``more realistic
+rendering'' change would have confounded:
+
+\begin{center}
+\small
+\begin{tabular}{@{}lll@{}}
+\toprule
+& \textbf{Appearance (A$\to$B)} & \textbf{Content (B$\to$C)} \\
+\midrule
+Class accuracy & $\times$2 on both models & --- \\
+Recall         & unchanged (model\_0)     & $+0.133$ (model\_0) \\
+Precision      & $-0.08$ on both          & $+0.21$ (model\_0) \\
+Hallucination  & barely moves             & $0.067 \to 0.011$ \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+Texture fixes \emph{naming}; content fixes \emph{finding}. Neither substitutes
+for the other.
+
+\paragraph{Texture changes naming, not finding.} On model\_0 the detector-level
+gain from texturing is large (1.93 to 5.15 detections per frame) yet the number
+of matched ground-truth objects is identical at 29. The additional detections
+are not new objects: they are more confident labels on regions already being
+detected, plus additional false positives, which is why precision falls. Read
+alone, the detector statistics would imply a recall improvement that did not
+occur.
+
+\paragraph{Clutter helps only where content was missing.} Adding furniture
+raises recall by $0.133$ on model\_0 but by $0.001$ on model\_17. This is what
+the content hypothesis predicts rather than a weakness of it: model\_17 is an
+office whose rooms already contain furniture, so there was little deficit to
+correct, whereas model\_0 is an open-corridor residential block whose coverage
+path spends much of its time on an unfurnished exterior deck. A uniform
+improvement across both buildings would have been the more suspicious result.
+
+\paragraph{Hallucination tracks content, not appearance.} The impossible-label
+rate on model\_0 falls $0.075 \to 0.067 \to 0.011$. The \texttt{person}
+detections that survived filtering and merging in conditions A and B were not a
+quirk of the detector: they are what an object-seeking model does when aimed at
+empty architecture. Give it real objects and the phantoms largely stop.
+
+\paragraph{Texture changes naming, not finding.} On model\_0 the detector-level
+gain is large (1.93 to 5.15 detections per frame) yet the number of matched
+ground-truth objects is identical at 29. The additional detections are not new
+objects: they are more confident labels on regions already being detected, plus
+additional false positives, which is why precision falls. Read alone, the
+detector statistics would imply a recall improvement that did not occur.
+
+\paragraph{Building type dominates appearance.} The gap between the two
+buildings under identical rendering (recall 0.510 vs 0.333 in condition~B)
+exceeds the gap between appearance conditions within either building. A single
+corpus-wide average would therefore be misleading, and we report per-model
+figures throughout.
+
+\subsection{HOV-SG}
+
+HOV-SG is the more meaningful comparison because it models rooms explicitly.
+Its run is in progress at the time of writing: feature extraction over 51
+keyframes completes in 4m43s, but sequential 3D mask merging requires
+approximately 165\,s per iteration over 50 iterations ($\approx$2\,h15). We note
+this because an earlier attempt was terminated by our own 50-minute wall clock
+and could easily have been misread as a failure of the method.
+
+One configuration detail is worth recording: \texttt{create\_graph.py} skips
+hierarchical graph construction entirely for datasets named \texttt{replica} or
+\texttt{scannet}, on the assumption that those are single-room scans. Because
+our renders adopt the Replica on-disk layout, registering them under that name
+would have produced a complete-looking run with the room layer --- the only
+reason to use HOV-SG --- silently absent.
+
+\subsection{The second cause: content, not appearance}
+\label{sec:content}
+
+Texture alone does not close the gap, and the class histograms show why:
+
+\begin{center}
+\small
+\begin{tabular}{@{}lp{9.4cm}@{}}
+\toprule
+\textbf{Replica} & pillow (690), sofa chair (249), coffee table (219),
+lamp (186), book (169), couch (147), shelf (142), potted plant (116) \\
+\addlinespace
+\textbf{BIM (B)} & closet door (107), closet wall (67), window (63),
+picture (28), bed (14), person (11) \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+Replica rooms are \emph{furnished}; IFC buildings are \emph{architecture}. Across
+four storeys, model\_0 contains 89 furniture instances in total, while a single
+Replica room presents hundreds of detectable objects. Since ConceptGraphs
+explicitly discards wall, floor and ceiling as background, it is searching for
+the category BIM does not model while ignoring the category BIM specifies
+exactly.
+
+\paragraph{Hallucination.} The label \texttt{person} appears in every BIM
+condition. There are no people in an IFC model. In the flat condition three
+\texttt{person} objects survived the three-detection filter \emph{and} the
+merging stage, meaning the pipeline built stable 3D objects out of nothing. The
+rate falls with texture but does not vanish.
+
+\section{Discussion}
+
+\paragraph{The negative result was not safe.} Our first measurement --- six
+recovered objects for a four-storey building --- looked like decisive failure. It
+was an artefact of frame stride: at 1.75\,m spacing the median object was seen
+in exactly one frame, so multi-view association never fired. Dense sampling took
+the count from 6 to 40 and the median from 1 to 6 detections per object. A
+second apparent failure, near-total detector silence, proved to be flat
+rendering. Both would have been reported as method limitations.
+
+\paragraph{What the field should take from this.} Applying object-centric
+open-vocabulary pipelines to BIM is a category error, independent of rendering.
+The meaningful comparison is with methods that model \emph{rooms} --- HOV-SG and
+its successors --- and the meaningful metric is room segmentation and
+connectivity, not object recall. Object recall on an unfurnished building
+measures the dataset.
+
+\paragraph{Implication for our own pipeline.} This supports scoping
+vision-language models to what IFC lacks --- affordances, and functional labels
+for the 344 geometrically recovered rooms that carry no name --- rather than to
+rediscovering objects that were never in the file.
+
+\section{Threats to validity}
+
+\begin{enumerate}
+\item \textbf{Synthetic appearance remains unmatched.} Condition B closes about
+half the statistical gap to Replica, not all of it. Absolute scores on BIM
+renders should not be read as scores on real buildings.
+\item \textbf{Idealised sensing cuts the other way.} Our poses are exact and
+depth is noiseless, which \emph{flatters} the methods relative to a real robot.
+Appearance and sensing biases therefore act in opposite directions and must not
+be conflated.
+\item \textbf{Single-detector control.} The Replica control isolates the
+detector, which is where the failure begins, but the association and fusion
+stages are not separately controlled.
+\item \textbf{Procedural clutter is not photoreal.} Condition C tests the effect
+of \emph{content presence}, not of realistic objects. It should be read as a
+lower bound on what furnishing contributes.
+\item \textbf{Scale.} Results reported here cover a subset of the corpus; the
+generator runs over all 25 models.
+\end{enumerate}
+
+\section{Reproducibility notes}
+
+Both baselines are the published implementations. Getting them to run required
+resolving version drift that we record because it is likely to affect anyone
+repeating this work.
+
+\paragraph{ConceptGraphs.} Eight blockers: absent \texttt{nvcc}; CUDA~12.1
+rejecting \texttt{gcc}$>$12; pip build isolation hiding \texttt{torch} from the
+\texttt{chamferdist} build; conda CUDA headers living under
+\texttt{targets/x86\_64-linux/include}; \texttt{supervision} removing
+\texttt{ColorPalette.default()} (and being silently upgraded again by the
+GroundingDINO install); \texttt{transformers} too new for RAM; missing
+\texttt{fairscale}. Two defects were in the repository itself: a
+\texttt{defaults:\ -\ base} entry naming a file that does not exist, and a
+default \texttt{match\_method} the code does not implement.
+
+\paragraph{HOV-SG.} numpy~2 breaking the compiled \texttt{faiss};
+\texttt{scikit-fmm} requiring a C++ compiler; a hardcoded interactive
+matplotlib backend.
+
+\paragraph{Modifications to third-party code.} Four, all recorded in-line and
+none algorithmic: skip frames where YOLO-World returns no boxes (ultralytics
+SAM raises on an empty bbox tensor); skip the corresponding absent detection
+files during mapping; switch HOV-SG's matplotlib backend to \texttt{Agg} for
+headless operation; add a dataset branch so our Replica-layout data reaches
+HOV-SG's hierarchical graph construction, which is otherwise skipped for
+\texttt{replica} and \texttt{scannet}.
+
+\section{Conclusions}
+
+\begin{enumerate}
+\item Zero-shot open-vocabulary pipelines do perform poorly on BIM-derived
+RGB-D, but the naive measurement overstates it by a wide margin. Controls are
+mandatory: without the Replica reference we would have attributed a rendering
+artefact to the method.
+\item \textbf{Appearance and content are separable causes with distinct
+signatures.} Texture doubles class accuracy and leaves recall untouched; content
+raises recall and precision and reduces hallucination by a factor of six.
+Neither substitutes for the other, and a single ``more realistic rendering''
+intervention would have confounded them.
+\item Object-centric pipelines remain structurally mismatched to BIM: they
+discard walls and floors as background while seeking the furniture a building
+model does not contain. Injected clutter helps only where content was genuinely
+absent.
+\item Building-scale scene graph evaluation should be room- and
+topology-centric. Exact IFC ground truth makes that measurable for the first
+time.
+\end{enumerate}
+
+\paragraph{Errors caught during this study.} We record these because each
+initially looked like a result. (i)~A frame stride of five left the median object
+visible in one frame, suppressing multi-view association and yielding six
+objects for a four-storey building. (ii)~Flat rendering silenced the detector on
+a third of frames. (iii)~Detections per frame nearly tripled with texture while
+matched objects did not change at all. (iv)~Our own evaluator scored correctly
+identified clutter as class errors, making condition~C appear to regress from
+0.483 to 0.187 when the true figure is 0.440. (v)~A 50-minute timeout killed
+HOV-SG mid-merge. Five apparent findings, all artefacts of setup or measurement.
+
+\end{document}

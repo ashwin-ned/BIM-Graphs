@@ -1,0 +1,110 @@
+\documentclass[a4paper, 10pt, conference]{ieeeconf}
+
+\IEEEoverridecommandlockouts
+\overrideIEEEmargins
+
+\usepackage{cite}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{graphicx}
+\usepackage{color,calc}
+\usepackage{makecell}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{caption}
+\usepackage{multirow}
+\usepackage{url}
+\usepackage{xcolor}
+\usepackage{tabularx}
+\usepackage{pifont}
+\newcommand{\cmark}{\ding{51}}
+\newcommand{\xmark}{\ding{55}}
+
+\def\BibTeX{{\rm B\kern-.05em{\sc i\kern-.025em b}\kern-.08em
+    T\kern-.1667em\lower.7ex\hbox{E}\kern-.125emX}}
+
+\title{\LARGE \bf RoboBIM: From Coverage to Correctness in Building-Information Priors for Robot Navigation}
+
+\author{
+\authorblockN{Ashwin Nedungadi$^{*}$, Bharathi Kannan Nithyanantham$^{*}$, and Stefan Luedtke\thanks{$^{*}$Equal contribution.}}\\
+\authorblockA{\textit{Institute for Visual \& Analytical Computing, Universit\"at Rostock} \\
+\{ashwin.nedungadi, bharathikannan.nithyanantham, stefan.luedtke\}@uni-rostock.de}
+}
+
+\begin{document}
+
+\maketitle
+\thispagestyle{empty}
+\pagestyle{empty}
+
+% ================================================================
+% ABSTRACT
+% ================================================================
+\begin{abstract}
+Building Information Models (BIM), encoded as Industry Foundation Classes (IFC) files, carry architectural priors that could let an indoor robot skip minutes of onboard metric-semantic mapping. In our workshop system, RoboBIM \cite{nedungadi2026robobimws}, we showed that a staged LLM agent can populate room-type, hazard, and traversability fields that a deterministic IFC parser leaves empty. That study reported \emph{coverage} on four buildings from single, unreplicated runs, against one weak deterministic strawman -- leaving the two questions any reviewer asks hardest unanswered: what does the model buy over a strong deterministic baseline, and are its outputs \emph{correct}, not merely non-null? This paper answers both. We build a benchmark of 150 procedurally generated buildings whose ground-truth connectivity is verified by a raster flood-fill cross-check independent of the scoring pipeline (2{,}769/2{,}769 pairs agree), and show our topology-recovery method beats three deterministic ablations and an independently published external tool at $p<10^{-6}$ (paired Wilcoxon, $n=150$), degrading gracefully rather than catastrophically under four levels of graduated IFC damage. We replace \emph{coverage} with \emph{held-out accuracy} for semantic labelling -- leave-one-out masking of real, architect-assigned IFC labels -- diagnose a systematic taxonomy failure rather than reporting it as an unexplained limitation, and fix the diagnosable part of it. Finally, we introduce a goal-resolution metric that closes the loop end to end: does a language query such as ``go to the kitchen'' retrieve the correct room, and can a specific robot embodiment then reach it. On 25 real buildings and 593 held-out real rooms, resolution succeeds in 51.9\% of cases and tracks label accuracy class-for-class, showing the two stages compose rather than compensate for one another. We release the generator, the verified benchmark, the annotation tool, and the full evaluation harness.
+\end{abstract}
+
+% ================================================================
+% I. INTRODUCTION
+% ================================================================
+\section{Introduction}
+
+Mobile robots deployed in structured indoor environments routinely reconstruct metric-semantic representations from onboard sensing -- Kimera \cite{rosinol2021kimera} and Hydra \cite{hughes2022hydra} are exemplars -- even when a design-time digital twin of the deployment site already exists as an IFC model \cite{hamieh2021,follini2020,kim2022semantic}. This duplication discards a prior the robot would otherwise spend minutes re-discovering. But the discarding is not entirely unreasonable: exported IFC is a \emph{drawing-production} artefact, not a navigation one. The relationships a robot needs -- which rooms are adjacent, which door joins which pair of rooms, what a room is \emph{for} -- are precisely the relationships that authoring tools have no reason to state, because no architectural drawing requires them.
+
+\textbf{What our workshop paper established, and what it left open.} RoboBIM \cite{nedungadi2026robobimws} framed IFC-to-prior compilation as a deterministic geometric backbone plus a staged, tool-augmented LLM agent that enriches it with room types, hazards, materials, and traversability, gated by a check that rejects any agent edit which reduces connected-transition count below the deterministic baseline. On four public buildings the agent raised room-type coverage from 51/131 to 89/131 rooms and populated fields the baseline left uniformly null. This established that an agentic layer \emph{can} add semantic content IFC does not state. It did not establish that the content is \emph{correct}: coverage counts non-null fields, not right ones, and a system that always outputs \emph{something} scores full coverage regardless of accuracy. It also compared against a single regex-and-property-set baseline -- exactly the strawman that leaves ``what does the LLM actually buy you'' unanswered -- and reported single, unreplicated runs on four buildings, which is not a foundation for a significance claim of any kind.
+
+\textbf{This paper rebuilds the evaluation, not just the pipeline.} We keep RoboBIM's two-layer framing -- a deterministic backbone that is trustworthy by construction, enriched by a layer that is not -- but replace every measurement that could not previously distinguish ``populated'' from ``correct.'' Concretely, we contribute:
+\begin{enumerate}
+\setlength{\itemsep}{1pt}
+\item A procedurally generated benchmark of 150 buildings whose ground-truth room connectivity is checked by a second, independent mechanism (raster flood-fill) rather than assumed correct because a generator wrote it, closing the single largest gap our own prior evaluation had: no reference to measure against at all.
+\item A statistically grounded comparison -- paired Wilcoxon significance and win/loss records over $n=150$ buildings, not $n=1$ -- against three deterministic ablations \emph{and} an independently published, publicly available external tool \cite{bjornskov2024ifc2graph}, replacing the single weak strawman of the workshop study.
+\item A graduated damage model (four levels, from space-boundary stripping to corrupted units) that isolates room recovery as the binding constraint under realistic IFC corruption, in place of an untested claim that the pipeline is robust.
+\item A correctness metric for semantic labelling -- leave-one-out masking of real, architect-assigned room names -- that replaces coverage outright, together with a diagnosed and partially repaired taxonomy failure reported with its root cause rather than left as an unexplained limitation.
+\item A goal-resolution metric that closes the loop the whole system exists to serve: whether a language query resolves to the correct room and whether a specific robot embodiment can then reach it, evaluated on 25 real buildings and 593 held-out real rooms.
+\end{enumerate}
+
+Section \ref{sec:related} positions this work against sensor-driven scene graphs, open-vocabulary and language-grounded graphs, BIM/IFC as a structured prior, and the space-boundary and room-recovery literature that neither our workshop paper nor the surveyed BIM-to-graph work engages with, despite solving exactly the problem that blocks it.
+
+% ================================================================
+% II. RELATED WORK
+% ================================================================
+\section{Related Work}
+\label{sec:related}
+
+\textbf{Sensor-driven 3D scene graphs.} Armeni et al.\ \cite{armeni20193d} introduced the layered formulation -- objects nested in rooms nested in a building -- that nearly all later work inherits. Kimera \cite{rosinol2021kimera} made construction fully automatic from visual-inertial data, deriving \emph{places} from a Generalised Voronoi Diagram of free space and segmenting rooms at the doorway constrictions between Voronoi regions; Hydra \cite{hughes2022hydra} made this real-time and loop-closure aware, and Mono-Hydra \cite{udugama2023monohydra} showed it degrades gracefully to monocular input. S-Graphs \cite{bavle2022sgraphsplus,bavle2025sgraphs2} instead makes rooms and walls \emph{factors in the SLAM optimisation itself}, and its architectural-plan variants \cite{shaheer2023architectural,ndulue2026matching} use a BIM-derived graph as a \emph{registration target} for localisation -- close to our problem, but silent on what to do when the BIM's own topology is missing, which is the case we address. Every system in this cluster \emph{estimates} its hierarchy from noisy sensing; ours reads the outer layers (building, storeys, exact element geometry) directly from IFC and estimates only the middle layer -- rooms and their connectivity -- that IFC omits.
+
+\textbf{Open-vocabulary and language-grounded graphs.} ConceptGraphs \cite{gu2023conceptgraphs} and HOV-SG \cite{werby2024hovsg} attach open-vocabulary, CLIP-grounded features to segments recovered from RGB-D streams, and Clio \cite{maggio2024clio} prunes the resulting graph against a task list rather than materialising everything a sensor can see. SayPlan \cite{rana2023sayplan} demonstrated the property our own goal-resolution and navigation stages depend on: an LLM can plan over a building-scale graph if permitted to collapse and expand it rather than ingest the whole scene at once, and EmbodiedRAG \cite{booker2024embodiedrag} and Taskography \cite{agia2022taskography} show retrieval- and graph-scale considerations matter as much as the underlying representation. These methods solve semantic richness \emph{without} a prior map; we solve it \emph{with} one, which changes what is worth estimating and what is worth verifying.
+
+\textbf{BIM and IFC as a structured prior.} The AEC community arrived at graph representations independently. ifcOWL \cite{pauwels2016ifcowl} mechanically maps the IFC schema to OWL, preserving everything at the cost of a graph that is awkward to query; the Building Topology Ontology \cite{rasmussen2021bot} responds with a deliberately minimal core closer to what a robot needs -- completeness and queryability are in tension, and robotics wants the queryable end. For navigation specifically, Zhu et al.'s IFC-Graph \cite{zhu2025ifcgraph} connects neighbouring spaces through doors for indoor pathfinding, and Gopee et al.\ \cite{gopee2023ifcnav} and Vega Torres et al.\ \cite{vegatorres2023bimlidar} export navigation maps and localise a robot against a BIM-derived map, respectively; Pix2G \cite{longo2025pix2g} runs the inverse direction in real time, producing BIM-like maps from onboard sensing. \emph{Every one of these presumes a well-formed spatial hierarchy already exists in the file} -- exactly the presumption our own IFC audit (Sec.~\ref{sec:related}, and detailed in our extended technical report) shows fails on realistic exports: zero \texttt{IfcRelSpaceBoundary} instances across 257\,MB of real IFC, and only 51\% of storeys containing any \texttt{IfcSpace} at all. Coupling IFC to language models is more recent: Iranmanesh et al.\ \cite{iranmanesh2025graphrag} retrieve grounded facts from an IFC-derived knowledge graph via LLM-emitted Cypher rather than trusting parametric memory, and Text2BIM \cite{du2024text2bim} inverts the direction, generating models from text. Most directly, BIM-Edit \cite{nithyanantham2026bimedit} benchmarks LLMs on natural-language editing of IFC across 324 tasks and finds the best model reaches only 49.5\% average score, with topological instructions the weakest category -- a result that argues, independently of our own findings, that raw IFC is a poor interface for a language model and that an explicit, verified topological graph is the right intermediate representation. Our own prior system \cite{nedungadi2026robobimws} sits in this cluster: it established that a staged agent, gated against topology regression, can enrich such a graph, but measured only whether fields were populated, not whether they were right, and compared against a single deterministic prefilter rather than the field's actual state of the art.
+
+\textbf{Recovering spaces and boundaries.} A literature largely unknown in robotics has, in fact, long known IFC space data is unreliable -- it surfaced first in building-energy simulation, which needs second-level space boundaries for thermal analysis. Lilis et al.\ \cite{lilis2017spaceboundary} generate that topology from raw IFC geometry, explicitly handling clash errors and malformed space volumes, and Fichter et al.\ \cite{fichter2021spaceboundary} note plainly that many delivered files lack \texttt{IfcSpace} entirely and generate the geometry themselves. Where spaces are absent altogether, room recovery becomes an occupancy-segmentation problem: Bormann et al.\ \cite{bormann2016roomseg} survey the morphological, distance-transform, Voronoi, and feature-based families that this literature and the sensor-driven scene-graph literature both converge on, and Ochmann et al.\ \cite{ochmann2016parametric} reconstruct volumetric building models from point clouds via graph-cut energy minimisation over wall centre-lines -- solving the same double-sided-wall pathology that any IFC-derived recovery method must also handle, since a wall is a solid with two faces rather than a zero-thickness line. Kim and Min \cite{kim2024semanticlayering} add an LLM layer on top of geometric segmentation to assign functional labels, which is the same task our held-out labelling evaluation targets, but without a correctness measurement against ground truth. This cluster solves precisely the problem that blocks reliable BIM-to-graph construction, and none of the BIM-to-robotics work surveyed above cites it.
+
+\textbf{Affordance- and capability-aware planning.} SayCan \cite{ahn2022saycan} and AutoGPT+P \cite{birr2024autogptp} ground LLM plans in robot affordances and capabilities once a semantic prior is available; our navigation stage is designed as a drop-in producer for such planners, parameterised per embodiment (wheeled, legged, human) rather than assuming a single robot.
+
+\textbf{Positioning.} This paper differs from the sensor-driven literature in that it never estimates geometry -- IFC states it exactly -- and from prior BIM-to-robotics work, including our own \cite{nedungadi2026robobimws}, in three concrete ways that follow directly from the gaps above: ground truth is independently verified rather than assumed, correctness is measured by holding out real labels rather than counting non-null fields, and the evaluation is powered by $n=150$ synthetic buildings with statistical significance testing rather than $n=1$ single-run measurements on four. Table~\ref{tab:positioning} summarises this against the workshop study and the closest external systems.
+
+\begin{table}[t]
+\centering
+\caption{\textbf{Positioning.} Ground-truth verification, statistical power, and correctness (vs.\ coverage) measurement are what distinguish this work from its own predecessor and from external IFC-to-graph tools.}
+\label{tab:positioning}
+\footnotesize
+\setlength{\tabcolsep}{3pt}
+\begin{tabularx}{\columnwidth}{@{}X c c c@{}}
+\toprule
+\textbf{Property} & \makecell{\textbf{RoboBIM}\\\textbf{WS \cite{nedungadi2026robobimws}}} & \makecell{\textbf{External}\\\textbf{tools}} & \textbf{This work} \\
+\midrule
+IFC as prior source              & \cmark & \cmark & \cmark \\
+No perception required           & \cmark & \cmark & \cmark \\
+Independently verified GT        & \xmark & \xmark & \cmark \\
+Statistically significant ($n{>}1$) & \xmark & \xmark & \cmark \\
+Correctness, not coverage        & \xmark & partial & \cmark \\
+Graduated robustness evaluation  & \xmark & \xmark & \cmark \\
+End-to-end goal resolution       & partial & \xmark & \cmark \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\bibliographystyle{ieeetr}
+{\footnotesize
+\bibliography{references}}
+
+\end{document}

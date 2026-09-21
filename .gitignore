@@ -1,0 +1,88 @@
+# --------------------------------------------------------------------------
+# Deployed separately. ifc-graphx/ is its own git repository with its own
+# GitHub remote (github.com/ashwin-ned/ifc-graphx) and its own CI -- pushing
+# it here would create a nested-repo mess and duplicate a live deployment.
+# --------------------------------------------------------------------------
+ifc-graphx/
+
+# --------------------------------------------------------------------------
+# Vendored external tools, each with its own .git history (Ifc2Graph, IFC2SB).
+# Re-clone from the upstream URLs in README.md rather than duplicating their
+# history here; committing them would also turn nested .git dirs into
+# accidental gitlinks.
+# --------------------------------------------------------------------------
+third_party/
+
+# Staged deletions under manual review -- never meant to be published.
+TO-DELETE/
+
+# --------------------------------------------------------------------------
+# Raw corpora. Multiple gigabytes; individual real IFC files run up to 70 MB
+# (dataset/2025_BIMfundamentals/model_126.ifc, model_152.ifc), well past what
+# a plain git history should carry with no Git LFS configured. Regenerate or
+# re-download per the Data section of README.md:
+#   - real IFC + floorplans: supplied dataset, not redistributable here
+#   - synthetic IFC + ground truth: main/generate_building.py (deterministic,
+#     --seed0 0 reproduces the archived corpus exactly -- verified 18 Sep 2026)
+#   - damaged synthetic levels: main/damage_ifc.py
+#   - blind-rendered vision corpus: main/render_blind.py (~2 min for the
+#     real corpus once the .plan.json extraction below exists)
+# --------------------------------------------------------------------------
+dataset/2025_BIMfundamentals/*.ifc
+dataset/2025_BIMfundamentals/floorplans/
+dataset/2025_BIMfundamentals/vision/
+dataset/test_set/*.ifc
+# The partner dataset is 236 MB and turned out to be almost entirely the
+# per-model scene-graph JSONs (208 files, ~1.1 MB each), not .ifc -- an
+# .ifc-only exclusion here missed the actual bulk of it on the first pass.
+dataset/BIM-GNI-Ramblr/**/*.json
+dataset/BIM-GNI-Ramblr/**/*.ifc
+dataset/synthetic_data/*/*.ifc
+dataset/synthetic_data/*/floorplans/
+dataset/synthetic_data/*/vision/
+
+# Excluded by file TYPE above, not by whole directory -- a whole-directory
+# ignore (e.g. `dataset/synthetic_data/synth150/`) would also hide anything
+# git is later told to keep inside it, since git never looks inside an
+# ignored directory in the first place. Kept as a result:
+#   - corpus.manifest.json (a few KB each): the size/SHA-256 record
+#     main/verify_corpus.py checks against
+#   - *.gt.json (604 KB for all of synth150): the deterministic ground truth
+#     this project's reproducibility claim rests on -- regenerating it
+#     exactly (main/generate_building.py --seed0 0) is verified, but 604 KB
+#     is cheap enough to just keep rather than lean on that every time
+#   - dataset/2025_BIMfundamentals/plans/*.plan.json (9.4 MB): the extracted
+#     topology the whole method runs on, too useful to force a re-parse of
+#     2 GB of IFC for
+#   - dataset/BIM-GNI-Ramblr/*.md: the partner dataset's own verification doc
+!dataset/2025_BIMfundamentals/plans/
+
+# --------------------------------------------------------------------------
+# Regeneratable intermediate outputs: per-building graph dumps for every
+# (corpus x damage level x method) cell -- results/baselines/ alone is 68 MB
+# of files main/baselines.py + main/eval_connectivity.py reproduce on demand.
+# The small SUMMARY score files one level up (results/bl_*.json,
+# *.manifest.json) are kept -- those are what README.md and the report cite.
+# --------------------------------------------------------------------------
+results/baselines/
+results/bl_synthetic_L2/
+results/bl_synthetic_L3/
+results/bl_synthetic_L4/
+
+# --------------------------------------------------------------------------
+# Standard
+# --------------------------------------------------------------------------
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.DS_Store
+*.bak
+
+# LaTeX build artifacts (the report itself -- .tex and .pdf -- is tracked).
+report/*.aux
+report/*.log
+report/*.out
+report/*.toc
+report/*.fls
+report/*.fdb_latexmk

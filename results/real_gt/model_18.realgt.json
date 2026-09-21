@@ -1,0 +1,228 @@
+{
+  "building": "model_18",
+  "source": "derived:flood-fill",
+  "derivable": true,
+  "excluded_because": null,
+  "n_doors": 17,
+  "n_voids": 21,
+  "params": {
+    "res": 0.05,
+    "band_slack": 0.04,
+    "band_min": 0.1,
+    "adj_tol": 0.6,
+    "door_h": 1.0,
+    "min_room_area": 0.5,
+    "min_blocker_area": 0.01,
+    "min_void_area": 0.02,
+    "void_scale": 1.0,
+    "declared_unit_scale": 1
+  },
+  "rooms": [
+    {
+      "rid": "2Q69Ms$n1BU8D4uFXz2qC3",
+      "name": "1",
+      "long_name": "Lobby",
+      "storey": "13LV5dTeP3CAox54x56C1Z",
+      "area": 33.15
+    },
+    {
+      "rid": "003scTgrHDgBv7$yEfwsFV",
+      "name": "2",
+      "long_name": "Internal lobby",
+      "storey": "13LV5dTeP3CAox54x56C1Z",
+      "area": 46.44
+    },
+    {
+      "rid": "0pTNkIYt5EyfHBAi6yi1sg",
+      "name": "3",
+      "long_name": "WC Men",
+      "storey": "13LV5dTeP3CAox54x56C1Z",
+      "area": 11.75
+    },
+    {
+      "rid": "0pTNkIYt5EyfHBAi6yi1sf",
+      "name": "4",
+      "long_name": "WC Women",
+      "storey": "13LV5dTeP3CAox54x56C1Z",
+      "area": 11.75
+    },
+    {
+      "rid": "0pTNkIYt5EyfHBAi6yi1j2",
+      "name": "5",
+      "long_name": "office",
+      "storey": "13LV5dTeP3CAox54x56C1Z",
+      "area": 31.88
+    },
+    {
+      "rid": "0pTNkIYt5EyfHBAi6yi1j1",
+      "name": "6",
+      "long_name": "office",
+      "storey": "13LV5dTeP3CAox54x56C1Z",
+      "area": 17.33
+    },
+    {
+      "rid": "0pTNkIYt5EyfHBAi6yi1j9",
+      "name": "7",
+      "long_name": "Corridor",
+      "storey": "13LV5dTeP3CAox54x56C1Z",
+      "area": 16.46
+    },
+    {
+      "rid": "0pTNkIYt5EyfHBAi6yi1jC",
+      "name": "8",
+      "long_name": "Snack bar",
+      "storey": "13LV5dTeP3CAox54x56C1Z",
+      "area": 68.49
+    },
+    {
+      "rid": "0pTNkIYt5EyfHBAi6yi9i5",
+      "name": "9",
+      "long_name": "office",
+      "storey": "0kWfSd9l1F5hqE2TIsDduT",
+      "area": 31.88
+    },
+    {
+      "rid": "0pTNkIYt5EyfHBAi6yi9i9",
+      "name": "10",
+      "long_name": "office",
+      "storey": "0kWfSd9l1F5hqE2TIsDduT",
+      "area": 17.33
+    },
+    {
+      "rid": "0pTNkIYt5EyfHBAi6yi9iC",
+      "name": "11",
+      "long_name": "corridor",
+      "storey": "0kWfSd9l1F5hqE2TIsDduT",
+      "area": 16.46
+    },
+    {
+      "rid": "0pTNkIYt5EyfHBAi6yi9YK",
+      "name": "12",
+      "long_name": "wc women",
+      "storey": "0kWfSd9l1F5hqE2TIsDduT",
+      "area": 11.75
+    },
+    {
+      "rid": "0pTNkIYt5EyfHBAi6yi9YR",
+      "name": "13",
+      "long_name": "wc men",
+      "storey": "0kWfSd9l1F5hqE2TIsDduT",
+      "area": 11.75
+    },
+    {
+      "rid": "0pTNkIYt5EyfHBAi6yi9Y3",
+      "name": "14",
+      "long_name": "inner lobby",
+      "storey": "0kWfSd9l1F5hqE2TIsDduT",
+      "area": 46.43
+    },
+    {
+      "rid": "0pTNkIYt5EyfHBAi6yi9Y6",
+      "name": "15",
+      "long_name": "Snack bar",
+      "storey": "0kWfSd9l1F5hqE2TIsDduT",
+      "area": 68.46
+    }
+  ],
+  "edges": [
+    {
+      "a": "003scTgrHDgBv7$yEfwsFV",
+      "b": "0pTNkIYt5EyfHBAi6yi1jC"
+    },
+    {
+      "a": "0pTNkIYt5EyfHBAi6yi1j1",
+      "b": "0pTNkIYt5EyfHBAi6yi1jC"
+    },
+    {
+      "a": "0pTNkIYt5EyfHBAi6yi1j2",
+      "b": "0pTNkIYt5EyfHBAi6yi1j9"
+    },
+    {
+      "a": "0pTNkIYt5EyfHBAi6yi1j9",
+      "b": "2Q69Ms$n1BU8D4uFXz2qC3"
+    },
+    {
+      "a": "0pTNkIYt5EyfHBAi6yi1jC",
+      "b": "0pTNkIYt5EyfHBAi6yi1sf"
+    },
+    {
+      "a": "0pTNkIYt5EyfHBAi6yi1jC",
+      "b": "0pTNkIYt5EyfHBAi6yi1sg"
+    },
+    {
+      "a": "0pTNkIYt5EyfHBAi6yi9Y3",
+      "b": "0pTNkIYt5EyfHBAi6yi9Y6"
+    },
+    {
+      "a": "0pTNkIYt5EyfHBAi6yi9Y6",
+      "b": "0pTNkIYt5EyfHBAi6yi9YK"
+    },
+    {
+      "a": "0pTNkIYt5EyfHBAi6yi9Y6",
+      "b": "0pTNkIYt5EyfHBAi6yi9YR"
+    },
+    {
+      "a": "0pTNkIYt5EyfHBAi6yi9Y6",
+      "b": "0pTNkIYt5EyfHBAi6yi9i9"
+    },
+    {
+      "a": "0pTNkIYt5EyfHBAi6yi9Y6",
+      "b": "0pTNkIYt5EyfHBAi6yi9iC"
+    },
+    {
+      "a": "0pTNkIYt5EyfHBAi6yi9i5",
+      "b": "0pTNkIYt5EyfHBAi6yi9iC"
+    }
+  ],
+  "adjacent_not_connected": [
+    {
+      "a": "003scTgrHDgBv7$yEfwsFV",
+      "b": "0pTNkIYt5EyfHBAi6yi1j9"
+    },
+    {
+      "a": "0pTNkIYt5EyfHBAi6yi1j1",
+      "b": "0pTNkIYt5EyfHBAi6yi1j2"
+    },
+    {
+      "a": "0pTNkIYt5EyfHBAi6yi1j1",
+      "b": "0pTNkIYt5EyfHBAi6yi1j9"
+    },
+    {
+      "a": "0pTNkIYt5EyfHBAi6yi1j2",
+      "b": "0pTNkIYt5EyfHBAi6yi1jC"
+    },
+    {
+      "a": "0pTNkIYt5EyfHBAi6yi1j2",
+      "b": "2Q69Ms$n1BU8D4uFXz2qC3"
+    },
+    {
+      "a": "0pTNkIYt5EyfHBAi6yi1j9",
+      "b": "0pTNkIYt5EyfHBAi6yi1jC"
+    },
+    {
+      "a": "0pTNkIYt5EyfHBAi6yi1sf",
+      "b": "0pTNkIYt5EyfHBAi6yi1sg"
+    },
+    {
+      "a": "0pTNkIYt5EyfHBAi6yi9Y3",
+      "b": "0pTNkIYt5EyfHBAi6yi9iC"
+    },
+    {
+      "a": "0pTNkIYt5EyfHBAi6yi9Y6",
+      "b": "0pTNkIYt5EyfHBAi6yi9i5"
+    },
+    {
+      "a": "0pTNkIYt5EyfHBAi6yi9YK",
+      "b": "0pTNkIYt5EyfHBAi6yi9YR"
+    },
+    {
+      "a": "0pTNkIYt5EyfHBAi6yi9i5",
+      "b": "0pTNkIYt5EyfHBAi6yi9i9"
+    },
+    {
+      "a": "0pTNkIYt5EyfHBAi6yi9i9",
+      "b": "0pTNkIYt5EyfHBAi6yi9iC"
+    }
+  ],
+  "unknown": []
+}

@@ -1,0 +1,755 @@
+% BIM-Graphs / RoboBIM -- consolidated results record, 18 September 2026.
+%
+% Compile:  latexmk -pdf results_2026_09_18.tex
+% Packages: booktabs, geometry, hyperref, xcolor, amsmath, longtable (all TeX Live).
+%
+% Every figure in this document was re-measured on 18 September 2026 against the
+% code and corpora present in the repository on that date. Figures that could
+% not be verified are marked as such rather than carried forward.
+\documentclass[11pt,a4paper]{article}
+
+\usepackage[margin=1in]{geometry}
+\usepackage{booktabs}
+\usepackage{amsmath}
+\usepackage{xcolor}
+\usepackage[table]{xcolor}
+\usepackage[hidelinks]{hyperref}
+\usepackage{longtable}
+
+\newcommand{\code}[1]{\texttt{\small #1}}
+\definecolor{warn}{RGB}{140,20,20}
+\newcommand{\noquote}[1]{\textcolor{warn}{\textbf{#1}}}
+
+\title{\textbf{Recovering navigable building graphs from IFC}\\[2mm]
+\large Consolidated results record and measurement audit}
+\author{BIM-Graphs / RoboBIM}
+\date{18 September 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+\noindent
+This document consolidates every quantitative result the project currently
+stands behind, and records an audit of the measurements themselves. Two
+findings dominate. First, the project's long-standing headline --- connectivity
+scored against human annotation --- is \emph{not} a correctness result: its
+specificity is exactly zero, because the annotation protocol can only record a
+negative where the pipeline already proposed a link, so a true negative is
+unrecordable. Second, two references that \emph{can} discriminate were
+identified and scored: a 150-building generated corpus carrying 1{,}211 explicit
+negatives, on which the method beats its strongest baseline at $p<10^{-6}$ at
+every damage level, and an annotation-free flood-fill reference over the real
+corpus which yields a real-corpus specificity of $0.644$ --- a number the
+project had previously concluded was unobtainable, on the strength of an
+argument that a later rebuild had already invalidated. The audit also corrects
+eight figures that had gone stale in the repository's own documentation,
+including the previous connectivity headline.
+\end{abstract}
+
+\section{Scope and provenance}
+
+All figures below were produced on 18 September 2026 from the repository state of
+that date, using \code{/mnt/data/home/anedung/miniforge3/envs/bim-sg/bin/python}
+(Python 3.11.16, torch 2.5.1+cu121, transformers 5.16.1). Model inference ran on
+a single NVIDIA L40S (46\,GB). Regression suites at time of writing:
+\code{tests/test\_m0\_regressions.py} reports 23/23 repairs holding and 4/4 open
+geometry findings still reproducing as intended; \code{tests/test\_labels.py} and
+\code{tests/test\_blind\_render.py} pass.
+
+Three classes of figure are distinguished throughout, because conflating them is
+how this project previously published numbers it had to retract:
+
+\begin{itemize}
+  \item \textbf{Verified} --- re-measured in this audit, command recorded.
+  \item \textbf{Bounded} --- cannot be computed exactly from the run that
+        produced it; an interval is given instead of a point estimate.
+  \item \noquote{Not quotable} --- structurally incapable of measuring what its
+        name suggests. Listed in \S\ref{sec:notquotable} with the reason.
+\end{itemize}
+
+\section{Corpora}
+
+All seven corpora pass \code{main/verify\_corpus.py}, which checks each file is a
+structurally complete STEP file and matches a recorded size/SHA-256 manifest.
+This check exists because one corpus file was previously a truncated copy
+(12{,}845{,}056 bytes, exactly $3136\times4096$, ending mid-number with no
+\code{END-ISO-10303-21;}, missing 8 of its 19 doors) which IfcOpenShell opened
+without complaint, reporting a plausible 6 storeys and 35 spaces. It was
+annotated by a human before anyone noticed.
+
+\begin{table}[ht]
+\centering
+\begin{tabular}{llr}
+\toprule
+Corpus & Contents & Integrity \\
+\midrule
+\code{dataset/test\_set} & 25 real IFC (the evaluation corpus) & pass \\
+\code{dataset/2025\_BIMfundamentals} & 208 real IFC & pass \\
+\code{ifc-graphx/annotator/data} & 25 real IFC (deployed annotator) & pass \\
+\code{synth150} & 150 generated IFC, pristine & pass \\
+\code{synth150\_L2} & 150, \code{IfcSpace} stripped from $\sim$half of storeys & pass \\
+\code{synth150\_L3} & 150, spaces orphaned from their storey & pass \\
+\code{synth150\_L4} & 150, no spatial containment, undeclared cm units & pass \\
+\bottomrule
+\end{tabular}
+\caption{Source corpora, all manifest-verified.}
+\end{table}
+
+\noindent
+\textbf{Generated corpus.} 150 buildings, 2{,}049 rooms, \textbf{1{,}708 positive
+pairs and 1{,}211 explicit adjacent-but-not-connected negatives}. The negatives
+are the design point: \code{main/generate\_building.py} exposes a
+\code{door\_ratio} precisely so that some adjacent room pairs are \emph{not}
+joined, because if every neighbouring pair has a door then naive adjacency
+scores perfectly and the benchmark cannot separate any two methods.
+
+\noindent
+\textbf{Real corpus.} 25 models yielding 1{,}027 rooms (681 stated as
+\code{IfcSpace}, 346 recovered geometrically). Of 146 storeys, only 74 contain
+any \code{IfcSpace}; \code{IfcRelSpaceBoundary} --- the schema's own
+connectivity relation --- occurs \textbf{zero} times across all 25 files, which
+is what makes this a recovery problem rather than a translation problem.
+
+\section{Connectivity against generated ground truth}
+
+This is the only corpus with enough explicit negatives to discriminate between
+methods. Ground truth is verified independently of the scoring pipeline by a
+raster flood-fill (\code{main/verify\_gt.py}): \textbf{2{,}769 / 2{,}769 pairs
+agree}. That check rasterises one storey at a time, so those 2{,}769 are the
+same-storey decided pairs; the corpus decides 2{,}919 pairs in total and the
+remaining \textbf{150 are the cross-storey stair links, one per building, which
+this mechanism does not check}. Vertical connectivity in the generated
+reference therefore rests on the generator's own assertion.
+
+\begin{table}[ht]
+\centering
+\small
+\begin{tabular}{lcccc}
+\toprule
+& \multicolumn{4}{c}{$F_1$ by damage level} \\
+\cmidrule(l){2-5}
+Method & L1 & L2 & L3 & L4 \\
+\midrule
+\code{schema}    & 0.000 & 0.000 & 0.000 & 0.000 \\
+\code{adjacency} & 0.696 & 0.635 & 0.635 & 0.635 \\
+\code{door\_near} & 0.916 & 0.858 & 0.858 & 0.858 \\
+\code{ifc2graph} & 0.738 & 0.491 & 0.000 & 0.000 \\
+\textbf{\code{ours}} & \textbf{0.998} & \textbf{0.899} & \textbf{0.899} & \textbf{0.899} \\
+\bottomrule
+\end{tabular}
+\caption{Pooled $F_1$ over 150 buildings per level. Reproduced at full
+floating-point precision by an independent pipeline run (\S\ref{sec:repro}).}
+\end{table}
+
+\begin{table}[ht]
+\centering
+\small
+\begin{tabular}{llcccc}
+\toprule
+Level & Method & Precision & Recall & $F_1$ & \textbf{Specificity} \\
+\midrule
+L1 & \code{schema}    & 0.000 & 0.000 & 0.000 & 1.000$^{\dagger}$ \\
+L1 & \code{adjacency} & 0.563 & 0.912 & 0.696 & 0.000 \\
+L1 & \code{door\_near} & 1.000 & 0.845 & 0.916 & 1.000 \\
+L1 & \code{ifc2graph} & 0.585 & 1.000 & 0.738 & 0.000 \\
+L1 & \textbf{\code{ours}} & \textbf{0.995} & \textbf{1.000} & \textbf{0.998} & \textbf{0.993} \\
+\midrule
+L2 & \code{adjacency} & 0.546 & 0.757 & 0.635 & 0.113 \\
+L2 & \code{door\_near} & 0.985 & 0.761 & 0.858 & 0.983 \\
+L2 & \code{ifc2graph} & 0.562 & 0.436 & 0.491 & 0.520 \\
+L2 & \textbf{\code{ours}} & \textbf{0.983} & \textbf{0.827} & \textbf{0.899} & \textbf{0.980} \\
+\bottomrule
+\end{tabular}
+\caption{Full metrics, L1 and L2. $^{\dagger}$\code{schema} asserts no edges at
+all, so it cannot produce a false positive and its specificity is 1.000 by
+definition. \textbf{Specificity must never be reported without recall beside
+it.}}
+\end{table}
+
+\subsection{Significance}
+
+Paired Wilcoxon signed-rank with a 20{,}000-resample bootstrap confidence
+interval on the paired difference, $n=150$ buildings. A $t$-test is not used:
+$F_1$ is bounded and non-normal.
+
+\begin{table}[ht]
+\centering
+\small
+\begin{tabular}{lccccc}
+\toprule
+Level & \code{ours} mean $F_1$ & Strongest baseline & $\Delta$ & 95\% CI & W/L/T \\
+\midrule
+L1 & 0.9980 & \code{door\_near} 0.9131 & $+0.0849$ & $[+0.0743,+0.0962]$ & 131/0/19 \\
+L2 & 0.8907 & \code{door\_near} 0.8502 & $+0.0405$ & $[+0.0319,+0.0497]$ & 81/2/67 \\
+L3 & 0.8907 & \code{door\_near} 0.8502 & $+0.0405$ & $[+0.0319,+0.0497]$ & 81/2/67 \\
+L4 & 0.8912 & \code{door\_near} 0.8502 & $+0.0410$ & $[+0.0324,+0.0502]$ & 81/2/67 \\
+\bottomrule
+\end{tabular}
+\caption{All four levels: $p<10^{-6}$. Note that \code{main/significance.py}
+could not execute at all until 18 September 2026 --- it called
+\code{sys.path.insert} with no \code{import sys}, raising \code{NameError} on
+import, and no test covered it. Every $p$-value quoted before that date
+predates the fix.}
+\end{table}
+
+\subsection{Two qualifications on the damage axis}
+
+\textbf{The axis has two regimes, not four.} L2, L3 and L4 yield identical
+pooled metrics for \code{adjacency}, \code{door\_near} and \code{ours}. The
+files genuinely differ --- on one building \code{IfcRelAggregates} drops
+$5\!\to\!4\!\to\!3$ and \code{IfcRelContained} $2\!\to\!0$ --- but the graphs
+built from L2 and L3 are byte-identical for all three methods. Orphaning spaces
+from their storey (L3) is absorbed entirely, because storey assignment is
+recovered geometrically rather than read from containment; the undeclared
+centimetre units at L4 are absorbed by scale detection. This is a robustness
+result, but \textbf{no four-level severity gradient should be claimed for
+connectivity}. What moves the number is the L1$\to$L2 step: missing
+\code{IfcSpace}, where half the storeys lose their rooms and recovery must
+supply them.
+
+\textbf{\code{ifc2graph} collapses by construction, not on the merits.} It has
+no room-recovery stage, so once L2 removes \code{IfcSpace} those rooms are
+invisible to it, and at L3/L4 without spatial containment it emits nothing.
+Claiming a win over a published external tool at L3/L4 would be hollow; its L1
+figure ($F_1$ 0.738, specificity 0.000) is the fair one to quote.
+
+\section{Connectivity against the real corpus}
+
+Two independent references exist over the real corpus. They disagree about
+almost everything that matters, and the reason is instructive.
+
+\subsection{Human annotation --- not a correctness result}
+
+15 buildings reviewed, 10 with complete verdict coverage.
+
+\begin{table}[ht]
+\centering
+\small
+\begin{tabular}{lr}
+\toprule
+Buildings & 10 \\
+Reference positives / negatives / unknown & 387 / 53 / 22 \\
+True positives / false negatives & 374 / 13 \\
+False positives on a reference negative & 53 \\
+\midrule
+Precision on pairs a reviewer ruled on & 0.876 \\
+Recall & 0.966 \\
+$F_1$ & 0.919 \\
+Strict precision / $F_1$ (charging out-of-scope and unmatched endpoints) & 0.811 / 0.882 \\
+Macro mean per-building $F_1$ & 0.937 \\
+\textbf{Specificity} & \noquote{0.000} \\
+Edge-type accuracy on matched pairs & \noquote{366/374 $=$ 0.979} \\
+\bottomrule
+\end{tabular}
+\caption{Annotated reference, re-measured 18 September 2026.}
+\end{table}
+
+Four qualifications, none of them optional:
+
+\begin{enumerate}
+  \item \textbf{Specificity is exactly zero: all 53 reference negatives are also
+        edges the pipeline asserts.} This is a property of the protocol, not of
+        the method. The reference's own metadata states its scope ---
+        \emph{``links the pipeline proposed and a reviewer rejected''} --- so a
+        rejection \emph{is}, by construction, one of the pipeline's own false
+        positives, and a true negative cannot be recorded at all. No
+        discriminative metric is computable from this reference.
+  \item \textbf{Recall is a proposal-acceptance rate.} The reviewer only ever
+        saw links the pipeline proposed; the reference's positives are the
+        pipeline's own candidate set plus a handful of hand-added links. Room
+        recall is worse still: all 375 reference rooms came from the pipeline
+        and \textbf{zero} from an annotator, so room recall is 1.000 by
+        construction and cannot detect a missed room at any rate.
+  \item \textbf{A trivial baseline wins on precision.} Joining every pair the
+        reviewer examined scores 0.918 against 0.876. With 53 negatives against
+        387 positives, this slice is not discriminative.
+  \item \textbf{83\% of judged items were swept in} with ``the rest of this
+        floor is correct''. That is ground truth, but it was not inspected item
+        by item.
+\end{enumerate}
+
+\noindent
+\textbf{The edge-type figure deserves its own note.} It read 380/380 until
+18 September 2026 and now reads 366/374. Composition copies the
+\emph{pipeline's own} relation into the reference, so the metric compared the
+pipeline to itself and could only ever read 1.000. Restoring one building's 8
+missing doors changed the pipeline's relation for 8 pairs the frozen reference
+still records as \code{open\_passage} --- and all 8 confusions are exactly
+\code{open\_passage}$\to$\code{connected\_by\_door}. The metric therefore
+measures neither correctness before nor after: it measures \emph{whether the
+pipeline has changed since the reference was frozen}.
+
+\noindent
+\textbf{One building accounts for the degradation.} \code{model\_2} contributes
+11 of the 13 false negatives and the single unmatched reference room, scoring
+recall 0.780 where every other building scores 1.000 or 0.949. Its verdicts were
+collected against the truncated file, whose missing doors had pushed its
+connectivity onto the \code{open\_passage} mechanism. Re-judging the delta ---
+3 rooms, 13 links, 1 floor link --- restores it.
+
+\subsection{The annotation-free derived reference --- discriminative}
+
+\code{main/derive\_real\_gt.py} recovers connectivity from geometry alone by
+rasterising walls and flood-filling free space, a different mechanism from the
+pipeline's oriented door probing, and \emph{independent of what the pipeline
+proposed}. It therefore does not share the defect above.
+
+\begin{table}[ht]
+\centering
+\small
+\begin{tabular}{lr}
+\toprule
+Models passing the reference's own trust gate & 17 of 25 \\
+Positives / negatives / unknown & 425 / 289 / 0 \\
+Precision & 0.789 \\
+Recall & 0.904 \\
+$F_1$ & 0.842 \\
+\textbf{Specificity} & \textbf{0.644} \\
+Strict precision & 0.406 \\
+Predictions out of scope / on unmatched endpoints & 80 / 378 \\
+\bottomrule
+\end{tabular}
+\caption{Derived reference. Cross-validated two independent ways: this path
+(\code{evaluation.scoring.score\_connectivity} via \code{match\_rooms}) and
+\code{main/eval\_real\_connectivity.py}'s uncontracted mode (tp 384, fp 103)
+agree to the digit.}
+\end{table}
+
+\noindent
+\textbf{This reference was wrongly written off.} The repository carried a
+section titled ``why these numbers must not be used'', whose principal argument
+was that 428 door-backed pairs disagreed with the reference against only 300
+that agreed --- a physically placed \code{IfcDoor} being strong evidence of a
+connection. That argument predates a rebuild of the reference. Recomputed
+against the reference now on disk: \textbf{362 agree, 17 disagree}, a 96\%
+reduction that nobody had re-checked. The conclusion drawn from the old data
+had outlived the data.
+
+\noindent
+\textbf{The residual disagreement is open finding A01, inside the ground-truth
+producer.} Where a door has no authored \code{IfcOpeningElement} void, the
+wall's XY projection seals the doorway, the flood-fill calls the pair
+separated, and a correct prediction is charged as a false positive. That is the
+same projection-instead-of-section defect listed as an open method finding. It
+follows that repairing A01 would improve the method \emph{and} the only
+independent real-corpus reference in one change --- which argues for
+prioritising it above A03--A05.
+
+\section{Where the error actually is}
+
+Decomposing the annotated reference's verdicts by relation type is the single
+most actionable result in this document.
+
+\begin{table}[ht]
+\centering
+\small
+\begin{tabular}{lrrr}
+\toprule
+Relation & Confirmed & Rejected & Precision \\
+\midrule
+\code{connected\_by\_door} & 240 & 0 & \textbf{1.000} \\
+\code{vertically\_connected} & 67 & 0 & \textbf{1.000} \\
+\code{open\_passage} & 67 & 53 & 0.558 \\
+\bottomrule
+\end{tabular}
+\caption{Every measured error in the system falls in one relation.}
+\end{table}
+
+\noindent
+Where IFC authors the answer --- a door product, a stair solid --- the
+deterministic path is \emph{exact}. All 53 errors are in the one inferred
+relation. Moreover \code{open\_passage} has no geometric signal in either
+direction: the maximum inscribed-circle diameter of the free gap measures
+$0.10$\,m for confirmed passages against $0.30$\,m for rejected ones on one
+building, $0.21$ against $0.21$ on another, and $0.01$ against $0.00$ on a
+third. It is measuring registration slop between \code{IfcSpace} footprints and
+wall faces and calling it connectivity. Relatedly, the width test uses an
+axis-aligned bounding box, which admits rejected passages with a median width of
+$3.51$\,m and a maximum of $15.74$\,m --- a 15.74\,m ``doorway''.
+
+\noindent
+This is why the method should be \textbf{hybrid} rather than learned end to end:
+nothing can improve on 1.000, and the learnable problem is confined to the
+relation where geometry is silent.
+
+\section{Semantic labelling}
+
+Leave-one-out over the labels IFC did state, 592 eligible rooms from 21 models.
+The room's own label, and every feature derived from it, is removed before
+features are read.
+
+\begin{table}[ht]
+\centering
+\small
+\begin{tabular}{lrrrl}
+\toprule
+Backend & Correct & Accuracy & vs.\ majority & Status \\
+\midrule
+Majority class (\code{office}) & 205/592 & 0.346 & --- & floor \\
+\code{rule} (hand-written priors) & 298/592 & 0.503 & $+0.157$ & verified \\
+\textbf{\code{llm}} GLM-4-9B-0414 & \textbf{329/592} & \textbf{0.556} & $\mathbf{+0.209}$ & verified \\
+\code{vlm} GLM-4.1V-9B-Thinking & 299/592 & 0.505 & $+0.159$ & \noquote{unreliable} \\
+\bottomrule
+\end{tabular}
+\caption{The LLM figure is the first post-repair measurement of this row and
+exceeds the rule baseline by $+0.052$; \code{office} recall alone moves
+$0.698\to0.839$.}
+\end{table}
+
+\subsection{Why the VLM figure must not be quoted}
+
+Of 592 rooms, \textbf{95 (16.0\%) hit the 300-token generation cap before
+producing a parseable answer}. On truncation, the backend falls back to the rule
+backend's own hypothesis --- so those 95 ``VLM answers'' are the rule backend's
+answers wearing the model's name. The effect is the same size as the model's
+entire margin over majority-class guessing.
+
+The run completed before this was instrumented, so the exact split cannot be
+recovered from it. It can only be bounded. With 299 correct of 592, and 95
+answers borrowed:
+\[
+\frac{299-95}{592-95} \;=\; 0.410
+\qquad\le\qquad
+\text{accuracy}_{\text{model only}}
+\qquad\le\qquad
+\frac{299}{592-95} \;=\; 0.602 .
+\]
+That interval spans from below the rule baseline to above the text LLM, so the
+ordering of the three backends is \emph{not} established by this run.
+\code{main/eval\_semantics.py} now records \code{truncated\_correct} and
+\code{accuracy\_excl\_truncated} per run, so a re-run reports the honest figure
+directly. \textbf{It should be re-run before this row is used.}
+
+\subsection{Per-class recall}
+
+\begin{table}[ht]
+\centering
+\small
+\begin{tabular}{lrrrr}
+\toprule
+Class & $n$ & \code{rule} & \code{llm} & \code{vlm} \\
+\midrule
+\code{office}      & 205 & 0.698 & \textbf{0.839} & 0.693 \\
+\code{bathroom}    & 132 & 0.530 & 0.538 & 0.530 \\
+\code{circulation} &  86 & 0.256 & 0.233 & 0.256 \\
+\code{stair}       &  45 & 0.644 & 0.644 & 0.622 \\
+\code{bedroom}     &  28 & 0.786 & 0.786 & 0.786 \\
+\code{meeting}     &  23 & 0.174 & 0.174 & 0.174 \\
+\code{living}      &  22 & 0.182 & 0.273 & 0.318 \\
+\code{kitchen}     &  18 & 0.222 & 0.222 & 0.222 \\
+\code{outdoor}     &  10 & 0.000 & 0.000 & 0.000 \\
+\code{storage}     &  10 & 0.000 & 0.100 & 0.000 \\
+\code{retail}      &   8 & 0.000 & 0.000 & 0.000 \\
+\code{service}     &   5 & 0.000 & 0.000 & 0.000 \\
+\bottomrule
+\end{tabular}
+\caption{Four of twelve classes never resolve, each with $\le 10$ held-out
+examples. Whether that is too little evidence or a real failure is not
+established. The dominant confusion in all three backends is
+\code{bathroom}$\to$\code{storage} (52 cases).}
+\end{table}
+
+\noindent
+Held-out rooms are stated \code{IfcSpace}s, which are geometrically cleaner than
+the recovered rooms this stage actually serves. All figures here are therefore
+an \textbf{optimistic bound}, and the 346 recovered rooms have no accuracy
+figure of their own.
+
+\section{Goal resolution}
+
+\begin{table}[ht]
+\centering
+\small
+\begin{tabular}{lr}
+\toprule
+Resolution accuracy & 298/592 $=$ 0.503 \\
+Reachable, wheeled profile & 91/298 $=$ 0.305 \\
+Reachable, legged profile & 252/298 $=$ 0.846 \\
+Reachable, human profile & 252/298 $=$ 0.846 \\
+\bottomrule
+\end{tabular}
+\caption{Re-measured 18 September 2026. The previously circulated figure of
+0.519 came from a file quarantined for a serialization defect and should not be
+cited.}
+\end{table}
+
+\noindent
+Two qualifications. First, \textbf{this is not an independent measurement of
+retrieval}: per-class recall here is identical to rule-backend label accuracy
+for 11 of 12 classes, because resolving ``go to the kitchen'' mostly succeeds or
+fails on whether the room was labelled correctly, not on the retrieval step.
+Second, the \code{legged} and \code{human} profiles report \textbf{byte-identical}
+counts, 252/298 each. That reproduces open finding A05 --- feasibility is
+two-valued, so a route can rest on an unverified connection --- in a fresh
+measurement rather than only in a regression fixture.
+
+\section{The vision modality}
+
+A leak-free image corpus was built so that a model given a picture is solving a
+spatial reasoning problem rather than an OCR problem.
+
+\begin{table}[ht]
+\centering
+\small
+\begin{tabular}{llrr}
+\toprule
+Corpus & Condition & Images & Note \\
+\midrule
+Real (208 models) & architectural plan & 966 & walls, doors, windows \\
+Real (208 models) & occupancy raster & 984 & binary, $0.10$\,m/cell \\
+Generated ($4\times150$) & architectural plan & 1{,}200 & 300 per level \\
+Generated ($4\times150$) & occupancy raster & 1{,}200 & 300 per level \\
+\bottomrule
+\end{tabular}
+\caption{Produced by \code{main/render\_blind.py}, gated by
+\code{tests/test\_blind\_render.py}.}
+\end{table}
+
+\noindent
+\textbf{The pre-existing image corpus was unusable and every image had to be
+replaced.} The previous renderer burned the answer into the pixels: room names
+and areas in legible type, a \code{?} appended to every geometrically recovered
+room, and a fill tint distinguishing IFC-stated from pipeline-recovered rooms
+--- i.e.\ part of the ground-truth partition. Its \code{--no-labels} flag
+suppressed only the first two. One ground-floor plan contained 949{,}601 pixels
+of the recovered-room fill colour alone. The new renders contain at most 4 such
+pixels, which is antialiasing coincidence; the leak gate is validated by being
+run against the old images, where it fires.
+
+\noindent
+\textbf{Doors are now visually distinct from windows.} The previous renderer
+placed \code{IfcDoor} and \code{IfcWindow} in one style bucket at identical
+colour and weight, making door-mediated connectivity unrecoverable from vision
+and the text-vs-vision comparison unfair --- the text modality receives the door
+products explicitly.
+
+\noindent
+\textbf{The modality comparison is controlled, and this is measured.} All 150
+generated buildings have byte-identical drawable geometry across L1--L4, and all
+600 rendered images (300 plan, 300 occupancy) are \textbf{byte-identical across
+all four damage levels}. \code{IfcWall} count is 8{,}912 at every level while
+\code{IfcSpace} drops $2{,}049\to994$. The text modality therefore loses half
+its rooms while the picture does not change by a single pixel, so any score
+difference across levels in a vision condition cannot be attributed to the
+image.
+
+\noindent
+\textbf{One stated limitation.} The occupancy raster is not bounded to the
+storey's floor plate, because no \code{IfcSlab} survives a $1.2$\,m section cut.
+Free space therefore continues past the building envelope wherever a real
+opening exists, including through external doors. It is an image for a model to
+read, not a segmentation mask.
+
+\section{The label vocabulary}
+
+\begin{table}[ht]
+\centering
+\small
+\begin{tabular}{lrr}
+\toprule
+Outcome & Rooms & Share \\
+\midrule
+Mapped to one of 12 classes & 5{,}158 & 81.6\% \\
+Unnamed (no functional content: ``Room'', ``Raum'', ``Area'') & 459 & 7.3\% \\
+Unmapped (a real function outside the taxonomy: ``Gym'', ``Studio'') & 583 & 9.2\% \\
+Ambiguous (combined function: ``Living room / Kitchen'') & 123 & 1.9\% \\
+\midrule
+\multicolumn{3}{l}{Of the 5{,}864 rooms carrying a real name: \textbf{5{,}158 (88.0\%) map}} \\
+\bottomrule
+\end{tabular}
+\caption{6{,}323 IFC-stated rooms across the 208-model corpus,
+\code{evaluation/labels.py} v1.0.0.}
+\end{table}
+
+\noindent
+The previous implementation answered a three-way question with two answers,
+returning ``no class'' both for a string carrying no function and for a real
+function the taxonomy could not express --- and every caller discarded both
+identically, so the taxonomy's blind spots were invisible. The sharpest
+consequence: the generator emits \code{Lab} as one of twelve synthetic room
+types and no keyword matched it, so \textbf{166 of 2{,}049 rooms in the primary
+corpus (8.1\%) were silently unscorable}. That is now zero, and a regression
+test fails if the generator gains a room type the vocabulary does not know.
+
+Two resolution defects were also fixed: punctuation was never stripped, so
+``W.C. (Women)'' did not match the key \code{wc}; and keyword matching took the
+first hit in dictionary order, so ``Store Front'' resolved to \code{storage}
+rather than \code{retail}. Longest-match was tried as a remedy and
+\emph{rejected} --- it sends ``Lift Shaft'' to \code{service} rather than
+\code{stair}, and a lift is vertical circulation. The ten genuine conflicts are
+resolved by an explicit table instead.
+
+\section{Reproducibility and determinism}
+\label{sec:repro}
+
+Running the pipeline's own single entry point a second time
+(\code{./run\_pipeline.sh --regenerate 150}) reproduced all 20
+(method $\times$ level) connectivity cells \textbf{identically at full
+floating-point precision}, not merely to three decimals.
+
+\textbf{What that does and does not show.} Checked against the archived corpus:
+the 150 ground-truth files are \textbf{byte-identical 150/150}, while the 150
+IFC files are \textbf{byte-identical 0/150} --- every input file differs in its
+GUIDs and header, and the ground truth it encodes does not. So this
+demonstrates that the parse $\to$ recover $\to$ score chain is invariant to IFC
+identifier churn, which is worth having. It is \textbf{not} a fresh sample of
+buildings and says nothing about variance across different layouts: the same
+seed yields the same rooms by construction. A sampling-variance claim would
+require varying the generator seed, which has not been run.
+
+\section{Metrics that are not quotable}
+\label{sec:notquotable}
+
+Recorded explicitly, because each reads like a result and is not one.
+
+\begin{longtable}{p{0.34\textwidth}p{0.58\textwidth}}
+\toprule
+Metric & Why not \\
+\midrule
+\endhead
+Specificity on the annotated reference & Structurally 0.000. A negative exists
+only where the pipeline proposed a link and a reviewer rejected it, so a true
+negative is unrecordable. \\
+Recall on the annotated reference & A proposal-acceptance rate: the reference's
+positives are the pipeline's own candidate set plus a few hand-added links. \\
+Room recall on the annotated reference & 1.000 by construction. All 375
+reference rooms came from the pipeline, none from an annotator. \\
+Edge-type accuracy & Composition copies the pipeline's own relation into the
+reference. It measures whether the pipeline changed since the reference was
+frozen. \\
+\code{schema} specificity (1.000) & It asserts no edges, so it cannot produce a
+false positive. \\
+\code{ifc2graph} at L3/L4 (0.000) & No room-recovery stage; the rooms are
+invisible to it by construction, not on the merits. \\
+VLM label accuracy (0.505) & 16.0\% of answers are the rule backend's, borrowed
+on truncation. True value bounded to $[0.410, 0.602]$. \\
+Intra-storey reachability & Rewards over-connection: the \code{adjacency}
+baseline, which joins through solid walls, scores 0.935 against 0.745. \\
+Goal resolution as retrieval & Per-class recall is identical to label accuracy
+for 11 of 12 classes. \\
+Any figure from the pre-repair snapshot & Quarantined for a serialization
+defect; the directory's own README is headed ``do not quote these''. \\
+\bottomrule
+\end{longtable}
+
+\section{Open findings and necessary conditions}
+
+Four geometry findings remain unrepaired, and the regression suite asserts they
+still reproduce, so a fix fails its case and must be flipped deliberately.
+
+\begin{table}[ht]
+\centering
+\small
+\begin{tabular}{llp{0.52\textwidth}}
+\toprule
+ID & Status & Description \\
+\midrule
+A01 & open & Room recovery takes the XY projection, not a section, so a lintel
+seals a doorway. Also present \emph{inside} the derived reference, where it is
+the cause of the residual door-backed disagreement. \\
+A03 & open & Door probing samples at fixed heights without checking the
+intervening segment, and reaches past a $0.5$\,m room through a wall. \\
+A04 & open & Reported width is the longest world-axis bounding-box side: a
+$1.0$\,m door rotated $45^{\circ}$ reports $0.742$\,m. The call site that
+matters admits a $15.74$\,m passage. \\
+A05 & open & Feasibility is two-valued; a missing width reads as passable, and
+\code{legged} and \code{human} reachability are byte-identical. \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\noindent
+\textbf{Necessary-condition checks} over the 25 real models
+(\code{main/validate.py}) --- these can falsify a graph but cannot rank one:
+\code{R2} doors-join-two-rooms 25/25, \code{R3} one-storey-per-room 25/25,
+\code{R4} plausible dimensions 25/25, \code{R6} containment sanity 25/25;
+\code{R1a} horizontal 9/25, \code{R1b} vertical 10/24 (1 n/a), \code{R5}
+coverage 18/25. Mean intra-storey 0.745, mean reachability 0.742, mean element
+coverage 0.634.
+
+\noindent
+\textbf{Two contract gaps remain open.} There is no split manifest, so a
+threshold tuned on a building can still be evaluated on it --- and four of the
+ten annotated buildings are provably development material, cited by name in
+source comments. And there is no schema validator run on every output: a graph
+declaring a nonexistent schema version currently scores $F_1$ 1.000, and an
+empty graph records as complete with exit status zero.
+
+\section{Corrections made in this audit}
+
+Eight figures in the repository's own documentation were stale or wrong. All are
+now corrected at source, with the superseded values retained where they form a
+dated record.
+
+\begin{longtable}{p{0.30\textwidth}p{0.24\textwidth}p{0.38\textwidth}}
+\toprule
+Claim & Was & Now, and why \\
+\midrule
+\endhead
+Annotated-reference headline & 0.878 / 0.982 / 0.927, strict 0.903 &
+0.876 / 0.966 / 0.919, strict 0.882. One building rebuilt from its intact
+source IFC. \\
+Edge-type accuracy & 380/380 & 366/374. The 8 confusions are all
+\code{open\_passage}$\to$\code{connected\_by\_door}, from that same rebuild. \\
+Per-relation decomposition & 240 doors read as 230; passage 83/53 $=$ 0.610 &
+door 240/0, vertical 67/0, passage 67/53 $=$ 0.558. The qualitative finding
+strengthened: restored doors moved connections off the failing mechanism. \\
+LLM margin over rule & $+0.053$ & $+0.052$. Arithmetic error
+($31/592 = 0.0524$). \\
+Regression suite size & ``22 repairs'' & 23. Documentation drift in two files. \\
+Reproducibility framing & ``a completely fresh corpus'' & Ground truth is
+byte-identical 150/150; only the IFC serialization differs. Demonstrates
+determinism, not sampling variance. \\
+Ground-truth verification scope & ``2{,}769/2{,}769 pairs'' &
+Same-storey pairs only. The 150 cross-storey stair links are not checked by
+that mechanism. \\
+Derived reference usability & ``these numbers must not be used'' (428 vs 300
+door-backed disagreements) & 17 vs 362 after a rebuild the argument predates.
+The reference is discriminative and now carries the project's only real-corpus
+specificity. \\
+\bottomrule
+\end{longtable}
+
+\noindent
+A ninth issue is recorded but not fixed: the VLM result record in
+\code{results/semantics\_eval.json} predates the truncation instrumentation, so
+it reports 0.505 with no truncation field. A reader consulting only the JSON
+would see no warning.
+
+\section{What the evidence currently supports}
+
+\begin{enumerate}
+  \item \textbf{On a reference that can discriminate, the method wins
+        decisively.} $F_1$ 0.998 and specificity 0.993 at L1, beating the
+        strongest baseline by $+0.085$ with $p<10^{-6}$ and 131 wins to 0
+        losses. Under the damage that matters --- missing \code{IfcSpace} ---
+        it degrades to 0.899 and still wins at $p<10^{-6}$.
+  \item \textbf{The real-corpus evaluation everyone had been quoting was the
+        problem, not the method.} On the annotated reference the same contrast
+        gives $p=0.805$ with the ablation ahead; on a reference with genuine
+        negatives the ordering reverses. Specificity 0.000 versus 0.644 is the
+        whole story.
+  \item \textbf{Error is confined to one mechanism.} Door- and stair-mediated
+        connectivity are exact (1.000, 1.000). All 53 measured errors are
+        \code{open\_passage}, where the geometric signal is absent in both
+        directions. This localises the research problem precisely and argues
+        for a hybrid method rather than a learned one.
+  \item \textbf{Repairing A01 pays twice} --- it is a defect in the method and
+        in the only independent real-corpus reference simultaneously, which
+        should lift it above A03--A05 in priority.
+  \item \textbf{Of the learned results, exactly one is currently
+        trustworthy}: the text LLM at 0.556 against a 0.346 floor and a 0.503
+        rule baseline. The vision result is not usable until re-run.
+\end{enumerate}
+
+\vspace{4mm}
+\noindent\rule{\textwidth}{0.4pt}\\[1mm]
+{\small Reproduce the connectivity results with
+\code{./run\_pipeline.sh --regenerate 150}; the semantic results with
+\code{python main/eval\_semantics.py --backend \{rule,llm,vlm\}}; and verify
+corpus integrity first with \code{python main/verify\_corpus.py <dir>}.
+Regression suites: \code{tests/test\_m0\_regressions.py},
+\code{tests/test\_labels.py}, \code{tests/test\_blind\_render.py}.}
+
+\end{document}

@@ -1,0 +1,7214 @@
+{
+ "schema": 2,
+ "model": "dataset/test_set/model_7.ifc",
+ "stats": {
+  "storeys": 7,
+  "spaces_total": 29,
+  "spaces_from_ifc": 21,
+  "spaces_inferred": 8,
+  "elements": 246,
+  "adjacency_edges": 21,
+  "door_connections": 17,
+  "exterior_doors": 5,
+  "open_passages": 2,
+  "doors_recovered_geometrically": 0,
+  "vertical_connections": 10,
+  "containment_edges": 469,
+  "spaces_repaired": 0,
+  "products_repaired": 450
+ },
+ "nodes": [
+  {
+   "layer": "building",
+   "label": "Building_7",
+   "project": "Project_7",
+   "source": "ifc",
+   "id": "building"
+  },
+  {
+   "layer": "storey",
+   "label": "Ebene -1",
+   "elevation": -3.0,
+   "source": "ifc",
+   "id": "1jPCssxb5C1RSM_YHIx$$2"
+  },
+  {
+   "layer": "storey",
+   "label": "Ebene 0",
+   "elevation": 0.0,
+   "source": "ifc",
+   "id": "13LV5dTeP3CAox54x56C1Z"
+  },
+  {
+   "layer": "storey",
+   "label": "Ebene 1",
+   "elevation": 4.5,
+   "source": "ifc",
+   "id": "1jPCssxb5C1RSM_YHIx$zl"
+  },
+  {
+   "layer": "storey",
+   "label": "Ebene 2",
+   "elevation": 9.0,
+   "source": "ifc",
+   "id": "1owBOg$5v0GwDBa7HPOsiG"
+  },
+  {
+   "layer": "storey",
+   "label": "Ebene 3",
+   "elevation": 13.5,
+   "source": "ifc",
+   "id": "2qGKQC4mr7bQHi0erg34tc"
+  },
+  {
+   "layer": "storey",
+   "label": "Ebene 4",
+   "elevation": 18.0,
+   "source": "ifc",
+   "id": "2qGKQC4mr7bQHi0erg34rO"
+  },
+  {
+   "layer": "storey",
+   "label": "Ebene 5",
+   "elevation": 22.5,
+   "source": "ifc",
+   "id": "3DWkEUmNbEUw4r79zq9qR2"
+  },
+  {
+   "layer": "space",
+   "label": "Office",
+   "room_number": "1",
+   "area": 12.05,
+   "height": 2.44,
+   "centroid": [
+    4.5,
+    21.805
+   ],
+   "elevation": 0.0,
+   "source": "ifc",
+   "id": "26uBYUqsT9fu$2hZqJnL2H"
+  },
+  {
+   "layer": "space",
+   "label": "Lobby",
+   "room_number": "2",
+   "area": 28.54,
+   "height": 2.44,
+   "centroid": [
+    4.5,
+    31.678
+   ],
+   "elevation": 0.0,
+   "source": "ifc",
+   "has_exterior_door": true,
+   "id": "26uBYUqsT9fu$2hZqJnL2K"
+  },
+  {
+   "layer": "space",
+   "label": "Staircase",
+   "room_number": "3",
+   "area": 14.05,
+   "height": 2.44,
+   "centroid": [
+    9.193,
+    37.5
+   ],
+   "elevation": 0.0,
+   "source": "ifc",
+   "has_exterior_door": true,
+   "id": "26uBYUqsT9fu$2hZqJnL2N"
+  },
+  {
+   "layer": "space",
+   "label": "Office",
+   "room_number": "4",
+   "area": 11.22,
+   "height": 2.44,
+   "centroid": [
+    15.05,
+    37.5
+   ],
+   "elevation": 0.0,
+   "source": "ifc",
+   "id": "26uBYUqsT9fu$2hZqJnL2Q"
+  },
+  {
+   "layer": "space",
+   "label": "Bathroom",
+   "room_number": "5",
+   "area": 3.5,
+   "height": 2.44,
+   "centroid": [
+    4.5,
+    11.887
+   ],
+   "elevation": 0.0,
+   "source": "ifc",
+   "id": "26uBYUqsT9fu$2hZqJnL2T"
+  },
+  {
+   "layer": "space",
+   "label": "Bathroom",
+   "room_number": "6",
+   "area": 3.12,
+   "height": 6.94,
+   "centroid": [
+    4.5,
+    10.18
+   ],
+   "elevation": 0.0,
+   "source": "ifc",
+   "id": "26uBYUqsT9fu$2hZqJnL3W"
+  },
+  {
+   "layer": "space",
+   "label": "Office",
+   "room_number": "7",
+   "area": 12.12,
+   "height": 2.44,
+   "centroid": [
+    4.5,
+    6.401
+   ],
+   "elevation": 0.0,
+   "source": "ifc",
+   "id": "26uBYUqsT9fu$2hZqJnL3Z"
+  },
+  {
+   "layer": "space",
+   "label": "Lobby",
+   "room_number": "8",
+   "area": 7.02,
+   "height": 2.44,
+   "centroid": [
+    4.5,
+    1.686
+   ],
+   "elevation": 0.0,
+   "source": "ifc",
+   "has_exterior_door": true,
+   "id": "26uBYUqsT9fu$2hZqJnL3c"
+  },
+  {
+   "layer": "space",
+   "label": "Staircase",
+   "room_number": "9",
+   "area": 17.36,
+   "height": 2.44,
+   "centroid": [
+    9.339,
+    1.3
+   ],
+   "elevation": 0.0,
+   "source": "ifc",
+   "id": "26uBYUqsT9fu$2hZqJnL3f"
+  },
+  {
+   "layer": "space",
+   "label": "Office",
+   "room_number": "10",
+   "area": 12.5,
+   "height": 2.44,
+   "centroid": [
+    15.196,
+    1.3
+   ],
+   "elevation": 0.0,
+   "source": "ifc",
+   "id": "26uBYUqsT9fu$2hZqJnL3i"
+  },
+  {
+   "layer": "space",
+   "label": "Office",
+   "room_number": "11",
+   "area": 7.52,
+   "height": 2.44,
+   "centroid": [
+    16.154,
+    1.3
+   ],
+   "elevation": 4.5,
+   "source": "ifc",
+   "id": "26uBYUqsT9fu$2hZqJnL3o"
+  },
+  {
+   "layer": "space",
+   "label": "Staircase",
+   "room_number": "12",
+   "area": 22.34,
+   "height": 2.44,
+   "centroid": [
+    10.296,
+    1.3
+   ],
+   "elevation": 4.5,
+   "source": "ifc",
+   "id": "26uBYUqsT9fu$2hZqJnL3s"
+  },
+  {
+   "layer": "space",
+   "label": "Office",
+   "room_number": "13",
+   "area": 9.42,
+   "height": 2.44,
+   "centroid": [
+    4.5,
+    2.266
+   ],
+   "elevation": 4.5,
+   "source": "ifc",
+   "id": "26uBYUqsT9fu$2hZqJnL3v"
+  },
+  {
+   "layer": "space",
+   "label": "Office",
+   "room_number": "14",
+   "area": 12.32,
+   "height": 2.44,
+   "centroid": [
+    4.5,
+    7.609
+   ],
+   "elevation": 4.5,
+   "source": "ifc",
+   "id": "26uBYUqsT9fu$2hZqJnL3y"
+  },
+  {
+   "layer": "space",
+   "label": "Bathroom",
+   "room_number": "15",
+   "area": 3.12,
+   "height": 2.44,
+   "centroid": [
+    4.5,
+    11.436
+   ],
+   "elevation": 4.5,
+   "source": "ifc",
+   "id": "26uBYUqsT9fu$2hZqJnL3$"
+  },
+  {
+   "layer": "space",
+   "label": "Bathroom",
+   "room_number": "16",
+   "area": 3.96,
+   "height": 2.44,
+   "centroid": [
+    4.5,
+    13.253
+   ],
+   "elevation": 4.5,
+   "source": "ifc",
+   "id": "26uBYUqsT9fu$2hZqJnL32"
+  },
+  {
+   "layer": "space",
+   "label": "Office",
+   "room_number": "17",
+   "area": 12.2,
+   "height": 2.44,
+   "centroid": [
+    4.5,
+    17.253
+   ],
+   "elevation": 4.5,
+   "source": "ifc",
+   "id": "26uBYUqsT9fu$2hZqJnL35"
+  },
+  {
+   "layer": "space",
+   "label": "Staircase",
+   "room_number": "18",
+   "area": 12.24,
+   "height": 2.44,
+   "centroid": [
+    4.5,
+    23.244
+   ],
+   "elevation": 4.5,
+   "source": "ifc",
+   "has_exterior_door": true,
+   "id": "26uBYUqsT9fu$2hZqJnL38"
+  },
+  {
+   "layer": "space",
+   "label": "Staircase",
+   "room_number": "19",
+   "area": 16.31,
+   "height": 2.44,
+   "centroid": [
+    9.707,
+    37.5
+   ],
+   "elevation": 4.5,
+   "source": "ifc",
+   "id": "26uBYUqsT9fu$2hZqJnL3B"
+  },
+  {
+   "layer": "space",
+   "label": "Einzelb\u00fcro",
+   "room_number": "20",
+   "area": 8.96,
+   "height": 2.44,
+   "centroid": [
+    15.565,
+    37.5
+   ],
+   "elevation": 4.5,
+   "source": "ifc",
+   "id": "26uBYUqsT9fu$2hZqJnL3E"
+  },
+  {
+   "layer": "space",
+   "label": "Office",
+   "room_number": "21",
+   "area": 12.37,
+   "height": 2.44,
+   "centroid": [
+    4.5,
+    15.819
+   ],
+   "elevation": 0.0,
+   "source": "ifc",
+   "id": "26uBYUqsT9fu$2hZqJnLF$"
+  },
+  {
+   "layer": "space",
+   "label": "room_1",
+   "room_number": "room_1",
+   "area": 76.0,
+   "height": 3.0,
+   "centroid": [
+    4.5,
+    19.5
+   ],
+   "elevation": -3.0,
+   "source": "inferred",
+   "id": "INF-1jPCssxb5C1RSM_YHIx$$2-0002"
+  },
+  {
+   "layer": "space",
+   "label": "room_2",
+   "room_number": "room_2",
+   "area": 23.94,
+   "height": 3.0,
+   "centroid": [
+    11.8,
+    1.55
+   ],
+   "elevation": -3.0,
+   "source": "inferred",
+   "id": "INF-1jPCssxb5C1RSM_YHIx$$2-0003"
+  },
+  {
+   "layer": "space",
+   "label": "room_3",
+   "room_number": "room_3",
+   "area": 24.15,
+   "height": 3.0,
+   "centroid": [
+    11.85,
+    37.55
+   ],
+   "elevation": -3.0,
+   "source": "inferred",
+   "id": "INF-1jPCssxb5C1RSM_YHIx$$2-0004"
+  },
+  {
+   "layer": "space",
+   "label": "Exterior Circulation",
+   "room_number": "exterior_circulation",
+   "area": 391.51,
+   "height": 3.0,
+   "centroid": [
+    12.05,
+    19.55
+   ],
+   "elevation": -3.0,
+   "source": "inferred",
+   "id": "EXT-1jPCssxb5C1RSM_YHIx$$2"
+  },
+  {
+   "layer": "space",
+   "label": "room_1",
+   "room_number": "room_1",
+   "area": 73.08,
+   "height": 4.5,
+   "centroid": [
+    4.535,
+    18.752
+   ],
+   "elevation": 9.0,
+   "source": "inferred",
+   "id": "INF-1owBOg$5v0GwDBa7HPOsiG-0002"
+  },
+  {
+   "layer": "space",
+   "label": "room_1",
+   "room_number": "room_1",
+   "area": 73.08,
+   "height": 4.5,
+   "centroid": [
+    4.535,
+    18.752
+   ],
+   "elevation": 13.5,
+   "source": "inferred",
+   "id": "INF-2qGKQC4mr7bQHi0erg34tc-0002"
+  },
+  {
+   "layer": "space",
+   "label": "room_1",
+   "room_number": "room_1",
+   "area": 65.73,
+   "height": 4.5,
+   "centroid": [
+    4.545,
+    22.85
+   ],
+   "elevation": 18.0,
+   "source": "inferred",
+   "id": "INF-2qGKQC4mr7bQHi0erg34rO-0002"
+  },
+  {
+   "layer": "space",
+   "label": "Exterior Circulation",
+   "room_number": "exterior_circulation",
+   "area": 19.44,
+   "height": 4.5,
+   "centroid": [
+    4.5,
+    3.397
+   ],
+   "elevation": 18.0,
+   "source": "inferred",
+   "id": "EXT-2qGKQC4mr7bQHi0erg34rO"
+  },
+  {
+   "layer": "element",
+   "ifc_type": "IfcWall",
+   "label": "Basiswand:Ziegel+WD hart 300+160",
+   "centroid": [
+    4.5,
+    0.195,
+    -1.65
+   ],
+   "zmin": -3.0,
+   "zmax": -0.3,
+   "clutter": false,
+   "source": "ifc",
+   "id": "07CR7fHeP4QfYTyO_6ZsDE"
+  },
+  {
+   "layer": "element",
+   "ifc_type": "IfcWall",
+   "label": "Basiswand:Ziegel+WD hart 300+160",
+   "centroid": [
+    3.195,
+    22.8,
+    -1.38
+   ],
+   "zmin": -3.0,
+   "zmax": -0.3,
+   "clutter": false,
+   "source": "ifc",
+   "id": "1hXC4WhvX7OfF8X3V_$Y76"
+  },
+  {
+   "layer": "element",
+   "ifc_type": "IfcWall",
+   "label": "Basiswand:Ziegel+WD hart 300+160",
+   "centroid": [
+    4.5,
+    38.805,
+    -1.65
+   ],
+   "zmin": -3.0,
+   "zmax": -0.3,
+   "clutter": false,
+   "source": "ifc",
+   "id": "07CR7fHeP4QfYTyO_6Zts4"
+  },
+  {
+   "layer": "element",
+   "ifc_type": "IfcWall",
+   "label": "Basiswand:Ziegel+WD hart 200+200",
+   "centroid": [
+    12.578,
+    38.778,
+    -1.65
+   ],
+   "zmin": -3.0,
+   "zmax": -0.3,
+   "clutter": false,
+   "source": "ifc",
+   "id": "07CR7fHeP4QfYTyO_6ZtpJ"
+  },
+  {
+   "layer": "element",
+   "ifc_type": "IfcWall",
+   "label": "Basiswand:Ziegel+WD hart 200+200",
+   "centroid": [
+    11.81,
+    36.2,
+    -1.65
+   ],
+   "zmin": -3.0,
+   "zmax": -0.3,
+   "clutter": false,
+   "source": "ifc",
+   "id": "07CR7fHeP4QfYTyO_6ZtnF"
+  },
+  {
+   "layer": "element",
+   "ifc_type": "IfcWall",
+   "label": "Basiswand:Ziegel+WD hart 200+200",
+   "centroid": [
+    17.78,
+    37.2,
+    -1.65
+   ],
+   "zmin": -3.0,
+   "zmax": -0.3,
+   "clutter": false,
+   "source": "ifc",
+   "id": "07CR7fHeP4QfYTyO_6Ztm1"
+  },
+  {
+   "layer": "element",
+   "ifc_type": "IfcWall",
+   "label": "Basiswand:Ziegel+WD hart 200+200",
+   "centroid": [
+    12.542,
+    2.778,
+    -1.65
+   ],
+   "zmin": -3.0,
+   "zmax": -0.3,
+   "clutter": false,
+   "source": "ifc",
+   "id": "07CR7fHeP4QfYTyO_6ZtwW"
+  },
+  {
+   "layer": "element",
+   "ifc_type": "IfcWall",
+   "label": "Basiswand:Ziegel+WD hart 200+200",
+   "centroid": [
+    17.78,
+    1.2,
+    -1.65
+   ],
+   "zmin": -3.0,
+   "zmax": -0.3,
+   "clutter": false,
+   "source": "ifc",
+   "id": "07CR7fHeP4QfYTyO_6ZtwJ"
+  },
+  {
+   "layer": "element",
+   "ifc_type": "IfcWall",
+   "label": "Basiswand:Ziegel+WD hart 200+200",
+   "centroid": [
+    11.85,
+    0.2,
+    -1.65
+   ],
+   "zmin": -3.0,
+   "zmax": -0.3,
+   "clutter": false,
+   "source": "ifc",
+   "id": "07CR7fHeP4QfYTyO_6ZtuF"
+  },
+  {
+   "layer": "element",
+   "ifc_type": "IfcWall",
+   "label": "Basiswand:Ziegel+WD hart 300+160",
+   "centroid": [
+    5.863,
+    19.5,
+    -1.65
+   ],
+   "zmin": -3.0,
+   "zmax": -0.3,
+   "clutter": false,
+   "source": "ifc",
+   "id": "1hXC4WhvX7OfF8X3V_$Y93"
+  },
+  {
+   "layer": "element",
+   "ifc_type": "IfcWall",
+   "label": "Basiswand:Ziegel+WD hart 300+160",
+   "centroid": [
+    4.5,
+    38.805,
+    2.25
+   ],
+   "zmin": 0.0,
+   "zmax": 4.5,
+   "clutter": false,
+   "source": "ifc",
+   "id": "07CR7fHeP4QfYTyO_6ZtT0"
+  },
+  {
+   "layer": "element",
+   "ifc_type": "IfcWall",
+   "label": "Basiswand:Ziegel+WD hart 200+200",
+   "centroid": [
+    17.78,
+    37.2,
+    2.15
+   ],
+   "zmin": 0.0,
+   "zmax": 4.3,
+   "clutter": false,
+   "source": "ifc",
+   "id": "07CR7fHeP4QfYTyO_6ZtT2"
+  },
+  {
+   "layer": "element",
+   "ifc_type": "IfcWall",
+   "label": "Basiswand:Ziegel+WD hart 200+200",
+   "centroid": [
+    12.542,
+    2.778,
+    2.15
+   ],
+   "zmin": 0.0,
+   "zmax": 4.3,
+   "clutter": false,
+   "source": "ifc",
+   "id": "07CR7fHeP4QfYTyO_6ZtTS"
+  },
+  {
+   "layer": "element",
+   "ifc_type": "IfcWall",
+   "label": "Basiswand:Ziegel+WD hart 200+200",
+   "centroid": [
+    17.8,
+    1.35,
+    2.15
+   ],
+   "zmin": 0.0,
+   "zmax": 4.3,
+   "clutter": false,
+   "source": "ifc",
+   "id": "07CR7fHeP4QfYTyO_6ZtTT"
+  },
+  {
+   "layer": "element",
+   "ifc_type": "IfcWall",
+   "label": "Basiswand:Ziegel+WD hart 200+200",
+   "centroid": [
+    13.724,
+    36.192,
+    1.789
+   ],
+   "zmin": 0.0,
+   "zmax": 4.3,
+   "clutter": false,
+   "source": "ifc",
+   "id": "07CR7fHeP4QfYTyO_6ZtT3"
+  },
+  {
+   "layer": "element",
+   "ifc_type": "IfcSlab",
+   "label": "Bodenplatte:STB 300",
+   "centroid": [
+    10.5,
+    37.5,
+    -0.15
+   ],
+   "zmin": -0.3,
+   "zmax": 0.0,
+   "clutter": false,
+   "source": "ifc",
+   "id": "07CR7fHeP4QfYTyO_6ZtDa"
+  },
+  {
+   "layer": "element",
+   "ifc_type": "IfcSlab",
+   "label": "Bodenplatte:STB 300",
+   "centroid": [
+    4.5,
+    18.0,
+    -0.15
+   ],
+   "zmin": -0.3,
+   "zmax": 0.0,
+   "clutter": false,
+   "source": "ifc",
+   "id": "07CR7fHeP4QfYTyO_6ZtD5"
+  },
+  {
+   "layer": "element",
+   "ifc_type": "IfcSlab",
+   "label": "Bodenplatte:STB 300",
+   "centroid": [
+    12.0,
+    1.5,
+    -0.15
+   ],
+   "zmin": -0.3,
+   "zmax": 0.0,
+   "clutter": false,
+   "source": "ifc",
+   "id": "07CR7fHeP4QfYTyO_6ZtAZ"
+  },
+  {
+   "layer": "element",
+   "ifc_type": "IfcWall",
+   "label": "Basiswand:Ziegel+WD hart 200+200",
+   "centroid": [
+    11.375,
+    38.808,
+    1.584
+   ],
+   "zmin": 0.0,
+   "zmax": 4.3,
+   "clutter": false,
+   "source": "ifc",
+   "id": "07CR7fHeP4QfYTyO_6ZtT1"
+  },
+  {
+   "layer": "element",
+   "ifc_type": "IfcDoor",
+   "label": "TU DF 1 - Rahmenstock fl\u00e4chenb\u00fcndig:ML - 885 x 2135",
+   "centroid": [
+    5.972,
+    1.836,
+    1.031
+   ],
+   "zmin": -0.0,
+   "zmax": 2.135,
+   "clutter": false,
+   "source": "ifc",
+   "id": "07CR7fHeP4QfYTyO_6Zt39"
+  },
+  {
+   "layer": "element",
+   "ifc_type": "IfcSlab",
+   "label": "Geschossdecke:STB 200",
+   "centroid": [
+    10.5,
+    37.5,
+    -0.1
+   ],
+   "zmin": -0.2,
+   "zmax": 0.0,
+   "clutter": false,
+   "source": "ifc",
+   "id": "1ksvnTQ291hfq4qBxBzHOP"
+  },
+  {
+   "layer": "element",
+   "ifc_type": "IfcDoor",
+   "label": "TU DF 1 - Rahmenstock fl\u00e4chenb\u00fcndig:ML - 885 x 2135",
+   "centroid": [
+    5.972,
+    37.776,
+    1.031
+   ],
+   "zmin": -0.0,
+   "zmax": 2.135,
+   "clutter": false,
+   "source": "ifc",
+   "id": "07CR7fHeP4QfYTyO_6Zt2F"
+  },
+  {
+   "layer": "element",
+   "ifc_type": "IfcSlab",
+   "label": "Geschossdecke:STB 200",
+   "centroid": [
+    4.5,
+    14.65,
+    4.4
+   ],
+   "zmin": 4.3,
+   "zmax": 4.5,
+   "clutter": false,
+   "source": "ifc",
+   "id": "1ksvnTQ291hfq4qBxBzHDD"
+  },
+  {
+   "layer": "element",
+   "ifc_type": "IfcSlab",
+   "label": "Geschossdecke:FB 200 Teppich",
+   "centroid": [
+    10.861,
+    37.25,
+    4.425
+   ],
+   "zmin": 4.3,
+   "zmax": 4.5,
+   "clutter": false,
+   "source": "ifc",
+   "id": "1ksvnTQ291hfq4qBxBzHDk"
+  },
+  {
+   "layer": "element",
+   "ifc_type": "IfcSlab",
+   "label": "Geschossdecke:FB 200 Teppich",
+   "centroid": [
+    10.195,
+    1.75,
+    4.425
+   ],
+   "zmin": 4.3,
+   "zmax": 4.5,
+   "clutter": false,
+   "source": "ifc",
+   "id": "1ksvnTQ291hfq4qBxBzHAg"
+  },
+  {
+   "layer": "element",
+   "ifc_type": "IfcWall",
+   "label": "Basiswand:Ziegel+WD hart 300+160",
+   "centroid": [
+    3.22,
+    17.031,
+    1.658
+   ],
+   "zmin": 0.0,
+   "zmax": 4.5,
+   "clutter": false,
+   "source": "ifc",
+   "id": "07CR7fHeP4QfYTyO_6ZtT6"
+  },
+  {
+   "layer": "element",
+   "ifc_type": "IfcWindow",
+   "label": "FE 2 tlg - DrehKipp mit Stulp:2000 x 1400",
+   "centroid": [
+    10.102,
+    38.783,
+    1.466
+   ],
+   "zmin": 0.821,
+   "zmax": 2.25,
+   "clutter": false,
+   "source": "ifc",
+   "id": "1ksvnTQ291hfq4qBxBzHeB"
+  },
+  {
+   "layer": "element",
+   "ifc_type": "IfcWindow",
+   "label": "FE 2 tlg - DrehKipp mit Stulp:2000 x 1400",
+   "centroid": [
+    14.998,
+    36.217,
+    1.466
+   ],
+   "zmin": 0.821,
+   "zmax": 2.25,
+   "clutter": false,
+   "source": "ifc",
+   "id": "1ksvnTQ291hfq4qBxBzHYC"
+  },
+  {
+   "layer": "element",
+   "ifc_type": "IfcWindow",
+   "label": "FE 2 tlg - DrehKipp mit Stulp:2000 x 1400",
+   "centroid": [
+    15.002,
+    38.783,
+    1.466
+   ],
+   "zmin": 0.821,
+   "zmax": 2.25,
+   "clutter": false,
+   "source": "ifc",
+   "id": "1ksvnTQ291hfq4qBxBzHZK"
+  },
+  {
+   "layer": "element",
+   "ifc_type": "IfcWindow",
+   "label": "FE 1 tlg - DrehKipp:1100 x 1400",
+   "centroid": [
+    3.23,
+    25.145,
+    1.447
+   ],
+   "zmin": 0.821,
+   "zmax": 2.25,
+   "clutter": false,
+   "source": "ifc",
+   "id": "1ksvnTQ291hfq4qBxBzG7W"
+  },
+  {
+   "layer": "element",
+   "ifc_type": "IfcWall",
+   "label": "Basiswand:Ziegel+WD hart 300+160",
+   "centroid": [
+    5.787,
+    19.965,
+    1.73
+   ],
+   "zmin": -0.0,
+   "zmax": 4.5,
+   "clutter": false,
+   "source": "ifc",
+   "id": "07CR7fHeP4QfYTyO_6ZtT5"
+  },
+  {
+   "layer": "element",
+   "ifc_type": "IfcWindow",
+   "label": "FE 1 tlg - DrehKipp:1100 x 1400",
+   "centroid": [
+    5.77,
+    34.695,
+    1.447
+   ],
+   "zmin": 0.821,
+   "zmax": 2.25,
+   "clutter": false,
+   "source": "ifc",
+   "id": "1ksvnTQ291hfq4qBxBzG$I"
+  },
+  {
+   "layer": "element",
+   "ifc_type": "IfcWindow",
+   "label": "FE 1 tlg - DrehKipp:1100 x 1400",
+   "centroid": [
+    3.23,
+    20.945,
+    1.447
+   ],
+   "zmin": 0.821,
+   "zmax": 2.25,
+   "clutter": false,
+   "source": "ifc",
+   "id": "1ksvnTQ291hfq4qBxBzG5g"
+  },
+  {
+   "layer": "element",
+   "ifc_type": "IfcWindow",
+   "label": "FE 1 tlg - DrehKipp:1100 x 1400",
+   "centroid": [
+    5.77,
+    26.295,
+    1.447
+   ],
+   "zmin": 0.821,
+   "zmax": 2.25,
+   "clutter": false,
+   "source": "ifc",
+   "id": "1ksvnTQ291hfq4qBxBzGuQ"
+  },
+  {
+   "layer": "element",
+   "ifc_type": "IfcWindow",
+   "label": "FE 1 tlg - DrehKipp:1100 x 1400",
+   "centroid": [
+    5.77,
+    30.495,
+    1.447
+   ],
+   "zmin": 0.821,
+   "zmax": 2.25,
+   "clutter": false,
+   "source": "ifc",
+   "id": "1ksvnTQ291hfq4qBxBzGwi"
+  },
+  {
+   "layer": "element",
+   "ifc_type": "IfcWindow",
+   "label": "FE 1 tlg - DrehKipp:1100 x 1400",
+   "centroid": [
+    5.77,
+    22.095,
+    1.447
+   ],
+   "zmin": 0.821,
+   "zmax": 2.25,
+   "clutter": false,
+   "source": "ifc",
+   "id": "1ksvnTQ291hfq4qBxBzGqQ"
+  },
+  {
+   "layer": "element",
+   "ifc_type": "IfcWindow",
+   "label": "FE 1 tlg - DrehKipp:1100 x 1400",
+   "centroid": [
+    3.23,
+    13.855,
+    1.447
+   ],
+   "zmin": 0.821,
+   "zmax": 2.25,
+   "clutter": false,
+   "source": "ifc",
+   "id": "1ksvnTQ291hfq4qBxBzGd2"
+  },
+  {
+   "layer": "element",
+   "ifc_type": "IfcWindow",
+   "label": "FE 1 tlg - DrehKipp:1100 x 1400",
+   "centroid": [
+    3.23,
+    10.34,
+    1.447
+   ],
+   "zmin": 0.821,
+   "zmax": 2.25,
+   "clutter": false,
+   "source": "ifc",
+   "id": "1ksvnTQ291hfq4qBxBzGd0"
+  },
+  {
+   "layer": "element",
+   "ifc_type": "IfcWindow",
+   "label": "FE 1 tlg - DrehKipp:1100 x 1400",
+   "centroid": [
+    3.23,
+    18.055,
+    1.447
+   ],
+   "zmin": 0.821,
+   "zmax": 2.25,
+   "clutter": false,
+   "source": "ifc",
+   "id": "1ksvnTQ291hfq4qBxBzGdC"
+  },
+  {
+   "layer": "element",
+   "ifc_type": "IfcWindow",
+   "label": "FE 1 tlg - DrehKipp:1100 x 1400",
+   "centroid": [
+    5.77,
+    4.305,
+    1.447
+   ],
+   "zmin": 0.821,
+   "zmax": 2.25,
+   "clutter": false,
+   "source": "ifc",
+   "id": "1ksvnTQ291hfq4qBxBzGaN"
+  },
+  {
+   "layer": "element",
+   "ifc_type": "IfcWindow",
+   "label": "FE 1 tlg - DrehKipp:1100 x 1400",
+   "centroid": [
+    5.77,
+    7.235,
+    1.447
+   ],
+   "zmin": 0.821,
+   "zmax": 2.25,
+   "clutter": false,
+   "source": "ifc",
+   "id": "1ksvnTQ291hfq4qBxBzGaH"
+  },
+  {
+   "layer": "element",
+   "ifc_type": "IfcStairFlight",
+   "label": "Zusammengebaute Treppe:Treppe",
+   "centroid": [
+    3.843,
+    29.047,
+    2.328
+   ],
+   "zmin": 0.156,
+   "zmax": 4.5,
+   "clutter": false,
+   "source": "ifc",
+   "id": "1ksvnTQ291hfq4qBxBzNyF"
+  },
+  {
+   "layer": "element",
+   "ifc_type": "IfcWindow",
+   "label": "FE 1 tlg - DrehKipp:1100 x 1400",
+   "centroid": [
+    5.77,
+    11.505,
+    1.447
+   ],
+   "zmin": 0.821,
+   "zmax": 2.25,
+   "clutter": false,
+   "source": "ifc",
+   "id": "1ksvnTQ291hfq4qBxBzGaJ"
+  },
+  {
+   "layer": "element",
+   "ifc_type": "IfcWindow",
+   "label": "FE 1 tlg - DrehKipp:1100 x 1400",
+   "centroid": [
+    5.77,
+    16.905,
+    1.447
+   ],
+   "zmin": 0.821,
+   "zmax": 2.25,
+   "clutter": false,
+   "source": "ifc",
+   "id": "1ksvnTQ291hfq4qBxBzGaT"
+  },
+  {
+   "layer": "element",
+   "ifc_type": "IfcWindow",
+   "label": "FE 1 tlg - DrehKipp:1100 x 1400",
+   "centroid": [
+    3.23,
+    4.965,
+    1.447
+   ],
+   "zmin": 0.821,
+   "zmax": 2.25,
+   "clutter": false,
+   "source": "ifc",
+   "id": "1ksvnTQ291hfq4qBxBzGbe"
+  },
+  {
+   "layer": "element",
+   "ifc_type": "IfcStairFlight",
+   "label": "Betonfertigteil-Treppe:Treppe",
+   "centroid": [
+    9.939,
+    37.0,
+    2.281
+   ],
+   "zmin": 0.0,
+   "zmax": 4.5,
+   "clutter": false,
+   "source": "ifc",
+   "id": "1jKaC_UV9EHQtr4wyx6Muy"
+  },
+  {
+   "layer": "element",
+   "ifc_type": "IfcStairFlight",
+   "label": "Betonfertigteil-Treppe:Treppe",
+   "centroid": [
+    9.879,
+    2.0,
+    2.281
+   ],
+   "zmin": 0.0,
+   "zmax": 4.5,
+   "clutter": false,
+   "source": "ifc",
+   "id": "1jKaC_UV9EHQtr4wyx6MvZ"
+  },
+  {
+   "layer": "element",
+   "ifc_type": "IfcWall",
+   "label": "Basiswand:Ziegel+WD hart 300+160",
+   "centroid": [
+    4.5,
+    38.805,
+    6.575
+   ],
+   "zmin": 4.5,
+   "zmax": 8.65,
+   "clutter": false,
+   "source": "ifc",
+   "id": "1jKaC_UV9EHQtr4wyx6Mnl"
+  },
+  {
+   "layer": "element",
+   "ifc_type": "IfcWall",
+   "label": "Basiswand:Ziegel+WD hart 200+200",
+   "centroid": [
+    17.794,
+    37.096,
+    7.235
+   ],
+   "zmin": 4.5,
+   "zmax": 9.0,
+   "clutter": false,
+   "source": "ifc",
+   "id": "1jKaC_UV9EHQtr4wyx6Mnj"
+  },
+  {
+   "layer": "element",
+   "ifc_type": "IfcDoor",
+   "label": "TU DF 1 - Haust\u00fcre:DL - 1000 x 2175",
+   "centroid": [
+    7.174,
+    38.649,
+    1.049
+   ],
+   "zmin": -0.18,
+   "zmax": 2.25,
+   "clutter": false,
+   "source": "ifc",
+   "id": "07CR7fHeP4QfYTyO_6Zt5u"
+  },
+  {
+   "layer": "element",
+   "ifc_type": "IfcDoor",
+   "label": "TU DF 1 - Haust\u00fcre:DL - 1000 x 2175",
+   "centroid": [
+    3.411,
+    33.916,
+    1.049
+   ],
+   "zmin": -0.18,
+   "zmax": 2.25,
+   "clutter": false,
+   "source": "ifc",
+   "id": "07CR7fHeP4QfYTyO_6ZtBx"
+  },
+  {
+   "layer": "element",
+   "ifc_type": "IfcWall",
+   "label": "Basiswand:Ziegel+WD hart 200+200",
+   "centroid": [
+    10.728,
+    2.78,
+    7.13
+   ],
+   "zmin": 4.5,
+   "zmax": 9.0,
+   "clutter": false,
+   "source": "ifc",
+   "id": "1jKaC_UV9EHQtr4wyx6Mnh"
+  },
+  {
+   "layer": "element",
+   "ifc_type": "IfcWall",
+   "label": "Basiswand:Ziegel+WD hart 200+200",
+   "centroid": [
+    17.8,
+    1.35,
+    6.75
+   ],
+   "zmin": 4.5,
+   "zmax": 9.0,
+   "clutter": false,
+   "source": "ifc",
+   "id": "1jKaC_UV9EHQtr4wyx6Mng"
+  },
+  {
+   "layer": "element",
+   "ifc_type": "IfcDoor",
+   "label": "TU DF 1 - Haust\u00fcre:ML - 1010 x 2250",
+   "centroid": [
+    3.409,
+    1.503,
+    1.048
+   ],
+   "zmin": -0.18,
+   "zmax": 2.25,
+   "clutter": false,
+   "source": "ifc",
+   "id": "07CR7fHeP4QfYTyO_6Zt8Q"
+  },
+  {
+   "layer": "element",
+   "ifc_type": "IfcWall",
+   "label": "Basiswand:Ziegel+WD hart 200+200",
+   "centroid": [
+    12.099,
+    38.809,
+    6.67
+   ],
+   "zmin": 4.5,
+   "zmax": 9.0,
+   "clutter": false,
+   "source": "ifc",
+   "id": "1jKaC_UV9EHQtr4wyx6Mnk"
+  },
+  {
+   "layer": "element",
+   "ifc_type": "IfcDoor",
+   "label": "TU DF 1 - Haust\u00fcre:DL - 1000 x 2175",
+   "centroid": [
+    3.411,
+    34.864,
+    1.049
+   ],
+   "zmin": -0.18,
+   "zmax": 2.25,
+   "clutter": false,
+   "source": "ifc",
+   "id": "07CR7fHeP4QfYTyO_6ZtBw"
+  },
+  {
+   "layer": "element",
+   "ifc_type": "IfcWall",
+   "label": "Basiswand:Ziegel+WD hart 200+200",
+   "centroid": [
+    11.416,
+    36.196,
+    6.661
+   ],
+   "zmin": 4.5,
+   "zmax": 9.0,
+   "clutter": false,
+   "source": "ifc",
+   "id": "1jKaC_UV9EHQtr4wyx6Mni"
+  },
+  {
+   "layer": "element",
+   "ifc_type": "IfcSlab",
+   "label": "Geschossdecke:STB 350",
+   "centroid": [
+    4.795,
+    21.422,
+    8.825
+   ],
+   "zmin": 8.65,
+   "zmax": 9.0,
+   "clutter": false,
+   "source": "ifc",
+   "id": "1jKaC_UV9EHQtr4wyx6Msp"
+  },
+  {
+   "layer": "element",
+   "ifc_type": "IfcWall",
+   "label": "Basiswand:Ziegel+WD hart 300+160",
+   "centroid": [
+    3.227,
+    15.944,
+    6.1
+   ],
+   "zmin": 4.5,
+   "zmax": 8.65,
+   "clutter": false,
+   "source": "ifc",
+   "id": "1jKaC_UV9EHQtr4wyx6MnX"
+  },
+  {
+   "layer": "element",
+   "ifc_type": "IfcWindow",
+   "label": "FE 2 tlg - DrehKipp mit Stulp:2000 x 1400",
+   "centroid": [
+    15.002,
+    38.783,
+    5.966
+   ],
+   "zmin": 5.321,
+   "zmax": 6.75,
+   "clutter": false,
+   "source": "ifc",
+   "id": "1jKaC_UV9EHQtr4wyx6MsZ"
+  },
+  {
+   "layer": "element",
+   "ifc_type": "IfcWindow",
+   "label": "FE 1 tlg - DrehKipp:1100 x 1400",
+   "centroid": [
+    3.23,
+    20.945,
+    5.947
+   ],
+   "zmin": 5.321,
+   "zmax": 6.75,
+   "clutter": false,
+   "source": "ifc",
+   "id": "1jKaC_UV9EHQtr4wyx6Msk"
+  },
+  {
+   "layer": "element",
+   "ifc_type": "IfcWindow",
+   "label": "FE 2 tlg - DrehKipp mit Stulp:2000 x 1400",
+   "centroid": [
+    14.998,
+    36.217,
+    5.966
+   ],
+   "zmin": 5.321,
+   "zmax": 6.75,
+   "clutter": false,
+   "source": "ifc",
+   "id": "1jKaC_UV9EHQtr4wyx6Msa"
+  },
+  {
+   "layer": "element",
+   "ifc_type": "IfcWindow",
+   "label": "FE 2 tlg - DrehKipp mit Stulp:2000 x 1400",
+   "centroid": [
+    10.102,
+    38.783,
+    5.966
+   ],
+   "zmin": 5.321,
+   "zmax": 6.75,
+   "clutter": false,
+   "source": "ifc",
+   "id": "1jKaC_UV9EHQtr4wyx6Msb"
+  },
+  {
+   "layer": "element",
+   "ifc_type": "IfcWindow",
+   "label": "FE 1 tlg - DrehKipp:1100 x 1400",
+   "centroid": [
+    3.23,
+    25.145,
+    5.947
+   ],
+   "zmin": 5.321,
+   "zmax": 6.75,
+   "clutter": false,
+   "source": "ifc",
+   "id": "1jKaC_UV9EHQtr4wyx6MsW"
+  },
+  {
+   "layer": "element",
+   "ifc_type": "IfcWindow",
+   "label": "FE 1 tlg - DrehKipp:1100 x 1400",
+   "centroid": [
+    5.77,
+    34.695,
+    5.947
+   ],
+   "zmin": 5.321,
+   "zmax": 6.75,
+   "clutter": false,
+   "source": "ifc",
+   "id": "1jKaC_UV9EHQtr4wyx6Msj"
+  },
+  {
+   "layer": "element",
+   "ifc_type": "IfcWindow",
+   "label": "FE 1 tlg - DrehKipp:1100 x 1400",
+   "centroid": [
+    5.77,
+    25.48,
+    5.947
+   ],
+   "zmin": 5.321,
+   "zmax": 6.75,
+   "clutter": false,
+   "source": "ifc",
+   "id": "1jKaC_UV9EHQtr4wyx6MtN"
+  },
+  {
+   "layer": "element",
+   "ifc_type": "IfcWindow",
+   "label": "FE 1 tlg - DrehKipp:1100 x 1400",
+   "centroid": [
+    5.77,
+    30.495,
+    5.947
+   ],
+   "zmin": 5.321,
+   "zmax": 6.75,
+   "clutter": false,
+   "source": "ifc",
+   "id": "1jKaC_UV9EHQtr4wyx6Msh"
+  },
+  {
+   "layer": "element",
+   "ifc_type": "IfcWindow",
+   "label": "FE 1 tlg - DrehKipp:1100 x 1400",
+   "centroid": [
+    3.23,
+    9.655,
+    5.947
+   ],
+   "zmin": 5.321,
+   "zmax": 6.75,
+   "clutter": false,
+   "source": "ifc",
+   "id": "1jKaC_UV9EHQtr4wyx6MtK"
+  },
+  {
+   "layer": "element",
+   "ifc_type": "IfcWindow",
+   "label": "FE 1 tlg - DrehKipp:1100 x 1400",
+   "centroid": [
+    3.23,
+    18.055,
+    5.947
+   ],
+   "zmin": 5.321,
+   "zmax": 6.75,
+   "clutter": false,
+   "source": "ifc",
+   "id": "1jKaC_UV9EHQtr4wyx6MtG"
+  },
+  {
+   "layer": "element",
+   "ifc_type": "IfcWindow",
+   "label": "FE 1 tlg - DrehKipp:1100 x 1400",
+   "centroid": [
+    3.23,
+    13.855,
+    5.947
+   ],
+   "zmin": 5.321,
+   "zmax": 6.75,
+   "clutter": false,
+   "source": "ifc",
+   "id": "1jKaC_UV9EHQtr4wyx6MtI"
+  },
+  {
+   "layer": "element",
+   "ifc_type": "IfcWindow",
+   "label": "FE 1 tlg - DrehKipp:1100 x 1400",
+   "centroid": [
+    5.77,
+    27.195,
+    5.947
+   ],
+   "zmin": 5.321,
+   "zmax": 6.75,
+   "clutter": false,
+   "source": "ifc",
+   "id": "1jKaC_UV9EHQtr4wyx6Msf"
+  },
+  {
+   "layer": "element",
+   "ifc_type": "IfcDoor",
+   "label": "TU DF 1 - Rahmenstock fl\u00e4chenb\u00fcndig:ML - 885 x 2135",
+   "centroid": [
+    5.972,
+    1.836,
+    5.531
+   ],
+   "zmin": 4.5,
+   "zmax": 6.635,
+   "clutter": false,
+   "source": "ifc",
+   "id": "1jKaC_UV9EHQtr4wyx6MsM"
+  },
+  {
+   "layer": "element",
+   "ifc_type": "IfcStairFlight",
+   "label": "Zusammengebaute Treppe:Treppe",
+   "centroid": [
+    5.069,
+    23.329,
+    6.828
+   ],
+   "zmin": 4.656,
+   "zmax": 9.0,
+   "clutter": false,
+   "source": "ifc",
+   "id": "1jKaC_UV9EHQtr4wyx6Mt6"
+  },
+  {
+   "layer": "element",
+   "ifc_type": "IfcWindow",
+   "label": "FE 1 tlg - DrehKipp:1100 x 1400",
+   "centroid": [
+    5.77,
+    5.205,
+    5.947
+   ],
+   "zmin": 5.321,
+   "zmax": 6.75,
+   "clutter": false,
+   "source": "ifc",
+   "id": "1jKaC_UV9EHQtr4wyx6MtV"
+  },
+  {
+   "layer": "element",
+   "ifc_type": "IfcWindow",
+   "label": "FE 1 tlg - DrehKipp:1100 x 1400",
+   "centroid": [
+    5.77,
+    12.705,
+    5.947
+   ],
+   "zmin": 5.321,
+   "zmax": 6.75,
+   "clutter": false,
+   "source": "ifc",
+   "id": "1jKaC_UV9EHQtr4wyx6MtR"
+  },
+  {
+   "layer": "element",
+   "ifc_type": "IfcWindow",
+   "label": "FE 1 tlg - DrehKipp:1100 x 1400",
+   "centroid": [
+    5.77,
+    8.505,
+    5.947
+   ],
+   "zmin": 5.321,
+   "zmax": 6.75,
+   "clutter": false,
+   "source": "ifc",
+   "id": "1jKaC_UV9EHQtr4wyx6MtT"
+  },
+  {
+   "layer": "element",
+   "ifc_type": "IfcWindow",
+   "label": "FE 1 tlg - DrehKipp:1100 x 1400",
+   "centroid": [
+    5.77,
+    16.905,
+    5.947
+   ],
+   "zmin": 5.321,
+   "zmax": 6.75,
+   "clutter": false,
+   "source": "ifc",
+   "id": "1jKaC_UV9EHQtr4wyx6MtP"
+  },
+  {
+   "layer": "element",
+   "ifc_type": "IfcWindow",
+   "label": "FE 1 tlg - DrehKipp:1100 x 1400",
+   "centroid": [
+    3.23,
+    5.665,
+    5.947
+   ],
+   "zmin": 5.321,
+   "zmax": 6.75,
+   "clutter": false,
+   "source": "ifc",
+   "id": "1jKaC_UV9EHQtr4wyx6MtO"
+  },
+  {
+   "layer": "element",
+   "ifc_type": "IfcWindow",
+   "label": "FE 2 tlg - DrehKipp mit Stulp:2000 x 1400",
+   "centroid": [
+    9.998,
+    36.217,
+    5.966
+   ],
+   "zmin": 5.321,
+   "zmax": 6.75,
+   "clutter": false,
+   "source": "ifc",
+   "id": "2hYqwodsHALxF$68RXz13l"
+  },
+  {
+   "layer": "element",
+   "ifc_type": "IfcWall",
+   "label": "Basiswand:Ziegel+WD hart 240+160",
+   "centroid": [
+    4.5,
+    38.82,
+    11.25
+   ],
+   "zmin": 9.0,
+   "zmax": 13.5,
+   "clutter": false,
+   "source": "ifc",
+   "id": "3DWkEUmNbEUw4r79zq9qil"
+  },
+  {
+   "layer": "element",
+   "ifc_type": "IfcWindow",
+   "label": "FE 1 tlg - Fix:1100 x 1400",
+   "centroid": [
+    3.232,
+    25.39,
+    10.135
+   ],
+   "zmin": 9.821,
+   "zmax": 11.25,
+   "clutter": false,
+   "source": "ifc",
+   "id": "3DWkEUmNbEUw4r79zq9qiv"
+  },
+  {
+   "layer": "element",
+   "ifc_type": "IfcWindow",
+   "label": "FE 1 tlg - Fix:1100 x 1400",
+   "centroid": [
+    5.768,
+    34.45,
+    10.135
+   ],
+   "zmin": 9.821,
+   "zmax": 11.25,
+   "clutter": false,
+   "source": "ifc",
+   "id": "3DWkEUmNbEUw4r79zq9qiy"
+  },
+  {
+   "layer": "element",
+   "ifc_type": "IfcWindow",
+   "label": "FE 1 tlg - Fix:1100 x 1400",
+   "centroid": [
+    5.768,
+    30.25,
+    10.135
+   ],
+   "zmin": 9.821,
+   "zmax": 11.25,
+   "clutter": false,
+   "source": "ifc",
+   "id": "3DWkEUmNbEUw4r79zq9qi_"
+  },
+  {
+   "layer": "element",
+   "ifc_type": "IfcWindow",
+   "label": "FE 1 tlg - Fix:1100 x 1400",
+   "centroid": [
+    3.232,
+    21.19,
+    10.135
+   ],
+   "zmin": 9.821,
+   "zmax": 11.25,
+   "clutter": false,
+   "source": "ifc",
+   "id": "3DWkEUmNbEUw4r79zq9qix"
+  },
+  {
+   "layer": "element",
+   "ifc_type": "IfcWindow",
+   "label": "FE 1 tlg - Fix:1100 x 1400",
+   "centroid": [
+    5.768,
+    26.05,
+    10.135
+   ],
+   "zmin": 9.821,
+   "zmax": 11.25,
+   "clutter": false,
+   "source": "ifc",
+   "id": "3DWkEUmNbEUw4r79zq9qim"
+  },
+  {
+   "layer": "element",
+   "ifc_type": "IfcWindow",
+   "label": "FE 1 tlg - Fix:1100 x 1400",
+   "centroid": [
+    5.768,
+    21.85,
+    10.135
+   ],
+   "zmin": 9.821,
+   "zmax": 11.25,
+   "clutter": false,
+   "source": "ifc",
+   "id": "3DWkEUmNbEUw4r79zq9qio"
+  },
+  {
+   "layer": "element",
+   "ifc_type": "IfcWindow",
+   "label": "FE 1 tlg - Fix:1100 x 1400",
+   "centroid": [
+    3.232,
+    9.41,
+    10.135
+   ],
+   "zmin": 9.821,
+   "zmax": 11.25,
+   "clutter": false,
+   "source": "ifc",
+   "id": "3DWkEUmNbEUw4r79zq9qir"
+  },
+  {
+   "layer": "element",
+   "ifc_type": "IfcWindow",
+   "label": "FE 1 tlg - Fix:1100 x 1400",
+   "centroid": [
+    3.232,
+    13.61,
+    10.135
+   ],
+   "zmin": 9.821,
+   "zmax": 11.25,
+   "clutter": false,
+   "source": "ifc",
+   "id": "3DWkEUmNbEUw4r79zq9qit"
+  },
+  {
+   "layer": "element",
+   "ifc_type": "IfcWindow",
+   "label": "FE 1 tlg - Fix:1100 x 1400",
+   "centroid": [
+    5.768,
+    4.55,
+    10.135
+   ],
+   "zmin": 9.821,
+   "zmax": 11.25,
+   "clutter": false,
+   "source": "ifc",
+   "id": "3DWkEUmNbEUw4r79zq9qiA"
+  },
+  {
+   "layer": "element",
+   "ifc_type": "IfcWindow",
+   "label": "FE 1 tlg - Fix:1100 x 1400",
+   "centroid": [
+    3.232,
+    17.81,
+    10.135
+   ],
+   "zmin": 9.821,
+   "zmax": 11.25,
+   "clutter": false,
+   "source": "ifc",
+   "id": "3DWkEUmNbEUw4r79zq9qi9"
+  },
+  {
+   "layer": "element",
+   "ifc_type": "IfcSlab",
+   "label": "Geschossdecke:STB 350",
+   "centroid": [
+    4.172,
+    24.281,
+    13.325
+   ],
+   "zmin": 13.15,
+   "zmax": 13.5,
+   "clutter": false,
+   "source": "ifc",
+   "id": "3DWkEUmNbEUw4r79zq9qk7"
+  },
+  {
+   "layer": "element",
+   "ifc_type": "IfcWindow",
+   "label": "FE 1 tlg - Fix:1100 x 1400",
+   "centroid": [
+    5.768,
+    8.75,
+    10.135
+   ],
+   "zmin": 9.821,
+   "zmax": 11.25,
+   "clutter": false,
+   "source": "ifc",
+   "id": "3DWkEUmNbEUw4r79zq9qiC"
+  },
+  {
+   "layer": "element",
+   "ifc_type": "IfcWindow",
+   "label": "FE 1 tlg - Fix:1100 x 1400",
+   "centroid": [
+    5.768,
+    12.95,
+    10.135
+   ],
+   "zmin": 9.821,
+   "zmax": 11.25,
+   "clutter": false,
+   "source": "ifc",
+   "id": "3DWkEUmNbEUw4r79zq9qiE"
+  },
+  {
+   "layer": "element",
+   "ifc_type": "IfcWindow",
+   "label": "FE 1 tlg - Fix:1100 x 1400",
+   "centroid": [
+    5.768,
+    17.15,
+    10.135
+   ],
+   "zmin": 9.821,
+   "zmax": 11.25,
+   "clutter": false,
+   "source": "ifc",
+   "id": "3DWkEUmNbEUw4r79zq9qi0"
+  },
+  {
+   "layer": "element",
+   "ifc_type": "IfcWindow",
+   "label": "FE 1 tlg - Fix:1100 x 1400",
+   "centroid": [
+    3.232,
+    5.21,
+    10.135
+   ],
+   "zmin": 9.821,
+   "zmax": 11.25,
+   "clutter": false,
+   "source": "ifc",
+   "id": "3DWkEUmNbEUw4r79zq9qi1"
+  },
+  {
+   "layer": "element",
+   "ifc_type": "IfcStairFlight",
+   "label": "Zusammengebaute Treppe:Treppe",
+   "centroid": [
+    3.843,
+    29.047,
+    11.328
+   ],
+   "zmin": 9.156,
+   "zmax": 13.5,
+   "clutter": false,
+   "source": "ifc",
+   "id": "3DWkEUmNbEUw4r79zq9qkU"
+  },
+  {
+   "layer": "element",
+   "ifc_type": "IfcWall",
+   "label": "Basiswand:Ziegel+WD hart 300+160",
+   "centroid": [
+    5.785,
+    18.818,
+    6.086
+   ],
+   "zmin": 4.5,
+   "zmax": 8.65,
+   "clutter": false,
+   "source": "ifc",
+   "id": "1jKaC_UV9EHQtr4wyx6MnY"
+  },
+  {
+   "layer": "element",
+   "ifc_type": "IfcWall",
+   "label": "Basiswand:Ziegel+WD hart 240+160",
+   "centroid": [
+    4.5,
+    38.82,
+    15.75
+   ],
+   "zmin": 13.5,
+   "zmax": 18.0,
+   "clutter": false,
+   "source": "ifc",
+   "id": "3DWkEUmNbEUw4r79zq9qlf"
+  },
+  {
+   "layer": "element",
+   "ifc_type": "IfcWindow",
+   "label": "FE 1 tlg - Fix:1100 x 1400",
+   "centroid": [
+    3.232,
+    25.39,
+    14.635
+   ],
+   "zmin": 14.321,
+   "zmax": 15.75,
+   "clutter": false,
+   "source": "ifc",
+   "id": "3DWkEUmNbEUw4r79zq9qlg"
+  },
+  {
+   "layer": "element",
+   "ifc_type": "IfcWindow",
+   "label": "FE 1 tlg - Fix:1100 x 1400",
+   "centroid": [
+    5.768,
+    30.25,
+    14.635
+   ],
+   "zmin": 14.321,
+   "zmax": 15.75,
+   "clutter": false,
+   "source": "ifc",
+   "id": "3DWkEUmNbEUw4r79zq9qll"
+  },
+  {
+   "layer": "element",
+   "ifc_type": "IfcWindow",
+   "label": "FE 1 tlg - Fix:1100 x 1400",
+   "centroid": [
+    5.768,
+    34.45,
+    14.635
+   ],
+   "zmin": 14.321,
+   "zmax": 15.75,
+   "clutter": false,
+   "source": "ifc",
+   "id": "3DWkEUmNbEUw4r79zq9qlj"
+  },
+  {
+   "layer": "element",
+   "ifc_type": "IfcWindow",
+   "label": "FE 1 tlg - Fix:1100 x 1400",
+   "centroid": [
+    3.232,
+    21.19,
+    14.635
+   ],
+   "zmin": 14.321,
+   "zmax": 15.75,
+   "clutter": false,
+   "source": "ifc",
+   "id": "3DWkEUmNbEUw4r79zq9qli"
+  },
+  {
+   "layer": "element",
+   "ifc_type": "IfcWindow",
+   "label": "FE 1 tlg - Fix:1100 x 1400",
+   "centroid": [
+    5.768,
+    26.05,
+    14.635
+   ],
+   "zmin": 14.321,
+   "zmax": 15.75,
+   "clutter": false,
+   "source": "ifc",
+   "id": "3DWkEUmNbEUw4r79zq9qlX"
+  },
+  {
+   "layer": "element",
+   "ifc_type": "IfcWindow",
+   "label": "FE 1 tlg - Fix:1100 x 1400",
+   "centroid": [
+    5.768,
+    21.85,
+    14.635
+   ],
+   "zmin": 14.321,
+   "zmax": 15.75,
+   "clutter": false,
+   "source": "ifc",
+   "id": "3DWkEUmNbEUw4r79zq9qlZ"
+  },
+  {
+   "layer": "element",
+   "ifc_type": "IfcWindow",
+   "label": "FE 1 tlg - Fix:1100 x 1400",
+   "centroid": [
+    3.232,
+    13.61,
+    14.635
+   ],
+   "zmin": 14.321,
+   "zmax": 15.75,
+   "clutter": false,
+   "source": "ifc",
+   "id": "3DWkEUmNbEUw4r79zq9qlu"
+  },
+  {
+   "layer": "element",
+   "ifc_type": "IfcWindow",
+   "label": "FE 1 tlg - Fix:1100 x 1400",
+   "centroid": [
+    3.232,
+    9.41,
+    14.635
+   ],
+   "zmin": 14.321,
+   "zmax": 15.75,
+   "clutter": false,
+   "source": "ifc",
+   "id": "3DWkEUmNbEUw4r79zq9qlc"
+  },
+  {
+   "layer": "element",
+   "ifc_type": "IfcWindow",
+   "label": "FE 1 tlg - Fix:1100 x 1400",
+   "centroid": [
+    3.232,
+    17.81,
+    14.635
+   ],
+   "zmin": 14.321,
+   "zmax": 15.75,
+   "clutter": false,
+   "source": "ifc",
+   "id": "3DWkEUmNbEUw4r79zq9qlw"
+  },
+  {
+   "layer": "element",
+   "ifc_type": "IfcWindow",
+   "label": "FE 1 tlg - Fix:1100 x 1400",
+   "centroid": [
+    5.768,
+    4.55,
+    14.635
+   ],
+   "zmin": 14.321,
+   "zmax": 15.75,
+   "clutter": false,
+   "source": "ifc",
+   "id": "3DWkEUmNbEUw4r79zq9qlx"
+  },
+  {
+   "layer": "element",
+   "ifc_type": "IfcWindow",
+   "label": "FE 1 tlg - Fix:1100 x 1400",
+   "centroid": [
+    5.768,
+    8.75,
+    14.635
+   ],
+   "zmin": 14.321,
+   "zmax": 15.75,
+   "clutter": false,
+   "source": "ifc",
+   "id": "3DWkEUmNbEUw4r79zq9qlz"
+  },
+  {
+   "layer": "element",
+   "ifc_type": "IfcSlab",
+   "label": "Geschossdecke:STB 350",
+   "centroid": [
+    4.172,
+    24.281,
+    17.825
+   ],
+   "zmin": 17.65,
+   "zmax": 18.0,
+   "clutter": false,
+   "source": "ifc",
+   "id": "3DWkEUmNbEUw4r79zq9qXs"
+  },
+  {
+   "layer": "element",
+   "ifc_type": "IfcWindow",
+   "label": "FE 1 tlg - Fix:1100 x 1400",
+   "centroid": [
+    5.768,
+    17.15,
+    14.635
+   ],
+   "zmin": 14.321,
+   "zmax": 15.75,
+   "clutter": false,
+   "source": "ifc",
+   "id": "3DWkEUmNbEUw4r79zq9qln"
+  },
+  {
+   "layer": "element",
+   "ifc_type": "IfcWindow",
+   "label": "FE 1 tlg - Fix:1100 x 1400",
+   "centroid": [
+    5.768,
+    12.95,
+    14.635
+   ],
+   "zmin": 14.321,
+   "zmax": 15.75,
+   "clutter": false,
+   "source": "ifc",
+   "id": "3DWkEUmNbEUw4r79zq9ql$"
+  },
+  {
+   "layer": "element",
+   "ifc_type": "IfcWindow",
+   "label": "FE 1 tlg - Fix:1100 x 1400",
+   "centroid": [
+    3.232,
+    5.21,
+    14.635
+   ],
+   "zmin": 14.321,
+   "zmax": 15.75,
+   "clutter": false,
+   "source": "ifc",
+   "id": "3DWkEUmNbEUw4r79zq9qlo"
+  },
+  {
+   "layer": "element",
+   "ifc_type": "IfcStairFlight",
+   "label": "Zusammengebaute Treppe:Treppe",
+   "centroid": [
+    3.843,
+    29.047,
+    15.828
+   ],
+   "zmin": 13.656,
+   "zmax": 18.0,
+   "clutter": false,
+   "source": "ifc",
+   "id": "3DWkEUmNbEUw4r79zq9qXD"
+  },
+  {
+   "layer": "element",
+   "ifc_type": "IfcWall",
+   "label": "Basiswand:Ziegel+WD hart 240+160",
+   "centroid": [
+    4.5,
+    38.82,
+    20.25
+   ],
+   "zmin": 18.0,
+   "zmax": 22.5,
+   "clutter": false,
+   "source": "ifc",
+   "id": "3DWkEUmNbEUw4r79zq9qXO"
+  },
+  {
+   "layer": "element",
+   "ifc_type": "IfcWindow",
+   "label": "FE 1 tlg - Fix:1100 x 1400",
+   "centroid": [
+    3.232,
+    32.15,
+    19.135
+   ],
+   "zmin": 18.821,
+   "zmax": 20.25,
+   "clutter": false,
+   "source": "ifc",
+   "id": "3DWkEUmNbEUw4r79zq9qXP"
+  },
+  {
+   "layer": "element",
+   "ifc_type": "IfcWindow",
+   "label": "FE 1 tlg - Fix:1100 x 1400",
+   "centroid": [
+    3.232,
+    27.95,
+    19.135
+   ],
+   "zmin": 18.821,
+   "zmax": 20.25,
+   "clutter": false,
+   "source": "ifc",
+   "id": "3DWkEUmNbEUw4r79zq9qXR"
+  },
+  {
+   "layer": "element",
+   "ifc_type": "IfcWindow",
+   "label": "FE 1 tlg - Fix:1100 x 1400",
+   "centroid": [
+    5.768,
+    37.01,
+    19.135
+   ],
+   "zmin": 18.821,
+   "zmax": 20.25,
+   "clutter": false,
+   "source": "ifc",
+   "id": "3DWkEUmNbEUw4r79zq9qXU"
+  },
+  {
+   "layer": "element",
+   "ifc_type": "IfcWindow",
+   "label": "FE 1 tlg - Fix:1100 x 1400",
+   "centroid": [
+    5.768,
+    32.81,
+    19.135
+   ],
+   "zmin": 18.821,
+   "zmax": 20.25,
+   "clutter": false,
+   "source": "ifc",
+   "id": "3DWkEUmNbEUw4r79zq9qXG"
+  },
+  {
+   "layer": "element",
+   "ifc_type": "IfcWall",
+   "label": "Basiswand:Ziegel+WD hart 240+160",
+   "centroid": [
+    4.5,
+    6.952,
+    19.572
+   ],
+   "zmin": 18.0,
+   "zmax": 22.5,
+   "clutter": false,
+   "source": "ifc",
+   "id": "3DWkEUmNbEUw4r79zq9qX7"
+  },
+  {
+   "layer": "element",
+   "ifc_type": "IfcWindow",
+   "label": "FE 1 tlg - Fix:1100 x 1400",
+   "centroid": [
+    5.768,
+    28.61,
+    19.135
+   ],
+   "zmin": 18.821,
+   "zmax": 20.25,
+   "clutter": false,
+   "source": "ifc",
+   "id": "3DWkEUmNbEUw4r79zq9qXI"
+  },
+  {
+   "layer": "element",
+   "ifc_type": "IfcWindow",
+   "label": "FE 1 tlg - Fix:1100 x 1400",
+   "centroid": [
+    3.232,
+    16.17,
+    19.135
+   ],
+   "zmin": 18.821,
+   "zmax": 20.25,
+   "clutter": false,
+   "source": "ifc",
+   "id": "3DWkEUmNbEUw4r79zq9qXL"
+  },
+  {
+   "layer": "element",
+   "ifc_type": "IfcWindow",
+   "label": "FE 1 tlg - Fix:1100 x 1400",
+   "centroid": [
+    3.232,
+    20.37,
+    19.135
+   ],
+   "zmin": 18.821,
+   "zmax": 20.25,
+   "clutter": false,
+   "source": "ifc",
+   "id": "3DWkEUmNbEUw4r79zq9qXN"
+  },
+  {
+   "layer": "element",
+   "ifc_type": "IfcWindow",
+   "label": "FE 1 tlg - Fix:1100 x 1400",
+   "centroid": [
+    3.232,
+    24.57,
+    19.135
+   ],
+   "zmin": 18.821,
+   "zmax": 20.25,
+   "clutter": false,
+   "source": "ifc",
+   "id": "3DWkEUmNbEUw4r79zq9qYf"
+  },
+  {
+   "layer": "element",
+   "ifc_type": "IfcWindow",
+   "label": "FE 1 tlg - Fix:1100 x 1400",
+   "centroid": [
+    5.768,
+    11.31,
+    19.135
+   ],
+   "zmin": 18.821,
+   "zmax": 20.25,
+   "clutter": false,
+   "source": "ifc",
+   "id": "3DWkEUmNbEUw4r79zq9qYg"
+  },
+  {
+   "layer": "element",
+   "ifc_type": "IfcWindow",
+   "label": "FE 1 tlg - Fix:1100 x 1400",
+   "centroid": [
+    5.768,
+    15.51,
+    19.135
+   ],
+   "zmin": 18.821,
+   "zmax": 20.25,
+   "clutter": false,
+   "source": "ifc",
+   "id": "3DWkEUmNbEUw4r79zq9qYi"
+  },
+  {
+   "layer": "element",
+   "ifc_type": "IfcWindow",
+   "label": "FE 1 tlg - Fix:1100 x 1400",
+   "centroid": [
+    5.768,
+    19.71,
+    19.135
+   ],
+   "zmin": 18.821,
+   "zmax": 20.25,
+   "clutter": false,
+   "source": "ifc",
+   "id": "3DWkEUmNbEUw4r79zq9qYk"
+  },
+  {
+   "layer": "element",
+   "ifc_type": "IfcWindow",
+   "label": "FE 1 tlg - Fix:1100 x 1400",
+   "centroid": [
+    5.768,
+    23.91,
+    19.135
+   ],
+   "zmin": 18.821,
+   "zmax": 20.25,
+   "clutter": false,
+   "source": "ifc",
+   "id": "3DWkEUmNbEUw4r79zq9qYW"
+  },
+  {
+   "layer": "element",
+   "ifc_type": "IfcColumn",
+   "label": "STB St\u00fctze - rechteckig:STB 250 x 250",
+   "centroid": [
+    5.88,
+    5.76,
+    20.25
+   ],
+   "zmin": 18.0,
+   "zmax": 22.5,
+   "clutter": false,
+   "source": "ifc",
+   "id": "2uEC5lWcnE7BDU0ErbW3GD"
+  },
+  {
+   "layer": "element",
+   "ifc_type": "IfcColumn",
+   "label": "STB St\u00fctze - rechteckig:STB 200 x 200",
+   "centroid": [
+    5.88,
+    3.76,
+    20.25
+   ],
+   "zmin": 18.0,
+   "zmax": 22.5,
+   "clutter": false,
+   "source": "ifc",
+   "id": "2uEC5lWcnE7BDU0ErbW3IO"
+  },
+  {
+   "layer": "element",
+   "ifc_type": "IfcColumn",
+   "label": "STB St\u00fctze - rechteckig:STB 200 x 200",
+   "centroid": [
+    5.88,
+    1.76,
+    20.25
+   ],
+   "zmin": 18.0,
+   "zmax": 22.5,
+   "clutter": false,
+   "source": "ifc",
+   "id": "2uEC5lWcnE7BDU0ErbW3J4"
+  },
+  {
+   "layer": "element",
+   "ifc_type": "IfcColumn",
+   "label": "STB St\u00fctze - rechteckig:STB 300 x 400",
+   "centroid": [
+    5.845,
+    0.2,
+    20.25
+   ],
+   "zmin": 18.0,
+   "zmax": 22.5,
+   "clutter": false,
+   "source": "ifc",
+   "id": "2uEC5lWcnE7BDU0ErbW3Jm"
+  },
+  {
+   "layer": "element",
+   "ifc_type": "IfcColumn",
+   "label": "STB St\u00fctze - rechteckig:STB 250 x 250",
+   "centroid": [
+    3.12,
+    5.76,
+    20.25
+   ],
+   "zmin": 18.0,
+   "zmax": 22.5,
+   "clutter": false,
+   "source": "ifc",
+   "id": "2uEC5lWcnE7BDU0ErbW3LZ"
+  },
+  {
+   "layer": "element",
+   "ifc_type": "IfcWindow",
+   "label": "FE 1 tlg - Fix:1100 x 1400",
+   "centroid": [
+    3.232,
+    11.97,
+    19.135
+   ],
+   "zmin": 18.821,
+   "zmax": 20.25,
+   "clutter": false,
+   "source": "ifc",
+   "id": "3DWkEUmNbEUw4r79zq9qYX"
+  },
+  {
+   "layer": "element",
+   "ifc_type": "IfcColumn",
+   "label": "STB St\u00fctze - rechteckig:STB 200 x 200",
+   "centroid": [
+    3.12,
+    3.76,
+    20.25
+   ],
+   "zmin": 18.0,
+   "zmax": 22.5,
+   "clutter": false,
+   "source": "ifc",
+   "id": "2uEC5lWcnE7BDU0ErbW3LX"
+  },
+  {
+   "layer": "element",
+   "ifc_type": "IfcColumn",
+   "label": "STB St\u00fctze - rechteckig:STB 300 x 400",
+   "centroid": [
+    3.157,
+    0.2,
+    20.25
+   ],
+   "zmin": 18.0,
+   "zmax": 22.5,
+   "clutter": false,
+   "source": "ifc",
+   "id": "2uEC5lWcnE7BDU0ErbW3Lz"
+  },
+  {
+   "layer": "element",
+   "ifc_type": "IfcColumn",
+   "label": "STB St\u00fctze - rechteckig:STB 200 x 200",
+   "centroid": [
+    3.12,
+    1.76,
+    20.25
+   ],
+   "zmin": 18.0,
+   "zmax": 22.5,
+   "clutter": false,
+   "source": "ifc",
+   "id": "2uEC5lWcnE7BDU0ErbW3L$"
+  },
+  {
+   "layer": "element",
+   "ifc_type": "IfcWall",
+   "label": "Basiswand:Ziegel 115",
+   "centroid": [
+    12.443,
+    37.777,
+    1.636
+   ],
+   "zmin": 0.0,
+   "zmax": 4.5,
+   "clutter": false,
+   "source": "ifc",
+   "id": "2iNGNb9Pf5P99FsPlV5FPz"
+  },
+  {
+   "layer": "element",
+   "ifc_type": "IfcWall",
+   "label": "Basiswand:Ziegel 115",
+   "centroid": [
+    4.748,
+    24.759,
+    1.636
+   ],
+   "zmin": 0.0,
+   "zmax": 4.5,
+   "clutter": false,
+   "source": "ifc",
+   "id": "2iNGNb9Pf5P99FsPlV5FGc"
+  },
+  {
+   "layer": "element",
+   "ifc_type": "IfcWall",
+   "label": "Basiswand:Ziegel 115",
+   "centroid": [
+    4.5,
+    10.988,
+    2.25
+   ],
+   "zmin": 0.0,
+   "zmax": 4.5,
+   "clutter": false,
+   "source": "ifc",
+   "id": "2iNGNb9Pf5P99FsPlV5FKt"
+  },
+  {
+   "layer": "element",
+   "ifc_type": "IfcWall",
+   "label": "Basiswand:Ziegel 115",
+   "centroid": [
+    4.748,
+    12.787,
+    1.636
+   ],
+   "zmin": 0.0,
+   "zmax": 4.5,
+   "clutter": false,
+   "source": "ifc",
+   "id": "2iNGNb9Pf5P99FsPlV5F8J"
+  },
+  {
+   "layer": "element",
+   "ifc_type": "IfcWall",
+   "label": "Basiswand:Ziegel+WD hart 240+160",
+   "centroid": [
+    3.198,
+    15.839,
+    10.618
+   ],
+   "zmin": 9.0,
+   "zmax": 13.5,
+   "clutter": false,
+   "source": "ifc",
+   "id": "3DWkEUmNbEUw4r79zq9qij"
+  },
+  {
+   "layer": "element",
+   "ifc_type": "IfcWall",
+   "label": "Basiswand:Ziegel 115",
+   "centroid": [
+    4.748,
+    18.85,
+    1.636
+   ],
+   "zmin": 0.0,
+   "zmax": 4.5,
+   "clutter": false,
+   "source": "ifc",
+   "id": "2iNGNb9Pf5P99FsPlV5FFe"
+  },
+  {
+   "layer": "element",
+   "ifc_type": "IfcWall",
+   "label": "Basiswand:Ziegel+WD hart 240+160",
+   "centroid": [
+    5.802,
+    19.497,
+    10.602
+   ],
+   "zmin": 9.0,
+   "zmax": 13.5,
+   "clutter": false,
+   "source": "ifc",
+   "id": "3DWkEUmNbEUw4r79zq9qii"
+  },
+  {
+   "layer": "element",
+   "ifc_type": "IfcWall",
+   "label": "Basiswand:Ziegel+WD hart 240+160",
+   "centroid": [
+    3.198,
+    15.839,
+    15.118
+   ],
+   "zmin": 13.5,
+   "zmax": 18.0,
+   "clutter": false,
+   "source": "ifc",
+   "id": "3DWkEUmNbEUw4r79zq9qkN"
+  },
+  {
+   "layer": "element",
+   "ifc_type": "IfcDoor",
+   "label": "TU DF 1 - Rahmenstock fl\u00e4chenb\u00fcndig:DL - 800 x 2000",
+   "centroid": [
+    4.687,
+    18.884,
+    1.029
+   ],
+   "zmin": -0.0,
+   "zmax": 2.045,
+   "clutter": false,
+   "source": "ifc",
+   "id": "2iNGNb9Pf5P99FsPlV54_p"
+  },
+  {
+   "layer": "element",
+   "ifc_type": "IfcDoor",
+   "label": "TU DF 1 - Rahmenstock fl\u00e4chenb\u00fcndig:DL - 800 x 2000",
+   "centroid": [
+    4.687,
+    24.793,
+    1.029
+   ],
+   "zmin": -0.0,
+   "zmax": 2.045,
+   "clutter": false,
+   "source": "ifc",
+   "id": "2iNGNb9Pf5P99FsPlV535D"
+  },
+  {
+   "layer": "element",
+   "ifc_type": "IfcWall",
+   "label": "Basiswand:Ziegel+WD hart 240+160",
+   "centroid": [
+    5.802,
+    19.497,
+    15.102
+   ],
+   "zmin": 13.5,
+   "zmax": 18.0,
+   "clutter": false,
+   "source": "ifc",
+   "id": "3DWkEUmNbEUw4r79zq9qkM"
+  },
+  {
+   "layer": "element",
+   "ifc_type": "IfcWall",
+   "label": "Basiswand:Ziegel 115",
+   "centroid": [
+    4.748,
+    9.373,
+    1.636
+   ],
+   "zmin": 0.0,
+   "zmax": 4.5,
+   "clutter": false,
+   "source": "ifc",
+   "id": "2iNGNb9Pf5P99FsPlV54i7"
+  },
+  {
+   "layer": "element",
+   "ifc_type": "IfcDoor",
+   "label": "TU DF 1 - Rahmenstock fl\u00e4chenb\u00fcndig:DL - 800 x 2000",
+   "centroid": [
+    4.687,
+    12.821,
+    1.029
+   ],
+   "zmin": -0.0,
+   "zmax": 2.045,
+   "clutter": false,
+   "source": "ifc",
+   "id": "2iNGNb9Pf5P99FsPlV54$T"
+  },
+  {
+   "layer": "element",
+   "ifc_type": "IfcWall",
+   "label": "Basiswand:Ziegel 115",
+   "centroid": [
+    4.748,
+    3.43,
+    1.636
+   ],
+   "zmin": 0.0,
+   "zmax": 4.5,
+   "clutter": false,
+   "source": "ifc",
+   "id": "2iNGNb9Pf5P99FsPlV547L"
+  },
+  {
+   "layer": "element",
+   "ifc_type": "IfcDoor",
+   "label": "TU DF 1 - Rahmenstock fl\u00e4chenb\u00fcndig:DL - 800 x 2000",
+   "centroid": [
+    12.476,
+    38.363,
+    1.029
+   ],
+   "zmin": -0.0,
+   "zmax": 2.045,
+   "clutter": false,
+   "source": "ifc",
+   "id": "2iNGNb9Pf5P99FsPlV54yH"
+  },
+  {
+   "layer": "element",
+   "ifc_type": "IfcWall",
+   "label": "Basiswand:Ziegel+WD hart 240+160",
+   "centroid": [
+    3.198,
+    22.265,
+    19.618
+   ],
+   "zmin": 18.0,
+   "zmax": 22.5,
+   "clutter": false,
+   "source": "ifc",
+   "id": "3DWkEUmNbEUw4r79zq9qX6"
+  },
+  {
+   "layer": "element",
+   "ifc_type": "IfcWall",
+   "label": "Basiswand:Ziegel 115",
+   "centroid": [
+    12.735,
+    1.059,
+    1.636
+   ],
+   "zmin": 0.0,
+   "zmax": 4.5,
+   "clutter": false,
+   "source": "ifc",
+   "id": "2iNGNb9Pf5P99FsPlV55_W"
+  },
+  {
+   "layer": "element",
+   "ifc_type": "IfcWall",
+   "label": "Basiswand:Ziegel 115",
+   "centroid": [
+    4.45,
+    26.243,
+    6.682
+   ],
+   "zmin": 4.5,
+   "zmax": 9.0,
+   "clutter": false,
+   "source": "ifc",
+   "id": "2iNGNb9Pf5P99FsPlV55H$"
+  },
+  {
+   "layer": "element",
+   "ifc_type": "IfcWall",
+   "label": "Basiswand:Ziegel 115",
+   "centroid": [
+    4.232,
+    14.262,
+    6.136
+   ],
+   "zmin": 4.5,
+   "zmax": 9.0,
+   "clutter": false,
+   "source": "ifc",
+   "id": "2iNGNb9Pf5P99FsPlV558I"
+  },
+  {
+   "layer": "element",
+   "ifc_type": "IfcWall",
+   "label": "Basiswand:Ziegel 115",
+   "centroid": [
+    14.65,
+    1.475,
+    6.682
+   ],
+   "zmin": 4.5,
+   "zmax": 9.0,
+   "clutter": false,
+   "source": "ifc",
+   "id": "2iNGNb9Pf5P99FsPlV55Ks"
+  },
+  {
+   "layer": "element",
+   "ifc_type": "IfcWall",
+   "label": "Basiswand:Ziegel 115",
+   "centroid": [
+    4.232,
+    20.245,
+    6.136
+   ],
+   "zmin": 4.5,
+   "zmax": 9.0,
+   "clutter": false,
+   "source": "ifc",
+   "id": "2iNGNb9Pf5P99FsPlV558L"
+  },
+  {
+   "layer": "element",
+   "ifc_type": "IfcWall",
+   "label": "Basiswand:Ziegel+WD hart 240+160",
+   "centroid": [
+    5.802,
+    24.016,
+    19.609
+   ],
+   "zmin": 18.0,
+   "zmax": 22.5,
+   "clutter": false,
+   "source": "ifc",
+   "id": "3DWkEUmNbEUw4r79zq9qX5"
+  },
+  {
+   "layer": "element",
+   "ifc_type": "IfcDoor",
+   "label": "TU DF 1 - Rahmenstock fl\u00e4chenb\u00fcndig:DL - 800 x 2000",
+   "centroid": [
+    4.687,
+    9.406,
+    1.029
+   ],
+   "zmin": -0.0,
+   "zmax": 2.045,
+   "clutter": false,
+   "source": "ifc",
+   "id": "2iNGNb9Pf5P99FsPlV54X2"
+  },
+  {
+   "layer": "element",
+   "ifc_type": "IfcWall",
+   "label": "Basiswand:Ziegel 115",
+   "centroid": [
+    4.5,
+    12.244,
+    6.75
+   ],
+   "zmin": 4.5,
+   "zmax": 9.0,
+   "clutter": false,
+   "source": "ifc",
+   "id": "2iNGNb9Pf5P99FsPlV55E6"
+  },
+  {
+   "layer": "element",
+   "ifc_type": "IfcWall",
+   "label": "Basiswand:Ziegel 115",
+   "centroid": [
+    4.738,
+    10.629,
+    6.136
+   ],
+   "zmin": 4.5,
+   "zmax": 9.0,
+   "clutter": false,
+   "source": "ifc",
+   "id": "2iNGNb9Pf5P99FsPlV55E9"
+  },
+  {
+   "layer": "element",
+   "ifc_type": "IfcDoor",
+   "label": "TU DF 1 - Rahmenstock fl\u00e4chenb\u00fcndig:DL - 800 x 2000",
+   "centroid": [
+    5.303,
+    3.396,
+    1.029
+   ],
+   "zmin": -0.0,
+   "zmax": 2.045,
+   "clutter": false,
+   "source": "ifc",
+   "id": "2iNGNb9Pf5P99FsPlV544f"
+  },
+  {
+   "layer": "element",
+   "ifc_type": "IfcWall",
+   "label": "Basiswand:Ziegel 115",
+   "centroid": [
+    4.738,
+    4.589,
+    6.136
+   ],
+   "zmin": 4.5,
+   "zmax": 9.0,
+   "clutter": false,
+   "source": "ifc",
+   "id": "2iNGNb9Pf5P99FsPlV56jn"
+  },
+  {
+   "layer": "element",
+   "ifc_type": "IfcDoor",
+   "label": "TU DF 1 - Rahmenstock fl\u00e4chenb\u00fcndig:DL - 800 x 2000",
+   "centroid": [
+    4.271,
+    20.278,
+    5.529
+   ],
+   "zmin": 4.5,
+   "zmax": 6.545,
+   "clutter": false,
+   "source": "ifc",
+   "id": "2iNGNb9Pf5P99FsPlV5586"
+  },
+  {
+   "layer": "element",
+   "ifc_type": "IfcDoor",
+   "label": "TU DF 1 - Rahmenstock fl\u00e4chenb\u00fcndig:DL - 800 x 2000",
+   "centroid": [
+    12.769,
+    1.068,
+    1.029
+   ],
+   "zmin": -0.0,
+   "zmax": 2.045,
+   "clutter": false,
+   "source": "ifc",
+   "id": "2iNGNb9Pf5P99FsPlV55zn"
+  },
+  {
+   "layer": "element",
+   "ifc_type": "IfcDoor",
+   "label": "TU DF 1 - Rahmenstock fl\u00e4chenb\u00fcndig:DL - 800 x 2000",
+   "centroid": [
+    4.271,
+    14.296,
+    5.529
+   ],
+   "zmin": 4.5,
+   "zmax": 6.545,
+   "clutter": false,
+   "source": "ifc",
+   "id": "2iNGNb9Pf5P99FsPlV5589"
+  },
+  {
+   "layer": "element",
+   "ifc_type": "IfcWall",
+   "label": "Basiswand:Ziegel 115",
+   "centroid": [
+    13.472,
+    37.248,
+    6.136
+   ],
+   "zmin": 4.5,
+   "zmax": 9.0,
+   "clutter": false,
+   "source": "ifc",
+   "id": "2iNGNb9Pf5P99FsPlV57ys"
+  },
+  {
+   "layer": "element",
+   "ifc_type": "IfcDoor",
+   "label": "TU DF 1 - Rahmenstock fl\u00e4chenb\u00fcndig:DL - 800 x 2000",
+   "centroid": [
+    3.597,
+    26.209,
+    5.529
+   ],
+   "zmin": 4.5,
+   "zmax": 6.545,
+   "clutter": false,
+   "source": "ifc",
+   "id": "2iNGNb9Pf5P99FsPlV56H8"
+  },
+  {
+   "layer": "element",
+   "ifc_type": "IfcDoor",
+   "label": "TU DF 1 - Rahmenstock fl\u00e4chenb\u00fcndig:DL - 800 x 2000",
+   "centroid": [
+    4.667,
+    4.622,
+    5.529
+   ],
+   "zmin": 4.5,
+   "zmax": 6.545,
+   "clutter": false,
+   "source": "ifc",
+   "id": "2iNGNb9Pf5P99FsPlV56jm"
+  },
+  {
+   "layer": "element",
+   "ifc_type": "IfcDoor",
+   "label": "TU DF 1 - Rahmenstock fl\u00e4chenb\u00fcndig:DL - 800 x 2000",
+   "centroid": [
+    4.667,
+    10.662,
+    5.529
+   ],
+   "zmin": 4.5,
+   "zmax": 6.545,
+   "clutter": false,
+   "source": "ifc",
+   "id": "2iNGNb9Pf5P99FsPlV55EC"
+  },
+  {
+   "layer": "element",
+   "ifc_type": "IfcDoor",
+   "label": "TU DF 1 - Rahmenstock fl\u00e4chenb\u00fcndig:DL - 800 x 2000",
+   "centroid": [
+    14.684,
+    2.463,
+    5.529
+   ],
+   "zmin": 4.5,
+   "zmax": 6.545,
+   "clutter": false,
+   "source": "ifc",
+   "id": "2iNGNb9Pf5P99FsPlV56CL"
+  },
+  {
+   "layer": "element",
+   "ifc_type": "IfcDoor",
+   "label": "TU DF 1 - Rahmenstock fl\u00e4chenb\u00fcndig:DL - 800 x 2000",
+   "centroid": [
+    13.505,
+    37.303,
+    5.529
+   ],
+   "zmin": 4.5,
+   "zmax": 6.545,
+   "clutter": false,
+   "source": "ifc",
+   "id": "2iNGNb9Pf5P99FsPlV57yv"
+  },
+  {
+   "layer": "element",
+   "ifc_type": "IfcDoor",
+   "label": "TU DF 1 - Haust\u00fcre:ML - 1135 x 2250",
+   "centroid": [
+    4.599,
+    6.95,
+    19.047
+   ],
+   "zmin": 17.8,
+   "zmax": 20.25,
+   "clutter": false,
+   "source": "ifc",
+   "id": "0HhC9uqTb6QgUcRAtyFIEY"
+  },
+  {
+   "layer": "element",
+   "ifc_type": "IfcRailing",
+   "label": "Gel\u00e4nder:Vertikale St\u00e4be mit Handlauf",
+   "centroid": [
+    4.498,
+    2.805,
+    18.488
+   ],
+   "zmin": 18.09,
+   "zmax": 19.0,
+   "clutter": false,
+   "source": "ifc",
+   "id": "0HhC9uqTb6QgUcRAtyFIO_"
+  },
+  {
+   "layer": "element",
+   "ifc_type": "IfcFurniture",
+   "label": "Sofa-02:B 800",
+   "centroid": [
+    4.64,
+    38.258,
+    0.439
+   ],
+   "zmin": 0.0,
+   "zmax": 0.879,
+   "clutter": true,
+   "source": "ifc",
+   "id": "2iNGNb9Pf5P99FsPlV52P9"
+  },
+  {
+   "layer": "element",
+   "ifc_type": "IfcFurniture",
+   "label": "Sofa-02:B 800",
+   "centroid": [
+    3.806,
+    37.193,
+    0.439
+   ],
+   "zmin": 0.0,
+   "zmax": 0.879,
+   "clutter": true,
+   "source": "ifc",
+   "id": "2iNGNb9Pf5P99FsPlV52Th"
+  },
+  {
+   "layer": "element",
+   "ifc_type": "IfcFurniture",
+   "label": "Sofa-02:B 800",
+   "centroid": [
+    5.218,
+    36.4,
+    0.439
+   ],
+   "zmin": 0.0,
+   "zmax": 0.879,
+   "clutter": true,
+   "source": "ifc",
+   "id": "2iNGNb9Pf5P99FsPlV52Hk"
+  },
+  {
+   "layer": "element",
+   "ifc_type": "IfcFurniture",
+   "label": "Sofa-02:B 800",
+   "centroid": [
+    5.218,
+    35.52,
+    0.439
+   ],
+   "zmin": 0.0,
+   "zmax": 0.879,
+   "clutter": true,
+   "source": "ifc",
+   "id": "2iNGNb9Pf5P99FsPlV52FC"
+  },
+  {
+   "layer": "element",
+   "ifc_type": "IfcFurniture",
+   "label": "Garderobe-01:600 x 600 x 2000",
+   "centroid": [
+    3.84,
+    38.04,
+    1.0
+   ],
+   "zmin": 0.0,
+   "zmax": 2.0,
+   "clutter": true,
+   "source": "ifc",
+   "id": "2iNGNb9Pf5P99FsPlV52Df"
+  },
+  {
+   "layer": "element",
+   "ifc_type": "IfcFurniture",
+   "label": "Garderobe-01:600 x 600 x 2000",
+   "centroid": [
+    3.82,
+    36.4,
+    1.0
+   ],
+   "zmin": 0.0,
+   "zmax": 2.0,
+   "clutter": true,
+   "source": "ifc",
+   "id": "2iNGNb9Pf5P99FsPlV524P"
+  },
+  {
+   "layer": "element",
+   "ifc_type": "IfcFurniture",
+   "label": "Schreibtisch-02:1800 x 900",
+   "centroid": [
+    3.97,
+    23.342,
+    0.375
+   ],
+   "zmin": -0.0,
+   "zmax": 0.75,
+   "clutter": true,
+   "source": "ifc",
+   "id": "2iNGNb9Pf5P99FsPlV53y2"
+  },
+  {
+   "layer": "element",
+   "ifc_type": "IfcFurniture",
+   "label": "Schreibtisch-02:1800 x 900",
+   "centroid": [
+    16.6,
+    38.05,
+    0.375
+   ],
+   "zmin": -0.0,
+   "zmax": 0.75,
+   "clutter": true,
+   "source": "ifc",
+   "id": "2iNGNb9Pf5P99FsPlV53qy"
+  },
+  {
+   "layer": "element",
+   "ifc_type": "IfcFurniture",
+   "label": "Schreibtisch-02:1800 x 900",
+   "centroid": [
+    14.7,
+    38.05,
+    0.375
+   ],
+   "zmin": -0.0,
+   "zmax": 0.75,
+   "clutter": true,
+   "source": "ifc",
+   "id": "2iNGNb9Pf5P99FsPlV53g7"
+  },
+  {
+   "layer": "element",
+   "ifc_type": "IfcFurniture",
+   "label": "Schreibtisch-02:1800 x 900",
+   "centroid": [
+    3.97,
+    20.42,
+    0.375
+   ],
+   "zmin": -0.0,
+   "zmax": 0.75,
+   "clutter": true,
+   "source": "ifc",
+   "id": "2iNGNb9Pf5P99FsPlV53Ww"
+  },
+  {
+   "layer": "element",
+   "ifc_type": "IfcFurniture",
+   "label": "Garderobe-01:600 x 600 x 2000",
+   "centroid": [
+    12.9,
+    36.8,
+    1.0
+   ],
+   "zmin": 0.0,
+   "zmax": 2.0,
+   "clutter": true,
+   "source": "ifc",
+   "id": "2iNGNb9Pf5P99FsPlV53dm"
+  },
+  {
+   "layer": "element",
+   "ifc_type": "IfcFurniture",
+   "label": "Drehstuhl-05:Typ1",
+   "centroid": [
+    4.74,
+    23.402,
+    0.419
+   ],
+   "zmin": 0.0,
+   "zmax": 0.837,
+   "clutter": true,
+   "source": "ifc",
+   "id": "2iNGNb9Pf5P99FsPlV53Uo"
+  },
+  {
+   "layer": "element",
+   "ifc_type": "IfcFurniture",
+   "label": "Drehstuhl-05:Typ1",
+   "centroid": [
+    4.74,
+    20.42,
+    0.419
+   ],
+   "zmin": 0.0,
+   "zmax": 0.837,
+   "clutter": true,
+   "source": "ifc",
+   "id": "2iNGNb9Pf5P99FsPlV53Jy"
+  },
+  {
+   "layer": "element",
+   "ifc_type": "IfcFurniture",
+   "label": "Drehstuhl-05:Typ1",
+   "centroid": [
+    14.8,
+    37.1,
+    0.419
+   ],
+   "zmin": 0.0,
+   "zmax": 0.837,
+   "clutter": true,
+   "source": "ifc",
+   "id": "2iNGNb9Pf5P99FsPlV53GB"
+  },
+  {
+   "layer": "element",
+   "ifc_type": "IfcFurniture",
+   "label": "Drehstuhl-05:Typ1",
+   "centroid": [
+    16.7,
+    37.1,
+    0.419
+   ],
+   "zmin": 0.0,
+   "zmax": 0.837,
+   "clutter": true,
+   "source": "ifc",
+   "id": "2iNGNb9Pf5P99FsPlV53Hg"
+  },
+  {
+   "layer": "element",
+   "ifc_type": "IfcFurniture",
+   "label": "Schreibtisch-02:1800 x 900",
+   "centroid": [
+    3.97,
+    17.393,
+    0.375
+   ],
+   "zmin": -0.0,
+   "zmax": 0.75,
+   "clutter": true,
+   "source": "ifc",
+   "id": "2iNGNb9Pf5P99FsPlV53Nz"
+  },
+  {
+   "layer": "element",
+   "ifc_type": "IfcFurniture",
+   "label": "Schreibtisch-02:1800 x 900",
+   "centroid": [
+    3.97,
+    14.751,
+    0.375
+   ],
+   "zmin": -0.0,
+   "zmax": 0.75,
+   "clutter": true,
+   "source": "ifc",
+   "id": "2iNGNb9Pf5P99FsPlV53N_"
+  },
+  {
+   "layer": "element",
+   "ifc_type": "IfcFurniture",
+   "label": "Drehstuhl-05:Typ1",
+   "centroid": [
+    4.74,
+    17.453,
+    0.419
+   ],
+   "zmin": 0.0,
+   "zmax": 0.837,
+   "clutter": true,
+   "source": "ifc",
+   "id": "2iNGNb9Pf5P99FsPlV53NW"
+  },
+  {
+   "layer": "element",
+   "ifc_type": "IfcFurniture",
+   "label": "Drehstuhl-05:Typ1",
+   "centroid": [
+    4.74,
+    14.751,
+    0.419
+   ],
+   "zmin": 0.0,
+   "zmax": 0.837,
+   "clutter": true,
+   "source": "ifc",
+   "id": "2iNGNb9Pf5P99FsPlV53Nb"
+  },
+  {
+   "layer": "element",
+   "ifc_type": "IfcFurniture",
+   "label": "Schreibtisch-02:1800 x 900",
+   "centroid": [
+    16.6,
+    2.05,
+    0.375
+   ],
+   "zmin": -0.0,
+   "zmax": 0.75,
+   "clutter": true,
+   "source": "ifc",
+   "id": "2iNGNb9Pf5P99FsPlV54dv"
+  },
+  {
+   "layer": "element",
+   "ifc_type": "IfcFurniture",
+   "label": "Schreibtisch-02:1800 x 900",
+   "centroid": [
+    14.7,
+    2.05,
+    0.375
+   ],
+   "zmin": -0.0,
+   "zmax": 0.75,
+   "clutter": true,
+   "source": "ifc",
+   "id": "2iNGNb9Pf5P99FsPlV54du"
+  },
+  {
+   "layer": "element",
+   "ifc_type": "IfcFurniture",
+   "label": "Drehstuhl-05:Typ1",
+   "centroid": [
+    14.8,
+    1.1,
+    0.419
+   ],
+   "zmin": 0.0,
+   "zmax": 0.837,
+   "clutter": true,
+   "source": "ifc",
+   "id": "2iNGNb9Pf5P99FsPlV54dx"
+  },
+  {
+   "layer": "element",
+   "ifc_type": "IfcFurniture",
+   "label": "Drehstuhl-05:Typ1",
+   "centroid": [
+    16.7,
+    1.1,
+    0.419
+   ],
+   "zmin": 0.0,
+   "zmax": 0.837,
+   "clutter": true,
+   "source": "ifc",
+   "id": "2iNGNb9Pf5P99FsPlV54dz"
+  },
+  {
+   "layer": "element",
+   "ifc_type": "IfcFurniture",
+   "label": "Schreibtisch-02:1800 x 900",
+   "centroid": [
+    4.01,
+    7.802,
+    0.375
+   ],
+   "zmin": -0.0,
+   "zmax": 0.75,
+   "clutter": true,
+   "source": "ifc",
+   "id": "2iNGNb9Pf5P99FsPlV54SN"
+  },
+  {
+   "layer": "element",
+   "ifc_type": "IfcFurniture",
+   "label": "Schreibtisch-02:1800 x 900",
+   "centroid": [
+    4.01,
+    5.28,
+    0.375
+   ],
+   "zmin": -0.0,
+   "zmax": 0.75,
+   "clutter": true,
+   "source": "ifc",
+   "id": "2iNGNb9Pf5P99FsPlV54SP"
+  },
+  {
+   "layer": "element",
+   "ifc_type": "IfcFurniture",
+   "label": "Drehstuhl-05:Typ1",
+   "centroid": [
+    4.78,
+    7.862,
+    0.419
+   ],
+   "zmin": 0.0,
+   "zmax": 0.837,
+   "clutter": true,
+   "source": "ifc",
+   "id": "2iNGNb9Pf5P99FsPlV54SO"
+  },
+  {
+   "layer": "element",
+   "ifc_type": "IfcFurniture",
+   "label": "Drehstuhl-05:Typ1",
+   "centroid": [
+    4.78,
+    5.28,
+    0.419
+   ],
+   "zmin": 0.0,
+   "zmax": 0.837,
+   "clutter": true,
+   "source": "ifc",
+   "id": "2iNGNb9Pf5P99FsPlV54SQ"
+  },
+  {
+   "layer": "element",
+   "ifc_type": "IfcFurniture",
+   "label": "Garderobe-01:600 x 600 x 2000",
+   "centroid": [
+    13.2,
+    2.2,
+    1.0
+   ],
+   "zmin": 0.0,
+   "zmax": 2.0,
+   "clutter": true,
+   "source": "ifc",
+   "id": "2iNGNb9Pf5P99FsPlV55oh"
+  },
+  {
+   "layer": "element",
+   "ifc_type": "IfcFurniture",
+   "label": "Regal-03:Typ1",
+   "centroid": [
+    7.873,
+    0.314,
+    0.925
+   ],
+   "zmin": 0.0,
+   "zmax": 1.85,
+   "clutter": true,
+   "source": "ifc",
+   "id": "2iNGNb9Pf5P99FsPlV55nG"
+  },
+  {
+   "layer": "element",
+   "ifc_type": "IfcFurniture",
+   "label": "Regal-03:Typ1",
+   "centroid": [
+    5.341,
+    27.997,
+    0.925
+   ],
+   "zmin": 0.0,
+   "zmax": 1.85,
+   "clutter": true,
+   "source": "ifc",
+   "id": "2iNGNb9Pf5P99FsPlV55aB"
+  },
+  {
+   "layer": "element",
+   "ifc_type": "IfcFurniture",
+   "label": "Regal-03:Typ1",
+   "centroid": [
+    3.645,
+    26.992,
+    0.925
+   ],
+   "zmin": 0.0,
+   "zmax": 1.85,
+   "clutter": true,
+   "source": "ifc",
+   "id": "2iNGNb9Pf5P99FsPlV55Qo"
+  },
+  {
+   "layer": "element",
+   "ifc_type": "IfcFurniture",
+   "label": "Sofa-02:B 800",
+   "centroid": [
+    3.731,
+    28.734,
+    0.439
+   ],
+   "zmin": 0.0,
+   "zmax": 0.879,
+   "clutter": true,
+   "source": "ifc",
+   "id": "2iNGNb9Pf5P99FsPlV55PQ"
+  },
+  {
+   "layer": "element",
+   "ifc_type": "IfcFurniture",
+   "label": "Sofa-02:B 800",
+   "centroid": [
+    3.812,
+    2.867,
+    0.439
+   ],
+   "zmin": 0.0,
+   "zmax": 0.879,
+   "clutter": true,
+   "source": "ifc",
+   "id": "2iNGNb9Pf5P99FsPlV55UP"
+  },
+  {
+   "layer": "element",
+   "ifc_type": "IfcFurniture",
+   "label": "Schreibtisch-02:1800 x 900",
+   "centroid": [
+    11.477,
+    2.07,
+    0.375
+   ],
+   "zmin": -0.0,
+   "zmax": 0.75,
+   "clutter": true,
+   "source": "ifc",
+   "id": "2iNGNb9Pf5P99FsPlV55TR"
+  },
+  {
+   "layer": "element",
+   "ifc_type": "IfcFurniture",
+   "label": "Drehstuhl-05:Typ1",
+   "centroid": [
+    11.577,
+    1.12,
+    0.419
+   ],
+   "zmin": 0.0,
+   "zmax": 0.837,
+   "clutter": true,
+   "source": "ifc",
+   "id": "2iNGNb9Pf5P99FsPlV55TQ"
+  },
+  {
+   "layer": "element",
+   "ifc_type": "IfcFurniture",
+   "label": "Schreibtisch-02:1800 x 900",
+   "centroid": [
+    4.988,
+    18.947,
+    4.875
+   ],
+   "zmin": 4.5,
+   "zmax": 5.25,
+   "clutter": true,
+   "source": "ifc",
+   "id": "2iNGNb9Pf5P99FsPlV55Ef"
+  },
+  {
+   "layer": "element",
+   "ifc_type": "IfcFurniture",
+   "label": "Schreibtisch-02:1800 x 900",
+   "centroid": [
+    4.988,
+    15.865,
+    4.875
+   ],
+   "zmin": 4.5,
+   "zmax": 5.25,
+   "clutter": true,
+   "source": "ifc",
+   "id": "2iNGNb9Pf5P99FsPlV55Eh"
+  },
+  {
+   "layer": "element",
+   "ifc_type": "IfcFurniture",
+   "label": "Drehstuhl-05:Typ1",
+   "centroid": [
+    4.218,
+    19.007,
+    4.919
+   ],
+   "zmin": 4.5,
+   "zmax": 5.337,
+   "clutter": true,
+   "source": "ifc",
+   "id": "2iNGNb9Pf5P99FsPlV55Eg"
+  },
+  {
+   "layer": "element",
+   "ifc_type": "IfcFurniture",
+   "label": "Drehstuhl-05:Typ1",
+   "centroid": [
+    4.218,
+    15.865,
+    4.919
+   ],
+   "zmin": 4.5,
+   "zmax": 5.337,
+   "clutter": true,
+   "source": "ifc",
+   "id": "2iNGNb9Pf5P99FsPlV55Ei"
+  },
+  {
+   "layer": "element",
+   "ifc_type": "IfcFurniture",
+   "label": "Schreibtisch-02:1800 x 900",
+   "centroid": [
+    3.95,
+    9.07,
+    4.875
+   ],
+   "zmin": 4.5,
+   "zmax": 5.25,
+   "clutter": true,
+   "source": "ifc",
+   "id": "2iNGNb9Pf5P99FsPlV56hy"
+  },
+  {
+   "layer": "element",
+   "ifc_type": "IfcFurniture",
+   "label": "Schreibtisch-02:1800 x 900",
+   "centroid": [
+    3.95,
+    6.348,
+    4.875
+   ],
+   "zmin": 4.5,
+   "zmax": 5.25,
+   "clutter": true,
+   "source": "ifc",
+   "id": "2iNGNb9Pf5P99FsPlV56h_"
+  },
+  {
+   "layer": "element",
+   "ifc_type": "IfcFurniture",
+   "label": "Drehstuhl-05:Typ1",
+   "centroid": [
+    4.72,
+    9.13,
+    4.919
+   ],
+   "zmin": 4.5,
+   "zmax": 5.337,
+   "clutter": true,
+   "source": "ifc",
+   "id": "2iNGNb9Pf5P99FsPlV56hX"
+  },
+  {
+   "layer": "element",
+   "ifc_type": "IfcFurniture",
+   "label": "Drehstuhl-05:Typ1",
+   "centroid": [
+    4.72,
+    6.348,
+    4.919
+   ],
+   "zmin": 4.5,
+   "zmax": 5.337,
+   "clutter": true,
+   "source": "ifc",
+   "id": "2iNGNb9Pf5P99FsPlV56hZ"
+  },
+  {
+   "layer": "element",
+   "ifc_type": "IfcFurniture",
+   "label": "Schreibtisch-02:1800 x 900",
+   "centroid": [
+    3.95,
+    2.42,
+    4.875
+   ],
+   "zmin": 4.5,
+   "zmax": 5.25,
+   "clutter": true,
+   "source": "ifc",
+   "id": "2iNGNb9Pf5P99FsPlV56YG"
+  },
+  {
+   "layer": "element",
+   "ifc_type": "IfcFurniture",
+   "label": "Drehstuhl-05:Typ1",
+   "centroid": [
+    4.72,
+    2.42,
+    4.919
+   ],
+   "zmin": 4.5,
+   "zmax": 5.337,
+   "clutter": true,
+   "source": "ifc",
+   "id": "2iNGNb9Pf5P99FsPlV56YI"
+  },
+  {
+   "layer": "element",
+   "ifc_type": "IfcFurniture",
+   "label": "Regal-03:Typ1",
+   "centroid": [
+    4.515,
+    0.409,
+    5.425
+   ],
+   "zmin": 4.5,
+   "zmax": 6.35,
+   "clutter": true,
+   "source": "ifc",
+   "id": "2iNGNb9Pf5P99FsPlV56W$"
+  },
+  {
+   "layer": "element",
+   "ifc_type": "IfcFurniture",
+   "label": "Regal-03:Typ1",
+   "centroid": [
+    7.052,
+    0.409,
+    5.425
+   ],
+   "zmin": 4.5,
+   "zmax": 6.35,
+   "clutter": true,
+   "source": "ifc",
+   "id": "2iNGNb9Pf5P99FsPlV56Xa"
+  },
+  {
+   "layer": "element",
+   "ifc_type": "IfcFurniture",
+   "label": "Sofa-03:B 1100",
+   "centroid": [
+    8.927,
+    0.55,
+    4.876
+   ],
+   "zmin": 4.5,
+   "zmax": 5.252,
+   "clutter": true,
+   "source": "ifc",
+   "id": "2iNGNb9Pf5P99FsPlV56dD"
+  },
+  {
+   "layer": "element",
+   "ifc_type": "IfcFurniture",
+   "label": "Sofa-03:B 1100",
+   "centroid": [
+    10.127,
+    0.55,
+    4.876
+   ],
+   "zmin": 4.5,
+   "zmax": 5.252,
+   "clutter": true,
+   "source": "ifc",
+   "id": "2iNGNb9Pf5P99FsPlV56bh"
+  },
+  {
+   "layer": "element",
+   "ifc_type": "IfcFurniture",
+   "label": "Regal-03:Typ1",
+   "centroid": [
+    5.341,
+    21.748,
+    5.425
+   ],
+   "zmin": 4.5,
+   "zmax": 6.35,
+   "clutter": true,
+   "source": "ifc",
+   "id": "2iNGNb9Pf5P99FsPlV56LO"
+  },
+  {
+   "layer": "element",
+   "ifc_type": "IfcFurniture",
+   "label": "Regal-03:Typ1",
+   "centroid": [
+    3.651,
+    23.077,
+    5.425
+   ],
+   "zmin": 4.5,
+   "zmax": 6.35,
+   "clutter": true,
+   "source": "ifc",
+   "id": "2iNGNb9Pf5P99FsPlV56Lh"
+  },
+  {
+   "layer": "element",
+   "ifc_type": "IfcFurniture",
+   "label": "Sofa-03:B 1100",
+   "centroid": [
+    8.927,
+    0.55,
+    4.876
+   ],
+   "zmin": 4.5,
+   "zmax": 5.252,
+   "clutter": true,
+   "source": "ifc",
+   "id": "2iNGNb9Pf5P99FsPlV5689"
+  },
+  {
+   "layer": "element",
+   "ifc_type": "IfcFurniture",
+   "label": "Sofa-03:B 1100",
+   "centroid": [
+    10.127,
+    0.55,
+    4.876
+   ],
+   "zmin": 4.5,
+   "zmax": 5.252,
+   "clutter": true,
+   "source": "ifc",
+   "id": "2iNGNb9Pf5P99FsPlV5688"
+  },
+  {
+   "layer": "element",
+   "ifc_type": "IfcFurniture",
+   "label": "Regal-03:Typ1",
+   "centroid": [
+    11.752,
+    0.409,
+    5.425
+   ],
+   "zmin": 4.5,
+   "zmax": 6.35,
+   "clutter": true,
+   "source": "ifc",
+   "id": "2iNGNb9Pf5P99FsPlV5694"
+  },
+  {
+   "layer": "element",
+   "ifc_type": "IfcFurniture",
+   "label": "Schreibtisch-02:1800 x 900",
+   "centroid": [
+    16.971,
+    1.5,
+    4.875
+   ],
+   "zmin": 4.5,
+   "zmax": 5.25,
+   "clutter": true,
+   "source": "ifc",
+   "id": "2iNGNb9Pf5P99FsPlV56EP"
+  },
+  {
+   "layer": "element",
+   "ifc_type": "IfcFurniture",
+   "label": "Drehstuhl-05:Typ1",
+   "centroid": [
+    16.202,
+    1.5,
+    4.919
+   ],
+   "zmin": 4.5,
+   "zmax": 5.337,
+   "clutter": true,
+   "source": "ifc",
+   "id": "2iNGNb9Pf5P99FsPlV56EO"
+  },
+  {
+   "layer": "element",
+   "ifc_type": "IfcFurniture",
+   "label": "Sofa-03:B 1100",
+   "centroid": [
+    15.087,
+    0.705,
+    4.876
+   ],
+   "zmin": 4.5,
+   "zmax": 5.252,
+   "clutter": true,
+   "source": "ifc",
+   "id": "2iNGNb9Pf5P99FsPlV5631"
+  },
+  {
+   "layer": "element",
+   "ifc_type": "IfcFurniture",
+   "label": "Sofa-02:B 800",
+   "centroid": [
+    5.234,
+    33.078,
+    0.439
+   ],
+   "zmin": 0.0,
+   "zmax": 0.879,
+   "clutter": true,
+   "source": "ifc",
+   "id": "2iNGNb9Pf5P99FsPlV564K"
+  },
+  {
+   "layer": "element",
+   "ifc_type": "IfcFurniture",
+   "label": "Sofa-02:B 800",
+   "centroid": [
+    5.234,
+    32.198,
+    0.439
+   ],
+   "zmin": 0.0,
+   "zmax": 0.879,
+   "clutter": true,
+   "source": "ifc",
+   "id": "2iNGNb9Pf5P99FsPlV564N"
+  },
+  {
+   "layer": "element",
+   "ifc_type": "IfcFurniture",
+   "label": "Regal-03:Typ1",
+   "centroid": [
+    7.211,
+    38.371,
+    5.425
+   ],
+   "zmin": 4.5,
+   "zmax": 6.35,
+   "clutter": true,
+   "source": "ifc",
+   "id": "2iNGNb9Pf5P99FsPlV57w6"
+  },
+  {
+   "layer": "element",
+   "ifc_type": "IfcFurniture",
+   "label": "Sofa-03:B 1100",
+   "centroid": [
+    9.086,
+    38.23,
+    4.876
+   ],
+   "zmin": 4.5,
+   "zmax": 5.252,
+   "clutter": true,
+   "source": "ifc",
+   "id": "2iNGNb9Pf5P99FsPlV57w9"
+  },
+  {
+   "layer": "element",
+   "ifc_type": "IfcFurniture",
+   "label": "Sofa-03:B 1100",
+   "centroid": [
+    10.286,
+    38.23,
+    4.876
+   ],
+   "zmin": 4.5,
+   "zmax": 5.252,
+   "clutter": true,
+   "source": "ifc",
+   "id": "2iNGNb9Pf5P99FsPlV57w8"
+  },
+  {
+   "layer": "element",
+   "ifc_type": "IfcFurniture",
+   "label": "Regal-03:Typ1",
+   "centroid": [
+    11.911,
+    38.371,
+    5.425
+   ],
+   "zmin": 4.5,
+   "zmax": 6.35,
+   "clutter": true,
+   "source": "ifc",
+   "id": "2iNGNb9Pf5P99FsPlV57wB"
+  },
+  {
+   "layer": "element",
+   "ifc_type": "IfcFurniture",
+   "label": "Schreibtisch-02:1800 x 900",
+   "centroid": [
+    17.13,
+    37.36,
+    4.875
+   ],
+   "zmin": 4.5,
+   "zmax": 5.25,
+   "clutter": true,
+   "source": "ifc",
+   "id": "2iNGNb9Pf5P99FsPlV57wA"
+  },
+  {
+   "layer": "element",
+   "ifc_type": "IfcFurniture",
+   "label": "Drehstuhl-05:Typ1",
+   "centroid": [
+    16.36,
+    37.36,
+    4.919
+   ],
+   "zmin": 4.5,
+   "zmax": 5.337,
+   "clutter": true,
+   "source": "ifc",
+   "id": "2iNGNb9Pf5P99FsPlV57wD"
+  },
+  {
+   "layer": "element",
+   "ifc_type": "IfcFurniture",
+   "label": "Sofa-03:B 1100",
+   "centroid": [
+    13.909,
+    38.02,
+    4.876
+   ],
+   "zmin": 4.5,
+   "zmax": 5.252,
+   "clutter": true,
+   "source": "ifc",
+   "id": "2iNGNb9Pf5P99FsPlV57wC"
+  },
+  {
+   "layer": "element",
+   "ifc_type": "IfcFurniture",
+   "label": "Sofa-03:B 1100",
+   "centroid": [
+    6.75,
+    36.9,
+    4.876
+   ],
+   "zmin": 4.5,
+   "zmax": 5.252,
+   "clutter": true,
+   "source": "ifc",
+   "id": "2iNGNb9Pf5P99FsPlV57qD"
+  },
+  {
+   "layer": "element",
+   "ifc_type": "IfcFurniture",
+   "label": "Schreibtisch-02:1800 x 900",
+   "centroid": [
+    11.3,
+    37.05,
+    0.375
+   ],
+   "zmin": -0.0,
+   "zmax": 0.75,
+   "clutter": true,
+   "source": "ifc",
+   "id": "2iNGNb9Pf5P99FsPlV57f$"
+  },
+  {
+   "layer": "element",
+   "ifc_type": "IfcFurniture",
+   "label": "Drehstuhl-05:Typ1",
+   "centroid": [
+    11.2,
+    38.0,
+    0.419
+   ],
+   "zmin": 0.0,
+   "zmax": 0.837,
+   "clutter": true,
+   "source": "ifc",
+   "id": "2iNGNb9Pf5P99FsPlV57f_"
+  },
+  {
+   "layer": "element",
+   "ifc_type": "IfcFurniture",
+   "label": "Garderobe-01:600 x 600 x 2000",
+   "centroid": [
+    6.331,
+    38.266,
+    1.0
+   ],
+   "zmin": 0.0,
+   "zmax": 2.0,
+   "clutter": true,
+   "source": "ifc",
+   "id": "2iNGNb9Pf5P99FsPlV57Zk"
+  },
+  {
+   "layer": "element",
+   "ifc_type": "IfcFurniture",
+   "label": "Garderobe-01:600 x 600 x 2000",
+   "centroid": [
+    6.331,
+    36.739,
+    1.0
+   ],
+   "zmin": 0.0,
+   "zmax": 2.0,
+   "clutter": true,
+   "source": "ifc",
+   "id": "2iNGNb9Pf5P99FsPlV57Rw"
+  }
+ ],
+ "edges": [
+  {
+   "relation": "contains",
+   "key": "contains",
+   "source": "building",
+   "target": "1jPCssxb5C1RSM_YHIx$$2"
+  },
+  {
+   "relation": "contains",
+   "key": "contains",
+   "source": "building",
+   "target": "13LV5dTeP3CAox54x56C1Z"
+  },
+  {
+   "relation": "contains",
+   "key": "contains",
+   "source": "building",
+   "target": "1jPCssxb5C1RSM_YHIx$zl"
+  },
+  {
+   "relation": "contains",
+   "key": "contains",
+   "source": "building",
+   "target": "1owBOg$5v0GwDBa7HPOsiG"
+  },
+  {
+   "relation": "contains",
+   "key": "contains",
+   "source": "building",
+   "target": "2qGKQC4mr7bQHi0erg34tc"
+  },
+  {
+   "relation": "contains",
+   "key": "contains",
+   "source": "building",
+   "target": "2qGKQC4mr7bQHi0erg34rO"
+  },
+  {
+   "relation": "contains",
+   "key": "contains",
+   "source": "building",
+   "target": "3DWkEUmNbEUw4r79zq9qR2"
+  },
+  {
+   "relation": "contains",
+   "key": "contains",
+   "source": "1jPCssxb5C1RSM_YHIx$$2",
+   "target": "INF-1jPCssxb5C1RSM_YHIx$$2-0002"
+  },
+  {
+   "relation": "contains",
+   "key": "contains",
+   "source": "1jPCssxb5C1RSM_YHIx$$2",
+   "target": "INF-1jPCssxb5C1RSM_YHIx$$2-0003"
+  },
+  {
+   "relation": "contains",
+   "key": "contains",
+   "source": "1jPCssxb5C1RSM_YHIx$$2",
+   "target": "INF-1jPCssxb5C1RSM_YHIx$$2-0004"
+  },
+  {
+   "relation": "contains",
+   "key": "contains",
+   "source": "1jPCssxb5C1RSM_YHIx$$2",
+   "target": "EXT-1jPCssxb5C1RSM_YHIx$$2"
+  },
+  {
+   "relation": "contains",
+   "provenance": "fallback",
+   "key": "contains",
+   "source": "1jPCssxb5C1RSM_YHIx$$2",
+   "target": "07CR7fHeP4QfYTyO_6ZsDE"
+  },
+  {
+   "relation": "contains",
+   "provenance": "fallback",
+   "key": "contains",
+   "source": "1jPCssxb5C1RSM_YHIx$$2",
+   "target": "1hXC4WhvX7OfF8X3V_$Y76"
+  },
+  {
+   "relation": "contains",
+   "provenance": "fallback",
+   "key": "contains",
+   "source": "1jPCssxb5C1RSM_YHIx$$2",
+   "target": "07CR7fHeP4QfYTyO_6Zts4"
+  },
+  {
+   "relation": "contains",
+   "provenance": "fallback",
+   "key": "contains",
+   "source": "1jPCssxb5C1RSM_YHIx$$2",
+   "target": "07CR7fHeP4QfYTyO_6ZtpJ"
+  },
+  {
+   "relation": "contains",
+   "provenance": "fallback",
+   "key": "contains",
+   "source": "1jPCssxb5C1RSM_YHIx$$2",
+   "target": "07CR7fHeP4QfYTyO_6ZtnF"
+  },
+  {
+   "relation": "contains",
+   "provenance": "fallback",
+   "key": "contains",
+   "source": "1jPCssxb5C1RSM_YHIx$$2",
+   "target": "07CR7fHeP4QfYTyO_6Ztm1"
+  },
+  {
+   "relation": "contains",
+   "provenance": "fallback",
+   "key": "contains",
+   "source": "1jPCssxb5C1RSM_YHIx$$2",
+   "target": "07CR7fHeP4QfYTyO_6ZtwW"
+  },
+  {
+   "relation": "contains",
+   "provenance": "fallback",
+   "key": "contains",
+   "source": "1jPCssxb5C1RSM_YHIx$$2",
+   "target": "07CR7fHeP4QfYTyO_6ZtwJ"
+  },
+  {
+   "relation": "contains",
+   "provenance": "fallback",
+   "key": "contains",
+   "source": "1jPCssxb5C1RSM_YHIx$$2",
+   "target": "07CR7fHeP4QfYTyO_6ZtuF"
+  },
+  {
+   "relation": "contains",
+   "provenance": "fallback",
+   "key": "contains",
+   "source": "1jPCssxb5C1RSM_YHIx$$2",
+   "target": "1hXC4WhvX7OfF8X3V_$Y93"
+  },
+  {
+   "relation": "contains",
+   "key": "contains",
+   "source": "13LV5dTeP3CAox54x56C1Z",
+   "target": "26uBYUqsT9fu$2hZqJnL2H"
+  },
+  {
+   "relation": "contains",
+   "key": "contains",
+   "source": "13LV5dTeP3CAox54x56C1Z",
+   "target": "26uBYUqsT9fu$2hZqJnL2K"
+  },
+  {
+   "relation": "contains",
+   "key": "contains",
+   "source": "13LV5dTeP3CAox54x56C1Z",
+   "target": "26uBYUqsT9fu$2hZqJnL2N"
+  },
+  {
+   "relation": "contains",
+   "key": "contains",
+   "source": "13LV5dTeP3CAox54x56C1Z",
+   "target": "26uBYUqsT9fu$2hZqJnL2Q"
+  },
+  {
+   "relation": "contains",
+   "key": "contains",
+   "source": "13LV5dTeP3CAox54x56C1Z",
+   "target": "26uBYUqsT9fu$2hZqJnL2T"
+  },
+  {
+   "relation": "contains",
+   "key": "contains",
+   "source": "13LV5dTeP3CAox54x56C1Z",
+   "target": "26uBYUqsT9fu$2hZqJnL3W"
+  },
+  {
+   "relation": "contains",
+   "key": "contains",
+   "source": "13LV5dTeP3CAox54x56C1Z",
+   "target": "26uBYUqsT9fu$2hZqJnL3Z"
+  },
+  {
+   "relation": "contains",
+   "key": "contains",
+   "source": "13LV5dTeP3CAox54x56C1Z",
+   "target": "26uBYUqsT9fu$2hZqJnL3c"
+  },
+  {
+   "relation": "contains",
+   "key": "contains",
+   "source": "13LV5dTeP3CAox54x56C1Z",
+   "target": "26uBYUqsT9fu$2hZqJnL3f"
+  },
+  {
+   "relation": "contains",
+   "key": "contains",
+   "source": "13LV5dTeP3CAox54x56C1Z",
+   "target": "26uBYUqsT9fu$2hZqJnL3i"
+  },
+  {
+   "relation": "contains",
+   "key": "contains",
+   "source": "13LV5dTeP3CAox54x56C1Z",
+   "target": "26uBYUqsT9fu$2hZqJnLF$"
+  },
+  {
+   "relation": "contains",
+   "provenance": "fallback",
+   "key": "contains",
+   "source": "13LV5dTeP3CAox54x56C1Z",
+   "target": "07CR7fHeP4QfYTyO_6ZtT0"
+  },
+  {
+   "relation": "contains",
+   "provenance": "fallback",
+   "key": "contains",
+   "source": "13LV5dTeP3CAox54x56C1Z",
+   "target": "07CR7fHeP4QfYTyO_6ZtT2"
+  },
+  {
+   "relation": "contains",
+   "provenance": "fallback",
+   "key": "contains",
+   "source": "13LV5dTeP3CAox54x56C1Z",
+   "target": "07CR7fHeP4QfYTyO_6ZtTS"
+  },
+  {
+   "relation": "contains",
+   "provenance": "fallback",
+   "key": "contains",
+   "source": "13LV5dTeP3CAox54x56C1Z",
+   "target": "2iNGNb9Pf5P99FsPlV5FKt"
+  },
+  {
+   "relation": "contains",
+   "key": "contains",
+   "source": "1jPCssxb5C1RSM_YHIx$zl",
+   "target": "26uBYUqsT9fu$2hZqJnL3o"
+  },
+  {
+   "relation": "contains",
+   "key": "contains",
+   "source": "1jPCssxb5C1RSM_YHIx$zl",
+   "target": "26uBYUqsT9fu$2hZqJnL3s"
+  },
+  {
+   "relation": "contains",
+   "key": "contains",
+   "source": "1jPCssxb5C1RSM_YHIx$zl",
+   "target": "26uBYUqsT9fu$2hZqJnL3v"
+  },
+  {
+   "relation": "contains",
+   "key": "contains",
+   "source": "1jPCssxb5C1RSM_YHIx$zl",
+   "target": "26uBYUqsT9fu$2hZqJnL3y"
+  },
+  {
+   "relation": "contains",
+   "key": "contains",
+   "source": "1jPCssxb5C1RSM_YHIx$zl",
+   "target": "26uBYUqsT9fu$2hZqJnL3$"
+  },
+  {
+   "relation": "contains",
+   "key": "contains",
+   "source": "1jPCssxb5C1RSM_YHIx$zl",
+   "target": "26uBYUqsT9fu$2hZqJnL32"
+  },
+  {
+   "relation": "contains",
+   "key": "contains",
+   "source": "1jPCssxb5C1RSM_YHIx$zl",
+   "target": "26uBYUqsT9fu$2hZqJnL35"
+  },
+  {
+   "relation": "contains",
+   "key": "contains",
+   "source": "1jPCssxb5C1RSM_YHIx$zl",
+   "target": "26uBYUqsT9fu$2hZqJnL38"
+  },
+  {
+   "relation": "contains",
+   "key": "contains",
+   "source": "1jPCssxb5C1RSM_YHIx$zl",
+   "target": "26uBYUqsT9fu$2hZqJnL3B"
+  },
+  {
+   "relation": "contains",
+   "key": "contains",
+   "source": "1jPCssxb5C1RSM_YHIx$zl",
+   "target": "26uBYUqsT9fu$2hZqJnL3E"
+  },
+  {
+   "relation": "contains",
+   "provenance": "fallback",
+   "key": "contains",
+   "source": "1jPCssxb5C1RSM_YHIx$zl",
+   "target": "1jKaC_UV9EHQtr4wyx6Mnl"
+  },
+  {
+   "relation": "contains",
+   "provenance": "fallback",
+   "key": "contains",
+   "source": "1jPCssxb5C1RSM_YHIx$zl",
+   "target": "1jKaC_UV9EHQtr4wyx6Msj"
+  },
+  {
+   "relation": "contains",
+   "provenance": "fallback",
+   "key": "contains",
+   "source": "1jPCssxb5C1RSM_YHIx$zl",
+   "target": "1jKaC_UV9EHQtr4wyx6Msh"
+  },
+  {
+   "relation": "contains",
+   "provenance": "fallback",
+   "key": "contains",
+   "source": "1jPCssxb5C1RSM_YHIx$zl",
+   "target": "1jKaC_UV9EHQtr4wyx6Msf"
+  },
+  {
+   "relation": "contains",
+   "provenance": "fallback",
+   "key": "contains",
+   "source": "1jPCssxb5C1RSM_YHIx$zl",
+   "target": "2iNGNb9Pf5P99FsPlV55H$"
+  },
+  {
+   "relation": "contains",
+   "provenance": "fallback",
+   "key": "contains",
+   "source": "1jPCssxb5C1RSM_YHIx$zl",
+   "target": "2iNGNb9Pf5P99FsPlV55E6"
+  },
+  {
+   "relation": "contains",
+   "key": "contains",
+   "source": "1owBOg$5v0GwDBa7HPOsiG",
+   "target": "INF-1owBOg$5v0GwDBa7HPOsiG-0002"
+  },
+  {
+   "relation": "contains",
+   "provenance": "fallback",
+   "key": "contains",
+   "source": "1owBOg$5v0GwDBa7HPOsiG",
+   "target": "3DWkEUmNbEUw4r79zq9qil"
+  },
+  {
+   "relation": "contains",
+   "provenance": "fallback",
+   "key": "contains",
+   "source": "1owBOg$5v0GwDBa7HPOsiG",
+   "target": "3DWkEUmNbEUw4r79zq9qiv"
+  },
+  {
+   "relation": "contains",
+   "provenance": "fallback",
+   "key": "contains",
+   "source": "1owBOg$5v0GwDBa7HPOsiG",
+   "target": "3DWkEUmNbEUw4r79zq9qiy"
+  },
+  {
+   "relation": "contains",
+   "provenance": "fallback",
+   "key": "contains",
+   "source": "1owBOg$5v0GwDBa7HPOsiG",
+   "target": "3DWkEUmNbEUw4r79zq9qi_"
+  },
+  {
+   "relation": "contains",
+   "provenance": "fallback",
+   "key": "contains",
+   "source": "1owBOg$5v0GwDBa7HPOsiG",
+   "target": "3DWkEUmNbEUw4r79zq9qix"
+  },
+  {
+   "relation": "contains",
+   "provenance": "fallback",
+   "key": "contains",
+   "source": "1owBOg$5v0GwDBa7HPOsiG",
+   "target": "3DWkEUmNbEUw4r79zq9qim"
+  },
+  {
+   "relation": "contains",
+   "provenance": "fallback",
+   "key": "contains",
+   "source": "1owBOg$5v0GwDBa7HPOsiG",
+   "target": "3DWkEUmNbEUw4r79zq9qio"
+  },
+  {
+   "relation": "contains",
+   "provenance": "fallback",
+   "key": "contains",
+   "source": "1owBOg$5v0GwDBa7HPOsiG",
+   "target": "3DWkEUmNbEUw4r79zq9qir"
+  },
+  {
+   "relation": "contains",
+   "provenance": "fallback",
+   "key": "contains",
+   "source": "1owBOg$5v0GwDBa7HPOsiG",
+   "target": "3DWkEUmNbEUw4r79zq9qit"
+  },
+  {
+   "relation": "contains",
+   "provenance": "fallback",
+   "key": "contains",
+   "source": "1owBOg$5v0GwDBa7HPOsiG",
+   "target": "3DWkEUmNbEUw4r79zq9qiA"
+  },
+  {
+   "relation": "contains",
+   "provenance": "fallback",
+   "key": "contains",
+   "source": "1owBOg$5v0GwDBa7HPOsiG",
+   "target": "3DWkEUmNbEUw4r79zq9qi9"
+  },
+  {
+   "relation": "contains",
+   "provenance": "fallback",
+   "key": "contains",
+   "source": "1owBOg$5v0GwDBa7HPOsiG",
+   "target": "3DWkEUmNbEUw4r79zq9qiC"
+  },
+  {
+   "relation": "contains",
+   "provenance": "fallback",
+   "key": "contains",
+   "source": "1owBOg$5v0GwDBa7HPOsiG",
+   "target": "3DWkEUmNbEUw4r79zq9qiE"
+  },
+  {
+   "relation": "contains",
+   "provenance": "fallback",
+   "key": "contains",
+   "source": "1owBOg$5v0GwDBa7HPOsiG",
+   "target": "3DWkEUmNbEUw4r79zq9qi0"
+  },
+  {
+   "relation": "contains",
+   "provenance": "fallback",
+   "key": "contains",
+   "source": "1owBOg$5v0GwDBa7HPOsiG",
+   "target": "3DWkEUmNbEUw4r79zq9qi1"
+  },
+  {
+   "relation": "contains",
+   "provenance": "fallback",
+   "key": "contains",
+   "source": "1owBOg$5v0GwDBa7HPOsiG",
+   "target": "3DWkEUmNbEUw4r79zq9qkU"
+  },
+  {
+   "relation": "contains",
+   "provenance": "fallback",
+   "key": "contains",
+   "source": "1owBOg$5v0GwDBa7HPOsiG",
+   "target": "3DWkEUmNbEUw4r79zq9qij"
+  },
+  {
+   "relation": "contains",
+   "provenance": "fallback",
+   "key": "contains",
+   "source": "1owBOg$5v0GwDBa7HPOsiG",
+   "target": "3DWkEUmNbEUw4r79zq9qii"
+  },
+  {
+   "relation": "contains",
+   "key": "contains",
+   "source": "2qGKQC4mr7bQHi0erg34tc",
+   "target": "INF-2qGKQC4mr7bQHi0erg34tc-0002"
+  },
+  {
+   "relation": "contains",
+   "provenance": "fallback",
+   "key": "contains",
+   "source": "2qGKQC4mr7bQHi0erg34tc",
+   "target": "3DWkEUmNbEUw4r79zq9qlf"
+  },
+  {
+   "relation": "contains",
+   "provenance": "fallback",
+   "key": "contains",
+   "source": "2qGKQC4mr7bQHi0erg34tc",
+   "target": "3DWkEUmNbEUw4r79zq9qlg"
+  },
+  {
+   "relation": "contains",
+   "provenance": "fallback",
+   "key": "contains",
+   "source": "2qGKQC4mr7bQHi0erg34tc",
+   "target": "3DWkEUmNbEUw4r79zq9qll"
+  },
+  {
+   "relation": "contains",
+   "provenance": "fallback",
+   "key": "contains",
+   "source": "2qGKQC4mr7bQHi0erg34tc",
+   "target": "3DWkEUmNbEUw4r79zq9qlj"
+  },
+  {
+   "relation": "contains",
+   "provenance": "fallback",
+   "key": "contains",
+   "source": "2qGKQC4mr7bQHi0erg34tc",
+   "target": "3DWkEUmNbEUw4r79zq9qli"
+  },
+  {
+   "relation": "contains",
+   "provenance": "fallback",
+   "key": "contains",
+   "source": "2qGKQC4mr7bQHi0erg34tc",
+   "target": "3DWkEUmNbEUw4r79zq9qlX"
+  },
+  {
+   "relation": "contains",
+   "provenance": "fallback",
+   "key": "contains",
+   "source": "2qGKQC4mr7bQHi0erg34tc",
+   "target": "3DWkEUmNbEUw4r79zq9qlZ"
+  },
+  {
+   "relation": "contains",
+   "provenance": "fallback",
+   "key": "contains",
+   "source": "2qGKQC4mr7bQHi0erg34tc",
+   "target": "3DWkEUmNbEUw4r79zq9qlu"
+  },
+  {
+   "relation": "contains",
+   "provenance": "fallback",
+   "key": "contains",
+   "source": "2qGKQC4mr7bQHi0erg34tc",
+   "target": "3DWkEUmNbEUw4r79zq9qlc"
+  },
+  {
+   "relation": "contains",
+   "provenance": "fallback",
+   "key": "contains",
+   "source": "2qGKQC4mr7bQHi0erg34tc",
+   "target": "3DWkEUmNbEUw4r79zq9qlw"
+  },
+  {
+   "relation": "contains",
+   "provenance": "fallback",
+   "key": "contains",
+   "source": "2qGKQC4mr7bQHi0erg34tc",
+   "target": "3DWkEUmNbEUw4r79zq9qlx"
+  },
+  {
+   "relation": "contains",
+   "provenance": "fallback",
+   "key": "contains",
+   "source": "2qGKQC4mr7bQHi0erg34tc",
+   "target": "3DWkEUmNbEUw4r79zq9qlz"
+  },
+  {
+   "relation": "contains",
+   "provenance": "fallback",
+   "key": "contains",
+   "source": "2qGKQC4mr7bQHi0erg34tc",
+   "target": "3DWkEUmNbEUw4r79zq9qln"
+  },
+  {
+   "relation": "contains",
+   "provenance": "fallback",
+   "key": "contains",
+   "source": "2qGKQC4mr7bQHi0erg34tc",
+   "target": "3DWkEUmNbEUw4r79zq9ql$"
+  },
+  {
+   "relation": "contains",
+   "provenance": "fallback",
+   "key": "contains",
+   "source": "2qGKQC4mr7bQHi0erg34tc",
+   "target": "3DWkEUmNbEUw4r79zq9qlo"
+  },
+  {
+   "relation": "contains",
+   "provenance": "fallback",
+   "key": "contains",
+   "source": "2qGKQC4mr7bQHi0erg34tc",
+   "target": "3DWkEUmNbEUw4r79zq9qXD"
+  },
+  {
+   "relation": "contains",
+   "provenance": "fallback",
+   "key": "contains",
+   "source": "2qGKQC4mr7bQHi0erg34tc",
+   "target": "3DWkEUmNbEUw4r79zq9qkN"
+  },
+  {
+   "relation": "contains",
+   "provenance": "fallback",
+   "key": "contains",
+   "source": "2qGKQC4mr7bQHi0erg34tc",
+   "target": "3DWkEUmNbEUw4r79zq9qkM"
+  },
+  {
+   "relation": "contains",
+   "key": "contains",
+   "source": "2qGKQC4mr7bQHi0erg34rO",
+   "target": "INF-2qGKQC4mr7bQHi0erg34rO-0002"
+  },
+  {
+   "relation": "contains",
+   "key": "contains",
+   "source": "2qGKQC4mr7bQHi0erg34rO",
+   "target": "EXT-2qGKQC4mr7bQHi0erg34rO"
+  },
+  {
+   "relation": "contains",
+   "provenance": "fallback",
+   "key": "contains",
+   "source": "2qGKQC4mr7bQHi0erg34rO",
+   "target": "3DWkEUmNbEUw4r79zq9qXO"
+  },
+  {
+   "relation": "contains",
+   "provenance": "fallback",
+   "key": "contains",
+   "source": "2qGKQC4mr7bQHi0erg34rO",
+   "target": "3DWkEUmNbEUw4r79zq9qXP"
+  },
+  {
+   "relation": "contains",
+   "provenance": "fallback",
+   "key": "contains",
+   "source": "2qGKQC4mr7bQHi0erg34rO",
+   "target": "3DWkEUmNbEUw4r79zq9qXR"
+  },
+  {
+   "relation": "contains",
+   "provenance": "fallback",
+   "key": "contains",
+   "source": "2qGKQC4mr7bQHi0erg34rO",
+   "target": "3DWkEUmNbEUw4r79zq9qX7"
+  },
+  {
+   "relation": "contains",
+   "provenance": "fallback",
+   "key": "contains",
+   "source": "2qGKQC4mr7bQHi0erg34rO",
+   "target": "3DWkEUmNbEUw4r79zq9qXL"
+  },
+  {
+   "relation": "contains",
+   "provenance": "fallback",
+   "key": "contains",
+   "source": "2qGKQC4mr7bQHi0erg34rO",
+   "target": "3DWkEUmNbEUw4r79zq9qXN"
+  },
+  {
+   "relation": "contains",
+   "provenance": "fallback",
+   "key": "contains",
+   "source": "2qGKQC4mr7bQHi0erg34rO",
+   "target": "3DWkEUmNbEUw4r79zq9qYf"
+  },
+  {
+   "relation": "contains",
+   "provenance": "fallback",
+   "key": "contains",
+   "source": "2qGKQC4mr7bQHi0erg34rO",
+   "target": "2uEC5lWcnE7BDU0ErbW3J4"
+  },
+  {
+   "relation": "contains",
+   "provenance": "fallback",
+   "key": "contains",
+   "source": "2qGKQC4mr7bQHi0erg34rO",
+   "target": "2uEC5lWcnE7BDU0ErbW3Jm"
+  },
+  {
+   "relation": "contains",
+   "provenance": "fallback",
+   "key": "contains",
+   "source": "2qGKQC4mr7bQHi0erg34rO",
+   "target": "3DWkEUmNbEUw4r79zq9qYX"
+  },
+  {
+   "relation": "contains",
+   "provenance": "fallback",
+   "key": "contains",
+   "source": "2qGKQC4mr7bQHi0erg34rO",
+   "target": "2uEC5lWcnE7BDU0ErbW3Lz"
+  },
+  {
+   "relation": "contains",
+   "provenance": "fallback",
+   "key": "contains",
+   "source": "2qGKQC4mr7bQHi0erg34rO",
+   "target": "2uEC5lWcnE7BDU0ErbW3L$"
+  },
+  {
+   "relation": "contains",
+   "provenance": "fallback",
+   "key": "contains",
+   "source": "2qGKQC4mr7bQHi0erg34rO",
+   "target": "3DWkEUmNbEUw4r79zq9qX6"
+  },
+  {
+   "relation": "contains",
+   "provenance": "fallback",
+   "key": "contains",
+   "source": "2qGKQC4mr7bQHi0erg34rO",
+   "target": "3DWkEUmNbEUw4r79zq9qX5"
+  },
+  {
+   "relation": "contains",
+   "provenance": "fallback",
+   "key": "contains",
+   "source": "2qGKQC4mr7bQHi0erg34rO",
+   "target": "0HhC9uqTb6QgUcRAtyFIEY"
+  },
+  {
+   "relation": "contains",
+   "provenance": "inferred",
+   "key": "contains",
+   "source": "26uBYUqsT9fu$2hZqJnL2H",
+   "target": "1ksvnTQ291hfq4qBxBzG5g"
+  },
+  {
+   "relation": "contains",
+   "provenance": "inferred",
+   "key": "contains",
+   "source": "26uBYUqsT9fu$2hZqJnL2H",
+   "target": "1ksvnTQ291hfq4qBxBzGqQ"
+  },
+  {
+   "relation": "contains",
+   "provenance": "inferred",
+   "key": "contains",
+   "source": "26uBYUqsT9fu$2hZqJnL2H",
+   "target": "2iNGNb9Pf5P99FsPlV5FFe"
+  },
+  {
+   "relation": "contains",
+   "provenance": "inferred",
+   "key": "contains",
+   "source": "26uBYUqsT9fu$2hZqJnL2H",
+   "target": "2iNGNb9Pf5P99FsPlV54_p"
+  },
+  {
+   "relation": "contains",
+   "provenance": "ifc",
+   "key": "contains",
+   "source": "26uBYUqsT9fu$2hZqJnL2H",
+   "target": "2iNGNb9Pf5P99FsPlV53y2"
+  },
+  {
+   "relation": "contains",
+   "provenance": "ifc",
+   "key": "contains",
+   "source": "26uBYUqsT9fu$2hZqJnL2H",
+   "target": "2iNGNb9Pf5P99FsPlV53Ww"
+  },
+  {
+   "relation": "contains",
+   "provenance": "ifc",
+   "key": "contains",
+   "source": "26uBYUqsT9fu$2hZqJnL2H",
+   "target": "2iNGNb9Pf5P99FsPlV53Uo"
+  },
+  {
+   "relation": "contains",
+   "provenance": "ifc",
+   "key": "contains",
+   "source": "26uBYUqsT9fu$2hZqJnL2H",
+   "target": "2iNGNb9Pf5P99FsPlV53Jy"
+  },
+  {
+   "edge_id": "adj:26uBYUqsT9fu$2hZqJnL2H|26uBYUqsT9fu$2hZqJnLF$",
+   "relation": "adjacent_to",
+   "gap": 0.115,
+   "provenance": "inferred",
+   "key": "adj:26uBYUqsT9fu$2hZqJnL2H|26uBYUqsT9fu$2hZqJnLF$",
+   "source": "26uBYUqsT9fu$2hZqJnL2H",
+   "target": "26uBYUqsT9fu$2hZqJnLF$"
+  },
+  {
+   "edge_id": "door:2iNGNb9Pf5P99FsPlV54_p",
+   "portal_id": "door:2iNGNb9Pf5P99FsPlV54_p",
+   "relation": "connected_by_door",
+   "door": "2iNGNb9Pf5P99FsPlV54_p",
+   "width": 0.89,
+   "provenance": "inferred",
+   "key": "door:2iNGNb9Pf5P99FsPlV54_p",
+   "source": "26uBYUqsT9fu$2hZqJnL2H",
+   "target": "26uBYUqsT9fu$2hZqJnLF$"
+  },
+  {
+   "edge_id": "adj:26uBYUqsT9fu$2hZqJnL2H|26uBYUqsT9fu$2hZqJnL2K",
+   "relation": "adjacent_to",
+   "gap": 0.115,
+   "provenance": "inferred",
+   "key": "adj:26uBYUqsT9fu$2hZqJnL2H|26uBYUqsT9fu$2hZqJnL2K",
+   "source": "26uBYUqsT9fu$2hZqJnL2H",
+   "target": "26uBYUqsT9fu$2hZqJnL2K"
+  },
+  {
+   "edge_id": "door:2iNGNb9Pf5P99FsPlV535D",
+   "portal_id": "door:2iNGNb9Pf5P99FsPlV535D",
+   "relation": "connected_by_door",
+   "door": "2iNGNb9Pf5P99FsPlV535D",
+   "width": 0.89,
+   "provenance": "inferred",
+   "key": "door:2iNGNb9Pf5P99FsPlV535D",
+   "source": "26uBYUqsT9fu$2hZqJnL2H",
+   "target": "26uBYUqsT9fu$2hZqJnL2K"
+  },
+  {
+   "edge_id": "vconn:1jKaC_UV9EHQtr4wyx6Mt6",
+   "portal_id": "vconn:1jKaC_UV9EHQtr4wyx6Mt6",
+   "relation": "vertically_connected",
+   "via": "1jKaC_UV9EHQtr4wyx6Mt6",
+   "kind": "stair",
+   "rise": 4.34,
+   "basis": "stair_solid",
+   "footprint_extent": 5.52,
+   "width": 0.61,
+   "provenance": "inferred",
+   "key": "vconn:1jKaC_UV9EHQtr4wyx6Mt6",
+   "source": "26uBYUqsT9fu$2hZqJnL2H",
+   "target": "26uBYUqsT9fu$2hZqJnL38"
+  },
+  {
+   "relation": "contains",
+   "provenance": "inferred",
+   "key": "contains",
+   "source": "26uBYUqsT9fu$2hZqJnL2K",
+   "target": "07CR7fHeP4QfYTyO_6ZtT6"
+  },
+  {
+   "relation": "contains",
+   "provenance": "inferred",
+   "key": "contains",
+   "source": "26uBYUqsT9fu$2hZqJnL2K",
+   "target": "1ksvnTQ291hfq4qBxBzG7W"
+  },
+  {
+   "relation": "contains",
+   "provenance": "inferred",
+   "key": "contains",
+   "source": "26uBYUqsT9fu$2hZqJnL2K",
+   "target": "07CR7fHeP4QfYTyO_6ZtT5"
+  },
+  {
+   "relation": "contains",
+   "provenance": "inferred",
+   "key": "contains",
+   "source": "26uBYUqsT9fu$2hZqJnL2K",
+   "target": "1ksvnTQ291hfq4qBxBzG$I"
+  },
+  {
+   "relation": "contains",
+   "provenance": "inferred",
+   "key": "contains",
+   "source": "26uBYUqsT9fu$2hZqJnL2K",
+   "target": "1ksvnTQ291hfq4qBxBzGuQ"
+  },
+  {
+   "relation": "contains",
+   "provenance": "inferred",
+   "key": "contains",
+   "source": "26uBYUqsT9fu$2hZqJnL2K",
+   "target": "1ksvnTQ291hfq4qBxBzGwi"
+  },
+  {
+   "relation": "contains",
+   "provenance": "inferred",
+   "key": "contains",
+   "source": "26uBYUqsT9fu$2hZqJnL2K",
+   "target": "1ksvnTQ291hfq4qBxBzNyF"
+  },
+  {
+   "relation": "contains",
+   "provenance": "inferred",
+   "key": "contains",
+   "source": "26uBYUqsT9fu$2hZqJnL2K",
+   "target": "07CR7fHeP4QfYTyO_6ZtBx"
+  },
+  {
+   "relation": "contains",
+   "provenance": "inferred",
+   "key": "contains",
+   "source": "26uBYUqsT9fu$2hZqJnL2K",
+   "target": "07CR7fHeP4QfYTyO_6ZtBw"
+  },
+  {
+   "relation": "contains",
+   "provenance": "inferred",
+   "key": "contains",
+   "source": "26uBYUqsT9fu$2hZqJnL2K",
+   "target": "2iNGNb9Pf5P99FsPlV5FGc"
+  },
+  {
+   "relation": "contains",
+   "provenance": "inferred",
+   "key": "contains",
+   "source": "26uBYUqsT9fu$2hZqJnL2K",
+   "target": "2iNGNb9Pf5P99FsPlV535D"
+  },
+  {
+   "relation": "contains",
+   "provenance": "ifc",
+   "key": "contains",
+   "source": "26uBYUqsT9fu$2hZqJnL2K",
+   "target": "2iNGNb9Pf5P99FsPlV52P9"
+  },
+  {
+   "relation": "contains",
+   "provenance": "ifc",
+   "key": "contains",
+   "source": "26uBYUqsT9fu$2hZqJnL2K",
+   "target": "2iNGNb9Pf5P99FsPlV52Th"
+  },
+  {
+   "relation": "contains",
+   "provenance": "ifc",
+   "key": "contains",
+   "source": "26uBYUqsT9fu$2hZqJnL2K",
+   "target": "2iNGNb9Pf5P99FsPlV52Hk"
+  },
+  {
+   "relation": "contains",
+   "provenance": "ifc",
+   "key": "contains",
+   "source": "26uBYUqsT9fu$2hZqJnL2K",
+   "target": "2iNGNb9Pf5P99FsPlV52FC"
+  },
+  {
+   "relation": "contains",
+   "provenance": "ifc",
+   "key": "contains",
+   "source": "26uBYUqsT9fu$2hZqJnL2K",
+   "target": "2iNGNb9Pf5P99FsPlV52Df"
+  },
+  {
+   "relation": "contains",
+   "provenance": "ifc",
+   "key": "contains",
+   "source": "26uBYUqsT9fu$2hZqJnL2K",
+   "target": "2iNGNb9Pf5P99FsPlV524P"
+  },
+  {
+   "relation": "contains",
+   "provenance": "ifc",
+   "key": "contains",
+   "source": "26uBYUqsT9fu$2hZqJnL2K",
+   "target": "2iNGNb9Pf5P99FsPlV55aB"
+  },
+  {
+   "relation": "contains",
+   "provenance": "ifc",
+   "key": "contains",
+   "source": "26uBYUqsT9fu$2hZqJnL2K",
+   "target": "2iNGNb9Pf5P99FsPlV55Qo"
+  },
+  {
+   "relation": "contains",
+   "provenance": "ifc",
+   "key": "contains",
+   "source": "26uBYUqsT9fu$2hZqJnL2K",
+   "target": "2iNGNb9Pf5P99FsPlV55PQ"
+  },
+  {
+   "relation": "contains",
+   "provenance": "ifc",
+   "key": "contains",
+   "source": "26uBYUqsT9fu$2hZqJnL2K",
+   "target": "2iNGNb9Pf5P99FsPlV564K"
+  },
+  {
+   "relation": "contains",
+   "provenance": "ifc",
+   "key": "contains",
+   "source": "26uBYUqsT9fu$2hZqJnL2K",
+   "target": "2iNGNb9Pf5P99FsPlV564N"
+  },
+  {
+   "edge_id": "adj:26uBYUqsT9fu$2hZqJnL2H|26uBYUqsT9fu$2hZqJnL2K",
+   "relation": "adjacent_to",
+   "gap": 0.115,
+   "provenance": "inferred",
+   "key": "adj:26uBYUqsT9fu$2hZqJnL2H|26uBYUqsT9fu$2hZqJnL2K",
+   "source": "26uBYUqsT9fu$2hZqJnL2K",
+   "target": "26uBYUqsT9fu$2hZqJnL2H"
+  },
+  {
+   "edge_id": "door:2iNGNb9Pf5P99FsPlV535D",
+   "portal_id": "door:2iNGNb9Pf5P99FsPlV535D",
+   "relation": "connected_by_door",
+   "door": "2iNGNb9Pf5P99FsPlV535D",
+   "width": 0.89,
+   "provenance": "inferred",
+   "key": "door:2iNGNb9Pf5P99FsPlV535D",
+   "source": "26uBYUqsT9fu$2hZqJnL2K",
+   "target": "26uBYUqsT9fu$2hZqJnL2H"
+  },
+  {
+   "edge_id": "adj:26uBYUqsT9fu$2hZqJnL2K|26uBYUqsT9fu$2hZqJnL2N",
+   "relation": "adjacent_to",
+   "gap": 0.46,
+   "provenance": "inferred",
+   "key": "adj:26uBYUqsT9fu$2hZqJnL2K|26uBYUqsT9fu$2hZqJnL2N",
+   "source": "26uBYUqsT9fu$2hZqJnL2K",
+   "target": "26uBYUqsT9fu$2hZqJnL2N"
+  },
+  {
+   "edge_id": "door:07CR7fHeP4QfYTyO_6Zt2F",
+   "portal_id": "door:07CR7fHeP4QfYTyO_6Zt2F",
+   "relation": "connected_by_door",
+   "door": "07CR7fHeP4QfYTyO_6Zt2F",
+   "width": 0.88,
+   "provenance": "inferred",
+   "key": "door:07CR7fHeP4QfYTyO_6Zt2F",
+   "source": "26uBYUqsT9fu$2hZqJnL2K",
+   "target": "26uBYUqsT9fu$2hZqJnL2N"
+  },
+  {
+   "edge_id": "vconn:1ksvnTQ291hfq4qBxBzNyF",
+   "portal_id": "vconn:1ksvnTQ291hfq4qBxBzNyF",
+   "relation": "vertically_connected",
+   "via": "1ksvnTQ291hfq4qBxBzNyF",
+   "kind": "stair",
+   "rise": 4.34,
+   "basis": "stair_solid",
+   "footprint_extent": 5.52,
+   "width": 0.61,
+   "provenance": "inferred",
+   "key": "vconn:1ksvnTQ291hfq4qBxBzNyF",
+   "source": "26uBYUqsT9fu$2hZqJnL2K",
+   "target": "26uBYUqsT9fu$2hZqJnL38"
+  },
+  {
+   "edge_id": "vconn:26uBYUqsT9fu$2hZqJnL2K|INF-1jPCssxb5C1RSM_YHIx$$2-0002:0",
+   "portal_id": "vconn:26uBYUqsT9fu$2hZqJnL2K|INF-1jPCssxb5C1RSM_YHIx$$2-0002:0",
+   "relation": "vertically_connected",
+   "via": "1ksvnTQ291hfq4qBxBzNyF",
+   "kind": "stair",
+   "rise": 4.34,
+   "basis": "stair_solid",
+   "footprint_extent": 5.52,
+   "width": 0.61,
+   "provenance": "inferred",
+   "key": "vconn:26uBYUqsT9fu$2hZqJnL2K|INF-1jPCssxb5C1RSM_YHIx$$2-0002:0",
+   "source": "26uBYUqsT9fu$2hZqJnL2K",
+   "target": "INF-1jPCssxb5C1RSM_YHIx$$2-0002"
+  },
+  {
+   "relation": "contains",
+   "provenance": "inferred",
+   "key": "contains",
+   "source": "26uBYUqsT9fu$2hZqJnL2N",
+   "target": "07CR7fHeP4QfYTyO_6ZtDa"
+  },
+  {
+   "relation": "contains",
+   "provenance": "inferred",
+   "key": "contains",
+   "source": "26uBYUqsT9fu$2hZqJnL2N",
+   "target": "07CR7fHeP4QfYTyO_6ZtT1"
+  },
+  {
+   "relation": "contains",
+   "provenance": "inferred",
+   "key": "contains",
+   "source": "26uBYUqsT9fu$2hZqJnL2N",
+   "target": "1ksvnTQ291hfq4qBxBzHOP"
+  },
+  {
+   "relation": "contains",
+   "provenance": "inferred",
+   "key": "contains",
+   "source": "26uBYUqsT9fu$2hZqJnL2N",
+   "target": "07CR7fHeP4QfYTyO_6Zt2F"
+  },
+  {
+   "relation": "contains",
+   "provenance": "inferred",
+   "key": "contains",
+   "source": "26uBYUqsT9fu$2hZqJnL2N",
+   "target": "1ksvnTQ291hfq4qBxBzHeB"
+  },
+  {
+   "relation": "contains",
+   "provenance": "inferred",
+   "key": "contains",
+   "source": "26uBYUqsT9fu$2hZqJnL2N",
+   "target": "1jKaC_UV9EHQtr4wyx6Muy"
+  },
+  {
+   "relation": "contains",
+   "provenance": "inferred",
+   "key": "contains",
+   "source": "26uBYUqsT9fu$2hZqJnL2N",
+   "target": "07CR7fHeP4QfYTyO_6Zt5u"
+  },
+  {
+   "relation": "contains",
+   "provenance": "ifc",
+   "key": "contains",
+   "source": "26uBYUqsT9fu$2hZqJnL2N",
+   "target": "2iNGNb9Pf5P99FsPlV57f$"
+  },
+  {
+   "relation": "contains",
+   "provenance": "ifc",
+   "key": "contains",
+   "source": "26uBYUqsT9fu$2hZqJnL2N",
+   "target": "2iNGNb9Pf5P99FsPlV57f_"
+  },
+  {
+   "relation": "contains",
+   "provenance": "ifc",
+   "key": "contains",
+   "source": "26uBYUqsT9fu$2hZqJnL2N",
+   "target": "2iNGNb9Pf5P99FsPlV57Zk"
+  },
+  {
+   "relation": "contains",
+   "provenance": "ifc",
+   "key": "contains",
+   "source": "26uBYUqsT9fu$2hZqJnL2N",
+   "target": "2iNGNb9Pf5P99FsPlV57Rw"
+  },
+  {
+   "edge_id": "adj:26uBYUqsT9fu$2hZqJnL2K|26uBYUqsT9fu$2hZqJnL2N",
+   "relation": "adjacent_to",
+   "gap": 0.46,
+   "provenance": "inferred",
+   "key": "adj:26uBYUqsT9fu$2hZqJnL2K|26uBYUqsT9fu$2hZqJnL2N",
+   "source": "26uBYUqsT9fu$2hZqJnL2N",
+   "target": "26uBYUqsT9fu$2hZqJnL2K"
+  },
+  {
+   "edge_id": "door:07CR7fHeP4QfYTyO_6Zt2F",
+   "portal_id": "door:07CR7fHeP4QfYTyO_6Zt2F",
+   "relation": "connected_by_door",
+   "door": "07CR7fHeP4QfYTyO_6Zt2F",
+   "width": 0.88,
+   "provenance": "inferred",
+   "key": "door:07CR7fHeP4QfYTyO_6Zt2F",
+   "source": "26uBYUqsT9fu$2hZqJnL2N",
+   "target": "26uBYUqsT9fu$2hZqJnL2K"
+  },
+  {
+   "edge_id": "adj:26uBYUqsT9fu$2hZqJnL2N|26uBYUqsT9fu$2hZqJnL2Q",
+   "relation": "adjacent_to",
+   "gap": 0.115,
+   "provenance": "inferred",
+   "key": "adj:26uBYUqsT9fu$2hZqJnL2N|26uBYUqsT9fu$2hZqJnL2Q",
+   "source": "26uBYUqsT9fu$2hZqJnL2N",
+   "target": "26uBYUqsT9fu$2hZqJnL2Q"
+  },
+  {
+   "edge_id": "door:2iNGNb9Pf5P99FsPlV54yH",
+   "portal_id": "door:2iNGNb9Pf5P99FsPlV54yH",
+   "relation": "connected_by_door",
+   "door": "2iNGNb9Pf5P99FsPlV54yH",
+   "width": 0.89,
+   "provenance": "inferred",
+   "key": "door:2iNGNb9Pf5P99FsPlV54yH",
+   "source": "26uBYUqsT9fu$2hZqJnL2N",
+   "target": "26uBYUqsT9fu$2hZqJnL2Q"
+  },
+  {
+   "edge_id": "vconn:1jKaC_UV9EHQtr4wyx6Muy",
+   "portal_id": "vconn:1jKaC_UV9EHQtr4wyx6Muy",
+   "relation": "vertically_connected",
+   "via": "1jKaC_UV9EHQtr4wyx6Muy",
+   "kind": "stair",
+   "rise": 4.5,
+   "basis": "stair_solid",
+   "footprint_extent": 4.7,
+   "width": 1.0,
+   "provenance": "inferred",
+   "key": "vconn:1jKaC_UV9EHQtr4wyx6Muy",
+   "source": "26uBYUqsT9fu$2hZqJnL2N",
+   "target": "26uBYUqsT9fu$2hZqJnL3B"
+  },
+  {
+   "edge_id": "vconn:26uBYUqsT9fu$2hZqJnL2N|INF-1jPCssxb5C1RSM_YHIx$$2-0004:0",
+   "portal_id": "vconn:26uBYUqsT9fu$2hZqJnL2N|INF-1jPCssxb5C1RSM_YHIx$$2-0004:0",
+   "relation": "vertically_connected",
+   "via": "1jKaC_UV9EHQtr4wyx6Muy",
+   "kind": "stair",
+   "rise": 4.5,
+   "basis": "stair_solid",
+   "footprint_extent": 4.7,
+   "width": 1.0,
+   "provenance": "inferred",
+   "key": "vconn:26uBYUqsT9fu$2hZqJnL2N|INF-1jPCssxb5C1RSM_YHIx$$2-0004:0",
+   "source": "26uBYUqsT9fu$2hZqJnL2N",
+   "target": "INF-1jPCssxb5C1RSM_YHIx$$2-0004"
+  },
+  {
+   "relation": "contains",
+   "provenance": "inferred",
+   "key": "contains",
+   "source": "26uBYUqsT9fu$2hZqJnL2Q",
+   "target": "07CR7fHeP4QfYTyO_6ZtT3"
+  },
+  {
+   "relation": "contains",
+   "provenance": "inferred",
+   "key": "contains",
+   "source": "26uBYUqsT9fu$2hZqJnL2Q",
+   "target": "1ksvnTQ291hfq4qBxBzHYC"
+  },
+  {
+   "relation": "contains",
+   "provenance": "inferred",
+   "key": "contains",
+   "source": "26uBYUqsT9fu$2hZqJnL2Q",
+   "target": "1ksvnTQ291hfq4qBxBzHZK"
+  },
+  {
+   "relation": "contains",
+   "provenance": "inferred",
+   "key": "contains",
+   "source": "26uBYUqsT9fu$2hZqJnL2Q",
+   "target": "2iNGNb9Pf5P99FsPlV5FPz"
+  },
+  {
+   "relation": "contains",
+   "provenance": "inferred",
+   "key": "contains",
+   "source": "26uBYUqsT9fu$2hZqJnL2Q",
+   "target": "2iNGNb9Pf5P99FsPlV54yH"
+  },
+  {
+   "relation": "contains",
+   "provenance": "ifc",
+   "key": "contains",
+   "source": "26uBYUqsT9fu$2hZqJnL2Q",
+   "target": "2iNGNb9Pf5P99FsPlV53qy"
+  },
+  {
+   "relation": "contains",
+   "provenance": "ifc",
+   "key": "contains",
+   "source": "26uBYUqsT9fu$2hZqJnL2Q",
+   "target": "2iNGNb9Pf5P99FsPlV53g7"
+  },
+  {
+   "relation": "contains",
+   "provenance": "ifc",
+   "key": "contains",
+   "source": "26uBYUqsT9fu$2hZqJnL2Q",
+   "target": "2iNGNb9Pf5P99FsPlV53dm"
+  },
+  {
+   "relation": "contains",
+   "provenance": "ifc",
+   "key": "contains",
+   "source": "26uBYUqsT9fu$2hZqJnL2Q",
+   "target": "2iNGNb9Pf5P99FsPlV53GB"
+  },
+  {
+   "relation": "contains",
+   "provenance": "ifc",
+   "key": "contains",
+   "source": "26uBYUqsT9fu$2hZqJnL2Q",
+   "target": "2iNGNb9Pf5P99FsPlV53Hg"
+  },
+  {
+   "edge_id": "adj:26uBYUqsT9fu$2hZqJnL2N|26uBYUqsT9fu$2hZqJnL2Q",
+   "relation": "adjacent_to",
+   "gap": 0.115,
+   "provenance": "inferred",
+   "key": "adj:26uBYUqsT9fu$2hZqJnL2N|26uBYUqsT9fu$2hZqJnL2Q",
+   "source": "26uBYUqsT9fu$2hZqJnL2Q",
+   "target": "26uBYUqsT9fu$2hZqJnL2N"
+  },
+  {
+   "edge_id": "door:2iNGNb9Pf5P99FsPlV54yH",
+   "portal_id": "door:2iNGNb9Pf5P99FsPlV54yH",
+   "relation": "connected_by_door",
+   "door": "2iNGNb9Pf5P99FsPlV54yH",
+   "width": 0.89,
+   "provenance": "inferred",
+   "key": "door:2iNGNb9Pf5P99FsPlV54yH",
+   "source": "26uBYUqsT9fu$2hZqJnL2Q",
+   "target": "26uBYUqsT9fu$2hZqJnL2N"
+  },
+  {
+   "relation": "contains",
+   "provenance": "inferred",
+   "key": "contains",
+   "source": "26uBYUqsT9fu$2hZqJnL2T",
+   "target": "1ksvnTQ291hfq4qBxBzGaJ"
+  },
+  {
+   "relation": "contains",
+   "provenance": "inferred",
+   "key": "contains",
+   "source": "26uBYUqsT9fu$2hZqJnL2T",
+   "target": "2iNGNb9Pf5P99FsPlV5F8J"
+  },
+  {
+   "edge_id": "adj:26uBYUqsT9fu$2hZqJnL2T|26uBYUqsT9fu$2hZqJnL3W",
+   "relation": "adjacent_to",
+   "gap": 0.115,
+   "provenance": "inferred",
+   "key": "adj:26uBYUqsT9fu$2hZqJnL2T|26uBYUqsT9fu$2hZqJnL3W",
+   "source": "26uBYUqsT9fu$2hZqJnL2T",
+   "target": "26uBYUqsT9fu$2hZqJnL3W"
+  },
+  {
+   "edge_id": "passage:26uBYUqsT9fu$2hZqJnL2T|26uBYUqsT9fu$2hZqJnL3W:0",
+   "portal_id": "passage:26uBYUqsT9fu$2hZqJnL2T|26uBYUqsT9fu$2hZqJnL3W:0",
+   "relation": "open_passage",
+   "width": 2.08,
+   "openness": 0.0,
+   "provenance": "inferred",
+   "key": "passage:26uBYUqsT9fu$2hZqJnL2T|26uBYUqsT9fu$2hZqJnL3W:0",
+   "source": "26uBYUqsT9fu$2hZqJnL2T",
+   "target": "26uBYUqsT9fu$2hZqJnL3W"
+  },
+  {
+   "edge_id": "adj:26uBYUqsT9fu$2hZqJnL2T|26uBYUqsT9fu$2hZqJnLF$",
+   "relation": "adjacent_to",
+   "gap": 0.115,
+   "provenance": "inferred",
+   "key": "adj:26uBYUqsT9fu$2hZqJnL2T|26uBYUqsT9fu$2hZqJnLF$",
+   "source": "26uBYUqsT9fu$2hZqJnL2T",
+   "target": "26uBYUqsT9fu$2hZqJnLF$"
+  },
+  {
+   "edge_id": "door:2iNGNb9Pf5P99FsPlV54$T",
+   "portal_id": "door:2iNGNb9Pf5P99FsPlV54$T",
+   "relation": "connected_by_door",
+   "door": "2iNGNb9Pf5P99FsPlV54$T",
+   "width": 0.89,
+   "provenance": "inferred",
+   "key": "door:2iNGNb9Pf5P99FsPlV54$T",
+   "source": "26uBYUqsT9fu$2hZqJnL2T",
+   "target": "26uBYUqsT9fu$2hZqJnLF$"
+  },
+  {
+   "relation": "contains",
+   "provenance": "inferred",
+   "key": "contains",
+   "source": "26uBYUqsT9fu$2hZqJnL3W",
+   "target": "1ksvnTQ291hfq4qBxBzGd0"
+  },
+  {
+   "relation": "contains",
+   "provenance": "inferred",
+   "key": "contains",
+   "source": "26uBYUqsT9fu$2hZqJnL3W",
+   "target": "2iNGNb9Pf5P99FsPlV54i7"
+  },
+  {
+   "relation": "contains",
+   "provenance": "inferred",
+   "key": "contains",
+   "source": "26uBYUqsT9fu$2hZqJnL3W",
+   "target": "2iNGNb9Pf5P99FsPlV54X2"
+  },
+  {
+   "edge_id": "adj:26uBYUqsT9fu$2hZqJnL2T|26uBYUqsT9fu$2hZqJnL3W",
+   "relation": "adjacent_to",
+   "gap": 0.115,
+   "provenance": "inferred",
+   "key": "adj:26uBYUqsT9fu$2hZqJnL2T|26uBYUqsT9fu$2hZqJnL3W",
+   "source": "26uBYUqsT9fu$2hZqJnL3W",
+   "target": "26uBYUqsT9fu$2hZqJnL2T"
+  },
+  {
+   "edge_id": "passage:26uBYUqsT9fu$2hZqJnL2T|26uBYUqsT9fu$2hZqJnL3W:0",
+   "portal_id": "passage:26uBYUqsT9fu$2hZqJnL2T|26uBYUqsT9fu$2hZqJnL3W:0",
+   "relation": "open_passage",
+   "width": 2.08,
+   "openness": 0.0,
+   "provenance": "inferred",
+   "key": "passage:26uBYUqsT9fu$2hZqJnL2T|26uBYUqsT9fu$2hZqJnL3W:0",
+   "source": "26uBYUqsT9fu$2hZqJnL3W",
+   "target": "26uBYUqsT9fu$2hZqJnL2T"
+  },
+  {
+   "edge_id": "adj:26uBYUqsT9fu$2hZqJnL3W|26uBYUqsT9fu$2hZqJnL3Z",
+   "relation": "adjacent_to",
+   "gap": 0.115,
+   "provenance": "inferred",
+   "key": "adj:26uBYUqsT9fu$2hZqJnL3W|26uBYUqsT9fu$2hZqJnL3Z",
+   "source": "26uBYUqsT9fu$2hZqJnL3W",
+   "target": "26uBYUqsT9fu$2hZqJnL3Z"
+  },
+  {
+   "edge_id": "door:2iNGNb9Pf5P99FsPlV54X2",
+   "portal_id": "door:2iNGNb9Pf5P99FsPlV54X2",
+   "relation": "connected_by_door",
+   "door": "2iNGNb9Pf5P99FsPlV54X2",
+   "width": 0.89,
+   "provenance": "inferred",
+   "key": "door:2iNGNb9Pf5P99FsPlV54X2",
+   "source": "26uBYUqsT9fu$2hZqJnL3W",
+   "target": "26uBYUqsT9fu$2hZqJnL3Z"
+  },
+  {
+   "relation": "contains",
+   "provenance": "inferred",
+   "key": "contains",
+   "source": "26uBYUqsT9fu$2hZqJnL3Z",
+   "target": "1ksvnTQ291hfq4qBxBzGaN"
+  },
+  {
+   "relation": "contains",
+   "provenance": "inferred",
+   "key": "contains",
+   "source": "26uBYUqsT9fu$2hZqJnL3Z",
+   "target": "1ksvnTQ291hfq4qBxBzGaH"
+  },
+  {
+   "relation": "contains",
+   "provenance": "inferred",
+   "key": "contains",
+   "source": "26uBYUqsT9fu$2hZqJnL3Z",
+   "target": "1ksvnTQ291hfq4qBxBzGbe"
+  },
+  {
+   "relation": "contains",
+   "provenance": "inferred",
+   "key": "contains",
+   "source": "26uBYUqsT9fu$2hZqJnL3Z",
+   "target": "2iNGNb9Pf5P99FsPlV547L"
+  },
+  {
+   "relation": "contains",
+   "provenance": "ifc",
+   "key": "contains",
+   "source": "26uBYUqsT9fu$2hZqJnL3Z",
+   "target": "2iNGNb9Pf5P99FsPlV54SN"
+  },
+  {
+   "relation": "contains",
+   "provenance": "ifc",
+   "key": "contains",
+   "source": "26uBYUqsT9fu$2hZqJnL3Z",
+   "target": "2iNGNb9Pf5P99FsPlV54SP"
+  },
+  {
+   "relation": "contains",
+   "provenance": "ifc",
+   "key": "contains",
+   "source": "26uBYUqsT9fu$2hZqJnL3Z",
+   "target": "2iNGNb9Pf5P99FsPlV54SO"
+  },
+  {
+   "relation": "contains",
+   "provenance": "ifc",
+   "key": "contains",
+   "source": "26uBYUqsT9fu$2hZqJnL3Z",
+   "target": "2iNGNb9Pf5P99FsPlV54SQ"
+  },
+  {
+   "edge_id": "adj:26uBYUqsT9fu$2hZqJnL3W|26uBYUqsT9fu$2hZqJnL3Z",
+   "relation": "adjacent_to",
+   "gap": 0.115,
+   "provenance": "inferred",
+   "key": "adj:26uBYUqsT9fu$2hZqJnL3W|26uBYUqsT9fu$2hZqJnL3Z",
+   "source": "26uBYUqsT9fu$2hZqJnL3Z",
+   "target": "26uBYUqsT9fu$2hZqJnL3W"
+  },
+  {
+   "edge_id": "door:2iNGNb9Pf5P99FsPlV54X2",
+   "portal_id": "door:2iNGNb9Pf5P99FsPlV54X2",
+   "relation": "connected_by_door",
+   "door": "2iNGNb9Pf5P99FsPlV54X2",
+   "width": 0.89,
+   "provenance": "inferred",
+   "key": "door:2iNGNb9Pf5P99FsPlV54X2",
+   "source": "26uBYUqsT9fu$2hZqJnL3Z",
+   "target": "26uBYUqsT9fu$2hZqJnL3W"
+  },
+  {
+   "edge_id": "adj:26uBYUqsT9fu$2hZqJnL3Z|26uBYUqsT9fu$2hZqJnL3c",
+   "relation": "adjacent_to",
+   "gap": 0.115,
+   "provenance": "inferred",
+   "key": "adj:26uBYUqsT9fu$2hZqJnL3Z|26uBYUqsT9fu$2hZqJnL3c",
+   "source": "26uBYUqsT9fu$2hZqJnL3Z",
+   "target": "26uBYUqsT9fu$2hZqJnL3c"
+  },
+  {
+   "edge_id": "door:2iNGNb9Pf5P99FsPlV544f",
+   "portal_id": "door:2iNGNb9Pf5P99FsPlV544f",
+   "relation": "connected_by_door",
+   "door": "2iNGNb9Pf5P99FsPlV544f",
+   "width": 0.89,
+   "provenance": "inferred",
+   "key": "door:2iNGNb9Pf5P99FsPlV544f",
+   "source": "26uBYUqsT9fu$2hZqJnL3Z",
+   "target": "26uBYUqsT9fu$2hZqJnL3c"
+  },
+  {
+   "relation": "contains",
+   "provenance": "inferred",
+   "key": "contains",
+   "source": "26uBYUqsT9fu$2hZqJnL3c",
+   "target": "07CR7fHeP4QfYTyO_6Zt8Q"
+  },
+  {
+   "relation": "contains",
+   "provenance": "inferred",
+   "key": "contains",
+   "source": "26uBYUqsT9fu$2hZqJnL3c",
+   "target": "2iNGNb9Pf5P99FsPlV544f"
+  },
+  {
+   "relation": "contains",
+   "provenance": "ifc",
+   "key": "contains",
+   "source": "26uBYUqsT9fu$2hZqJnL3c",
+   "target": "2iNGNb9Pf5P99FsPlV55UP"
+  },
+  {
+   "edge_id": "adj:26uBYUqsT9fu$2hZqJnL3Z|26uBYUqsT9fu$2hZqJnL3c",
+   "relation": "adjacent_to",
+   "gap": 0.115,
+   "provenance": "inferred",
+   "key": "adj:26uBYUqsT9fu$2hZqJnL3Z|26uBYUqsT9fu$2hZqJnL3c",
+   "source": "26uBYUqsT9fu$2hZqJnL3c",
+   "target": "26uBYUqsT9fu$2hZqJnL3Z"
+  },
+  {
+   "edge_id": "door:2iNGNb9Pf5P99FsPlV544f",
+   "portal_id": "door:2iNGNb9Pf5P99FsPlV544f",
+   "relation": "connected_by_door",
+   "door": "2iNGNb9Pf5P99FsPlV544f",
+   "width": 0.89,
+   "provenance": "inferred",
+   "key": "door:2iNGNb9Pf5P99FsPlV544f",
+   "source": "26uBYUqsT9fu$2hZqJnL3c",
+   "target": "26uBYUqsT9fu$2hZqJnL3Z"
+  },
+  {
+   "edge_id": "adj:26uBYUqsT9fu$2hZqJnL3c|26uBYUqsT9fu$2hZqJnL3f",
+   "relation": "adjacent_to",
+   "gap": 0.46,
+   "provenance": "inferred",
+   "key": "adj:26uBYUqsT9fu$2hZqJnL3c|26uBYUqsT9fu$2hZqJnL3f",
+   "source": "26uBYUqsT9fu$2hZqJnL3c",
+   "target": "26uBYUqsT9fu$2hZqJnL3f"
+  },
+  {
+   "edge_id": "door:07CR7fHeP4QfYTyO_6Zt39",
+   "portal_id": "door:07CR7fHeP4QfYTyO_6Zt39",
+   "relation": "connected_by_door",
+   "door": "07CR7fHeP4QfYTyO_6Zt39",
+   "width": 0.89,
+   "provenance": "inferred",
+   "key": "door:07CR7fHeP4QfYTyO_6Zt39",
+   "source": "26uBYUqsT9fu$2hZqJnL3c",
+   "target": "26uBYUqsT9fu$2hZqJnL3f"
+  },
+  {
+   "relation": "contains",
+   "provenance": "inferred",
+   "key": "contains",
+   "source": "26uBYUqsT9fu$2hZqJnL3f",
+   "target": "07CR7fHeP4QfYTyO_6ZtAZ"
+  },
+  {
+   "relation": "contains",
+   "provenance": "inferred",
+   "key": "contains",
+   "source": "26uBYUqsT9fu$2hZqJnL3f",
+   "target": "07CR7fHeP4QfYTyO_6Zt39"
+  },
+  {
+   "relation": "contains",
+   "provenance": "inferred",
+   "key": "contains",
+   "source": "26uBYUqsT9fu$2hZqJnL3f",
+   "target": "1jKaC_UV9EHQtr4wyx6MvZ"
+  },
+  {
+   "relation": "contains",
+   "provenance": "inferred",
+   "key": "contains",
+   "source": "26uBYUqsT9fu$2hZqJnL3f",
+   "target": "2iNGNb9Pf5P99FsPlV55_W"
+  },
+  {
+   "relation": "contains",
+   "provenance": "ifc",
+   "key": "contains",
+   "source": "26uBYUqsT9fu$2hZqJnL3f",
+   "target": "2iNGNb9Pf5P99FsPlV55nG"
+  },
+  {
+   "relation": "contains",
+   "provenance": "ifc",
+   "key": "contains",
+   "source": "26uBYUqsT9fu$2hZqJnL3f",
+   "target": "2iNGNb9Pf5P99FsPlV55TR"
+  },
+  {
+   "relation": "contains",
+   "provenance": "ifc",
+   "key": "contains",
+   "source": "26uBYUqsT9fu$2hZqJnL3f",
+   "target": "2iNGNb9Pf5P99FsPlV55TQ"
+  },
+  {
+   "edge_id": "adj:26uBYUqsT9fu$2hZqJnL3c|26uBYUqsT9fu$2hZqJnL3f",
+   "relation": "adjacent_to",
+   "gap": 0.46,
+   "provenance": "inferred",
+   "key": "adj:26uBYUqsT9fu$2hZqJnL3c|26uBYUqsT9fu$2hZqJnL3f",
+   "source": "26uBYUqsT9fu$2hZqJnL3f",
+   "target": "26uBYUqsT9fu$2hZqJnL3c"
+  },
+  {
+   "edge_id": "door:07CR7fHeP4QfYTyO_6Zt39",
+   "portal_id": "door:07CR7fHeP4QfYTyO_6Zt39",
+   "relation": "connected_by_door",
+   "door": "07CR7fHeP4QfYTyO_6Zt39",
+   "width": 0.89,
+   "provenance": "inferred",
+   "key": "door:07CR7fHeP4QfYTyO_6Zt39",
+   "source": "26uBYUqsT9fu$2hZqJnL3f",
+   "target": "26uBYUqsT9fu$2hZqJnL3c"
+  },
+  {
+   "edge_id": "adj:26uBYUqsT9fu$2hZqJnL3f|26uBYUqsT9fu$2hZqJnL3i",
+   "relation": "adjacent_to",
+   "gap": 0.115,
+   "provenance": "inferred",
+   "key": "adj:26uBYUqsT9fu$2hZqJnL3f|26uBYUqsT9fu$2hZqJnL3i",
+   "source": "26uBYUqsT9fu$2hZqJnL3f",
+   "target": "26uBYUqsT9fu$2hZqJnL3i"
+  },
+  {
+   "edge_id": "door:2iNGNb9Pf5P99FsPlV55zn",
+   "portal_id": "door:2iNGNb9Pf5P99FsPlV55zn",
+   "relation": "connected_by_door",
+   "door": "2iNGNb9Pf5P99FsPlV55zn",
+   "width": 0.89,
+   "provenance": "inferred",
+   "key": "door:2iNGNb9Pf5P99FsPlV55zn",
+   "source": "26uBYUqsT9fu$2hZqJnL3f",
+   "target": "26uBYUqsT9fu$2hZqJnL3i"
+  },
+  {
+   "edge_id": "vconn:1jKaC_UV9EHQtr4wyx6MvZ",
+   "portal_id": "vconn:1jKaC_UV9EHQtr4wyx6MvZ",
+   "relation": "vertically_connected",
+   "via": "1jKaC_UV9EHQtr4wyx6MvZ",
+   "kind": "stair",
+   "rise": 4.5,
+   "basis": "stair_solid",
+   "footprint_extent": 4.7,
+   "width": 1.0,
+   "provenance": "inferred",
+   "key": "vconn:1jKaC_UV9EHQtr4wyx6MvZ",
+   "source": "26uBYUqsT9fu$2hZqJnL3f",
+   "target": "26uBYUqsT9fu$2hZqJnL3s"
+  },
+  {
+   "edge_id": "vconn:26uBYUqsT9fu$2hZqJnL3f|INF-1jPCssxb5C1RSM_YHIx$$2-0003:0",
+   "portal_id": "vconn:26uBYUqsT9fu$2hZqJnL3f|INF-1jPCssxb5C1RSM_YHIx$$2-0003:0",
+   "relation": "vertically_connected",
+   "via": "1jKaC_UV9EHQtr4wyx6MvZ",
+   "kind": "stair",
+   "rise": 4.5,
+   "basis": "stair_solid",
+   "footprint_extent": 4.7,
+   "width": 1.0,
+   "provenance": "inferred",
+   "key": "vconn:26uBYUqsT9fu$2hZqJnL3f|INF-1jPCssxb5C1RSM_YHIx$$2-0003:0",
+   "source": "26uBYUqsT9fu$2hZqJnL3f",
+   "target": "INF-1jPCssxb5C1RSM_YHIx$$2-0003"
+  },
+  {
+   "relation": "contains",
+   "provenance": "inferred",
+   "key": "contains",
+   "source": "26uBYUqsT9fu$2hZqJnL3i",
+   "target": "07CR7fHeP4QfYTyO_6ZtTT"
+  },
+  {
+   "relation": "contains",
+   "provenance": "inferred",
+   "key": "contains",
+   "source": "26uBYUqsT9fu$2hZqJnL3i",
+   "target": "2iNGNb9Pf5P99FsPlV55zn"
+  },
+  {
+   "relation": "contains",
+   "provenance": "ifc",
+   "key": "contains",
+   "source": "26uBYUqsT9fu$2hZqJnL3i",
+   "target": "2iNGNb9Pf5P99FsPlV54dv"
+  },
+  {
+   "relation": "contains",
+   "provenance": "ifc",
+   "key": "contains",
+   "source": "26uBYUqsT9fu$2hZqJnL3i",
+   "target": "2iNGNb9Pf5P99FsPlV54du"
+  },
+  {
+   "relation": "contains",
+   "provenance": "ifc",
+   "key": "contains",
+   "source": "26uBYUqsT9fu$2hZqJnL3i",
+   "target": "2iNGNb9Pf5P99FsPlV54dx"
+  },
+  {
+   "relation": "contains",
+   "provenance": "ifc",
+   "key": "contains",
+   "source": "26uBYUqsT9fu$2hZqJnL3i",
+   "target": "2iNGNb9Pf5P99FsPlV54dz"
+  },
+  {
+   "relation": "contains",
+   "provenance": "ifc",
+   "key": "contains",
+   "source": "26uBYUqsT9fu$2hZqJnL3i",
+   "target": "2iNGNb9Pf5P99FsPlV55oh"
+  },
+  {
+   "edge_id": "adj:26uBYUqsT9fu$2hZqJnL3f|26uBYUqsT9fu$2hZqJnL3i",
+   "relation": "adjacent_to",
+   "gap": 0.115,
+   "provenance": "inferred",
+   "key": "adj:26uBYUqsT9fu$2hZqJnL3f|26uBYUqsT9fu$2hZqJnL3i",
+   "source": "26uBYUqsT9fu$2hZqJnL3i",
+   "target": "26uBYUqsT9fu$2hZqJnL3f"
+  },
+  {
+   "edge_id": "door:2iNGNb9Pf5P99FsPlV55zn",
+   "portal_id": "door:2iNGNb9Pf5P99FsPlV55zn",
+   "relation": "connected_by_door",
+   "door": "2iNGNb9Pf5P99FsPlV55zn",
+   "width": 0.89,
+   "provenance": "inferred",
+   "key": "door:2iNGNb9Pf5P99FsPlV55zn",
+   "source": "26uBYUqsT9fu$2hZqJnL3i",
+   "target": "26uBYUqsT9fu$2hZqJnL3f"
+  },
+  {
+   "relation": "contains",
+   "provenance": "inferred",
+   "key": "contains",
+   "source": "26uBYUqsT9fu$2hZqJnL3o",
+   "target": "1jKaC_UV9EHQtr4wyx6Mng"
+  },
+  {
+   "relation": "contains",
+   "provenance": "inferred",
+   "key": "contains",
+   "source": "26uBYUqsT9fu$2hZqJnL3o",
+   "target": "2iNGNb9Pf5P99FsPlV56CL"
+  },
+  {
+   "relation": "contains",
+   "provenance": "ifc",
+   "key": "contains",
+   "source": "26uBYUqsT9fu$2hZqJnL3o",
+   "target": "2iNGNb9Pf5P99FsPlV56EP"
+  },
+  {
+   "relation": "contains",
+   "provenance": "ifc",
+   "key": "contains",
+   "source": "26uBYUqsT9fu$2hZqJnL3o",
+   "target": "2iNGNb9Pf5P99FsPlV56EO"
+  },
+  {
+   "relation": "contains",
+   "provenance": "ifc",
+   "key": "contains",
+   "source": "26uBYUqsT9fu$2hZqJnL3o",
+   "target": "2iNGNb9Pf5P99FsPlV5631"
+  },
+  {
+   "edge_id": "adj:26uBYUqsT9fu$2hZqJnL3o|26uBYUqsT9fu$2hZqJnL3s",
+   "relation": "adjacent_to",
+   "gap": 0.115,
+   "provenance": "inferred",
+   "key": "adj:26uBYUqsT9fu$2hZqJnL3o|26uBYUqsT9fu$2hZqJnL3s",
+   "source": "26uBYUqsT9fu$2hZqJnL3o",
+   "target": "26uBYUqsT9fu$2hZqJnL3s"
+  },
+  {
+   "edge_id": "door:2iNGNb9Pf5P99FsPlV56CL",
+   "portal_id": "door:2iNGNb9Pf5P99FsPlV56CL",
+   "relation": "connected_by_door",
+   "door": "2iNGNb9Pf5P99FsPlV56CL",
+   "width": 0.89,
+   "provenance": "inferred",
+   "key": "door:2iNGNb9Pf5P99FsPlV56CL",
+   "source": "26uBYUqsT9fu$2hZqJnL3o",
+   "target": "26uBYUqsT9fu$2hZqJnL3s"
+  },
+  {
+   "relation": "contains",
+   "provenance": "inferred",
+   "key": "contains",
+   "source": "26uBYUqsT9fu$2hZqJnL3s",
+   "target": "1ksvnTQ291hfq4qBxBzHAg"
+  },
+  {
+   "relation": "contains",
+   "provenance": "inferred",
+   "key": "contains",
+   "source": "26uBYUqsT9fu$2hZqJnL3s",
+   "target": "1jKaC_UV9EHQtr4wyx6Mnh"
+  },
+  {
+   "relation": "contains",
+   "provenance": "inferred",
+   "key": "contains",
+   "source": "26uBYUqsT9fu$2hZqJnL3s",
+   "target": "1jKaC_UV9EHQtr4wyx6MsM"
+  },
+  {
+   "relation": "contains",
+   "provenance": "inferred",
+   "key": "contains",
+   "source": "26uBYUqsT9fu$2hZqJnL3s",
+   "target": "2iNGNb9Pf5P99FsPlV55Ks"
+  },
+  {
+   "relation": "contains",
+   "provenance": "ifc",
+   "key": "contains",
+   "source": "26uBYUqsT9fu$2hZqJnL3s",
+   "target": "2iNGNb9Pf5P99FsPlV56Xa"
+  },
+  {
+   "relation": "contains",
+   "provenance": "ifc",
+   "key": "contains",
+   "source": "26uBYUqsT9fu$2hZqJnL3s",
+   "target": "2iNGNb9Pf5P99FsPlV56dD"
+  },
+  {
+   "relation": "contains",
+   "provenance": "ifc",
+   "key": "contains",
+   "source": "26uBYUqsT9fu$2hZqJnL3s",
+   "target": "2iNGNb9Pf5P99FsPlV56bh"
+  },
+  {
+   "relation": "contains",
+   "provenance": "ifc",
+   "key": "contains",
+   "source": "26uBYUqsT9fu$2hZqJnL3s",
+   "target": "2iNGNb9Pf5P99FsPlV5689"
+  },
+  {
+   "relation": "contains",
+   "provenance": "ifc",
+   "key": "contains",
+   "source": "26uBYUqsT9fu$2hZqJnL3s",
+   "target": "2iNGNb9Pf5P99FsPlV5688"
+  },
+  {
+   "relation": "contains",
+   "provenance": "ifc",
+   "key": "contains",
+   "source": "26uBYUqsT9fu$2hZqJnL3s",
+   "target": "2iNGNb9Pf5P99FsPlV5694"
+  },
+  {
+   "edge_id": "adj:26uBYUqsT9fu$2hZqJnL3o|26uBYUqsT9fu$2hZqJnL3s",
+   "relation": "adjacent_to",
+   "gap": 0.115,
+   "provenance": "inferred",
+   "key": "adj:26uBYUqsT9fu$2hZqJnL3o|26uBYUqsT9fu$2hZqJnL3s",
+   "source": "26uBYUqsT9fu$2hZqJnL3s",
+   "target": "26uBYUqsT9fu$2hZqJnL3o"
+  },
+  {
+   "edge_id": "door:2iNGNb9Pf5P99FsPlV56CL",
+   "portal_id": "door:2iNGNb9Pf5P99FsPlV56CL",
+   "relation": "connected_by_door",
+   "door": "2iNGNb9Pf5P99FsPlV56CL",
+   "width": 0.89,
+   "provenance": "inferred",
+   "key": "door:2iNGNb9Pf5P99FsPlV56CL",
+   "source": "26uBYUqsT9fu$2hZqJnL3s",
+   "target": "26uBYUqsT9fu$2hZqJnL3o"
+  },
+  {
+   "edge_id": "adj:26uBYUqsT9fu$2hZqJnL3s|26uBYUqsT9fu$2hZqJnL3v",
+   "relation": "adjacent_to",
+   "gap": 0.46,
+   "provenance": "inferred",
+   "key": "adj:26uBYUqsT9fu$2hZqJnL3s|26uBYUqsT9fu$2hZqJnL3v",
+   "source": "26uBYUqsT9fu$2hZqJnL3s",
+   "target": "26uBYUqsT9fu$2hZqJnL3v"
+  },
+  {
+   "edge_id": "door:1jKaC_UV9EHQtr4wyx6MsM",
+   "portal_id": "door:1jKaC_UV9EHQtr4wyx6MsM",
+   "relation": "connected_by_door",
+   "door": "1jKaC_UV9EHQtr4wyx6MsM",
+   "width": 0.89,
+   "provenance": "inferred",
+   "key": "door:1jKaC_UV9EHQtr4wyx6MsM",
+   "source": "26uBYUqsT9fu$2hZqJnL3s",
+   "target": "26uBYUqsT9fu$2hZqJnL3v"
+  },
+  {
+   "edge_id": "vconn:1jKaC_UV9EHQtr4wyx6MvZ",
+   "portal_id": "vconn:1jKaC_UV9EHQtr4wyx6MvZ",
+   "relation": "vertically_connected",
+   "via": "1jKaC_UV9EHQtr4wyx6MvZ",
+   "kind": "stair",
+   "rise": 4.5,
+   "basis": "stair_solid",
+   "footprint_extent": 4.7,
+   "width": 1.0,
+   "provenance": "inferred",
+   "key": "vconn:1jKaC_UV9EHQtr4wyx6MvZ",
+   "source": "26uBYUqsT9fu$2hZqJnL3s",
+   "target": "26uBYUqsT9fu$2hZqJnL3f"
+  },
+  {
+   "relation": "contains",
+   "provenance": "ifc",
+   "key": "contains",
+   "source": "26uBYUqsT9fu$2hZqJnL3v",
+   "target": "2iNGNb9Pf5P99FsPlV56YG"
+  },
+  {
+   "relation": "contains",
+   "provenance": "ifc",
+   "key": "contains",
+   "source": "26uBYUqsT9fu$2hZqJnL3v",
+   "target": "2iNGNb9Pf5P99FsPlV56YI"
+  },
+  {
+   "relation": "contains",
+   "provenance": "ifc",
+   "key": "contains",
+   "source": "26uBYUqsT9fu$2hZqJnL3v",
+   "target": "2iNGNb9Pf5P99FsPlV56W$"
+  },
+  {
+   "edge_id": "adj:26uBYUqsT9fu$2hZqJnL3s|26uBYUqsT9fu$2hZqJnL3v",
+   "relation": "adjacent_to",
+   "gap": 0.46,
+   "provenance": "inferred",
+   "key": "adj:26uBYUqsT9fu$2hZqJnL3s|26uBYUqsT9fu$2hZqJnL3v",
+   "source": "26uBYUqsT9fu$2hZqJnL3v",
+   "target": "26uBYUqsT9fu$2hZqJnL3s"
+  },
+  {
+   "edge_id": "door:1jKaC_UV9EHQtr4wyx6MsM",
+   "portal_id": "door:1jKaC_UV9EHQtr4wyx6MsM",
+   "relation": "connected_by_door",
+   "door": "1jKaC_UV9EHQtr4wyx6MsM",
+   "width": 0.89,
+   "provenance": "inferred",
+   "key": "door:1jKaC_UV9EHQtr4wyx6MsM",
+   "source": "26uBYUqsT9fu$2hZqJnL3v",
+   "target": "26uBYUqsT9fu$2hZqJnL3s"
+  },
+  {
+   "edge_id": "adj:26uBYUqsT9fu$2hZqJnL3v|26uBYUqsT9fu$2hZqJnL3y",
+   "relation": "adjacent_to",
+   "gap": 0.115,
+   "provenance": "inferred",
+   "key": "adj:26uBYUqsT9fu$2hZqJnL3v|26uBYUqsT9fu$2hZqJnL3y",
+   "source": "26uBYUqsT9fu$2hZqJnL3v",
+   "target": "26uBYUqsT9fu$2hZqJnL3y"
+  },
+  {
+   "edge_id": "door:2iNGNb9Pf5P99FsPlV56jm",
+   "portal_id": "door:2iNGNb9Pf5P99FsPlV56jm",
+   "relation": "connected_by_door",
+   "door": "2iNGNb9Pf5P99FsPlV56jm",
+   "width": 0.89,
+   "provenance": "inferred",
+   "key": "door:2iNGNb9Pf5P99FsPlV56jm",
+   "source": "26uBYUqsT9fu$2hZqJnL3v",
+   "target": "26uBYUqsT9fu$2hZqJnL3y"
+  },
+  {
+   "relation": "contains",
+   "provenance": "inferred",
+   "key": "contains",
+   "source": "26uBYUqsT9fu$2hZqJnL3y",
+   "target": "1jKaC_UV9EHQtr4wyx6MnX"
+  },
+  {
+   "relation": "contains",
+   "provenance": "inferred",
+   "key": "contains",
+   "source": "26uBYUqsT9fu$2hZqJnL3y",
+   "target": "1jKaC_UV9EHQtr4wyx6MtK"
+  },
+  {
+   "relation": "contains",
+   "provenance": "inferred",
+   "key": "contains",
+   "source": "26uBYUqsT9fu$2hZqJnL3y",
+   "target": "1jKaC_UV9EHQtr4wyx6MtV"
+  },
+  {
+   "relation": "contains",
+   "provenance": "inferred",
+   "key": "contains",
+   "source": "26uBYUqsT9fu$2hZqJnL3y",
+   "target": "1jKaC_UV9EHQtr4wyx6MtT"
+  },
+  {
+   "relation": "contains",
+   "provenance": "inferred",
+   "key": "contains",
+   "source": "26uBYUqsT9fu$2hZqJnL3y",
+   "target": "1jKaC_UV9EHQtr4wyx6MtO"
+  },
+  {
+   "relation": "contains",
+   "provenance": "inferred",
+   "key": "contains",
+   "source": "26uBYUqsT9fu$2hZqJnL3y",
+   "target": "2iNGNb9Pf5P99FsPlV56jn"
+  },
+  {
+   "relation": "contains",
+   "provenance": "inferred",
+   "key": "contains",
+   "source": "26uBYUqsT9fu$2hZqJnL3y",
+   "target": "2iNGNb9Pf5P99FsPlV56jm"
+  },
+  {
+   "relation": "contains",
+   "provenance": "ifc",
+   "key": "contains",
+   "source": "26uBYUqsT9fu$2hZqJnL3y",
+   "target": "2iNGNb9Pf5P99FsPlV56hy"
+  },
+  {
+   "relation": "contains",
+   "provenance": "ifc",
+   "key": "contains",
+   "source": "26uBYUqsT9fu$2hZqJnL3y",
+   "target": "2iNGNb9Pf5P99FsPlV56h_"
+  },
+  {
+   "relation": "contains",
+   "provenance": "ifc",
+   "key": "contains",
+   "source": "26uBYUqsT9fu$2hZqJnL3y",
+   "target": "2iNGNb9Pf5P99FsPlV56hX"
+  },
+  {
+   "relation": "contains",
+   "provenance": "ifc",
+   "key": "contains",
+   "source": "26uBYUqsT9fu$2hZqJnL3y",
+   "target": "2iNGNb9Pf5P99FsPlV56hZ"
+  },
+  {
+   "edge_id": "adj:26uBYUqsT9fu$2hZqJnL3v|26uBYUqsT9fu$2hZqJnL3y",
+   "relation": "adjacent_to",
+   "gap": 0.115,
+   "provenance": "inferred",
+   "key": "adj:26uBYUqsT9fu$2hZqJnL3v|26uBYUqsT9fu$2hZqJnL3y",
+   "source": "26uBYUqsT9fu$2hZqJnL3y",
+   "target": "26uBYUqsT9fu$2hZqJnL3v"
+  },
+  {
+   "edge_id": "door:2iNGNb9Pf5P99FsPlV56jm",
+   "portal_id": "door:2iNGNb9Pf5P99FsPlV56jm",
+   "relation": "connected_by_door",
+   "door": "2iNGNb9Pf5P99FsPlV56jm",
+   "width": 0.89,
+   "provenance": "inferred",
+   "key": "door:2iNGNb9Pf5P99FsPlV56jm",
+   "source": "26uBYUqsT9fu$2hZqJnL3y",
+   "target": "26uBYUqsT9fu$2hZqJnL3v"
+  },
+  {
+   "edge_id": "adj:26uBYUqsT9fu$2hZqJnL3$|26uBYUqsT9fu$2hZqJnL3y",
+   "relation": "adjacent_to",
+   "gap": 0.115,
+   "provenance": "inferred",
+   "key": "adj:26uBYUqsT9fu$2hZqJnL3$|26uBYUqsT9fu$2hZqJnL3y",
+   "source": "26uBYUqsT9fu$2hZqJnL3y",
+   "target": "26uBYUqsT9fu$2hZqJnL3$"
+  },
+  {
+   "edge_id": "door:2iNGNb9Pf5P99FsPlV55EC",
+   "portal_id": "door:2iNGNb9Pf5P99FsPlV55EC",
+   "relation": "connected_by_door",
+   "door": "2iNGNb9Pf5P99FsPlV55EC",
+   "width": 0.89,
+   "provenance": "inferred",
+   "key": "door:2iNGNb9Pf5P99FsPlV55EC",
+   "source": "26uBYUqsT9fu$2hZqJnL3y",
+   "target": "26uBYUqsT9fu$2hZqJnL3$"
+  },
+  {
+   "relation": "contains",
+   "provenance": "inferred",
+   "key": "contains",
+   "source": "26uBYUqsT9fu$2hZqJnL3$",
+   "target": "2iNGNb9Pf5P99FsPlV55E9"
+  },
+  {
+   "relation": "contains",
+   "provenance": "inferred",
+   "key": "contains",
+   "source": "26uBYUqsT9fu$2hZqJnL3$",
+   "target": "2iNGNb9Pf5P99FsPlV55EC"
+  },
+  {
+   "edge_id": "adj:26uBYUqsT9fu$2hZqJnL3$|26uBYUqsT9fu$2hZqJnL3y",
+   "relation": "adjacent_to",
+   "gap": 0.115,
+   "provenance": "inferred",
+   "key": "adj:26uBYUqsT9fu$2hZqJnL3$|26uBYUqsT9fu$2hZqJnL3y",
+   "source": "26uBYUqsT9fu$2hZqJnL3$",
+   "target": "26uBYUqsT9fu$2hZqJnL3y"
+  },
+  {
+   "edge_id": "door:2iNGNb9Pf5P99FsPlV55EC",
+   "portal_id": "door:2iNGNb9Pf5P99FsPlV55EC",
+   "relation": "connected_by_door",
+   "door": "2iNGNb9Pf5P99FsPlV55EC",
+   "width": 0.89,
+   "provenance": "inferred",
+   "key": "door:2iNGNb9Pf5P99FsPlV55EC",
+   "source": "26uBYUqsT9fu$2hZqJnL3$",
+   "target": "26uBYUqsT9fu$2hZqJnL3y"
+  },
+  {
+   "edge_id": "adj:26uBYUqsT9fu$2hZqJnL3$|26uBYUqsT9fu$2hZqJnL32",
+   "relation": "adjacent_to",
+   "gap": 0.115,
+   "provenance": "inferred",
+   "key": "adj:26uBYUqsT9fu$2hZqJnL3$|26uBYUqsT9fu$2hZqJnL32",
+   "source": "26uBYUqsT9fu$2hZqJnL3$",
+   "target": "26uBYUqsT9fu$2hZqJnL32"
+  },
+  {
+   "edge_id": "passage:26uBYUqsT9fu$2hZqJnL3$|26uBYUqsT9fu$2hZqJnL32:0",
+   "portal_id": "passage:26uBYUqsT9fu$2hZqJnL3$|26uBYUqsT9fu$2hZqJnL32:0",
+   "relation": "open_passage",
+   "width": 2.08,
+   "openness": 0.0,
+   "provenance": "inferred",
+   "key": "passage:26uBYUqsT9fu$2hZqJnL3$|26uBYUqsT9fu$2hZqJnL32:0",
+   "source": "26uBYUqsT9fu$2hZqJnL3$",
+   "target": "26uBYUqsT9fu$2hZqJnL32"
+  },
+  {
+   "relation": "contains",
+   "provenance": "inferred",
+   "key": "contains",
+   "source": "26uBYUqsT9fu$2hZqJnL32",
+   "target": "1jKaC_UV9EHQtr4wyx6MtI"
+  },
+  {
+   "relation": "contains",
+   "provenance": "inferred",
+   "key": "contains",
+   "source": "26uBYUqsT9fu$2hZqJnL32",
+   "target": "1jKaC_UV9EHQtr4wyx6MtR"
+  },
+  {
+   "edge_id": "adj:26uBYUqsT9fu$2hZqJnL3$|26uBYUqsT9fu$2hZqJnL32",
+   "relation": "adjacent_to",
+   "gap": 0.115,
+   "provenance": "inferred",
+   "key": "adj:26uBYUqsT9fu$2hZqJnL3$|26uBYUqsT9fu$2hZqJnL32",
+   "source": "26uBYUqsT9fu$2hZqJnL32",
+   "target": "26uBYUqsT9fu$2hZqJnL3$"
+  },
+  {
+   "edge_id": "passage:26uBYUqsT9fu$2hZqJnL3$|26uBYUqsT9fu$2hZqJnL32:0",
+   "portal_id": "passage:26uBYUqsT9fu$2hZqJnL3$|26uBYUqsT9fu$2hZqJnL32:0",
+   "relation": "open_passage",
+   "width": 2.08,
+   "openness": 0.0,
+   "provenance": "inferred",
+   "key": "passage:26uBYUqsT9fu$2hZqJnL3$|26uBYUqsT9fu$2hZqJnL32:0",
+   "source": "26uBYUqsT9fu$2hZqJnL32",
+   "target": "26uBYUqsT9fu$2hZqJnL3$"
+  },
+  {
+   "edge_id": "adj:26uBYUqsT9fu$2hZqJnL32|26uBYUqsT9fu$2hZqJnL35",
+   "relation": "adjacent_to",
+   "gap": 0.115,
+   "provenance": "inferred",
+   "key": "adj:26uBYUqsT9fu$2hZqJnL32|26uBYUqsT9fu$2hZqJnL35",
+   "source": "26uBYUqsT9fu$2hZqJnL32",
+   "target": "26uBYUqsT9fu$2hZqJnL35"
+  },
+  {
+   "edge_id": "door:2iNGNb9Pf5P99FsPlV5589",
+   "portal_id": "door:2iNGNb9Pf5P99FsPlV5589",
+   "relation": "connected_by_door",
+   "door": "2iNGNb9Pf5P99FsPlV5589",
+   "width": 0.89,
+   "provenance": "inferred",
+   "key": "door:2iNGNb9Pf5P99FsPlV5589",
+   "source": "26uBYUqsT9fu$2hZqJnL32",
+   "target": "26uBYUqsT9fu$2hZqJnL35"
+  },
+  {
+   "relation": "contains",
+   "provenance": "inferred",
+   "key": "contains",
+   "source": "26uBYUqsT9fu$2hZqJnL35",
+   "target": "1ksvnTQ291hfq4qBxBzHDD"
+  },
+  {
+   "relation": "contains",
+   "provenance": "inferred",
+   "key": "contains",
+   "source": "26uBYUqsT9fu$2hZqJnL35",
+   "target": "1jKaC_UV9EHQtr4wyx6MtG"
+  },
+  {
+   "relation": "contains",
+   "provenance": "inferred",
+   "key": "contains",
+   "source": "26uBYUqsT9fu$2hZqJnL35",
+   "target": "1jKaC_UV9EHQtr4wyx6MtP"
+  },
+  {
+   "relation": "contains",
+   "provenance": "inferred",
+   "key": "contains",
+   "source": "26uBYUqsT9fu$2hZqJnL35",
+   "target": "2iNGNb9Pf5P99FsPlV558I"
+  },
+  {
+   "relation": "contains",
+   "provenance": "inferred",
+   "key": "contains",
+   "source": "26uBYUqsT9fu$2hZqJnL35",
+   "target": "2iNGNb9Pf5P99FsPlV5589"
+  },
+  {
+   "relation": "contains",
+   "provenance": "ifc",
+   "key": "contains",
+   "source": "26uBYUqsT9fu$2hZqJnL35",
+   "target": "2iNGNb9Pf5P99FsPlV55Ef"
+  },
+  {
+   "relation": "contains",
+   "provenance": "ifc",
+   "key": "contains",
+   "source": "26uBYUqsT9fu$2hZqJnL35",
+   "target": "2iNGNb9Pf5P99FsPlV55Eh"
+  },
+  {
+   "relation": "contains",
+   "provenance": "ifc",
+   "key": "contains",
+   "source": "26uBYUqsT9fu$2hZqJnL35",
+   "target": "2iNGNb9Pf5P99FsPlV55Eg"
+  },
+  {
+   "relation": "contains",
+   "provenance": "ifc",
+   "key": "contains",
+   "source": "26uBYUqsT9fu$2hZqJnL35",
+   "target": "2iNGNb9Pf5P99FsPlV55Ei"
+  },
+  {
+   "edge_id": "adj:26uBYUqsT9fu$2hZqJnL32|26uBYUqsT9fu$2hZqJnL35",
+   "relation": "adjacent_to",
+   "gap": 0.115,
+   "provenance": "inferred",
+   "key": "adj:26uBYUqsT9fu$2hZqJnL32|26uBYUqsT9fu$2hZqJnL35",
+   "source": "26uBYUqsT9fu$2hZqJnL35",
+   "target": "26uBYUqsT9fu$2hZqJnL32"
+  },
+  {
+   "edge_id": "door:2iNGNb9Pf5P99FsPlV5589",
+   "portal_id": "door:2iNGNb9Pf5P99FsPlV5589",
+   "relation": "connected_by_door",
+   "door": "2iNGNb9Pf5P99FsPlV5589",
+   "width": 0.89,
+   "provenance": "inferred",
+   "key": "door:2iNGNb9Pf5P99FsPlV5589",
+   "source": "26uBYUqsT9fu$2hZqJnL35",
+   "target": "26uBYUqsT9fu$2hZqJnL32"
+  },
+  {
+   "edge_id": "adj:26uBYUqsT9fu$2hZqJnL35|26uBYUqsT9fu$2hZqJnL38",
+   "relation": "adjacent_to",
+   "gap": 0.115,
+   "provenance": "inferred",
+   "key": "adj:26uBYUqsT9fu$2hZqJnL35|26uBYUqsT9fu$2hZqJnL38",
+   "source": "26uBYUqsT9fu$2hZqJnL35",
+   "target": "26uBYUqsT9fu$2hZqJnL38"
+  },
+  {
+   "edge_id": "door:2iNGNb9Pf5P99FsPlV5586",
+   "portal_id": "door:2iNGNb9Pf5P99FsPlV5586",
+   "relation": "connected_by_door",
+   "door": "2iNGNb9Pf5P99FsPlV5586",
+   "width": 0.89,
+   "provenance": "inferred",
+   "key": "door:2iNGNb9Pf5P99FsPlV5586",
+   "source": "26uBYUqsT9fu$2hZqJnL35",
+   "target": "26uBYUqsT9fu$2hZqJnL38"
+  },
+  {
+   "relation": "contains",
+   "provenance": "inferred",
+   "key": "contains",
+   "source": "26uBYUqsT9fu$2hZqJnL38",
+   "target": "1jKaC_UV9EHQtr4wyx6Msk"
+  },
+  {
+   "relation": "contains",
+   "provenance": "inferred",
+   "key": "contains",
+   "source": "26uBYUqsT9fu$2hZqJnL38",
+   "target": "1jKaC_UV9EHQtr4wyx6MsW"
+  },
+  {
+   "relation": "contains",
+   "provenance": "inferred",
+   "key": "contains",
+   "source": "26uBYUqsT9fu$2hZqJnL38",
+   "target": "1jKaC_UV9EHQtr4wyx6MtN"
+  },
+  {
+   "relation": "contains",
+   "provenance": "inferred",
+   "key": "contains",
+   "source": "26uBYUqsT9fu$2hZqJnL38",
+   "target": "1jKaC_UV9EHQtr4wyx6Mt6"
+  },
+  {
+   "relation": "contains",
+   "provenance": "inferred",
+   "key": "contains",
+   "source": "26uBYUqsT9fu$2hZqJnL38",
+   "target": "1jKaC_UV9EHQtr4wyx6MnY"
+  },
+  {
+   "relation": "contains",
+   "provenance": "inferred",
+   "key": "contains",
+   "source": "26uBYUqsT9fu$2hZqJnL38",
+   "target": "2iNGNb9Pf5P99FsPlV558L"
+  },
+  {
+   "relation": "contains",
+   "provenance": "inferred",
+   "key": "contains",
+   "source": "26uBYUqsT9fu$2hZqJnL38",
+   "target": "2iNGNb9Pf5P99FsPlV5586"
+  },
+  {
+   "relation": "contains",
+   "provenance": "inferred",
+   "key": "contains",
+   "source": "26uBYUqsT9fu$2hZqJnL38",
+   "target": "2iNGNb9Pf5P99FsPlV56H8"
+  },
+  {
+   "relation": "contains",
+   "provenance": "ifc",
+   "key": "contains",
+   "source": "26uBYUqsT9fu$2hZqJnL38",
+   "target": "2iNGNb9Pf5P99FsPlV56LO"
+  },
+  {
+   "relation": "contains",
+   "provenance": "ifc",
+   "key": "contains",
+   "source": "26uBYUqsT9fu$2hZqJnL38",
+   "target": "2iNGNb9Pf5P99FsPlV56Lh"
+  },
+  {
+   "edge_id": "adj:26uBYUqsT9fu$2hZqJnL35|26uBYUqsT9fu$2hZqJnL38",
+   "relation": "adjacent_to",
+   "gap": 0.115,
+   "provenance": "inferred",
+   "key": "adj:26uBYUqsT9fu$2hZqJnL35|26uBYUqsT9fu$2hZqJnL38",
+   "source": "26uBYUqsT9fu$2hZqJnL38",
+   "target": "26uBYUqsT9fu$2hZqJnL35"
+  },
+  {
+   "edge_id": "door:2iNGNb9Pf5P99FsPlV5586",
+   "portal_id": "door:2iNGNb9Pf5P99FsPlV5586",
+   "relation": "connected_by_door",
+   "door": "2iNGNb9Pf5P99FsPlV5586",
+   "width": 0.89,
+   "provenance": "inferred",
+   "key": "door:2iNGNb9Pf5P99FsPlV5586",
+   "source": "26uBYUqsT9fu$2hZqJnL38",
+   "target": "26uBYUqsT9fu$2hZqJnL35"
+  },
+  {
+   "edge_id": "vconn:1jKaC_UV9EHQtr4wyx6Mt6",
+   "portal_id": "vconn:1jKaC_UV9EHQtr4wyx6Mt6",
+   "relation": "vertically_connected",
+   "via": "1jKaC_UV9EHQtr4wyx6Mt6",
+   "kind": "stair",
+   "rise": 4.34,
+   "basis": "stair_solid",
+   "footprint_extent": 5.52,
+   "width": 0.61,
+   "provenance": "inferred",
+   "key": "vconn:1jKaC_UV9EHQtr4wyx6Mt6",
+   "source": "26uBYUqsT9fu$2hZqJnL38",
+   "target": "26uBYUqsT9fu$2hZqJnL2H"
+  },
+  {
+   "edge_id": "vconn:26uBYUqsT9fu$2hZqJnL38|INF-1owBOg$5v0GwDBa7HPOsiG-0002:0",
+   "portal_id": "vconn:26uBYUqsT9fu$2hZqJnL38|INF-1owBOg$5v0GwDBa7HPOsiG-0002:0",
+   "relation": "vertically_connected",
+   "via": "1jKaC_UV9EHQtr4wyx6Mt6",
+   "kind": "stair",
+   "rise": 4.34,
+   "basis": "stair_solid",
+   "footprint_extent": 5.52,
+   "width": 0.61,
+   "provenance": "inferred",
+   "key": "vconn:26uBYUqsT9fu$2hZqJnL38|INF-1owBOg$5v0GwDBa7HPOsiG-0002:0",
+   "source": "26uBYUqsT9fu$2hZqJnL38",
+   "target": "INF-1owBOg$5v0GwDBa7HPOsiG-0002"
+  },
+  {
+   "edge_id": "vconn:1ksvnTQ291hfq4qBxBzNyF",
+   "portal_id": "vconn:1ksvnTQ291hfq4qBxBzNyF",
+   "relation": "vertically_connected",
+   "via": "1ksvnTQ291hfq4qBxBzNyF",
+   "kind": "stair",
+   "rise": 4.34,
+   "basis": "stair_solid",
+   "footprint_extent": 5.52,
+   "width": 0.61,
+   "provenance": "inferred",
+   "key": "vconn:1ksvnTQ291hfq4qBxBzNyF",
+   "source": "26uBYUqsT9fu$2hZqJnL38",
+   "target": "26uBYUqsT9fu$2hZqJnL2K"
+  },
+  {
+   "relation": "contains",
+   "provenance": "inferred",
+   "key": "contains",
+   "source": "26uBYUqsT9fu$2hZqJnL3B",
+   "target": "1ksvnTQ291hfq4qBxBzHDk"
+  },
+  {
+   "relation": "contains",
+   "provenance": "inferred",
+   "key": "contains",
+   "source": "26uBYUqsT9fu$2hZqJnL3B",
+   "target": "1jKaC_UV9EHQtr4wyx6Mnk"
+  },
+  {
+   "relation": "contains",
+   "provenance": "inferred",
+   "key": "contains",
+   "source": "26uBYUqsT9fu$2hZqJnL3B",
+   "target": "1jKaC_UV9EHQtr4wyx6Mni"
+  },
+  {
+   "relation": "contains",
+   "provenance": "inferred",
+   "key": "contains",
+   "source": "26uBYUqsT9fu$2hZqJnL3B",
+   "target": "1jKaC_UV9EHQtr4wyx6Msb"
+  },
+  {
+   "relation": "contains",
+   "provenance": "inferred",
+   "key": "contains",
+   "source": "26uBYUqsT9fu$2hZqJnL3B",
+   "target": "2hYqwodsHALxF$68RXz13l"
+  },
+  {
+   "relation": "contains",
+   "provenance": "ifc",
+   "key": "contains",
+   "source": "26uBYUqsT9fu$2hZqJnL3B",
+   "target": "2iNGNb9Pf5P99FsPlV57w6"
+  },
+  {
+   "relation": "contains",
+   "provenance": "ifc",
+   "key": "contains",
+   "source": "26uBYUqsT9fu$2hZqJnL3B",
+   "target": "2iNGNb9Pf5P99FsPlV57w9"
+  },
+  {
+   "relation": "contains",
+   "provenance": "ifc",
+   "key": "contains",
+   "source": "26uBYUqsT9fu$2hZqJnL3B",
+   "target": "2iNGNb9Pf5P99FsPlV57w8"
+  },
+  {
+   "relation": "contains",
+   "provenance": "ifc",
+   "key": "contains",
+   "source": "26uBYUqsT9fu$2hZqJnL3B",
+   "target": "2iNGNb9Pf5P99FsPlV57wB"
+  },
+  {
+   "relation": "contains",
+   "provenance": "ifc",
+   "key": "contains",
+   "source": "26uBYUqsT9fu$2hZqJnL3B",
+   "target": "2iNGNb9Pf5P99FsPlV57qD"
+  },
+  {
+   "edge_id": "adj:26uBYUqsT9fu$2hZqJnL3B|26uBYUqsT9fu$2hZqJnL3E",
+   "relation": "adjacent_to",
+   "gap": 0.115,
+   "provenance": "inferred",
+   "key": "adj:26uBYUqsT9fu$2hZqJnL3B|26uBYUqsT9fu$2hZqJnL3E",
+   "source": "26uBYUqsT9fu$2hZqJnL3B",
+   "target": "26uBYUqsT9fu$2hZqJnL3E"
+  },
+  {
+   "edge_id": "door:2iNGNb9Pf5P99FsPlV57yv",
+   "portal_id": "door:2iNGNb9Pf5P99FsPlV57yv",
+   "relation": "connected_by_door",
+   "door": "2iNGNb9Pf5P99FsPlV57yv",
+   "width": 0.89,
+   "provenance": "inferred",
+   "key": "door:2iNGNb9Pf5P99FsPlV57yv",
+   "source": "26uBYUqsT9fu$2hZqJnL3B",
+   "target": "26uBYUqsT9fu$2hZqJnL3E"
+  },
+  {
+   "edge_id": "vconn:1jKaC_UV9EHQtr4wyx6Muy",
+   "portal_id": "vconn:1jKaC_UV9EHQtr4wyx6Muy",
+   "relation": "vertically_connected",
+   "via": "1jKaC_UV9EHQtr4wyx6Muy",
+   "kind": "stair",
+   "rise": 4.5,
+   "basis": "stair_solid",
+   "footprint_extent": 4.7,
+   "width": 1.0,
+   "provenance": "inferred",
+   "key": "vconn:1jKaC_UV9EHQtr4wyx6Muy",
+   "source": "26uBYUqsT9fu$2hZqJnL3B",
+   "target": "26uBYUqsT9fu$2hZqJnL2N"
+  },
+  {
+   "relation": "contains",
+   "provenance": "inferred",
+   "key": "contains",
+   "source": "26uBYUqsT9fu$2hZqJnL3E",
+   "target": "1jKaC_UV9EHQtr4wyx6Mnj"
+  },
+  {
+   "relation": "contains",
+   "provenance": "inferred",
+   "key": "contains",
+   "source": "26uBYUqsT9fu$2hZqJnL3E",
+   "target": "1jKaC_UV9EHQtr4wyx6MsZ"
+  },
+  {
+   "relation": "contains",
+   "provenance": "inferred",
+   "key": "contains",
+   "source": "26uBYUqsT9fu$2hZqJnL3E",
+   "target": "1jKaC_UV9EHQtr4wyx6Msa"
+  },
+  {
+   "relation": "contains",
+   "provenance": "inferred",
+   "key": "contains",
+   "source": "26uBYUqsT9fu$2hZqJnL3E",
+   "target": "2iNGNb9Pf5P99FsPlV57ys"
+  },
+  {
+   "relation": "contains",
+   "provenance": "inferred",
+   "key": "contains",
+   "source": "26uBYUqsT9fu$2hZqJnL3E",
+   "target": "2iNGNb9Pf5P99FsPlV57yv"
+  },
+  {
+   "relation": "contains",
+   "provenance": "ifc",
+   "key": "contains",
+   "source": "26uBYUqsT9fu$2hZqJnL3E",
+   "target": "2iNGNb9Pf5P99FsPlV57wA"
+  },
+  {
+   "relation": "contains",
+   "provenance": "ifc",
+   "key": "contains",
+   "source": "26uBYUqsT9fu$2hZqJnL3E",
+   "target": "2iNGNb9Pf5P99FsPlV57wD"
+  },
+  {
+   "relation": "contains",
+   "provenance": "ifc",
+   "key": "contains",
+   "source": "26uBYUqsT9fu$2hZqJnL3E",
+   "target": "2iNGNb9Pf5P99FsPlV57wC"
+  },
+  {
+   "edge_id": "adj:26uBYUqsT9fu$2hZqJnL3B|26uBYUqsT9fu$2hZqJnL3E",
+   "relation": "adjacent_to",
+   "gap": 0.115,
+   "provenance": "inferred",
+   "key": "adj:26uBYUqsT9fu$2hZqJnL3B|26uBYUqsT9fu$2hZqJnL3E",
+   "source": "26uBYUqsT9fu$2hZqJnL3E",
+   "target": "26uBYUqsT9fu$2hZqJnL3B"
+  },
+  {
+   "edge_id": "door:2iNGNb9Pf5P99FsPlV57yv",
+   "portal_id": "door:2iNGNb9Pf5P99FsPlV57yv",
+   "relation": "connected_by_door",
+   "door": "2iNGNb9Pf5P99FsPlV57yv",
+   "width": 0.89,
+   "provenance": "inferred",
+   "key": "door:2iNGNb9Pf5P99FsPlV57yv",
+   "source": "26uBYUqsT9fu$2hZqJnL3E",
+   "target": "26uBYUqsT9fu$2hZqJnL3B"
+  },
+  {
+   "relation": "contains",
+   "provenance": "inferred",
+   "key": "contains",
+   "source": "26uBYUqsT9fu$2hZqJnLF$",
+   "target": "07CR7fHeP4QfYTyO_6ZtD5"
+  },
+  {
+   "relation": "contains",
+   "provenance": "inferred",
+   "key": "contains",
+   "source": "26uBYUqsT9fu$2hZqJnLF$",
+   "target": "1ksvnTQ291hfq4qBxBzGd2"
+  },
+  {
+   "relation": "contains",
+   "provenance": "inferred",
+   "key": "contains",
+   "source": "26uBYUqsT9fu$2hZqJnLF$",
+   "target": "1ksvnTQ291hfq4qBxBzGdC"
+  },
+  {
+   "relation": "contains",
+   "provenance": "inferred",
+   "key": "contains",
+   "source": "26uBYUqsT9fu$2hZqJnLF$",
+   "target": "1ksvnTQ291hfq4qBxBzGaT"
+  },
+  {
+   "relation": "contains",
+   "provenance": "inferred",
+   "key": "contains",
+   "source": "26uBYUqsT9fu$2hZqJnLF$",
+   "target": "2iNGNb9Pf5P99FsPlV54$T"
+  },
+  {
+   "relation": "contains",
+   "provenance": "ifc",
+   "key": "contains",
+   "source": "26uBYUqsT9fu$2hZqJnLF$",
+   "target": "2iNGNb9Pf5P99FsPlV53Nz"
+  },
+  {
+   "relation": "contains",
+   "provenance": "ifc",
+   "key": "contains",
+   "source": "26uBYUqsT9fu$2hZqJnLF$",
+   "target": "2iNGNb9Pf5P99FsPlV53N_"
+  },
+  {
+   "relation": "contains",
+   "provenance": "ifc",
+   "key": "contains",
+   "source": "26uBYUqsT9fu$2hZqJnLF$",
+   "target": "2iNGNb9Pf5P99FsPlV53NW"
+  },
+  {
+   "relation": "contains",
+   "provenance": "ifc",
+   "key": "contains",
+   "source": "26uBYUqsT9fu$2hZqJnLF$",
+   "target": "2iNGNb9Pf5P99FsPlV53Nb"
+  },
+  {
+   "edge_id": "adj:26uBYUqsT9fu$2hZqJnL2H|26uBYUqsT9fu$2hZqJnLF$",
+   "relation": "adjacent_to",
+   "gap": 0.115,
+   "provenance": "inferred",
+   "key": "adj:26uBYUqsT9fu$2hZqJnL2H|26uBYUqsT9fu$2hZqJnLF$",
+   "source": "26uBYUqsT9fu$2hZqJnLF$",
+   "target": "26uBYUqsT9fu$2hZqJnL2H"
+  },
+  {
+   "edge_id": "door:2iNGNb9Pf5P99FsPlV54_p",
+   "portal_id": "door:2iNGNb9Pf5P99FsPlV54_p",
+   "relation": "connected_by_door",
+   "door": "2iNGNb9Pf5P99FsPlV54_p",
+   "width": 0.89,
+   "provenance": "inferred",
+   "key": "door:2iNGNb9Pf5P99FsPlV54_p",
+   "source": "26uBYUqsT9fu$2hZqJnLF$",
+   "target": "26uBYUqsT9fu$2hZqJnL2H"
+  },
+  {
+   "edge_id": "adj:26uBYUqsT9fu$2hZqJnL2T|26uBYUqsT9fu$2hZqJnLF$",
+   "relation": "adjacent_to",
+   "gap": 0.115,
+   "provenance": "inferred",
+   "key": "adj:26uBYUqsT9fu$2hZqJnL2T|26uBYUqsT9fu$2hZqJnLF$",
+   "source": "26uBYUqsT9fu$2hZqJnLF$",
+   "target": "26uBYUqsT9fu$2hZqJnL2T"
+  },
+  {
+   "edge_id": "door:2iNGNb9Pf5P99FsPlV54$T",
+   "portal_id": "door:2iNGNb9Pf5P99FsPlV54$T",
+   "relation": "connected_by_door",
+   "door": "2iNGNb9Pf5P99FsPlV54$T",
+   "width": 0.89,
+   "provenance": "inferred",
+   "key": "door:2iNGNb9Pf5P99FsPlV54$T",
+   "source": "26uBYUqsT9fu$2hZqJnLF$",
+   "target": "26uBYUqsT9fu$2hZqJnL2T"
+  },
+  {
+   "edge_id": "vconn:26uBYUqsT9fu$2hZqJnL2K|INF-1jPCssxb5C1RSM_YHIx$$2-0002:0",
+   "portal_id": "vconn:26uBYUqsT9fu$2hZqJnL2K|INF-1jPCssxb5C1RSM_YHIx$$2-0002:0",
+   "relation": "vertically_connected",
+   "via": "1ksvnTQ291hfq4qBxBzNyF",
+   "kind": "stair",
+   "rise": 4.34,
+   "basis": "stair_solid",
+   "footprint_extent": 5.52,
+   "width": 0.61,
+   "provenance": "inferred",
+   "key": "vconn:26uBYUqsT9fu$2hZqJnL2K|INF-1jPCssxb5C1RSM_YHIx$$2-0002:0",
+   "source": "INF-1jPCssxb5C1RSM_YHIx$$2-0002",
+   "target": "26uBYUqsT9fu$2hZqJnL2K"
+  },
+  {
+   "edge_id": "adj:EXT-1jPCssxb5C1RSM_YHIx$$2|INF-1jPCssxb5C1RSM_YHIx$$2-0003",
+   "relation": "adjacent_to",
+   "gap": 0.5,
+   "provenance": "inferred",
+   "key": "adj:EXT-1jPCssxb5C1RSM_YHIx$$2|INF-1jPCssxb5C1RSM_YHIx$$2-0003",
+   "source": "INF-1jPCssxb5C1RSM_YHIx$$2-0003",
+   "target": "EXT-1jPCssxb5C1RSM_YHIx$$2"
+  },
+  {
+   "edge_id": "vconn:26uBYUqsT9fu$2hZqJnL3f|INF-1jPCssxb5C1RSM_YHIx$$2-0003:0",
+   "portal_id": "vconn:26uBYUqsT9fu$2hZqJnL3f|INF-1jPCssxb5C1RSM_YHIx$$2-0003:0",
+   "relation": "vertically_connected",
+   "via": "1jKaC_UV9EHQtr4wyx6MvZ",
+   "kind": "stair",
+   "rise": 4.5,
+   "basis": "stair_solid",
+   "footprint_extent": 4.7,
+   "width": 1.0,
+   "provenance": "inferred",
+   "key": "vconn:26uBYUqsT9fu$2hZqJnL3f|INF-1jPCssxb5C1RSM_YHIx$$2-0003:0",
+   "source": "INF-1jPCssxb5C1RSM_YHIx$$2-0003",
+   "target": "26uBYUqsT9fu$2hZqJnL3f"
+  },
+  {
+   "edge_id": "adj:EXT-1jPCssxb5C1RSM_YHIx$$2|INF-1jPCssxb5C1RSM_YHIx$$2-0004",
+   "relation": "adjacent_to",
+   "gap": 0.5,
+   "provenance": "inferred",
+   "key": "adj:EXT-1jPCssxb5C1RSM_YHIx$$2|INF-1jPCssxb5C1RSM_YHIx$$2-0004",
+   "source": "INF-1jPCssxb5C1RSM_YHIx$$2-0004",
+   "target": "EXT-1jPCssxb5C1RSM_YHIx$$2"
+  },
+  {
+   "edge_id": "vconn:26uBYUqsT9fu$2hZqJnL2N|INF-1jPCssxb5C1RSM_YHIx$$2-0004:0",
+   "portal_id": "vconn:26uBYUqsT9fu$2hZqJnL2N|INF-1jPCssxb5C1RSM_YHIx$$2-0004:0",
+   "relation": "vertically_connected",
+   "via": "1jKaC_UV9EHQtr4wyx6Muy",
+   "kind": "stair",
+   "rise": 4.5,
+   "basis": "stair_solid",
+   "footprint_extent": 4.7,
+   "width": 1.0,
+   "provenance": "inferred",
+   "key": "vconn:26uBYUqsT9fu$2hZqJnL2N|INF-1jPCssxb5C1RSM_YHIx$$2-0004:0",
+   "source": "INF-1jPCssxb5C1RSM_YHIx$$2-0004",
+   "target": "26uBYUqsT9fu$2hZqJnL2N"
+  },
+  {
+   "edge_id": "adj:EXT-1jPCssxb5C1RSM_YHIx$$2|INF-1jPCssxb5C1RSM_YHIx$$2-0003",
+   "relation": "adjacent_to",
+   "gap": 0.5,
+   "provenance": "inferred",
+   "key": "adj:EXT-1jPCssxb5C1RSM_YHIx$$2|INF-1jPCssxb5C1RSM_YHIx$$2-0003",
+   "source": "EXT-1jPCssxb5C1RSM_YHIx$$2",
+   "target": "INF-1jPCssxb5C1RSM_YHIx$$2-0003"
+  },
+  {
+   "edge_id": "adj:EXT-1jPCssxb5C1RSM_YHIx$$2|INF-1jPCssxb5C1RSM_YHIx$$2-0004",
+   "relation": "adjacent_to",
+   "gap": 0.5,
+   "provenance": "inferred",
+   "key": "adj:EXT-1jPCssxb5C1RSM_YHIx$$2|INF-1jPCssxb5C1RSM_YHIx$$2-0004",
+   "source": "EXT-1jPCssxb5C1RSM_YHIx$$2",
+   "target": "INF-1jPCssxb5C1RSM_YHIx$$2-0004"
+  },
+  {
+   "relation": "contains",
+   "provenance": "inferred",
+   "key": "contains",
+   "source": "INF-1owBOg$5v0GwDBa7HPOsiG-0002",
+   "target": "1jKaC_UV9EHQtr4wyx6Msp"
+  },
+  {
+   "edge_id": "vconn:26uBYUqsT9fu$2hZqJnL38|INF-1owBOg$5v0GwDBa7HPOsiG-0002:0",
+   "portal_id": "vconn:26uBYUqsT9fu$2hZqJnL38|INF-1owBOg$5v0GwDBa7HPOsiG-0002:0",
+   "relation": "vertically_connected",
+   "via": "1jKaC_UV9EHQtr4wyx6Mt6",
+   "kind": "stair",
+   "rise": 4.34,
+   "basis": "stair_solid",
+   "footprint_extent": 5.52,
+   "width": 0.61,
+   "provenance": "inferred",
+   "key": "vconn:26uBYUqsT9fu$2hZqJnL38|INF-1owBOg$5v0GwDBa7HPOsiG-0002:0",
+   "source": "INF-1owBOg$5v0GwDBa7HPOsiG-0002",
+   "target": "26uBYUqsT9fu$2hZqJnL38"
+  },
+  {
+   "edge_id": "vconn:3DWkEUmNbEUw4r79zq9qkU",
+   "portal_id": "vconn:3DWkEUmNbEUw4r79zq9qkU",
+   "relation": "vertically_connected",
+   "via": "3DWkEUmNbEUw4r79zq9qkU",
+   "kind": "stair",
+   "rise": 4.34,
+   "basis": "stair_solid",
+   "footprint_extent": 5.52,
+   "width": 0.61,
+   "provenance": "inferred",
+   "key": "vconn:3DWkEUmNbEUw4r79zq9qkU",
+   "source": "INF-1owBOg$5v0GwDBa7HPOsiG-0002",
+   "target": "INF-2qGKQC4mr7bQHi0erg34tc-0002"
+  },
+  {
+   "relation": "contains",
+   "provenance": "inferred",
+   "key": "contains",
+   "source": "INF-2qGKQC4mr7bQHi0erg34tc-0002",
+   "target": "3DWkEUmNbEUw4r79zq9qk7"
+  },
+  {
+   "edge_id": "vconn:3DWkEUmNbEUw4r79zq9qXD",
+   "portal_id": "vconn:3DWkEUmNbEUw4r79zq9qXD",
+   "relation": "vertically_connected",
+   "via": "3DWkEUmNbEUw4r79zq9qXD",
+   "kind": "stair",
+   "rise": 4.34,
+   "basis": "stair_solid",
+   "footprint_extent": 5.52,
+   "width": 0.61,
+   "provenance": "inferred",
+   "key": "vconn:3DWkEUmNbEUw4r79zq9qXD",
+   "source": "INF-2qGKQC4mr7bQHi0erg34tc-0002",
+   "target": "INF-2qGKQC4mr7bQHi0erg34rO-0002"
+  },
+  {
+   "edge_id": "vconn:3DWkEUmNbEUw4r79zq9qkU",
+   "portal_id": "vconn:3DWkEUmNbEUw4r79zq9qkU",
+   "relation": "vertically_connected",
+   "via": "3DWkEUmNbEUw4r79zq9qkU",
+   "kind": "stair",
+   "rise": 4.34,
+   "basis": "stair_solid",
+   "footprint_extent": 5.52,
+   "width": 0.61,
+   "provenance": "inferred",
+   "key": "vconn:3DWkEUmNbEUw4r79zq9qkU",
+   "source": "INF-2qGKQC4mr7bQHi0erg34tc-0002",
+   "target": "INF-1owBOg$5v0GwDBa7HPOsiG-0002"
+  },
+  {
+   "relation": "contains",
+   "provenance": "inferred",
+   "key": "contains",
+   "source": "INF-2qGKQC4mr7bQHi0erg34rO-0002",
+   "target": "3DWkEUmNbEUw4r79zq9qXs"
+  },
+  {
+   "relation": "contains",
+   "provenance": "inferred",
+   "key": "contains",
+   "source": "INF-2qGKQC4mr7bQHi0erg34rO-0002",
+   "target": "3DWkEUmNbEUw4r79zq9qXU"
+  },
+  {
+   "relation": "contains",
+   "provenance": "inferred",
+   "key": "contains",
+   "source": "INF-2qGKQC4mr7bQHi0erg34rO-0002",
+   "target": "3DWkEUmNbEUw4r79zq9qXG"
+  },
+  {
+   "relation": "contains",
+   "provenance": "inferred",
+   "key": "contains",
+   "source": "INF-2qGKQC4mr7bQHi0erg34rO-0002",
+   "target": "3DWkEUmNbEUw4r79zq9qXI"
+  },
+  {
+   "relation": "contains",
+   "provenance": "inferred",
+   "key": "contains",
+   "source": "INF-2qGKQC4mr7bQHi0erg34rO-0002",
+   "target": "3DWkEUmNbEUw4r79zq9qYg"
+  },
+  {
+   "relation": "contains",
+   "provenance": "inferred",
+   "key": "contains",
+   "source": "INF-2qGKQC4mr7bQHi0erg34rO-0002",
+   "target": "3DWkEUmNbEUw4r79zq9qYi"
+  },
+  {
+   "relation": "contains",
+   "provenance": "inferred",
+   "key": "contains",
+   "source": "INF-2qGKQC4mr7bQHi0erg34rO-0002",
+   "target": "3DWkEUmNbEUw4r79zq9qYk"
+  },
+  {
+   "relation": "contains",
+   "provenance": "inferred",
+   "key": "contains",
+   "source": "INF-2qGKQC4mr7bQHi0erg34rO-0002",
+   "target": "3DWkEUmNbEUw4r79zq9qYW"
+  },
+  {
+   "edge_id": "adj:EXT-2qGKQC4mr7bQHi0erg34rO|INF-2qGKQC4mr7bQHi0erg34rO-0002",
+   "relation": "adjacent_to",
+   "gap": 0.5,
+   "provenance": "inferred",
+   "key": "adj:EXT-2qGKQC4mr7bQHi0erg34rO|INF-2qGKQC4mr7bQHi0erg34rO-0002",
+   "source": "INF-2qGKQC4mr7bQHi0erg34rO-0002",
+   "target": "EXT-2qGKQC4mr7bQHi0erg34rO"
+  },
+  {
+   "edge_id": "door:0HhC9uqTb6QgUcRAtyFIEY",
+   "portal_id": "door:0HhC9uqTb6QgUcRAtyFIEY",
+   "relation": "connected_by_door",
+   "door": "0HhC9uqTb6QgUcRAtyFIEY",
+   "width": 1.14,
+   "provenance": "inferred",
+   "key": "door:0HhC9uqTb6QgUcRAtyFIEY",
+   "source": "INF-2qGKQC4mr7bQHi0erg34rO-0002",
+   "target": "EXT-2qGKQC4mr7bQHi0erg34rO"
+  },
+  {
+   "edge_id": "vconn:3DWkEUmNbEUw4r79zq9qXD",
+   "portal_id": "vconn:3DWkEUmNbEUw4r79zq9qXD",
+   "relation": "vertically_connected",
+   "via": "3DWkEUmNbEUw4r79zq9qXD",
+   "kind": "stair",
+   "rise": 4.34,
+   "basis": "stair_solid",
+   "footprint_extent": 5.52,
+   "width": 0.61,
+   "provenance": "inferred",
+   "key": "vconn:3DWkEUmNbEUw4r79zq9qXD",
+   "source": "INF-2qGKQC4mr7bQHi0erg34rO-0002",
+   "target": "INF-2qGKQC4mr7bQHi0erg34tc-0002"
+  },
+  {
+   "relation": "contains",
+   "provenance": "inferred",
+   "key": "contains",
+   "source": "EXT-2qGKQC4mr7bQHi0erg34rO",
+   "target": "2uEC5lWcnE7BDU0ErbW3GD"
+  },
+  {
+   "relation": "contains",
+   "provenance": "inferred",
+   "key": "contains",
+   "source": "EXT-2qGKQC4mr7bQHi0erg34rO",
+   "target": "2uEC5lWcnE7BDU0ErbW3IO"
+  },
+  {
+   "relation": "contains",
+   "provenance": "inferred",
+   "key": "contains",
+   "source": "EXT-2qGKQC4mr7bQHi0erg34rO",
+   "target": "2uEC5lWcnE7BDU0ErbW3LZ"
+  },
+  {
+   "relation": "contains",
+   "provenance": "inferred",
+   "key": "contains",
+   "source": "EXT-2qGKQC4mr7bQHi0erg34rO",
+   "target": "2uEC5lWcnE7BDU0ErbW3LX"
+  },
+  {
+   "relation": "contains",
+   "provenance": "inferred",
+   "key": "contains",
+   "source": "EXT-2qGKQC4mr7bQHi0erg34rO",
+   "target": "0HhC9uqTb6QgUcRAtyFIO_"
+  },
+  {
+   "edge_id": "adj:EXT-2qGKQC4mr7bQHi0erg34rO|INF-2qGKQC4mr7bQHi0erg34rO-0002",
+   "relation": "adjacent_to",
+   "gap": 0.5,
+   "provenance": "inferred",
+   "key": "adj:EXT-2qGKQC4mr7bQHi0erg34rO|INF-2qGKQC4mr7bQHi0erg34rO-0002",
+   "source": "EXT-2qGKQC4mr7bQHi0erg34rO",
+   "target": "INF-2qGKQC4mr7bQHi0erg34rO-0002"
+  },
+  {
+   "edge_id": "door:0HhC9uqTb6QgUcRAtyFIEY",
+   "portal_id": "door:0HhC9uqTb6QgUcRAtyFIEY",
+   "relation": "connected_by_door",
+   "door": "0HhC9uqTb6QgUcRAtyFIEY",
+   "width": 1.14,
+   "provenance": "inferred",
+   "key": "door:0HhC9uqTb6QgUcRAtyFIEY",
+   "source": "EXT-2qGKQC4mr7bQHi0erg34rO",
+   "target": "INF-2qGKQC4mr7bQHi0erg34rO-0002"
+  }
+ ]
+}

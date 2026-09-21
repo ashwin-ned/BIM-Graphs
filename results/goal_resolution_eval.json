@@ -1,0 +1,202 @@
+{
+  "n": 592,
+  "resolved": 298,
+  "accuracy": 0.5033783783783784,
+  "candidate_hist": {
+    "5": 444,
+    "0": 27,
+    "3": 35,
+    "4": 24,
+    "2": 36,
+    "1": 26
+  },
+  "per_class": {
+    "living": {
+      "recall": 0.18181818181818182,
+      "n": 22
+    },
+    "kitchen": {
+      "recall": 0.2222222222222222,
+      "n": 18
+    },
+    "bedroom": {
+      "recall": 0.7857142857142857,
+      "n": 28
+    },
+    "bathroom": {
+      "recall": 0.5303030303030303,
+      "n": 132
+    },
+    "stair": {
+      "recall": 0.6444444444444445,
+      "n": 45
+    },
+    "meeting": {
+      "recall": 0.17391304347826086,
+      "n": 23
+    },
+    "office": {
+      "recall": 0.697560975609756,
+      "n": 205
+    },
+    "circulation": {
+      "recall": 0.2558139534883721,
+      "n": 86
+    },
+    "service": {
+      "recall": 0.0,
+      "n": 5
+    },
+    "retail": {
+      "recall": 0.0,
+      "n": 8
+    },
+    "outdoor": {
+      "recall": 0.0,
+      "n": 10
+    },
+    "storage": {
+      "recall": 0.0,
+      "n": 10
+    }
+  },
+  "reachability_from_entry": {
+    "wheeled": {
+      "reachable": 91,
+      "planned": 298,
+      "fraction": 0.3053691275167785
+    },
+    "legged": {
+      "reachable": 252,
+      "planned": 298,
+      "fraction": 0.8456375838926175
+    },
+    "human": {
+      "reachable": 252,
+      "planned": 298,
+      "fraction": 0.8456375838926175
+    }
+  },
+  "examples": [
+    {
+      "model": "model_0.graph.json",
+      "query": "living",
+      "n_candidates": 7,
+      "resolved": false
+    },
+    {
+      "model": "model_0.graph.json",
+      "query": "living",
+      "n_candidates": 7,
+      "resolved": false
+    },
+    {
+      "model": "model_0.graph.json",
+      "query": "kitchen",
+      "n_candidates": 0,
+      "resolved": false
+    },
+    {
+      "model": "model_0.graph.json",
+      "query": "living",
+      "n_candidates": 8,
+      "resolved": true
+    },
+    {
+      "model": "model_0.graph.json",
+      "query": "bedroom",
+      "n_candidates": 8,
+      "resolved": true
+    },
+    {
+      "model": "model_0.graph.json",
+      "query": "bedroom",
+      "n_candidates": 8,
+      "resolved": true
+    },
+    {
+      "model": "model_0.graph.json",
+      "query": "bathroom",
+      "n_candidates": 3,
+      "resolved": false
+    },
+    {
+      "model": "model_0.graph.json",
+      "query": "bathroom",
+      "n_candidates": 4,
+      "resolved": true
+    },
+    {
+      "model": "model_0.graph.json",
+      "query": "bedroom",
+      "n_candidates": 8,
+      "resolved": true
+    },
+    {
+      "model": "model_0.graph.json",
+      "query": "stair",
+      "n_candidates": 3,
+      "resolved": true
+    },
+    {
+      "model": "model_0.graph.json",
+      "query": "bedroom",
+      "n_candidates": 8,
+      "resolved": true
+    },
+    {
+      "model": "model_0.graph.json",
+      "query": "stair",
+      "n_candidates": 3,
+      "resolved": true
+    },
+    {
+      "model": "model_0.graph.json",
+      "query": "living",
+      "n_candidates": 7,
+      "resolved": false
+    },
+    {
+      "model": "model_0.graph.json",
+      "query": "living",
+      "n_candidates": 7,
+      "resolved": false
+    },
+    {
+      "model": "model_0.graph.json",
+      "query": "bathroom",
+      "n_candidates": 3,
+      "resolved": false
+    },
+    {
+      "model": "model_0.graph.json",
+      "query": "bathroom",
+      "n_candidates": 3,
+      "resolved": false
+    },
+    {
+      "model": "model_0.graph.json",
+      "query": "living",
+      "n_candidates": 7,
+      "resolved": false
+    },
+    {
+      "model": "model_0.graph.json",
+      "query": "living",
+      "n_candidates": 7,
+      "resolved": false
+    },
+    {
+      "model": "model_0.graph.json",
+      "query": "living",
+      "n_candidates": 7,
+      "resolved": false
+    },
+    {
+      "model": "model_1.graph.json",
+      "query": "bathroom",
+      "n_candidates": 3,
+      "resolved": false
+    }
+  ]
+}

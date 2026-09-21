@@ -1,0 +1,531 @@
+{
+  "building": "model_15",
+  "source": "derived:flood-fill",
+  "derivable": true,
+  "excluded_because": null,
+  "n_doors": 34,
+  "n_voids": 51,
+  "params": {
+    "res": 0.05,
+    "band_slack": 0.04,
+    "band_min": 0.1,
+    "adj_tol": 0.6,
+    "door_h": 1.0,
+    "min_room_area": 0.5,
+    "min_blocker_area": 0.01,
+    "min_void_area": 0.02,
+    "void_scale": 1.0,
+    "declared_unit_scale": 1
+  },
+  "rooms": [
+    {
+      "rid": "1ZxVSQQPf4Ixgc6sS3C0qB",
+      "name": "55",
+      "long_name": "OFFICE",
+      "storey": "3Zu5Bv0LOHrPC10026FoQQ",
+      "area": 17.5
+    },
+    {
+      "rid": "1ZxVSQQPf4Ixgc6sS3C0qA",
+      "name": "56",
+      "long_name": "OFFICE",
+      "storey": "3Zu5Bv0LOHrPC10026FoQQ",
+      "area": 18.03
+    },
+    {
+      "rid": "1ZxVSQQPf4Ixgc6sS3C0q9",
+      "name": "57",
+      "long_name": "OFFICE",
+      "storey": "3Zu5Bv0LOHrPC10026FoQQ",
+      "area": 18.02
+    },
+    {
+      "rid": "1ZxVSQQPf4Ixgc6sS3C0q8",
+      "name": "58",
+      "long_name": "OFFICE",
+      "storey": "3Zu5Bv0LOHrPC10026FoQQ",
+      "area": 18.03
+    },
+    {
+      "rid": "1ZxVSQQPf4Ixgc6sS3C0rt",
+      "name": "59",
+      "long_name": "OFFICE",
+      "storey": "3Zu5Bv0LOHrPC10026FoQQ",
+      "area": 18.03
+    },
+    {
+      "rid": "1ZxVSQQPf4Ixgc6sS3C0rs",
+      "name": "60",
+      "long_name": "CANTEEN",
+      "storey": "3Zu5Bv0LOHrPC10026FoQQ",
+      "area": 68.83
+    },
+    {
+      "rid": "1ZxVSQQPf4Ixgc6sS3C0rr",
+      "name": "61",
+      "long_name": "LIFT",
+      "storey": "3Zu5Bv0LOHrPC10026FoQQ",
+      "area": 5.21
+    },
+    {
+      "rid": "1ZxVSQQPf4Ixgc6sS3C0rq",
+      "name": "62",
+      "long_name": "VERANDER",
+      "storey": "3Zu5Bv0LOHrPC10026FoQQ",
+      "area": 136.24
+    },
+    {
+      "rid": "1ZxVSQQPf4Ixgc6sS3C0rp",
+      "name": "63",
+      "long_name": "WC",
+      "storey": "3Zu5Bv0LOHrPC10026FoQQ",
+      "area": 3.25
+    },
+    {
+      "rid": "1ZxVSQQPf4Ixgc6sS3C0ro",
+      "name": "64",
+      "long_name": "WC",
+      "storey": "3Zu5Bv0LOHrPC10026FoQQ",
+      "area": 3.2
+    },
+    {
+      "rid": "1ZxVSQQPf4Ixgc6sS3C0rn",
+      "name": "65",
+      "long_name": "LOBBY",
+      "storey": "3Zu5Bv0LOHrPC10026FoQQ",
+      "area": 47.12
+    },
+    {
+      "rid": "1ZxVSQQPf4Ixgc6sS3C0rm",
+      "name": "66",
+      "long_name": "OFFICE",
+      "storey": "3Zu5Bv0LOHrPC10026FoQQ",
+      "area": 27.12
+    },
+    {
+      "rid": "1ZxVSQQPf4Ixgc6sS3C0rW",
+      "name": "67",
+      "long_name": "OFFICE",
+      "storey": "15Z0v90RiHrPC20026FoKR",
+      "area": 17.5
+    },
+    {
+      "rid": "1ZxVSQQPf4Ixgc6sS3C0rl",
+      "name": "68",
+      "long_name": "OFFICE",
+      "storey": "15Z0v90RiHrPC20026FoKR",
+      "area": 18.03
+    },
+    {
+      "rid": "1ZxVSQQPf4Ixgc6sS3C0rk",
+      "name": "69",
+      "long_name": "OFFICE",
+      "storey": "15Z0v90RiHrPC20026FoKR",
+      "area": 18.02
+    },
+    {
+      "rid": "1ZxVSQQPf4Ixgc6sS3C0rj",
+      "name": "70",
+      "long_name": "OFFICE",
+      "storey": "15Z0v90RiHrPC20026FoKR",
+      "area": 18.03
+    },
+    {
+      "rid": "1ZxVSQQPf4Ixgc6sS3C0ri",
+      "name": "71",
+      "long_name": "OFFICE",
+      "storey": "15Z0v90RiHrPC20026FoKR",
+      "area": 18.03
+    },
+    {
+      "rid": "1ZxVSQQPf4Ixgc6sS3C0rh",
+      "name": "72",
+      "long_name": "CONFERENCE ROOM",
+      "storey": "15Z0v90RiHrPC20026FoKR",
+      "area": 68.6
+    },
+    {
+      "rid": "1ZxVSQQPf4Ixgc6sS3C0rg",
+      "name": "73",
+      "long_name": "LIFT",
+      "storey": "15Z0v90RiHrPC20026FoKR",
+      "area": 5.32
+    },
+    {
+      "rid": "1ZxVSQQPf4Ixgc6sS3C0rf",
+      "name": "74",
+      "long_name": "WC",
+      "storey": "15Z0v90RiHrPC20026FoKR",
+      "area": 3.25
+    },
+    {
+      "rid": "1ZxVSQQPf4Ixgc6sS3C0re",
+      "name": "75",
+      "long_name": "WC",
+      "storey": "15Z0v90RiHrPC20026FoKR",
+      "area": 3.2
+    },
+    {
+      "rid": "1ZxVSQQPf4Ixgc6sS3C0rN",
+      "name": "76",
+      "long_name": "LOBBY",
+      "storey": "15Z0v90RiHrPC20026FoKR",
+      "area": 47.13
+    },
+    {
+      "rid": "1ZxVSQQPf4Ixgc6sS3C0rM",
+      "name": "77",
+      "long_name": "OFFICE",
+      "storey": "15Z0v90RiHrPC20026FoKR",
+      "area": 27.13
+    },
+    {
+      "rid": "1ZxVSQQPf4Ixgc6sS3C0rL",
+      "name": "78",
+      "long_name": "VERANDER",
+      "storey": "15Z0v90RiHrPC20026FoKR",
+      "area": 144.83
+    },
+    {
+      "rid": "1ZxVSQQPf4Ixgc6sS3C0r7",
+      "name": "79",
+      "long_name": "OFFICE",
+      "storey": "3Y76Xen_L7wwXzEpyUyBAX",
+      "area": 17.5
+    },
+    {
+      "rid": "1ZxVSQQPf4Ixgc6sS3C0r6",
+      "name": "80",
+      "long_name": "OFFICE",
+      "storey": "3Y76Xen_L7wwXzEpyUyBAX",
+      "area": 18.03
+    },
+    {
+      "rid": "1ZxVSQQPf4Ixgc6sS3C0r5",
+      "name": "81",
+      "long_name": "OFFICE",
+      "storey": "3Y76Xen_L7wwXzEpyUyBAX",
+      "area": 18.02
+    },
+    {
+      "rid": "1ZxVSQQPf4Ixgc6sS3C0r4",
+      "name": "82",
+      "long_name": "OFFICE",
+      "storey": "3Y76Xen_L7wwXzEpyUyBAX",
+      "area": 18.03
+    },
+    {
+      "rid": "1ZxVSQQPf4Ixgc6sS3C0r3",
+      "name": "83",
+      "long_name": "OFFICE",
+      "storey": "3Y76Xen_L7wwXzEpyUyBAX",
+      "area": 18.03
+    },
+    {
+      "rid": "1ZxVSQQPf4Ixgc6sS3C0r2",
+      "name": "84",
+      "long_name": "WC",
+      "storey": "3Y76Xen_L7wwXzEpyUyBAX",
+      "area": 3.22
+    },
+    {
+      "rid": "1ZxVSQQPf4Ixgc6sS3C0r1",
+      "name": "85",
+      "long_name": "WC",
+      "storey": "3Y76Xen_L7wwXzEpyUyBAX",
+      "area": 3.17
+    },
+    {
+      "rid": "1ZxVSQQPf4Ixgc6sS3C0r0",
+      "name": "86",
+      "long_name": "CONFERENCE ROOM",
+      "storey": "3Y76Xen_L7wwXzEpyUyBAX",
+      "area": 68.65
+    },
+    {
+      "rid": "1ZxVSQQPf4Ixgc6sS3C0rF",
+      "name": "87",
+      "long_name": "LIFT",
+      "storey": "3Y76Xen_L7wwXzEpyUyBAX",
+      "area": 5.38
+    },
+    {
+      "rid": "1ZxVSQQPf4Ixgc6sS3C0rE",
+      "name": "88",
+      "long_name": "LOBBY",
+      "storey": "3Y76Xen_L7wwXzEpyUyBAX",
+      "area": 47.12
+    },
+    {
+      "rid": "1ZxVSQQPf4Ixgc6sS3C0rD",
+      "name": "89",
+      "long_name": "OFICE",
+      "storey": "3Y76Xen_L7wwXzEpyUyBAX",
+      "area": 27.12
+    },
+    {
+      "rid": "1ZxVSQQPf4Ixgc6sS3C0rC",
+      "name": "90",
+      "long_name": "VERANDER",
+      "storey": "3Y76Xen_L7wwXzEpyUyBAX",
+      "area": 144.81
+    },
+    {
+      "rid": "1ZxVSQQPf4Ixgc6sS3C0oy",
+      "name": "91",
+      "long_name": "OFFICE",
+      "storey": "3Y76Xen_L7wwXzEpyUyBA9",
+      "area": 27.13
+    },
+    {
+      "rid": "1ZxVSQQPf4Ixgc6sS3C0ox",
+      "name": "92",
+      "long_name": "LOUNGE",
+      "storey": "3Y76Xen_L7wwXzEpyUyBA9",
+      "area": 68.65
+    },
+    {
+      "rid": "1ZxVSQQPf4Ixgc6sS3C0ow",
+      "name": "93",
+      "long_name": "LIFT",
+      "storey": "3Y76Xen_L7wwXzEpyUyBA9",
+      "area": 5.38
+    },
+    {
+      "rid": "1ZxVSQQPf4Ixgc6sS3C0ov",
+      "name": "94",
+      "long_name": "LOBBY",
+      "storey": "3Y76Xen_L7wwXzEpyUyBA9",
+      "area": 47.12
+    }
+  ],
+  "edges": [
+    {
+      "a": "1ZxVSQQPf4Ixgc6sS3C0q8",
+      "b": "1ZxVSQQPf4Ixgc6sS3C0rq"
+    },
+    {
+      "a": "1ZxVSQQPf4Ixgc6sS3C0q9",
+      "b": "1ZxVSQQPf4Ixgc6sS3C0rq"
+    },
+    {
+      "a": "1ZxVSQQPf4Ixgc6sS3C0qA",
+      "b": "1ZxVSQQPf4Ixgc6sS3C0rq"
+    },
+    {
+      "a": "1ZxVSQQPf4Ixgc6sS3C0qB",
+      "b": "1ZxVSQQPf4Ixgc6sS3C0rq"
+    },
+    {
+      "a": "1ZxVSQQPf4Ixgc6sS3C0rm",
+      "b": "1ZxVSQQPf4Ixgc6sS3C0rn"
+    },
+    {
+      "a": "1ZxVSQQPf4Ixgc6sS3C0rn",
+      "b": "1ZxVSQQPf4Ixgc6sS3C0rq"
+    },
+    {
+      "a": "1ZxVSQQPf4Ixgc6sS3C0ro",
+      "b": "1ZxVSQQPf4Ixgc6sS3C0rq"
+    },
+    {
+      "a": "1ZxVSQQPf4Ixgc6sS3C0rp",
+      "b": "1ZxVSQQPf4Ixgc6sS3C0rq"
+    },
+    {
+      "a": "1ZxVSQQPf4Ixgc6sS3C0rq",
+      "b": "1ZxVSQQPf4Ixgc6sS3C0rr"
+    },
+    {
+      "a": "1ZxVSQQPf4Ixgc6sS3C0rq",
+      "b": "1ZxVSQQPf4Ixgc6sS3C0rs"
+    },
+    {
+      "a": "1ZxVSQQPf4Ixgc6sS3C0rq",
+      "b": "1ZxVSQQPf4Ixgc6sS3C0rt"
+    },
+    {
+      "a": "1ZxVSQQPf4Ixgc6sS3C0rL",
+      "b": "1ZxVSQQPf4Ixgc6sS3C0rN"
+    },
+    {
+      "a": "1ZxVSQQPf4Ixgc6sS3C0rL",
+      "b": "1ZxVSQQPf4Ixgc6sS3C0rW"
+    },
+    {
+      "a": "1ZxVSQQPf4Ixgc6sS3C0rL",
+      "b": "1ZxVSQQPf4Ixgc6sS3C0re"
+    },
+    {
+      "a": "1ZxVSQQPf4Ixgc6sS3C0rL",
+      "b": "1ZxVSQQPf4Ixgc6sS3C0rf"
+    },
+    {
+      "a": "1ZxVSQQPf4Ixgc6sS3C0rL",
+      "b": "1ZxVSQQPf4Ixgc6sS3C0rg"
+    },
+    {
+      "a": "1ZxVSQQPf4Ixgc6sS3C0rL",
+      "b": "1ZxVSQQPf4Ixgc6sS3C0rh"
+    },
+    {
+      "a": "1ZxVSQQPf4Ixgc6sS3C0rL",
+      "b": "1ZxVSQQPf4Ixgc6sS3C0ri"
+    },
+    {
+      "a": "1ZxVSQQPf4Ixgc6sS3C0rL",
+      "b": "1ZxVSQQPf4Ixgc6sS3C0rj"
+    },
+    {
+      "a": "1ZxVSQQPf4Ixgc6sS3C0rL",
+      "b": "1ZxVSQQPf4Ixgc6sS3C0rk"
+    },
+    {
+      "a": "1ZxVSQQPf4Ixgc6sS3C0rL",
+      "b": "1ZxVSQQPf4Ixgc6sS3C0rl"
+    },
+    {
+      "a": "1ZxVSQQPf4Ixgc6sS3C0rM",
+      "b": "1ZxVSQQPf4Ixgc6sS3C0rN"
+    },
+    {
+      "a": "1ZxVSQQPf4Ixgc6sS3C0r0",
+      "b": "1ZxVSQQPf4Ixgc6sS3C0rC"
+    },
+    {
+      "a": "1ZxVSQQPf4Ixgc6sS3C0r1",
+      "b": "1ZxVSQQPf4Ixgc6sS3C0rC"
+    },
+    {
+      "a": "1ZxVSQQPf4Ixgc6sS3C0r2",
+      "b": "1ZxVSQQPf4Ixgc6sS3C0rC"
+    },
+    {
+      "a": "1ZxVSQQPf4Ixgc6sS3C0r3",
+      "b": "1ZxVSQQPf4Ixgc6sS3C0rC"
+    },
+    {
+      "a": "1ZxVSQQPf4Ixgc6sS3C0r4",
+      "b": "1ZxVSQQPf4Ixgc6sS3C0rC"
+    },
+    {
+      "a": "1ZxVSQQPf4Ixgc6sS3C0r5",
+      "b": "1ZxVSQQPf4Ixgc6sS3C0rC"
+    },
+    {
+      "a": "1ZxVSQQPf4Ixgc6sS3C0r6",
+      "b": "1ZxVSQQPf4Ixgc6sS3C0rC"
+    },
+    {
+      "a": "1ZxVSQQPf4Ixgc6sS3C0r7",
+      "b": "1ZxVSQQPf4Ixgc6sS3C0rC"
+    },
+    {
+      "a": "1ZxVSQQPf4Ixgc6sS3C0rC",
+      "b": "1ZxVSQQPf4Ixgc6sS3C0rE"
+    },
+    {
+      "a": "1ZxVSQQPf4Ixgc6sS3C0rC",
+      "b": "1ZxVSQQPf4Ixgc6sS3C0rF"
+    },
+    {
+      "a": "1ZxVSQQPf4Ixgc6sS3C0rD",
+      "b": "1ZxVSQQPf4Ixgc6sS3C0rE"
+    },
+    {
+      "a": "1ZxVSQQPf4Ixgc6sS3C0ov",
+      "b": "1ZxVSQQPf4Ixgc6sS3C0oy"
+    }
+  ],
+  "adjacent_not_connected": [
+    {
+      "a": "1ZxVSQQPf4Ixgc6sS3C0q8",
+      "b": "1ZxVSQQPf4Ixgc6sS3C0q9"
+    },
+    {
+      "a": "1ZxVSQQPf4Ixgc6sS3C0q8",
+      "b": "1ZxVSQQPf4Ixgc6sS3C0rt"
+    },
+    {
+      "a": "1ZxVSQQPf4Ixgc6sS3C0q9",
+      "b": "1ZxVSQQPf4Ixgc6sS3C0qA"
+    },
+    {
+      "a": "1ZxVSQQPf4Ixgc6sS3C0qA",
+      "b": "1ZxVSQQPf4Ixgc6sS3C0qB"
+    },
+    {
+      "a": "1ZxVSQQPf4Ixgc6sS3C0ro",
+      "b": "1ZxVSQQPf4Ixgc6sS3C0rp"
+    },
+    {
+      "a": "1ZxVSQQPf4Ixgc6sS3C0ro",
+      "b": "1ZxVSQQPf4Ixgc6sS3C0rt"
+    },
+    {
+      "a": "1ZxVSQQPf4Ixgc6sS3C0rr",
+      "b": "1ZxVSQQPf4Ixgc6sS3C0rs"
+    },
+    {
+      "a": "1ZxVSQQPf4Ixgc6sS3C0rW",
+      "b": "1ZxVSQQPf4Ixgc6sS3C0rl"
+    },
+    {
+      "a": "1ZxVSQQPf4Ixgc6sS3C0re",
+      "b": "1ZxVSQQPf4Ixgc6sS3C0rf"
+    },
+    {
+      "a": "1ZxVSQQPf4Ixgc6sS3C0re",
+      "b": "1ZxVSQQPf4Ixgc6sS3C0ri"
+    },
+    {
+      "a": "1ZxVSQQPf4Ixgc6sS3C0rg",
+      "b": "1ZxVSQQPf4Ixgc6sS3C0rh"
+    },
+    {
+      "a": "1ZxVSQQPf4Ixgc6sS3C0ri",
+      "b": "1ZxVSQQPf4Ixgc6sS3C0rj"
+    },
+    {
+      "a": "1ZxVSQQPf4Ixgc6sS3C0rj",
+      "b": "1ZxVSQQPf4Ixgc6sS3C0rk"
+    },
+    {
+      "a": "1ZxVSQQPf4Ixgc6sS3C0rk",
+      "b": "1ZxVSQQPf4Ixgc6sS3C0rl"
+    },
+    {
+      "a": "1ZxVSQQPf4Ixgc6sS3C0r0",
+      "b": "1ZxVSQQPf4Ixgc6sS3C0rF"
+    },
+    {
+      "a": "1ZxVSQQPf4Ixgc6sS3C0r1",
+      "b": "1ZxVSQQPf4Ixgc6sS3C0r2"
+    },
+    {
+      "a": "1ZxVSQQPf4Ixgc6sS3C0r1",
+      "b": "1ZxVSQQPf4Ixgc6sS3C0r3"
+    },
+    {
+      "a": "1ZxVSQQPf4Ixgc6sS3C0r3",
+      "b": "1ZxVSQQPf4Ixgc6sS3C0r4"
+    },
+    {
+      "a": "1ZxVSQQPf4Ixgc6sS3C0r4",
+      "b": "1ZxVSQQPf4Ixgc6sS3C0r5"
+    },
+    {
+      "a": "1ZxVSQQPf4Ixgc6sS3C0r5",
+      "b": "1ZxVSQQPf4Ixgc6sS3C0r6"
+    },
+    {
+      "a": "1ZxVSQQPf4Ixgc6sS3C0r6",
+      "b": "1ZxVSQQPf4Ixgc6sS3C0r7"
+    },
+    {
+      "a": "1ZxVSQQPf4Ixgc6sS3C0ow",
+      "b": "1ZxVSQQPf4Ixgc6sS3C0ox"
+    }
+  ],
+  "unknown": []
+}

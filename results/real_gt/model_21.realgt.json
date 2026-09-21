@@ -1,0 +1,53 @@
+{
+  "building": "model_21",
+  "source": "derived:flood-fill",
+  "derivable": false,
+  "excluded_because": "no candidate-adjacent room pairs",
+  "n_doors": 25,
+  "n_voids": 35,
+  "params": {
+    "res": 0.05,
+    "band_slack": 0.04,
+    "band_min": 0.1,
+    "adj_tol": 0.6,
+    "door_h": 1.0,
+    "min_room_area": 0.5,
+    "min_blocker_area": 0.01,
+    "min_void_area": 0.02,
+    "void_scale": 1.0,
+    "declared_unit_scale": 1
+  },
+  "rooms": [
+    {
+      "rid": "13W4_qB4v8Rwh8eThx86MK",
+      "name": "2",
+      "long_name": "Room",
+      "storey": "3Zu5Bv0LOHrPC10026FoQQ",
+      "area": 23.51
+    },
+    {
+      "rid": "0OihGrSa564upmL79ZIJnL",
+      "name": "4",
+      "long_name": "Room",
+      "storey": "3Zu5Bv0LOHrPC10026FoQQ",
+      "area": 23.9
+    },
+    {
+      "rid": "0OihGrSa564upmL79ZIJnr",
+      "name": "5",
+      "long_name": "Room",
+      "storey": "3Zu5Bv0LOHrPC10026FoQQ",
+      "area": 24.93
+    },
+    {
+      "rid": "0OihGrSa564upmL79ZIJnm",
+      "name": "6",
+      "long_name": "Room",
+      "storey": "3Zu5Bv0LOHrPC10026FoQQ",
+      "area": 24.14
+    }
+  ],
+  "edges": [],
+  "adjacent_not_connected": [],
+  "unknown": []
+}

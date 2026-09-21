@@ -1,0 +1,20 @@
+  PASS isSupported() is false without the browser API
+  PASS store opens the folder
+  PASS found 2 plans in the folder
+  PASS IFC files are detected beside the plans
+  PASS models are listed in natural order
+  PASS plan parses from the folder
+  PASS IFC file is reachable for the 3D view
+  PASS annotation file written into the dataset folder
+  PASS file on disk is valid JSON
+  PASS file is in the same bundle format as the download
+  PASS racing saves leave valid JSON
+  PASS racing saves keep both models
+  PASS reopening restores 2 annotation(s)
+  PASS restored annotator name is offered
+  PASS restored work is intact
+  PASS composes a complete building graph from the folder
+  PASS nothing is ever 'unexported' in folder mode
+  PASS a corrupt annotation file is reported
+
+PASS the dataset-folder backend saves and restores work correctly

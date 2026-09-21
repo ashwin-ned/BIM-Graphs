@@ -1,0 +1,213 @@
+{
+ "schema": 2,
+ "model": "dataset/synthetic_data/synthetic/synth_0016.ifc",
+ "stats": {
+  "method": "schema"
+ },
+ "nodes": [
+  {
+   "layer": "storey",
+   "label": "Level 0",
+   "elevation": 0.0,
+   "id": "3h$9KE8UH528jz2rD1$rz2"
+  },
+  {
+   "layer": "storey",
+   "label": "Level 1",
+   "elevation": 3.2,
+   "id": "3uapUEQXf1Tw4j6EPMSVfV"
+  },
+  {
+   "layer": "space",
+   "label": "Stair",
+   "room_number": "S0R000",
+   "area": 25.95,
+   "centroid": [
+    2.398,
+    2.923
+   ],
+   "elevation": 0.0,
+   "source": "ifc",
+   "id": "2lnjiEPjz6CvvJY0v8n41H"
+  },
+  {
+   "layer": "space",
+   "label": "Kitchen",
+   "room_number": "S0R001",
+   "area": 22.14,
+   "centroid": [
+    6.855,
+    2.923
+   ],
+   "elevation": 0.0,
+   "source": "ifc",
+   "id": "2uWYk2W8PBCf5M4v8ecTHr"
+  },
+  {
+   "layer": "space",
+   "label": "Utility",
+   "room_number": "S0R002",
+   "area": 27.07,
+   "centroid": [
+    2.373,
+    8.923
+   ],
+   "elevation": 0.0,
+   "source": "ifc",
+   "id": "25oudnYvn24Bn0cw8zUtAo"
+  },
+  {
+   "layer": "space",
+   "label": "Store",
+   "room_number": "S0R003",
+   "area": 23.63,
+   "centroid": [
+    6.831,
+    8.923
+   ],
+   "elevation": 0.0,
+   "source": "ifc",
+   "id": "1dZAsgC_LBKfXAXjqgl_jP"
+  },
+  {
+   "layer": "space",
+   "label": "Reception",
+   "room_number": "S0R004",
+   "area": 104.84,
+   "centroid": [
+    13.458,
+    6.0
+   ],
+   "elevation": 0.0,
+   "source": "ifc",
+   "id": "2z$LJMt$b1GxCcRgtAQkfr"
+  },
+  {
+   "layer": "space",
+   "label": "Stair",
+   "room_number": "S1R000",
+   "area": 30.81,
+   "centroid": [
+    2.512,
+    3.293
+   ],
+   "elevation": 3.2,
+   "source": "ifc",
+   "id": "3hBT44pmTCvPzNPj$xhSvp"
+  },
+  {
+   "layer": "space",
+   "label": "Living Room",
+   "room_number": "S1R001",
+   "area": 23.14,
+   "centroid": [
+    6.936,
+    3.293
+   ],
+   "elevation": 3.2,
+   "source": "ifc",
+   "id": "3j4Z731VD8CuOdyl_xo7VC"
+  },
+  {
+   "layer": "space",
+   "label": "Corridor",
+   "room_number": "S1R002",
+   "area": 21.14,
+   "centroid": [
+    2.127,
+    9.293
+   ],
+   "elevation": 3.2,
+   "source": "ifc",
+   "id": "3nfJsp08bEovLPYs2Pj5f4"
+  },
+  {
+   "layer": "space",
+   "label": "Utility",
+   "room_number": "S1R003",
+   "area": 22.9,
+   "centroid": [
+    6.551,
+    9.293
+   ],
+   "elevation": 3.2,
+   "source": "ifc",
+   "id": "3dNH9sjVrF4hpR4uxtpdQ4"
+  },
+  {
+   "layer": "space",
+   "label": "Store",
+   "room_number": "S1R004",
+   "area": 105.64,
+   "centroid": [
+    13.424,
+    6.0
+   ],
+   "elevation": 3.2,
+   "source": "ifc",
+   "id": "0Y4PbxH3n5YxzFqg5j4WuE"
+  }
+ ],
+ "edges": [
+  {
+   "relation": "contains",
+   "key": "contains",
+   "source": "3h$9KE8UH528jz2rD1$rz2",
+   "target": "2lnjiEPjz6CvvJY0v8n41H"
+  },
+  {
+   "relation": "contains",
+   "key": "contains",
+   "source": "3h$9KE8UH528jz2rD1$rz2",
+   "target": "2uWYk2W8PBCf5M4v8ecTHr"
+  },
+  {
+   "relation": "contains",
+   "key": "contains",
+   "source": "3h$9KE8UH528jz2rD1$rz2",
+   "target": "25oudnYvn24Bn0cw8zUtAo"
+  },
+  {
+   "relation": "contains",
+   "key": "contains",
+   "source": "3h$9KE8UH528jz2rD1$rz2",
+   "target": "1dZAsgC_LBKfXAXjqgl_jP"
+  },
+  {
+   "relation": "contains",
+   "key": "contains",
+   "source": "3h$9KE8UH528jz2rD1$rz2",
+   "target": "2z$LJMt$b1GxCcRgtAQkfr"
+  },
+  {
+   "relation": "contains",
+   "key": "contains",
+   "source": "3uapUEQXf1Tw4j6EPMSVfV",
+   "target": "3hBT44pmTCvPzNPj$xhSvp"
+  },
+  {
+   "relation": "contains",
+   "key": "contains",
+   "source": "3uapUEQXf1Tw4j6EPMSVfV",
+   "target": "3j4Z731VD8CuOdyl_xo7VC"
+  },
+  {
+   "relation": "contains",
+   "key": "contains",
+   "source": "3uapUEQXf1Tw4j6EPMSVfV",
+   "target": "3nfJsp08bEovLPYs2Pj5f4"
+  },
+  {
+   "relation": "contains",
+   "key": "contains",
+   "source": "3uapUEQXf1Tw4j6EPMSVfV",
+   "target": "3dNH9sjVrF4hpR4uxtpdQ4"
+  },
+  {
+   "relation": "contains",
+   "key": "contains",
+   "source": "3uapUEQXf1Tw4j6EPMSVfV",
+   "target": "0Y4PbxH3n5YxzFqg5j4WuE"
+  }
+ ]
+}

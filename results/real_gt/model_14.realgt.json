@@ -1,0 +1,24 @@
+{
+  "building": "model_14",
+  "source": "derived:flood-fill",
+  "derivable": false,
+  "excluded_because": "fewer than two IfcSpace with usable footprints",
+  "n_doors": 38,
+  "n_voids": 57,
+  "params": {
+    "res": 0.05,
+    "band_slack": 0.04,
+    "band_min": 0.1,
+    "adj_tol": 0.6,
+    "door_h": 1.0,
+    "min_room_area": 0.5,
+    "min_blocker_area": 0.01,
+    "min_void_area": 0.02,
+    "void_scale": 1.0,
+    "declared_unit_scale": 0.001
+  },
+  "rooms": [],
+  "edges": [],
+  "adjacent_not_connected": [],
+  "unknown": []
+}

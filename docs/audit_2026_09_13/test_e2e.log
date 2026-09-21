@@ -1,0 +1,84 @@
+publishing model_0.ifc for the 3D checks
+serving the built site at http://127.0.0.1:47197/
+
+-- boot --
+  PASS the page loads with no uncaught errors
+  PASS all 28 controls are visible
+  PASS the debug hook is available
+
+-- the model list and the plan --
+  PASS the model list is populated (25)
+  PASS the plan draws rooms (15)
+  PASS the plan draws links (30)
+  PASS the plan draws walls (75)
+  PASS the plan is framed inside the canvas
+
+-- judging --
+  PASS turning off the links layer clears them from the plan
+  PASS clicking a room opens the inspector
+  PASS pressing 1 records a verdict
+  PASS the room is outlined as judged
+  PASS the saved verdict says what it means, not "correct"
+  PASS Ctrl+Z takes it back
+  PASS Ctrl+Shift+Z puts it back
+
+-- adding and removing --
+  PASS adding a link asks door or open passage
+  PASS A links two rooms
+  PASS the chosen kind is recorded
+  PASS turning the links layer back on redraws them
+  PASS the added link has a wide click target
+  PASS clicking the link selects it
+  PASS Delete removes the link it added
+
+-- accepting the rest of a floor --
+  PASS a room can be marked "not a room" before sweeping
+  PASS the sweep asks before doing anything
+  PASS every room on the floor is now judged
+  PASS every link on the floor is now judged
+  PASS the deliberate 'not a room' survived the sweep
+  PASS and was not relabelled as bulk
+  PASS swept verdicts are flagged bulk (14 rooms, 15 links)
+  PASS the sweep writes the specific words too
+  PASS the storey now shows as done
+  PASS Ctrl+Z undoes the whole sweep at once
+  PASS shortcuts still work with a checkbox focused
+
+-- storeys --
+  PASS the storey list is populated (4)
+  PASS ] moves to the next storey
+
+-- layouts --
+  PASS Split shows both panes and the divider
+  PASS IFC model hides the plan
+  PASS Plan hides the model
+
+-- the IFC renders --
+  PASS the IFC produced meshes
+  PASS the camera is at a finite distance (75.3 m)
+  PASS the camera position is finite
+  PASS the model has a sane height (19.2 m)
+  PASS storeys were read (4)
+  PASS the 3D canvas has a real size
+  PASS the 3D canvas is not blank (38 distinct colours)
+
+-- framing on the rooms --
+  PASS the plan yields a room footprint
+  PASS the model was recentred by a known offset (-4.1, -1.1)
+  PASS all four footprint corners are on screen (4/4)
+  PASS a ray to the camera target meets the model
+
+-- the section --
+  PASS a section produces a clipping plane
+  PASS the section plane is horizontal (cuts on Y, not X or Z)
+  PASS a storey slab produces two planes
+  PASS the slab sits at storey 0's elevation (0.02 m)
+  PASS the slab is roughly one storey tall
+  PASS follow floor moves the section when the storey changes
+  PASS the slider shows a tick per storey (4)
+
+-- errors seen over the whole run --
+  PASS no uncaught errors at any point
+
+57 passed, 0 failed
+PASS the annotator works end to end in a real browser

@@ -1,0 +1,38 @@
+  PASS graph composes (34 nodes, 65 edges)
+  PASS every node gets a position
+  PASS positions are finite
+  PASS rooms are not all stacked on one point
+  PASS stats count the rooms (29)
+  PASS stats count components
+  PASS graphml holds every node (34)
+  PASS graphml holds every edge (65)
+  PASS no graphml edge points at a missing node
+  PASS every graphml data key is declared
+  PASS gexf holds every node (34)
+  PASS gexf gives every node a viz:position
+  PASS gexf holds every edge (65)
+  PASS networkx reads the graphml (34 nodes, 65 edges)
+  PASS networkx sees the same edges in graphml
+  PASS networkx reads the gexf
+  PASS graphml node attributes survive the round trip
+  PASS a room named with a script tag round-trips verbatim
+  PASS a room named with quotes and ampersands round-trips verbatim
+  PASS the room-level graph has 1 component(s), matching stats
+  PASS no placeholder is left unreplaced
+  PASS the page is self-contained (no external fetches)
+  PASS a room name cannot close the script block
+  PASS the script-tag room name is escaped in the payload
+  PASS the embedded payload is parseable JSON
+  PASS the payload carries every room
+  PASS the payload carries the hostile name intact
+  PASS every payload edge joins two rooms it also carries
+  PASS the payload names every storey
+  model_x__AN             29 rooms   32 links  [graphml, gexf, html]
+
+-> /tmp/tmpgm4ew8xs/out
+   .html opens in any browser, no software needed
+   .graphml opens in yEd, Gephi, Cytoscape; .gexf in Gephi
+  PASS the exporter exits clean
+  PASS it writes all three formats (model_x__AN.gexf, model_x__AN.graphml, model_x__AN.html)
+
+PASS the exported graph opens in a real graph library, and the standalone page is safe against anything an IFC can be named

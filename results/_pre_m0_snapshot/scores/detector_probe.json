@@ -1,0 +1,134 @@
+[
+  {
+    "label": "BIM_flat",
+    "dir": "renders/model_0/rgb",
+    "frames": 120,
+    "zero_frac": 0.31666666666666665,
+    "mean_dets": 1.925,
+    "median_dets": 2.0,
+    "mean_conf": 0.26386009221211143,
+    "distinct_classes": 27,
+    "top": [
+      [
+        "closet wall",
+        62
+      ],
+      [
+        "person",
+        25
+      ],
+      [
+        "window",
+        25
+      ],
+      [
+        "closet door",
+        21
+      ],
+      [
+        "picture",
+        19
+      ],
+      [
+        "mirror",
+        12
+      ],
+      [
+        "bathroom vanity",
+        8
+      ],
+      [
+        "cabinet",
+        7
+      ]
+    ]
+  },
+  {
+    "label": "BIM_textured",
+    "dir": "/tmp/claude-2209/-mnt-data-home-anedung-projects-bim-sg/5ea5a87a-7ffb-4b47-b275-4ae0c881540b/scratchpad/tex/model_0/rgb",
+    "frames": 60,
+    "zero_frac": 0.03333333333333333,
+    "mean_dets": 5.15,
+    "median_dets": 5.0,
+    "mean_conf": 0.2506893703225747,
+    "distinct_classes": 14,
+    "top": [
+      [
+        "closet door",
+        107
+      ],
+      [
+        "closet wall",
+        67
+      ],
+      [
+        "window",
+        63
+      ],
+      [
+        "picture",
+        28
+      ],
+      [
+        "bed",
+        14
+      ],
+      [
+        "person",
+        11
+      ],
+      [
+        "mirror",
+        5
+      ],
+      [
+        "bench",
+        3
+      ]
+    ]
+  },
+  {
+    "label": "Replica",
+    "dir": "third_party/replica_dl/Replica/room0/results",
+    "frames": 120,
+    "zero_frac": 0.0,
+    "mean_dets": 25.025,
+    "median_dets": 25.0,
+    "mean_conf": 0.4911059945960701,
+    "distinct_classes": 60,
+    "top": [
+      [
+        "pillow",
+        690
+      ],
+      [
+        "sofa chair",
+        249
+      ],
+      [
+        "coffee table",
+        219
+      ],
+      [
+        "lamp",
+        186
+      ],
+      [
+        "book",
+        169
+      ],
+      [
+        "couch",
+        147
+      ],
+      [
+        "shelf",
+        142
+      ],
+      [
+        "potted plant",
+        116
+      ]
+    ]
+  }
+]

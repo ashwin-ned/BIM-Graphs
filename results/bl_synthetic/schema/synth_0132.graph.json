@@ -1,0 +1,270 @@
+{
+ "schema": 2,
+ "model": "dataset/synthetic_data/synthetic/synth_0132.ifc",
+ "stats": {
+  "method": "schema"
+ },
+ "nodes": [
+  {
+   "layer": "storey",
+   "label": "Level 0",
+   "elevation": 0.0,
+   "id": "2_3V3hjSL3MOtwAILfrgfF"
+  },
+  {
+   "layer": "storey",
+   "label": "Level 1",
+   "elevation": 3.2,
+   "id": "1yZmKE6ZTAjBr8VVOo47Ai"
+  },
+  {
+   "layer": "space",
+   "label": "Stair",
+   "room_number": "S0R000",
+   "area": 33.48,
+   "centroid": [
+    2.51,
+    3.573
+   ],
+   "elevation": 0.0,
+   "source": "ifc",
+   "id": "39InRNpdbBNgtHDAUWyFkl"
+  },
+  {
+   "layer": "space",
+   "label": "Bedroom",
+   "room_number": "S0R001",
+   "area": 23.49,
+   "centroid": [
+    6.811,
+    3.573
+   ],
+   "elevation": 0.0,
+   "source": "ifc",
+   "id": "2cAn6tRg14OPiqjWJaef7A"
+  },
+  {
+   "layer": "space",
+   "label": "Lab",
+   "room_number": "S0R002",
+   "area": 22.31,
+   "centroid": [
+    2.497,
+    9.573
+   ],
+   "elevation": 0.0,
+   "source": "ifc",
+   "id": "19Lu1Dp_z1uuY$j5uOhe3D"
+  },
+  {
+   "layer": "space",
+   "label": "Bathroom",
+   "room_number": "S0R003",
+   "area": 15.86,
+   "centroid": [
+    6.798,
+    9.573
+   ],
+   "elevation": 0.0,
+   "source": "ifc",
+   "id": "3cW$10_5X3ZA2J4b5W3SKk"
+  },
+  {
+   "layer": "space",
+   "label": "Store",
+   "room_number": "S0R004",
+   "area": 108.54,
+   "centroid": [
+    13.301,
+    6.0
+   ],
+   "elevation": 0.0,
+   "source": "ifc",
+   "id": "0zOvHUtpPDSBUhN3gJmUXq"
+  },
+  {
+   "layer": "space",
+   "label": "Stair",
+   "room_number": "S1R000",
+   "area": 40.08,
+   "centroid": [
+    3.114,
+    3.425
+   ],
+   "elevation": 3.2,
+   "source": "ifc",
+   "id": "2aWf_Wrf1BuOtK3hP8fvcf"
+  },
+  {
+   "layer": "space",
+   "label": "Store",
+   "room_number": "S1R001",
+   "area": 25.21,
+   "centroid": [
+    8.223,
+    3.425
+   ],
+   "elevation": 3.2,
+   "source": "ifc",
+   "id": "3NLSUXWn16sA2HLBbtfefS"
+  },
+  {
+   "layer": "space",
+   "label": "Kitchen",
+   "room_number": "S1R002",
+   "area": 20.61,
+   "centroid": [
+    2.182,
+    9.425
+   ],
+   "elevation": 3.2,
+   "source": "ifc",
+   "id": "2ToFI$8fXDYAmT$NUD3Uwb"
+  },
+  {
+   "layer": "space",
+   "label": "Meeting Room",
+   "room_number": "S1R003",
+   "area": 27.99,
+   "centroid": [
+    7.29,
+    9.425
+   ],
+   "elevation": 3.2,
+   "source": "ifc",
+   "id": "2aoZdJ9VbFqft1VYz7GsDC"
+  },
+  {
+   "layer": "space",
+   "label": "Bedroom",
+   "room_number": "S1R004",
+   "area": 25.26,
+   "centroid": [
+    12.445,
+    3.069
+   ],
+   "elevation": 3.2,
+   "source": "ifc",
+   "id": "2WxYla4HzEpRkpz752Um7x"
+  },
+  {
+   "layer": "space",
+   "label": "Bedroom",
+   "room_number": "S1R005",
+   "area": 18.58,
+   "centroid": [
+    16.336,
+    3.069
+   ],
+   "elevation": 3.2,
+   "source": "ifc",
+   "id": "0cf9PkD9f96QJkMM8pyonZ"
+  },
+  {
+   "layer": "space",
+   "label": "Kitchen",
+   "room_number": "S1R006",
+   "area": 22.68,
+   "centroid": [
+    12.321,
+    9.069
+   ],
+   "elevation": 3.2,
+   "source": "ifc",
+   "id": "3xtxA6Oqj6RvZhQLHOcQwh"
+  },
+  {
+   "layer": "space",
+   "label": "Store",
+   "room_number": "S1R007",
+   "area": 19.11,
+   "centroid": [
+    16.212,
+    9.069
+   ],
+   "elevation": 3.2,
+   "source": "ifc",
+   "id": "0JRQHlS5H9qgzZl7mA1qum"
+  }
+ ],
+ "edges": [
+  {
+   "relation": "contains",
+   "key": "contains",
+   "source": "2_3V3hjSL3MOtwAILfrgfF",
+   "target": "39InRNpdbBNgtHDAUWyFkl"
+  },
+  {
+   "relation": "contains",
+   "key": "contains",
+   "source": "2_3V3hjSL3MOtwAILfrgfF",
+   "target": "2cAn6tRg14OPiqjWJaef7A"
+  },
+  {
+   "relation": "contains",
+   "key": "contains",
+   "source": "2_3V3hjSL3MOtwAILfrgfF",
+   "target": "19Lu1Dp_z1uuY$j5uOhe3D"
+  },
+  {
+   "relation": "contains",
+   "key": "contains",
+   "source": "2_3V3hjSL3MOtwAILfrgfF",
+   "target": "3cW$10_5X3ZA2J4b5W3SKk"
+  },
+  {
+   "relation": "contains",
+   "key": "contains",
+   "source": "2_3V3hjSL3MOtwAILfrgfF",
+   "target": "0zOvHUtpPDSBUhN3gJmUXq"
+  },
+  {
+   "relation": "contains",
+   "key": "contains",
+   "source": "1yZmKE6ZTAjBr8VVOo47Ai",
+   "target": "2aWf_Wrf1BuOtK3hP8fvcf"
+  },
+  {
+   "relation": "contains",
+   "key": "contains",
+   "source": "1yZmKE6ZTAjBr8VVOo47Ai",
+   "target": "3NLSUXWn16sA2HLBbtfefS"
+  },
+  {
+   "relation": "contains",
+   "key": "contains",
+   "source": "1yZmKE6ZTAjBr8VVOo47Ai",
+   "target": "2ToFI$8fXDYAmT$NUD3Uwb"
+  },
+  {
+   "relation": "contains",
+   "key": "contains",
+   "source": "1yZmKE6ZTAjBr8VVOo47Ai",
+   "target": "2aoZdJ9VbFqft1VYz7GsDC"
+  },
+  {
+   "relation": "contains",
+   "key": "contains",
+   "source": "1yZmKE6ZTAjBr8VVOo47Ai",
+   "target": "2WxYla4HzEpRkpz752Um7x"
+  },
+  {
+   "relation": "contains",
+   "key": "contains",
+   "source": "1yZmKE6ZTAjBr8VVOo47Ai",
+   "target": "0cf9PkD9f96QJkMM8pyonZ"
+  },
+  {
+   "relation": "contains",
+   "key": "contains",
+   "source": "1yZmKE6ZTAjBr8VVOo47Ai",
+   "target": "3xtxA6Oqj6RvZhQLHOcQwh"
+  },
+  {
+   "relation": "contains",
+   "key": "contains",
+   "source": "1yZmKE6ZTAjBr8VVOo47Ai",
+   "target": "0JRQHlS5H9qgzZl7mA1qum"
+  }
+ ]
+}

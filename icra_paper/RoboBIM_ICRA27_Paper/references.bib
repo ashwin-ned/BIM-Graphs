@@ -1,0 +1,423 @@
+% ============================================================================
+%  RoboBIM -- ICRA 2027 Full Paper References
+%  Merged from research/bibliography.bib (BIM-Graphs literature review) and
+%  RoboBIM_ICRA26_WS/references.bib (workshop paper), de-duplicated against
+%  canonical entries and cleaned of malformed/duplicate BibTeX found in the
+%  workshop file. Where the two source files disagreed on metadata (e.g.
+%  Hydra's year), the entry verified against the paper/arXiv record is kept.
+% ============================================================================
+
+% ---------------------------------------------------------------------------
+% (A) THIS WORK'S OWN PRIOR PUBLICATION
+% ---------------------------------------------------------------------------
+
+@inproceedings{nedungadi2026robobimws,
+  title     = {{RoboBIM}: Scaling Robot Semantic Foundations through Agentic Extraction of {BIM} Priors},
+  author    = {Nedungadi, Ashwin and Nithyanantham, Bharathi Kannan and L{\"u}dtke, Stefan},
+  booktitle = {Robots Meet Prior Maps: Leveraging Geometric and Semantic Priors for Real-World Robot Autonomy -- {ICRA} Workshop},
+  year      = {2026}
+}
+
+% ---------------------------------------------------------------------------
+% (B) FOUNDATIONS OF 3D SCENE GRAPHS
+% ---------------------------------------------------------------------------
+
+@inproceedings{armeni20193d,
+  title     = {3D Scene Graph: A Structure for Unified Semantics, 3D Space, and Camera},
+  author    = {Armeni, Iro and He, Zhi-Yang and Gwak, JunYoung and Zamir, Amir R. and Fischer, Martin and Malik, Jitendra and Savarese, Silvio},
+  booktitle = {Proceedings of the IEEE/CVF International Conference on Computer Vision (ICCV)},
+  pages     = {5664--5673},
+  year      = {2019},
+  doi       = {10.1109/ICCV.2019.00576}
+}
+
+@article{rosinol2021kimera,
+  title   = {Kimera: From {SLAM} to spatial perception with {3D} dynamic scene graphs},
+  author  = {Rosinol, Antoni and Violette, Andrew and Abate, Marcus and Hughes, Nathan and Chang, Yun and Shi, Jingnan and Gupta, Arjun and Carlone, Luca},
+  journal = {The International Journal of Robotics Research},
+  volume  = {40},
+  number  = {12-14},
+  pages   = {1510--1546},
+  year    = {2021},
+  doi     = {10.1177/02783649211056674}
+}
+
+@misc{hughes2022hydra,
+  title         = {Hydra: A Real-time Spatial Perception System for {3D} Scene Graph Construction and Optimization},
+  author        = {Nathan Hughes and Yun Chang and Luca Carlone},
+  year          = {2022},
+  eprint        = {2201.13360},
+  archivePrefix = {arXiv},
+  primaryClass  = {cs.RO},
+  note          = {Robotics: Science and Systems (RSS)},
+  url           = {https://arxiv.org/abs/2201.13360}
+}
+
+@misc{udugama2023monohydra,
+  title         = {Mono-hydra: Real-time {3D} scene graph construction from monocular camera input with {IMU}},
+  author        = {U. V. B. L. Udugama and G. Vosselman and F. Nex},
+  year          = {2023},
+  eprint        = {2308.05515},
+  archivePrefix = {arXiv},
+  primaryClass  = {cs.CV},
+  url           = {https://arxiv.org/abs/2308.05515}
+}
+
+% ---------------------------------------------------------------------------
+% (C) HIERARCHICAL / SITUATIONAL GRAPHS FOR SLAM AND NAVIGATION
+% ---------------------------------------------------------------------------
+
+@misc{bavle2022sgraphsplus,
+  title         = {{S-Graphs+}: Real-time Localization and Mapping leveraging Hierarchical Representations},
+  author        = {Hriday Bavle and Jose Luis Sanchez-Lopez and Muhammad Shaheer and Javier Civera and Holger Voos},
+  year          = {2022},
+  eprint        = {2212.11770},
+  archivePrefix = {arXiv},
+  primaryClass  = {cs.RO},
+  note          = {IEEE RA-L 2023},
+  url           = {https://arxiv.org/abs/2212.11770}
+}
+
+@misc{bavle2025sgraphs2,
+  title         = {{S-Graphs 2.0} -- A Hierarchical-Semantic Optimization and Loop Closure for {SLAM}},
+  author        = {Hriday Bavle and Jose Luis Sanchez-Lopez and Muhammad Shaheer and Javier Civera and Holger Voos},
+  year          = {2025},
+  eprint        = {2502.18044},
+  archivePrefix = {arXiv},
+  primaryClass  = {cs.RO},
+  url           = {https://arxiv.org/abs/2502.18044}
+}
+
+@misc{shaheer2023architectural,
+  title         = {Graph-based Global Robot Simultaneous Localization and Mapping using Architectural Plans},
+  author        = {Muhammad Shaheer and Jose Andres Millan-Romera and Hriday Bavle and Jose Luis Sanchez-Lopez and Javier Civera and Holger Voos},
+  year          = {2023},
+  eprint        = {2305.09295},
+  archivePrefix = {arXiv},
+  primaryClass  = {cs.RO},
+  url           = {https://arxiv.org/abs/2305.09295}
+}
+
+@misc{ndulue2026matching,
+  title         = {Learning-Based Hierarchical Scene Graph Matching for Robot Localization Leveraging Prior Maps},
+  author        = {Nimrod Millenium Ndulue and Jose Andres Millan-Romera and Matteo Giorgi and Holger Voos and Jose Luis Sanchez-Lopez},
+  year          = {2026},
+  eprint        = {2604.27821},
+  archivePrefix = {arXiv},
+  primaryClass  = {cs.RO},
+  url           = {https://arxiv.org/abs/2604.27821}
+}
+
+% ---------------------------------------------------------------------------
+% (D) OPEN-VOCABULARY AND LANGUAGE-GROUNDED SCENE GRAPHS
+% ---------------------------------------------------------------------------
+
+@misc{gu2023conceptgraphs,
+  title         = {{ConceptGraphs}: Open-Vocabulary {3D} Scene Graphs for Perception and Planning},
+  author        = {Qiao Gu and Alihusein Kuwajerwala and Sacha Morin and Krishna Murthy Jatavallabhula and Bipasha Sen and Aditya Agarwal and Corban Rivera and William Paul and Kirsty Ellis and Rama Chellappa and Chuang Gan and Celso Miguel de Melo and Joshua B. Tenenbaum and Antonio Torralba and Florian Shkurti and Liam Paull},
+  year          = {2023},
+  eprint        = {2309.16650},
+  archivePrefix = {arXiv},
+  primaryClass  = {cs.RO},
+  note          = {ICRA 2024},
+  url           = {https://arxiv.org/abs/2309.16650}
+}
+
+@misc{werby2024hovsg,
+  title         = {Hierarchical Open-Vocabulary {3D} Scene Graphs for Language-Grounded Robot Navigation},
+  author        = {Abdelrhman Werby and Chenguang Huang and Martin B{\"u}chner and Abhinav Valada and Wolfram Burgard},
+  year          = {2024},
+  eprint        = {2403.17846},
+  archivePrefix = {arXiv},
+  primaryClass  = {cs.RO},
+  note          = {Robotics: Science and Systems (RSS)},
+  url           = {https://arxiv.org/abs/2403.17846}
+}
+
+@misc{maggio2024clio,
+  title         = {{Clio}: Real-time Task-Driven Open-Set {3D} Scene Graphs},
+  author        = {Dominic Maggio and Yun Chang and Nathan Hughes and Matthew Trang and Dan Griffith and Carlyn Dougherty and Eric Cristofalo and Lukas Schmid and Luca Carlone},
+  year          = {2024},
+  eprint        = {2404.13696},
+  archivePrefix = {arXiv},
+  primaryClass  = {cs.RO},
+  url           = {https://arxiv.org/abs/2404.13696}
+}
+
+% ---------------------------------------------------------------------------
+% (E) LLM REASONING OVER SCENE GRAPHS AND TASK PLANNING
+% ---------------------------------------------------------------------------
+
+@misc{rana2023sayplan,
+  title         = {{SayPlan}: Grounding Large Language Models using {3D} Scene Graphs for Scalable Robot Task Planning},
+  author        = {Krishan Rana and Jesse Haviland and Sourav Garg and Jad Abou-Chakra and Ian Reid and Niko Suenderhauf},
+  year          = {2023},
+  eprint        = {2307.06135},
+  archivePrefix = {arXiv},
+  primaryClass  = {cs.RO},
+  note          = {CoRL 2023},
+  url           = {https://arxiv.org/abs/2307.06135}
+}
+
+@article{booker2024embodiedrag,
+  author  = {Booker, Meghan and Agia, Christopher and Sermanet, Pierre and Ren, Allen Z.},
+  title   = {{EmbodiedRAG}: Dynamic {3D} Scene Graph Retrieval for Efficient Robot Task Planning},
+  journal = {arXiv preprint arXiv:2410.23968},
+  year    = {2024}
+}
+
+@inproceedings{agia2022taskography,
+  author    = {Agia, Christopher and others},
+  title     = {Taskography: Evaluating robot task planning over large {3D} scene graphs},
+  booktitle = {Conference on Robot Learning (CoRL)},
+  year      = {2022}
+}
+
+% ---------------------------------------------------------------------------
+% (F) BIM AND IFC AS A STRUCTURED PRIOR
+% ---------------------------------------------------------------------------
+
+@article{pauwels2016ifcowl,
+  title   = {{EXPRESS} to {OWL} for construction industry: Towards a recommendable and usable {ifcOWL} ontology},
+  author  = {Pauwels, Pieter and Terkaj, Walter},
+  journal = {Automation in Construction},
+  volume  = {63},
+  pages   = {100--133},
+  year    = {2016},
+  doi     = {10.1016/j.autcon.2015.12.003}
+}
+
+@article{rasmussen2021bot,
+  title   = {{BOT}: The building topology ontology of the {W3C} linked building data group},
+  author  = {Rasmussen, Mads Holten and Lefran{\c{c}}ois, Maxime and Schneider, Georg Ferdinand and Pauwels, Pieter},
+  journal = {Semantic Web},
+  volume  = {12},
+  number  = {1},
+  pages   = {143--161},
+  year    = {2021},
+  doi     = {10.3233/SW-200385}
+}
+
+@article{hamieh2021,
+  author  = {Hamieh, Ali and Moughlbay, Abed Al-Raoof and Marche, Bruno and Francois, Cl{\'e}ment},
+  title   = {Semantic Navigation Using Building Information on Construction Sites},
+  journal = {arXiv preprint arXiv:2104.10296},
+  year    = {2021}
+}
+
+@inproceedings{follini2020,
+  author    = {Follini, Chiara and Terzer, Marco and Marcher, Carmen and Giusti, Alessandro and Matt, Dominik T.},
+  title     = {{BIM}-integrated collaborative robotics for application in building construction},
+  booktitle = {Proceedings of the International Symposium on Automation and Robotics in Construction},
+  year      = {2020}
+}
+
+@article{kim2022semantic,
+  author  = {Kim, Kyungki and Peavy, Matthew},
+  title   = {{BIM}-based semantic building world modeling for robot task planning},
+  journal = {Automation in Construction},
+  volume  = {138},
+  year    = {2022}
+}
+
+@article{zhu2025ifcgraph,
+  title   = {Semantics-based connectivity graph for indoor pathfinding powered by {IFC-Graph}},
+  author  = {Zhu, Junxiang and Wong, Mun On and Nisbet, Nicholas and Xu, Jinying and Kelly, Tom and Zlatanova, Sisi and Brilakis, Ioannis},
+  journal = {Automation in Construction},
+  volume  = {171},
+  pages   = {106019},
+  year    = {2025},
+  doi     = {10.1016/j.autcon.2025.106019}
+}
+
+@article{gopee2023ifcnav,
+  title   = {Improving autonomous robotic navigation using {IFC} files},
+  author  = {Gopee, Muhammad A. and Prieto, Samuel A. and Garc{\'i}a de Soto, Borja},
+  journal = {Construction Robotics},
+  volume  = {7},
+  number  = {3-4},
+  pages   = {235--251},
+  year    = {2023},
+  doi     = {10.1007/s41693-023-00112-8}
+}
+
+@article{teo2018igit,
+  author  = {Teo, Tee-Ann and Cho, Kuan-Hua},
+  title   = {{i-GIT}: Intelligent generation of indoor topology from {IFC} models},
+  journal = {ScienceDirect},
+  year    = {2018}
+}
+
+@article{vegatorres2023bimlidar,
+  title         = {Occupancy Grid Map to Pose Graph-based Map: Robust {BIM}-based {2D-LiDAR} Localization for Lifelong Indoor Navigation in Changing and Dynamic Environments},
+  author        = {Miguel Arturo Vega Torres and Alexander Braun and Andr{\'e} Borrmann},
+  year          = {2023},
+  eprint        = {2308.05443},
+  archivePrefix = {arXiv},
+  primaryClass  = {cs.RO},
+  url           = {https://arxiv.org/abs/2308.05443}
+}
+
+@misc{longo2025pix2g,
+  title         = {Pixels-to-Graph: Real-time Integration of Building Information Models and Scene Graphs for Semantic-Geometric Human-Robot Understanding},
+  author        = {Antonello Longo and Chanyoung Chung and Matteo Palieri and Sung-Kyun Kim and Ali Agha and Cataldo Guaragnella and Shehryar Khattak},
+  year          = {2025},
+  eprint        = {2506.22593},
+  archivePrefix = {arXiv},
+  primaryClass  = {cs.RO},
+  note          = {IEEE CASE 2025},
+  url           = {https://arxiv.org/abs/2506.22593}
+}
+
+@misc{iranmanesh2025graphrag,
+  title         = {{LLM}-assisted {Graph-RAG} Information Extraction from {IFC} Data},
+  author        = {Sima Iranmanesh and Hadeel Saadany and Edlira Vakaj},
+  year          = {2025},
+  eprint        = {2504.16813},
+  archivePrefix = {arXiv},
+  primaryClass  = {cs.AI},
+  url           = {https://arxiv.org/abs/2504.16813}
+}
+
+@misc{du2024text2bim,
+  title         = {{Text2BIM}: Generating Building Models Using a Large Language Model-based Multi-Agent Framework},
+  author        = {Changyu Du and Sebastian Esser and Stavros Nousias and Andr{\'e} Borrmann},
+  year          = {2024},
+  eprint        = {2408.08054},
+  archivePrefix = {arXiv},
+  primaryClass  = {cs.AI},
+  url           = {https://arxiv.org/abs/2408.08054}
+}
+
+@misc{nithyanantham2026bimedit,
+  title         = {{BIM-Edit}: Benchmarking Large Language Models for {IFC}-Based Building Information Modeling},
+  author        = {Bharathi Kannan Nithyanantham and Clemens Kujat and Tobias Sesterhenn and Stefan Telgmann and Ashwin Nedungadi and J{\"o}rn Pl{\"o}nnigs and Christian Bartelt and Stefan L{\"u}dtke},
+  year          = {2026},
+  eprint        = {2606.20146},
+  archivePrefix = {arXiv},
+  primaryClass  = {cs.AI},
+  url           = {https://arxiv.org/abs/2606.20146}
+}
+
+@article{bim2rdt2025,
+  title   = {{BIM2RDT}: Building Information Models to Robot-Ready Site Digital Twins},
+  journal = {arXiv preprint arXiv:2509.20705},
+  year    = {2025}
+}
+
+@article{nithyanantham2025mcp4ifc,
+  author  = {Nithyanantham, Bharathi Kannan and others},
+  title   = {{MCP4IFC}: {IFC}-Based Building Design Using {LLMs}},
+  journal = {arXiv preprint arXiv:2511.05533},
+  year    = {2025}
+}
+
+% ---------------------------------------------------------------------------
+% (G) SPACE BOUNDARIES AND ROOM RECOVERY
+% ---------------------------------------------------------------------------
+
+@article{lilis2017spaceboundary,
+  title   = {Automatic generation of second-level space boundary topology from {IFC} geometry inputs},
+  author  = {Lilis, Georgios N. and Giannakis, Georgios I. and Rovas, Dimitrios V.},
+  journal = {Automation in Construction},
+  volume  = {76},
+  pages   = {108--124},
+  year    = {2017},
+  doi     = {10.1016/j.autcon.2016.08.044}
+}
+
+@inproceedings{fichter2021spaceboundary,
+  title     = {Automatic generation of second level space boundary geometry from {IFC} models},
+  author    = {Fichter, Eric and Richter, Veronika and Frisch, J{\'e}r{\^o}me and van Treeck, Christoph},
+  booktitle = {Proceedings of Building Simulation 2021: 17th Conference of IBPSA},
+  year      = {2021},
+  doi       = {10.26868/25222708.2021.30156}
+}
+
+@inproceedings{bormann2016roomseg,
+  title     = {Room segmentation: Survey, implementation, and analysis},
+  author    = {Bormann, Richard and Jordan, Florian and Li, Wenzhe and Hampp, Joshua and H{\"a}gele, Martin},
+  booktitle = {2016 IEEE International Conference on Robotics and Automation (ICRA)},
+  pages     = {1019--1026},
+  year      = {2016},
+  doi       = {10.1109/ICRA.2016.7487234}
+}
+
+@article{ochmann2016parametric,
+  title   = {Automatic reconstruction of parametric building models from indoor point clouds},
+  author  = {Ochmann, Sebastian and Vock, Richard and Wessel, Raoul and Klein, Reinhard},
+  journal = {Computers \& Graphics},
+  volume  = {54},
+  pages   = {94--103},
+  year    = {2016},
+  doi     = {10.1016/j.cag.2015.07.008}
+}
+
+@misc{kim2024semanticlayering,
+  title         = {Semantic Layering in Room Segmentation via {LLMs}},
+  author        = {Taehyeon Kim and Byung-Cheol Min},
+  year          = {2024},
+  eprint        = {2403.12920},
+  archivePrefix = {arXiv},
+  primaryClass  = {cs.RO},
+  url           = {https://arxiv.org/abs/2403.12920}
+}
+
+% ---------------------------------------------------------------------------
+% (H) AFFORDANCE- AND CAPABILITY-AWARE PLANNING
+% ---------------------------------------------------------------------------
+
+@article{ahn2022saycan,
+  author  = {Ahn, Michael and Brohan, Anthony and Brown, Noah and others},
+  title   = {Do As {I} Can, Not As {I} Say: Grounding Language in Robotic Affordances},
+  journal = {arXiv preprint arXiv:2204.01691},
+  year    = {2022}
+}
+
+@inproceedings{birr2024autogptp,
+  author    = {Birr, Tobias and others},
+  title     = {{AutoGPT+P}: Affordance-based Task Planning using {LLMs}},
+  booktitle = {Robotics: Science and Systems (RSS)},
+  year      = {2024}
+}
+
+% ---------------------------------------------------------------------------
+% (I) TOOLING AND EXTERNAL BASELINES
+% ---------------------------------------------------------------------------
+
+@misc{ifcopenshell,
+  title        = {{IfcOpenShell}: The open source {IFC} toolkit and geometry engine},
+  author       = {{IfcOpenShell Contributors}},
+  year         = {2025},
+  howpublished = {\url{https://ifcopenshell.org}},
+  note         = {Version 0.8.5}
+}
+
+@misc{buildingsmart_ifc4,
+  title        = {{Industry Foundation Classes (IFC4)} -- {ISO} 16739-1:2018},
+  author       = {{buildingSMART International}},
+  year         = {2018},
+  howpublished = {\url{https://technical.buildingsmart.org/standards/ifc/}}
+}
+
+@misc{bjornskov2024ifc2graph,
+  title        = {{Ifc2Graph}: extracting a topological space-adjacency graph from {IFC}},
+  author       = {Bj{\o}rnskov, Jakob},
+  year         = {2024},
+  howpublished = {\url{https://github.com/JBjoernskov/Ifc2Graph}}
+}
+
+@misc{ifc2sb,
+  title        = {{IFC2SB}: {IFC} to Space Boundaries},
+  author       = {{RWTH-E3D}},
+  year         = {2023},
+  howpublished = {\url{https://github.com/RWTH-E3D/IFC2SB}},
+  note         = {E3D, RWTH Aachen University}
+}
+
+@misc{anthropic2024mcp,
+  author       = {{Anthropic}},
+  title        = {Model Context Protocol ({MCP}) Specification},
+  year         = {2024},
+  howpublished = {\url{https://modelcontextprotocol.io}}
+}

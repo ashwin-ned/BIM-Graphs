@@ -1,0 +1,26 @@
+run eval_connectivity: 8 ok, 0 missing, 0 failed, 0 excluded (denominator 8)
+
+building          GT  neg  unk  pred  TP  FP  FN   prec    rec     F1  strict       rooms
+-----------------------------------------------------------------------------------------
+synth_0000        13    9    0    13  13   0   0  1.000  1.000  1.000   1.000    16/16   
+synth_0001         7    6    0     7   7   0   0  1.000  1.000  1.000   1.000    10/10   
+synth_0002         7    6    0     7   7   0   0  1.000  1.000  1.000   1.000    10/10   
+synth_0003         9    7    0     9   9   0   0  1.000  1.000  1.000   1.000    12/12   
+synth_0004        13    9    0    13  13   0   0  1.000  1.000  1.000   1.000    15/15   
+synth_0005        11    9    0    11  11   0   0  1.000  1.000  1.000   1.000    14/14   
+synth_0006         6    5    0     6   6   0   0  1.000  1.000  1.000   1.000     9/9    
+synth_0007        11    8    0    11  11   0   0  1.000  1.000  1.000   1.000    13/13   
+
+--- MICRO-AVERAGED over 8 buildings ---
+  precision 1.000   recall 1.000   F1 1.000
+  strict (charging out-of-scope and unmatched-endpoint claims): precision 1.000  F1 1.000
+  macro mean per-building F1 1.000
+  tp 77  fn 0  fp on a reference negative 0
+  predictions the reference never examined: 0   on an unknown pair: 0   hung on an unmatched room: 0
+  rooms: 99 matched, 0 reference rooms unmatched (0 merged, 0 split)
+  predicted rooms with no reference room: 0 a reviewer rejected, 0 nobody judged
+  connect-every-examined-pair baseline would score precision 0.562 at recall 1.000
+  edge-type accuracy (matched edges): 77/77 = 1.000
+
+wrote results/bl_synthetic_ours.json
+wrote results/bl_synthetic_ours.manifest.json

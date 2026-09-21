@@ -1,0 +1,20 @@
+  PASS lists the plans from a subfolder (2)
+  PASS models are in natural order
+  PASS serves the plan from a relative --plans (200)
+  PASS the plan parses
+  PASS an IFC in the parent directory is found
+  PASS the listing reports the download size
+  PASS serves the IFC for the 3D view (200)
+  PASS saving an annotation succeeds
+  PASS it lands in the annotations directory
+  PASS it reads back intact
+  PASS progress shows in the model list
+  PASS an unknown model is 404, not a traversal
+  PASS path traversal is refused (..%2f..%2fetc%2fpa)
+  PASS path traversal is refused on the IFC route (..%2f..%2fetc%2fpa)
+  PASS path traversal is refused (..%2fmodel_0)
+  PASS path traversal is refused on the IFC route (..%2fmodel_0)
+  PASS path traversal is refused (%2e%2e%2fmodel_0)
+  PASS path traversal is refused on the IFC route (%2e%2e%2fmodel_0)
+
+PASS the server backend serves plans and IFC files from a real corpus layout, over a relative path

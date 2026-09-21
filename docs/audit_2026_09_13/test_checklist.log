@@ -1,0 +1,22 @@
+  PASS the script exits clean
+  PASS one row per IFC (8)
+  PASS the columns an annotator needs are all there
+  PASS a model with no storeys is marked skip
+  PASS its box is left blank, not offered as work
+  PASS and the row says why
+  PASS an ordinary building is marked ok
+  PASS with an empty box to tick
+  PASS and nothing alarming said about it
+  PASS its size is reported for planning
+  PASS a building with no floor-to-floor links is flagged
+  PASS storeys 0.6 m apart are flagged as not a real floor
+  PASS a building with no doors is flagged
+  PASS 900 m² 'rooms' are flagged as whole floors
+  PASS a finished annotation is ticked
+  PASS and credited to whoever did it
+  PASS an unfinished annotation is NOT ticked
+  PASS it names who has it
+  PASS and says exactly what is left (dana has this one: 1 room still to judge — p...)
+  PASS everything else is left unticked (5)
+
+PASS the checklist marks each model with what is actually true of it

@@ -1,0 +1,26 @@
+{
+  "totals": {
+    "rooms": 618,
+    "edges": 425,
+    "neg": 289,
+    "unknown": 0,
+    "models": 25,
+    "usable": 17
+  },
+  "excluded": {
+    "fewer than two IfcSpace with usable footprints": [
+      "model_11",
+      "model_14"
+    ],
+    "no candidate-adjacent room pairs": [
+      "model_19",
+      "model_21",
+      "model_3",
+      "model_9"
+    ],
+    "no separated pair among candidates": [
+      "model_20",
+      "model_4"
+    ]
+  }
+}

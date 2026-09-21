@@ -1,0 +1,401 @@
+[
+  {
+    "backend": "rule",
+    "n": 592,
+    "accuracy": 0.5033783783783784,
+    "majority_baseline": 0.34628378378378377,
+    "per_class": {
+      "living": {
+        "recall": 0.18181818181818182,
+        "n": 22
+      },
+      "kitchen": {
+        "recall": 0.2222222222222222,
+        "n": 18
+      },
+      "bedroom": {
+        "recall": 0.7857142857142857,
+        "n": 28
+      },
+      "bathroom": {
+        "recall": 0.5303030303030303,
+        "n": 132
+      },
+      "stair": {
+        "recall": 0.6444444444444445,
+        "n": 45
+      },
+      "meeting": {
+        "recall": 0.17391304347826086,
+        "n": 23
+      },
+      "office": {
+        "recall": 0.697560975609756,
+        "n": 205
+      },
+      "circulation": {
+        "recall": 0.2558139534883721,
+        "n": 86
+      },
+      "service": {
+        "recall": 0.0,
+        "n": 5
+      },
+      "retail": {
+        "recall": 0.0,
+        "n": 8
+      },
+      "outdoor": {
+        "recall": 0.0,
+        "n": 10
+      },
+      "storage": {
+        "recall": 0.0,
+        "n": 10
+      }
+    },
+    "confusions": {
+      "bathroom->storage": 52,
+      "circulation->stair": 37,
+      "office->storage": 30,
+      "office->living": 28,
+      "circulation->office": 18,
+      "meeting->office": 10,
+      "circulation->living": 9,
+      "stair->bathroom": 9,
+      "kitchen->office": 8,
+      "bathroom->office": 8,
+      "living->bedroom": 7,
+      "meeting->stair": 6,
+      "living->circulation": 6,
+      "bedroom->circulation": 6,
+      "retail->stair": 5,
+      "outdoor->circulation": 5,
+      "stair->storage": 4,
+      "storage->bedroom": 4,
+      "service->storage": 4,
+      "outdoor->office": 4
+    }
+  },
+  {
+    "backend": "llm:GLM-4-9B-0414",
+    "n": 592,
+    "accuracy": 0.5557432432432432,
+    "majority_baseline": 0.34628378378378377,
+    "per_class": {
+      "living": {
+        "recall": 0.2727272727272727,
+        "n": 22
+      },
+      "kitchen": {
+        "recall": 0.2222222222222222,
+        "n": 18
+      },
+      "bedroom": {
+        "recall": 0.7857142857142857,
+        "n": 28
+      },
+      "bathroom": {
+        "recall": 0.5378787878787878,
+        "n": 132
+      },
+      "stair": {
+        "recall": 0.6444444444444445,
+        "n": 45
+      },
+      "meeting": {
+        "recall": 0.17391304347826086,
+        "n": 23
+      },
+      "office": {
+        "recall": 0.8390243902439024,
+        "n": 205
+      },
+      "circulation": {
+        "recall": 0.23255813953488372,
+        "n": 86
+      },
+      "service": {
+        "recall": 0.0,
+        "n": 5
+      },
+      "retail": {
+        "recall": 0.0,
+        "n": 8
+      },
+      "outdoor": {
+        "recall": 0.0,
+        "n": 10
+      },
+      "storage": {
+        "recall": 0.1,
+        "n": 10
+      }
+    },
+    "confusions": {
+      "bathroom->storage": 52,
+      "circulation->stair": 37,
+      "office->living": 25,
+      "circulation->office": 20,
+      "meeting->office": 13,
+      "circulation->living": 9,
+      "stair->bathroom": 9,
+      "kitchen->office": 8,
+      "living->bedroom": 7,
+      "bathroom->office": 7,
+      "outdoor->office": 6,
+      "office->storage": 5,
+      "living->office": 4,
+      "retail->stair": 4,
+      "meeting->stair": 4,
+      "stair->storage": 4,
+      "storage->bedroom": 4,
+      "bedroom->living": 4,
+      "service->storage": 4,
+      "outdoor->circulation": 4
+    }
+  },
+  {
+    "backend": "vlm:GLM-4.1V-9B-Thinking",
+    "n": 592,
+    "accuracy": 0.5050675675675675,
+    "majority_baseline": 0.34628378378378377,
+    "per_class": {
+      "living": {
+        "recall": 0.3181818181818182,
+        "n": 22
+      },
+      "kitchen": {
+        "recall": 0.2222222222222222,
+        "n": 18
+      },
+      "bedroom": {
+        "recall": 0.7857142857142857,
+        "n": 28
+      },
+      "bathroom": {
+        "recall": 0.5303030303030303,
+        "n": 132
+      },
+      "stair": {
+        "recall": 0.6222222222222222,
+        "n": 45
+      },
+      "meeting": {
+        "recall": 0.17391304347826086,
+        "n": 23
+      },
+      "office": {
+        "recall": 0.6926829268292682,
+        "n": 205
+      },
+      "circulation": {
+        "recall": 0.2558139534883721,
+        "n": 86
+      },
+      "service": {
+        "recall": 0.0,
+        "n": 5
+      },
+      "retail": {
+        "recall": 0.0,
+        "n": 8
+      },
+      "outdoor": {
+        "recall": 0.0,
+        "n": 10
+      },
+      "storage": {
+        "recall": 0.0,
+        "n": 10
+      }
+    },
+    "confusions": {
+      "bathroom->storage": 52,
+      "circulation->stair": 35,
+      "office->storage": 30,
+      "office->living": 29,
+      "circulation->office": 17,
+      "circulation->living": 12,
+      "meeting->office": 9,
+      "stair->bathroom": 9,
+      "kitchen->office": 8,
+      "bathroom->office": 8,
+      "living->bedroom": 7,
+      "bedroom->circulation": 6,
+      "meeting->stair": 5,
+      "outdoor->circulation": 5,
+      "retail->living": 4,
+      "meeting->living": 4,
+      "stair->storage": 4,
+      "service->storage": 4,
+      "outdoor->office": 4,
+      "retail->stair": 3
+    }
+  },
+  {
+    "backend": "rule",
+    "n": 592,
+    "accuracy": 0.5033783783783784,
+    "majority_baseline": 0.34628378378378377,
+    "truncated_n": 0,
+    "truncated_correct": 0,
+    "accuracy_excl_truncated": 0.5033783783783784,
+    "per_class": {
+      "living": {
+        "recall": 0.18181818181818182,
+        "n": 22
+      },
+      "kitchen": {
+        "recall": 0.2222222222222222,
+        "n": 18
+      },
+      "bedroom": {
+        "recall": 0.7857142857142857,
+        "n": 28
+      },
+      "bathroom": {
+        "recall": 0.5303030303030303,
+        "n": 132
+      },
+      "stair": {
+        "recall": 0.6444444444444445,
+        "n": 45
+      },
+      "meeting": {
+        "recall": 0.17391304347826086,
+        "n": 23
+      },
+      "office": {
+        "recall": 0.697560975609756,
+        "n": 205
+      },
+      "circulation": {
+        "recall": 0.2558139534883721,
+        "n": 86
+      },
+      "service": {
+        "recall": 0.0,
+        "n": 5
+      },
+      "retail": {
+        "recall": 0.0,
+        "n": 8
+      },
+      "outdoor": {
+        "recall": 0.0,
+        "n": 10
+      },
+      "storage": {
+        "recall": 0.0,
+        "n": 10
+      }
+    },
+    "confusions": {
+      "bathroom->storage": 52,
+      "circulation->stair": 37,
+      "office->storage": 30,
+      "office->living": 28,
+      "circulation->office": 18,
+      "meeting->office": 10,
+      "circulation->living": 9,
+      "stair->bathroom": 9,
+      "kitchen->office": 8,
+      "bathroom->office": 8,
+      "living->bedroom": 7,
+      "meeting->stair": 6,
+      "living->circulation": 6,
+      "bedroom->circulation": 6,
+      "retail->stair": 5,
+      "outdoor->circulation": 5,
+      "stair->storage": 4,
+      "storage->bedroom": 4,
+      "service->storage": 4,
+      "outdoor->office": 4
+    }
+  },
+  {
+    "backend": "llm:GLM-4-9B-0414",
+    "n": 592,
+    "accuracy": 0.5557432432432432,
+    "majority_baseline": 0.34628378378378377,
+    "answered": 592,
+    "no_answer": 0,
+    "truncated_n": 0,
+    "unparseable_n": 0,
+    "accuracy_answered_only": 0.5557432432432432,
+    "max_new_tokens": 1536,
+    "per_class": {
+      "living": {
+        "recall": 0.2727272727272727,
+        "n": 22
+      },
+      "kitchen": {
+        "recall": 0.2222222222222222,
+        "n": 18
+      },
+      "bedroom": {
+        "recall": 0.7857142857142857,
+        "n": 28
+      },
+      "bathroom": {
+        "recall": 0.5378787878787878,
+        "n": 132
+      },
+      "stair": {
+        "recall": 0.6444444444444445,
+        "n": 45
+      },
+      "meeting": {
+        "recall": 0.17391304347826086,
+        "n": 23
+      },
+      "office": {
+        "recall": 0.8390243902439024,
+        "n": 205
+      },
+      "circulation": {
+        "recall": 0.23255813953488372,
+        "n": 86
+      },
+      "service": {
+        "recall": 0.0,
+        "n": 5
+      },
+      "retail": {
+        "recall": 0.0,
+        "n": 8
+      },
+      "outdoor": {
+        "recall": 0.0,
+        "n": 10
+      },
+      "storage": {
+        "recall": 0.1,
+        "n": 10
+      }
+    },
+    "confusions": {
+      "bathroom->storage": 52,
+      "circulation->stair": 37,
+      "office->living": 25,
+      "circulation->office": 20,
+      "meeting->office": 13,
+      "circulation->living": 9,
+      "stair->bathroom": 9,
+      "kitchen->office": 8,
+      "living->bedroom": 7,
+      "bathroom->office": 7,
+      "outdoor->office": 6,
+      "office->storage": 5,
+      "living->office": 4,
+      "retail->stair": 4,
+      "meeting->stair": 4,
+      "stair->storage": 4,
+      "storage->bedroom": 4,
+      "bedroom->living": 4,
+      "service->storage": 4,
+      "outdoor->circulation": 4
+    }
+  }
+]

@@ -1,0 +1,213 @@
+{
+ "schema": 2,
+ "model": "dataset/synthetic_data/synthetic/synth_0086.ifc",
+ "stats": {
+  "method": "schema"
+ },
+ "nodes": [
+  {
+   "layer": "storey",
+   "label": "Level 0",
+   "elevation": 0.0,
+   "id": "0GGsPHSJD8x8mXbux3zofD"
+  },
+  {
+   "layer": "storey",
+   "label": "Level 1",
+   "elevation": 3.2,
+   "id": "3rzPZV5PHBVOXw3nv85T8G"
+  },
+  {
+   "layer": "space",
+   "label": "Stair",
+   "room_number": "S0R000",
+   "area": 35.73,
+   "centroid": [
+    3.487,
+    2.737
+   ],
+   "elevation": 0.0,
+   "source": "ifc",
+   "id": "12tuMDHPH2jQ6qv3uUKfPy"
+  },
+  {
+   "layer": "space",
+   "label": "Meeting Room",
+   "room_number": "S0R001",
+   "area": 42.85,
+   "centroid": [
+    3.487,
+    8.737
+   ],
+   "elevation": 0.0,
+   "source": "ifc",
+   "id": "05kPYcdMLFox3cwo9$P3ID"
+  },
+  {
+   "layer": "space",
+   "label": "Living Room",
+   "room_number": "S0R002",
+   "area": 38.01,
+   "centroid": [
+    10.15,
+    3.189
+   ],
+   "elevation": 0.0,
+   "source": "ifc",
+   "id": "0RE1DXOOD69Az63I3A70wh"
+  },
+  {
+   "layer": "space",
+   "label": "Bathroom",
+   "room_number": "S0R003",
+   "area": 27.64,
+   "centroid": [
+    15.663,
+    3.189
+   ],
+   "elevation": 0.0,
+   "source": "ifc",
+   "id": "22gLnxZmz0pAypP8BD6tXi"
+  },
+  {
+   "layer": "space",
+   "label": "Office",
+   "room_number": "S0R004",
+   "area": 58.69,
+   "centroid": [
+    12.487,
+    9.189
+   ],
+   "elevation": 0.0,
+   "source": "ifc",
+   "id": "30EK_k65LFuO7pyBWvypFe"
+  },
+  {
+   "layer": "space",
+   "label": "Stair",
+   "room_number": "S1R000",
+   "area": 102.48,
+   "centroid": [
+    4.442,
+    6.0
+   ],
+   "elevation": 3.2,
+   "source": "ifc",
+   "id": "1GAd9RAKj1cPIgcPUQzl05"
+  },
+  {
+   "layer": "space",
+   "label": "Lab",
+   "room_number": "S1R001",
+   "area": 19.4,
+   "centroid": [
+    11.023,
+    2.479
+   ],
+   "elevation": 3.2,
+   "source": "ifc",
+   "id": "2MXbfds$P5hhDl196tDdxW"
+  },
+  {
+   "layer": "space",
+   "label": "Office",
+   "room_number": "S1R002",
+   "area": 22.07,
+   "centroid": [
+    15.58,
+    2.479
+   ],
+   "elevation": 3.2,
+   "source": "ifc",
+   "id": "38QafcE6zC2erUktc2rOtz"
+  },
+  {
+   "layer": "space",
+   "label": "Living Room",
+   "room_number": "S1R003",
+   "area": 28.02,
+   "centroid": [
+    11.032,
+    8.479
+   ],
+   "elevation": 3.2,
+   "source": "ifc",
+   "id": "1a5TdZser5e8bDtom0s9KJ"
+  },
+  {
+   "layer": "space",
+   "label": "Bedroom",
+   "room_number": "S1R004",
+   "area": 31.61,
+   "centroid": [
+    15.59,
+    8.479
+   ],
+   "elevation": 3.2,
+   "source": "ifc",
+   "id": "079xSbLsTCQhF0b7KD1VvV"
+  }
+ ],
+ "edges": [
+  {
+   "relation": "contains",
+   "key": "contains",
+   "source": "0GGsPHSJD8x8mXbux3zofD",
+   "target": "12tuMDHPH2jQ6qv3uUKfPy"
+  },
+  {
+   "relation": "contains",
+   "key": "contains",
+   "source": "0GGsPHSJD8x8mXbux3zofD",
+   "target": "05kPYcdMLFox3cwo9$P3ID"
+  },
+  {
+   "relation": "contains",
+   "key": "contains",
+   "source": "0GGsPHSJD8x8mXbux3zofD",
+   "target": "0RE1DXOOD69Az63I3A70wh"
+  },
+  {
+   "relation": "contains",
+   "key": "contains",
+   "source": "0GGsPHSJD8x8mXbux3zofD",
+   "target": "22gLnxZmz0pAypP8BD6tXi"
+  },
+  {
+   "relation": "contains",
+   "key": "contains",
+   "source": "0GGsPHSJD8x8mXbux3zofD",
+   "target": "30EK_k65LFuO7pyBWvypFe"
+  },
+  {
+   "relation": "contains",
+   "key": "contains",
+   "source": "3rzPZV5PHBVOXw3nv85T8G",
+   "target": "1GAd9RAKj1cPIgcPUQzl05"
+  },
+  {
+   "relation": "contains",
+   "key": "contains",
+   "source": "3rzPZV5PHBVOXw3nv85T8G",
+   "target": "2MXbfds$P5hhDl196tDdxW"
+  },
+  {
+   "relation": "contains",
+   "key": "contains",
+   "source": "3rzPZV5PHBVOXw3nv85T8G",
+   "target": "38QafcE6zC2erUktc2rOtz"
+  },
+  {
+   "relation": "contains",
+   "key": "contains",
+   "source": "3rzPZV5PHBVOXw3nv85T8G",
+   "target": "1a5TdZser5e8bDtom0s9KJ"
+  },
+  {
+   "relation": "contains",
+   "key": "contains",
+   "source": "3rzPZV5PHBVOXw3nv85T8G",
+   "target": "079xSbLsTCQhF0b7KD1VvV"
+  }
+ ]
+}

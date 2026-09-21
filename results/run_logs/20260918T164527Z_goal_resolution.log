@@ -1,0 +1,33 @@
+held-out rooms: 592  (21 models)
+
+goal resolution: 298/592 = 0.503
+  candidate-set size (query hits, capped at 5+): {5: 444, 0: 27, 3: 35, 4: 24, 2: 36, 1: 26}
+
+  class            recall      n
+  office            0.698    205
+  bathroom          0.530    132
+  circulation       0.256     86
+  stair             0.644     45
+  bedroom           0.786     28
+  meeting           0.174     23
+  living            0.182     22
+  kitchen           0.222     18
+  outdoor           0.000     10
+  storage           0.000     10
+  retail            0.000      8
+  service           0.000      5
+
+  downstream: route from building entry to resolved goal
+    wheeled    91/298 = 0.305 reachable
+    legged     252/298 = 0.846 reachable
+    human      252/298 = 0.846 reachable
+
+wrote results/goal_resolution_eval.json
+
+NOTE: other rooms in the same building keep their real/predicted
+label while one room is held out -- this measures whether a query
+finds an unlabelled room among otherwise-labelled ones, the actual
+deployment condition. It does not measure disambiguating between
+several rooms of the identical class in the same building (e.g.
+'the kitchen on the 2nd floor') -- any candidate in the set counts
+as resolved, which is the easier and, for now, honest bar.

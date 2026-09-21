@@ -1,0 +1,47 @@
+pinned dependencies:
+  THREE_URL    https://cdn.jsdelivr.net/npm/three@0.184.0/build/three.module.js
+  WEBIFC_URL   https://cdn.jsdelivr.net/npm/web-ifc@0.0.77/web-ifc-api.js
+  WASM_DIR     https://cdn.jsdelivr.net/npm/web-ifc@0.0.77/
+
+reachable and resolvable:
+  PASS three.module.js downloads
+  PASS web-ifc-api.js downloads
+  PASS web-ifc.wasm downloads
+  PASS THREE_URL has no bare imports
+  PASS WEBIFC_URL has no bare imports
+  PASS three.core.js (three.module.js's relative import) resolves
+
+orbit controls, against the real three.js build:
+  PASS camera sits at target + spherical offset
+  PASS camera looks at the target
+  PASS horizontal drag turns the camera
+  PASS phi stays under PI at the pole
+  PASS phi stays over 0 at the pole
+  PASS dolly scales the radius
+  PASS radius clamps to minDistance
+  PASS pan moves the target
+  PASS pan holds the camera-target distance
+  PASS pan follows the camera basis
+  PASS the listeners the viewer needs are bound
+  PASS a left-drag orbits
+  PASS a right-drag pans
+  PASS the wheel zooms in
+  PASS zooming off-centre also shifts the target toward the cursor
+  PASS an empty BufferGeometry has a non-finite box (the bug being guarded)
+  PASS merging drops the empty geometry
+  PASS the merged box stays finite
+  PASS the merged box is the real one
+  PASS merging only empties yields null
+  PASS the viewer applies no rotation of its own to web-ifc output
+  PASS a point at 4.5 m is inside a 3-6 m slab
+  PASS a point at 1 m is below it
+  PASS a point at 8 m is above it
+  PASS the slab ignores horizontal position
+
+axis convention, against a real model:
+  spans  X 116.4  Y 19.2  Z 82.6 m
+  storeys 0.0, 4.9, 9.8, 11.8 -> expect a height near 15.7 m
+  PASS the height is on Y (19.2 m), which is where the section planes cut
+  PASS every storey elevation lies inside the Y extent (-1.5..17.7 m)
+
+PASS the viewer's dependencies resolve and its controls behave

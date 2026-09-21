@@ -1,0 +1,202 @@
+{
+  "n": 593,
+  "resolved": 308,
+  "accuracy": 0.5193929173693086,
+  "candidate_hist": {
+    "5": 485,
+    "0": 27,
+    "3": 27,
+    "4": 12,
+    "2": 27,
+    "1": 15
+  },
+  "per_class": {
+    "living": {
+      "recall": 0.14285714285714285,
+      "n": 21
+    },
+    "kitchen": {
+      "recall": 0.36,
+      "n": 25
+    },
+    "bedroom": {
+      "recall": 0.7857142857142857,
+      "n": 28
+    },
+    "bathroom": {
+      "recall": 0.5230769230769231,
+      "n": 130
+    },
+    "stair": {
+      "recall": 0.8,
+      "n": 45
+    },
+    "meeting": {
+      "recall": 0.16666666666666666,
+      "n": 24
+    },
+    "office": {
+      "recall": 0.7024390243902439,
+      "n": 205
+    },
+    "circulation": {
+      "recall": 0.2682926829268293,
+      "n": 82
+    },
+    "service": {
+      "recall": 0.0,
+      "n": 5
+    },
+    "retail": {
+      "recall": 0.0,
+      "n": 8
+    },
+    "outdoor": {
+      "recall": 0.0,
+      "n": 10
+    },
+    "storage": {
+      "recall": 0.0,
+      "n": 10
+    }
+  },
+  "reachability_from_entry": {
+    "wheeled": {
+      "reachable": 52,
+      "planned": 308,
+      "fraction": 0.16883116883116883
+    },
+    "legged": {
+      "reachable": 142,
+      "planned": 308,
+      "fraction": 0.461038961038961
+    },
+    "human": {
+      "reachable": 142,
+      "planned": 308,
+      "fraction": 0.461038961038961
+    }
+  },
+  "examples": [
+    {
+      "model": "model_0.graph.json",
+      "query": "living",
+      "n_candidates": 7,
+      "resolved": false
+    },
+    {
+      "model": "model_0.graph.json",
+      "query": "living",
+      "n_candidates": 7,
+      "resolved": false
+    },
+    {
+      "model": "model_0.graph.json",
+      "query": "kitchen",
+      "n_candidates": 0,
+      "resolved": false
+    },
+    {
+      "model": "model_0.graph.json",
+      "query": "living",
+      "n_candidates": 8,
+      "resolved": true
+    },
+    {
+      "model": "model_0.graph.json",
+      "query": "bedroom",
+      "n_candidates": 10,
+      "resolved": true
+    },
+    {
+      "model": "model_0.graph.json",
+      "query": "bedroom",
+      "n_candidates": 10,
+      "resolved": true
+    },
+    {
+      "model": "model_0.graph.json",
+      "query": "bathroom",
+      "n_candidates": 3,
+      "resolved": false
+    },
+    {
+      "model": "model_0.graph.json",
+      "query": "bathroom",
+      "n_candidates": 4,
+      "resolved": true
+    },
+    {
+      "model": "model_0.graph.json",
+      "query": "bedroom",
+      "n_candidates": 10,
+      "resolved": true
+    },
+    {
+      "model": "model_0.graph.json",
+      "query": "stair",
+      "n_candidates": 3,
+      "resolved": true
+    },
+    {
+      "model": "model_0.graph.json",
+      "query": "bedroom",
+      "n_candidates": 10,
+      "resolved": true
+    },
+    {
+      "model": "model_0.graph.json",
+      "query": "stair",
+      "n_candidates": 3,
+      "resolved": true
+    },
+    {
+      "model": "model_0.graph.json",
+      "query": "living",
+      "n_candidates": 7,
+      "resolved": false
+    },
+    {
+      "model": "model_0.graph.json",
+      "query": "living",
+      "n_candidates": 7,
+      "resolved": false
+    },
+    {
+      "model": "model_0.graph.json",
+      "query": "bathroom",
+      "n_candidates": 3,
+      "resolved": false
+    },
+    {
+      "model": "model_0.graph.json",
+      "query": "bathroom",
+      "n_candidates": 3,
+      "resolved": false
+    },
+    {
+      "model": "model_0.graph.json",
+      "query": "living",
+      "n_candidates": 7,
+      "resolved": false
+    },
+    {
+      "model": "model_0.graph.json",
+      "query": "living",
+      "n_candidates": 7,
+      "resolved": false
+    },
+    {
+      "model": "model_0.graph.json",
+      "query": "living",
+      "n_candidates": 7,
+      "resolved": false
+    },
+    {
+      "model": "model_1.graph.json",
+      "query": "bathroom",
+      "n_candidates": 3,
+      "resolved": false
+    }
+  ]
+}

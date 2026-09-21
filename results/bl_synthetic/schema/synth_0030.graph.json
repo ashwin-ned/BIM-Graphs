@@ -1,0 +1,251 @@
+{
+ "schema": 2,
+ "model": "dataset/synthetic_data/synthetic/synth_0030.ifc",
+ "stats": {
+  "method": "schema"
+ },
+ "nodes": [
+  {
+   "layer": "storey",
+   "label": "Level 0",
+   "elevation": 0.0,
+   "id": "3Go9K3_Kj2pBcQW4yHIcnk"
+  },
+  {
+   "layer": "storey",
+   "label": "Level 1",
+   "elevation": 3.2,
+   "id": "09MDTXUjP2JOlK9mdUlykf"
+  },
+  {
+   "layer": "space",
+   "label": "Stair",
+   "room_number": "S0R000",
+   "area": 93.09,
+   "centroid": [
+    4.045,
+    6.0
+   ],
+   "elevation": 0.0,
+   "source": "ifc",
+   "id": "2FESuEf7D6G8i2I9Ys1Nv2"
+  },
+  {
+   "layer": "space",
+   "label": "Office",
+   "room_number": "S0R001",
+   "area": 22.4,
+   "centroid": [
+    10.445,
+    2.582
+   ],
+   "elevation": 0.0,
+   "source": "ifc",
+   "id": "3AUMMS3vX0lQR$3uzstrCO"
+  },
+  {
+   "layer": "space",
+   "label": "Corridor",
+   "room_number": "S0R002",
+   "area": 24.82,
+   "centroid": [
+    15.4,
+    2.582
+   ],
+   "elevation": 0.0,
+   "source": "ifc",
+   "id": "3FixCgaF9CGhMhA5yi_3mO"
+  },
+  {
+   "layer": "space",
+   "label": "Lab",
+   "room_number": "S0R003",
+   "area": 39.27,
+   "centroid": [
+    11.148,
+    8.582
+   ],
+   "elevation": 0.0,
+   "source": "ifc",
+   "id": "0ZQV1pG$j4pBQgbaORphP0"
+  },
+  {
+   "layer": "space",
+   "label": "Office",
+   "room_number": "S0R004",
+   "area": 23.84,
+   "centroid": [
+    16.104,
+    8.582
+   ],
+   "elevation": 0.0,
+   "source": "ifc",
+   "id": "1Zo8Ismgn0chlAQUhOf7a4"
+  },
+  {
+   "layer": "space",
+   "label": "Stair",
+   "room_number": "S1R000",
+   "area": 36.73,
+   "centroid": [
+    3.015,
+    3.25
+   ],
+   "elevation": 3.2,
+   "source": "ifc",
+   "id": "3bmhchhx15gAva$O4ibCRq"
+  },
+  {
+   "layer": "space",
+   "label": "Kitchen",
+   "room_number": "S1R001",
+   "area": 24.62,
+   "centroid": [
+    8.083,
+    3.25
+   ],
+   "elevation": 3.2,
+   "source": "ifc",
+   "id": "15B6i65eXDXPrk15KxNpdI"
+  },
+  {
+   "layer": "space",
+   "label": "Meeting Room",
+   "room_number": "S1R002",
+   "area": 52.65,
+   "centroid": [
+    5.068,
+    9.25
+   ],
+   "elevation": 3.2,
+   "source": "ifc",
+   "id": "100$HjbqfDlAXkWCYp9Fd1"
+  },
+  {
+   "layer": "space",
+   "label": "Office",
+   "room_number": "S1R003",
+   "area": 23.33,
+   "centroid": [
+    12.458,
+    2.725
+   ],
+   "elevation": 3.2,
+   "source": "ifc",
+   "id": "1qBTpbzSr8KOm_0Dcq7ata"
+  },
+  {
+   "layer": "space",
+   "label": "Living Room",
+   "room_number": "S1R004",
+   "area": 15.86,
+   "centroid": [
+    16.39,
+    2.725
+   ],
+   "elevation": 3.2,
+   "source": "ifc",
+   "id": "2lNGENbqD6_xzcA08AIqxN"
+  },
+  {
+   "layer": "space",
+   "label": "Corridor",
+   "room_number": "S1R005",
+   "area": 18.67,
+   "centroid": [
+    11.706,
+    8.725
+   ],
+   "elevation": 3.2,
+   "source": "ifc",
+   "id": "217Fx2WTfACBE2hT8n$1qs"
+  },
+  {
+   "layer": "space",
+   "label": "Bedroom",
+   "room_number": "S1R006",
+   "area": 28.72,
+   "centroid": [
+    15.638,
+    8.725
+   ],
+   "elevation": 3.2,
+   "source": "ifc",
+   "id": "3MiUn66qH2DuPZ9UpGg9zD"
+  }
+ ],
+ "edges": [
+  {
+   "relation": "contains",
+   "key": "contains",
+   "source": "3Go9K3_Kj2pBcQW4yHIcnk",
+   "target": "2FESuEf7D6G8i2I9Ys1Nv2"
+  },
+  {
+   "relation": "contains",
+   "key": "contains",
+   "source": "3Go9K3_Kj2pBcQW4yHIcnk",
+   "target": "3AUMMS3vX0lQR$3uzstrCO"
+  },
+  {
+   "relation": "contains",
+   "key": "contains",
+   "source": "3Go9K3_Kj2pBcQW4yHIcnk",
+   "target": "3FixCgaF9CGhMhA5yi_3mO"
+  },
+  {
+   "relation": "contains",
+   "key": "contains",
+   "source": "3Go9K3_Kj2pBcQW4yHIcnk",
+   "target": "0ZQV1pG$j4pBQgbaORphP0"
+  },
+  {
+   "relation": "contains",
+   "key": "contains",
+   "source": "3Go9K3_Kj2pBcQW4yHIcnk",
+   "target": "1Zo8Ismgn0chlAQUhOf7a4"
+  },
+  {
+   "relation": "contains",
+   "key": "contains",
+   "source": "09MDTXUjP2JOlK9mdUlykf",
+   "target": "3bmhchhx15gAva$O4ibCRq"
+  },
+  {
+   "relation": "contains",
+   "key": "contains",
+   "source": "09MDTXUjP2JOlK9mdUlykf",
+   "target": "15B6i65eXDXPrk15KxNpdI"
+  },
+  {
+   "relation": "contains",
+   "key": "contains",
+   "source": "09MDTXUjP2JOlK9mdUlykf",
+   "target": "100$HjbqfDlAXkWCYp9Fd1"
+  },
+  {
+   "relation": "contains",
+   "key": "contains",
+   "source": "09MDTXUjP2JOlK9mdUlykf",
+   "target": "1qBTpbzSr8KOm_0Dcq7ata"
+  },
+  {
+   "relation": "contains",
+   "key": "contains",
+   "source": "09MDTXUjP2JOlK9mdUlykf",
+   "target": "2lNGENbqD6_xzcA08AIqxN"
+  },
+  {
+   "relation": "contains",
+   "key": "contains",
+   "source": "09MDTXUjP2JOlK9mdUlykf",
+   "target": "217Fx2WTfACBE2hT8n$1qs"
+  },
+  {
+   "relation": "contains",
+   "key": "contains",
+   "source": "09MDTXUjP2JOlK9mdUlykf",
+   "target": "3MiUn66qH2DuPZ9UpGg9zD"
+  }
+ ]
+}

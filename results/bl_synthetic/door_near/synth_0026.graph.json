@@ -1,0 +1,412 @@
+{
+ "schema": 2,
+ "model": "dataset/synthetic_data/synthetic/synth_0026.ifc",
+ "stats": {
+  "method": "door_near"
+ },
+ "nodes": [
+  {
+   "layer": "storey",
+   "label": "Level 0",
+   "elevation": 0.0,
+   "id": "1zALP1vi5EdgbN8g4YM4Bm"
+  },
+  {
+   "layer": "storey",
+   "label": "Level 1",
+   "elevation": 3.2,
+   "id": "1FhH5b2Qn5X8SHC3XefqtJ"
+  },
+  {
+   "layer": "space",
+   "label": "Stair",
+   "room_number": "S0R000",
+   "area": 45.77,
+   "centroid": [
+    3.858,
+    3.145
+   ],
+   "elevation": 0.0,
+   "source": "ifc",
+   "id": "3wToOvy25BjApu6N3qLWGs"
+  },
+  {
+   "layer": "space",
+   "label": "Reception",
+   "room_number": "S0R001",
+   "area": 22.85,
+   "centroid": [
+    2.174,
+    9.145
+   ],
+   "elevation": 0.0,
+   "source": "ifc",
+   "id": "2oB$t9z5110f8hMPCVQc2J"
+  },
+  {
+   "layer": "space",
+   "label": "Corridor",
+   "room_number": "S0R002",
+   "area": 17.46,
+   "centroid": [
+    6.032,
+    9.145
+   ],
+   "elevation": 0.0,
+   "source": "ifc",
+   "id": "0H2QJaK6z8j9T5NwF1Bgjz"
+  },
+  {
+   "layer": "space",
+   "label": "Store",
+   "room_number": "S0R003",
+   "area": 118.99,
+   "centroid": [
+    12.858,
+    6.0
+   ],
+   "elevation": 0.0,
+   "source": "ifc",
+   "id": "0QDz3Qv2526B2LA4ZNX7QU"
+  },
+  {
+   "layer": "space",
+   "label": "Stair",
+   "room_number": "S1R000",
+   "area": 22.07,
+   "centroid": [
+    2.41,
+    2.488
+   ],
+   "elevation": 3.2,
+   "source": "ifc",
+   "id": "1yikAcYzb4mwvCZeV2oO_C"
+  },
+  {
+   "layer": "space",
+   "label": "Meeting Room",
+   "room_number": "S1R001",
+   "area": 22.44,
+   "centroid": [
+    7.27,
+    2.488
+   ],
+   "elevation": 3.2,
+   "source": "ifc",
+   "id": "03zEJ7fk9EGAkLoqslRnEc"
+  },
+  {
+   "layer": "space",
+   "label": "Corridor",
+   "room_number": "S1R002",
+   "area": 30.03,
+   "centroid": [
+    2.3,
+    8.488
+   ],
+   "elevation": 3.2,
+   "source": "ifc",
+   "id": "0P6a_2zn1BkfHLApF6QgLL"
+  },
+  {
+   "layer": "space",
+   "label": "Office",
+   "room_number": "S1R003",
+   "area": 33.58,
+   "centroid": [
+    7.16,
+    8.488
+   ],
+   "elevation": 3.2,
+   "source": "ifc",
+   "id": "06HxZavV165gsnt2SOFQO8"
+  },
+  {
+   "layer": "space",
+   "label": "Utility",
+   "room_number": "S1R004",
+   "area": 48.82,
+   "centroid": [
+    13.86,
+    3.121
+   ],
+   "elevation": 3.2,
+   "source": "ifc",
+   "id": "29MJlBTKn15Q$P6aAE_SlE"
+  },
+  {
+   "layer": "space",
+   "label": "Office",
+   "room_number": "S1R005",
+   "area": 25.7,
+   "centroid": [
+    12.132,
+    9.121
+   ],
+   "elevation": 3.2,
+   "source": "ifc",
+   "id": "3r5$vRXQzELOwHokmpOBS2"
+  },
+  {
+   "layer": "space",
+   "label": "Bathroom",
+   "room_number": "S1R006",
+   "area": 18.09,
+   "centroid": [
+    16.272,
+    9.121
+   ],
+   "elevation": 3.2,
+   "source": "ifc",
+   "id": "1rPu2lfjbDgunDN0znz7_j"
+  }
+ ],
+ "edges": [
+  {
+   "relation": "contains",
+   "key": "contains",
+   "source": "1zALP1vi5EdgbN8g4YM4Bm",
+   "target": "3wToOvy25BjApu6N3qLWGs"
+  },
+  {
+   "relation": "contains",
+   "key": "contains",
+   "source": "1zALP1vi5EdgbN8g4YM4Bm",
+   "target": "2oB$t9z5110f8hMPCVQc2J"
+  },
+  {
+   "relation": "contains",
+   "key": "contains",
+   "source": "1zALP1vi5EdgbN8g4YM4Bm",
+   "target": "0H2QJaK6z8j9T5NwF1Bgjz"
+  },
+  {
+   "relation": "contains",
+   "key": "contains",
+   "source": "1zALP1vi5EdgbN8g4YM4Bm",
+   "target": "0QDz3Qv2526B2LA4ZNX7QU"
+  },
+  {
+   "relation": "contains",
+   "key": "contains",
+   "source": "1FhH5b2Qn5X8SHC3XefqtJ",
+   "target": "1yikAcYzb4mwvCZeV2oO_C"
+  },
+  {
+   "relation": "contains",
+   "key": "contains",
+   "source": "1FhH5b2Qn5X8SHC3XefqtJ",
+   "target": "03zEJ7fk9EGAkLoqslRnEc"
+  },
+  {
+   "relation": "contains",
+   "key": "contains",
+   "source": "1FhH5b2Qn5X8SHC3XefqtJ",
+   "target": "0P6a_2zn1BkfHLApF6QgLL"
+  },
+  {
+   "relation": "contains",
+   "key": "contains",
+   "source": "1FhH5b2Qn5X8SHC3XefqtJ",
+   "target": "06HxZavV165gsnt2SOFQO8"
+  },
+  {
+   "relation": "contains",
+   "key": "contains",
+   "source": "1FhH5b2Qn5X8SHC3XefqtJ",
+   "target": "29MJlBTKn15Q$P6aAE_SlE"
+  },
+  {
+   "relation": "contains",
+   "key": "contains",
+   "source": "1FhH5b2Qn5X8SHC3XefqtJ",
+   "target": "3r5$vRXQzELOwHokmpOBS2"
+  },
+  {
+   "relation": "contains",
+   "key": "contains",
+   "source": "1FhH5b2Qn5X8SHC3XefqtJ",
+   "target": "1rPu2lfjbDgunDN0znz7_j"
+  },
+  {
+   "edge_id": "connected_by_door:1mq5Wpsk90qOjf5uZmsMVS",
+   "relation": "connected_by_door",
+   "provenance": "inferred",
+   "door": "1mq5Wpsk90qOjf5uZmsMVS",
+   "width": null,
+   "key": "connected_by_door:1mq5Wpsk90qOjf5uZmsMVS",
+   "source": "3wToOvy25BjApu6N3qLWGs",
+   "target": "2oB$t9z5110f8hMPCVQc2J"
+  },
+  {
+   "edge_id": "connected_by_door:2nehV3rZn7kOZMuxiDNDIz",
+   "relation": "connected_by_door",
+   "provenance": "inferred",
+   "door": "2nehV3rZn7kOZMuxiDNDIz",
+   "width": null,
+   "key": "connected_by_door:2nehV3rZn7kOZMuxiDNDIz",
+   "source": "3wToOvy25BjApu6N3qLWGs",
+   "target": "0QDz3Qv2526B2LA4ZNX7QU"
+  },
+  {
+   "edge_id": "vertically_connected:1GrQ9lVin6RBt8NV5Hs6u0",
+   "relation": "vertically_connected",
+   "provenance": "inferred",
+   "via": "1GrQ9lVin6RBt8NV5Hs6u0",
+   "kind": "stair",
+   "key": "vertically_connected:1GrQ9lVin6RBt8NV5Hs6u0",
+   "source": "3wToOvy25BjApu6N3qLWGs",
+   "target": "1yikAcYzb4mwvCZeV2oO_C"
+  },
+  {
+   "edge_id": "connected_by_door:1mq5Wpsk90qOjf5uZmsMVS",
+   "relation": "connected_by_door",
+   "provenance": "inferred",
+   "door": "1mq5Wpsk90qOjf5uZmsMVS",
+   "width": null,
+   "key": "connected_by_door:1mq5Wpsk90qOjf5uZmsMVS",
+   "source": "2oB$t9z5110f8hMPCVQc2J",
+   "target": "3wToOvy25BjApu6N3qLWGs"
+  },
+  {
+   "edge_id": "connected_by_door:0rlpXyiJf7EQq48_JnhoSP",
+   "relation": "connected_by_door",
+   "provenance": "inferred",
+   "door": "0rlpXyiJf7EQq48_JnhoSP",
+   "width": null,
+   "key": "connected_by_door:0rlpXyiJf7EQq48_JnhoSP",
+   "source": "0H2QJaK6z8j9T5NwF1Bgjz",
+   "target": "0QDz3Qv2526B2LA4ZNX7QU"
+  },
+  {
+   "edge_id": "connected_by_door:0rlpXyiJf7EQq48_JnhoSP",
+   "relation": "connected_by_door",
+   "provenance": "inferred",
+   "door": "0rlpXyiJf7EQq48_JnhoSP",
+   "width": null,
+   "key": "connected_by_door:0rlpXyiJf7EQq48_JnhoSP",
+   "source": "0QDz3Qv2526B2LA4ZNX7QU",
+   "target": "0H2QJaK6z8j9T5NwF1Bgjz"
+  },
+  {
+   "edge_id": "connected_by_door:2nehV3rZn7kOZMuxiDNDIz",
+   "relation": "connected_by_door",
+   "provenance": "inferred",
+   "door": "2nehV3rZn7kOZMuxiDNDIz",
+   "width": null,
+   "key": "connected_by_door:2nehV3rZn7kOZMuxiDNDIz",
+   "source": "0QDz3Qv2526B2LA4ZNX7QU",
+   "target": "3wToOvy25BjApu6N3qLWGs"
+  },
+  {
+   "edge_id": "connected_by_door:2GmDEGrZ5CQgpw0btGv8t8",
+   "relation": "connected_by_door",
+   "provenance": "inferred",
+   "door": "2GmDEGrZ5CQgpw0btGv8t8",
+   "width": null,
+   "key": "connected_by_door:2GmDEGrZ5CQgpw0btGv8t8",
+   "source": "1yikAcYzb4mwvCZeV2oO_C",
+   "target": "03zEJ7fk9EGAkLoqslRnEc"
+  },
+  {
+   "edge_id": "vertically_connected:1GrQ9lVin6RBt8NV5Hs6u0",
+   "relation": "vertically_connected",
+   "provenance": "inferred",
+   "via": "1GrQ9lVin6RBt8NV5Hs6u0",
+   "kind": "stair",
+   "key": "vertically_connected:1GrQ9lVin6RBt8NV5Hs6u0",
+   "source": "1yikAcYzb4mwvCZeV2oO_C",
+   "target": "3wToOvy25BjApu6N3qLWGs"
+  },
+  {
+   "edge_id": "connected_by_door:3QABpLzZfDmgQTph0QyqDO",
+   "relation": "connected_by_door",
+   "provenance": "inferred",
+   "door": "3QABpLzZfDmgQTph0QyqDO",
+   "width": null,
+   "key": "connected_by_door:3QABpLzZfDmgQTph0QyqDO",
+   "source": "03zEJ7fk9EGAkLoqslRnEc",
+   "target": "06HxZavV165gsnt2SOFQO8"
+  },
+  {
+   "edge_id": "connected_by_door:2GmDEGrZ5CQgpw0btGv8t8",
+   "relation": "connected_by_door",
+   "provenance": "inferred",
+   "door": "2GmDEGrZ5CQgpw0btGv8t8",
+   "width": null,
+   "key": "connected_by_door:2GmDEGrZ5CQgpw0btGv8t8",
+   "source": "03zEJ7fk9EGAkLoqslRnEc",
+   "target": "1yikAcYzb4mwvCZeV2oO_C"
+  },
+  {
+   "edge_id": "connected_by_door:0SulGyd19F8RsuveF_QQWu",
+   "relation": "connected_by_door",
+   "provenance": "inferred",
+   "door": "0SulGyd19F8RsuveF_QQWu",
+   "width": null,
+   "key": "connected_by_door:0SulGyd19F8RsuveF_QQWu",
+   "source": "03zEJ7fk9EGAkLoqslRnEc",
+   "target": "29MJlBTKn15Q$P6aAE_SlE"
+  },
+  {
+   "edge_id": "connected_by_door:2dfn46ZSjFWRCO5zhvN1LP",
+   "relation": "connected_by_door",
+   "provenance": "inferred",
+   "door": "2dfn46ZSjFWRCO5zhvN1LP",
+   "width": null,
+   "key": "connected_by_door:2dfn46ZSjFWRCO5zhvN1LP",
+   "source": "0P6a_2zn1BkfHLApF6QgLL",
+   "target": "06HxZavV165gsnt2SOFQO8"
+  },
+  {
+   "edge_id": "connected_by_door:3QABpLzZfDmgQTph0QyqDO",
+   "relation": "connected_by_door",
+   "provenance": "inferred",
+   "door": "3QABpLzZfDmgQTph0QyqDO",
+   "width": null,
+   "key": "connected_by_door:3QABpLzZfDmgQTph0QyqDO",
+   "source": "06HxZavV165gsnt2SOFQO8",
+   "target": "03zEJ7fk9EGAkLoqslRnEc"
+  },
+  {
+   "edge_id": "connected_by_door:2dfn46ZSjFWRCO5zhvN1LP",
+   "relation": "connected_by_door",
+   "provenance": "inferred",
+   "door": "2dfn46ZSjFWRCO5zhvN1LP",
+   "width": null,
+   "key": "connected_by_door:2dfn46ZSjFWRCO5zhvN1LP",
+   "source": "06HxZavV165gsnt2SOFQO8",
+   "target": "0P6a_2zn1BkfHLApF6QgLL"
+  },
+  {
+   "edge_id": "connected_by_door:1KskRXwyz3wxwGE8SPN3eU",
+   "relation": "connected_by_door",
+   "provenance": "inferred",
+   "door": "1KskRXwyz3wxwGE8SPN3eU",
+   "width": null,
+   "key": "connected_by_door:1KskRXwyz3wxwGE8SPN3eU",
+   "source": "29MJlBTKn15Q$P6aAE_SlE",
+   "target": "3r5$vRXQzELOwHokmpOBS2"
+  },
+  {
+   "edge_id": "connected_by_door:0SulGyd19F8RsuveF_QQWu",
+   "relation": "connected_by_door",
+   "provenance": "inferred",
+   "door": "0SulGyd19F8RsuveF_QQWu",
+   "width": null,
+   "key": "connected_by_door:0SulGyd19F8RsuveF_QQWu",
+   "source": "29MJlBTKn15Q$P6aAE_SlE",
+   "target": "03zEJ7fk9EGAkLoqslRnEc"
+  },
+  {
+   "edge_id": "connected_by_door:1KskRXwyz3wxwGE8SPN3eU",
+   "relation": "connected_by_door",
+   "provenance": "inferred",
+   "door": "1KskRXwyz3wxwGE8SPN3eU",
+   "width": null,
+   "key": "connected_by_door:1KskRXwyz3wxwGE8SPN3eU",
+   "source": "3r5$vRXQzELOwHokmpOBS2",
+   "target": "29MJlBTKn15Q$P6aAE_SlE"
+  }
+ ]
+}

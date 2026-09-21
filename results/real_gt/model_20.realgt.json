@@ -1,0 +1,116 @@
+{
+  "building": "model_20",
+  "source": "derived:flood-fill",
+  "derivable": false,
+  "excluded_because": "no separated pair among candidates: blocking geometry may be absent",
+  "n_doors": 19,
+  "n_voids": 46,
+  "params": {
+    "res": 0.05,
+    "band_slack": 0.04,
+    "band_min": 0.1,
+    "adj_tol": 0.6,
+    "door_h": 1.0,
+    "min_room_area": 0.5,
+    "min_blocker_area": 0.01,
+    "min_void_area": 0.02,
+    "void_scale": 1.0,
+    "declared_unit_scale": 1
+  },
+  "rooms": [
+    {
+      "rid": "3FEGQ1pj12XPo30STbPWKP",
+      "name": "1",
+      "long_name": "Raum",
+      "storey": "13LV5dTeP3CAox54x56C1Z",
+      "area": 32.7
+    },
+    {
+      "rid": "3FEGQ1pj12XPo30STbPWKQ",
+      "name": "2",
+      "long_name": "Raum",
+      "storey": "13LV5dTeP3CAox54x56C1Z",
+      "area": 31.85
+    },
+    {
+      "rid": "3FEGQ1pj12XPo30STbPWKV",
+      "name": "3",
+      "long_name": "Raum",
+      "storey": "13LV5dTeP3CAox54x56C1Z",
+      "area": 99.11
+    },
+    {
+      "rid": "3FEGQ1pj12XPo30STbPWKG",
+      "name": "4",
+      "long_name": "Lobby",
+      "storey": "13LV5dTeP3CAox54x56C1Z",
+      "area": 159.33
+    },
+    {
+      "rid": "3FEGQ1pj12XPo30STbPWKL",
+      "name": "5",
+      "long_name": "Raum",
+      "storey": "13LV5dTeP3CAox54x56C1Z",
+      "area": 31.85
+    },
+    {
+      "rid": "3FEGQ1pj12XPo30STbPWKM",
+      "name": "6",
+      "long_name": "Raum",
+      "storey": "13LV5dTeP3CAox54x56C1Z",
+      "area": 30.75
+    },
+    {
+      "rid": "3FEGQ1pj12XPo30STbPWPb",
+      "name": "7",
+      "long_name": "Raum",
+      "storey": "1owBOg$5v0GwDBa7HPOsiG",
+      "area": 31.85
+    },
+    {
+      "rid": "3FEGQ1pj12XPo30STbPWPv",
+      "name": "8",
+      "long_name": "Raum",
+      "storey": "1owBOg$5v0GwDBa7HPOsiG",
+      "area": 31.85
+    },
+    {
+      "rid": "3FEGQ1pj12XPo30STbPWP$",
+      "name": "9",
+      "long_name": "Raum",
+      "storey": "1fCNYHS2f5GRPTJYMA6G5$",
+      "area": 31.85
+    },
+    {
+      "rid": "3FEGQ1pj12XPo30STbPWPp",
+      "name": "10",
+      "long_name": "Raum",
+      "storey": "1fCNYHS2f5GRPTJYMA6G5$",
+      "area": 31.85
+    }
+  ],
+  "edges": [
+    {
+      "a": "3FEGQ1pj12XPo30STbPWKG",
+      "b": "3FEGQ1pj12XPo30STbPWKL"
+    },
+    {
+      "a": "3FEGQ1pj12XPo30STbPWKG",
+      "b": "3FEGQ1pj12XPo30STbPWKP"
+    },
+    {
+      "a": "3FEGQ1pj12XPo30STbPWKL",
+      "b": "3FEGQ1pj12XPo30STbPWKM"
+    },
+    {
+      "a": "3FEGQ1pj12XPo30STbPWKP",
+      "b": "3FEGQ1pj12XPo30STbPWKQ"
+    },
+    {
+      "a": "3FEGQ1pj12XPo30STbPWKQ",
+      "b": "3FEGQ1pj12XPo30STbPWKV"
+    }
+  ],
+  "adjacent_not_connected": [],
+  "unknown": []
+}

@@ -1,0 +1,238 @@
+[
+  {
+    "model": "model_0",
+    "pred_file": "full_pcd_ram_bimsg_s1_post.pkl.gz",
+    "gt_visible_total": 497,
+    "gt_visible_objects": 87,
+    "gt_visible_architecture": 259,
+    "pred_objects": 40,
+    "matched": 29,
+    "object_recall": 0.333,
+    "object_precision": 0.725,
+    "unmatched_pred": 11,
+    "hallucinated_impossible": 3,
+    "hallucination_rate": 0.075,
+    "class_correct_of_matched": 7,
+    "class_accuracy": 0.241,
+    "pred_label_hist": [
+      [
+        "closet wall",
+        14
+      ],
+      [
+        "closet door",
+        5
+      ],
+      [
+        "picture",
+        4
+      ],
+      [
+        "window",
+        3
+      ],
+      [
+        "mirror",
+        3
+      ],
+      [
+        "person",
+        3
+      ],
+      [
+        "lamp",
+        2
+      ],
+      [
+        "bathroom stall door",
+        2
+      ],
+      [
+        "bathroom vanity",
+        1
+      ],
+      [
+        "cup",
+        1
+      ]
+    ],
+    "tag": "A_flat"
+  },
+  {
+    "model": "model_0",
+    "pred_file": "full_pcd_ram_B_textured_model_0_post.pkl.gz",
+    "gt_visible_total": 489,
+    "gt_visible_objects": 87,
+    "gt_visible_architecture": 249,
+    "pred_objects": 45,
+    "matched": 29,
+    "object_recall": 0.333,
+    "object_precision": 0.644,
+    "unmatched_pred": 16,
+    "hallucinated_impossible": 3,
+    "hallucination_rate": 0.067,
+    "class_correct_of_matched": 14,
+    "class_accuracy": 0.483,
+    "pred_label_hist": [
+      [
+        "closet door",
+        16
+      ],
+      [
+        "bed",
+        8
+      ],
+      [
+        "closet wall",
+        5
+      ],
+      [
+        "person",
+        3
+      ],
+      [
+        "bench",
+        3
+      ],
+      [
+        "mirror",
+        3
+      ],
+      [
+        "window",
+        2
+      ],
+      [
+        "picture",
+        2
+      ],
+      [
+        "cup",
+        1
+      ],
+      [
+        "paper towel roll",
+        1
+      ]
+    ],
+    "tag": "B_textured"
+  },
+  {
+    "model": "model_0",
+    "pred_file": "full_pcd_ram_C_clutter_model_0_post.pkl.gz",
+    "gt_visible_total": 560,
+    "gt_visible_objects": 161,
+    "gt_visible_architecture": 241,
+    "pred_objects": 88,
+    "matched": 75,
+    "object_recall": 0.466,
+    "object_precision": 0.852,
+    "unmatched_pred": 13,
+    "hallucinated_impossible": 1,
+    "hallucination_rate": 0.011,
+    "class_correct_of_matched": 33,
+    "class_accuracy": 0.44,
+    "pred_label_hist": [
+      [
+        "closet door",
+        15
+      ],
+      [
+        "lamp",
+        14
+      ],
+      [
+        "bed",
+        9
+      ],
+      [
+        "desk",
+        9
+      ],
+      [
+        "sofa chair",
+        5
+      ],
+      [
+        "cabinet",
+        5
+      ],
+      [
+        "picture",
+        5
+      ],
+      [
+        "closet wall",
+        4
+      ],
+      [
+        "radiator",
+        4
+      ],
+      [
+        "storage bin",
+        3
+      ]
+    ],
+    "tag": "C_clutter"
+  },
+  {
+    "model": "model_17",
+    "pred_file": "full_pcd_ram_C_clutter_model_17_post.pkl.gz",
+    "gt_visible_total": 352,
+    "gt_visible_objects": 169,
+    "gt_visible_architecture": 164,
+    "pred_objects": 118,
+    "matched": 86,
+    "object_recall": 0.509,
+    "object_precision": 0.729,
+    "unmatched_pred": 32,
+    "hallucinated_impossible": 0,
+    "hallucination_rate": 0.0,
+    "class_correct_of_matched": 36,
+    "class_accuracy": 0.419,
+    "pred_label_hist": [
+      [
+        "window",
+        15
+      ],
+      [
+        "toilet",
+        14
+      ],
+      [
+        "desk",
+        14
+      ],
+      [
+        "picture",
+        10
+      ],
+      [
+        "closet door",
+        10
+      ],
+      [
+        "lamp",
+        9
+      ],
+      [
+        "sofa chair",
+        9
+      ],
+      [
+        "bed",
+        8
+      ],
+      [
+        "closet wall",
+        6
+      ],
+      [
+        "cabinet",
+        6
+      ]
+    ],
+    "tag": "C_clutter"
+  }
+]

@@ -1,0 +1,108 @@
+{
+  "building": "model_19",
+  "source": "derived:flood-fill",
+  "derivable": false,
+  "excluded_because": "no candidate-adjacent room pairs",
+  "n_doors": 34,
+  "n_voids": 63,
+  "params": {
+    "res": 0.05,
+    "band_slack": 0.04,
+    "band_min": 0.1,
+    "adj_tol": 0.6,
+    "door_h": 1.0,
+    "min_room_area": 0.5,
+    "min_blocker_area": 0.01,
+    "min_void_area": 0.02,
+    "void_scale": 1.0,
+    "declared_unit_scale": 0.001
+  },
+  "rooms": [
+    {
+      "rid": "00yvDI1aP4JgzJDApMiu54",
+      "name": "1",
+      "long_name": "kitchen",
+      "storey": "3Zu5Bv0LOHrPC10026FoQQ",
+      "area": 6.25
+    },
+    {
+      "rid": "00yvDI1aP4JgzJDApMiu5O",
+      "name": "2",
+      "long_name": "bedroom 1",
+      "storey": "3Zu5Bv0LOHrPC10026FoQQ",
+      "area": 3.68
+    },
+    {
+      "rid": "00yvDI1aP4JgzJDApMiu5Q",
+      "name": "3",
+      "long_name": "bedroom 2",
+      "storey": "3Zu5Bv0LOHrPC10026FoQQ",
+      "area": 3.68
+    },
+    {
+      "rid": "00yvDI1aP4JgzJDApMiu5S",
+      "name": "4",
+      "long_name": "toilet",
+      "storey": "3Zu5Bv0LOHrPC10026FoQQ",
+      "area": 2.17
+    },
+    {
+      "rid": "00yvDI1aP4JgzJDApMiu5U",
+      "name": "5",
+      "long_name": "living Room",
+      "storey": "3Zu5Bv0LOHrPC10026FoQQ",
+      "area": 9.19
+    },
+    {
+      "rid": "00yvDI1aP4JgzJDApMiu5G",
+      "name": "6",
+      "long_name": "stair area",
+      "storey": "3Zu5Bv0LOHrPC10026FoQQ",
+      "area": 7.7
+    }
+  ],
+  "edges": [],
+  "adjacent_not_connected": [],
+  "unknown": [
+    {
+      "a": "00yvDI1aP4JgzJDApMiu54",
+      "b": "00yvDI1aP4JgzJDApMiu5Q",
+      "reason": "room fully occluded by blocking geometry"
+    },
+    {
+      "a": "00yvDI1aP4JgzJDApMiu54",
+      "b": "00yvDI1aP4JgzJDApMiu5U",
+      "reason": "room fully occluded by blocking geometry"
+    },
+    {
+      "a": "00yvDI1aP4JgzJDApMiu5G",
+      "b": "00yvDI1aP4JgzJDApMiu5U",
+      "reason": "room fully occluded by blocking geometry"
+    },
+    {
+      "a": "00yvDI1aP4JgzJDApMiu5O",
+      "b": "00yvDI1aP4JgzJDApMiu5S",
+      "reason": "room fully occluded by blocking geometry"
+    },
+    {
+      "a": "00yvDI1aP4JgzJDApMiu5O",
+      "b": "00yvDI1aP4JgzJDApMiu5U",
+      "reason": "room fully occluded by blocking geometry"
+    },
+    {
+      "a": "00yvDI1aP4JgzJDApMiu5Q",
+      "b": "00yvDI1aP4JgzJDApMiu5S",
+      "reason": "room fully occluded by blocking geometry"
+    },
+    {
+      "a": "00yvDI1aP4JgzJDApMiu5Q",
+      "b": "00yvDI1aP4JgzJDApMiu5U",
+      "reason": "room fully occluded by blocking geometry"
+    },
+    {
+      "a": "00yvDI1aP4JgzJDApMiu5S",
+      "b": "00yvDI1aP4JgzJDApMiu5U",
+      "reason": "room fully occluded by blocking geometry"
+    }
+  ]
+}

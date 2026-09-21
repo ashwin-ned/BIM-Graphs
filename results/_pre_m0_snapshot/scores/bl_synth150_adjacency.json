@@ -1,0 +1,4033 @@
+[
+  {
+    "building": "synth_0000",
+    "gt_edges": 13,
+    "gt_negatives": 9,
+    "pred_edges": 26,
+    "tp": 12,
+    "fp": 14,
+    "fn": 1,
+    "fp_on_solid_wall": 9,
+    "fp_non_adjacent": 5,
+    "unmapped_rooms": 0,
+    "precision": 0.462,
+    "recall": 0.923,
+    "f1": 0.615,
+    "recall_by_type": {
+      "door": "10/10",
+      "open_passage": "2/2",
+      "vertical": "0/1"
+    },
+    "type_exact": 2,
+    "type_checked": 12,
+    "type_accuracy": 0.167,
+    "spurious_types": {
+      "door->open_passage": 10
+    },
+    "trivial_all_adjacent_precision": 0.591
+  },
+  {
+    "building": "synth_0001",
+    "gt_edges": 7,
+    "gt_negatives": 6,
+    "pred_edges": 14,
+    "tp": 6,
+    "fp": 8,
+    "fn": 1,
+    "fp_on_solid_wall": 6,
+    "fp_non_adjacent": 2,
+    "unmapped_rooms": 0,
+    "precision": 0.429,
+    "recall": 0.857,
+    "f1": 0.571,
+    "recall_by_type": {
+      "door": "5/5",
+      "open_passage": "1/1",
+      "vertical": "0/1"
+    },
+    "type_exact": 1,
+    "type_checked": 6,
+    "type_accuracy": 0.167,
+    "spurious_types": {
+      "door->open_passage": 5
+    },
+    "trivial_all_adjacent_precision": 0.538
+  },
+  {
+    "building": "synth_0002",
+    "gt_edges": 7,
+    "gt_negatives": 6,
+    "pred_edges": 14,
+    "tp": 6,
+    "fp": 8,
+    "fn": 1,
+    "fp_on_solid_wall": 6,
+    "fp_non_adjacent": 2,
+    "unmapped_rooms": 0,
+    "precision": 0.429,
+    "recall": 0.857,
+    "f1": 0.571,
+    "recall_by_type": {
+      "door": "6/6",
+      "vertical": "0/1"
+    },
+    "type_exact": 0,
+    "type_checked": 6,
+    "type_accuracy": 0.0,
+    "spurious_types": {
+      "door->open_passage": 6
+    },
+    "trivial_all_adjacent_precision": 0.538
+  },
+  {
+    "building": "synth_0003",
+    "gt_edges": 9,
+    "gt_negatives": 7,
+    "pred_edges": 18,
+    "tp": 8,
+    "fp": 10,
+    "fn": 1,
+    "fp_on_solid_wall": 7,
+    "fp_non_adjacent": 3,
+    "unmapped_rooms": 0,
+    "precision": 0.444,
+    "recall": 0.889,
+    "f1": 0.593,
+    "recall_by_type": {
+      "door": "7/7",
+      "open_passage": "1/1",
+      "vertical": "0/1"
+    },
+    "type_exact": 1,
+    "type_checked": 8,
+    "type_accuracy": 0.125,
+    "spurious_types": {
+      "door->open_passage": 7
+    },
+    "trivial_all_adjacent_precision": 0.562
+  },
+  {
+    "building": "synth_0004",
+    "gt_edges": 13,
+    "gt_negatives": 9,
+    "pred_edges": 24,
+    "tp": 12,
+    "fp": 12,
+    "fn": 1,
+    "fp_on_solid_wall": 9,
+    "fp_non_adjacent": 3,
+    "unmapped_rooms": 0,
+    "precision": 0.5,
+    "recall": 0.923,
+    "f1": 0.649,
+    "recall_by_type": {
+      "door": "11/11",
+      "open_passage": "1/1",
+      "vertical": "0/1"
+    },
+    "type_exact": 1,
+    "type_checked": 12,
+    "type_accuracy": 0.083,
+    "spurious_types": {
+      "door->open_passage": 11
+    },
+    "trivial_all_adjacent_precision": 0.591
+  },
+  {
+    "building": "synth_0005",
+    "gt_edges": 11,
+    "gt_negatives": 9,
+    "pred_edges": 23,
+    "tp": 10,
+    "fp": 13,
+    "fn": 1,
+    "fp_on_solid_wall": 9,
+    "fp_non_adjacent": 4,
+    "unmapped_rooms": 0,
+    "precision": 0.435,
+    "recall": 0.909,
+    "f1": 0.588,
+    "recall_by_type": {
+      "door": "9/9",
+      "open_passage": "1/1",
+      "vertical": "0/1"
+    },
+    "type_exact": 1,
+    "type_checked": 10,
+    "type_accuracy": 0.1,
+    "spurious_types": {
+      "door->open_passage": 9
+    },
+    "trivial_all_adjacent_precision": 0.55
+  },
+  {
+    "building": "synth_0006",
+    "gt_edges": 6,
+    "gt_negatives": 5,
+    "pred_edges": 12,
+    "tp": 5,
+    "fp": 7,
+    "fn": 1,
+    "fp_on_solid_wall": 5,
+    "fp_non_adjacent": 2,
+    "unmapped_rooms": 0,
+    "precision": 0.417,
+    "recall": 0.833,
+    "f1": 0.556,
+    "recall_by_type": {
+      "door": "5/5",
+      "vertical": "0/1"
+    },
+    "type_exact": 0,
+    "type_checked": 5,
+    "type_accuracy": 0.0,
+    "spurious_types": {
+      "door->open_passage": 5
+    },
+    "trivial_all_adjacent_precision": 0.545
+  },
+  {
+    "building": "synth_0007",
+    "gt_edges": 11,
+    "gt_negatives": 8,
+    "pred_edges": 20,
+    "tp": 10,
+    "fp": 10,
+    "fn": 1,
+    "fp_on_solid_wall": 8,
+    "fp_non_adjacent": 2,
+    "unmapped_rooms": 0,
+    "precision": 0.5,
+    "recall": 0.909,
+    "f1": 0.645,
+    "recall_by_type": {
+      "door": "7/7",
+      "open_passage": "3/3",
+      "vertical": "0/1"
+    },
+    "type_exact": 3,
+    "type_checked": 10,
+    "type_accuracy": 0.3,
+    "spurious_types": {
+      "door->open_passage": 7
+    },
+    "trivial_all_adjacent_precision": 0.579
+  },
+  {
+    "building": "synth_0008",
+    "gt_edges": 12,
+    "gt_negatives": 9,
+    "pred_edges": 24,
+    "tp": 11,
+    "fp": 13,
+    "fn": 1,
+    "fp_on_solid_wall": 9,
+    "fp_non_adjacent": 4,
+    "unmapped_rooms": 0,
+    "precision": 0.458,
+    "recall": 0.917,
+    "f1": 0.611,
+    "recall_by_type": {
+      "door": "9/9",
+      "open_passage": "2/2",
+      "vertical": "0/1"
+    },
+    "type_exact": 2,
+    "type_checked": 11,
+    "type_accuracy": 0.182,
+    "spurious_types": {
+      "door->open_passage": 9
+    },
+    "trivial_all_adjacent_precision": 0.571
+  },
+  {
+    "building": "synth_0009",
+    "gt_edges": 8,
+    "gt_negatives": 6,
+    "pred_edges": 14,
+    "tp": 7,
+    "fp": 7,
+    "fn": 1,
+    "fp_on_solid_wall": 6,
+    "fp_non_adjacent": 1,
+    "unmapped_rooms": 0,
+    "precision": 0.5,
+    "recall": 0.875,
+    "f1": 0.636,
+    "recall_by_type": {
+      "door": "5/5",
+      "open_passage": "2/2",
+      "vertical": "0/1"
+    },
+    "type_exact": 2,
+    "type_checked": 7,
+    "type_accuracy": 0.286,
+    "spurious_types": {
+      "door->open_passage": 5
+    },
+    "trivial_all_adjacent_precision": 0.571
+  },
+  {
+    "building": "synth_0010",
+    "gt_edges": 12,
+    "gt_negatives": 8,
+    "pred_edges": 20,
+    "tp": 11,
+    "fp": 9,
+    "fn": 1,
+    "fp_on_solid_wall": 8,
+    "fp_non_adjacent": 1,
+    "unmapped_rooms": 0,
+    "precision": 0.55,
+    "recall": 0.917,
+    "f1": 0.687,
+    "recall_by_type": {
+      "door": "10/10",
+      "open_passage": "1/1",
+      "vertical": "0/1"
+    },
+    "type_exact": 1,
+    "type_checked": 11,
+    "type_accuracy": 0.091,
+    "spurious_types": {
+      "door->open_passage": 10
+    },
+    "trivial_all_adjacent_precision": 0.6
+  },
+  {
+    "building": "synth_0011",
+    "gt_edges": 11,
+    "gt_negatives": 8,
+    "pred_edges": 20,
+    "tp": 10,
+    "fp": 10,
+    "fn": 1,
+    "fp_on_solid_wall": 8,
+    "fp_non_adjacent": 2,
+    "unmapped_rooms": 0,
+    "precision": 0.5,
+    "recall": 0.909,
+    "f1": 0.645,
+    "recall_by_type": {
+      "door": "9/9",
+      "open_passage": "1/1",
+      "vertical": "0/1"
+    },
+    "type_exact": 1,
+    "type_checked": 10,
+    "type_accuracy": 0.1,
+    "spurious_types": {
+      "door->open_passage": 9
+    },
+    "trivial_all_adjacent_precision": 0.579
+  },
+  {
+    "building": "synth_0012",
+    "gt_edges": 12,
+    "gt_negatives": 8,
+    "pred_edges": 22,
+    "tp": 11,
+    "fp": 11,
+    "fn": 1,
+    "fp_on_solid_wall": 8,
+    "fp_non_adjacent": 3,
+    "unmapped_rooms": 0,
+    "precision": 0.5,
+    "recall": 0.917,
+    "f1": 0.647,
+    "recall_by_type": {
+      "open_passage": "4/4",
+      "door": "7/7",
+      "vertical": "0/1"
+    },
+    "type_exact": 4,
+    "type_checked": 11,
+    "type_accuracy": 0.364,
+    "spurious_types": {
+      "door->open_passage": 7
+    },
+    "trivial_all_adjacent_precision": 0.6
+  },
+  {
+    "building": "synth_0013",
+    "gt_edges": 14,
+    "gt_negatives": 10,
+    "pred_edges": 26,
+    "tp": 13,
+    "fp": 13,
+    "fn": 1,
+    "fp_on_solid_wall": 10,
+    "fp_non_adjacent": 3,
+    "unmapped_rooms": 0,
+    "precision": 0.5,
+    "recall": 0.929,
+    "f1": 0.65,
+    "recall_by_type": {
+      "door": "13/13",
+      "vertical": "0/1"
+    },
+    "type_exact": 0,
+    "type_checked": 13,
+    "type_accuracy": 0.0,
+    "spurious_types": {
+      "door->open_passage": 13
+    },
+    "trivial_all_adjacent_precision": 0.583
+  },
+  {
+    "building": "synth_0014",
+    "gt_edges": 11,
+    "gt_negatives": 8,
+    "pred_edges": 23,
+    "tp": 10,
+    "fp": 13,
+    "fn": 1,
+    "fp_on_solid_wall": 8,
+    "fp_non_adjacent": 5,
+    "unmapped_rooms": 0,
+    "precision": 0.435,
+    "recall": 0.909,
+    "f1": 0.588,
+    "recall_by_type": {
+      "open_passage": "5/5",
+      "door": "5/5",
+      "vertical": "0/1"
+    },
+    "type_exact": 5,
+    "type_checked": 10,
+    "type_accuracy": 0.5,
+    "spurious_types": {
+      "door->open_passage": 5
+    },
+    "trivial_all_adjacent_precision": 0.579
+  },
+  {
+    "building": "synth_0015",
+    "gt_edges": 15,
+    "gt_negatives": 11,
+    "pred_edges": 26,
+    "tp": 14,
+    "fp": 12,
+    "fn": 1,
+    "fp_on_solid_wall": 11,
+    "fp_non_adjacent": 1,
+    "unmapped_rooms": 0,
+    "precision": 0.538,
+    "recall": 0.933,
+    "f1": 0.683,
+    "recall_by_type": {
+      "door": "12/12",
+      "open_passage": "2/2",
+      "vertical": "0/1"
+    },
+    "type_exact": 2,
+    "type_checked": 14,
+    "type_accuracy": 0.143,
+    "spurious_types": {
+      "door->open_passage": 12
+    },
+    "trivial_all_adjacent_precision": 0.577
+  },
+  {
+    "building": "synth_0016",
+    "gt_edges": 7,
+    "gt_negatives": 6,
+    "pred_edges": 14,
+    "tp": 6,
+    "fp": 8,
+    "fn": 1,
+    "fp_on_solid_wall": 6,
+    "fp_non_adjacent": 2,
+    "unmapped_rooms": 0,
+    "precision": 0.429,
+    "recall": 0.857,
+    "f1": 0.571,
+    "recall_by_type": {
+      "open_passage": "1/1",
+      "door": "5/5",
+      "vertical": "0/1"
+    },
+    "type_exact": 1,
+    "type_checked": 6,
+    "type_accuracy": 0.167,
+    "spurious_types": {
+      "door->open_passage": 5
+    },
+    "trivial_all_adjacent_precision": 0.538
+  },
+  {
+    "building": "synth_0017",
+    "gt_edges": 10,
+    "gt_negatives": 7,
+    "pred_edges": 18,
+    "tp": 9,
+    "fp": 9,
+    "fn": 1,
+    "fp_on_solid_wall": 7,
+    "fp_non_adjacent": 2,
+    "unmapped_rooms": 0,
+    "precision": 0.5,
+    "recall": 0.9,
+    "f1": 0.643,
+    "recall_by_type": {
+      "open_passage": "3/3",
+      "door": "6/6",
+      "vertical": "0/1"
+    },
+    "type_exact": 3,
+    "type_checked": 9,
+    "type_accuracy": 0.333,
+    "spurious_types": {
+      "door->open_passage": 6
+    },
+    "trivial_all_adjacent_precision": 0.588
+  },
+  {
+    "building": "synth_0018",
+    "gt_edges": 12,
+    "gt_negatives": 8,
+    "pred_edges": 24,
+    "tp": 11,
+    "fp": 13,
+    "fn": 1,
+    "fp_on_solid_wall": 8,
+    "fp_non_adjacent": 5,
+    "unmapped_rooms": 0,
+    "precision": 0.458,
+    "recall": 0.917,
+    "f1": 0.611,
+    "recall_by_type": {
+      "door": "10/10",
+      "open_passage": "1/1",
+      "vertical": "0/1"
+    },
+    "type_exact": 1,
+    "type_checked": 11,
+    "type_accuracy": 0.091,
+    "spurious_types": {
+      "door->open_passage": 10
+    },
+    "trivial_all_adjacent_precision": 0.6
+  },
+  {
+    "building": "synth_0019",
+    "gt_edges": 13,
+    "gt_negatives": 9,
+    "pred_edges": 24,
+    "tp": 12,
+    "fp": 12,
+    "fn": 1,
+    "fp_on_solid_wall": 9,
+    "fp_non_adjacent": 3,
+    "unmapped_rooms": 0,
+    "precision": 0.5,
+    "recall": 0.923,
+    "f1": 0.649,
+    "recall_by_type": {
+      "open_passage": "1/1",
+      "door": "11/11",
+      "vertical": "0/1"
+    },
+    "type_exact": 1,
+    "type_checked": 12,
+    "type_accuracy": 0.083,
+    "spurious_types": {
+      "door->open_passage": 11
+    },
+    "trivial_all_adjacent_precision": 0.591
+  },
+  {
+    "building": "synth_0020",
+    "gt_edges": 10,
+    "gt_negatives": 7,
+    "pred_edges": 18,
+    "tp": 9,
+    "fp": 9,
+    "fn": 1,
+    "fp_on_solid_wall": 7,
+    "fp_non_adjacent": 2,
+    "unmapped_rooms": 0,
+    "precision": 0.5,
+    "recall": 0.9,
+    "f1": 0.643,
+    "recall_by_type": {
+      "door": "8/8",
+      "open_passage": "1/1",
+      "vertical": "0/1"
+    },
+    "type_exact": 1,
+    "type_checked": 9,
+    "type_accuracy": 0.111,
+    "spurious_types": {
+      "door->open_passage": 8
+    },
+    "trivial_all_adjacent_precision": 0.588
+  },
+  {
+    "building": "synth_0021",
+    "gt_edges": 12,
+    "gt_negatives": 9,
+    "pred_edges": 24,
+    "tp": 11,
+    "fp": 13,
+    "fn": 1,
+    "fp_on_solid_wall": 9,
+    "fp_non_adjacent": 4,
+    "unmapped_rooms": 0,
+    "precision": 0.458,
+    "recall": 0.917,
+    "f1": 0.611,
+    "recall_by_type": {
+      "open_passage": "5/5",
+      "door": "6/6",
+      "vertical": "0/1"
+    },
+    "type_exact": 5,
+    "type_checked": 11,
+    "type_accuracy": 0.455,
+    "spurious_types": {
+      "door->open_passage": 6
+    },
+    "trivial_all_adjacent_precision": 0.571
+  },
+  {
+    "building": "synth_0022",
+    "gt_edges": 7,
+    "gt_negatives": 5,
+    "pred_edges": 12,
+    "tp": 6,
+    "fp": 6,
+    "fn": 1,
+    "fp_on_solid_wall": 5,
+    "fp_non_adjacent": 1,
+    "unmapped_rooms": 0,
+    "precision": 0.5,
+    "recall": 0.857,
+    "f1": 0.632,
+    "recall_by_type": {
+      "door": "5/5",
+      "open_passage": "1/1",
+      "vertical": "0/1"
+    },
+    "type_exact": 1,
+    "type_checked": 6,
+    "type_accuracy": 0.167,
+    "spurious_types": {
+      "door->open_passage": 5
+    },
+    "trivial_all_adjacent_precision": 0.583
+  },
+  {
+    "building": "synth_0023",
+    "gt_edges": 12,
+    "gt_negatives": 8,
+    "pred_edges": 24,
+    "tp": 11,
+    "fp": 13,
+    "fn": 1,
+    "fp_on_solid_wall": 8,
+    "fp_non_adjacent": 5,
+    "unmapped_rooms": 0,
+    "precision": 0.458,
+    "recall": 0.917,
+    "f1": 0.611,
+    "recall_by_type": {
+      "door": "10/10",
+      "open_passage": "1/1",
+      "vertical": "0/1"
+    },
+    "type_exact": 1,
+    "type_checked": 11,
+    "type_accuracy": 0.091,
+    "spurious_types": {
+      "door->open_passage": 10
+    },
+    "trivial_all_adjacent_precision": 0.6
+  },
+  {
+    "building": "synth_0024",
+    "gt_edges": 13,
+    "gt_negatives": 9,
+    "pred_edges": 24,
+    "tp": 12,
+    "fp": 12,
+    "fn": 1,
+    "fp_on_solid_wall": 9,
+    "fp_non_adjacent": 3,
+    "unmapped_rooms": 0,
+    "precision": 0.5,
+    "recall": 0.923,
+    "f1": 0.649,
+    "recall_by_type": {
+      "door": "10/10",
+      "open_passage": "2/2",
+      "vertical": "0/1"
+    },
+    "type_exact": 2,
+    "type_checked": 12,
+    "type_accuracy": 0.167,
+    "spurious_types": {
+      "door->open_passage": 10
+    },
+    "trivial_all_adjacent_precision": 0.591
+  },
+  {
+    "building": "synth_0025",
+    "gt_edges": 13,
+    "gt_negatives": 9,
+    "pred_edges": 24,
+    "tp": 12,
+    "fp": 12,
+    "fn": 1,
+    "fp_on_solid_wall": 9,
+    "fp_non_adjacent": 3,
+    "unmapped_rooms": 0,
+    "precision": 0.5,
+    "recall": 0.923,
+    "f1": 0.649,
+    "recall_by_type": {
+      "door": "10/10",
+      "open_passage": "2/2",
+      "vertical": "0/1"
+    },
+    "type_exact": 2,
+    "type_checked": 12,
+    "type_accuracy": 0.167,
+    "spurious_types": {
+      "door->open_passage": 10
+    },
+    "trivial_all_adjacent_precision": 0.591
+  },
+  {
+    "building": "synth_0026",
+    "gt_edges": 10,
+    "gt_negatives": 6,
+    "pred_edges": 16,
+    "tp": 9,
+    "fp": 7,
+    "fn": 1,
+    "fp_on_solid_wall": 6,
+    "fp_non_adjacent": 1,
+    "unmapped_rooms": 0,
+    "precision": 0.562,
+    "recall": 0.9,
+    "f1": 0.692,
+    "recall_by_type": {
+      "door": "8/8",
+      "open_passage": "1/1",
+      "vertical": "0/1"
+    },
+    "type_exact": 1,
+    "type_checked": 9,
+    "type_accuracy": 0.111,
+    "spurious_types": {
+      "door->open_passage": 8
+    },
+    "trivial_all_adjacent_precision": 0.625
+  },
+  {
+    "building": "synth_0027",
+    "gt_edges": 10,
+    "gt_negatives": 8,
+    "pred_edges": 18,
+    "tp": 9,
+    "fp": 9,
+    "fn": 1,
+    "fp_on_solid_wall": 8,
+    "fp_non_adjacent": 1,
+    "unmapped_rooms": 0,
+    "precision": 0.5,
+    "recall": 0.9,
+    "f1": 0.643,
+    "recall_by_type": {
+      "door": "8/8",
+      "open_passage": "1/1",
+      "vertical": "0/1"
+    },
+    "type_exact": 1,
+    "type_checked": 9,
+    "type_accuracy": 0.111,
+    "spurious_types": {
+      "door->open_passage": 8
+    },
+    "trivial_all_adjacent_precision": 0.556
+  },
+  {
+    "building": "synth_0028",
+    "gt_edges": 12,
+    "gt_negatives": 8,
+    "pred_edges": 22,
+    "tp": 11,
+    "fp": 11,
+    "fn": 1,
+    "fp_on_solid_wall": 8,
+    "fp_non_adjacent": 3,
+    "unmapped_rooms": 0,
+    "precision": 0.5,
+    "recall": 0.917,
+    "f1": 0.647,
+    "recall_by_type": {
+      "door": "10/10",
+      "open_passage": "1/1",
+      "vertical": "0/1"
+    },
+    "type_exact": 1,
+    "type_checked": 11,
+    "type_accuracy": 0.091,
+    "spurious_types": {
+      "door->open_passage": 10
+    },
+    "trivial_all_adjacent_precision": 0.6
+  },
+  {
+    "building": "synth_0029",
+    "gt_edges": 11,
+    "gt_negatives": 7,
+    "pred_edges": 20,
+    "tp": 10,
+    "fp": 10,
+    "fn": 1,
+    "fp_on_solid_wall": 7,
+    "fp_non_adjacent": 3,
+    "unmapped_rooms": 0,
+    "precision": 0.5,
+    "recall": 0.909,
+    "f1": 0.645,
+    "recall_by_type": {
+      "door": "10/10",
+      "vertical": "0/1"
+    },
+    "type_exact": 0,
+    "type_checked": 10,
+    "type_accuracy": 0.0,
+    "spurious_types": {
+      "door->open_passage": 10
+    },
+    "trivial_all_adjacent_precision": 0.611
+  },
+  {
+    "building": "synth_0030",
+    "gt_edges": 11,
+    "gt_negatives": 8,
+    "pred_edges": 18,
+    "tp": 10,
+    "fp": 8,
+    "fn": 1,
+    "fp_on_solid_wall": 8,
+    "fp_non_adjacent": 0,
+    "unmapped_rooms": 0,
+    "precision": 0.556,
+    "recall": 0.909,
+    "f1": 0.69,
+    "recall_by_type": {
+      "door": "7/7",
+      "open_passage": "3/3",
+      "vertical": "0/1"
+    },
+    "type_exact": 3,
+    "type_checked": 10,
+    "type_accuracy": 0.3,
+    "spurious_types": {
+      "door->open_passage": 7
+    },
+    "trivial_all_adjacent_precision": 0.579
+  },
+  {
+    "building": "synth_0031",
+    "gt_edges": 13,
+    "gt_negatives": 9,
+    "pred_edges": 26,
+    "tp": 12,
+    "fp": 14,
+    "fn": 1,
+    "fp_on_solid_wall": 9,
+    "fp_non_adjacent": 5,
+    "unmapped_rooms": 0,
+    "precision": 0.462,
+    "recall": 0.923,
+    "f1": 0.615,
+    "recall_by_type": {
+      "door": "8/8",
+      "open_passage": "4/4",
+      "vertical": "0/1"
+    },
+    "type_exact": 4,
+    "type_checked": 12,
+    "type_accuracy": 0.333,
+    "spurious_types": {
+      "door->open_passage": 8
+    },
+    "trivial_all_adjacent_precision": 0.591
+  },
+  {
+    "building": "synth_0032",
+    "gt_edges": 10,
+    "gt_negatives": 7,
+    "pred_edges": 18,
+    "tp": 9,
+    "fp": 9,
+    "fn": 1,
+    "fp_on_solid_wall": 7,
+    "fp_non_adjacent": 2,
+    "unmapped_rooms": 0,
+    "precision": 0.5,
+    "recall": 0.9,
+    "f1": 0.643,
+    "recall_by_type": {
+      "door": "8/8",
+      "open_passage": "1/1",
+      "vertical": "0/1"
+    },
+    "type_exact": 1,
+    "type_checked": 9,
+    "type_accuracy": 0.111,
+    "spurious_types": {
+      "door->open_passage": 8
+    },
+    "trivial_all_adjacent_precision": 0.588
+  },
+  {
+    "building": "synth_0033",
+    "gt_edges": 11,
+    "gt_negatives": 7,
+    "pred_edges": 18,
+    "tp": 10,
+    "fp": 8,
+    "fn": 1,
+    "fp_on_solid_wall": 7,
+    "fp_non_adjacent": 1,
+    "unmapped_rooms": 0,
+    "precision": 0.556,
+    "recall": 0.909,
+    "f1": 0.69,
+    "recall_by_type": {
+      "door": "7/7",
+      "open_passage": "3/3",
+      "vertical": "0/1"
+    },
+    "type_exact": 3,
+    "type_checked": 10,
+    "type_accuracy": 0.3,
+    "spurious_types": {
+      "door->open_passage": 7
+    },
+    "trivial_all_adjacent_precision": 0.611
+  },
+  {
+    "building": "synth_0034",
+    "gt_edges": 12,
+    "gt_negatives": 9,
+    "pred_edges": 24,
+    "tp": 11,
+    "fp": 13,
+    "fn": 1,
+    "fp_on_solid_wall": 9,
+    "fp_non_adjacent": 4,
+    "unmapped_rooms": 0,
+    "precision": 0.458,
+    "recall": 0.917,
+    "f1": 0.611,
+    "recall_by_type": {
+      "door": "11/11",
+      "vertical": "0/1"
+    },
+    "type_exact": 0,
+    "type_checked": 11,
+    "type_accuracy": 0.0,
+    "spurious_types": {
+      "door->open_passage": 11
+    },
+    "trivial_all_adjacent_precision": 0.571
+  },
+  {
+    "building": "synth_0035",
+    "gt_edges": 12,
+    "gt_negatives": 8,
+    "pred_edges": 24,
+    "tp": 11,
+    "fp": 13,
+    "fn": 1,
+    "fp_on_solid_wall": 8,
+    "fp_non_adjacent": 5,
+    "unmapped_rooms": 0,
+    "precision": 0.458,
+    "recall": 0.917,
+    "f1": 0.611,
+    "recall_by_type": {
+      "door": "11/11",
+      "vertical": "0/1"
+    },
+    "type_exact": 0,
+    "type_checked": 11,
+    "type_accuracy": 0.0,
+    "spurious_types": {
+      "door->open_passage": 11
+    },
+    "trivial_all_adjacent_precision": 0.6
+  },
+  {
+    "building": "synth_0036",
+    "gt_edges": 14,
+    "gt_negatives": 10,
+    "pred_edges": 24,
+    "tp": 13,
+    "fp": 11,
+    "fn": 1,
+    "fp_on_solid_wall": 10,
+    "fp_non_adjacent": 1,
+    "unmapped_rooms": 0,
+    "precision": 0.542,
+    "recall": 0.929,
+    "f1": 0.684,
+    "recall_by_type": {
+      "door": "10/10",
+      "open_passage": "3/3",
+      "vertical": "0/1"
+    },
+    "type_exact": 3,
+    "type_checked": 13,
+    "type_accuracy": 0.231,
+    "spurious_types": {
+      "door->open_passage": 10
+    },
+    "trivial_all_adjacent_precision": 0.583
+  },
+  {
+    "building": "synth_0037",
+    "gt_edges": 11,
+    "gt_negatives": 8,
+    "pred_edges": 22,
+    "tp": 10,
+    "fp": 12,
+    "fn": 1,
+    "fp_on_solid_wall": 8,
+    "fp_non_adjacent": 4,
+    "unmapped_rooms": 0,
+    "precision": 0.455,
+    "recall": 0.909,
+    "f1": 0.606,
+    "recall_by_type": {
+      "door": "7/7",
+      "open_passage": "3/3",
+      "vertical": "0/1"
+    },
+    "type_exact": 3,
+    "type_checked": 10,
+    "type_accuracy": 0.3,
+    "spurious_types": {
+      "door->open_passage": 7
+    },
+    "trivial_all_adjacent_precision": 0.579
+  },
+  {
+    "building": "synth_0038",
+    "gt_edges": 13,
+    "gt_negatives": 9,
+    "pred_edges": 26,
+    "tp": 12,
+    "fp": 14,
+    "fn": 1,
+    "fp_on_solid_wall": 9,
+    "fp_non_adjacent": 5,
+    "unmapped_rooms": 0,
+    "precision": 0.462,
+    "recall": 0.923,
+    "f1": 0.615,
+    "recall_by_type": {
+      "open_passage": "6/6",
+      "door": "6/6",
+      "vertical": "0/1"
+    },
+    "type_exact": 6,
+    "type_checked": 12,
+    "type_accuracy": 0.5,
+    "spurious_types": {
+      "door->open_passage": 6
+    },
+    "trivial_all_adjacent_precision": 0.591
+  },
+  {
+    "building": "synth_0039",
+    "gt_edges": 13,
+    "gt_negatives": 8,
+    "pred_edges": 24,
+    "tp": 12,
+    "fp": 12,
+    "fn": 1,
+    "fp_on_solid_wall": 8,
+    "fp_non_adjacent": 4,
+    "unmapped_rooms": 0,
+    "precision": 0.5,
+    "recall": 0.923,
+    "f1": 0.649,
+    "recall_by_type": {
+      "door": "12/12",
+      "vertical": "0/1"
+    },
+    "type_exact": 0,
+    "type_checked": 12,
+    "type_accuracy": 0.0,
+    "spurious_types": {
+      "door->open_passage": 12
+    },
+    "trivial_all_adjacent_precision": 0.619
+  },
+  {
+    "building": "synth_0040",
+    "gt_edges": 11,
+    "gt_negatives": 8,
+    "pred_edges": 20,
+    "tp": 10,
+    "fp": 10,
+    "fn": 1,
+    "fp_on_solid_wall": 8,
+    "fp_non_adjacent": 2,
+    "unmapped_rooms": 0,
+    "precision": 0.5,
+    "recall": 0.909,
+    "f1": 0.645,
+    "recall_by_type": {
+      "door": "9/9",
+      "open_passage": "1/1",
+      "vertical": "0/1"
+    },
+    "type_exact": 1,
+    "type_checked": 10,
+    "type_accuracy": 0.1,
+    "spurious_types": {
+      "door->open_passage": 9
+    },
+    "trivial_all_adjacent_precision": 0.579
+  },
+  {
+    "building": "synth_0041",
+    "gt_edges": 14,
+    "gt_negatives": 9,
+    "pred_edges": 26,
+    "tp": 13,
+    "fp": 13,
+    "fn": 1,
+    "fp_on_solid_wall": 9,
+    "fp_non_adjacent": 4,
+    "unmapped_rooms": 0,
+    "precision": 0.5,
+    "recall": 0.929,
+    "f1": 0.65,
+    "recall_by_type": {
+      "door": "11/11",
+      "open_passage": "2/2",
+      "vertical": "0/1"
+    },
+    "type_exact": 2,
+    "type_checked": 13,
+    "type_accuracy": 0.154,
+    "spurious_types": {
+      "door->open_passage": 11
+    },
+    "trivial_all_adjacent_precision": 0.609
+  },
+  {
+    "building": "synth_0042",
+    "gt_edges": 10,
+    "gt_negatives": 7,
+    "pred_edges": 18,
+    "tp": 9,
+    "fp": 9,
+    "fn": 1,
+    "fp_on_solid_wall": 7,
+    "fp_non_adjacent": 2,
+    "unmapped_rooms": 0,
+    "precision": 0.5,
+    "recall": 0.9,
+    "f1": 0.643,
+    "recall_by_type": {
+      "door": "8/8",
+      "open_passage": "1/1",
+      "vertical": "0/1"
+    },
+    "type_exact": 1,
+    "type_checked": 9,
+    "type_accuracy": 0.111,
+    "spurious_types": {
+      "door->open_passage": 8
+    },
+    "trivial_all_adjacent_precision": 0.588
+  },
+  {
+    "building": "synth_0043",
+    "gt_edges": 8,
+    "gt_negatives": 6,
+    "pred_edges": 14,
+    "tp": 7,
+    "fp": 7,
+    "fn": 1,
+    "fp_on_solid_wall": 6,
+    "fp_non_adjacent": 1,
+    "unmapped_rooms": 0,
+    "precision": 0.5,
+    "recall": 0.875,
+    "f1": 0.636,
+    "recall_by_type": {
+      "door": "6/6",
+      "open_passage": "1/1",
+      "vertical": "0/1"
+    },
+    "type_exact": 1,
+    "type_checked": 7,
+    "type_accuracy": 0.143,
+    "spurious_types": {
+      "door->open_passage": 6
+    },
+    "trivial_all_adjacent_precision": 0.571
+  },
+  {
+    "building": "synth_0044",
+    "gt_edges": 11,
+    "gt_negatives": 7,
+    "pred_edges": 18,
+    "tp": 10,
+    "fp": 8,
+    "fn": 1,
+    "fp_on_solid_wall": 7,
+    "fp_non_adjacent": 1,
+    "unmapped_rooms": 0,
+    "precision": 0.556,
+    "recall": 0.909,
+    "f1": 0.69,
+    "recall_by_type": {
+      "door": "9/9",
+      "open_passage": "1/1",
+      "vertical": "0/1"
+    },
+    "type_exact": 1,
+    "type_checked": 10,
+    "type_accuracy": 0.1,
+    "spurious_types": {
+      "door->open_passage": 9
+    },
+    "trivial_all_adjacent_precision": 0.611
+  },
+  {
+    "building": "synth_0045",
+    "gt_edges": 8,
+    "gt_negatives": 5,
+    "pred_edges": 12,
+    "tp": 7,
+    "fp": 5,
+    "fn": 1,
+    "fp_on_solid_wall": 5,
+    "fp_non_adjacent": 0,
+    "unmapped_rooms": 0,
+    "precision": 0.583,
+    "recall": 0.875,
+    "f1": 0.7,
+    "recall_by_type": {
+      "door": "7/7",
+      "vertical": "0/1"
+    },
+    "type_exact": 0,
+    "type_checked": 7,
+    "type_accuracy": 0.0,
+    "spurious_types": {
+      "door->open_passage": 7
+    },
+    "trivial_all_adjacent_precision": 0.615
+  },
+  {
+    "building": "synth_0046",
+    "gt_edges": 7,
+    "gt_negatives": 5,
+    "pred_edges": 12,
+    "tp": 6,
+    "fp": 6,
+    "fn": 1,
+    "fp_on_solid_wall": 5,
+    "fp_non_adjacent": 1,
+    "unmapped_rooms": 0,
+    "precision": 0.5,
+    "recall": 0.857,
+    "f1": 0.632,
+    "recall_by_type": {
+      "door": "5/5",
+      "open_passage": "1/1",
+      "vertical": "0/1"
+    },
+    "type_exact": 1,
+    "type_checked": 6,
+    "type_accuracy": 0.167,
+    "spurious_types": {
+      "door->open_passage": 5
+    },
+    "trivial_all_adjacent_precision": 0.583
+  },
+  {
+    "building": "synth_0047",
+    "gt_edges": 11,
+    "gt_negatives": 8,
+    "pred_edges": 22,
+    "tp": 10,
+    "fp": 12,
+    "fn": 1,
+    "fp_on_solid_wall": 8,
+    "fp_non_adjacent": 4,
+    "unmapped_rooms": 0,
+    "precision": 0.455,
+    "recall": 0.909,
+    "f1": 0.606,
+    "recall_by_type": {
+      "open_passage": "2/2",
+      "door": "8/8",
+      "vertical": "0/1"
+    },
+    "type_exact": 2,
+    "type_checked": 10,
+    "type_accuracy": 0.2,
+    "spurious_types": {
+      "door->open_passage": 8
+    },
+    "trivial_all_adjacent_precision": 0.579
+  },
+  {
+    "building": "synth_0048",
+    "gt_edges": 13,
+    "gt_negatives": 8,
+    "pred_edges": 22,
+    "tp": 12,
+    "fp": 10,
+    "fn": 1,
+    "fp_on_solid_wall": 8,
+    "fp_non_adjacent": 2,
+    "unmapped_rooms": 0,
+    "precision": 0.545,
+    "recall": 0.923,
+    "f1": 0.686,
+    "recall_by_type": {
+      "door": "9/9",
+      "open_passage": "3/3",
+      "vertical": "0/1"
+    },
+    "type_exact": 3,
+    "type_checked": 12,
+    "type_accuracy": 0.25,
+    "spurious_types": {
+      "door->open_passage": 9
+    },
+    "trivial_all_adjacent_precision": 0.619
+  },
+  {
+    "building": "synth_0049",
+    "gt_edges": 8,
+    "gt_negatives": 6,
+    "pred_edges": 16,
+    "tp": 7,
+    "fp": 9,
+    "fn": 1,
+    "fp_on_solid_wall": 6,
+    "fp_non_adjacent": 3,
+    "unmapped_rooms": 0,
+    "precision": 0.438,
+    "recall": 0.875,
+    "f1": 0.583,
+    "recall_by_type": {
+      "door": "7/7",
+      "vertical": "0/1"
+    },
+    "type_exact": 0,
+    "type_checked": 7,
+    "type_accuracy": 0.0,
+    "spurious_types": {
+      "door->open_passage": 7
+    },
+    "trivial_all_adjacent_precision": 0.571
+  },
+  {
+    "building": "synth_0050",
+    "gt_edges": 13,
+    "gt_negatives": 9,
+    "pred_edges": 22,
+    "tp": 12,
+    "fp": 10,
+    "fn": 1,
+    "fp_on_solid_wall": 9,
+    "fp_non_adjacent": 1,
+    "unmapped_rooms": 0,
+    "precision": 0.545,
+    "recall": 0.923,
+    "f1": 0.686,
+    "recall_by_type": {
+      "open_passage": "1/1",
+      "door": "11/11",
+      "vertical": "0/1"
+    },
+    "type_exact": 1,
+    "type_checked": 12,
+    "type_accuracy": 0.083,
+    "spurious_types": {
+      "door->open_passage": 11
+    },
+    "trivial_all_adjacent_precision": 0.591
+  },
+  {
+    "building": "synth_0051",
+    "gt_edges": 12,
+    "gt_negatives": 8,
+    "pred_edges": 24,
+    "tp": 11,
+    "fp": 13,
+    "fn": 1,
+    "fp_on_solid_wall": 8,
+    "fp_non_adjacent": 5,
+    "unmapped_rooms": 0,
+    "precision": 0.458,
+    "recall": 0.917,
+    "f1": 0.611,
+    "recall_by_type": {
+      "door": "8/8",
+      "open_passage": "3/3",
+      "vertical": "0/1"
+    },
+    "type_exact": 3,
+    "type_checked": 11,
+    "type_accuracy": 0.273,
+    "spurious_types": {
+      "door->open_passage": 8
+    },
+    "trivial_all_adjacent_precision": 0.6
+  },
+  {
+    "building": "synth_0052",
+    "gt_edges": 12,
+    "gt_negatives": 8,
+    "pred_edges": 24,
+    "tp": 11,
+    "fp": 13,
+    "fn": 1,
+    "fp_on_solid_wall": 8,
+    "fp_non_adjacent": 5,
+    "unmapped_rooms": 0,
+    "precision": 0.458,
+    "recall": 0.917,
+    "f1": 0.611,
+    "recall_by_type": {
+      "door": "9/9",
+      "open_passage": "2/2",
+      "vertical": "0/1"
+    },
+    "type_exact": 2,
+    "type_checked": 11,
+    "type_accuracy": 0.182,
+    "spurious_types": {
+      "door->open_passage": 9
+    },
+    "trivial_all_adjacent_precision": 0.6
+  },
+  {
+    "building": "synth_0053",
+    "gt_edges": 15,
+    "gt_negatives": 10,
+    "pred_edges": 26,
+    "tp": 14,
+    "fp": 12,
+    "fn": 1,
+    "fp_on_solid_wall": 10,
+    "fp_non_adjacent": 2,
+    "unmapped_rooms": 0,
+    "precision": 0.538,
+    "recall": 0.933,
+    "f1": 0.683,
+    "recall_by_type": {
+      "door": "12/12",
+      "open_passage": "2/2",
+      "vertical": "0/1"
+    },
+    "type_exact": 2,
+    "type_checked": 14,
+    "type_accuracy": 0.143,
+    "spurious_types": {
+      "door->open_passage": 12
+    },
+    "trivial_all_adjacent_precision": 0.6
+  },
+  {
+    "building": "synth_0054",
+    "gt_edges": 13,
+    "gt_negatives": 8,
+    "pred_edges": 24,
+    "tp": 12,
+    "fp": 12,
+    "fn": 1,
+    "fp_on_solid_wall": 8,
+    "fp_non_adjacent": 4,
+    "unmapped_rooms": 0,
+    "precision": 0.5,
+    "recall": 0.923,
+    "f1": 0.649,
+    "recall_by_type": {
+      "door": "10/10",
+      "open_passage": "2/2",
+      "vertical": "0/1"
+    },
+    "type_exact": 2,
+    "type_checked": 12,
+    "type_accuracy": 0.167,
+    "spurious_types": {
+      "door->open_passage": 10
+    },
+    "trivial_all_adjacent_precision": 0.619
+  },
+  {
+    "building": "synth_0055",
+    "gt_edges": 13,
+    "gt_negatives": 9,
+    "pred_edges": 26,
+    "tp": 12,
+    "fp": 14,
+    "fn": 1,
+    "fp_on_solid_wall": 9,
+    "fp_non_adjacent": 5,
+    "unmapped_rooms": 0,
+    "precision": 0.462,
+    "recall": 0.923,
+    "f1": 0.615,
+    "recall_by_type": {
+      "door": "10/10",
+      "open_passage": "2/2",
+      "vertical": "0/1"
+    },
+    "type_exact": 2,
+    "type_checked": 12,
+    "type_accuracy": 0.167,
+    "spurious_types": {
+      "door->open_passage": 10
+    },
+    "trivial_all_adjacent_precision": 0.591
+  },
+  {
+    "building": "synth_0056",
+    "gt_edges": 13,
+    "gt_negatives": 9,
+    "pred_edges": 25,
+    "tp": 12,
+    "fp": 13,
+    "fn": 1,
+    "fp_on_solid_wall": 9,
+    "fp_non_adjacent": 4,
+    "unmapped_rooms": 0,
+    "precision": 0.48,
+    "recall": 0.923,
+    "f1": 0.632,
+    "recall_by_type": {
+      "door": "9/9",
+      "open_passage": "3/3",
+      "vertical": "0/1"
+    },
+    "type_exact": 3,
+    "type_checked": 12,
+    "type_accuracy": 0.25,
+    "spurious_types": {
+      "door->open_passage": 9
+    },
+    "trivial_all_adjacent_precision": 0.591
+  },
+  {
+    "building": "synth_0057",
+    "gt_edges": 11,
+    "gt_negatives": 8,
+    "pred_edges": 20,
+    "tp": 10,
+    "fp": 10,
+    "fn": 1,
+    "fp_on_solid_wall": 8,
+    "fp_non_adjacent": 2,
+    "unmapped_rooms": 0,
+    "precision": 0.5,
+    "recall": 0.909,
+    "f1": 0.645,
+    "recall_by_type": {
+      "door": "10/10",
+      "vertical": "0/1"
+    },
+    "type_exact": 0,
+    "type_checked": 10,
+    "type_accuracy": 0.0,
+    "spurious_types": {
+      "door->open_passage": 10
+    },
+    "trivial_all_adjacent_precision": 0.579
+  },
+  {
+    "building": "synth_0058",
+    "gt_edges": 9,
+    "gt_negatives": 6,
+    "pred_edges": 16,
+    "tp": 8,
+    "fp": 8,
+    "fn": 1,
+    "fp_on_solid_wall": 6,
+    "fp_non_adjacent": 2,
+    "unmapped_rooms": 0,
+    "precision": 0.5,
+    "recall": 0.889,
+    "f1": 0.64,
+    "recall_by_type": {
+      "door": "7/7",
+      "open_passage": "1/1",
+      "vertical": "0/1"
+    },
+    "type_exact": 1,
+    "type_checked": 8,
+    "type_accuracy": 0.125,
+    "spurious_types": {
+      "door->open_passage": 7
+    },
+    "trivial_all_adjacent_precision": 0.6
+  },
+  {
+    "building": "synth_0059",
+    "gt_edges": 13,
+    "gt_negatives": 9,
+    "pred_edges": 24,
+    "tp": 12,
+    "fp": 12,
+    "fn": 1,
+    "fp_on_solid_wall": 9,
+    "fp_non_adjacent": 3,
+    "unmapped_rooms": 0,
+    "precision": 0.5,
+    "recall": 0.923,
+    "f1": 0.649,
+    "recall_by_type": {
+      "open_passage": "2/2",
+      "door": "10/10",
+      "vertical": "0/1"
+    },
+    "type_exact": 2,
+    "type_checked": 12,
+    "type_accuracy": 0.167,
+    "spurious_types": {
+      "door->open_passage": 10
+    },
+    "trivial_all_adjacent_precision": 0.591
+  },
+  {
+    "building": "synth_0060",
+    "gt_edges": 13,
+    "gt_negatives": 8,
+    "pred_edges": 24,
+    "tp": 12,
+    "fp": 12,
+    "fn": 1,
+    "fp_on_solid_wall": 8,
+    "fp_non_adjacent": 4,
+    "unmapped_rooms": 0,
+    "precision": 0.5,
+    "recall": 0.923,
+    "f1": 0.649,
+    "recall_by_type": {
+      "door": "11/11",
+      "open_passage": "1/1",
+      "vertical": "0/1"
+    },
+    "type_exact": 1,
+    "type_checked": 12,
+    "type_accuracy": 0.083,
+    "spurious_types": {
+      "door->open_passage": 11
+    },
+    "trivial_all_adjacent_precision": 0.619
+  },
+  {
+    "building": "synth_0061",
+    "gt_edges": 10,
+    "gt_negatives": 7,
+    "pred_edges": 21,
+    "tp": 9,
+    "fp": 12,
+    "fn": 1,
+    "fp_on_solid_wall": 7,
+    "fp_non_adjacent": 5,
+    "unmapped_rooms": 0,
+    "precision": 0.429,
+    "recall": 0.9,
+    "f1": 0.581,
+    "recall_by_type": {
+      "door": "8/8",
+      "open_passage": "1/1",
+      "vertical": "0/1"
+    },
+    "type_exact": 1,
+    "type_checked": 9,
+    "type_accuracy": 0.111,
+    "spurious_types": {
+      "door->open_passage": 8
+    },
+    "trivial_all_adjacent_precision": 0.588
+  },
+  {
+    "building": "synth_0062",
+    "gt_edges": 10,
+    "gt_negatives": 8,
+    "pred_edges": 20,
+    "tp": 9,
+    "fp": 11,
+    "fn": 1,
+    "fp_on_solid_wall": 8,
+    "fp_non_adjacent": 3,
+    "unmapped_rooms": 0,
+    "precision": 0.45,
+    "recall": 0.9,
+    "f1": 0.6,
+    "recall_by_type": {
+      "door": "8/8",
+      "open_passage": "1/1",
+      "vertical": "0/1"
+    },
+    "type_exact": 1,
+    "type_checked": 9,
+    "type_accuracy": 0.111,
+    "spurious_types": {
+      "door->open_passage": 8
+    },
+    "trivial_all_adjacent_precision": 0.556
+  },
+  {
+    "building": "synth_0063",
+    "gt_edges": 14,
+    "gt_negatives": 10,
+    "pred_edges": 24,
+    "tp": 13,
+    "fp": 11,
+    "fn": 1,
+    "fp_on_solid_wall": 10,
+    "fp_non_adjacent": 1,
+    "unmapped_rooms": 0,
+    "precision": 0.542,
+    "recall": 0.929,
+    "f1": 0.684,
+    "recall_by_type": {
+      "door": "10/10",
+      "open_passage": "3/3",
+      "vertical": "0/1"
+    },
+    "type_exact": 3,
+    "type_checked": 13,
+    "type_accuracy": 0.231,
+    "spurious_types": {
+      "door->open_passage": 10
+    },
+    "trivial_all_adjacent_precision": 0.583
+  },
+  {
+    "building": "synth_0064",
+    "gt_edges": 13,
+    "gt_negatives": 8,
+    "pred_edges": 24,
+    "tp": 12,
+    "fp": 12,
+    "fn": 1,
+    "fp_on_solid_wall": 8,
+    "fp_non_adjacent": 4,
+    "unmapped_rooms": 0,
+    "precision": 0.5,
+    "recall": 0.923,
+    "f1": 0.649,
+    "recall_by_type": {
+      "open_passage": "6/6",
+      "door": "6/6",
+      "vertical": "0/1"
+    },
+    "type_exact": 6,
+    "type_checked": 12,
+    "type_accuracy": 0.5,
+    "spurious_types": {
+      "door->open_passage": 6
+    },
+    "trivial_all_adjacent_precision": 0.619
+  },
+  {
+    "building": "synth_0065",
+    "gt_edges": 14,
+    "gt_negatives": 10,
+    "pred_edges": 26,
+    "tp": 13,
+    "fp": 13,
+    "fn": 1,
+    "fp_on_solid_wall": 10,
+    "fp_non_adjacent": 3,
+    "unmapped_rooms": 0,
+    "precision": 0.5,
+    "recall": 0.929,
+    "f1": 0.65,
+    "recall_by_type": {
+      "open_passage": "3/3",
+      "door": "10/10",
+      "vertical": "0/1"
+    },
+    "type_exact": 3,
+    "type_checked": 13,
+    "type_accuracy": 0.231,
+    "spurious_types": {
+      "door->open_passage": 10
+    },
+    "trivial_all_adjacent_precision": 0.583
+  },
+  {
+    "building": "synth_0066",
+    "gt_edges": 10,
+    "gt_negatives": 7,
+    "pred_edges": 20,
+    "tp": 9,
+    "fp": 11,
+    "fn": 1,
+    "fp_on_solid_wall": 7,
+    "fp_non_adjacent": 4,
+    "unmapped_rooms": 0,
+    "precision": 0.45,
+    "recall": 0.9,
+    "f1": 0.6,
+    "recall_by_type": {
+      "door": "9/9",
+      "vertical": "0/1"
+    },
+    "type_exact": 0,
+    "type_checked": 9,
+    "type_accuracy": 0.0,
+    "spurious_types": {
+      "door->open_passage": 9
+    },
+    "trivial_all_adjacent_precision": 0.588
+  },
+  {
+    "building": "synth_0067",
+    "gt_edges": 11,
+    "gt_negatives": 8,
+    "pred_edges": 20,
+    "tp": 10,
+    "fp": 10,
+    "fn": 1,
+    "fp_on_solid_wall": 8,
+    "fp_non_adjacent": 2,
+    "unmapped_rooms": 0,
+    "precision": 0.5,
+    "recall": 0.909,
+    "f1": 0.645,
+    "recall_by_type": {
+      "door": "9/9",
+      "open_passage": "1/1",
+      "vertical": "0/1"
+    },
+    "type_exact": 1,
+    "type_checked": 10,
+    "type_accuracy": 0.1,
+    "spurious_types": {
+      "door->open_passage": 9
+    },
+    "trivial_all_adjacent_precision": 0.579
+  },
+  {
+    "building": "synth_0068",
+    "gt_edges": 12,
+    "gt_negatives": 9,
+    "pred_edges": 24,
+    "tp": 11,
+    "fp": 13,
+    "fn": 1,
+    "fp_on_solid_wall": 9,
+    "fp_non_adjacent": 4,
+    "unmapped_rooms": 0,
+    "precision": 0.458,
+    "recall": 0.917,
+    "f1": 0.611,
+    "recall_by_type": {
+      "door": "11/11",
+      "vertical": "0/1"
+    },
+    "type_exact": 0,
+    "type_checked": 11,
+    "type_accuracy": 0.0,
+    "spurious_types": {
+      "door->open_passage": 11
+    },
+    "trivial_all_adjacent_precision": 0.571
+  },
+  {
+    "building": "synth_0069",
+    "gt_edges": 10,
+    "gt_negatives": 7,
+    "pred_edges": 20,
+    "tp": 9,
+    "fp": 11,
+    "fn": 1,
+    "fp_on_solid_wall": 7,
+    "fp_non_adjacent": 4,
+    "unmapped_rooms": 0,
+    "precision": 0.45,
+    "recall": 0.9,
+    "f1": 0.6,
+    "recall_by_type": {
+      "door": "8/8",
+      "open_passage": "1/1",
+      "vertical": "0/1"
+    },
+    "type_exact": 1,
+    "type_checked": 9,
+    "type_accuracy": 0.111,
+    "spurious_types": {
+      "door->open_passage": 8
+    },
+    "trivial_all_adjacent_precision": 0.588
+  },
+  {
+    "building": "synth_0070",
+    "gt_edges": 6,
+    "gt_negatives": 5,
+    "pred_edges": 12,
+    "tp": 5,
+    "fp": 7,
+    "fn": 1,
+    "fp_on_solid_wall": 5,
+    "fp_non_adjacent": 2,
+    "unmapped_rooms": 0,
+    "precision": 0.417,
+    "recall": 0.833,
+    "f1": 0.556,
+    "recall_by_type": {
+      "door": "4/4",
+      "open_passage": "1/1",
+      "vertical": "0/1"
+    },
+    "type_exact": 1,
+    "type_checked": 5,
+    "type_accuracy": 0.2,
+    "spurious_types": {
+      "door->open_passage": 4
+    },
+    "trivial_all_adjacent_precision": 0.545
+  },
+  {
+    "building": "synth_0071",
+    "gt_edges": 11,
+    "gt_negatives": 8,
+    "pred_edges": 20,
+    "tp": 10,
+    "fp": 10,
+    "fn": 1,
+    "fp_on_solid_wall": 8,
+    "fp_non_adjacent": 2,
+    "unmapped_rooms": 0,
+    "precision": 0.5,
+    "recall": 0.909,
+    "f1": 0.645,
+    "recall_by_type": {
+      "open_passage": "1/1",
+      "door": "9/9",
+      "vertical": "0/1"
+    },
+    "type_exact": 1,
+    "type_checked": 10,
+    "type_accuracy": 0.1,
+    "spurious_types": {
+      "door->open_passage": 9
+    },
+    "trivial_all_adjacent_precision": 0.579
+  },
+  {
+    "building": "synth_0072",
+    "gt_edges": 11,
+    "gt_negatives": 9,
+    "pred_edges": 22,
+    "tp": 10,
+    "fp": 12,
+    "fn": 1,
+    "fp_on_solid_wall": 9,
+    "fp_non_adjacent": 3,
+    "unmapped_rooms": 0,
+    "precision": 0.455,
+    "recall": 0.909,
+    "f1": 0.606,
+    "recall_by_type": {
+      "door": "9/9",
+      "open_passage": "1/1",
+      "vertical": "0/1"
+    },
+    "type_exact": 1,
+    "type_checked": 10,
+    "type_accuracy": 0.1,
+    "spurious_types": {
+      "door->open_passage": 9
+    },
+    "trivial_all_adjacent_precision": 0.55
+  },
+  {
+    "building": "synth_0073",
+    "gt_edges": 7,
+    "gt_negatives": 6,
+    "pred_edges": 14,
+    "tp": 6,
+    "fp": 8,
+    "fn": 1,
+    "fp_on_solid_wall": 6,
+    "fp_non_adjacent": 2,
+    "unmapped_rooms": 0,
+    "precision": 0.429,
+    "recall": 0.857,
+    "f1": 0.571,
+    "recall_by_type": {
+      "door": "4/4",
+      "open_passage": "2/2",
+      "vertical": "0/1"
+    },
+    "type_exact": 2,
+    "type_checked": 6,
+    "type_accuracy": 0.333,
+    "spurious_types": {
+      "door->open_passage": 4
+    },
+    "trivial_all_adjacent_precision": 0.538
+  },
+  {
+    "building": "synth_0074",
+    "gt_edges": 11,
+    "gt_negatives": 7,
+    "pred_edges": 18,
+    "tp": 10,
+    "fp": 8,
+    "fn": 1,
+    "fp_on_solid_wall": 7,
+    "fp_non_adjacent": 1,
+    "unmapped_rooms": 0,
+    "precision": 0.556,
+    "recall": 0.909,
+    "f1": 0.69,
+    "recall_by_type": {
+      "open_passage": "3/3",
+      "door": "7/7",
+      "vertical": "0/1"
+    },
+    "type_exact": 3,
+    "type_checked": 10,
+    "type_accuracy": 0.3,
+    "spurious_types": {
+      "door->open_passage": 7
+    },
+    "trivial_all_adjacent_precision": 0.611
+  },
+  {
+    "building": "synth_0075",
+    "gt_edges": 9,
+    "gt_negatives": 7,
+    "pred_edges": 18,
+    "tp": 8,
+    "fp": 10,
+    "fn": 1,
+    "fp_on_solid_wall": 7,
+    "fp_non_adjacent": 3,
+    "unmapped_rooms": 0,
+    "precision": 0.444,
+    "recall": 0.889,
+    "f1": 0.593,
+    "recall_by_type": {
+      "door": "5/5",
+      "open_passage": "3/3",
+      "vertical": "0/1"
+    },
+    "type_exact": 3,
+    "type_checked": 8,
+    "type_accuracy": 0.375,
+    "spurious_types": {
+      "door->open_passage": 5
+    },
+    "trivial_all_adjacent_precision": 0.562
+  },
+  {
+    "building": "synth_0076",
+    "gt_edges": 14,
+    "gt_negatives": 9,
+    "pred_edges": 26,
+    "tp": 13,
+    "fp": 13,
+    "fn": 1,
+    "fp_on_solid_wall": 9,
+    "fp_non_adjacent": 4,
+    "unmapped_rooms": 0,
+    "precision": 0.5,
+    "recall": 0.929,
+    "f1": 0.65,
+    "recall_by_type": {
+      "door": "9/9",
+      "open_passage": "4/4",
+      "vertical": "0/1"
+    },
+    "type_exact": 4,
+    "type_checked": 13,
+    "type_accuracy": 0.308,
+    "spurious_types": {
+      "door->open_passage": 9
+    },
+    "trivial_all_adjacent_precision": 0.609
+  },
+  {
+    "building": "synth_0077",
+    "gt_edges": 12,
+    "gt_negatives": 9,
+    "pred_edges": 22,
+    "tp": 11,
+    "fp": 11,
+    "fn": 1,
+    "fp_on_solid_wall": 9,
+    "fp_non_adjacent": 2,
+    "unmapped_rooms": 0,
+    "precision": 0.5,
+    "recall": 0.917,
+    "f1": 0.647,
+    "recall_by_type": {
+      "open_passage": "3/3",
+      "door": "8/8",
+      "vertical": "0/1"
+    },
+    "type_exact": 3,
+    "type_checked": 11,
+    "type_accuracy": 0.273,
+    "spurious_types": {
+      "door->open_passage": 8
+    },
+    "trivial_all_adjacent_precision": 0.571
+  },
+  {
+    "building": "synth_0078",
+    "gt_edges": 11,
+    "gt_negatives": 8,
+    "pred_edges": 22,
+    "tp": 10,
+    "fp": 12,
+    "fn": 1,
+    "fp_on_solid_wall": 8,
+    "fp_non_adjacent": 4,
+    "unmapped_rooms": 0,
+    "precision": 0.455,
+    "recall": 0.909,
+    "f1": 0.606,
+    "recall_by_type": {
+      "door": "8/8",
+      "open_passage": "2/2",
+      "vertical": "0/1"
+    },
+    "type_exact": 2,
+    "type_checked": 10,
+    "type_accuracy": 0.2,
+    "spurious_types": {
+      "door->open_passage": 8
+    },
+    "trivial_all_adjacent_precision": 0.579
+  },
+  {
+    "building": "synth_0079",
+    "gt_edges": 13,
+    "gt_negatives": 9,
+    "pred_edges": 26,
+    "tp": 12,
+    "fp": 14,
+    "fn": 1,
+    "fp_on_solid_wall": 9,
+    "fp_non_adjacent": 5,
+    "unmapped_rooms": 0,
+    "precision": 0.462,
+    "recall": 0.923,
+    "f1": 0.615,
+    "recall_by_type": {
+      "door": "11/11",
+      "open_passage": "1/1",
+      "vertical": "0/1"
+    },
+    "type_exact": 1,
+    "type_checked": 12,
+    "type_accuracy": 0.083,
+    "spurious_types": {
+      "door->open_passage": 11
+    },
+    "trivial_all_adjacent_precision": 0.591
+  },
+  {
+    "building": "synth_0080",
+    "gt_edges": 11,
+    "gt_negatives": 8,
+    "pred_edges": 23,
+    "tp": 10,
+    "fp": 13,
+    "fn": 1,
+    "fp_on_solid_wall": 8,
+    "fp_non_adjacent": 5,
+    "unmapped_rooms": 0,
+    "precision": 0.435,
+    "recall": 0.909,
+    "f1": 0.588,
+    "recall_by_type": {
+      "door": "9/9",
+      "open_passage": "1/1",
+      "vertical": "0/1"
+    },
+    "type_exact": 1,
+    "type_checked": 10,
+    "type_accuracy": 0.1,
+    "spurious_types": {
+      "door->open_passage": 9
+    },
+    "trivial_all_adjacent_precision": 0.579
+  },
+  {
+    "building": "synth_0081",
+    "gt_edges": 14,
+    "gt_negatives": 10,
+    "pred_edges": 26,
+    "tp": 13,
+    "fp": 13,
+    "fn": 1,
+    "fp_on_solid_wall": 10,
+    "fp_non_adjacent": 3,
+    "unmapped_rooms": 0,
+    "precision": 0.5,
+    "recall": 0.929,
+    "f1": 0.65,
+    "recall_by_type": {
+      "door": "10/10",
+      "open_passage": "3/3",
+      "vertical": "0/1"
+    },
+    "type_exact": 3,
+    "type_checked": 13,
+    "type_accuracy": 0.231,
+    "spurious_types": {
+      "door->open_passage": 10
+    },
+    "trivial_all_adjacent_precision": 0.583
+  },
+  {
+    "building": "synth_0082",
+    "gt_edges": 13,
+    "gt_negatives": 10,
+    "pred_edges": 24,
+    "tp": 12,
+    "fp": 12,
+    "fn": 1,
+    "fp_on_solid_wall": 10,
+    "fp_non_adjacent": 2,
+    "unmapped_rooms": 0,
+    "precision": 0.5,
+    "recall": 0.923,
+    "f1": 0.649,
+    "recall_by_type": {
+      "door": "10/10",
+      "open_passage": "2/2",
+      "vertical": "0/1"
+    },
+    "type_exact": 2,
+    "type_checked": 12,
+    "type_accuracy": 0.167,
+    "spurious_types": {
+      "door->open_passage": 10
+    },
+    "trivial_all_adjacent_precision": 0.565
+  },
+  {
+    "building": "synth_0083",
+    "gt_edges": 11,
+    "gt_negatives": 8,
+    "pred_edges": 20,
+    "tp": 10,
+    "fp": 10,
+    "fn": 1,
+    "fp_on_solid_wall": 8,
+    "fp_non_adjacent": 2,
+    "unmapped_rooms": 0,
+    "precision": 0.5,
+    "recall": 0.909,
+    "f1": 0.645,
+    "recall_by_type": {
+      "open_passage": "5/5",
+      "door": "5/5",
+      "vertical": "0/1"
+    },
+    "type_exact": 5,
+    "type_checked": 10,
+    "type_accuracy": 0.5,
+    "spurious_types": {
+      "door->open_passage": 5
+    },
+    "trivial_all_adjacent_precision": 0.579
+  },
+  {
+    "building": "synth_0084",
+    "gt_edges": 7,
+    "gt_negatives": 6,
+    "pred_edges": 14,
+    "tp": 6,
+    "fp": 8,
+    "fn": 1,
+    "fp_on_solid_wall": 6,
+    "fp_non_adjacent": 2,
+    "unmapped_rooms": 0,
+    "precision": 0.429,
+    "recall": 0.857,
+    "f1": 0.571,
+    "recall_by_type": {
+      "door": "4/4",
+      "open_passage": "2/2",
+      "vertical": "0/1"
+    },
+    "type_exact": 2,
+    "type_checked": 6,
+    "type_accuracy": 0.333,
+    "spurious_types": {
+      "door->open_passage": 4
+    },
+    "trivial_all_adjacent_precision": 0.538
+  },
+  {
+    "building": "synth_0085",
+    "gt_edges": 7,
+    "gt_negatives": 6,
+    "pred_edges": 14,
+    "tp": 6,
+    "fp": 8,
+    "fn": 1,
+    "fp_on_solid_wall": 6,
+    "fp_non_adjacent": 2,
+    "unmapped_rooms": 0,
+    "precision": 0.429,
+    "recall": 0.857,
+    "f1": 0.571,
+    "recall_by_type": {
+      "open_passage": "2/2",
+      "door": "4/4",
+      "vertical": "0/1"
+    },
+    "type_exact": 2,
+    "type_checked": 6,
+    "type_accuracy": 0.333,
+    "spurious_types": {
+      "door->open_passage": 4
+    },
+    "trivial_all_adjacent_precision": 0.538
+  },
+  {
+    "building": "synth_0086",
+    "gt_edges": 7,
+    "gt_negatives": 6,
+    "pred_edges": 14,
+    "tp": 6,
+    "fp": 8,
+    "fn": 1,
+    "fp_on_solid_wall": 6,
+    "fp_non_adjacent": 2,
+    "unmapped_rooms": 0,
+    "precision": 0.429,
+    "recall": 0.857,
+    "f1": 0.571,
+    "recall_by_type": {
+      "door": "6/6",
+      "vertical": "0/1"
+    },
+    "type_exact": 0,
+    "type_checked": 6,
+    "type_accuracy": 0.0,
+    "spurious_types": {
+      "door->open_passage": 6
+    },
+    "trivial_all_adjacent_precision": 0.538
+  },
+  {
+    "building": "synth_0087",
+    "gt_edges": 13,
+    "gt_negatives": 9,
+    "pred_edges": 24,
+    "tp": 12,
+    "fp": 12,
+    "fn": 1,
+    "fp_on_solid_wall": 9,
+    "fp_non_adjacent": 3,
+    "unmapped_rooms": 0,
+    "precision": 0.5,
+    "recall": 0.923,
+    "f1": 0.649,
+    "recall_by_type": {
+      "door": "12/12",
+      "vertical": "0/1"
+    },
+    "type_exact": 0,
+    "type_checked": 12,
+    "type_accuracy": 0.0,
+    "spurious_types": {
+      "door->open_passage": 12
+    },
+    "trivial_all_adjacent_precision": 0.591
+  },
+  {
+    "building": "synth_0088",
+    "gt_edges": 11,
+    "gt_negatives": 9,
+    "pred_edges": 22,
+    "tp": 10,
+    "fp": 12,
+    "fn": 1,
+    "fp_on_solid_wall": 9,
+    "fp_non_adjacent": 3,
+    "unmapped_rooms": 0,
+    "precision": 0.455,
+    "recall": 0.909,
+    "f1": 0.606,
+    "recall_by_type": {
+      "door": "9/9",
+      "open_passage": "1/1",
+      "vertical": "0/1"
+    },
+    "type_exact": 1,
+    "type_checked": 10,
+    "type_accuracy": 0.1,
+    "spurious_types": {
+      "door->open_passage": 9
+    },
+    "trivial_all_adjacent_precision": 0.55
+  },
+  {
+    "building": "synth_0089",
+    "gt_edges": 13,
+    "gt_negatives": 10,
+    "pred_edges": 24,
+    "tp": 12,
+    "fp": 12,
+    "fn": 1,
+    "fp_on_solid_wall": 10,
+    "fp_non_adjacent": 2,
+    "unmapped_rooms": 0,
+    "precision": 0.5,
+    "recall": 0.923,
+    "f1": 0.649,
+    "recall_by_type": {
+      "door": "9/9",
+      "open_passage": "3/3",
+      "vertical": "0/1"
+    },
+    "type_exact": 3,
+    "type_checked": 12,
+    "type_accuracy": 0.25,
+    "spurious_types": {
+      "door->open_passage": 9
+    },
+    "trivial_all_adjacent_precision": 0.565
+  },
+  {
+    "building": "synth_0090",
+    "gt_edges": 13,
+    "gt_negatives": 8,
+    "pred_edges": 26,
+    "tp": 12,
+    "fp": 14,
+    "fn": 1,
+    "fp_on_solid_wall": 8,
+    "fp_non_adjacent": 6,
+    "unmapped_rooms": 0,
+    "precision": 0.462,
+    "recall": 0.923,
+    "f1": 0.615,
+    "recall_by_type": {
+      "door": "8/8",
+      "open_passage": "4/4",
+      "vertical": "0/1"
+    },
+    "type_exact": 4,
+    "type_checked": 12,
+    "type_accuracy": 0.333,
+    "spurious_types": {
+      "door->open_passage": 8
+    },
+    "trivial_all_adjacent_precision": 0.619
+  },
+  {
+    "building": "synth_0091",
+    "gt_edges": 13,
+    "gt_negatives": 9,
+    "pred_edges": 24,
+    "tp": 12,
+    "fp": 12,
+    "fn": 1,
+    "fp_on_solid_wall": 9,
+    "fp_non_adjacent": 3,
+    "unmapped_rooms": 0,
+    "precision": 0.5,
+    "recall": 0.923,
+    "f1": 0.649,
+    "recall_by_type": {
+      "door": "11/11",
+      "open_passage": "1/1",
+      "vertical": "0/1"
+    },
+    "type_exact": 1,
+    "type_checked": 12,
+    "type_accuracy": 0.083,
+    "spurious_types": {
+      "door->open_passage": 11
+    },
+    "trivial_all_adjacent_precision": 0.591
+  },
+  {
+    "building": "synth_0092",
+    "gt_edges": 13,
+    "gt_negatives": 9,
+    "pred_edges": 26,
+    "tp": 12,
+    "fp": 14,
+    "fn": 1,
+    "fp_on_solid_wall": 9,
+    "fp_non_adjacent": 5,
+    "unmapped_rooms": 0,
+    "precision": 0.462,
+    "recall": 0.923,
+    "f1": 0.615,
+    "recall_by_type": {
+      "door": "10/10",
+      "open_passage": "2/2",
+      "vertical": "0/1"
+    },
+    "type_exact": 2,
+    "type_checked": 12,
+    "type_accuracy": 0.167,
+    "spurious_types": {
+      "door->open_passage": 10
+    },
+    "trivial_all_adjacent_precision": 0.591
+  },
+  {
+    "building": "synth_0093",
+    "gt_edges": 12,
+    "gt_negatives": 9,
+    "pred_edges": 22,
+    "tp": 11,
+    "fp": 11,
+    "fn": 1,
+    "fp_on_solid_wall": 9,
+    "fp_non_adjacent": 2,
+    "unmapped_rooms": 0,
+    "precision": 0.5,
+    "recall": 0.917,
+    "f1": 0.647,
+    "recall_by_type": {
+      "door": "9/9",
+      "open_passage": "2/2",
+      "vertical": "0/1"
+    },
+    "type_exact": 2,
+    "type_checked": 11,
+    "type_accuracy": 0.182,
+    "spurious_types": {
+      "door->open_passage": 9
+    },
+    "trivial_all_adjacent_precision": 0.571
+  },
+  {
+    "building": "synth_0094",
+    "gt_edges": 12,
+    "gt_negatives": 8,
+    "pred_edges": 22,
+    "tp": 11,
+    "fp": 11,
+    "fn": 1,
+    "fp_on_solid_wall": 8,
+    "fp_non_adjacent": 3,
+    "unmapped_rooms": 0,
+    "precision": 0.5,
+    "recall": 0.917,
+    "f1": 0.647,
+    "recall_by_type": {
+      "door": "9/9",
+      "open_passage": "2/2",
+      "vertical": "0/1"
+    },
+    "type_exact": 2,
+    "type_checked": 11,
+    "type_accuracy": 0.182,
+    "spurious_types": {
+      "door->open_passage": 9
+    },
+    "trivial_all_adjacent_precision": 0.6
+  },
+  {
+    "building": "synth_0095",
+    "gt_edges": 9,
+    "gt_negatives": 7,
+    "pred_edges": 18,
+    "tp": 8,
+    "fp": 10,
+    "fn": 1,
+    "fp_on_solid_wall": 7,
+    "fp_non_adjacent": 3,
+    "unmapped_rooms": 0,
+    "precision": 0.444,
+    "recall": 0.889,
+    "f1": 0.593,
+    "recall_by_type": {
+      "door": "7/7",
+      "open_passage": "1/1",
+      "vertical": "0/1"
+    },
+    "type_exact": 1,
+    "type_checked": 8,
+    "type_accuracy": 0.125,
+    "spurious_types": {
+      "door->open_passage": 7
+    },
+    "trivial_all_adjacent_precision": 0.562
+  },
+  {
+    "building": "synth_0096",
+    "gt_edges": 11,
+    "gt_negatives": 8,
+    "pred_edges": 20,
+    "tp": 10,
+    "fp": 10,
+    "fn": 1,
+    "fp_on_solid_wall": 8,
+    "fp_non_adjacent": 2,
+    "unmapped_rooms": 0,
+    "precision": 0.5,
+    "recall": 0.909,
+    "f1": 0.645,
+    "recall_by_type": {
+      "door": "8/8",
+      "open_passage": "2/2",
+      "vertical": "0/1"
+    },
+    "type_exact": 2,
+    "type_checked": 10,
+    "type_accuracy": 0.2,
+    "spurious_types": {
+      "door->open_passage": 8
+    },
+    "trivial_all_adjacent_precision": 0.579
+  },
+  {
+    "building": "synth_0097",
+    "gt_edges": 14,
+    "gt_negatives": 9,
+    "pred_edges": 25,
+    "tp": 13,
+    "fp": 12,
+    "fn": 1,
+    "fp_on_solid_wall": 9,
+    "fp_non_adjacent": 3,
+    "unmapped_rooms": 0,
+    "precision": 0.52,
+    "recall": 0.929,
+    "f1": 0.667,
+    "recall_by_type": {
+      "door": "10/10",
+      "open_passage": "3/3",
+      "vertical": "0/1"
+    },
+    "type_exact": 3,
+    "type_checked": 13,
+    "type_accuracy": 0.231,
+    "spurious_types": {
+      "door->open_passage": 10
+    },
+    "trivial_all_adjacent_precision": 0.609
+  },
+  {
+    "building": "synth_0098",
+    "gt_edges": 13,
+    "gt_negatives": 8,
+    "pred_edges": 24,
+    "tp": 12,
+    "fp": 12,
+    "fn": 1,
+    "fp_on_solid_wall": 8,
+    "fp_non_adjacent": 4,
+    "unmapped_rooms": 0,
+    "precision": 0.5,
+    "recall": 0.923,
+    "f1": 0.649,
+    "recall_by_type": {
+      "door": "11/11",
+      "open_passage": "1/1",
+      "vertical": "0/1"
+    },
+    "type_exact": 1,
+    "type_checked": 12,
+    "type_accuracy": 0.083,
+    "spurious_types": {
+      "door->open_passage": 11
+    },
+    "trivial_all_adjacent_precision": 0.619
+  },
+  {
+    "building": "synth_0099",
+    "gt_edges": 14,
+    "gt_negatives": 11,
+    "pred_edges": 26,
+    "tp": 13,
+    "fp": 13,
+    "fn": 1,
+    "fp_on_solid_wall": 11,
+    "fp_non_adjacent": 2,
+    "unmapped_rooms": 0,
+    "precision": 0.5,
+    "recall": 0.929,
+    "f1": 0.65,
+    "recall_by_type": {
+      "door": "10/10",
+      "open_passage": "3/3",
+      "vertical": "0/1"
+    },
+    "type_exact": 3,
+    "type_checked": 13,
+    "type_accuracy": 0.231,
+    "spurious_types": {
+      "door->open_passage": 10
+    },
+    "trivial_all_adjacent_precision": 0.56
+  },
+  {
+    "building": "synth_0100",
+    "gt_edges": 10,
+    "gt_negatives": 7,
+    "pred_edges": 20,
+    "tp": 9,
+    "fp": 11,
+    "fn": 1,
+    "fp_on_solid_wall": 7,
+    "fp_non_adjacent": 4,
+    "unmapped_rooms": 0,
+    "precision": 0.45,
+    "recall": 0.9,
+    "f1": 0.6,
+    "recall_by_type": {
+      "door": "8/8",
+      "open_passage": "1/1",
+      "vertical": "0/1"
+    },
+    "type_exact": 1,
+    "type_checked": 9,
+    "type_accuracy": 0.111,
+    "spurious_types": {
+      "door->open_passage": 8
+    },
+    "trivial_all_adjacent_precision": 0.588
+  },
+  {
+    "building": "synth_0101",
+    "gt_edges": 12,
+    "gt_negatives": 8,
+    "pred_edges": 24,
+    "tp": 11,
+    "fp": 13,
+    "fn": 1,
+    "fp_on_solid_wall": 8,
+    "fp_non_adjacent": 5,
+    "unmapped_rooms": 0,
+    "precision": 0.458,
+    "recall": 0.917,
+    "f1": 0.611,
+    "recall_by_type": {
+      "door": "9/9",
+      "open_passage": "2/2",
+      "vertical": "0/1"
+    },
+    "type_exact": 2,
+    "type_checked": 11,
+    "type_accuracy": 0.182,
+    "spurious_types": {
+      "door->open_passage": 9
+    },
+    "trivial_all_adjacent_precision": 0.6
+  },
+  {
+    "building": "synth_0102",
+    "gt_edges": 7,
+    "gt_negatives": 6,
+    "pred_edges": 14,
+    "tp": 6,
+    "fp": 8,
+    "fn": 1,
+    "fp_on_solid_wall": 6,
+    "fp_non_adjacent": 2,
+    "unmapped_rooms": 0,
+    "precision": 0.429,
+    "recall": 0.857,
+    "f1": 0.571,
+    "recall_by_type": {
+      "open_passage": "2/2",
+      "door": "4/4",
+      "vertical": "0/1"
+    },
+    "type_exact": 2,
+    "type_checked": 6,
+    "type_accuracy": 0.333,
+    "spurious_types": {
+      "door->open_passage": 4
+    },
+    "trivial_all_adjacent_precision": 0.538
+  },
+  {
+    "building": "synth_0103",
+    "gt_edges": 13,
+    "gt_negatives": 10,
+    "pred_edges": 24,
+    "tp": 12,
+    "fp": 12,
+    "fn": 1,
+    "fp_on_solid_wall": 10,
+    "fp_non_adjacent": 2,
+    "unmapped_rooms": 0,
+    "precision": 0.5,
+    "recall": 0.923,
+    "f1": 0.649,
+    "recall_by_type": {
+      "open_passage": "2/2",
+      "door": "10/10",
+      "vertical": "0/1"
+    },
+    "type_exact": 2,
+    "type_checked": 12,
+    "type_accuracy": 0.167,
+    "spurious_types": {
+      "door->open_passage": 10
+    },
+    "trivial_all_adjacent_precision": 0.565
+  },
+  {
+    "building": "synth_0104",
+    "gt_edges": 10,
+    "gt_negatives": 8,
+    "pred_edges": 18,
+    "tp": 9,
+    "fp": 9,
+    "fn": 1,
+    "fp_on_solid_wall": 8,
+    "fp_non_adjacent": 1,
+    "unmapped_rooms": 0,
+    "precision": 0.5,
+    "recall": 0.9,
+    "f1": 0.643,
+    "recall_by_type": {
+      "door": "5/5",
+      "open_passage": "4/4",
+      "vertical": "0/1"
+    },
+    "type_exact": 4,
+    "type_checked": 9,
+    "type_accuracy": 0.444,
+    "spurious_types": {
+      "door->open_passage": 5
+    },
+    "trivial_all_adjacent_precision": 0.556
+  },
+  {
+    "building": "synth_0105",
+    "gt_edges": 14,
+    "gt_negatives": 9,
+    "pred_edges": 26,
+    "tp": 13,
+    "fp": 13,
+    "fn": 1,
+    "fp_on_solid_wall": 9,
+    "fp_non_adjacent": 4,
+    "unmapped_rooms": 0,
+    "precision": 0.5,
+    "recall": 0.929,
+    "f1": 0.65,
+    "recall_by_type": {
+      "door": "12/12",
+      "open_passage": "1/1",
+      "vertical": "0/1"
+    },
+    "type_exact": 1,
+    "type_checked": 13,
+    "type_accuracy": 0.077,
+    "spurious_types": {
+      "door->open_passage": 12
+    },
+    "trivial_all_adjacent_precision": 0.609
+  },
+  {
+    "building": "synth_0106",
+    "gt_edges": 7,
+    "gt_negatives": 5,
+    "pred_edges": 12,
+    "tp": 6,
+    "fp": 6,
+    "fn": 1,
+    "fp_on_solid_wall": 5,
+    "fp_non_adjacent": 1,
+    "unmapped_rooms": 0,
+    "precision": 0.5,
+    "recall": 0.857,
+    "f1": 0.632,
+    "recall_by_type": {
+      "door": "6/6",
+      "vertical": "0/1"
+    },
+    "type_exact": 0,
+    "type_checked": 6,
+    "type_accuracy": 0.0,
+    "spurious_types": {
+      "door->open_passage": 6
+    },
+    "trivial_all_adjacent_precision": 0.583
+  },
+  {
+    "building": "synth_0107",
+    "gt_edges": 12,
+    "gt_negatives": 8,
+    "pred_edges": 20,
+    "tp": 11,
+    "fp": 9,
+    "fn": 1,
+    "fp_on_solid_wall": 8,
+    "fp_non_adjacent": 1,
+    "unmapped_rooms": 0,
+    "precision": 0.55,
+    "recall": 0.917,
+    "f1": 0.687,
+    "recall_by_type": {
+      "open_passage": "2/2",
+      "door": "9/9",
+      "vertical": "0/1"
+    },
+    "type_exact": 2,
+    "type_checked": 11,
+    "type_accuracy": 0.182,
+    "spurious_types": {
+      "door->open_passage": 9
+    },
+    "trivial_all_adjacent_precision": 0.6
+  },
+  {
+    "building": "synth_0108",
+    "gt_edges": 13,
+    "gt_negatives": 9,
+    "pred_edges": 24,
+    "tp": 12,
+    "fp": 12,
+    "fn": 1,
+    "fp_on_solid_wall": 9,
+    "fp_non_adjacent": 3,
+    "unmapped_rooms": 0,
+    "precision": 0.5,
+    "recall": 0.923,
+    "f1": 0.649,
+    "recall_by_type": {
+      "door": "10/10",
+      "open_passage": "2/2",
+      "vertical": "0/1"
+    },
+    "type_exact": 2,
+    "type_checked": 12,
+    "type_accuracy": 0.167,
+    "spurious_types": {
+      "door->open_passage": 10
+    },
+    "trivial_all_adjacent_precision": 0.591
+  },
+  {
+    "building": "synth_0109",
+    "gt_edges": 10,
+    "gt_negatives": 7,
+    "pred_edges": 20,
+    "tp": 9,
+    "fp": 11,
+    "fn": 1,
+    "fp_on_solid_wall": 7,
+    "fp_non_adjacent": 4,
+    "unmapped_rooms": 0,
+    "precision": 0.45,
+    "recall": 0.9,
+    "f1": 0.6,
+    "recall_by_type": {
+      "open_passage": "3/3",
+      "door": "6/6",
+      "vertical": "0/1"
+    },
+    "type_exact": 3,
+    "type_checked": 9,
+    "type_accuracy": 0.333,
+    "spurious_types": {
+      "door->open_passage": 6
+    },
+    "trivial_all_adjacent_precision": 0.588
+  },
+  {
+    "building": "synth_0110",
+    "gt_edges": 12,
+    "gt_negatives": 9,
+    "pred_edges": 24,
+    "tp": 11,
+    "fp": 13,
+    "fn": 1,
+    "fp_on_solid_wall": 9,
+    "fp_non_adjacent": 4,
+    "unmapped_rooms": 0,
+    "precision": 0.458,
+    "recall": 0.917,
+    "f1": 0.611,
+    "recall_by_type": {
+      "door": "9/9",
+      "open_passage": "2/2",
+      "vertical": "0/1"
+    },
+    "type_exact": 2,
+    "type_checked": 11,
+    "type_accuracy": 0.182,
+    "spurious_types": {
+      "door->open_passage": 9
+    },
+    "trivial_all_adjacent_precision": 0.571
+  },
+  {
+    "building": "synth_0111",
+    "gt_edges": 13,
+    "gt_negatives": 9,
+    "pred_edges": 26,
+    "tp": 12,
+    "fp": 14,
+    "fn": 1,
+    "fp_on_solid_wall": 9,
+    "fp_non_adjacent": 5,
+    "unmapped_rooms": 0,
+    "precision": 0.462,
+    "recall": 0.923,
+    "f1": 0.615,
+    "recall_by_type": {
+      "door": "11/11",
+      "open_passage": "1/1",
+      "vertical": "0/1"
+    },
+    "type_exact": 1,
+    "type_checked": 12,
+    "type_accuracy": 0.083,
+    "spurious_types": {
+      "door->open_passage": 11
+    },
+    "trivial_all_adjacent_precision": 0.591
+  },
+  {
+    "building": "synth_0112",
+    "gt_edges": 13,
+    "gt_negatives": 9,
+    "pred_edges": 26,
+    "tp": 12,
+    "fp": 14,
+    "fn": 1,
+    "fp_on_solid_wall": 9,
+    "fp_non_adjacent": 5,
+    "unmapped_rooms": 0,
+    "precision": 0.462,
+    "recall": 0.923,
+    "f1": 0.615,
+    "recall_by_type": {
+      "door": "9/9",
+      "open_passage": "3/3",
+      "vertical": "0/1"
+    },
+    "type_exact": 3,
+    "type_checked": 12,
+    "type_accuracy": 0.25,
+    "spurious_types": {
+      "door->open_passage": 9
+    },
+    "trivial_all_adjacent_precision": 0.591
+  },
+  {
+    "building": "synth_0113",
+    "gt_edges": 11,
+    "gt_negatives": 8,
+    "pred_edges": 20,
+    "tp": 10,
+    "fp": 10,
+    "fn": 1,
+    "fp_on_solid_wall": 8,
+    "fp_non_adjacent": 2,
+    "unmapped_rooms": 0,
+    "precision": 0.5,
+    "recall": 0.909,
+    "f1": 0.645,
+    "recall_by_type": {
+      "door": "7/7",
+      "open_passage": "3/3",
+      "vertical": "0/1"
+    },
+    "type_exact": 3,
+    "type_checked": 10,
+    "type_accuracy": 0.3,
+    "spurious_types": {
+      "door->open_passage": 7
+    },
+    "trivial_all_adjacent_precision": 0.579
+  },
+  {
+    "building": "synth_0114",
+    "gt_edges": 13,
+    "gt_negatives": 9,
+    "pred_edges": 24,
+    "tp": 12,
+    "fp": 12,
+    "fn": 1,
+    "fp_on_solid_wall": 9,
+    "fp_non_adjacent": 3,
+    "unmapped_rooms": 0,
+    "precision": 0.5,
+    "recall": 0.923,
+    "f1": 0.649,
+    "recall_by_type": {
+      "door": "10/10",
+      "open_passage": "2/2",
+      "vertical": "0/1"
+    },
+    "type_exact": 2,
+    "type_checked": 12,
+    "type_accuracy": 0.167,
+    "spurious_types": {
+      "door->open_passage": 10
+    },
+    "trivial_all_adjacent_precision": 0.591
+  },
+  {
+    "building": "synth_0115",
+    "gt_edges": 7,
+    "gt_negatives": 5,
+    "pred_edges": 12,
+    "tp": 6,
+    "fp": 6,
+    "fn": 1,
+    "fp_on_solid_wall": 5,
+    "fp_non_adjacent": 1,
+    "unmapped_rooms": 0,
+    "precision": 0.5,
+    "recall": 0.857,
+    "f1": 0.632,
+    "recall_by_type": {
+      "door": "6/6",
+      "vertical": "0/1"
+    },
+    "type_exact": 0,
+    "type_checked": 6,
+    "type_accuracy": 0.0,
+    "spurious_types": {
+      "door->open_passage": 6
+    },
+    "trivial_all_adjacent_precision": 0.583
+  },
+  {
+    "building": "synth_0116",
+    "gt_edges": 11,
+    "gt_negatives": 8,
+    "pred_edges": 20,
+    "tp": 10,
+    "fp": 10,
+    "fn": 1,
+    "fp_on_solid_wall": 8,
+    "fp_non_adjacent": 2,
+    "unmapped_rooms": 0,
+    "precision": 0.5,
+    "recall": 0.909,
+    "f1": 0.645,
+    "recall_by_type": {
+      "door": "9/9",
+      "open_passage": "1/1",
+      "vertical": "0/1"
+    },
+    "type_exact": 1,
+    "type_checked": 10,
+    "type_accuracy": 0.1,
+    "spurious_types": {
+      "door->open_passage": 9
+    },
+    "trivial_all_adjacent_precision": 0.579
+  },
+  {
+    "building": "synth_0117",
+    "gt_edges": 13,
+    "gt_negatives": 9,
+    "pred_edges": 22,
+    "tp": 12,
+    "fp": 10,
+    "fn": 1,
+    "fp_on_solid_wall": 9,
+    "fp_non_adjacent": 1,
+    "unmapped_rooms": 0,
+    "precision": 0.545,
+    "recall": 0.923,
+    "f1": 0.686,
+    "recall_by_type": {
+      "door": "10/10",
+      "open_passage": "2/2",
+      "vertical": "0/1"
+    },
+    "type_exact": 2,
+    "type_checked": 12,
+    "type_accuracy": 0.167,
+    "spurious_types": {
+      "door->open_passage": 10
+    },
+    "trivial_all_adjacent_precision": 0.591
+  },
+  {
+    "building": "synth_0118",
+    "gt_edges": 11,
+    "gt_negatives": 8,
+    "pred_edges": 20,
+    "tp": 10,
+    "fp": 10,
+    "fn": 1,
+    "fp_on_solid_wall": 8,
+    "fp_non_adjacent": 2,
+    "unmapped_rooms": 0,
+    "precision": 0.5,
+    "recall": 0.909,
+    "f1": 0.645,
+    "recall_by_type": {
+      "door": "9/9",
+      "open_passage": "1/1",
+      "vertical": "0/1"
+    },
+    "type_exact": 1,
+    "type_checked": 10,
+    "type_accuracy": 0.1,
+    "spurious_types": {
+      "door->open_passage": 9
+    },
+    "trivial_all_adjacent_precision": 0.579
+  },
+  {
+    "building": "synth_0119",
+    "gt_edges": 10,
+    "gt_negatives": 8,
+    "pred_edges": 20,
+    "tp": 9,
+    "fp": 11,
+    "fn": 1,
+    "fp_on_solid_wall": 8,
+    "fp_non_adjacent": 3,
+    "unmapped_rooms": 0,
+    "precision": 0.45,
+    "recall": 0.9,
+    "f1": 0.6,
+    "recall_by_type": {
+      "open_passage": "2/2",
+      "door": "7/7",
+      "vertical": "0/1"
+    },
+    "type_exact": 2,
+    "type_checked": 9,
+    "type_accuracy": 0.222,
+    "spurious_types": {
+      "door->open_passage": 7
+    },
+    "trivial_all_adjacent_precision": 0.556
+  },
+  {
+    "building": "synth_0120",
+    "gt_edges": 11,
+    "gt_negatives": 9,
+    "pred_edges": 20,
+    "tp": 10,
+    "fp": 10,
+    "fn": 1,
+    "fp_on_solid_wall": 9,
+    "fp_non_adjacent": 1,
+    "unmapped_rooms": 0,
+    "precision": 0.5,
+    "recall": 0.909,
+    "f1": 0.645,
+    "recall_by_type": {
+      "door": "9/9",
+      "open_passage": "1/1",
+      "vertical": "0/1"
+    },
+    "type_exact": 1,
+    "type_checked": 10,
+    "type_accuracy": 0.1,
+    "spurious_types": {
+      "door->open_passage": 9
+    },
+    "trivial_all_adjacent_precision": 0.55
+  },
+  {
+    "building": "synth_0121",
+    "gt_edges": 13,
+    "gt_negatives": 9,
+    "pred_edges": 24,
+    "tp": 12,
+    "fp": 12,
+    "fn": 1,
+    "fp_on_solid_wall": 9,
+    "fp_non_adjacent": 3,
+    "unmapped_rooms": 0,
+    "precision": 0.5,
+    "recall": 0.923,
+    "f1": 0.649,
+    "recall_by_type": {
+      "door": "9/9",
+      "open_passage": "3/3",
+      "vertical": "0/1"
+    },
+    "type_exact": 3,
+    "type_checked": 12,
+    "type_accuracy": 0.25,
+    "spurious_types": {
+      "door->open_passage": 9
+    },
+    "trivial_all_adjacent_precision": 0.591
+  },
+  {
+    "building": "synth_0122",
+    "gt_edges": 9,
+    "gt_negatives": 6,
+    "pred_edges": 16,
+    "tp": 8,
+    "fp": 8,
+    "fn": 1,
+    "fp_on_solid_wall": 6,
+    "fp_non_adjacent": 2,
+    "unmapped_rooms": 0,
+    "precision": 0.5,
+    "recall": 0.889,
+    "f1": 0.64,
+    "recall_by_type": {
+      "door": "8/8",
+      "vertical": "0/1"
+    },
+    "type_exact": 0,
+    "type_checked": 8,
+    "type_accuracy": 0.0,
+    "spurious_types": {
+      "door->open_passage": 8
+    },
+    "trivial_all_adjacent_precision": 0.6
+  },
+  {
+    "building": "synth_0123",
+    "gt_edges": 13,
+    "gt_negatives": 8,
+    "pred_edges": 26,
+    "tp": 12,
+    "fp": 14,
+    "fn": 1,
+    "fp_on_solid_wall": 8,
+    "fp_non_adjacent": 6,
+    "unmapped_rooms": 0,
+    "precision": 0.462,
+    "recall": 0.923,
+    "f1": 0.615,
+    "recall_by_type": {
+      "door": "11/11",
+      "open_passage": "1/1",
+      "vertical": "0/1"
+    },
+    "type_exact": 1,
+    "type_checked": 12,
+    "type_accuracy": 0.083,
+    "spurious_types": {
+      "door->open_passage": 11
+    },
+    "trivial_all_adjacent_precision": 0.619
+  },
+  {
+    "building": "synth_0124",
+    "gt_edges": 12,
+    "gt_negatives": 8,
+    "pred_edges": 25,
+    "tp": 11,
+    "fp": 14,
+    "fn": 1,
+    "fp_on_solid_wall": 8,
+    "fp_non_adjacent": 6,
+    "unmapped_rooms": 0,
+    "precision": 0.44,
+    "recall": 0.917,
+    "f1": 0.595,
+    "recall_by_type": {
+      "open_passage": "3/3",
+      "door": "8/8",
+      "vertical": "0/1"
+    },
+    "type_exact": 3,
+    "type_checked": 11,
+    "type_accuracy": 0.273,
+    "spurious_types": {
+      "door->open_passage": 8
+    },
+    "trivial_all_adjacent_precision": 0.6
+  },
+  {
+    "building": "synth_0125",
+    "gt_edges": 10,
+    "gt_negatives": 8,
+    "pred_edges": 20,
+    "tp": 9,
+    "fp": 11,
+    "fn": 1,
+    "fp_on_solid_wall": 8,
+    "fp_non_adjacent": 3,
+    "unmapped_rooms": 0,
+    "precision": 0.45,
+    "recall": 0.9,
+    "f1": 0.6,
+    "recall_by_type": {
+      "door": "9/9",
+      "vertical": "0/1"
+    },
+    "type_exact": 0,
+    "type_checked": 9,
+    "type_accuracy": 0.0,
+    "spurious_types": {
+      "door->open_passage": 9
+    },
+    "trivial_all_adjacent_precision": 0.556
+  },
+  {
+    "building": "synth_0126",
+    "gt_edges": 13,
+    "gt_negatives": 10,
+    "pred_edges": 26,
+    "tp": 12,
+    "fp": 14,
+    "fn": 1,
+    "fp_on_solid_wall": 10,
+    "fp_non_adjacent": 4,
+    "unmapped_rooms": 0,
+    "precision": 0.462,
+    "recall": 0.923,
+    "f1": 0.615,
+    "recall_by_type": {
+      "door": "10/10",
+      "open_passage": "2/2",
+      "vertical": "0/1"
+    },
+    "type_exact": 2,
+    "type_checked": 12,
+    "type_accuracy": 0.167,
+    "spurious_types": {
+      "door->open_passage": 10
+    },
+    "trivial_all_adjacent_precision": 0.565
+  },
+  {
+    "building": "synth_0127",
+    "gt_edges": 13,
+    "gt_negatives": 9,
+    "pred_edges": 24,
+    "tp": 12,
+    "fp": 12,
+    "fn": 1,
+    "fp_on_solid_wall": 9,
+    "fp_non_adjacent": 3,
+    "unmapped_rooms": 0,
+    "precision": 0.5,
+    "recall": 0.923,
+    "f1": 0.649,
+    "recall_by_type": {
+      "open_passage": "3/3",
+      "door": "9/9",
+      "vertical": "0/1"
+    },
+    "type_exact": 3,
+    "type_checked": 12,
+    "type_accuracy": 0.25,
+    "spurious_types": {
+      "door->open_passage": 9
+    },
+    "trivial_all_adjacent_precision": 0.591
+  },
+  {
+    "building": "synth_0128",
+    "gt_edges": 13,
+    "gt_negatives": 10,
+    "pred_edges": 22,
+    "tp": 12,
+    "fp": 10,
+    "fn": 1,
+    "fp_on_solid_wall": 10,
+    "fp_non_adjacent": 0,
+    "unmapped_rooms": 0,
+    "precision": 0.545,
+    "recall": 0.923,
+    "f1": 0.686,
+    "recall_by_type": {
+      "door": "10/10",
+      "open_passage": "2/2",
+      "vertical": "0/1"
+    },
+    "type_exact": 2,
+    "type_checked": 12,
+    "type_accuracy": 0.167,
+    "spurious_types": {
+      "door->open_passage": 10
+    },
+    "trivial_all_adjacent_precision": 0.565
+  },
+  {
+    "building": "synth_0129",
+    "gt_edges": 14,
+    "gt_negatives": 9,
+    "pred_edges": 26,
+    "tp": 13,
+    "fp": 13,
+    "fn": 1,
+    "fp_on_solid_wall": 9,
+    "fp_non_adjacent": 4,
+    "unmapped_rooms": 0,
+    "precision": 0.5,
+    "recall": 0.929,
+    "f1": 0.65,
+    "recall_by_type": {
+      "door": "12/12",
+      "open_passage": "1/1",
+      "vertical": "0/1"
+    },
+    "type_exact": 1,
+    "type_checked": 13,
+    "type_accuracy": 0.077,
+    "spurious_types": {
+      "door->open_passage": 12
+    },
+    "trivial_all_adjacent_precision": 0.609
+  },
+  {
+    "building": "synth_0130",
+    "gt_edges": 12,
+    "gt_negatives": 8,
+    "pred_edges": 22,
+    "tp": 11,
+    "fp": 11,
+    "fn": 1,
+    "fp_on_solid_wall": 8,
+    "fp_non_adjacent": 3,
+    "unmapped_rooms": 0,
+    "precision": 0.5,
+    "recall": 0.917,
+    "f1": 0.647,
+    "recall_by_type": {
+      "door": "10/10",
+      "open_passage": "1/1",
+      "vertical": "0/1"
+    },
+    "type_exact": 1,
+    "type_checked": 11,
+    "type_accuracy": 0.091,
+    "spurious_types": {
+      "door->open_passage": 10
+    },
+    "trivial_all_adjacent_precision": 0.6
+  },
+  {
+    "building": "synth_0131",
+    "gt_edges": 9,
+    "gt_negatives": 7,
+    "pred_edges": 18,
+    "tp": 8,
+    "fp": 10,
+    "fn": 1,
+    "fp_on_solid_wall": 7,
+    "fp_non_adjacent": 3,
+    "unmapped_rooms": 0,
+    "precision": 0.444,
+    "recall": 0.889,
+    "f1": 0.593,
+    "recall_by_type": {
+      "door": "7/7",
+      "open_passage": "1/1",
+      "vertical": "0/1"
+    },
+    "type_exact": 1,
+    "type_checked": 8,
+    "type_accuracy": 0.125,
+    "spurious_types": {
+      "door->open_passage": 7
+    },
+    "trivial_all_adjacent_precision": 0.562
+  },
+  {
+    "building": "synth_0132",
+    "gt_edges": 10,
+    "gt_negatives": 8,
+    "pred_edges": 20,
+    "tp": 9,
+    "fp": 11,
+    "fn": 1,
+    "fp_on_solid_wall": 8,
+    "fp_non_adjacent": 3,
+    "unmapped_rooms": 0,
+    "precision": 0.45,
+    "recall": 0.9,
+    "f1": 0.6,
+    "recall_by_type": {
+      "door": "8/8",
+      "open_passage": "1/1",
+      "vertical": "0/1"
+    },
+    "type_exact": 1,
+    "type_checked": 9,
+    "type_accuracy": 0.111,
+    "spurious_types": {
+      "door->open_passage": 8
+    },
+    "trivial_all_adjacent_precision": 0.556
+  },
+  {
+    "building": "synth_0133",
+    "gt_edges": 12,
+    "gt_negatives": 8,
+    "pred_edges": 24,
+    "tp": 11,
+    "fp": 13,
+    "fn": 1,
+    "fp_on_solid_wall": 8,
+    "fp_non_adjacent": 5,
+    "unmapped_rooms": 0,
+    "precision": 0.458,
+    "recall": 0.917,
+    "f1": 0.611,
+    "recall_by_type": {
+      "door": "10/10",
+      "open_passage": "1/1",
+      "vertical": "0/1"
+    },
+    "type_exact": 1,
+    "type_checked": 11,
+    "type_accuracy": 0.091,
+    "spurious_types": {
+      "door->open_passage": 10
+    },
+    "trivial_all_adjacent_precision": 0.6
+  },
+  {
+    "building": "synth_0134",
+    "gt_edges": 13,
+    "gt_negatives": 8,
+    "pred_edges": 22,
+    "tp": 12,
+    "fp": 10,
+    "fn": 1,
+    "fp_on_solid_wall": 8,
+    "fp_non_adjacent": 2,
+    "unmapped_rooms": 0,
+    "precision": 0.545,
+    "recall": 0.923,
+    "f1": 0.686,
+    "recall_by_type": {
+      "open_passage": "2/2",
+      "door": "10/10",
+      "vertical": "0/1"
+    },
+    "type_exact": 2,
+    "type_checked": 12,
+    "type_accuracy": 0.167,
+    "spurious_types": {
+      "door->open_passage": 10
+    },
+    "trivial_all_adjacent_precision": 0.619
+  },
+  {
+    "building": "synth_0135",
+    "gt_edges": 13,
+    "gt_negatives": 9,
+    "pred_edges": 24,
+    "tp": 12,
+    "fp": 12,
+    "fn": 1,
+    "fp_on_solid_wall": 9,
+    "fp_non_adjacent": 3,
+    "unmapped_rooms": 0,
+    "precision": 0.5,
+    "recall": 0.923,
+    "f1": 0.649,
+    "recall_by_type": {
+      "door": "11/11",
+      "open_passage": "1/1",
+      "vertical": "0/1"
+    },
+    "type_exact": 1,
+    "type_checked": 12,
+    "type_accuracy": 0.083,
+    "spurious_types": {
+      "door->open_passage": 11
+    },
+    "trivial_all_adjacent_precision": 0.591
+  },
+  {
+    "building": "synth_0136",
+    "gt_edges": 12,
+    "gt_negatives": 9,
+    "pred_edges": 22,
+    "tp": 11,
+    "fp": 11,
+    "fn": 1,
+    "fp_on_solid_wall": 9,
+    "fp_non_adjacent": 2,
+    "unmapped_rooms": 0,
+    "precision": 0.5,
+    "recall": 0.917,
+    "f1": 0.647,
+    "recall_by_type": {
+      "door": "10/10",
+      "open_passage": "1/1",
+      "vertical": "0/1"
+    },
+    "type_exact": 1,
+    "type_checked": 11,
+    "type_accuracy": 0.091,
+    "spurious_types": {
+      "door->open_passage": 10
+    },
+    "trivial_all_adjacent_precision": 0.571
+  },
+  {
+    "building": "synth_0137",
+    "gt_edges": 13,
+    "gt_negatives": 9,
+    "pred_edges": 26,
+    "tp": 12,
+    "fp": 14,
+    "fn": 1,
+    "fp_on_solid_wall": 9,
+    "fp_non_adjacent": 5,
+    "unmapped_rooms": 0,
+    "precision": 0.462,
+    "recall": 0.923,
+    "f1": 0.615,
+    "recall_by_type": {
+      "door": "7/7",
+      "open_passage": "5/5",
+      "vertical": "0/1"
+    },
+    "type_exact": 5,
+    "type_checked": 12,
+    "type_accuracy": 0.417,
+    "spurious_types": {
+      "door->open_passage": 7
+    },
+    "trivial_all_adjacent_precision": 0.591
+  },
+  {
+    "building": "synth_0138",
+    "gt_edges": 11,
+    "gt_negatives": 8,
+    "pred_edges": 20,
+    "tp": 10,
+    "fp": 10,
+    "fn": 1,
+    "fp_on_solid_wall": 8,
+    "fp_non_adjacent": 2,
+    "unmapped_rooms": 0,
+    "precision": 0.5,
+    "recall": 0.909,
+    "f1": 0.645,
+    "recall_by_type": {
+      "door": "7/7",
+      "open_passage": "3/3",
+      "vertical": "0/1"
+    },
+    "type_exact": 3,
+    "type_checked": 10,
+    "type_accuracy": 0.3,
+    "spurious_types": {
+      "door->open_passage": 7
+    },
+    "trivial_all_adjacent_precision": 0.579
+  },
+  {
+    "building": "synth_0139",
+    "gt_edges": 11,
+    "gt_negatives": 8,
+    "pred_edges": 23,
+    "tp": 10,
+    "fp": 13,
+    "fn": 1,
+    "fp_on_solid_wall": 8,
+    "fp_non_adjacent": 5,
+    "unmapped_rooms": 0,
+    "precision": 0.435,
+    "recall": 0.909,
+    "f1": 0.588,
+    "recall_by_type": {
+      "door": "9/9",
+      "open_passage": "1/1",
+      "vertical": "0/1"
+    },
+    "type_exact": 1,
+    "type_checked": 10,
+    "type_accuracy": 0.1,
+    "spurious_types": {
+      "door->open_passage": 9
+    },
+    "trivial_all_adjacent_precision": 0.579
+  },
+  {
+    "building": "synth_0140",
+    "gt_edges": 10,
+    "gt_negatives": 7,
+    "pred_edges": 18,
+    "tp": 9,
+    "fp": 9,
+    "fn": 1,
+    "fp_on_solid_wall": 7,
+    "fp_non_adjacent": 2,
+    "unmapped_rooms": 0,
+    "precision": 0.5,
+    "recall": 0.9,
+    "f1": 0.643,
+    "recall_by_type": {
+      "door": "8/8",
+      "open_passage": "1/1",
+      "vertical": "0/1"
+    },
+    "type_exact": 1,
+    "type_checked": 9,
+    "type_accuracy": 0.111,
+    "spurious_types": {
+      "door->open_passage": 8
+    },
+    "trivial_all_adjacent_precision": 0.588
+  },
+  {
+    "building": "synth_0141",
+    "gt_edges": 14,
+    "gt_negatives": 9,
+    "pred_edges": 26,
+    "tp": 13,
+    "fp": 13,
+    "fn": 1,
+    "fp_on_solid_wall": 9,
+    "fp_non_adjacent": 4,
+    "unmapped_rooms": 0,
+    "precision": 0.5,
+    "recall": 0.929,
+    "f1": 0.65,
+    "recall_by_type": {
+      "door": "12/12",
+      "open_passage": "1/1",
+      "vertical": "0/1"
+    },
+    "type_exact": 1,
+    "type_checked": 13,
+    "type_accuracy": 0.077,
+    "spurious_types": {
+      "door->open_passage": 12
+    },
+    "trivial_all_adjacent_precision": 0.609
+  },
+  {
+    "building": "synth_0142",
+    "gt_edges": 13,
+    "gt_negatives": 9,
+    "pred_edges": 24,
+    "tp": 12,
+    "fp": 12,
+    "fn": 1,
+    "fp_on_solid_wall": 9,
+    "fp_non_adjacent": 3,
+    "unmapped_rooms": 0,
+    "precision": 0.5,
+    "recall": 0.923,
+    "f1": 0.649,
+    "recall_by_type": {
+      "door": "11/11",
+      "open_passage": "1/1",
+      "vertical": "0/1"
+    },
+    "type_exact": 1,
+    "type_checked": 12,
+    "type_accuracy": 0.083,
+    "spurious_types": {
+      "door->open_passage": 11
+    },
+    "trivial_all_adjacent_precision": 0.591
+  },
+  {
+    "building": "synth_0143",
+    "gt_edges": 11,
+    "gt_negatives": 8,
+    "pred_edges": 20,
+    "tp": 10,
+    "fp": 10,
+    "fn": 1,
+    "fp_on_solid_wall": 8,
+    "fp_non_adjacent": 2,
+    "unmapped_rooms": 0,
+    "precision": 0.5,
+    "recall": 0.909,
+    "f1": 0.645,
+    "recall_by_type": {
+      "door": "7/7",
+      "open_passage": "3/3",
+      "vertical": "0/1"
+    },
+    "type_exact": 3,
+    "type_checked": 10,
+    "type_accuracy": 0.3,
+    "spurious_types": {
+      "door->open_passage": 7
+    },
+    "trivial_all_adjacent_precision": 0.579
+  },
+  {
+    "building": "synth_0144",
+    "gt_edges": 14,
+    "gt_negatives": 10,
+    "pred_edges": 24,
+    "tp": 13,
+    "fp": 11,
+    "fn": 1,
+    "fp_on_solid_wall": 10,
+    "fp_non_adjacent": 1,
+    "unmapped_rooms": 0,
+    "precision": 0.542,
+    "recall": 0.929,
+    "f1": 0.684,
+    "recall_by_type": {
+      "door": "11/11",
+      "open_passage": "2/2",
+      "vertical": "0/1"
+    },
+    "type_exact": 2,
+    "type_checked": 13,
+    "type_accuracy": 0.154,
+    "spurious_types": {
+      "door->open_passage": 11
+    },
+    "trivial_all_adjacent_precision": 0.583
+  },
+  {
+    "building": "synth_0145",
+    "gt_edges": 13,
+    "gt_negatives": 9,
+    "pred_edges": 24,
+    "tp": 12,
+    "fp": 12,
+    "fn": 1,
+    "fp_on_solid_wall": 9,
+    "fp_non_adjacent": 3,
+    "unmapped_rooms": 0,
+    "precision": 0.5,
+    "recall": 0.923,
+    "f1": 0.649,
+    "recall_by_type": {
+      "open_passage": "1/1",
+      "door": "11/11",
+      "vertical": "0/1"
+    },
+    "type_exact": 1,
+    "type_checked": 12,
+    "type_accuracy": 0.083,
+    "spurious_types": {
+      "door->open_passage": 11
+    },
+    "trivial_all_adjacent_precision": 0.591
+  },
+  {
+    "building": "synth_0146",
+    "gt_edges": 12,
+    "gt_negatives": 9,
+    "pred_edges": 24,
+    "tp": 11,
+    "fp": 13,
+    "fn": 1,
+    "fp_on_solid_wall": 9,
+    "fp_non_adjacent": 4,
+    "unmapped_rooms": 0,
+    "precision": 0.458,
+    "recall": 0.917,
+    "f1": 0.611,
+    "recall_by_type": {
+      "door": "11/11",
+      "vertical": "0/1"
+    },
+    "type_exact": 0,
+    "type_checked": 11,
+    "type_accuracy": 0.0,
+    "spurious_types": {
+      "door->open_passage": 11
+    },
+    "trivial_all_adjacent_precision": 0.571
+  },
+  {
+    "building": "synth_0147",
+    "gt_edges": 13,
+    "gt_negatives": 9,
+    "pred_edges": 24,
+    "tp": 12,
+    "fp": 12,
+    "fn": 1,
+    "fp_on_solid_wall": 9,
+    "fp_non_adjacent": 3,
+    "unmapped_rooms": 0,
+    "precision": 0.5,
+    "recall": 0.923,
+    "f1": 0.649,
+    "recall_by_type": {
+      "door": "11/11",
+      "open_passage": "1/1",
+      "vertical": "0/1"
+    },
+    "type_exact": 1,
+    "type_checked": 12,
+    "type_accuracy": 0.083,
+    "spurious_types": {
+      "door->open_passage": 11
+    },
+    "trivial_all_adjacent_precision": 0.591
+  },
+  {
+    "building": "synth_0148",
+    "gt_edges": 13,
+    "gt_negatives": 9,
+    "pred_edges": 26,
+    "tp": 12,
+    "fp": 14,
+    "fn": 1,
+    "fp_on_solid_wall": 9,
+    "fp_non_adjacent": 5,
+    "unmapped_rooms": 0,
+    "precision": 0.462,
+    "recall": 0.923,
+    "f1": 0.615,
+    "recall_by_type": {
+      "door": "11/11",
+      "open_passage": "1/1",
+      "vertical": "0/1"
+    },
+    "type_exact": 1,
+    "type_checked": 12,
+    "type_accuracy": 0.083,
+    "spurious_types": {
+      "door->open_passage": 11
+    },
+    "trivial_all_adjacent_precision": 0.591
+  },
+  {
+    "building": "synth_0149",
+    "gt_edges": 14,
+    "gt_negatives": 9,
+    "pred_edges": 26,
+    "tp": 13,
+    "fp": 13,
+    "fn": 1,
+    "fp_on_solid_wall": 9,
+    "fp_non_adjacent": 4,
+    "unmapped_rooms": 0,
+    "precision": 0.5,
+    "recall": 0.929,
+    "f1": 0.65,
+    "recall_by_type": {
+      "open_passage": "7/7",
+      "door": "6/6",
+      "vertical": "0/1"
+    },
+    "type_exact": 7,
+    "type_checked": 13,
+    "type_accuracy": 0.538,
+    "spurious_types": {
+      "door->open_passage": 6
+    },
+    "trivial_all_adjacent_precision": 0.609
+  }
+]

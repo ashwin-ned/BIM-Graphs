@@ -1,0 +1,1224 @@
+{
+  "manifest_version": 1,
+  "run": "eval_connectivity",
+  "started": "2026-09-18T16:48:54Z",
+  "finished": "2026-09-18T16:48:54Z",
+  "python": "3.11.16",
+  "platform": "Linux-6.14.0-37-generic-x86_64-with-glibc2.41",
+  "git_revision": null,
+  "config": {
+    "gt": "dataset/synthetic_data/synthetic_L3",
+    "graphs": "results/bl_synthetic_L3/ifc2graph",
+    "pattern": "*.gt.json"
+  },
+  "counts": {
+    "ok": 150,
+    "missing": 0,
+    "failed": 0,
+    "excluded": 0
+  },
+  "complete": true,
+  "denominator": 150,
+  "units": [
+    {
+      "unit": "synth_0000",
+      "state": "ok",
+      "reason": null,
+      "f1": 0.0,
+      "tp": 0,
+      "fn": 13
+    },
+    {
+      "unit": "synth_0001",
+      "state": "ok",
+      "reason": null,
+      "f1": 0.0,
+      "tp": 0,
+      "fn": 7
+    },
+    {
+      "unit": "synth_0002",
+      "state": "ok",
+      "reason": null,
+      "f1": 0.0,
+      "tp": 0,
+      "fn": 7
+    },
+    {
+      "unit": "synth_0003",
+      "state": "ok",
+      "reason": null,
+      "f1": 0.0,
+      "tp": 0,
+      "fn": 9
+    },
+    {
+      "unit": "synth_0004",
+      "state": "ok",
+      "reason": null,
+      "f1": 0.0,
+      "tp": 0,
+      "fn": 13
+    },
+    {
+      "unit": "synth_0005",
+      "state": "ok",
+      "reason": null,
+      "f1": 0.0,
+      "tp": 0,
+      "fn": 11
+    },
+    {
+      "unit": "synth_0006",
+      "state": "ok",
+      "reason": null,
+      "f1": 0.0,
+      "tp": 0,
+      "fn": 6
+    },
+    {
+      "unit": "synth_0007",
+      "state": "ok",
+      "reason": null,
+      "f1": 0.0,
+      "tp": 0,
+      "fn": 11
+    },
+    {
+      "unit": "synth_0008",
+      "state": "ok",
+      "reason": null,
+      "f1": 0.0,
+      "tp": 0,
+      "fn": 12
+    },
+    {
+      "unit": "synth_0009",
+      "state": "ok",
+      "reason": null,
+      "f1": 0.0,
+      "tp": 0,
+      "fn": 8
+    },
+    {
+      "unit": "synth_0010",
+      "state": "ok",
+      "reason": null,
+      "f1": 0.0,
+      "tp": 0,
+      "fn": 12
+    },
+    {
+      "unit": "synth_0011",
+      "state": "ok",
+      "reason": null,
+      "f1": 0.0,
+      "tp": 0,
+      "fn": 11
+    },
+    {
+      "unit": "synth_0012",
+      "state": "ok",
+      "reason": null,
+      "f1": 0.0,
+      "tp": 0,
+      "fn": 12
+    },
+    {
+      "unit": "synth_0013",
+      "state": "ok",
+      "reason": null,
+      "f1": 0.0,
+      "tp": 0,
+      "fn": 14
+    },
+    {
+      "unit": "synth_0014",
+      "state": "ok",
+      "reason": null,
+      "f1": 0.0,
+      "tp": 0,
+      "fn": 11
+    },
+    {
+      "unit": "synth_0015",
+      "state": "ok",
+      "reason": null,
+      "f1": 0.0,
+      "tp": 0,
+      "fn": 15
+    },
+    {
+      "unit": "synth_0016",
+      "state": "ok",
+      "reason": null,
+      "f1": 0.0,
+      "tp": 0,
+      "fn": 7
+    },
+    {
+      "unit": "synth_0017",
+      "state": "ok",
+      "reason": null,
+      "f1": 0.0,
+      "tp": 0,
+      "fn": 10
+    },
+    {
+      "unit": "synth_0018",
+      "state": "ok",
+      "reason": null,
+      "f1": 0.0,
+      "tp": 0,
+      "fn": 12
+    },
+    {
+      "unit": "synth_0019",
+      "state": "ok",
+      "reason": null,
+      "f1": 0.0,
+      "tp": 0,
+      "fn": 13
+    },
+    {
+      "unit": "synth_0020",
+      "state": "ok",
+      "reason": null,
+      "f1": 0.0,
+      "tp": 0,
+      "fn": 10
+    },
+    {
+      "unit": "synth_0021",
+      "state": "ok",
+      "reason": null,
+      "f1": 0.0,
+      "tp": 0,
+      "fn": 12
+    },
+    {
+      "unit": "synth_0022",
+      "state": "ok",
+      "reason": null,
+      "f1": 0.0,
+      "tp": 0,
+      "fn": 7
+    },
+    {
+      "unit": "synth_0023",
+      "state": "ok",
+      "reason": null,
+      "f1": 0.0,
+      "tp": 0,
+      "fn": 12
+    },
+    {
+      "unit": "synth_0024",
+      "state": "ok",
+      "reason": null,
+      "f1": 0.0,
+      "tp": 0,
+      "fn": 13
+    },
+    {
+      "unit": "synth_0025",
+      "state": "ok",
+      "reason": null,
+      "f1": 0.0,
+      "tp": 0,
+      "fn": 13
+    },
+    {
+      "unit": "synth_0026",
+      "state": "ok",
+      "reason": null,
+      "f1": 0.0,
+      "tp": 0,
+      "fn": 10
+    },
+    {
+      "unit": "synth_0027",
+      "state": "ok",
+      "reason": null,
+      "f1": 0.0,
+      "tp": 0,
+      "fn": 10
+    },
+    {
+      "unit": "synth_0028",
+      "state": "ok",
+      "reason": null,
+      "f1": 0.0,
+      "tp": 0,
+      "fn": 12
+    },
+    {
+      "unit": "synth_0029",
+      "state": "ok",
+      "reason": null,
+      "f1": 0.0,
+      "tp": 0,
+      "fn": 11
+    },
+    {
+      "unit": "synth_0030",
+      "state": "ok",
+      "reason": null,
+      "f1": 0.0,
+      "tp": 0,
+      "fn": 11
+    },
+    {
+      "unit": "synth_0031",
+      "state": "ok",
+      "reason": null,
+      "f1": 0.0,
+      "tp": 0,
+      "fn": 13
+    },
+    {
+      "unit": "synth_0032",
+      "state": "ok",
+      "reason": null,
+      "f1": 0.0,
+      "tp": 0,
+      "fn": 10
+    },
+    {
+      "unit": "synth_0033",
+      "state": "ok",
+      "reason": null,
+      "f1": 0.0,
+      "tp": 0,
+      "fn": 11
+    },
+    {
+      "unit": "synth_0034",
+      "state": "ok",
+      "reason": null,
+      "f1": 0.0,
+      "tp": 0,
+      "fn": 12
+    },
+    {
+      "unit": "synth_0035",
+      "state": "ok",
+      "reason": null,
+      "f1": 0.0,
+      "tp": 0,
+      "fn": 12
+    },
+    {
+      "unit": "synth_0036",
+      "state": "ok",
+      "reason": null,
+      "f1": 0.0,
+      "tp": 0,
+      "fn": 14
+    },
+    {
+      "unit": "synth_0037",
+      "state": "ok",
+      "reason": null,
+      "f1": 0.0,
+      "tp": 0,
+      "fn": 11
+    },
+    {
+      "unit": "synth_0038",
+      "state": "ok",
+      "reason": null,
+      "f1": 0.0,
+      "tp": 0,
+      "fn": 13
+    },
+    {
+      "unit": "synth_0039",
+      "state": "ok",
+      "reason": null,
+      "f1": 0.0,
+      "tp": 0,
+      "fn": 13
+    },
+    {
+      "unit": "synth_0040",
+      "state": "ok",
+      "reason": null,
+      "f1": 0.0,
+      "tp": 0,
+      "fn": 11
+    },
+    {
+      "unit": "synth_0041",
+      "state": "ok",
+      "reason": null,
+      "f1": 0.0,
+      "tp": 0,
+      "fn": 14
+    },
+    {
+      "unit": "synth_0042",
+      "state": "ok",
+      "reason": null,
+      "f1": 0.0,
+      "tp": 0,
+      "fn": 10
+    },
+    {
+      "unit": "synth_0043",
+      "state": "ok",
+      "reason": null,
+      "f1": 0.0,
+      "tp": 0,
+      "fn": 8
+    },
+    {
+      "unit": "synth_0044",
+      "state": "ok",
+      "reason": null,
+      "f1": 0.0,
+      "tp": 0,
+      "fn": 11
+    },
+    {
+      "unit": "synth_0045",
+      "state": "ok",
+      "reason": null,
+      "f1": 0.0,
+      "tp": 0,
+      "fn": 8
+    },
+    {
+      "unit": "synth_0046",
+      "state": "ok",
+      "reason": null,
+      "f1": 0.0,
+      "tp": 0,
+      "fn": 7
+    },
+    {
+      "unit": "synth_0047",
+      "state": "ok",
+      "reason": null,
+      "f1": 0.0,
+      "tp": 0,
+      "fn": 11
+    },
+    {
+      "unit": "synth_0048",
+      "state": "ok",
+      "reason": null,
+      "f1": 0.0,
+      "tp": 0,
+      "fn": 13
+    },
+    {
+      "unit": "synth_0049",
+      "state": "ok",
+      "reason": null,
+      "f1": 0.0,
+      "tp": 0,
+      "fn": 8
+    },
+    {
+      "unit": "synth_0050",
+      "state": "ok",
+      "reason": null,
+      "f1": 0.0,
+      "tp": 0,
+      "fn": 13
+    },
+    {
+      "unit": "synth_0051",
+      "state": "ok",
+      "reason": null,
+      "f1": 0.0,
+      "tp": 0,
+      "fn": 12
+    },
+    {
+      "unit": "synth_0052",
+      "state": "ok",
+      "reason": null,
+      "f1": 0.0,
+      "tp": 0,
+      "fn": 12
+    },
+    {
+      "unit": "synth_0053",
+      "state": "ok",
+      "reason": null,
+      "f1": 0.0,
+      "tp": 0,
+      "fn": 15
+    },
+    {
+      "unit": "synth_0054",
+      "state": "ok",
+      "reason": null,
+      "f1": 0.0,
+      "tp": 0,
+      "fn": 13
+    },
+    {
+      "unit": "synth_0055",
+      "state": "ok",
+      "reason": null,
+      "f1": 0.0,
+      "tp": 0,
+      "fn": 13
+    },
+    {
+      "unit": "synth_0056",
+      "state": "ok",
+      "reason": null,
+      "f1": 0.0,
+      "tp": 0,
+      "fn": 13
+    },
+    {
+      "unit": "synth_0057",
+      "state": "ok",
+      "reason": null,
+      "f1": 0.0,
+      "tp": 0,
+      "fn": 11
+    },
+    {
+      "unit": "synth_0058",
+      "state": "ok",
+      "reason": null,
+      "f1": 0.0,
+      "tp": 0,
+      "fn": 9
+    },
+    {
+      "unit": "synth_0059",
+      "state": "ok",
+      "reason": null,
+      "f1": 0.0,
+      "tp": 0,
+      "fn": 13
+    },
+    {
+      "unit": "synth_0060",
+      "state": "ok",
+      "reason": null,
+      "f1": 0.0,
+      "tp": 0,
+      "fn": 13
+    },
+    {
+      "unit": "synth_0061",
+      "state": "ok",
+      "reason": null,
+      "f1": 0.0,
+      "tp": 0,
+      "fn": 10
+    },
+    {
+      "unit": "synth_0062",
+      "state": "ok",
+      "reason": null,
+      "f1": 0.0,
+      "tp": 0,
+      "fn": 10
+    },
+    {
+      "unit": "synth_0063",
+      "state": "ok",
+      "reason": null,
+      "f1": 0.0,
+      "tp": 0,
+      "fn": 14
+    },
+    {
+      "unit": "synth_0064",
+      "state": "ok",
+      "reason": null,
+      "f1": 0.0,
+      "tp": 0,
+      "fn": 13
+    },
+    {
+      "unit": "synth_0065",
+      "state": "ok",
+      "reason": null,
+      "f1": 0.0,
+      "tp": 0,
+      "fn": 14
+    },
+    {
+      "unit": "synth_0066",
+      "state": "ok",
+      "reason": null,
+      "f1": 0.0,
+      "tp": 0,
+      "fn": 10
+    },
+    {
+      "unit": "synth_0067",
+      "state": "ok",
+      "reason": null,
+      "f1": 0.0,
+      "tp": 0,
+      "fn": 11
+    },
+    {
+      "unit": "synth_0068",
+      "state": "ok",
+      "reason": null,
+      "f1": 0.0,
+      "tp": 0,
+      "fn": 12
+    },
+    {
+      "unit": "synth_0069",
+      "state": "ok",
+      "reason": null,
+      "f1": 0.0,
+      "tp": 0,
+      "fn": 10
+    },
+    {
+      "unit": "synth_0070",
+      "state": "ok",
+      "reason": null,
+      "f1": 0.0,
+      "tp": 0,
+      "fn": 6
+    },
+    {
+      "unit": "synth_0071",
+      "state": "ok",
+      "reason": null,
+      "f1": 0.0,
+      "tp": 0,
+      "fn": 11
+    },
+    {
+      "unit": "synth_0072",
+      "state": "ok",
+      "reason": null,
+      "f1": 0.0,
+      "tp": 0,
+      "fn": 11
+    },
+    {
+      "unit": "synth_0073",
+      "state": "ok",
+      "reason": null,
+      "f1": 0.0,
+      "tp": 0,
+      "fn": 7
+    },
+    {
+      "unit": "synth_0074",
+      "state": "ok",
+      "reason": null,
+      "f1": 0.0,
+      "tp": 0,
+      "fn": 11
+    },
+    {
+      "unit": "synth_0075",
+      "state": "ok",
+      "reason": null,
+      "f1": 0.0,
+      "tp": 0,
+      "fn": 9
+    },
+    {
+      "unit": "synth_0076",
+      "state": "ok",
+      "reason": null,
+      "f1": 0.0,
+      "tp": 0,
+      "fn": 14
+    },
+    {
+      "unit": "synth_0077",
+      "state": "ok",
+      "reason": null,
+      "f1": 0.0,
+      "tp": 0,
+      "fn": 12
+    },
+    {
+      "unit": "synth_0078",
+      "state": "ok",
+      "reason": null,
+      "f1": 0.0,
+      "tp": 0,
+      "fn": 11
+    },
+    {
+      "unit": "synth_0079",
+      "state": "ok",
+      "reason": null,
+      "f1": 0.0,
+      "tp": 0,
+      "fn": 13
+    },
+    {
+      "unit": "synth_0080",
+      "state": "ok",
+      "reason": null,
+      "f1": 0.0,
+      "tp": 0,
+      "fn": 11
+    },
+    {
+      "unit": "synth_0081",
+      "state": "ok",
+      "reason": null,
+      "f1": 0.0,
+      "tp": 0,
+      "fn": 14
+    },
+    {
+      "unit": "synth_0082",
+      "state": "ok",
+      "reason": null,
+      "f1": 0.0,
+      "tp": 0,
+      "fn": 13
+    },
+    {
+      "unit": "synth_0083",
+      "state": "ok",
+      "reason": null,
+      "f1": 0.0,
+      "tp": 0,
+      "fn": 11
+    },
+    {
+      "unit": "synth_0084",
+      "state": "ok",
+      "reason": null,
+      "f1": 0.0,
+      "tp": 0,
+      "fn": 7
+    },
+    {
+      "unit": "synth_0085",
+      "state": "ok",
+      "reason": null,
+      "f1": 0.0,
+      "tp": 0,
+      "fn": 7
+    },
+    {
+      "unit": "synth_0086",
+      "state": "ok",
+      "reason": null,
+      "f1": 0.0,
+      "tp": 0,
+      "fn": 7
+    },
+    {
+      "unit": "synth_0087",
+      "state": "ok",
+      "reason": null,
+      "f1": 0.0,
+      "tp": 0,
+      "fn": 13
+    },
+    {
+      "unit": "synth_0088",
+      "state": "ok",
+      "reason": null,
+      "f1": 0.0,
+      "tp": 0,
+      "fn": 11
+    },
+    {
+      "unit": "synth_0089",
+      "state": "ok",
+      "reason": null,
+      "f1": 0.0,
+      "tp": 0,
+      "fn": 13
+    },
+    {
+      "unit": "synth_0090",
+      "state": "ok",
+      "reason": null,
+      "f1": 0.0,
+      "tp": 0,
+      "fn": 13
+    },
+    {
+      "unit": "synth_0091",
+      "state": "ok",
+      "reason": null,
+      "f1": 0.0,
+      "tp": 0,
+      "fn": 13
+    },
+    {
+      "unit": "synth_0092",
+      "state": "ok",
+      "reason": null,
+      "f1": 0.0,
+      "tp": 0,
+      "fn": 13
+    },
+    {
+      "unit": "synth_0093",
+      "state": "ok",
+      "reason": null,
+      "f1": 0.0,
+      "tp": 0,
+      "fn": 12
+    },
+    {
+      "unit": "synth_0094",
+      "state": "ok",
+      "reason": null,
+      "f1": 0.0,
+      "tp": 0,
+      "fn": 12
+    },
+    {
+      "unit": "synth_0095",
+      "state": "ok",
+      "reason": null,
+      "f1": 0.0,
+      "tp": 0,
+      "fn": 9
+    },
+    {
+      "unit": "synth_0096",
+      "state": "ok",
+      "reason": null,
+      "f1": 0.0,
+      "tp": 0,
+      "fn": 11
+    },
+    {
+      "unit": "synth_0097",
+      "state": "ok",
+      "reason": null,
+      "f1": 0.0,
+      "tp": 0,
+      "fn": 14
+    },
+    {
+      "unit": "synth_0098",
+      "state": "ok",
+      "reason": null,
+      "f1": 0.0,
+      "tp": 0,
+      "fn": 13
+    },
+    {
+      "unit": "synth_0099",
+      "state": "ok",
+      "reason": null,
+      "f1": 0.0,
+      "tp": 0,
+      "fn": 14
+    },
+    {
+      "unit": "synth_0100",
+      "state": "ok",
+      "reason": null,
+      "f1": 0.0,
+      "tp": 0,
+      "fn": 10
+    },
+    {
+      "unit": "synth_0101",
+      "state": "ok",
+      "reason": null,
+      "f1": 0.0,
+      "tp": 0,
+      "fn": 12
+    },
+    {
+      "unit": "synth_0102",
+      "state": "ok",
+      "reason": null,
+      "f1": 0.0,
+      "tp": 0,
+      "fn": 7
+    },
+    {
+      "unit": "synth_0103",
+      "state": "ok",
+      "reason": null,
+      "f1": 0.0,
+      "tp": 0,
+      "fn": 13
+    },
+    {
+      "unit": "synth_0104",
+      "state": "ok",
+      "reason": null,
+      "f1": 0.0,
+      "tp": 0,
+      "fn": 10
+    },
+    {
+      "unit": "synth_0105",
+      "state": "ok",
+      "reason": null,
+      "f1": 0.0,
+      "tp": 0,
+      "fn": 14
+    },
+    {
+      "unit": "synth_0106",
+      "state": "ok",
+      "reason": null,
+      "f1": 0.0,
+      "tp": 0,
+      "fn": 7
+    },
+    {
+      "unit": "synth_0107",
+      "state": "ok",
+      "reason": null,
+      "f1": 0.0,
+      "tp": 0,
+      "fn": 12
+    },
+    {
+      "unit": "synth_0108",
+      "state": "ok",
+      "reason": null,
+      "f1": 0.0,
+      "tp": 0,
+      "fn": 13
+    },
+    {
+      "unit": "synth_0109",
+      "state": "ok",
+      "reason": null,
+      "f1": 0.0,
+      "tp": 0,
+      "fn": 10
+    },
+    {
+      "unit": "synth_0110",
+      "state": "ok",
+      "reason": null,
+      "f1": 0.0,
+      "tp": 0,
+      "fn": 12
+    },
+    {
+      "unit": "synth_0111",
+      "state": "ok",
+      "reason": null,
+      "f1": 0.0,
+      "tp": 0,
+      "fn": 13
+    },
+    {
+      "unit": "synth_0112",
+      "state": "ok",
+      "reason": null,
+      "f1": 0.0,
+      "tp": 0,
+      "fn": 13
+    },
+    {
+      "unit": "synth_0113",
+      "state": "ok",
+      "reason": null,
+      "f1": 0.0,
+      "tp": 0,
+      "fn": 11
+    },
+    {
+      "unit": "synth_0114",
+      "state": "ok",
+      "reason": null,
+      "f1": 0.0,
+      "tp": 0,
+      "fn": 13
+    },
+    {
+      "unit": "synth_0115",
+      "state": "ok",
+      "reason": null,
+      "f1": 0.0,
+      "tp": 0,
+      "fn": 7
+    },
+    {
+      "unit": "synth_0116",
+      "state": "ok",
+      "reason": null,
+      "f1": 0.0,
+      "tp": 0,
+      "fn": 11
+    },
+    {
+      "unit": "synth_0117",
+      "state": "ok",
+      "reason": null,
+      "f1": 0.0,
+      "tp": 0,
+      "fn": 13
+    },
+    {
+      "unit": "synth_0118",
+      "state": "ok",
+      "reason": null,
+      "f1": 0.0,
+      "tp": 0,
+      "fn": 11
+    },
+    {
+      "unit": "synth_0119",
+      "state": "ok",
+      "reason": null,
+      "f1": 0.0,
+      "tp": 0,
+      "fn": 10
+    },
+    {
+      "unit": "synth_0120",
+      "state": "ok",
+      "reason": null,
+      "f1": 0.0,
+      "tp": 0,
+      "fn": 11
+    },
+    {
+      "unit": "synth_0121",
+      "state": "ok",
+      "reason": null,
+      "f1": 0.0,
+      "tp": 0,
+      "fn": 13
+    },
+    {
+      "unit": "synth_0122",
+      "state": "ok",
+      "reason": null,
+      "f1": 0.0,
+      "tp": 0,
+      "fn": 9
+    },
+    {
+      "unit": "synth_0123",
+      "state": "ok",
+      "reason": null,
+      "f1": 0.0,
+      "tp": 0,
+      "fn": 13
+    },
+    {
+      "unit": "synth_0124",
+      "state": "ok",
+      "reason": null,
+      "f1": 0.0,
+      "tp": 0,
+      "fn": 12
+    },
+    {
+      "unit": "synth_0125",
+      "state": "ok",
+      "reason": null,
+      "f1": 0.0,
+      "tp": 0,
+      "fn": 10
+    },
+    {
+      "unit": "synth_0126",
+      "state": "ok",
+      "reason": null,
+      "f1": 0.0,
+      "tp": 0,
+      "fn": 13
+    },
+    {
+      "unit": "synth_0127",
+      "state": "ok",
+      "reason": null,
+      "f1": 0.0,
+      "tp": 0,
+      "fn": 13
+    },
+    {
+      "unit": "synth_0128",
+      "state": "ok",
+      "reason": null,
+      "f1": 0.0,
+      "tp": 0,
+      "fn": 13
+    },
+    {
+      "unit": "synth_0129",
+      "state": "ok",
+      "reason": null,
+      "f1": 0.0,
+      "tp": 0,
+      "fn": 14
+    },
+    {
+      "unit": "synth_0130",
+      "state": "ok",
+      "reason": null,
+      "f1": 0.0,
+      "tp": 0,
+      "fn": 12
+    },
+    {
+      "unit": "synth_0131",
+      "state": "ok",
+      "reason": null,
+      "f1": 0.0,
+      "tp": 0,
+      "fn": 9
+    },
+    {
+      "unit": "synth_0132",
+      "state": "ok",
+      "reason": null,
+      "f1": 0.0,
+      "tp": 0,
+      "fn": 10
+    },
+    {
+      "unit": "synth_0133",
+      "state": "ok",
+      "reason": null,
+      "f1": 0.0,
+      "tp": 0,
+      "fn": 12
+    },
+    {
+      "unit": "synth_0134",
+      "state": "ok",
+      "reason": null,
+      "f1": 0.0,
+      "tp": 0,
+      "fn": 13
+    },
+    {
+      "unit": "synth_0135",
+      "state": "ok",
+      "reason": null,
+      "f1": 0.0,
+      "tp": 0,
+      "fn": 13
+    },
+    {
+      "unit": "synth_0136",
+      "state": "ok",
+      "reason": null,
+      "f1": 0.0,
+      "tp": 0,
+      "fn": 12
+    },
+    {
+      "unit": "synth_0137",
+      "state": "ok",
+      "reason": null,
+      "f1": 0.0,
+      "tp": 0,
+      "fn": 13
+    },
+    {
+      "unit": "synth_0138",
+      "state": "ok",
+      "reason": null,
+      "f1": 0.0,
+      "tp": 0,
+      "fn": 11
+    },
+    {
+      "unit": "synth_0139",
+      "state": "ok",
+      "reason": null,
+      "f1": 0.0,
+      "tp": 0,
+      "fn": 11
+    },
+    {
+      "unit": "synth_0140",
+      "state": "ok",
+      "reason": null,
+      "f1": 0.0,
+      "tp": 0,
+      "fn": 10
+    },
+    {
+      "unit": "synth_0141",
+      "state": "ok",
+      "reason": null,
+      "f1": 0.0,
+      "tp": 0,
+      "fn": 14
+    },
+    {
+      "unit": "synth_0142",
+      "state": "ok",
+      "reason": null,
+      "f1": 0.0,
+      "tp": 0,
+      "fn": 13
+    },
+    {
+      "unit": "synth_0143",
+      "state": "ok",
+      "reason": null,
+      "f1": 0.0,
+      "tp": 0,
+      "fn": 11
+    },
+    {
+      "unit": "synth_0144",
+      "state": "ok",
+      "reason": null,
+      "f1": 0.0,
+      "tp": 0,
+      "fn": 14
+    },
+    {
+      "unit": "synth_0145",
+      "state": "ok",
+      "reason": null,
+      "f1": 0.0,
+      "tp": 0,
+      "fn": 13
+    },
+    {
+      "unit": "synth_0146",
+      "state": "ok",
+      "reason": null,
+      "f1": 0.0,
+      "tp": 0,
+      "fn": 12
+    },
+    {
+      "unit": "synth_0147",
+      "state": "ok",
+      "reason": null,
+      "f1": 0.0,
+      "tp": 0,
+      "fn": 13
+    },
+    {
+      "unit": "synth_0148",
+      "state": "ok",
+      "reason": null,
+      "f1": 0.0,
+      "tp": 0,
+      "fn": 13
+    },
+    {
+      "unit": "synth_0149",
+      "state": "ok",
+      "reason": null,
+      "f1": 0.0,
+      "tp": 0,
+      "fn": 14
+    }
+  ]
+}

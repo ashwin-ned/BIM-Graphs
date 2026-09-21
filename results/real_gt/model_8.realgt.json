@@ -1,0 +1,648 @@
+{
+  "building": "model_8",
+  "source": "derived:flood-fill",
+  "derivable": true,
+  "excluded_because": null,
+  "n_doors": 46,
+  "n_voids": 46,
+  "params": {
+    "res": 0.05,
+    "band_slack": 0.04,
+    "band_min": 0.1,
+    "adj_tol": 0.6,
+    "door_h": 1.0,
+    "min_room_area": 0.5,
+    "min_blocker_area": 0.01,
+    "min_void_area": 0.02,
+    "void_scale": 1.0,
+    "declared_unit_scale": 1
+  },
+  "rooms": [
+    {
+      "rid": "0pQqjnOeT7$94bqTGHtzS8",
+      "name": "1",
+      "long_name": "Office",
+      "storey": "3Zu5Bv0LOHrPC10026FoQQ",
+      "area": 15.52
+    },
+    {
+      "rid": "0pQqjnOeT7$94bqTGHtzSC",
+      "name": "3",
+      "long_name": "Enterance",
+      "storey": "3Zu5Bv0LOHrPC10026FoQQ",
+      "area": 73.32
+    },
+    {
+      "rid": "0pQqjnOeT7$94bqTGHtzSE",
+      "name": "4",
+      "long_name": "Office",
+      "storey": "3Zu5Bv0LOHrPC10026FoQQ",
+      "area": 15.52
+    },
+    {
+      "rid": "0pQqjnOeT7$94bqTGHtzS2",
+      "name": "6",
+      "long_name": "Office",
+      "storey": "3Zu5Bv0LOHrPC10026FoQQ",
+      "area": 21.47
+    },
+    {
+      "rid": "0pQqjnOeT7$94bqTGHtzS4",
+      "name": "7",
+      "long_name": "Office",
+      "storey": "3Zu5Bv0LOHrPC10026FoQQ",
+      "area": 21.41
+    },
+    {
+      "rid": "2GytO7CYr3_hS6Nu2JYfxB",
+      "name": "10",
+      "long_name": "Stair",
+      "storey": "3Zu5Bv0LOHrPC10026FoQQ",
+      "area": 6.13
+    },
+    {
+      "rid": "2GytO7CYr3_hS6Nu2JYf4a",
+      "name": "13",
+      "long_name": "Office",
+      "storey": "3Zu5Bv0LOHrPC10026FoQQ",
+      "area": 21.75
+    },
+    {
+      "rid": "2GytO7CYr3_hS6Nu2JYfNr",
+      "name": "14",
+      "long_name": "Conference hall",
+      "storey": "3Zu5Bv0LOHrPC10026FoQQ",
+      "area": 50.36
+    },
+    {
+      "rid": "2GytO7CYr3_hS6Nu2JYfNp",
+      "name": "15",
+      "long_name": "Office",
+      "storey": "3Zu5Bv0LOHrPC10026FoQQ",
+      "area": 15.76
+    },
+    {
+      "rid": "2GytO7CYr3_hS6Nu2JYfNn",
+      "name": "16",
+      "long_name": "Office",
+      "storey": "3Zu5Bv0LOHrPC10026FoQQ",
+      "area": 15.76
+    },
+    {
+      "rid": "2GytO7CYr3_hS6Nu2JYfNF",
+      "name": "17",
+      "long_name": "Corridor",
+      "storey": "3Zu5Bv0LOHrPC10026FoQQ",
+      "area": 44.62
+    },
+    {
+      "rid": "3aorwOIbTAsRMlLGWRdSn1",
+      "name": "18",
+      "long_name": "Office",
+      "storey": "15Z0v90RiHrPC20026FoKR",
+      "area": 15.52
+    },
+    {
+      "rid": "3aorwOIbTAsRMlLGWRdSnF",
+      "name": "20",
+      "long_name": "Office",
+      "storey": "15Z0v90RiHrPC20026FoKR",
+      "area": 15.52
+    },
+    {
+      "rid": "3aorwOIbTAsRMlLGWRdSnE",
+      "name": "21",
+      "long_name": "Office",
+      "storey": "15Z0v90RiHrPC20026FoKR",
+      "area": 21.47
+    },
+    {
+      "rid": "3aorwOIbTAsRMlLGWRdSnD",
+      "name": "22",
+      "long_name": "Office",
+      "storey": "15Z0v90RiHrPC20026FoKR",
+      "area": 21.41
+    },
+    {
+      "rid": "3aorwOIbTAsRMlLGWRdSnA",
+      "name": "25",
+      "long_name": "Office",
+      "storey": "15Z0v90RiHrPC20026FoKR",
+      "area": 21.75
+    },
+    {
+      "rid": "3aorwOIbTAsRMlLGWRdSn8",
+      "name": "27",
+      "long_name": "Office",
+      "storey": "15Z0v90RiHrPC20026FoKR",
+      "area": 15.76
+    },
+    {
+      "rid": "3aorwOIbTAsRMlLGWRdSnN",
+      "name": "28",
+      "long_name": "Office",
+      "storey": "15Z0v90RiHrPC20026FoKR",
+      "area": 15.76
+    },
+    {
+      "rid": "3aorwOIbTAsRMlLGWRdSsN",
+      "name": "55",
+      "long_name": "Enterance",
+      "storey": "15Z0v90RiHrPC20026FoKR",
+      "area": 52.29
+    },
+    {
+      "rid": "3aorwOIbTAsRMlLGWRdSqj",
+      "name": "56",
+      "long_name": "Corridor",
+      "storey": "15Z0v90RiHrPC20026FoKR",
+      "area": 65.62
+    },
+    {
+      "rid": "3aorwOIbTAsRMlLGWRdSq1",
+      "name": "57",
+      "long_name": "Stair",
+      "storey": "15Z0v90RiHrPC20026FoKR",
+      "area": 6.17
+    },
+    {
+      "rid": "3aorwOIbTAsRMlLGWRdSnI",
+      "name": "30",
+      "long_name": "Office",
+      "storey": "30MCbSofj3dxQ32C2pYW$x",
+      "area": 15.52
+    },
+    {
+      "rid": "3aorwOIbTAsRMlLGWRdSnH",
+      "name": "31",
+      "long_name": "Enterance",
+      "storey": "30MCbSofj3dxQ32C2pYW$x",
+      "area": 52.16
+    },
+    {
+      "rid": "3aorwOIbTAsRMlLGWRdSnG",
+      "name": "32",
+      "long_name": "Office",
+      "storey": "30MCbSofj3dxQ32C2pYW$x",
+      "area": 15.52
+    },
+    {
+      "rid": "3aorwOIbTAsRMlLGWRdSnV",
+      "name": "33",
+      "long_name": "Office",
+      "storey": "30MCbSofj3dxQ32C2pYW$x",
+      "area": 21.47
+    },
+    {
+      "rid": "3aorwOIbTAsRMlLGWRdSnU",
+      "name": "34",
+      "long_name": "Office",
+      "storey": "30MCbSofj3dxQ32C2pYW$x",
+      "area": 21.41
+    },
+    {
+      "rid": "3aorwOIbTAsRMlLGWRdSnR",
+      "name": "37",
+      "long_name": "Office",
+      "storey": "30MCbSofj3dxQ32C2pYW$x",
+      "area": 21.75
+    },
+    {
+      "rid": "3aorwOIbTAsRMlLGWRdSnQ",
+      "name": "38",
+      "long_name": "Conference hall",
+      "storey": "30MCbSofj3dxQ32C2pYW$x",
+      "area": 18.89
+    },
+    {
+      "rid": "3aorwOIbTAsRMlLGWRdSnP",
+      "name": "39",
+      "long_name": "Office",
+      "storey": "30MCbSofj3dxQ32C2pYW$x",
+      "area": 15.76
+    },
+    {
+      "rid": "3aorwOIbTAsRMlLGWRdSnO",
+      "name": "40",
+      "long_name": "Office",
+      "storey": "30MCbSofj3dxQ32C2pYW$x",
+      "area": 15.76
+    },
+    {
+      "rid": "3aorwOIbTAsRMlLGWRdSgZ",
+      "name": "58",
+      "long_name": "Stair",
+      "storey": "30MCbSofj3dxQ32C2pYW$x",
+      "area": 6.29
+    },
+    {
+      "rid": "3aorwOIbTAsRMlLGWRdSgl",
+      "name": "59",
+      "long_name": "Corridor",
+      "storey": "30MCbSofj3dxQ32C2pYW$x",
+      "area": 65.62
+    },
+    {
+      "rid": "3aorwOIbTAsRMlLGWRdSgh",
+      "name": "60",
+      "long_name": "Office",
+      "storey": "30MCbSofj3dxQ32C2pYW$x",
+      "area": 15.19
+    },
+    {
+      "rid": "3aorwOIbTAsRMlLGWRdSgf",
+      "name": "61",
+      "long_name": "Office",
+      "storey": "30MCbSofj3dxQ32C2pYW$x",
+      "area": 15.18
+    },
+    {
+      "rid": "3aorwOIbTAsRMlLGWRdSsZ",
+      "name": "42",
+      "long_name": "Office",
+      "storey": "30MCbSofj3dxQ32C2pYWop",
+      "area": 15.52
+    },
+    {
+      "rid": "3aorwOIbTAsRMlLGWRdSsY",
+      "name": "43",
+      "long_name": "Enterance",
+      "storey": "30MCbSofj3dxQ32C2pYWop",
+      "area": 52.16
+    },
+    {
+      "rid": "3aorwOIbTAsRMlLGWRdSsX",
+      "name": "44",
+      "long_name": "Office",
+      "storey": "30MCbSofj3dxQ32C2pYWop",
+      "area": 15.52
+    },
+    {
+      "rid": "3aorwOIbTAsRMlLGWRdSsW",
+      "name": "45",
+      "long_name": "Office",
+      "storey": "30MCbSofj3dxQ32C2pYWop",
+      "area": 21.47
+    },
+    {
+      "rid": "3aorwOIbTAsRMlLGWRdSsl",
+      "name": "46",
+      "long_name": "Office",
+      "storey": "30MCbSofj3dxQ32C2pYWop",
+      "area": 21.41
+    },
+    {
+      "rid": "3aorwOIbTAsRMlLGWRdSsi",
+      "name": "49",
+      "long_name": "Office",
+      "storey": "30MCbSofj3dxQ32C2pYWop",
+      "area": 21.75
+    },
+    {
+      "rid": "3aorwOIbTAsRMlLGWRdSsg",
+      "name": "51",
+      "long_name": "Office",
+      "storey": "30MCbSofj3dxQ32C2pYWop",
+      "area": 15.76
+    },
+    {
+      "rid": "3aorwOIbTAsRMlLGWRdSsf",
+      "name": "52",
+      "long_name": "Office",
+      "storey": "30MCbSofj3dxQ32C2pYWop",
+      "area": 15.76
+    },
+    {
+      "rid": "3aorwOIbTAsRMlLGWRdSi7",
+      "name": "62",
+      "long_name": "Conference hall",
+      "storey": "30MCbSofj3dxQ32C2pYWop",
+      "area": 18.89
+    },
+    {
+      "rid": "3aorwOIbTAsRMlLGWRdSi6",
+      "name": "63",
+      "long_name": "Office",
+      "storey": "30MCbSofj3dxQ32C2pYWop",
+      "area": 15.19
+    },
+    {
+      "rid": "3aorwOIbTAsRMlLGWRdSi5",
+      "name": "64",
+      "long_name": "Office",
+      "storey": "30MCbSofj3dxQ32C2pYWop",
+      "area": 15.18
+    },
+    {
+      "rid": "3aorwOIbTAsRMlLGWRdSZm",
+      "name": "65",
+      "long_name": "Corridor",
+      "storey": "30MCbSofj3dxQ32C2pYWop",
+      "area": 65.62
+    },
+    {
+      "rid": "3aorwOIbTAsRMlLGWRdSZN",
+      "name": "66",
+      "long_name": "Stair",
+      "storey": "30MCbSofj3dxQ32C2pYWop",
+      "area": 6.29
+    }
+  ],
+  "edges": [
+    {
+      "a": "0pQqjnOeT7$94bqTGHtzS2",
+      "b": "0pQqjnOeT7$94bqTGHtzSC"
+    },
+    {
+      "a": "0pQqjnOeT7$94bqTGHtzS4",
+      "b": "0pQqjnOeT7$94bqTGHtzSC"
+    },
+    {
+      "a": "0pQqjnOeT7$94bqTGHtzS8",
+      "b": "2GytO7CYr3_hS6Nu2JYfNF"
+    },
+    {
+      "a": "0pQqjnOeT7$94bqTGHtzSC",
+      "b": "2GytO7CYr3_hS6Nu2JYf4a"
+    },
+    {
+      "a": "0pQqjnOeT7$94bqTGHtzSC",
+      "b": "2GytO7CYr3_hS6Nu2JYfNF"
+    },
+    {
+      "a": "0pQqjnOeT7$94bqTGHtzSC",
+      "b": "2GytO7CYr3_hS6Nu2JYfxB"
+    },
+    {
+      "a": "0pQqjnOeT7$94bqTGHtzSE",
+      "b": "2GytO7CYr3_hS6Nu2JYfNF"
+    },
+    {
+      "a": "2GytO7CYr3_hS6Nu2JYfNF",
+      "b": "2GytO7CYr3_hS6Nu2JYfNn"
+    },
+    {
+      "a": "2GytO7CYr3_hS6Nu2JYfNF",
+      "b": "2GytO7CYr3_hS6Nu2JYfNp"
+    },
+    {
+      "a": "2GytO7CYr3_hS6Nu2JYfNF",
+      "b": "2GytO7CYr3_hS6Nu2JYfNr"
+    },
+    {
+      "a": "3aorwOIbTAsRMlLGWRdSn1",
+      "b": "3aorwOIbTAsRMlLGWRdSqj"
+    },
+    {
+      "a": "3aorwOIbTAsRMlLGWRdSn8",
+      "b": "3aorwOIbTAsRMlLGWRdSqj"
+    },
+    {
+      "a": "3aorwOIbTAsRMlLGWRdSnA",
+      "b": "3aorwOIbTAsRMlLGWRdSqj"
+    },
+    {
+      "a": "3aorwOIbTAsRMlLGWRdSnD",
+      "b": "3aorwOIbTAsRMlLGWRdSqj"
+    },
+    {
+      "a": "3aorwOIbTAsRMlLGWRdSnD",
+      "b": "3aorwOIbTAsRMlLGWRdSsN"
+    },
+    {
+      "a": "3aorwOIbTAsRMlLGWRdSnE",
+      "b": "3aorwOIbTAsRMlLGWRdSqj"
+    },
+    {
+      "a": "3aorwOIbTAsRMlLGWRdSnF",
+      "b": "3aorwOIbTAsRMlLGWRdSqj"
+    },
+    {
+      "a": "3aorwOIbTAsRMlLGWRdSnN",
+      "b": "3aorwOIbTAsRMlLGWRdSqj"
+    },
+    {
+      "a": "3aorwOIbTAsRMlLGWRdSq1",
+      "b": "3aorwOIbTAsRMlLGWRdSsN"
+    },
+    {
+      "a": "3aorwOIbTAsRMlLGWRdSqj",
+      "b": "3aorwOIbTAsRMlLGWRdSsN"
+    },
+    {
+      "a": "3aorwOIbTAsRMlLGWRdSgZ",
+      "b": "3aorwOIbTAsRMlLGWRdSnH"
+    },
+    {
+      "a": "3aorwOIbTAsRMlLGWRdSgf",
+      "b": "3aorwOIbTAsRMlLGWRdSgl"
+    },
+    {
+      "a": "3aorwOIbTAsRMlLGWRdSgh",
+      "b": "3aorwOIbTAsRMlLGWRdSgl"
+    },
+    {
+      "a": "3aorwOIbTAsRMlLGWRdSgl",
+      "b": "3aorwOIbTAsRMlLGWRdSnG"
+    },
+    {
+      "a": "3aorwOIbTAsRMlLGWRdSgl",
+      "b": "3aorwOIbTAsRMlLGWRdSnH"
+    },
+    {
+      "a": "3aorwOIbTAsRMlLGWRdSgl",
+      "b": "3aorwOIbTAsRMlLGWRdSnI"
+    },
+    {
+      "a": "3aorwOIbTAsRMlLGWRdSgl",
+      "b": "3aorwOIbTAsRMlLGWRdSnO"
+    },
+    {
+      "a": "3aorwOIbTAsRMlLGWRdSgl",
+      "b": "3aorwOIbTAsRMlLGWRdSnP"
+    },
+    {
+      "a": "3aorwOIbTAsRMlLGWRdSgl",
+      "b": "3aorwOIbTAsRMlLGWRdSnQ"
+    },
+    {
+      "a": "3aorwOIbTAsRMlLGWRdSgl",
+      "b": "3aorwOIbTAsRMlLGWRdSnR"
+    },
+    {
+      "a": "3aorwOIbTAsRMlLGWRdSgl",
+      "b": "3aorwOIbTAsRMlLGWRdSnU"
+    },
+    {
+      "a": "3aorwOIbTAsRMlLGWRdSgl",
+      "b": "3aorwOIbTAsRMlLGWRdSnV"
+    },
+    {
+      "a": "3aorwOIbTAsRMlLGWRdSnH",
+      "b": "3aorwOIbTAsRMlLGWRdSnU"
+    },
+    {
+      "a": "3aorwOIbTAsRMlLGWRdSZN",
+      "b": "3aorwOIbTAsRMlLGWRdSsY"
+    },
+    {
+      "a": "3aorwOIbTAsRMlLGWRdSZm",
+      "b": "3aorwOIbTAsRMlLGWRdSi5"
+    },
+    {
+      "a": "3aorwOIbTAsRMlLGWRdSZm",
+      "b": "3aorwOIbTAsRMlLGWRdSi6"
+    },
+    {
+      "a": "3aorwOIbTAsRMlLGWRdSZm",
+      "b": "3aorwOIbTAsRMlLGWRdSi7"
+    },
+    {
+      "a": "3aorwOIbTAsRMlLGWRdSZm",
+      "b": "3aorwOIbTAsRMlLGWRdSsW"
+    },
+    {
+      "a": "3aorwOIbTAsRMlLGWRdSZm",
+      "b": "3aorwOIbTAsRMlLGWRdSsX"
+    },
+    {
+      "a": "3aorwOIbTAsRMlLGWRdSZm",
+      "b": "3aorwOIbTAsRMlLGWRdSsY"
+    },
+    {
+      "a": "3aorwOIbTAsRMlLGWRdSZm",
+      "b": "3aorwOIbTAsRMlLGWRdSsZ"
+    },
+    {
+      "a": "3aorwOIbTAsRMlLGWRdSZm",
+      "b": "3aorwOIbTAsRMlLGWRdSsf"
+    },
+    {
+      "a": "3aorwOIbTAsRMlLGWRdSZm",
+      "b": "3aorwOIbTAsRMlLGWRdSsg"
+    },
+    {
+      "a": "3aorwOIbTAsRMlLGWRdSZm",
+      "b": "3aorwOIbTAsRMlLGWRdSsi"
+    },
+    {
+      "a": "3aorwOIbTAsRMlLGWRdSZm",
+      "b": "3aorwOIbTAsRMlLGWRdSsl"
+    },
+    {
+      "a": "3aorwOIbTAsRMlLGWRdSsY",
+      "b": "3aorwOIbTAsRMlLGWRdSsl"
+    }
+  ],
+  "adjacent_not_connected": [
+    {
+      "a": "0pQqjnOeT7$94bqTGHtzS2",
+      "b": "0pQqjnOeT7$94bqTGHtzS4"
+    },
+    {
+      "a": "0pQqjnOeT7$94bqTGHtzS2",
+      "b": "2GytO7CYr3_hS6Nu2JYf4a"
+    },
+    {
+      "a": "0pQqjnOeT7$94bqTGHtzS8",
+      "b": "2GytO7CYr3_hS6Nu2JYfNn"
+    },
+    {
+      "a": "0pQqjnOeT7$94bqTGHtzSE",
+      "b": "2GytO7CYr3_hS6Nu2JYfNp"
+    },
+    {
+      "a": "2GytO7CYr3_hS6Nu2JYf4a",
+      "b": "2GytO7CYr3_hS6Nu2JYfNF"
+    },
+    {
+      "a": "2GytO7CYr3_hS6Nu2JYfNn",
+      "b": "2GytO7CYr3_hS6Nu2JYfNr"
+    },
+    {
+      "a": "2GytO7CYr3_hS6Nu2JYfNp",
+      "b": "2GytO7CYr3_hS6Nu2JYfNr"
+    },
+    {
+      "a": "3aorwOIbTAsRMlLGWRdSn1",
+      "b": "3aorwOIbTAsRMlLGWRdSnN"
+    },
+    {
+      "a": "3aorwOIbTAsRMlLGWRdSn8",
+      "b": "3aorwOIbTAsRMlLGWRdSnF"
+    },
+    {
+      "a": "3aorwOIbTAsRMlLGWRdSnA",
+      "b": "3aorwOIbTAsRMlLGWRdSnE"
+    },
+    {
+      "a": "3aorwOIbTAsRMlLGWRdSnD",
+      "b": "3aorwOIbTAsRMlLGWRdSnE"
+    },
+    {
+      "a": "3aorwOIbTAsRMlLGWRdSgf",
+      "b": "3aorwOIbTAsRMlLGWRdSnP"
+    },
+    {
+      "a": "3aorwOIbTAsRMlLGWRdSgf",
+      "b": "3aorwOIbTAsRMlLGWRdSnQ"
+    },
+    {
+      "a": "3aorwOIbTAsRMlLGWRdSgh",
+      "b": "3aorwOIbTAsRMlLGWRdSnO"
+    },
+    {
+      "a": "3aorwOIbTAsRMlLGWRdSgh",
+      "b": "3aorwOIbTAsRMlLGWRdSnQ"
+    },
+    {
+      "a": "3aorwOIbTAsRMlLGWRdSnG",
+      "b": "3aorwOIbTAsRMlLGWRdSnP"
+    },
+    {
+      "a": "3aorwOIbTAsRMlLGWRdSnI",
+      "b": "3aorwOIbTAsRMlLGWRdSnO"
+    },
+    {
+      "a": "3aorwOIbTAsRMlLGWRdSnR",
+      "b": "3aorwOIbTAsRMlLGWRdSnV"
+    },
+    {
+      "a": "3aorwOIbTAsRMlLGWRdSnU",
+      "b": "3aorwOIbTAsRMlLGWRdSnV"
+    },
+    {
+      "a": "3aorwOIbTAsRMlLGWRdSi5",
+      "b": "3aorwOIbTAsRMlLGWRdSi7"
+    },
+    {
+      "a": "3aorwOIbTAsRMlLGWRdSi5",
+      "b": "3aorwOIbTAsRMlLGWRdSsg"
+    },
+    {
+      "a": "3aorwOIbTAsRMlLGWRdSi6",
+      "b": "3aorwOIbTAsRMlLGWRdSi7"
+    },
+    {
+      "a": "3aorwOIbTAsRMlLGWRdSi6",
+      "b": "3aorwOIbTAsRMlLGWRdSsf"
+    },
+    {
+      "a": "3aorwOIbTAsRMlLGWRdSsW",
+      "b": "3aorwOIbTAsRMlLGWRdSsi"
+    },
+    {
+      "a": "3aorwOIbTAsRMlLGWRdSsW",
+      "b": "3aorwOIbTAsRMlLGWRdSsl"
+    },
+    {
+      "a": "3aorwOIbTAsRMlLGWRdSsX",
+      "b": "3aorwOIbTAsRMlLGWRdSsg"
+    },
+    {
+      "a": "3aorwOIbTAsRMlLGWRdSsZ",
+      "b": "3aorwOIbTAsRMlLGWRdSsf"
+    }
+  ],
+  "unknown": []
+}

@@ -1,0 +1,450 @@
+{
+  "building": "model_23",
+  "source": "derived:flood-fill",
+  "derivable": true,
+  "excluded_because": null,
+  "n_doors": 35,
+  "n_voids": 58,
+  "params": {
+    "res": 0.05,
+    "band_slack": 0.04,
+    "band_min": 0.1,
+    "adj_tol": 0.6,
+    "door_h": 1.0,
+    "min_room_area": 0.5,
+    "min_blocker_area": 0.01,
+    "min_void_area": 0.02,
+    "void_scale": 1.0,
+    "declared_unit_scale": 1
+  },
+  "rooms": [
+    {
+      "rid": "0AfG6dBOT22u7UTlFFE6EJ",
+      "name": "01",
+      "long_name": "Lobby",
+      "storey": "13LV5dTeP3CAox54x56C1Z",
+      "area": 52.12
+    },
+    {
+      "rid": "0Vgr1wBTbBF9IQ7uE2P4Fy",
+      "name": "02",
+      "long_name": "Kitchenette",
+      "storey": "13LV5dTeP3CAox54x56C1Z",
+      "area": 8.93
+    },
+    {
+      "rid": "0Vgr1wBTbBF9IQ7uE2P4F$",
+      "name": "03",
+      "long_name": "Office",
+      "storey": "13LV5dTeP3CAox54x56C1Z",
+      "area": 16.4
+    },
+    {
+      "rid": "0Vgr1wBTbBF9IQ7uE2P4D7",
+      "name": "05",
+      "long_name": "WC",
+      "storey": "13LV5dTeP3CAox54x56C1Z",
+      "area": 2.18
+    },
+    {
+      "rid": "0Vgr1wBTbBF9IQ7uE2P4Dw",
+      "name": "06",
+      "long_name": "WC",
+      "storey": "13LV5dTeP3CAox54x56C1Z",
+      "area": 2.18
+    },
+    {
+      "rid": "0Vgr1wBTbBF9IQ7uE2P5nj",
+      "name": "04",
+      "long_name": "WC",
+      "storey": "13LV5dTeP3CAox54x56C1Z",
+      "area": 2.18
+    },
+    {
+      "rid": "2QTLaWvQ16oQs1fDVZ7rAI",
+      "name": "08",
+      "long_name": "Archive",
+      "storey": "13LV5dTeP3CAox54x56C1Z",
+      "area": 24.93
+    },
+    {
+      "rid": "3gIQdAPYT20Og4_q8ebzPZ",
+      "name": "011",
+      "long_name": "Corridor",
+      "storey": "13LV5dTeP3CAox54x56C1Z",
+      "area": 21.3
+    },
+    {
+      "rid": "3gIQdAPYT20Og4_q8ebzPh",
+      "name": "07",
+      "long_name": "Office",
+      "storey": "13LV5dTeP3CAox54x56C1Z",
+      "area": 14.83
+    },
+    {
+      "rid": "2Qere5o7D78RmGllIFgrO_",
+      "name": "09",
+      "long_name": "Storage",
+      "storey": "13LV5dTeP3CAox54x56C1Z",
+      "area": 5.2
+    },
+    {
+      "rid": "1hBH8bG2D4Veii_rw1AlQ1",
+      "name": "010",
+      "long_name": "Stairs",
+      "storey": "13LV5dTeP3CAox54x56C1Z",
+      "area": 13.9
+    },
+    {
+      "rid": "3gIQdAPYT20Og4_q8ebzdJ",
+      "name": "20",
+      "long_name": "Lounge",
+      "storey": "2Kj_PyC3fEihrWhiF1eZ9J",
+      "area": 107.66
+    },
+    {
+      "rid": "3g7aOqnZPFsOHoQlQFACpu",
+      "name": "21",
+      "long_name": "Office",
+      "storey": "2Kj_PyC3fEihrWhiF1eZ9J",
+      "area": 14.83
+    },
+    {
+      "rid": "3g7aOqnZPFsOHoQlQFACpx",
+      "name": "22",
+      "long_name": "WC",
+      "storey": "2Kj_PyC3fEihrWhiF1eZ9J",
+      "area": 2.18
+    },
+    {
+      "rid": "3g7aOqnZPFsOHoQlQFACp_",
+      "name": "23",
+      "long_name": "WC",
+      "storey": "2Kj_PyC3fEihrWhiF1eZ9J",
+      "area": 2.18
+    },
+    {
+      "rid": "3g7aOqnZPFsOHoQlQFACpn",
+      "name": "24",
+      "long_name": "WC",
+      "storey": "2Kj_PyC3fEihrWhiF1eZ9J",
+      "area": 2.18
+    },
+    {
+      "rid": "3g7aOqnZPFsOHoQlQFACpq",
+      "name": "25",
+      "long_name": "WC",
+      "storey": "2Kj_PyC3fEihrWhiF1eZ9J",
+      "area": 5.2
+    },
+    {
+      "rid": "3g7aOqnZPFsOHoQlQFACpt",
+      "name": "26",
+      "long_name": "Corridor",
+      "storey": "2Kj_PyC3fEihrWhiF1eZ9J",
+      "area": 21.58
+    },
+    {
+      "rid": "3g7aOqnZPFsOHoQlQFACoA",
+      "name": "27",
+      "long_name": "Stairs",
+      "storey": "2Kj_PyC3fEihrWhiF1eZ9J",
+      "area": 14.26
+    },
+    {
+      "rid": "0h5UEozyvE$9ZOXqT3COt6",
+      "name": "11",
+      "long_name": "Lounge West",
+      "storey": "0kWfSd9l1F5hqE2TIsDduT",
+      "area": 26.16
+    },
+    {
+      "rid": "3g7aOqnZPFsOHoQlQFACm0",
+      "name": "12",
+      "long_name": "Lounge East",
+      "storey": "0kWfSd9l1F5hqE2TIsDduT",
+      "area": 10.9
+    },
+    {
+      "rid": "3g7aOqnZPFsOHoQlQFACmI",
+      "name": "13",
+      "long_name": "Office",
+      "storey": "0kWfSd9l1F5hqE2TIsDduT",
+      "area": 13.19
+    },
+    {
+      "rid": "3g7aOqnZPFsOHoQlQFACmL",
+      "name": "14",
+      "long_name": "Open-Plan Office",
+      "storey": "0kWfSd9l1F5hqE2TIsDduT",
+      "area": 50.59
+    },
+    {
+      "rid": "3g7aOqnZPFsOHoQlQFACmh",
+      "name": "15",
+      "long_name": "Stairs",
+      "storey": "0kWfSd9l1F5hqE2TIsDduT",
+      "area": 14.26
+    },
+    {
+      "rid": "1fnPS9c4D3_eCeARL_E$wT",
+      "name": "32",
+      "long_name": "Small Conference",
+      "storey": "2Kj_PyC3fEihrWhiF1eZEU",
+      "area": 17.12
+    },
+    {
+      "rid": "1fnPS9c4D3_eCeARL_E$wO",
+      "name": "33",
+      "long_name": "Office",
+      "storey": "2Kj_PyC3fEihrWhiF1eZEU",
+      "area": 16.74
+    },
+    {
+      "rid": "1fnPS9c4D3_eCeARL_E$wR",
+      "name": "34",
+      "long_name": "Kitchenette",
+      "storey": "2Kj_PyC3fEihrWhiF1eZEU",
+      "area": 15.96
+    },
+    {
+      "rid": "1fnPS9c4D3_eCeARL_E$vc",
+      "name": "31",
+      "long_name": "Big Conference",
+      "storey": "2Kj_PyC3fEihrWhiF1eZEU",
+      "area": 34.4
+    },
+    {
+      "rid": "1fnPS9c4D3_eCeARL_E$vX",
+      "name": "35",
+      "long_name": "Stairs",
+      "storey": "2Kj_PyC3fEihrWhiF1eZEU",
+      "area": 9.84
+    },
+    {
+      "rid": "1fnPS9c4D3_eCeARL_E$vi",
+      "name": "36",
+      "long_name": "Stairs",
+      "storey": "2Kj_PyC3fEihrWhiF1eZEU",
+      "area": 11.07
+    },
+    {
+      "rid": "1fnPS9c4D3_eCeARL_E$vl",
+      "name": "37",
+      "long_name": "Corridor",
+      "storey": "2Kj_PyC3fEihrWhiF1eZEU",
+      "area": 21.58
+    },
+    {
+      "rid": "1fnPS9c4D3_eCeARL_E$vg",
+      "name": "312",
+      "long_name": "WC",
+      "storey": "2Kj_PyC3fEihrWhiF1eZEU",
+      "area": 2.18
+    },
+    {
+      "rid": "1fnPS9c4D3_eCeARL_E$vr",
+      "name": "39",
+      "long_name": "Storage",
+      "storey": "2Kj_PyC3fEihrWhiF1eZEU",
+      "area": 5.2
+    },
+    {
+      "rid": "1fnPS9c4D3_eCeARL_E$vm",
+      "name": "38",
+      "long_name": "Office",
+      "storey": "2Kj_PyC3fEihrWhiF1eZEU",
+      "area": 14.83
+    },
+    {
+      "rid": "1fnPS9c4D3_eCeARL_E$vp",
+      "name": "313",
+      "long_name": "Stairs",
+      "storey": "2Kj_PyC3fEihrWhiF1eZEU",
+      "area": 14.26
+    },
+    {
+      "rid": "1fnPS9c4D3_eCeARL_E$uo",
+      "name": "310",
+      "long_name": "WC",
+      "storey": "2Kj_PyC3fEihrWhiF1eZEU",
+      "area": 2.18
+    },
+    {
+      "rid": "1fnPS9c4D3_eCeARL_E$uz",
+      "name": "311",
+      "long_name": "WC",
+      "storey": "2Kj_PyC3fEihrWhiF1eZEU",
+      "area": 2.18
+    }
+  ],
+  "edges": [
+    {
+      "a": "0AfG6dBOT22u7UTlFFE6EJ",
+      "b": "3gIQdAPYT20Og4_q8ebzPZ"
+    },
+    {
+      "a": "0Vgr1wBTbBF9IQ7uE2P4D7",
+      "b": "3gIQdAPYT20Og4_q8ebzPZ"
+    },
+    {
+      "a": "0Vgr1wBTbBF9IQ7uE2P4Dw",
+      "b": "3gIQdAPYT20Og4_q8ebzPZ"
+    },
+    {
+      "a": "0Vgr1wBTbBF9IQ7uE2P4F$",
+      "b": "0Vgr1wBTbBF9IQ7uE2P4Fy"
+    },
+    {
+      "a": "0Vgr1wBTbBF9IQ7uE2P5nj",
+      "b": "3gIQdAPYT20Og4_q8ebzPZ"
+    },
+    {
+      "a": "1hBH8bG2D4Veii_rw1AlQ1",
+      "b": "3gIQdAPYT20Og4_q8ebzPh"
+    },
+    {
+      "a": "2Qere5o7D78RmGllIFgrO_",
+      "b": "3gIQdAPYT20Og4_q8ebzPZ"
+    },
+    {
+      "a": "3gIQdAPYT20Og4_q8ebzPZ",
+      "b": "3gIQdAPYT20Og4_q8ebzPh"
+    },
+    {
+      "a": "3g7aOqnZPFsOHoQlQFACoA",
+      "b": "3g7aOqnZPFsOHoQlQFACpu"
+    },
+    {
+      "a": "3g7aOqnZPFsOHoQlQFACp_",
+      "b": "3g7aOqnZPFsOHoQlQFACpt"
+    },
+    {
+      "a": "3g7aOqnZPFsOHoQlQFACpn",
+      "b": "3g7aOqnZPFsOHoQlQFACpt"
+    },
+    {
+      "a": "3g7aOqnZPFsOHoQlQFACpq",
+      "b": "3g7aOqnZPFsOHoQlQFACpt"
+    },
+    {
+      "a": "3g7aOqnZPFsOHoQlQFACpt",
+      "b": "3g7aOqnZPFsOHoQlQFACpu"
+    },
+    {
+      "a": "3g7aOqnZPFsOHoQlQFACpt",
+      "b": "3g7aOqnZPFsOHoQlQFACpx"
+    },
+    {
+      "a": "3g7aOqnZPFsOHoQlQFACpt",
+      "b": "3gIQdAPYT20Og4_q8ebzdJ"
+    },
+    {
+      "a": "3g7aOqnZPFsOHoQlQFACm0",
+      "b": "3g7aOqnZPFsOHoQlQFACmI"
+    },
+    {
+      "a": "3g7aOqnZPFsOHoQlQFACmL",
+      "b": "3g7aOqnZPFsOHoQlQFACmh"
+    },
+    {
+      "a": "1fnPS9c4D3_eCeARL_E$uo",
+      "b": "1fnPS9c4D3_eCeARL_E$vl"
+    },
+    {
+      "a": "1fnPS9c4D3_eCeARL_E$uz",
+      "b": "1fnPS9c4D3_eCeARL_E$vl"
+    },
+    {
+      "a": "1fnPS9c4D3_eCeARL_E$vX",
+      "b": "1fnPS9c4D3_eCeARL_E$vc"
+    },
+    {
+      "a": "1fnPS9c4D3_eCeARL_E$vc",
+      "b": "1fnPS9c4D3_eCeARL_E$wR"
+    },
+    {
+      "a": "1fnPS9c4D3_eCeARL_E$vg",
+      "b": "1fnPS9c4D3_eCeARL_E$vl"
+    },
+    {
+      "a": "1fnPS9c4D3_eCeARL_E$vi",
+      "b": "1fnPS9c4D3_eCeARL_E$wT"
+    },
+    {
+      "a": "1fnPS9c4D3_eCeARL_E$vl",
+      "b": "1fnPS9c4D3_eCeARL_E$vm"
+    },
+    {
+      "a": "1fnPS9c4D3_eCeARL_E$vl",
+      "b": "1fnPS9c4D3_eCeARL_E$vr"
+    },
+    {
+      "a": "1fnPS9c4D3_eCeARL_E$vl",
+      "b": "1fnPS9c4D3_eCeARL_E$wR"
+    },
+    {
+      "a": "1fnPS9c4D3_eCeARL_E$vm",
+      "b": "1fnPS9c4D3_eCeARL_E$vp"
+    },
+    {
+      "a": "1fnPS9c4D3_eCeARL_E$wO",
+      "b": "1fnPS9c4D3_eCeARL_E$wR"
+    },
+    {
+      "a": "1fnPS9c4D3_eCeARL_E$wO",
+      "b": "1fnPS9c4D3_eCeARL_E$wT"
+    }
+  ],
+  "adjacent_not_connected": [
+    {
+      "a": "0AfG6dBOT22u7UTlFFE6EJ",
+      "b": "0Vgr1wBTbBF9IQ7uE2P4F$"
+    },
+    {
+      "a": "0AfG6dBOT22u7UTlFFE6EJ",
+      "b": "0Vgr1wBTbBF9IQ7uE2P4Fy"
+    },
+    {
+      "a": "0AfG6dBOT22u7UTlFFE6EJ",
+      "b": "2QTLaWvQ16oQs1fDVZ7rAI"
+    },
+    {
+      "a": "0Vgr1wBTbBF9IQ7uE2P4D7",
+      "b": "0Vgr1wBTbBF9IQ7uE2P4Dw"
+    },
+    {
+      "a": "0Vgr1wBTbBF9IQ7uE2P4D7",
+      "b": "0Vgr1wBTbBF9IQ7uE2P5nj"
+    },
+    {
+      "a": "0Vgr1wBTbBF9IQ7uE2P4Dw",
+      "b": "2Qere5o7D78RmGllIFgrO_"
+    },
+    {
+      "a": "3g7aOqnZPFsOHoQlQFACp_",
+      "b": "3g7aOqnZPFsOHoQlQFACpn"
+    },
+    {
+      "a": "3g7aOqnZPFsOHoQlQFACp_",
+      "b": "3g7aOqnZPFsOHoQlQFACpx"
+    },
+    {
+      "a": "3g7aOqnZPFsOHoQlQFACpn",
+      "b": "3g7aOqnZPFsOHoQlQFACpq"
+    },
+    {
+      "a": "1fnPS9c4D3_eCeARL_E$uo",
+      "b": "1fnPS9c4D3_eCeARL_E$vg"
+    },
+    {
+      "a": "1fnPS9c4D3_eCeARL_E$uz",
+      "b": "1fnPS9c4D3_eCeARL_E$vg"
+    },
+    {
+      "a": "1fnPS9c4D3_eCeARL_E$uz",
+      "b": "1fnPS9c4D3_eCeARL_E$vr"
+    }
+  ],
+  "unknown": []
+}

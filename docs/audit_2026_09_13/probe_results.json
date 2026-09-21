@@ -1,0 +1,250 @@
+{
+  "parallel_doors": {
+    "resolved_by_topology": 2,
+    "stored_a_to_b": [
+      {
+        "relation": "adjacent_to",
+        "gap": 0.2,
+        "provenance": "inferred"
+      },
+      {
+        "relation": "connected_by_door",
+        "door": "narrow",
+        "width": 0.4,
+        "provenance": "inferred"
+      }
+    ],
+    "wheeled_route_exists": false,
+    "reversing_input_makes_route_exist": true
+  },
+  "rotation_changes_width": {
+    "physical_long_side_m": 1.0,
+    "reported_m": 0.742462120245875
+  },
+  "door_probe_skips_near_room": [
+    {
+      "door": "wide",
+      "a": "remote",
+      "b": "a",
+      "width": 1.2,
+      "exterior": false
+    }
+  ],
+  "stacked_labels_without_stair_solid": {
+    "connections": [
+      {
+        "a": "hi",
+        "b": "lo",
+        "via": null,
+        "kind": "stairwell",
+        "rise": null,
+        "footprint_extent": null,
+        "clear_width": null
+      }
+    ],
+    "legged_plan": {
+      "nodes": [
+        "lo",
+        "hi"
+      ],
+      "labels": [
+        "Stair",
+        "Stair"
+      ],
+      "legs": [
+        {
+          "from": "Stair",
+          "to": "Stair",
+          "via": "stairwell",
+          "distance": 25.1
+        }
+      ],
+      "length_m": 25.1,
+      "uses_stairs": true
+    }
+  },
+  "masked_stair_label_retains_label_derived_feature": 1,
+  "missing_width_passable": true,
+  "zero_elevation_is_ground_floor": false,
+  "canonical_edge_cases": {
+    "office": "office",
+    "meeting": "meeting",
+    "storage": "storage",
+    "outdoor": null,
+    "Open Floor Plate": "outdoor"
+  },
+  "specific_room_query": {
+    "query": "Kitchen 2",
+    "candidates": [
+      "k1",
+      "k2"
+    ]
+  },
+  "unsure_room_in_ground_truth": {
+    "complete": true,
+    "nodes": [
+      {
+        "id": "probe",
+        "layer": "building",
+        "label": "probe",
+        "provenance": "ifc"
+      },
+      {
+        "id": "s0",
+        "layer": "storey",
+        "label": "Ground",
+        "elevation": 0,
+        "parent": "probe",
+        "provenance": "ifc"
+      },
+      {
+        "id": "a",
+        "layer": "space",
+        "label": "room",
+        "ifc_label": "room",
+        "predicted_label": null,
+        "area": 9,
+        "centroid": [
+          0,
+          0
+        ],
+        "parent": "s0",
+        "provenance": "ifc",
+        "verdict": "unsure"
+      },
+      {
+        "id": "b",
+        "layer": "space",
+        "label": "room",
+        "ifc_label": "room",
+        "predicted_label": null,
+        "area": 9,
+        "centroid": [
+          3,
+          0
+        ],
+        "parent": "s0",
+        "provenance": "ifc",
+        "verdict": "real"
+      }
+    ],
+    "edges": [
+      {
+        "a": "probe",
+        "b": "s0",
+        "relation": "contains",
+        "provenance": "ifc"
+      },
+      {
+        "a": "s0",
+        "b": "a",
+        "relation": "contains",
+        "provenance": "ifc"
+      },
+      {
+        "a": "s0",
+        "b": "b",
+        "relation": "contains",
+        "provenance": "ifc"
+      },
+      {
+        "a": "a",
+        "b": "b",
+        "relation": "connected_by_door",
+        "storey": "s0",
+        "provenance": "ifc+annotator"
+      }
+    ],
+    "held_out": []
+  },
+  "current_verdicts_legacy_scorer": {
+    "model": "probe",
+    "annotator": "audit",
+    "rooms_all": {
+      "judged": 0,
+      "tp": 0,
+      "fp": 0,
+      "partial": 0,
+      "precision": null,
+      "recall": null
+    },
+    "rooms_ifc": {
+      "judged": 0,
+      "tp": 0,
+      "fp": 0,
+      "partial": 0,
+      "precision": null,
+      "recall": null
+    },
+    "rooms_inferred": {
+      "judged": 0,
+      "tp": 0,
+      "fp": 0,
+      "partial": 0,
+      "precision": null,
+      "recall": null
+    },
+    "missing_rooms": 0,
+    "edges": {
+      "judged": 0,
+      "tp": 0,
+      "fp": 0,
+      "added": 0,
+      "precision": null,
+      "recall": null
+    },
+    "labels": {
+      "checked": 0,
+      "accuracy": null
+    }
+  },
+  "human_gt_synthetic_scorer": "KeyError: 'adjacent_not_connected'",
+  "roundtrip_parallel_edges": {
+    "before": 2,
+    "after": 1
+  },
+  "static_build_drops_available_ifc": {
+    "source_exists": true,
+    "copied": false,
+    "manifest": [
+      {
+        "model": "probe",
+        "storeys": 1,
+        "rooms": 2,
+        "edges": 1,
+        "vertical": 0,
+        "items": 3,
+        "hasIfc": false,
+        "ifcBytes": 0
+      }
+    ]
+  },
+  "reference_double_scales_openings": {
+    "same_geometry_metres_voids": 1,
+    "same_geometry_mm_voids": 0,
+    "mm_without_second_scale_voids": 1,
+    "normal_door_footprint_filtered_by_room_area_threshold": true
+  },
+  "schema_baseline_treats_wall_as_door": [
+    {
+      "relation": "connected_by_door",
+      "provenance": "inferred",
+      "door": "3kPGAjS7v8vAbRcMU$XS$I"
+    },
+    {
+      "relation": "connected_by_door",
+      "provenance": "inferred",
+      "door": "3kPGAjS7v8vAbRcMU$XS$I"
+    }
+  ],
+  "lintel_projection_seals_opening": {
+    "doorway_center_inside_projection": true,
+    "doorway_center_inside_true_section": false,
+    "section_polygons": 2
+  },
+  "unmatched_false_edge_not_scored": {
+    "input_edges": 2,
+    "scored_edges": 1,
+    "unmapped_rooms": 1
+  }
+}

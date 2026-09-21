@@ -1,0 +1,246 @@
+{
+  "building": "model_7",
+  "source": "derived:flood-fill",
+  "derivable": true,
+  "excluded_because": null,
+  "n_doors": 22,
+  "n_voids": 31,
+  "params": {
+    "res": 0.05,
+    "band_slack": 0.04,
+    "band_min": 0.1,
+    "adj_tol": 0.6,
+    "door_h": 1.0,
+    "min_room_area": 0.5,
+    "min_blocker_area": 0.01,
+    "min_void_area": 0.02,
+    "void_scale": 1.0,
+    "declared_unit_scale": 1
+  },
+  "rooms": [
+    {
+      "rid": "26uBYUqsT9fu$2hZqJnL2H",
+      "name": "1",
+      "long_name": "Office",
+      "storey": "13LV5dTeP3CAox54x56C1Z",
+      "area": 12.05
+    },
+    {
+      "rid": "26uBYUqsT9fu$2hZqJnL2K",
+      "name": "2",
+      "long_name": "Lobby",
+      "storey": "13LV5dTeP3CAox54x56C1Z",
+      "area": 28.54
+    },
+    {
+      "rid": "26uBYUqsT9fu$2hZqJnL2N",
+      "name": "3",
+      "long_name": "Staircase",
+      "storey": "13LV5dTeP3CAox54x56C1Z",
+      "area": 14.05
+    },
+    {
+      "rid": "26uBYUqsT9fu$2hZqJnL2Q",
+      "name": "4",
+      "long_name": "Office",
+      "storey": "13LV5dTeP3CAox54x56C1Z",
+      "area": 11.22
+    },
+    {
+      "rid": "26uBYUqsT9fu$2hZqJnL2T",
+      "name": "5",
+      "long_name": "Bathroom",
+      "storey": "13LV5dTeP3CAox54x56C1Z",
+      "area": 3.5
+    },
+    {
+      "rid": "26uBYUqsT9fu$2hZqJnL3W",
+      "name": "6",
+      "long_name": "Bathroom",
+      "storey": "13LV5dTeP3CAox54x56C1Z",
+      "area": 3.12
+    },
+    {
+      "rid": "26uBYUqsT9fu$2hZqJnL3Z",
+      "name": "7",
+      "long_name": "Office",
+      "storey": "13LV5dTeP3CAox54x56C1Z",
+      "area": 12.12
+    },
+    {
+      "rid": "26uBYUqsT9fu$2hZqJnL3c",
+      "name": "8",
+      "long_name": "Lobby",
+      "storey": "13LV5dTeP3CAox54x56C1Z",
+      "area": 7.02
+    },
+    {
+      "rid": "26uBYUqsT9fu$2hZqJnL3f",
+      "name": "9",
+      "long_name": "Staircase",
+      "storey": "13LV5dTeP3CAox54x56C1Z",
+      "area": 17.36
+    },
+    {
+      "rid": "26uBYUqsT9fu$2hZqJnL3i",
+      "name": "10",
+      "long_name": "Office",
+      "storey": "13LV5dTeP3CAox54x56C1Z",
+      "area": 12.5
+    },
+    {
+      "rid": "26uBYUqsT9fu$2hZqJnLF$",
+      "name": "21",
+      "long_name": "Office",
+      "storey": "13LV5dTeP3CAox54x56C1Z",
+      "area": 12.37
+    },
+    {
+      "rid": "26uBYUqsT9fu$2hZqJnL3o",
+      "name": "11",
+      "long_name": "Office",
+      "storey": "1jPCssxb5C1RSM_YHIx$zl",
+      "area": 7.52
+    },
+    {
+      "rid": "26uBYUqsT9fu$2hZqJnL3s",
+      "name": "12",
+      "long_name": "Staircase",
+      "storey": "1jPCssxb5C1RSM_YHIx$zl",
+      "area": 22.34
+    },
+    {
+      "rid": "26uBYUqsT9fu$2hZqJnL3v",
+      "name": "13",
+      "long_name": "Office",
+      "storey": "1jPCssxb5C1RSM_YHIx$zl",
+      "area": 9.42
+    },
+    {
+      "rid": "26uBYUqsT9fu$2hZqJnL3y",
+      "name": "14",
+      "long_name": "Office",
+      "storey": "1jPCssxb5C1RSM_YHIx$zl",
+      "area": 12.32
+    },
+    {
+      "rid": "26uBYUqsT9fu$2hZqJnL3$",
+      "name": "15",
+      "long_name": "Bathroom",
+      "storey": "1jPCssxb5C1RSM_YHIx$zl",
+      "area": 3.12
+    },
+    {
+      "rid": "26uBYUqsT9fu$2hZqJnL32",
+      "name": "16",
+      "long_name": "Bathroom",
+      "storey": "1jPCssxb5C1RSM_YHIx$zl",
+      "area": 3.96
+    },
+    {
+      "rid": "26uBYUqsT9fu$2hZqJnL35",
+      "name": "17",
+      "long_name": "Office",
+      "storey": "1jPCssxb5C1RSM_YHIx$zl",
+      "area": 12.2
+    },
+    {
+      "rid": "26uBYUqsT9fu$2hZqJnL38",
+      "name": "18",
+      "long_name": "Staircase",
+      "storey": "1jPCssxb5C1RSM_YHIx$zl",
+      "area": 12.24
+    },
+    {
+      "rid": "26uBYUqsT9fu$2hZqJnL3B",
+      "name": "19",
+      "long_name": "Staircase",
+      "storey": "1jPCssxb5C1RSM_YHIx$zl",
+      "area": 16.31
+    },
+    {
+      "rid": "26uBYUqsT9fu$2hZqJnL3E",
+      "name": "20",
+      "long_name": "Einzelb\u00fcro",
+      "storey": "1jPCssxb5C1RSM_YHIx$zl",
+      "area": 8.96
+    }
+  ],
+  "edges": [
+    {
+      "a": "26uBYUqsT9fu$2hZqJnL2H",
+      "b": "26uBYUqsT9fu$2hZqJnL2K"
+    },
+    {
+      "a": "26uBYUqsT9fu$2hZqJnL2H",
+      "b": "26uBYUqsT9fu$2hZqJnLF$"
+    },
+    {
+      "a": "26uBYUqsT9fu$2hZqJnL2K",
+      "b": "26uBYUqsT9fu$2hZqJnL2N"
+    },
+    {
+      "a": "26uBYUqsT9fu$2hZqJnL2N",
+      "b": "26uBYUqsT9fu$2hZqJnL2Q"
+    },
+    {
+      "a": "26uBYUqsT9fu$2hZqJnL2T",
+      "b": "26uBYUqsT9fu$2hZqJnLF$"
+    },
+    {
+      "a": "26uBYUqsT9fu$2hZqJnL3W",
+      "b": "26uBYUqsT9fu$2hZqJnL3Z"
+    },
+    {
+      "a": "26uBYUqsT9fu$2hZqJnL3Z",
+      "b": "26uBYUqsT9fu$2hZqJnL3c"
+    },
+    {
+      "a": "26uBYUqsT9fu$2hZqJnL3c",
+      "b": "26uBYUqsT9fu$2hZqJnL3f"
+    },
+    {
+      "a": "26uBYUqsT9fu$2hZqJnL3f",
+      "b": "26uBYUqsT9fu$2hZqJnL3i"
+    },
+    {
+      "a": "26uBYUqsT9fu$2hZqJnL3$",
+      "b": "26uBYUqsT9fu$2hZqJnL3y"
+    },
+    {
+      "a": "26uBYUqsT9fu$2hZqJnL32",
+      "b": "26uBYUqsT9fu$2hZqJnL35"
+    },
+    {
+      "a": "26uBYUqsT9fu$2hZqJnL35",
+      "b": "26uBYUqsT9fu$2hZqJnL38"
+    },
+    {
+      "a": "26uBYUqsT9fu$2hZqJnL3B",
+      "b": "26uBYUqsT9fu$2hZqJnL3E"
+    },
+    {
+      "a": "26uBYUqsT9fu$2hZqJnL3o",
+      "b": "26uBYUqsT9fu$2hZqJnL3s"
+    },
+    {
+      "a": "26uBYUqsT9fu$2hZqJnL3s",
+      "b": "26uBYUqsT9fu$2hZqJnL3v"
+    },
+    {
+      "a": "26uBYUqsT9fu$2hZqJnL3v",
+      "b": "26uBYUqsT9fu$2hZqJnL3y"
+    }
+  ],
+  "adjacent_not_connected": [
+    {
+      "a": "26uBYUqsT9fu$2hZqJnL2T",
+      "b": "26uBYUqsT9fu$2hZqJnL3W"
+    },
+    {
+      "a": "26uBYUqsT9fu$2hZqJnL3$",
+      "b": "26uBYUqsT9fu$2hZqJnL32"
+    }
+  ],
+  "unknown": []
+}

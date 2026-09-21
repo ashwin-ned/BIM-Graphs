@@ -1,0 +1,73 @@
+
+--- build without IFC files ---
+serving the built site at http://127.0.0.1:37461/bim-sg/
+  PASS all assets resolve under /bim-sg/
+  PASS config.js selects local mode
+  PASS store is LocalStore
+  PASS manifest lists models (25)
+  PASS plan model_0 loads from data/
+  PASS absent annotation returns an empty shape
+  PASS annotation round-trips through localStorage
+  PASS progress shows in the model list
+  PASS composed graph is complete
+  PASS composed graph has a building node
+  PASS storeys chain into 1 component(s)
+  PASS unexported work is flagged
+  PASS flag clears once downloaded
+  PASS bundle is well formed
+  PASS bundle re-imports into a clean browser
+  PASS re-imported work is intact
+  PASS no IFC in this build, so nothing claims to have one
+
+--- build with IFC files ---
+serving the built site at http://127.0.0.1:41115/bim-sg/
+  PASS all assets resolve under /bim-sg/
+  PASS config.js selects local mode
+  PASS store is LocalStore
+  PASS manifest lists models (25)
+  PASS plan model_0 loads from data/
+  PASS absent annotation returns an empty shape
+  PASS annotation round-trips through localStorage
+  PASS progress shows in the model list
+  PASS composed graph is complete
+  PASS composed graph has a building node
+  PASS storeys chain into 1 component(s)
+  PASS unexported work is flagged
+  PASS flag clears once downloaded
+  PASS bundle is well formed
+  PASS bundle re-imports into a clean browser
+  PASS re-imported work is intact
+  PASS manifest flags model_0 as having an IFC
+  PASS manifest carries the download size
+  PASS IFC downloads over http (62 bytes)
+  PASS downloaded bytes are an IFC file
+----------------------------------------
+Exception occurred during processing of request from ('127.0.0.1', 59874)
+Traceback (most recent call last):
+  File "/mnt/data/home/anedung/miniforge3/envs/bim-sg/lib/python3.11/socketserver.py", line 317, in _handle_request_noblock
+    self.process_request(request, client_address)
+  File "/mnt/data/home/anedung/miniforge3/envs/bim-sg/lib/python3.11/socketserver.py", line 348, in process_request
+    self.finish_request(request, client_address)
+  File "/mnt/data/home/anedung/miniforge3/envs/bim-sg/lib/python3.11/socketserver.py", line 361, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/mnt/data/home/anedung/projects/bim-sg/annotator/test_static_build.py", line 189, in <lambda>
+    handler = lambda *a, **k: Quiet(*a, directory=root, **k)   # noqa: E731
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/data/home/anedung/miniforge3/envs/bim-sg/lib/python3.11/http/server.py", line 675, in __init__
+    super().__init__(*args, **kwargs)
+  File "/mnt/data/home/anedung/miniforge3/envs/bim-sg/lib/python3.11/socketserver.py", line 755, in __init__
+    self.handle()
+  File "/mnt/data/home/anedung/miniforge3/envs/bim-sg/lib/python3.11/http/server.py", line 440, in handle
+    self.handle_one_request()
+  File "/mnt/data/home/anedung/miniforge3/envs/bim-sg/lib/python3.11/http/server.py", line 428, in handle_one_request
+    method()
+  File "/mnt/data/home/anedung/miniforge3/envs/bim-sg/lib/python3.11/http/server.py", line 682, in do_GET
+    self.copyfile(f, self.wfile)
+  File "/mnt/data/home/anedung/miniforge3/envs/bim-sg/lib/python3.11/http/server.py", line 881, in copyfile
+    shutil.copyfileobj(source, outputfile)
+  File "/mnt/data/home/anedung/miniforge3/envs/bim-sg/lib/python3.11/shutil.py", line 200, in copyfileobj
+    fdst_write(buf)
+  File "/mnt/data/home/anedung/miniforge3/envs/bim-sg/lib/python3.11/socketserver.py", line 834, in write
+    self._sock.sendall(b)
+ConnectionResetError: [Errno 104] Connection reset by peer
+----------------------------------------

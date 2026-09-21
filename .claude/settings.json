@@ -1,0 +1,12 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(docker run *)",
+      "Bash(time /mnt/data/home/anedung/miniforge3/envs/bim-sg/bin/python main/derive_real_gt.py --dir dataset/test_set --out /tmp/claude-2209/-mnt-data-home-anedung-projects-bim-sg/5ea5a87a-7ffb-4b47-b275-4ae0c881540b/scratchpad/rgt --limit 5)",
+      "Bash(/mnt/data/home/anedung/miniforge3/envs/bim-sg/bin/python -)",
+      "WebFetch(domain:github.com)"
+    ],
+    "defaultMode": "bypassPermissions"
+  },
+  "skipDangerousModePermissionPrompt": true
+}

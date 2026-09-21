@@ -1,0 +1,35 @@
+held-out rooms: 592  (from 21 models)
+
+backend: rule
+  accuracy          298/592 = 0.503
+  majority baseline 205/592 = 0.346 (always 'office')
+  lift over majority +0.157
+
+  class            recall      n
+  office            0.698    205
+  bathroom          0.530    132
+  circulation       0.256     86
+  stair             0.644     45
+  bedroom           0.786     28
+  meeting           0.174     23
+  living            0.182     22
+  kitchen           0.222     18
+  outdoor           0.000     10
+  storage           0.000     10
+  retail            0.000      8
+  service           0.000      5
+
+  most common confusions:
+    bathroom->storage                  52
+    circulation->stair                 37
+    office->storage                    30
+    office->living                     28
+    circulation->office                18
+    meeting->office                    10
+    circulation->living                9
+    stair->bathroom                    9
+
+wrote results/semantics_eval.json
+
+NOTE: held-out rooms are stated IfcSpaces, which are cleaner than
+the recovered rooms this will run on. Treat as an optimistic bound.

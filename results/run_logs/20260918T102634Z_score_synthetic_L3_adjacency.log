@@ -1,0 +1,27 @@
+run eval_connectivity: 8 ok, 0 missing, 0 failed, 0 excluded (denominator 8)
+
+building          GT  neg  unk  pred  TP  FP  FN   prec    rec     F1  strict       rooms
+-----------------------------------------------------------------------------------------
+synth_0000        13    9    0    26  12   9   1  0.571  0.923  0.706   0.615    16/16   
+synth_0001         7    6    0    12   4   6   3  0.400  0.571  0.471   0.421     9/10   
+synth_0002         7    6    0    14   6   6   1  0.500  0.857  0.632   0.571    10/10   
+synth_0003         9    7    0    16   7   5   2  0.583  0.778  0.667   0.560    11/12   
+synth_0004        13    9    0    22  11   8   2  0.579  0.846  0.688   0.629    14/15   
+synth_0005        11    9    0    20   7   8   4  0.467  0.636  0.538   0.452    13/14   
+synth_0006         6    5    0    12   5   5   1  0.500  0.833  0.625   0.556     9/9    
+synth_0007        11    8    0    16   7   5   4  0.583  0.636  0.609   0.519    11/13   
+
+--- MICRO-AVERAGED over 8 buildings ---
+  precision 0.532   recall 0.766   F1 0.628
+  strict (charging out-of-scope and unmatched-endpoint claims): precision 0.428  F1 0.549
+  macro mean per-building F1 0.617
+  tp 59  fn 18  fp on a reference negative 52
+  predictions the reference never examined: 27   on an unknown pair: 0   hung on an unmatched room: 0
+  rooms: 93 matched, 6 reference rooms unmatched (0 merged, 0 split)
+  predicted rooms with no reference room: 0 a reviewer rejected, 0 nobody judged
+  connect-every-examined-pair baseline would score precision 0.562 at recall 1.000
+  edge-type accuracy (matched edges): 3/59 = 0.051
+  type confusions: door->open_passage x56
+
+wrote results/bl_synthetic_L3_adjacency.json
+wrote results/bl_synthetic_L3_adjacency.manifest.json
