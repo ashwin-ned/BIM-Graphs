@@ -431,6 +431,29 @@ one. This is the general form of the `_coerce()` defect that faked a published
 number; `tests/test_graph_extraction.py` was verified against 11 deliberately
 injected defects.
 
+**Set-of-mark is the primary vision condition.** A bare plan asked for pixel
+centroids does not measure plan reading: probed on an 1800×1262 render,
+GLM-4.1V-9B-Thinking got the room count exactly right (6/6, 5/5) and still
+matched almost nothing, because every centroid landed on a round 50 px grid
+inside the left 40% of the image and five of six predictions fell inside one
+reference room. So `plan_som` / `occ_som` / `text+plan_som` draw a numbered
+disc on each IFC-declared room; the model refers to rooms by number and gives
+no coordinates, and a number resolves to that room's GlobalId and true
+centroid. Localisation leaves the task and what is measured is room function
+and connectivity.
+
+Two things must be quoted with any set-of-mark number. The marks reveal the
+room partition, so **room recovery is not measured** there and room recall is
+1.000 by construction for the declared set. And marks follow *declared* rooms
+only — never the pipeline's recovered ones — so the mark count tracks the IFC
+exactly (535 → 261 from L1 to L2, identical at L3/L4) and whole storeys drop
+out of the condition once damage strips their spaces.
+
+```bash
+python main/render_blind.py --from-json dataset/synthetic_data/synth150/floorplans \
+    --out dataset/synthetic_data/synth150/vision --mode som
+```
+
 **Run the oracle before spending GPU time on a new corpus.** It emits the
 reference through the real prompt path, parser and scorer, and must score
 1.000:

@@ -218,11 +218,32 @@ deliberately injected defects. An `oracle` backend scores the reference
 through the real parser and scorer and must return 1.000; it does, on
 4 modalities × 4 damage levels × 300 units and on the real corpus.
 
-**Known limitation to report:** the vision modalities are currently scorable
-only on the synthetic corpus. The real corpus's derived reference states no
-room extent, so an image-conditioned prediction has nothing to match against
-and is recorded as `unscorable` rather than scored 0.000. `todo.md` Phase B
-closing note.
+**The vision task is set under the best conditions available**, because the
+question is whether a VLM can reason about a plan, not whether it can regress
+pixel coordinates. The primary vision condition is **set-of-mark**: each
+IFC-declared room carries a numbered disc and the model refers to rooms by
+number, so localisation is removed from the task and what is measured is room
+function and connectivity. Asking for bare pixel centroids instead does not
+measure plan reading -- probed on an 1800x1262 render, GLM-4.1V-9B-Thinking
+got the room count exactly right and still matched almost nothing, because
+every centroid landed on a round 50 px grid in one corner of the image. That
+strict condition is still reported, as the localisation result it is.
+
+Two things any set-of-mark number must carry: the marks reveal the room
+partition, so **room recovery is not measured and room recall is 1.000 by
+construction** for the declared set; and marks follow *declared* rooms only,
+so at L2+ whole storeys carry no marks and drop out of the condition.
+
+**Known limitations to report:**
+- The unmarked vision modalities are scorable only on the synthetic corpus.
+  The real corpus's derived reference states no room extent, so an
+  image-conditioned prediction has nothing to match against and is recorded
+  `unscorable` rather than scored 0.000. Set-of-mark does work there, because
+  a mark resolves to the room's GlobalId, which the derived reference keys on.
+- **The synthetic corpus cannot test vision labelling.** Its buildings hold
+  only `IfcWall`, `IfcDoor` and `IfcStair` -- no furniture, no windows -- so a
+  render carries almost no functional cue and a probe scored labels 0/22.
+  Vision labelling belongs on the real corpus.
 
 ---
 

@@ -106,30 +106,85 @@ synthetic-only and the paper says so. **Not decided here.**
 
 ---
 
-## Phase C — the multimodal grid (Experiment §4.5) (≈8–10 days incl. GPU time)
+## Phase C — the multimodal grid (Experiment §4.5) — scoped and probed 21 Sep 2026
 
-Blocked on Phase B. Depends on Phase A's truncation fix carrying over.
+Decisions taken (all approved). `main/run_grid.py` enumerates **56 cells**;
+`--dry-run` prints them.
 
-- [ ] **Finalise the model list against current cached weights** before
-      committing GPU time. As of this planning pass: GLM-4-9B-0414 (text),
-      GLM-4.1V-9B-Thinking (vision) confirmed cached and load-tested.
-      Qwen2.5-VL-7B-Instruct and InternVL3-8B are cached but not yet
-      load-tested end to end in this harness — do that first, same "load
-      before you plan around it" rule that caught the `transformers`/`torch`
-      false alarm earlier this project.
-- [ ] Decide compute budget explicitly: full grid = models × {text, V-plan,
-      V-occ, text+V-plan} × 4 damage levels × {labels given, labels masked} ×
-      150 (or fewer, sampled) buildings. At the VLM's measured ~20 s/room this
-      is easily multi-day if run exhaustively — **size the sample per cell
-      deliberately** (e.g. a fixed subsample of synth150 for the full grid,
-      the full corpus only for the winning configuration) rather than
-      discovering the cost mid-run.
-- [ ] Run the grid, cell by cell, `RunManifest`-tracked so a missing/failed
-      cell is visible rather than silently absent from an average.
-- [ ] Produce the comparison table and the modality-ablation result the
-      abstract's **[TODO]** clauses need: what does vision add when text
-      damage increases (the whole point of the byte-identical-across-damage
-      corpus from §4's vision work).
+- [x] **Model list: 3 text + 3 vision**, registered in `extract_graph_llm.MODELS`
+      with `pairs_with` recording shared backbones.
+      Text: `glm-9b`, `qwen25-7b`, `qwen3-8b` (downloaded 21 Sep, 16 GB).
+      Vision: `glm-9b-v`, `qwen25-vl-7b`, `internvl3-8b`.
+      Llama-3.1-8B-Instruct and gemma-2-9b-it were the obvious third text
+      picks and are **gated** (HTTP 401 without a token); Qwen3-8B is the
+      strongest ungated model in the weight class. InternVL3-8B's language
+      tower is Qwen2.5-7B, so its text counterpart was already in the list.
+- [x] **Grid shape.** Image-only modalities are invariant to damage (renders
+      byte-identical, verified 40/40) and to label masking (renders carry no
+      names), so they get one cell each plus two deliberate controls. Text
+      gets all four levels because it is the cheap modality and the flat
+      L2=L3=L4 result is itself a finding.
+- [x] **Sampling: staged.** Exploratory pass at 30 buildings (60 units/cell),
+      headline cells at 150 (the paired Wilcoxon in `main/significance.py`
+      wants the full corpus).
+- [x] **Greedy decoding** (`do_sample=False`), one run per cell. This is what
+      makes the image-only invariance argument exact.
+- [x] **Set-of-mark is the primary vision condition** — see Phase B's closing
+      notes and `render_blind.render_som_png`. Unmarked `plan`/`occ` are still
+      run, as the honest strict condition and the localisation result.
+- [ ] **Load-test `qwen25-vl-7b`, `internvl3-8b` and `qwen3-8b` in this
+      harness before planning around them.** Only the GLM pair has been run
+      end to end. `VisionBackend` uses `AutoModelForImageTextToText` with a
+      `{"type": "image"}` message part; InternVL historically wants its own
+      `model.chat()` interface, so this is the likeliest breakage.
+- [ ] Run the grid (`main/run_grid.py --buildings 30`), then the headline
+      cells at 150.
+- [ ] Produce the comparison table and the modality-ablation result.
+
+### Measured on 21 Sep 2026 — use these, not estimates
+
+| | s/unit | truncation | notes |
+|---|---|---|---|
+| text, GLM-4-9B, 3072 tok | **24** | 0/6 | 6/6 parsed |
+| plan, GLM-4.1V-9B, 2048 tok | 89 | **4/6** | cap far too low |
+| plan, GLM-4.1V-9B, 4096 tok | **139** | 1/6 | usable |
+
+Budget at 30 buildings/cell: 24 text cells ≈ 9.6 h + 32 vision cells ≈ 74 h
+= **≈ 3.5 GPU-days** for the exploratory pass. **Use `--max-new-tokens 4096`
+or higher for any vision cell**; 2048 truncates two thirds of them.
+
+The apples-to-apples deterministic bar, scored on the *identical* restricted
+task (per storey, `connected_by_door` + `open_passage` only, n=300 storeys):
+
+| corpus | `ours` F1 | `door_near` F1 |
+|---|---|---|
+| L1 | **0.997** | 0.907 |
+| L2 / L3 / L4 | **0.897** | 0.852 |
+
+Cross-checks against the published whole-task 0.998 / 0.899, so the
+restriction is not distorting anything. A model number is only meaningful
+against these.
+
+### Three things Phase C must state rather than discover
+
+1. **The synthetic corpus cannot test vision labelling.** Its buildings
+   contain only `IfcWall`, `IfcDoor` and `IfcStair` — no furniture and **no
+   windows at all** — so a plan render carries almost no functional cue. A
+   probe scored labels 0/22 with every prediction wrong in a plausible way
+   (`bathroom` for a stair, `living`/`bedroom` for corridors). Vision label
+   accuracy on synth150 is measuring near-chance by construction. The real
+   corpus has windows, columns and railings; report vision labelling there,
+   or state this explicitly.
+2. **The damage axis is a text axis.** The renders are byte-identical across
+   levels, so vision performance cannot move with damage. That *is* the
+   headline — text degrades, vision does not — but it means "vision is robust
+   to damage" is true by construction and must be presented as such.
+3. **Set-of-mark at L2+ has a selection effect.** Damage strips `IfcSpace`
+   from whole storeys, so 150 of 300 units have no marks at all and are
+   recorded `missing`. The surviving 150 are exactly the storeys that kept
+   their spaces, so an L1-vs-L2 SOM comparison is not over the same units.
+   Per-unit scores are written to `*.scores.json`, so intersect the unit sets
+   post hoc rather than comparing pooled numbers.
 
 ---
 
