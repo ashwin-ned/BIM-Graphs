@@ -427,6 +427,62 @@ def test_prompts() -> None:
         ok("an unknown modality raises rather than silently picking one", True)
 
 
+def test_set_of_mark() -> None:
+    print("\n-- a mark number resolves to a room, or is charged --")
+
+    marks = [{"index": 1, "gid": "GID-A", "centroid": [2.0, 3.0]},
+             {"index": 2, "gid": "GID-B", "centroid": [8.0, 3.0]}]
+    resp = json.dumps({
+        "rooms": [{"id": "1", "label": "kitchen"},
+                  {"id": "Room 2", "label": "living"},
+                  {"id": "7", "label": "office"}],          # no such mark
+        "edges": [{"a": "1", "b": "Room 2", "type": "door"},
+                  {"a": "1", "b": "7", "type": "open"}]})
+    ex = X.parse_response(resp, False)
+    g = X.to_graph(ex, marks=marks)
+
+    ok(f"a mark that was never drawn is charged ({ex.dropped_rooms})",
+       ex.dropped_rooms.get("unresolved_mark") == 1)
+    ok(f"an edge onto it is charged too ({ex.dropped_edges})",
+       ex.dropped_edges.get("endpoint_unresolved_mark") == 1)
+
+    # The node takes the marked room's GlobalId, which is what makes identity
+    # matching work on the real corpus, and the marked room's true centroid,
+    # which is what makes geometric matching work on the synthetic one. The
+    # model supplied neither -- that is the point of the condition.
+    spaces = {n for n, d in g.nodes(data=True) if d.get("layer") == "space"}
+    ok(f"resolved rooms carry the reference GlobalId ({sorted(spaces)})",
+       spaces == {"GID-A", "GID-B"})
+    ok("...and the mark's true centroid, not the model's guess",
+       g.nodes["GID-A"]["centroid"] == [2.0, 3.0])
+    ok("...and record which mark they came from",
+       g.nodes["GID-A"]["mark_index"] == 1)
+    ok("the surviving edge is rewritten onto the resolved ids",
+       any(u == "GID-A" and v == "GID-B"
+           for u, v, _ in g.edges(keys=True)))
+
+    # Accepted id forms are a fixed set. "13" must NOT resolve to mark 1 --
+    # a prefix or substring match would silently attach an edge to the wrong
+    # room and there would be nothing in the output to show it happened.
+    by_index = {"1": marks[0], "2": marks[1]}
+    for form in ("1", "room 1", "Room_1", "#1", "R1", " 1 "):
+        ok(f"id form {form!r} resolves",
+           X._match_mark(form, by_index) is not None)
+    for form in ("13", "one", "", "1a", "room"):
+        ok(f"id form {form!r} does NOT resolve",
+           X._match_mark(form, by_index) is None)
+
+    # The set-of-mark prompt must not ask for coordinates: asking for them on a
+    # bare plan is what produced a round-50-px grid in one corner of the image.
+    for mod in X.SOM_MODALITIES:
+        _, user, wants_img = X.build_prompt(mod, {
+            "name": "S", "spaces": [], "elements": []})
+        ok(f"{mod}: asks for no coordinate", "centroid" not in user)
+        ok(f"{mod}: wants an image", wants_img is True)
+        ok(f"{mod}: tells the model to use the printed numbers",
+           "number printed" in user)
+
+
 def main() -> int:
     test_parse_failures()
     test_think_traces()
@@ -436,6 +492,7 @@ def main() -> int:
     test_unscorable_diagnosis()
     test_empty_prediction_scores_zero_not_perfect()
     test_prompts()
+    test_set_of_mark()
     print()
     return failures
 

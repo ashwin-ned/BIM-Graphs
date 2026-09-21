@@ -50,10 +50,24 @@ import sys
 import numpy as np
 
 try:
-    from PIL import Image, ImageDraw
+    from PIL import Image, ImageDraw, ImageFont
     HAVE_PIL = True
 except Exception:
     HAVE_PIL = False
+
+
+def _font(size: int):
+    """A TrueType face for the set-of-mark digits, or None to fall back."""
+    if not HAVE_PIL:
+        return None
+    for path in ("/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf",
+                 "/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf",
+                 "/Library/Fonts/Arial.ttf", "C:/Windows/Fonts/arial.ttf"):
+        try:
+            return ImageFont.truetype(path, size)
+        except Exception:
+            continue
+    return None
 
 
 # --------------------------------------------------------------------------
@@ -136,6 +150,109 @@ def render_plan_png(storey: dict, path: str, tr: dict, ss: int = 2) -> str:
     img = img.resize((tr["width"], tr["height"]), Image.LANCZOS)
     img.save(path)
     return path
+
+
+# --------------------------------------------------------------------------
+# set-of-mark condition
+# --------------------------------------------------------------------------
+
+def declared_marks(storey: dict) -> list:
+    """The rooms the IFC file declares, numbered, for marking on an image.
+
+    Only `source == "ifc"` spaces, for the same reason `graph_extract.
+    storey_text` filters them: the sidecar also carries the pipeline's own
+    recovered rooms, and marking those would hand a model the answer to the
+    room-recovery half of the task and flatten the damage axis along with it.
+    Numbering follows the sidecar's own order so it is stable across a
+    re-render.
+
+    This is the visual counterpart of what the text condition is given -- the
+    same room set, named the same way -- so a text-versus-vision difference is
+    about the modality and not about one side knowing more rooms.
+    """
+    out = []
+    for s in (storey.get("spaces") or storey.get("rooms") or []):
+        if (s.get("source") or "ifc") != "ifc":
+            continue
+        c = s.get("centroid")
+        if not c or len(c) < 2:
+            continue
+        out.append({"index": len(out) + 1,
+                    "gid": s.get("global_id") or s.get("id"),
+                    "centroid": [float(c[0]), float(c[1])]})
+    return out
+
+
+def render_som_png(storey: dict, path: str, tr: dict, base: str = "plan",
+                   res: float = OCC_RES, min_side: int = OCC_MIN_SIDE,
+                   marks: list | None = None) -> tuple:
+    """A base render with a numbered disc on each IFC-declared room.
+
+    The set-of-mark condition. A model asked for pixel centroids on a bare
+    plan does not localise: probed on an 1800x1262 render, GLM-4.1V-9B-Thinking
+    got the room *count* exactly right (6/6, 5/5) but placed every centroid on
+    a round 50 px grid inside the left 40% of the image, so five of six
+    predictions fell inside one reference room and nothing matched. That
+    measures coordinate regression, not plan reading.
+
+    With the rooms marked, a model refers to a room by the number printed in
+    it. No localisation is required, matching is exact, and what is left being
+    measured is the question actually being asked: given the room set, can it
+    read the room functions and which pairs connect?
+
+    **What this condition gives away, stated because it must be quoted with any
+    result from it:** the marks reveal the room partition -- how many rooms the
+    file declares and where they are. Room recovery is therefore NOT measured
+    here and room recall is 1.000 by construction for the declared set, the
+    same tautology as room recall against the annotated reference. Only the
+    labels and the connectivity are results.
+
+    Returns (image_path, marks).
+    """
+    if not HAVE_PIL:
+        raise RuntimeError("Pillow is required (pip install Pillow)")
+    marks = declared_marks(storey) if marks is None else marks
+
+    # The mark must be drawn on the grid of the image it is drawn on. The plan
+    # render and the occupancy raster do not share one (~89.6 px/m at
+    # 1800x1262 against ~30 px/m at 579x396), and taking the caller's word for
+    # it is how the harness came to lift occupancy answers on the plan's grid.
+    tmp = path + ".base.png"
+    if base == "occ":
+        if render_occupancy_png(storey, tmp, res=res, min_side=min_side) is None:
+            return None, marks
+        tr_used = occupancy_transform(storey, res=res, min_side=min_side)
+    else:
+        render_plan_png(storey, tmp, tr)
+        tr_used = tr
+    img = Image.open(tmp).convert("RGB")
+    os.remove(tmp)
+    if tr_used is None or (tr_used["width"], tr_used["height"]) != img.size:
+        raise RuntimeError(
+            f"mark grid does not describe the {base} image: transform says "
+            f"{tr_used and (tr_used['width'], tr_used['height'])}, image is "
+            f"{img.size}")
+
+    dr = ImageDraw.Draw(img)
+    s, tx, ty = tr_used["px_per_m"], tr_used["tx"], tr_used["ty"]
+    # Scale the disc to the image so the digits stay legible after whatever
+    # internal resize the model applies.
+    r = max(11, int(min(img.size) * 0.028))
+    font = _font(int(r * 1.35))
+    for mk in marks:
+        x, y = mk["centroid"]
+        px, py = x * s + tx, -y * s + ty
+        dr.ellipse([px - r, py - r, px + r, py + r],
+                   fill=(255, 255, 255), outline=(0, 0, 0), width=max(2, r // 6))
+        txt = str(mk["index"])
+        if font is not None:
+            bb = dr.textbbox((0, 0), txt, font=font)
+            dr.text((px - (bb[2] - bb[0]) / 2, py - (bb[3] - bb[1]) / 2 - bb[1]),
+                    txt, fill=(0, 0, 0), font=font)
+        else:                                  # no TrueType font available
+            dr.text((px - 3, py - 5), txt, fill=(0, 0, 0))
+    img.save(path)
+    return path, marks
 
 
 # --------------------------------------------------------------------------
@@ -280,6 +397,27 @@ def render_model(sidecar: str, out_dir: str, mode: str, res: float,
             else:
                 render_plan_png(st, os.path.join(out_dir, f"{model}_{slug}_plan.png"), tr)
                 rec["plan"] += 1
+        if mode in ("som", "both_som"):
+            for base, suffix in (("plan", "plan_som"), ("occ", "occ_som")):
+                if base == "plan" and (not tr or not st.get("elements")):
+                    rec["skipped"].append(f"{slug}:{suffix}:no-geometry")
+                    continue
+                out = os.path.join(out_dir, f"{model}_{slug}_{suffix}.png")
+                try:
+                    q, marks = render_som_png(st, out, tr, base=base)
+                except RuntimeError as e:
+                    rec["skipped"].append(f"{slug}:{suffix}:{e}")
+                    continue
+                if q is None:
+                    rec["skipped"].append(f"{slug}:{suffix}:no-bounds")
+                    continue
+                # Written beside the image so the harness resolves exactly the
+                # numbers that were drawn, rather than recomputing and hoping
+                # the two agree.
+                with open(out.replace(".png", ".marks.json"), "w") as fh:
+                    json.dump({"model": model, "storey": slug, "base": base,
+                               "marks": marks}, fh, indent=1)
+                rec[suffix] = rec.get(suffix, 0) + 1
         if mode in ("occ", "both"):
             p = render_occupancy_png(
                 st, os.path.join(out_dir, f"{model}_{slug}_occ.png"),
@@ -299,7 +437,11 @@ def main(argv=None) -> int:
                     help="directory of model_*/model_*_floorplans.json sidecars, "
                          "or a single sidecar file")
     ap.add_argument("--out", required=True, help="directory to write images into")
-    ap.add_argument("--mode", choices=("plan", "occ", "both"), default="both")
+    ap.add_argument("--mode",
+                    choices=("plan", "occ", "both", "som", "both_som"),
+                    default="both",
+                    help="'som' renders the set-of-mark variants (numbered "
+                         "discs on each declared room) alongside nothing else")
     ap.add_argument("--res", type=float, default=OCC_RES,
                     help="metres per cell for the occupancy raster")
     ap.add_argument("--min-side", type=int, default=OCC_MIN_SIDE,

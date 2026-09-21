@@ -73,18 +73,41 @@ def forbidden_counts(path: str) -> dict:
 def main() -> int:
     # ---- the source-level invariant -------------------------------------
     src = open(os.path.join(ROOT, "main", "render_blind.py")).read()
-    body = src.split('"""', 2)[-1]        # skip the module docstring
-    # Comments are stripped, because this module documents what it deliberately
-    # does NOT draw -- and an earlier version of this test failed on the comment
-    # that says so.
-    code = "\n".join(
-        ln.split("#", 1)[0] for ln in body.splitlines()
-        if not ln.strip().startswith("#"))
-    ok("render_blind.py never draws text (no .text( call in its code)",
-       ".text(" not in code)
-    ok("render_blind.py never reads storey['spaces'] in code",
-       'storey["spaces"]' not in code and "storey['spaces']" not in code
-       and '"spaces"' not in code)
+    # Scoped to the two leak-free renderers by NAME, via the AST, rather than
+    # scanned over the whole module. The set-of-mark renderer added later draws
+    # digits and reads `spaces` on purpose -- that is the whole point of that
+    # condition -- and a module-wide scan cannot tell the deliberate case from
+    # the forbidden one. It also cannot tell code from a docstring quoting it,
+    # which is how an earlier version of this very test reported a false
+    # failure.
+    import ast
+    tree = ast.parse(src)
+    fns = {n.name: n for n in ast.walk(tree)
+           if isinstance(n, ast.FunctionDef)}
+    for name in ("render_plan_png", "render_occupancy_png"):
+        fn = fns.get(name)
+        ok(f"{name} exists to be checked", fn is not None)
+        if fn is None:
+            continue
+        draws_text = any(
+            isinstance(n, ast.Call) and isinstance(n.func, ast.Attribute)
+            and n.func.attr == "text" for n in ast.walk(fn))
+        ok(f"{name} never draws text", not draws_text)
+        reads_spaces = any(
+            isinstance(n, ast.Constant) and n.value in ("spaces", "rooms")
+            for n in ast.walk(fn))
+        ok(f"{name} never reads the storey's spaces", not reads_spaces)
+
+    # The set-of-mark renderer is allowed digits, and nothing else. It must not
+    # acquire a room name, an area or a fill -- the leaks that made the
+    # original 984 renders unusable.
+    som = fns.get("render_som_png")
+    ok("render_som_png exists", som is not None)
+    if som is not None:
+        names = {n.value for n in ast.walk(som)
+                 if isinstance(n, ast.Constant) and isinstance(n.value, str)}
+        ok("render_som_png draws no room name or area field",
+           not ({"name", "long_name", "label", "area_m2", "area"} & names))
 
     # ---- doors must be distinguishable from windows ---------------------
     # Without this the door-mediated half of the task is unrecoverable from
@@ -220,6 +243,35 @@ def main() -> int:
                names and not differing)
             for n in differing[:5]:
                 print(f"         differs across levels: {n}")
+
+    # ---- the set-of-mark condition leaks nothing but its digits ----------
+    # SOM reveals the room partition on purpose (that is its stated ablation),
+    # but it must not reveal a room's NAME, its area, or the stated-vs-recovered
+    # distinction -- the three leaks that made the original renders unusable.
+    import tempfile
+    side = os.path.join(ROOT, "dataset", "synthetic_data", "synth150",
+                        "floorplans", "synth_0050",
+                        "synth_0050_floorplans.json")
+    if os.path.exists(side):
+        st = json.load(open(side))["storeys"][0]
+        marks = RB.declared_marks(st)
+        ok(f"marks cover only IFC-declared rooms ({len(marks)})",
+           len(marks) == len([s for s in st["spaces"]
+                              if (s.get("source") or "ifc") == "ifc"]))
+        ok("marks are numbered from 1 with no gaps",
+           [m["index"] for m in marks] == list(range(1, len(marks) + 1)))
+        with tempfile.TemporaryDirectory() as td:
+            for base in ("plan", "occ"):
+                p, _ = RB.render_som_png(
+                    st, os.path.join(td, f"som_{base}.png"),
+                    st["transform"], base=base)
+                counts = forbidden_counts(p)
+                worst = max(counts.values())
+                ok(f"set-of-mark {base} render leaks no name/area/fill colour "
+                   f"(worst {worst} px)", worst <= FILL_NOISE)
+                for k, v in counts.items():
+                    if v > FILL_NOISE:
+                        print(f"         {base} leaks {v:8d} px of {k}")
 
     print()
     return failures

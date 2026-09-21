@@ -56,24 +56,50 @@ VISION_MODELS = [k for k, v in MODELS.items() if v["kind"] == "vision"]
 HEADLINE_MODELS = ("glm-9b", "glm-9b-v")
 
 
+# Text damage has two regimes: L2, L3 and L4 declare an identical set of
+# IfcSpaces (595 against L1's 869), because storey assignment is recovered
+# geometrically and L4's centimetre units are absorbed by
+# `detect_scale_correction`. The text modality is cheap enough to run all four
+# and show the flatness; the vision modalities run the two regimes and one
+# control.
+REGIMES = ("synth150", "synth150_L2")
+
+
 def cells() -> list:
     """Every (model, modality, corpus, mask) the grid actually needs."""
     out = []
 
-    # Text-bearing modalities: damage and label masking both matter.
+    # -- text: the baseline, and the only cheap modality -------------------
     for m in TEXT_MODELS:
         for corpus in LEVELS:
             for mask in (False, True):
                 out.append({"model": m, "modality": "text",
                             "corpus": corpus, "mask": mask})
+
+    # -- set-of-mark: the primary vision condition -------------------------
+    # Each declared room carries a numbered disc, so a model names rooms by
+    # number and never has to localise anything. This is the "best conditions"
+    # question: given the room set, can a model read a plan? It is also the
+    # only vision condition that is damage-sensitive, because the marks follow
+    # the *declared* rooms and half of those are gone from L2 on.
     for m in VISION_MODELS:
-        for corpus in LEVELS:
+        for corpus in REGIMES:
+            out.append({"model": m, "modality": "plan_som",
+                        "corpus": corpus, "mask": False})
+            out.append({"model": m, "modality": "occ_som",
+                        "corpus": corpus, "mask": False})
             for mask in (False, True):
-                out.append({"model": m, "modality": "text+plan",
+                out.append({"model": m, "modality": "text+plan_som",
                             "corpus": corpus, "mask": mask})
 
-    # Image-only modalities: invariant to damage and to masking, so one cell
-    # each -- plus a single L4 control to prove the invariance empirically.
+    # -- unmarked images: the localisation result --------------------------
+    # Reported because it is the honest strict condition, and small. A probe of
+    # GLM-4.1V-9B-Thinking on a bare plan got the room count exactly right and
+    # still matched almost nothing, because its centroids clustered in one
+    # corner of the image; that is a localisation failure and it should be
+    # shown as one rather than folded into a plan-reading claim. Invariant to
+    # damage and to masking (the renders are byte-identical and carry no
+    # names), so one cell each plus one control.
     for m in VISION_MODELS:
         for modality in ("plan", "occ"):
             out.append({"model": m, "modality": modality,
@@ -81,6 +107,9 @@ def cells() -> list:
     out.append({"model": VISION_MODELS[0], "modality": "plan",
                 "corpus": "synth150_L4", "mask": False,
                 "note": "invariance control: must match the synth150 plan cell"})
+    out.append({"model": VISION_MODELS[0], "modality": "plan_som",
+                "corpus": "synth150_L3", "mask": False,
+                "note": "regime control: must match the synth150_L2 plan_som cell"})
     return out
 
 

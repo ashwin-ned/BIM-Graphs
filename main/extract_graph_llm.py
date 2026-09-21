@@ -60,9 +60,9 @@ from evaluation import matching as MATCH
 from evaluation import schema as SCHEMA
 from evaluation import scoring as SCORE
 from evaluation.manifest import RunManifest
-from render_blind import occupancy_transform, storey_slug
+from render_blind import declared_marks, occupancy_transform, storey_slug
 
-MODALITIES = ("text", "plan", "occ", "text+plan")
+MODALITIES = X.ALL_MODALITIES
 
 # The grid's model list, declared in one place so a cell is identified by a
 # short name rather than by a repo path spelled slightly differently in four
@@ -117,11 +117,58 @@ def transform_for(modality: str, storey: dict) -> dict | None:
     it, because the rooms do carry centroids. Hence one function, used by both
     the scorer path and the oracle.
     """
-    if modality == "occ":
+    if modality in ("occ", "occ_som"):
         return occupancy_transform(storey)
-    if modality in ("plan", "text+plan"):
+    if modality in ("plan", "text+plan", "plan_som", "text+plan_som"):
         return storey.get("transform")
     return None
+
+
+def marks_for(unit: dict) -> list:
+    """The numbered marks drawn on this unit's image.
+
+    Preferred from the sidecar the renderer wrote, so the numbers the harness
+    resolves are provably the numbers on the image. Recomputed from the storey
+    only as a fallback -- both paths call `render_blind.declared_marks`, but a
+    stale image beside a fresh sidecar would otherwise go unnoticed, which is
+    the same drift the transform/image check exists to stop.
+    """
+    side = (unit.get("marks_path") or "")
+    if side and os.path.exists(side):
+        with open(side) as fh:
+            return json.load(fh)["marks"]
+    return declared_marks(unit["storey"])
+
+
+def marks_to_gt(marks: list, gt) -> dict:
+    """{mark index -> reference room id}, by identity where possible.
+
+    Two dialects, two joins. The deriver and the annotator key rooms by IFC
+    GlobalId, which is exactly what a declared space carries, so that is an
+    exact join. The generator keys rooms by its own synthetic rid, which
+    appears nowhere in the sidecar, so the mark's centroid is placed inside a
+    reference room's extent instead. A mark that resolves to nothing is left
+    out and the caller sees a shorter mapping -- it is never guessed into the
+    nearest room.
+    """
+    out = {}
+    taken = set()
+    for mk in marks:
+        gid = mk.get("gid")
+        if gid in gt.rooms and gid not in taken:
+            out[mk["index"]] = gid
+            taken.add(gid)
+            continue
+        cx, cy = mk["centroid"]
+        for rid, room in gt.rooms.items():
+            if rid in taken or not room.bbox:
+                continue
+            x0, y0, x1, y1 = room.bbox
+            if x0 <= cx <= x1 and y0 <= cy <= y1:
+                out[mk["index"]] = rid
+                taken.add(rid)
+                break
+    return out
 
 
 # --------------------------------------------------------------------------
@@ -167,7 +214,17 @@ def find_units(corpus: str, modality: str, images: str | None,
             u = {"unit": f"{name}/{slug}", "building": name, "storey_index": i,
                  "storey": st, "gt_path": gt_path, "sidecar": side,
                  "slug": slug, "image": None, "skip": None}
-            if modality in ("plan", "occ", "text+plan"):
+            if modality in X.SOM_MODALITIES:
+                kind = "occ_som" if modality == "occ_som" else "plan_som"
+                p = os.path.join(img_dir, f"{name}_{slug}_{kind}.png")
+                u["marks_path"] = os.path.join(
+                    img_dir, f"{name}_{slug}_{kind}.marks.json")
+                if not os.path.exists(p):
+                    u["skip"] = (f"no {kind} render at {p} -- run "
+                                 f"main/render_blind.py --mode som")
+                else:
+                    u["image"] = p
+            elif modality in ("plan", "occ", "text+plan"):
                 kind = "occ" if modality == "occ" else "plan"
                 p = os.path.join(img_dir, f"{name}_{slug}_{kind}.png")
                 if not os.path.exists(p):
@@ -216,7 +273,9 @@ class OracleBackend:
         self.name = f"oracle:{anchor}"
 
     def generate(self, system, user, image=None, unit=None, gt=None,
-                 max_new_tokens=0, transform=None):
+                 max_new_tokens=0, transform=None, marks=None):
+        if marks is not None:
+            return self._as_marks(gt, marks)
         rooms, edges = [], []
         alias = {}
         for k, (rid, r) in enumerate(gt.rooms.items() if gt else []):
@@ -261,6 +320,34 @@ class OracleBackend:
                               "type": inv[rel]})
         return (json.dumps({"rooms": rooms, "edges": edges}), False,
                 {"oracle": self.anchor})
+
+    def _as_marks(self, gt, marks):
+        """The reference answered the way a set-of-mark condition asks for it.
+
+        Verifies the whole mark path end to end: the numbers the renderer drew,
+        their resolution back to a room, and the scoring that follows. If the
+        numbering and the reference ever disagree this returns below 1.000,
+        which is the only way that mismatch is visible -- a model scoring badly
+        on marks would otherwise look like a model that cannot read a plan.
+        """
+        m2g = marks_to_gt(marks, gt)
+        g2m = {rid: idx for idx, rid in m2g.items()}
+        rooms = [{"id": str(idx), "label": gt.rooms[rid].label}
+                 for idx, rid in sorted(m2g.items())]
+        inv = {"connected_by_door": "door", "open_passage": "open"}
+        edges = []
+        for p, declared in gt.positives.items():
+            a, b = tuple(p)
+            if a not in g2m or b not in g2m:
+                continue
+            rel = SCORE.TYPE_MAP.get(declared)
+            if rel is None and declared is None:
+                rel = "connected_by_door"
+            if rel in X.EXTRACT_RELATIONS:
+                edges.append({"a": str(g2m[a]), "b": str(g2m[b]),
+                              "type": inv[rel]})
+        return (json.dumps({"rooms": rooms, "edges": edges}), False,
+                {"oracle": "marks", "marks": len(marks)})
 
 
 class ReplayBackend:
@@ -431,6 +518,25 @@ def run(args) -> int:
             continue
         gt = gt_full.restrict(rids, reason=f"storey {key}")
 
+        marks = None
+        if args.modality in X.SOM_MODALITIES:
+            marks = marks_for(u)
+            m2g = marks_to_gt(marks, gt)
+            if not m2g:
+                man.missing(u["unit"],
+                            reason=f"none of the {len(marks)} marks resolved "
+                                   f"to a reference room")
+                continue
+            # The model was shown these rooms and no others, so the reference
+            # is narrowed to them. Charging it for a room that carried no mark
+            # would measure room recovery, which this condition deliberately
+            # hands over -- see render_blind.render_som_png on what the marks
+            # give away.
+            gt = gt.restrict(set(m2g.values()),
+                             reason=f"storey {key}; {len(m2g)} marked rooms")
+            if len(m2g) < len(marks):
+                marks = [mk for mk in marks if mk["index"] in m2g]
+
         tr = transform_for(args.modality, u["storey"])
         if u["image"] and tr:
             # The transform must describe THIS image. If it does not, every
@@ -459,6 +565,7 @@ def run(args) -> int:
             kw = {}
             if args.backend == "oracle":
                 kw["transform"] = transform_for(args.modality, u["storey"])
+                kw["marks"] = marks
             raw, hit_cap, meta = backend.generate(
                 system, user, image=u["image"], unit=u["unit"], gt=gt,
                 max_new_tokens=args.max_new_tokens, **kw)
@@ -473,7 +580,7 @@ def run(args) -> int:
         status_n[ex.status] = status_n.get(ex.status, 0) + 1
         g = X.to_graph(ex, transform=transform_for(args.modality, u["storey"]),
                        elevation=u["storey"].get("elevation_m"),
-                       storey_gid=f"ST-{u['storey_index']}")
+                       storey_gid=f"ST-{u['storey_index']}", marks=marks)
         m = MATCH.match_rooms(g, gt)
         if m.unscorable:
             # Loud, and out of the average. A score computed here would

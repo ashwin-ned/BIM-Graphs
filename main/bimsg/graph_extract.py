@@ -60,6 +60,13 @@ except ImportError:                       # pragma: no cover - path bootstrap
         os.path.dirname(os.path.abspath(__file__)))))
     from evaluation import labels as L
 
+# Set-of-mark conditions: each declared room carries a numbered disc, so the
+# model names rooms by number and never has to localise anything. What is left
+# being measured is room function and connectivity -- see
+# `render_blind.render_som_png` for what the marks give away.
+SOM_MODALITIES = ("plan_som", "occ_som", "text+plan_som")
+ALL_MODALITIES = ("text", "plan", "occ", "text+plan") + SOM_MODALITIES
+
 # The relations a model is asked for. `vertically_connected` is absent by
 # design -- see the module docstring.
 EXTRACT_RELATIONS = ("connected_by_door", "open_passage")
@@ -153,6 +160,8 @@ Rules:
 # nothing else, and a model reading the text is given metres.
 _ROOM_EXTRA_PX = ', "centroid_px": [<x>, <y>]'
 _ROOM_EXTRA_M = ', "centroid_m": [<x>, <y>]'
+_ANCHOR_MARK = ('- "id" is the number printed on the room\'s disc, as a '
+                'string. Use only numbers that appear in the image.')
 _ANCHOR_PX = ('- "centroid_px" is the pixel coordinate of the room\'s '
               'approximate centre in the image you were shown. The image is '
               '{w} pixels wide and {h} pixels tall, with (0, 0) at the '
@@ -173,6 +182,27 @@ Walls are drawn as thick lines. A gap in a wall between two rooms is an \
 opening you can walk through. Give each room you find an id of your own \
 choosing and report the pixel coordinates of its approximate centre, so that \
 your rooms can be located on the image you were shown."""
+
+SYSTEM_SOM = """You are a building-information assistant. You are shown a \
+top-down architectural floor plan of one storey. Each room the building file \
+declares is marked with a numbered white disc.
+
+Walls are drawn as thick lines. A gap in a wall between two rooms is an \
+opening you can walk through; doors and windows are drawn in different \
+colours from walls.
+
+Refer to each room by the number printed in it. You do not need to give any \
+coordinates -- the numbers identify the rooms."""
+
+SYSTEM_SOM_OCC = """You are a building-information assistant. You are shown a \
+binary occupancy map of one storey: white pixels are free floor space, black \
+pixels are walls and other obstructions. Each room the building file declares \
+is marked with a numbered disc.
+
+A narrow white channel joining two regions is an opening you can walk \
+through. Refer to each room by the number printed in it; you do not need to \
+give any coordinates. You cannot see furniture or labels, so infer each \
+room's function from its size, shape and how it connects to the others."""
 
 SYSTEM_OCC = """You are a building-information assistant. You are shown a \
 binary occupancy map of one storey of a building: white pixels are free floor \
@@ -296,6 +326,24 @@ def build_prompt(modality: str, storey: dict | None = None,
     Those two readings support opposite conclusions about the model, so the
     ambiguity is removed rather than argued about.
     """
+    if modality in SOM_MODALITIES:
+        # Identity comes from the marks, so no coordinate is requested: a
+        # bare plan asked for pixel centroids and got a round 50 px grid in
+        # the left 40% of the image, which measured coordinate regression
+        # rather than plan reading.
+        contract = OUTPUT_CONTRACT.format(
+            taxonomy=", ".join(L.CLASSES), extra_room="",
+            anchor_rule=_ANCHOR_MARK)
+        sysp = SYSTEM_SOM_OCC if modality == "occ_som" else SYSTEM_SOM
+        if modality == "text+plan_som":
+            return (SYSTEM_SOM,
+                    "Facts the building file states about this storey:\n\n"
+                    + storey_text(storey, mask_labels)
+                    + "\n\nThe image shows the same storey, with each "
+                      "declared room marked by a numbered disc.\n\n"
+                    + contract, True)
+        return (sysp, contract, True)
+
     pixel = modality in ("plan", "occ", "text+plan")
     anchor = _ANCHOR_M
     if pixel:
@@ -320,7 +368,7 @@ def build_prompt(modality: str, storey: dict | None = None,
                 + storey_text(storey, mask_labels)
                 + "\n\nThe image shows the same storey.\n\n" + contract, True)
     raise ValueError(f"unknown modality {modality!r}; expected one of "
-                     f"text, plan, occ, text+plan")
+                     + ", ".join(ALL_MODALITIES))
 
 
 # --------------------------------------------------------------------------
@@ -496,7 +544,8 @@ def px_to_m(px, py, tr: dict) -> tuple:
 
 
 def to_graph(ex: Extraction, transform: dict | None = None,
-             elevation: float | None = None, storey_gid: str | None = None):
+             elevation: float | None = None, storey_gid: str | None = None,
+             marks: list | None = None):
     """Build a graph in the pipeline's own shape, so the existing scorers apply.
 
     This is the whole reason the evaluation contract was worth building. The
@@ -523,9 +572,23 @@ def to_graph(ex: Extraction, transform: dict | None = None,
     if storey_gid:
         g.add_node(storey_gid, layer="storey", source="predicted",
                    elevation=elevation)
+    # Set-of-mark: a number printed on the image resolves to the declared room
+    # it was drawn on, so the model's "3" becomes that room's GlobalId and its
+    # true centroid. The correspondence is part of the input the model was
+    # given, not something it had to infer, so using it is not leakage -- but
+    # it does mean room recovery is not being measured in this condition.
+    by_index = {str(mk["index"]): mk for mk in (marks or [])}
+    unresolved = set()
     for r in ex.rooms:
+        mk = _match_mark(r["id"], by_index) if by_index else None
+        if by_index and mk is None:
+            # A number that was never on the image. Counted, not invented.
+            ex._drop_room("unresolved_mark")
+            unresolved.add(r["id"])
+            continue
+        node_id = (mk["gid"] or r["id"]) if mk else r["id"]
         attrs = {"layer": "space", "source": "predicted",
-                 "room_number": r["id"],
+                 "room_number": (mk["gid"] if mk else r["id"]),
                  # `predicted_label` and not `label`: score_labels reads only
                  # the former precisely so that a prediction can never be
                  # scored against itself.
@@ -537,7 +600,11 @@ def to_graph(ex: Extraction, transform: dict | None = None,
         # `centroid` on a node means world metres -- that is what
         # `matching._bbox_score` compares against a reference bbox -- so only
         # a value actually in metres may be written there.
-        if m is not None:
+        if mk is not None:
+            attrs["centroid"] = [round(mk["centroid"][0], 3),
+                                 round(mk["centroid"][1], 3)]
+            attrs["mark_index"] = mk["index"]
+        elif m is not None:
             attrs["centroid"] = [round(m[0], 3), round(m[1], 3)]
         elif px is not None and transform:
             x, y = px_to_m(px[0], px[1], transform)
@@ -551,14 +618,43 @@ def to_graph(ex: Extraction, transform: dict | None = None,
             # The model used the bare key the contract did not ask for, so
             # which system it is in is unknown. Recorded, never guessed.
             attrs["centroid_unknown_units"] = list(r["centroid_bare"])
-        g.add_node(r["id"], **attrs)
+        g.add_node(node_id, **attrs)
+        r["_node"] = node_id
         if storey_gid:
-            g.add_edge(storey_gid, r["id"], key=f"contains:{r['id']}",
+            g.add_edge(storey_gid, node_id, key=f"contains:{node_id}",
                        relation="contains")
 
+    node_of = {r["id"]: r["_node"] for r in ex.rooms if "_node" in r}
     for i, e in enumerate(ex.edges):
+        a, b = node_of.get(e["a"]), node_of.get(e["b"])
+        if a is None or b is None:
+            # Its endpoint resolved to no room -- an edge on an unresolved mark.
+            ex._drop_edge("endpoint_unresolved_mark")
+            continue
         pid = f"pred-{i:04d}"
-        for u, v in ((e["a"], e["b"]), (e["b"], e["a"])):
+        for u, v in ((a, b), (b, a)):
             g.add_edge(u, v, key=pid, edge_id=pid, portal_id=pid,
                        relation=e["relation"], provenance="model")
     return g
+
+
+_MARK_ID = re.compile(r"^(?:room|rooms|r|space|s|#|no|nr)?[\s_.:#-]*(\d+)$",
+                      re.IGNORECASE)
+
+
+def _match_mark(rid: str, by_index: dict):
+    """Resolve a model's room id to a numbered mark, or None.
+
+    Models do not answer with a bare integer reliably -- "3", "room 3",
+    "Room_3" and "#3" all occur -- so a small fixed set of forms is accepted
+    and anything else is counted as unresolved rather than guessed at. In
+    particular no prefix/substring search is done: "room 13" must not resolve
+    to mark 1.
+    """
+    t = str(rid).strip()
+    if t in by_index:
+        return by_index[t]
+    mo = _MARK_ID.match(t)
+    if mo:
+        return by_index.get(str(int(mo.group(1))))
+    return None
