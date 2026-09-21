@@ -107,9 +107,15 @@ MODELS = {
     # token), so this is the strongest ungated model in the same weight class.
     # It also gives a within-family generation comparison against
     # Qwen2.5-7B on the same task.
-    # Qwen3 emits a reasoning trace of its own by default, hence the larger cap.
+    # Qwen3 reasons by default and its trace does not fit any cap worth paying
+    # for: at 6144 every unit of a 4-unit probe truncated and the cell scored
+    # F1 0.000, which is not a result but an absence of one. Unlike
+    # GLM-4.1V-Thinking it exposes a real toggle -- its chat template takes
+    # `enable_thinking=False`, which prefills a closed empty trace the model is
+    # trained to respect -- so it is run in that mode and the paper says so.
     "qwen3-8b":   {"id": "Qwen/Qwen3-8B", "kind": "text", "pairs_with": None,
-                   "max_new_tokens": 6144, "thinking": True},
+                   "max_new_tokens": 3072, "thinking": False,
+                   "no_think_template": True},
     # -- vision ------------------------------------------------------------
     "glm-9b-v":   {"id": "zai-org/GLM-4.1V-9B-Thinking", "kind": "vision",
                    "pairs_with": "glm-9b", "max_new_tokens": 6144,
@@ -434,11 +440,14 @@ class ReplayBackend:
 class TextBackend:
     """A causal LM reading the storey as text."""
 
-    def __init__(self, model_id="zai-org/GLM-4-9B-0414", device="cuda"):
+    def __init__(self, model_id="zai-org/GLM-4-9B-0414", device="cuda",
+                 no_think: bool = False):
         from transformers import AutoModelForCausalLM, AutoTokenizer
         import torch
         self.name = f"llm:{model_id.split('/')[-1]}"
         self.model_id = model_id
+        # Only where the model's own template supports it -- see MODELS.
+        self.no_think = no_think
         self.tok = AutoTokenizer.from_pretrained(model_id, trust_remote_code=True)
         self.model = AutoModelForCausalLM.from_pretrained(
             model_id, dtype=torch.bfloat16, device_map=device,
@@ -451,8 +460,9 @@ class TextBackend:
                  max_new_tokens=2048):
         msgs = [{"role": "system", "content": system},
                 {"role": "user", "content": user}]
+        kw = {"enable_thinking": False} if self.no_think else {}
         text = self.tok.apply_chat_template(msgs, tokenize=False,
-                                            add_generation_prompt=True)
+                                            add_generation_prompt=True, **kw)
         ids = self.tok(text, return_tensors="pt").to(self.model.device)
         t0 = time.time()
         with self._torch.no_grad():
@@ -649,6 +659,8 @@ def run(args) -> int:
            "backend": args.backend, "model_id": args.model_id,
            "oracle_anchor": args.oracle_anchor if args.backend == "oracle" else None,
            "mask_labels": bool(args.mask_labels),
+           "no_think_template": bool(
+               MODELS.get(args.model_id or "", {}).get("no_think_template")),
            "max_new_tokens": args.max_new_tokens,
            "relations_scored": list(X.EXTRACT_RELATIONS),
            "scope": "one storey per call; vertical links out of scope on both "
@@ -664,7 +676,10 @@ def run(args) -> int:
             return 1
         backend = ReplayBackend(args.replay)
     elif args.backend == "llm":
-        backend = TextBackend(resolve_model(args.model_id or "glm-9b", "text"))
+        name = args.model_id or "glm-9b"
+        backend = TextBackend(
+            resolve_model(name, "text"),
+            no_think=bool(MODELS.get(name, {}).get("no_think_template")))
     else:
         vid = resolve_model(args.model_id or "glm-9b-v", "vision")
         # InternVL3 needs its own path -- see InternVLBackend for why the
