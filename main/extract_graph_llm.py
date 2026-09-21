@@ -498,6 +498,12 @@ class InternVLBackend:
     tiling into 448 px patches whose aspect ratio is chosen per image -- and
     generation goes through `model.chat`.
 
+    Its remote code also needs two packages the rest of this project does not:
+    `einops` and `timm` (for `timm.layers.DropPath`). Install `timm` with
+    `--no-deps`: a plain install resolves its own torch pin and can silently
+    move this environment off torch 2.5.1+cu121, which everything else here is
+    built against.
+
     One accounting compromise, stated because it affects a reported number:
     `model.chat` returns a decoded string and not token ids, so the generated
     length is recovered by re-tokenising the reply. That is exact for the
@@ -512,7 +518,24 @@ class InternVLBackend:
     def __init__(self, model_id="OpenGVLab/InternVL3-8B", device="cuda",
                  max_tiles: int = 12, tile: int = 448):
         from transformers import AutoModel, AutoTokenizer
+        from transformers.modeling_utils import PreTrainedModel
         import torch
+
+        # transformers 5.16.1 sets `all_tied_weights_keys` as an *instance*
+        # attribute inside `post_init()`, and reads it back during weight
+        # loading. InternVL3's vendored modelling code predates that API and
+        # declares only the older `_tied_weights_keys`, so loading dies with
+        # "'InternVLChatModel' object has no attribute
+        # 'all_tied_weights_keys'". This is the transformers-vs-remote-code
+        # gap the project flagged as a risk and that did NOT reproduce for the
+        # GLM pair; it is real for this one model.
+        #
+        # A class-level default is the contained fix: every current model sets
+        # its own instance attribute in post_init, which shadows this, so the
+        # shim only ever applies to a class that never set it at all.
+        if not hasattr(PreTrainedModel, "all_tied_weights_keys"):
+            PreTrainedModel.all_tied_weights_keys = {}
+
         self.name = f"vlm:{model_id.split('/')[-1]}"
         self.model_id = model_id
         self.tile = tile
