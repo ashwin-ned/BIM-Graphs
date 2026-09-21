@@ -84,6 +84,67 @@ class GroundTruth:
         """Pairs the reference examined, including the ones it abstained on."""
         return self.decided() | self.unknown
 
+    def restrict(self, rids, reason: str) -> "GroundTruth":
+        """A view of this reference covering only `rids`, saying what it lost.
+
+        Needed because a model is asked for one storey at a time (see
+        `bimsg.graph_extract`), and a reference covering the whole building
+        would charge it with every cross-storey link it was told not to emit.
+        Restricting the prediction's scope without restricting the reference's
+        is how a task definition turns into a measured failure.
+
+        A pair with one endpoint inside `rids` and one outside is neither kept
+        nor forgotten: it is counted in `scope["dropped_straddling"]`. Those
+        pairs are the real boundary of the restriction, and a restriction that
+        does not report them is indistinguishable from one that lost pairs by
+        accident.
+        """
+        keep = set(rids)
+        kept_rooms = {r: v for r, v in self.rooms.items() if r in keep}
+
+        def split(pairs):
+            inside, straddling = [], 0
+            for p in pairs:
+                a, b = tuple(p)
+                n = (a in keep) + (b in keep)
+                if n == 2:
+                    inside.append(p)
+                elif n == 1:
+                    straddling += 1
+            return inside, straddling
+
+        pos, s1 = split(self.positives)
+        neg, s2 = split(self.negatives)
+        unk, s3 = split(self.unknown)
+        scope = dict(self.scope)
+        scope["restricted_to"] = reason
+        scope["rooms_before"] = len(self.rooms)
+        scope["rooms_after"] = len(kept_rooms)
+        scope["dropped_straddling"] = s1 + s2 + s3
+        scope["dropped_outside"] = (
+            (len(self.positives) - len(pos) - s1)
+            + (len(self.negatives) - len(neg) - s2)
+            + (len(self.unknown) - len(unk) - s3))
+        return GroundTruth(
+            building=self.building, provenance=self.provenance,
+            identity=self.identity, rooms=kept_rooms,
+            positives={p: self.positives[p] for p in pos},
+            negatives=set(neg), unknown=set(unk),
+            rooms_rejected={r for r in self.rooms_rejected if r in keep},
+            usable=self.usable, excluded_because=self.excluded_because,
+            scope=scope, schema=self.schema, path=self.path)
+
+    def rooms_on_storey(self, storey) -> set:
+        """Room ids the reference places on one storey, by either field.
+
+        The generator writes an integer storey index, the deriver and the
+        annotator write a name. Both are compared as strings so a caller does
+        not have to know which dialect it holds.
+        """
+        want = str(storey)
+        return {rid for rid, r in self.rooms.items()
+                if str(r.storey) == want or str(r.storey_index) == want}
+
     def summary(self) -> dict:
         return {
             "building": self.building, "provenance": self.provenance,

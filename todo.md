@@ -31,46 +31,78 @@ unblocks, so nothing here is busywork disconnected from the paper.
 
 ---
 
-## Phase B — extraction harness (Method §3.5, unblocks all of Phase C) (≈10–12 days)
+## Phase B — extraction harness (Method §3.5, unblocks all of Phase C) — **BUILT 21 Sep 2026**
 
-This is the largest genuinely new engineering block and the one nothing else
-can start without.
+Landed as `main/bimsg/graph_extract.py` (library), `main/extract_graph_llm.py`
+(CLI) and `tests/test_graph_extraction.py` (guard), plus two additions to the
+evaluation contract. No new metric was written: a model's answer is parsed into
+a graph in the pipeline's own shape and handed to the **existing**
+`score_connectivity` / `score_labels`, so a model and the deterministic method
+are compared by one definition of precision.
 
-- [ ] **Whole-graph extraction prompt format.** One prompt per modality
-      (text-IFC, plan image, occupancy image, text+image) that asks a model to
-      emit an entire building's graph — rooms with labels, edges with types —
-      in one pass. Design decision needed: JSON, or a constrained grammar? A
-      model's context window bounds how much of a large building fits in one
-      call; decide now whether large buildings get chunked per storey or
-      dropped from this experiment, and say so explicitly rather than
-      silently.
-- [ ] **JSON-schema-validated parser with explicit parse-failure accounting.**
-      Replace `_coerce()`'s silent fallback-to-rule-baseline
-      (`main/bimsg/semantics.py`) with something that records `pred_missing` /
-      `pred_unmapped` per `evaluation.scoring.score_labels`'s existing
-      contract, extended to whole predicted graphs, not just single labels.
-      This is the same defect Phase A's VLM re-run works around for the
-      per-room task; the whole-graph task needs the general version.
-- [ ] **Pixel-space identity mode** in `evaluation/matching.py` + a new
-      dialect in `evaluation/schema.py`'s `detect_dialect` (currently raises
-      on anything unrecognised). A model reading an image emits pixel
-      coordinates or its own room ids, never IFC GlobalIds or world-metre
-      centroids. The lift already exists — every `*_floorplans.json` storey
-      carries `transform` = `{px_per_m, tx, ty, width, height}` — so this is
-      wiring, not new geometry.
-- [ ] **Provenance logging**: model revision, prompt hash, raw response, token
-      counts, wall-clock runtime, per prediction. Needed for the grid in
-      Phase C to be auditable and for `RunManifest` to have something to key
-      on beyond model × building.
-- [ ] New module, e.g. `main/extract_graph_llm.py`, tying the above together
-      with a CLI parallel to `main/eval_semantics.py`'s
-      `--backend {rule,llm,vlm}` shape but scoring whole graphs instead of
-      single labels.
-- [ ] **Test it before trusting it**: feed a known-bad model response (empty
-      string, truncated JSON, a graph with an invented room) through the new
-      parser and confirm it is charged correctly, not silently dropped or
-      silently scored as correct — the standing rule in this project after
-      three separate instances of exactly that failure shipping.
+- [x] **Whole-graph extraction prompt format** — four modalities (`text`,
+      `plan`, `occ`, `text+plan`), one output contract, JSON rather than a
+      grammar. **Size decision, stated not discovered: one storey per call**,
+      because a plan image is already one storey and per-storey text keeps the
+      modalities comparable rather than asking the text condition to do more.
+- [x] **Vertical links are out of scope**, on *both* sides — removed from the
+      reference by the new `GroundTruth.restrict`, which counts the pairs it
+      drops (`dropped_straddling`). Rationale: the deterministic path already
+      recovers them at precision 1.000, so there is nothing for a model to win
+      and points for it to lose by accident. Restricting only the prediction
+      would have turned a task definition into a measured failure.
+- [x] **JSON-schema-validated parser with explicit failure accounting** —
+      `Extraction.status` ∈ {ok, no_json, invalid_json, schema_invalid,
+      truncated}, plus per-item `dropped_rooms` / `dropped_edges` counters
+      (duplicate id, undeclared endpoint, self loop, unknown type, …). A
+      failed extraction yields an **empty** graph, never a partial one. Reads
+      only what follows `</think>`, so a thinking model's discarded first
+      draft is not mined as its answer.
+- [x] **Pixel-space matching** — `px_to_m` inverts the stored
+      `transform`, verified by round-trip. Implemented as a lift at parse time
+      rather than a new `detect_dialect` branch: `detect_dialect` reads
+      *ground-truth* files and a prediction is not ground truth, so adding a
+      dialect there would have been the wrong seam. Metres and pixels are kept
+      in separate keys — pooling them puts a room ~19 m from its true position
+      and reads as a recall failure rather than a unit error (measured while
+      breaking it on purpose).
+- [x] **Silent-zero guard** — `matching._diagnose` names the two cases where
+      zero matches is *not* the prediction's fault: a reference dialect that
+      states no room extent, and a prediction never lifted into metres. Both
+      are recorded as `failed: unscorable` and leave the average, rather than
+      contributing a 0.000 that describes the harness.
+- [x] **Provenance logging** — per prediction: prompt SHA-256, raw response,
+      token counts, wall-clock seconds, extraction summary, the reference's
+      restricted scope; per run: model id and `_commit_hash` revision. Written
+      alongside a `RunManifest` and a scores file.
+- [x] **An `oracle` backend, and this is the part that earned its keep.** It
+      emits the reference through the real prompt path, real parser and real
+      scorer, and must score 1.000. Three anchor modes, because the obvious one
+      is not enough: `identity` reported OK with the spatial anchor deleted
+      **and** against a deliberately sign-flipped `px_to_m`, while `pixels`
+      caught both (recall 0.000, 69 rooms missed and 69 invented). Only
+      `pixels` tests what the vision conditions depend on. A `replay` backend
+      re-scores logged responses so a scorer fix costs no GPU hours.
+- [x] **Verified against known-bad input** — 11 deliberate defects injected one
+      at a time and each confirmed to fail the suite: the `label` /
+      `predicted_label` self-scoring tautology, think-trace mining, a partial
+      extraction reported as success, uncounted item drops, `restrict`
+      forgetting and `restrict` over-keeping, a deleted diagnosis, a sign-flipped
+      lift, a metre value lifted as pixels, a guessed bare centroid, and the
+      unrestricted reference. Harness verified end to end at 1.000 on
+      **4 modalities × 4 damage levels × 300 units** and on the real corpus
+      (583/583 rooms, 522/522 labels).
+
+**One finding Phase C has to decide on, surfaced by the oracle rather than by a
+wasted run: the vision modalities cannot currently be scored on the real
+corpus.** The derived reference (`results/real_gt/*.realgt.json`) records a
+centroid and an area but no room extent, so an image-conditioned prediction —
+which invents its own room ids — has nothing to match against, and all 7 units
+in a 12-unit probe came back `failed: unscorable` with 0 scored. Text works
+there (the model can echo the IFC GlobalId, which identity-matches). Either
+`main/derive_real_gt.py` starts emitting the flood-fill region's extent, which
+looks small and would unlock real-corpus vision, or the vision rows stay
+synthetic-only and the paper says so. **Not decided here.**
 
 ---
 

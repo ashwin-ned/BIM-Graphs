@@ -404,6 +404,58 @@ ceiling on model accuracy — a method can be right where a reviewer was wrong,
 and treating it as a bound would reward an annotation process that agreed by
 being careless.
 
+### Whole-graph extraction: a model scored by the same code as the method
+
+`main/extract_graph_llm.py` asks a model for one storey's whole graph — every
+room, its function, and the pairs that open onto each other — in four
+modalities: `text`, `plan` (rendered plan), `occ` (occupancy raster), and
+`text+plan`. It **defines no metric of its own.** The answer is parsed into a
+graph in the pipeline's own shape and handed to the same `score_connectivity`
+and `score_labels` that score the deterministic method, so both are compared by
+one definition of precision.
+
+Two scope decisions, stated rather than left implicit:
+
+- **One storey per call.** A plan image is one storey, so per-storey text keeps
+  the modalities comparable instead of asking the text condition to do more.
+- **Vertical links are out of scope** — and are removed from the *reference*
+  too, by `GroundTruth.restrict`, which counts the pairs it drops. The
+  deterministic path recovers them at precision 1.000, so a model has nothing
+  to win and points to lose by accident. Restricting only the prediction would
+  turn a task definition into a measured failure.
+
+Every parse failure is counted and named (`no_json`, `invalid_json`,
+`schema_invalid`, `truncated`), with per-item counters for dropped rooms and
+edges, and a failed extraction yields an **empty** graph rather than a partial
+one. This is the general form of the `_coerce()` defect that faked a published
+number; `tests/test_graph_extraction.py` was verified against 11 deliberately
+injected defects.
+
+**Run the oracle before spending GPU time on a new corpus.** It emits the
+reference through the real prompt path, parser and scorer, and must score
+1.000:
+
+```bash
+python main/extract_graph_llm.py --corpus dataset/synthetic_data/synth150 \
+    --backend oracle --oracle-anchor pixels --modality plan
+```
+
+Use `--oracle-anchor pixels`, not the default. The `identity` anchor joins by
+room id and touches no geometry: it reported OK against a deliberately
+sign-flipped pixel→metre lift *and* with the spatial anchor deleted entirely,
+while `pixels` caught both (recall 0.000, 69 rooms missed and 69 invented).
+`pixels` is the only mode that tests what the vision conditions depend on.
+A `replay` backend re-scores a previous run's logged responses, so fixing a
+scorer costs no GPU hours.
+
+Verified at 1.000 on 4 modalities × 4 damage levels × 300 units, and on the
+real corpus (583/583 rooms matched, 522/522 labels). **The vision modalities
+are not yet scorable on the real corpus:** its derived reference states a
+centroid and an area but no room extent, so an image-conditioned prediction —
+which invents its own room ids — has nothing to match against. Those units are
+recorded as `unscorable` and leave the average rather than contributing a
+0.000 that would describe the reference instead of the model.
+
 ## Layout
 
 ```
@@ -436,6 +488,7 @@ main/eval_connectivity.py      connectivity vs any reference, with a manifest
 main/eval_real_connectivity.py the derived reference, with room contraction
 main/evaluate.py               verdict-level scoring of human annotation
 main/eval_semantics.py         held-out label accuracy, with dependency masking
+main/extract_graph_llm.py      whole-graph extraction by a model, oracle-verified
 main/eval_goal_resolution.py   language query → room → embodiment-aware plan
 
 main/render_plan.py       highlighted room crops for the VLM, keyed by GlobalId

@@ -42,6 +42,10 @@ class Matching:
     splits: dict = field(default_factory=dict)        # node -> [losing rids]
     by_identity: int = 0
     by_geometry: int = 0
+    # Set when matching could not have succeeded for a reason that is not the
+    # prediction's fault -- see `_diagnose`. A score computed over such a
+    # matching is meaningless and must be reported as unscorable instead.
+    unscorable: str | None = None
 
     def counts(self) -> dict:
         return {
@@ -143,4 +147,52 @@ def match_rooms(g, gt) -> Matching:
         losers = [r for r in rids if m.assign.get(n) != r]
         if losers and n in m.assign:
             m.splits[n] = losers
+    m.unscorable = _diagnose(g, gt, m, nodes)
     return m
+
+
+def _diagnose(g, gt, m, nodes) -> str | None:
+    """Why zero matches happened, when it was not the prediction's fault.
+
+    A model that invents its own room ids cannot match by identity, so it falls
+    through to geometry -- and `_bbox_score` needs `gt_room.bbox`, which **only
+    the generator dialect states**. The deriver and the annotator record a
+    centroid and an area but no extent, deliberately (`schema.Room.bbox`:
+    inventing one from a centroid would make geometric matching look better
+    than it is).
+
+    So scoring an image-conditioned prediction against the real corpus matches
+    nothing, every predicted edge lands on an unmatched endpoint, and precision
+    reads 0.000 -- a number that describes the reference's missing geometry and
+    not the model at all. This project has already published one metric that
+    measured its own scaffolding instead of a method. Say so here instead.
+    """
+    if m.assign or not nodes:
+        return None
+    if not gt.rooms:
+        return "reference states no rooms"
+    keyed = sum(1 for n in nodes if _identity_key(g, n, gt.identity) in gt.rooms)
+    if keyed:
+        return None
+    ref_has_geometry = any(gt.rooms[r].bbox for r in gt.rooms)
+    anchored = sum(1 for n in nodes if g.nodes[n].get("centroid"))
+    if ref_has_geometry and not anchored:
+        # The mirror of the case below, and the one a harness bug produces: the
+        # reference could have matched geometrically, but not one prediction
+        # carries a world-metre centroid to match with. A model asked for pixel
+        # coordinates whose transform never arrived looks exactly like this, and
+        # it reads as precision 0.000 for a method that may have been right.
+        stray = sum(1 for n in nodes if g.nodes[n].get("centroid_px")
+                    or g.nodes[n].get("centroid_unknown_units"))
+        return (f"the reference states room extents but none of the "
+                f"{len(nodes)} predicted rooms carries a world-metre centroid"
+                + (f" ({stray} carry unlifted pixel or unit-less coordinates)"
+                   if stray else "")
+                + " -- nothing could have matched, so this is a harness or "
+                  "prompt fault, not a prediction failure")
+    if ref_has_geometry:
+        return None                        # geometry was available and missed
+    return (f"no predicted room shares an id with the reference "
+            f"(identity={gt.identity!r}) and the {gt.provenance!r} dialect "
+            f"states no room extent to match a centroid against, so geometric "
+            f"matching is unavailable -- not a prediction failure")

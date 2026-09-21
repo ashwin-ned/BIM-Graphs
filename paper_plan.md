@@ -184,24 +184,45 @@ The call site that actually admits false positives is
 (`topology.py:253-257`), which the original audit tracked but which affects
 only 0.2% of doors. **[TODO]**.
 
-### 3.5 Multimodal extraction
+### 3.5 Multimodal extraction — **[BUILT 21 Sep 2026, unrun]**
 
-**[TODO — design not yet written.]** Two extraction regimes to specify and
-build:
-- *Per-room classification with graph context* (exists today, text and VLM
-  backends both run — see Experiments §4.4). This is a proxy task, not the
-  paper's actual claim.
-- *Whole-graph extraction*: given a building's text, its rendered plan, its
-  occupancy raster, or some combination, emit the full topology+semantics
-  graph in one pass, scored by the existing modality-agnostic
-  `evaluation.scoring.score_connectivity` / `score_labels`. This is the
-  paper's actual multimodal claim and does not exist yet. Needs: a prompt
-  format per modality, a JSON-schema-validated parser with explicit
-  parse-failure accounting (replacing `_coerce()`'s silent fallback to the
-  rule baseline — a defect that has already once faked a published number),
-  and a pixel-space room-identity mode in `evaluation/matching.py` so a
-  model's pixel-coordinate answer can be matched against a world-metre
-  reference. `todo.md` P2.
+Two extraction regimes:
+- *Per-room classification with graph context* (§4.4). A proxy task, not the
+  paper's claim, and reported as such.
+- *Whole-graph extraction* — the paper's actual multimodal claim. Given one
+  storey as text, as a rendered plan, as an occupancy raster, or as text plus
+  plan, the model emits that storey's rooms (with functions) and the pairs
+  that open onto each other, in one pass.
+
+The harness exists: `main/bimsg/graph_extract.py` (prompts, parser, graph
+builder) and `main/extract_graph_llm.py` (CLI, backends, provenance,
+manifest). **It defines no new metric.** The model's answer is parsed into a
+graph in the pipeline's own shape and scored by the same
+`evaluation.scoring.score_connectivity` / `score_labels` that scores the
+deterministic method — so the multimodal comparison and the method comparison
+share one definition of precision, and the paper cannot be accused of grading
+its own method on a friendlier curve.
+
+Two scope decisions to state in the paper rather than bury:
+1. **One storey per call**, because a plan image is one storey and per-storey
+   text keeps the modalities comparable.
+2. **Vertical links are out of scope**, removed from the prediction *and* the
+   reference (`GroundTruth.restrict`, which counts what it drops). The
+   deterministic path recovers them at precision 1.000, so a model has nothing
+   to win there.
+
+Parse failures are counted and named, never repaired: a non-answer scores as
+an empty prediction. This is the general form of the `_coerce()` defect that
+faked a published number (§4.4), and the guard is verified against 11
+deliberately injected defects. An `oracle` backend scores the reference
+through the real parser and scorer and must return 1.000; it does, on
+4 modalities × 4 damage levels × 300 units and on the real corpus.
+
+**Known limitation to report:** the vision modalities are currently scorable
+only on the synthetic corpus. The real corpus's derived reference states no
+room extent, so an image-conditioned prediction has nothing to match against
+and is recorded as `unscorable` rather than scored 0.000. `todo.md` Phase B
+closing note.
 
 ---
 
@@ -279,14 +300,27 @@ which never substitutes a prior. Rerun: 590/592 answered (99.7%, 2 truncated,
 0 unparseable); accuracy over answered rooms only (0.498) is within noise of
 the headline (0.497), confirming the fix didn't just relocate the defect.
 
-### 4.5 Multimodal extraction grid — **[TODO], the paper's core empirical gap**
+### 4.5 Multimodal extraction grid — **harness [BUILT], results [TODO]**
 
-Design in Method §3.5. Grid: **[TODO — finalise model list against current
-GPU/weight availability]** open-weights text models × open-weights VLMs ×
-{text, plan image, occupancy image, text+image} × 4 damage levels × {semantic
-labels given, labels masked}. Primary metric: `score_connectivity` +
-`score_labels` on synth150 (specificity computable); secondary: the real
-corpus (b) reference. `todo.md` P3.
+The paper's core empirical gap. The harness is built and verified (Method
+§3.5); no model has been run through it yet, so every number in this section
+is still outstanding.
+
+Grid: **[TODO — finalise model list against cached weights]** open-weights
+text models × open-weights VLMs × {text, plan image, occupancy image,
+text+plan} × 4 damage levels × {labels given, labels masked}. Primary corpus
+synth150, where specificity is computable; the real corpus secondary, and
+**text-only there** until the derived reference carries room extents.
+
+The headline the grid is built to produce: the plan and occupancy renders are
+**byte-identical across L1–L4** while the text loses half its `IfcSpace`
+declarations, so the modality gap as a function of text damage is measurable
+directly rather than inferred. That is the controlled experiment the whole
+damage axis was for. `todo.md` Phase C.
+
+Run the `oracle` backend on each new corpus before spending GPU time on it —
+it costs seconds and it is the only thing standing between a harness bug and
+an unfalsifiable model number.
 
 ### 4.6 Ablation ladder (method repairs) — **[TODO]**
 
