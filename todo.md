@@ -93,16 +93,21 @@ are compared by one definition of precision.
       **4 modalities × 4 damage levels × 300 units** and on the real corpus
       (583/583 rooms, 522/522 labels).
 
-**One finding Phase C has to decide on, surfaced by the oracle rather than by a
-wasted run: the vision modalities cannot currently be scored on the real
-corpus.** The derived reference (`results/real_gt/*.realgt.json`) records a
-centroid and an area but no room extent, so an image-conditioned prediction —
-which invents its own room ids — has nothing to match against, and all 7 units
-in a 12-unit probe came back `failed: unscorable` with 0 scored. Text works
-there (the model can echo the IFC GlobalId, which identity-matches). Either
-`main/derive_real_gt.py` starts emitting the flood-fill region's extent, which
-looks small and would unlock real-corpus vision, or the vision rows stay
-synthetic-only and the paper says so. **Not decided here.**
+**Surfaced by the oracle rather than by a wasted run, then resolved by the
+set-of-mark condition: unmarked vision cannot be scored on the real corpus,
+but marked vision can.** The derived reference
+(`results/real_gt/*.realgt.json`) records a centroid and an area but no room
+extent, so an *unmarked* image-conditioned prediction -- which invents its own
+room ids -- has nothing to match against, and all 7 units of a 12-unit probe
+came back `failed: unscorable` with 0 scored. A **mark resolves to the room's
+GlobalId**, which is exactly what that reference keys on, so `plan_som` /
+`occ_som` join it exactly: 268/268 marks resolve across 9 usable models, and
+the oracle scores 1.000 over 60 scorable units with 522/522 labels. Real-corpus
+vision is therefore in scope after all, and it is the corpus where vision
+labelling has any chance -- its buildings carry windows, columns and railings
+where the synthetic ones carry none. Emitting extents from
+`main/derive_real_gt.py` is no longer needed for this, only for the unmarked
+conditions.
 
 ---
 

@@ -235,11 +235,14 @@ construction** for the declared set; and marks follow *declared* rooms only,
 so at L2+ whole storeys carry no marks and drop out of the condition.
 
 **Known limitations to report:**
-- The unmarked vision modalities are scorable only on the synthetic corpus.
-  The real corpus's derived reference states no room extent, so an
-  image-conditioned prediction has nothing to match against and is recorded
-  `unscorable` rather than scored 0.000. Set-of-mark does work there, because
-  a mark resolves to the room's GlobalId, which the derived reference keys on.
+- The **unmarked** vision modalities are scorable only on the synthetic
+  corpus: the real corpus's derived reference states no room extent, so a
+  prediction that invents its own room ids has nothing to match against and is
+  recorded `unscorable` rather than scored 0.000. **Set-of-mark does work
+  there** -- a mark resolves to the room's GlobalId, which that reference keys
+  on (268/268 marks join, oracle 1.000 over 60 units) -- so the real corpus
+  carries the marked vision conditions and is where vision labelling should be
+  reported.
 - **The synthetic corpus cannot test vision labelling.** Its buildings hold
   only `IfcWall`, `IfcDoor` and `IfcStair` -- no furniture, no windows -- so a
   render carries almost no functional cue and a probe scored labels 0/22.
