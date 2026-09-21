@@ -256,23 +256,28 @@ independent ways to the digit. This is the paper's real-corpus headline.
 error in the system. Geometric signal absent in both directions (inscribed-gap
 measurements per building). `report/results_2026_09_18.tex` §5.
 
-### 4.4 Semantic labelling — **[VERIFIED for two backends], one unusable**
+### 4.4 Semantic labelling — **[VERIFIED, all three backends]**
 
-Leave-one-out over 592 IFC-stated rooms:
+Leave-one-out over 592 IFC-stated rooms, re-measured 21 September 2026 with a
+non-answer accounting fix in place (both `VLMBackend` and `LLMBackend`
+previously substituted the rule backend's own hypothesis for a non-answer;
+95/592 VLM rooms hit this, ~coincidentally the model's entire margin over
+majority-class guessing — the mechanism is documented in
+`tests/test_vlm_answer_accounting.py`, verified to fail against the pre-fix
+code):
 
 | backend | accuracy | vs. majority (0.346) |
 |---|---|---|
 | rule (hand priors) | 0.503 | +0.157 |
 | **LLM (GLM-4-9B-0414)** | **0.556** | **+0.209** |
-| VLM (GLM-4.1V-9B-Thinking) | 0.505 | +0.159 — **[unusable, see below]** |
+| VLM (GLM-4.1V-9B-Thinking) | 0.497 | +0.150 |
 
-The VLM row cannot be used as-is: 16.0% of generations hit a token cap and
-silently fell back to the rule backend's own answer, so the reported number is
-partly borrowed. True model-only accuracy is bounded to **[0.410, 0.602]**,
-wide enough to span below the rule baseline to above the LLM. Instrumentation
-now exists (`main/eval_semantics.py` tracks `truncated_correct`) so a re-run
-reports the honest number directly. **[TODO — re-run before use]**, `todo.md`
-P1.
+Fix: `max_new_tokens` raised 300→1536 (a diagnostic probe found the model's
+`<think>` trace needs a median 85, p90 245, max 1004 tokens before closing),
+and both backends now return `(label_or_None, status)` via `_coerce_strict`,
+which never substitutes a prior. Rerun: 590/592 answered (99.7%, 2 truncated,
+0 unparseable); accuracy over answered rooms only (0.498) is within noise of
+the headline (0.497), confirming the fix didn't just relocate the defect.
 
 ### 4.5 Multimodal extraction grid — **[TODO], the paper's core empirical gap**
 

@@ -11,17 +11,13 @@ unblocks, so nothing here is busywork disconnected from the paper.
 
 ## Phase A — quick, no design work, do first (≈1–2 days)
 
-- [ ] **Re-run the VLM semantic backend** now that truncation is instrumented.
-      `python main/eval_semantics.py --backend vlm --graphs 'results/model_*.graph.json'`.
-      Unblocks §4.4's real number instead of the current [0.410, 0.602]
-      bound. ~3.3 h GPU time; launch and continue other work.
-- [ ] **Before that re-run, raise the generation budget or shorten the
-      prompt** — 16.0% of generations hit the 300-token cap on the last run.
-      Either is a one-line change in `main/bimsg/semantics.py`
-      (`VLMBackend.predict_image`'s `max_new_tokens`, or trim `VLM_SYSTEM_PROMPT`).
-      Re-check the truncation rate on a 20-item probe before committing to the
-      full run again — the point is to not repeat the same failure at 5×
-      the models in Phase C.
+- [x] **Re-run the VLM semantic backend** now that truncation is instrumented.
+      Done 21 Sep 2026: `max_new_tokens` raised 300→1536, both `VLMBackend`
+      and `LLMBackend`'s silent-fallback-to-rule-prior defect fixed
+      (`_coerce_strict`, regression-guarded by
+      `tests/test_vlm_answer_accounting.py`). Result: 294/592 = 0.497
+      (590/592 answered, 2 truncated, 0 unparseable) — real number now in
+      §4.4, `README.md`, and `report/results_2026_09_18.tex`/`.pdf`.
 - [ ] **model_2 annotation top-up**: 3 rooms, 13 links, 1 floor link, against
       the now-intact plan (`annotator/data/model_2.plan.json`, 42 rooms).
       **Needs a human annotator — you or a colleague, not me.** Affects the

@@ -389,7 +389,7 @@ Backend & Correct & Accuracy & vs.\ majority & Status \\
 Majority class (\code{office}) & 205/592 & 0.346 & --- & floor \\
 \code{rule} (hand-written priors) & 298/592 & 0.503 & $+0.157$ & verified \\
 \textbf{\code{llm}} GLM-4-9B-0414 & \textbf{329/592} & \textbf{0.556} & $\mathbf{+0.209}$ & verified \\
-\code{vlm} GLM-4.1V-9B-Thinking & 299/592 & 0.505 & $+0.159$ & \noquote{unreliable} \\
+\code{vlm} GLM-4.1V-9B-Thinking & 294/592 & 0.497 & $+0.150$ & verified \\
 \bottomrule
 \end{tabular}
 \caption{The LLM figure is the first post-repair measurement of this row and
@@ -397,29 +397,31 @@ exceeds the rule baseline by $+0.052$; \code{office} recall alone moves
 $0.698\to0.839$.}
 \end{table}
 
-\subsection{Why the VLM figure must not be quoted}
+\subsection{The VLM figure: fixed, not just bounded}
 
-Of 592 rooms, \textbf{95 (16.0\%) hit the 300-token generation cap before
-producing a parseable answer}. On truncation, the backend falls back to the rule
-backend's own hypothesis --- so those 95 ``VLM answers'' are the rule backend's
-answers wearing the model's name. The effect is the same size as the model's
-entire margin over majority-class guessing.
+The 18 September 2026 run had two compounding defects. First, the generation
+cap was 300 tokens, far below what this ``thinking'' model needs to close its
+\code{<think>...</think>} trace before answering (a diagnostic probe over 24
+rooms found median 85 tokens to close, p90 245, max 1004). Second --- found
+while fixing the first, not reported by any prior measurement --- both
+\code{VLMBackend.predict\_image} and \code{LLMBackend.predict} silently
+substituted the rule backend's own hypothesis whenever a model's output failed
+to parse (\code{\_coerce(text, fallback=hyp)}), so a non-answer scored as the
+rule baseline's answer rather than as wrong. \textbf{95 of 592 rooms (16.0\%)}
+hit this on the VLM path --- coincidentally almost exactly the model's own
+margin over majority-class guessing, which is what made the original 0.505
+figure look plausible while being unmeasurable.
 
-The run completed before this was instrumented, so the exact split cannot be
-recovered from it. It can only be bounded. With 299 correct of 592, and 95
-answers borrowed:
-\[
-\frac{299-95}{592-95} \;=\; 0.410
-\qquad\le\qquad
-\text{accuracy}_{\text{model only}}
-\qquad\le\qquad
-\frac{299}{592-95} \;=\; 0.602 .
-\]
-That interval spans from below the rule baseline to above the text LLM, so the
-ordering of the three backends is \emph{not} established by this run.
-\code{main/eval\_semantics.py} now records \code{truncated\_correct} and
-\code{accuracy\_excl\_truncated} per run, so a re-run reports the honest figure
-directly. \textbf{It should be re-run before this row is used.}
+Both are fixed: \code{max\_new\_tokens} raised to 1536, and both backends now
+return \code{(label\_or\_None, status)} with
+\code{status}~$\in\{$\code{ok}, \code{truncated}, \code{unparseable}$\}$ via a
+new \code{\_coerce\_strict} that never substitutes a prior. The fix is
+regression-guarded by \code{tests/test\_vlm\_answer\_accounting.py}, verified
+to fail against the pre-fix code. Rerun 21 September 2026:
+\textbf{590/592 answered (99.7\%), 2 truncated, 0 unparseable}. Accuracy over
+answered rooms only is 0.498 --- essentially identical to the headline 0.497,
+confirming the fix did not merely relocate the defect into a different
+accounting bucket.
 
 \subsection{Per-class recall}
 
@@ -430,13 +432,13 @@ directly. \textbf{It should be re-run before this row is used.}
 \toprule
 Class & $n$ & \code{rule} & \code{llm} & \code{vlm} \\
 \midrule
-\code{office}      & 205 & 0.698 & \textbf{0.839} & 0.693 \\
-\code{bathroom}    & 132 & 0.530 & 0.538 & 0.530 \\
-\code{circulation} &  86 & 0.256 & 0.233 & 0.256 \\
-\code{stair}       &  45 & 0.644 & 0.644 & 0.622 \\
-\code{bedroom}     &  28 & 0.786 & 0.786 & 0.786 \\
-\code{meeting}     &  23 & 0.174 & 0.174 & 0.174 \\
-\code{living}      &  22 & 0.182 & 0.273 & 0.318 \\
+\code{office}      & 205 & 0.698 & \textbf{0.839} & 0.668 \\
+\code{bathroom}    & 132 & 0.530 & 0.538 & 0.500 \\
+\code{circulation} &  86 & 0.256 & 0.233 & 0.314 \\
+\code{stair}       &  45 & 0.644 & 0.644 & 0.600 \\
+\code{bedroom}     &  28 & 0.786 & 0.786 & 0.571 \\
+\code{meeting}     &  23 & 0.174 & 0.174 & 0.087 \\
+\code{living}      &  22 & 0.182 & 0.273 & 0.682 \\
 \code{kitchen}     &  18 & 0.222 & 0.222 & 0.222 \\
 \code{outdoor}     &  10 & 0.000 & 0.000 & 0.000 \\
 \code{storage}     &  10 & 0.000 & 0.100 & 0.000 \\
@@ -446,8 +448,11 @@ Class & $n$ & \code{rule} & \code{llm} & \code{vlm} \\
 \end{tabular}
 \caption{Four of twelve classes never resolve, each with $\le 10$ held-out
 examples. Whether that is too little evidence or a real failure is not
-established. The dominant confusion in all three backends is
-\code{bathroom}$\to$\code{storage} (52 cases).}
+established. \code{vlm} recall here is the post-fix, non-substituted
+measurement (21 September 2026). Dominant confusions:
+\code{bathroom}$\to$\code{storage} (53) and
+\code{office}$\to$\code{living}/\code{storage} (33/30), consistent with the
+model reading furniture off the render rather than topology.}
 \end{table}
 
 \noindent
@@ -622,8 +627,6 @@ frozen. \\
 false positive. \\
 \code{ifc2graph} at L3/L4 (0.000) & No room-recovery stage; the rooms are
 invisible to it by construction, not on the merits. \\
-VLM label accuracy (0.505) & 16.0\% of answers are the rule backend's, borrowed
-on truncation. True value bounded to $[0.410, 0.602]$. \\
 Intra-storey reachability & Rewards over-connection: the \code{adjacency}
 baseline, which joins through solid walls, scores 0.935 against 0.745. \\
 Goal resolution as retrieval & Per-class recall is identical to label accuracy
@@ -712,10 +715,11 @@ specificity. \\
 \end{longtable}
 
 \noindent
-A ninth issue is recorded but not fixed: the VLM result record in
-\code{results/semantics\_eval.json} predates the truncation instrumentation, so
-it reports 0.505 with no truncation field. A reader consulting only the JSON
-would see no warning.
+A ninth issue, open at the time of the 18 September audit, has since been
+fixed: the VLM (and, it turned out, the LLM) backend silently substituted the
+rule backend's own hypothesis for a non-answer. Both now return an explicit
+\code{status} and never substitute; the VLM row above (0.497, 21 September
+2026) is the corrected, regression-guarded measurement.
 
 \section{What the evidence currently supports}
 

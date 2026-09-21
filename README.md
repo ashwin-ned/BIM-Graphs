@@ -204,46 +204,54 @@ they cannot rank one.
 Held-out accuracy against the labels IFC did state, leave-one-out, all **592**
 eligible rooms (593 before `model_2.graph.json` was rebuilt from the corpus's
 one truncated source IFC — see [docs/AUDIT_2026_09_18.md](docs/AUDIT_2026_09_18.md)).
-Re-measured 18 September 2026, first time post-M0, on a GPU freed for the
-purpose:
+Re-measured 21 September 2026 with the non-answer accounting fix in place
+(previously the rule backend's own hypothesis was silently substituted for a
+model's non-answer — see below):
 
 | backend | accuracy | vs. majority class (0.346) |
 |---|---|---|
 | rule | 0.503 | +0.157 |
 | **LLM (GLM-4-9B-0414)** | **0.556** | **+0.209** |
-| VLM (GLM-4.1V-9B-Thinking) | 0.505 — **do not quote without reading below** | +0.159 |
+| VLM (GLM-4.1V-9B-Thinking) | 0.497 | +0.150 |
 
-The LLM number is real signal, not noise around the rule baseline: +0.052 over
-rule, and office recall alone moves 0.698 → 0.839. It also runs fast — 592 rooms
-in under two minutes once the 9B weights are loaded — so there is no excuse for
-this row staying stale.
+All three numbers are now clean: every non-answer is charged as wrong, not
+substituted with the rule prior. The LLM number is real signal, not noise
+around the rule baseline: +0.052 over rule, and office recall alone moves
+0.698 → 0.839. It also runs fast — 592 rooms in under two minutes once the 9B
+weights are loaded.
 
-Both numbers now use one vocabulary. `main/bimsg/semantics.py` used to carry its
+Both numbers use one vocabulary. `main/bimsg/semantics.py` used to carry its
 own copy of the taxonomy with two dict-order and normalisation bugs; it now
 delegates to `evaluation/labels.py`, versioned and covered by
 `tests/test_labels.py`. The rule figure moves slightly with each vocabulary fix,
 which is expected and is why the vocabulary version travels with every score
 `evaluation.scoring.score_labels` produces.
 
-**The VLM number is unreliable, and now measured to be unreliable rather than
-suspected.** It renders a crop per room and asks a "thinking" model for one
-word within a 300-token cap; on the 18 September 2026 run, **95 of 592 rooms
-(16.0%) hit that cap before producing a parseable answer**. `_coerce()`
-(`main/bimsg/semantics.py`) silently falls back to the rule backend's own
-hypothesis when that happens, so those 95 "VLM answers" are actually the rule
-backend's answers wearing the model's name — a bigger effect than a 20-item
-probe suggested (15% there, 16.0% over the full run, so not a small-sample
-fluke) and, worse, exactly the same size as the model's own margin over
-majority-class guessing.
+**The VLM number was unreliable and has been fixed, not merely bounded.** It
+renders a crop per room and asks a "thinking" model for one word after a
+`<think>...</think>` trace. Two defects compounded on the 18 September 2026
+run: (1) the token cap was 300, far below the trace length this model actually
+needs (diagnostic probe: median 85 tokens to `</think>`, p90 245, max 1004 over
+24 rooms); (2) both `VLMBackend.predict_image` and, discovered while fixing the
+former, `LLMBackend.predict` silently substituted the rule backend's own
+hypothesis (`_coerce(text, fallback=hyp)`) whenever the model's output didn't
+parse — so a non-answer scored as the rule baseline's answer, not as wrong.
+**95 of 592 rooms (16.0%) hit this on the VLM path** — coincidentally almost
+exactly the model's own margin over majority-class guessing, which is what
+made the original 0.505 figure look plausible while being unmeasurable.
 
-The run finished before this was fixed, so the exact split cannot be recovered
-from it — only bounded: correcting for the 95 borrowed answers puts the
-model's own accuracy somewhere in **[0.410, 0.602]**, a range wide enough to
-span from below the rule baseline to well above the LLM's. `main/eval_semantics.py`
-now tracks this per item (`truncated_correct`, `accuracy_excl_truncated` in
-every record `--out` writes) so the **next** VLM run reports the honest number
-directly instead of a blended one. **Re-run before quoting this row anywhere
-that leaves this repo:**
+Both are fixed: `max_new_tokens` raised to 1536 (informed by the diagnostic
+probe above), and both backends now return `(label_or_None, status)` with
+`status ∈ {ok, truncated, unparseable}` via a new `_coerce_strict` that never
+falls back to a prior (`main/bimsg/semantics.py`; regression-guarded by
+`tests/test_vlm_answer_accounting.py`, verified to fail against the pre-fix
+code). Rerun 21 September 2026: **590/592 answered (99.7%), 2 truncated, 0
+unparseable** — accuracy over answered rooms only 0.498, essentially identical
+to the headline 0.497, confirming the fix did not just hide the problem in a
+different bucket. Worst classes (all n ≤ 10): outdoor, storage, retail, service
+at 0.000 recall; dominant confusions are `bathroom→storage` (53) and
+`office→living`/`office→storage` (33/30), consistent with the model reading
+furniture/clutter off the render rather than topology.
 
 ```bash
 python main/eval_semantics.py --backend vlm --graphs 'results/model_*.graph.json'

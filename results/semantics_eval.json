@@ -397,5 +397,89 @@
       "service->storage": 4,
       "outdoor->circulation": 4
     }
+  },
+  {
+    "backend": "vlm:GLM-4.1V-9B-Thinking",
+    "n": 592,
+    "accuracy": 0.4966216216216216,
+    "majority_baseline": 0.34628378378378377,
+    "answered": 590,
+    "no_answer": 2,
+    "truncated_n": 2,
+    "unparseable_n": 0,
+    "accuracy_answered_only": 0.49830508474576274,
+    "max_new_tokens": 1536,
+    "per_class": {
+      "living": {
+        "recall": 0.6818181818181818,
+        "n": 22
+      },
+      "kitchen": {
+        "recall": 0.2222222222222222,
+        "n": 18
+      },
+      "bedroom": {
+        "recall": 0.5714285714285714,
+        "n": 28
+      },
+      "bathroom": {
+        "recall": 0.5,
+        "n": 132
+      },
+      "stair": {
+        "recall": 0.6,
+        "n": 45
+      },
+      "meeting": {
+        "recall": 0.08695652173913043,
+        "n": 23
+      },
+      "office": {
+        "recall": 0.6682926829268293,
+        "n": 205
+      },
+      "circulation": {
+        "recall": 0.313953488372093,
+        "n": 86
+      },
+      "service": {
+        "recall": 0.0,
+        "n": 5
+      },
+      "retail": {
+        "recall": 0.0,
+        "n": 8
+      },
+      "outdoor": {
+        "recall": 0.0,
+        "n": 10
+      },
+      "storage": {
+        "recall": 0.0,
+        "n": 10
+      }
+    },
+    "confusions": {
+      "bathroom->storage": 53,
+      "office->living": 33,
+      "office->storage": 30,
+      "circulation->stair": 23,
+      "circulation->living": 21,
+      "circulation->office": 14,
+      "meeting->living": 12,
+      "stair->bathroom": 9,
+      "bathroom->office": 9,
+      "kitchen->office": 8,
+      "meeting->office": 6,
+      "bedroom->circulation": 6,
+      "retail->living": 5,
+      "outdoor->circulation": 5,
+      "bedroom->living": 4,
+      "stair->storage": 4,
+      "service->storage": 4,
+      "outdoor->office": 4,
+      "stair->living": 4,
+      "storage->bedroom": 3
+    }
   }
 ]
