@@ -754,6 +754,20 @@ def run(args) -> int:
         print(f"    recall           {agg['recall']:.3f}")
         print(f"    F1               {agg['f1']:.3f}")
         print(f"    precision_strict {agg['precision_strict']:.3f}")
+        # Specificity is first-class in this project, not an afterthought: a
+        # method that joins everything reaches high recall and is worthless,
+        # and the annotated real reference cannot measure it at all (all 53 of
+        # its negatives are pipeline proposals). The synthetic corpus states
+        # explicit adjacent-not-connected negatives, so here it is computable
+        # and must be printed beside recall rather than left in the JSON.
+        neg = agg["gt_negatives"]
+        if neg:
+            spec = (neg - agg["fp_on_reference_negative"]) / neg
+            print(f"    specificity      {spec:.3f}  "
+                  f"({neg - agg['fp_on_reference_negative']}/{neg} reference "
+                  f"negatives left unjoined)")
+        else:
+            print("    specificity      n/a (this reference states no negatives)")
         print(f"    tp {agg['tp']}  fn {agg['fn']}  "
               f"fp_on_negative {agg['fp_on_reference_negative']}  "
               f"out_of_scope {agg['pred_out_of_scope']}  "
@@ -784,9 +798,14 @@ def run(args) -> int:
                               "model_revision": getattr(backend, "revision",
                                                          None)},
                    "predictions": provenance}, fh, indent=2)
+    pooled = SCORE.pool(rows) if rows else None
+    if pooled and pooled.get("gt_negatives"):
+        n = pooled["gt_negatives"]
+        pooled["specificity"] = round(
+            (n - pooled["fp_on_reference_negative"]) / n, 5)
     with open(f"{base}.scores.json", "w") as fh:
         json.dump({"config": cfg,
-                   "pooled": SCORE.pool(rows) if rows else None,
+                   "pooled": pooled,
                    "extraction_statuses": status_n,
                    "per_unit": rows}, fh, indent=2)
     print(f"\nwrote {base}.{{scores,provenance,manifest}}.json")
