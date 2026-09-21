@@ -142,6 +142,30 @@ def resolve_model(name_or_id: str, kind: str) -> str:
     return name_or_id
 
 
+def output_tag(corpus: str, backend: str, model: str | None, modality: str,
+               mask: bool, oracle_anchor: str | None = None) -> str:
+    """The stem every output file of one cell shares. ONE definition.
+
+    There were briefly two: this module named its files
+    `{corpus}_{backend}_{modality}` while `run_grid.cell_tag` expected
+    `{corpus}_{backend}-{model}_{modality}`. Two consequences, both silent.
+    Every text model wrote to the same three filenames and overwrote the
+    previous model's results -- 8 files where there should have been 24 -- and
+    `run_grid`'s resume check looked for a name that never existed, so it
+    would have re-run finished cells forever. Caught by a 2-unit smoke pass
+    over all 56 cells; it would otherwise have destroyed two thirds of the
+    grid quietly.
+    """
+    parts = [os.path.basename(corpus.rstrip("/")), backend]
+    if backend == "oracle" and oracle_anchor:
+        parts[-1] = f"{backend}-{oracle_anchor}"
+    elif model:
+        parts[-1] = f"{backend}-{model}"
+    parts.append(modality.replace("+", "-"))
+    tag = "_".join(parts)
+    return tag + ("_masked" if mask else "")
+
+
 def transform_for(modality: str, storey: dict) -> dict | None:
     """The pixel grid of the image this modality actually shows the model.
 
@@ -827,12 +851,9 @@ def run(args) -> int:
 
     out_dir = args.out or "results/extract"
     os.makedirs(out_dir, exist_ok=True)
-    tag = (f"{args.backend}"
-           f"{'-' + args.oracle_anchor if args.backend == 'oracle' else ''}"
-           f"_{args.modality.replace('+', '-')}"
-           f"{'_masked' if args.mask_labels else ''}")
-    corpus_tag = os.path.basename(args.corpus.rstrip("/"))
-    base = os.path.join(out_dir, f"{corpus_tag}_{tag}")
+    base = os.path.join(out_dir, output_tag(
+        args.corpus, args.backend, args.model_id, args.modality,
+        bool(args.mask_labels), args.oracle_anchor))
     man.write(f"{base}.manifest.json")
     with open(f"{base}.provenance.json", "w") as fh:
         json.dump({"config": {**cfg,

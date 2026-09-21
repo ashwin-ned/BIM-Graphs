@@ -51,7 +51,7 @@ import time
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 
-from extract_graph_llm import MODELS, cap_for
+from extract_graph_llm import MODELS, cap_for, output_tag
 
 LEVELS = ("synth150", "synth150_L2", "synth150_L3", "synth150_L4")
 CORPUS_ROOT = "dataset/synthetic_data"
@@ -127,10 +127,9 @@ def is_headline(c: dict) -> bool:
 
 
 def cell_tag(c: dict) -> str:
+    """Delegates to the harness so the resume check and the writer agree."""
     kind = "llm" if MODELS[c["model"]]["kind"] == "text" else "vlm"
-    return (f"{c['corpus']}_{kind}-{c['model']}_"
-            f"{c['modality'].replace('+', '-')}"
-            f"{'_masked' if c['mask'] else ''}")
+    return output_tag(c["corpus"], kind, c["model"], c["modality"], c["mask"])
 
 
 def main(argv=None) -> int:

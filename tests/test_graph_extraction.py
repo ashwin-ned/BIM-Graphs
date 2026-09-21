@@ -483,6 +483,38 @@ def test_set_of_mark() -> None:
            "number printed" in user)
 
 
+def test_output_tag_agreement() -> None:
+    print("\n-- the writer and the resume check name files identically --")
+    # These were briefly two separate f-strings that disagreed, so every text
+    # model overwrote the previous one's results (8 files where 24 belonged)
+    # and the grid's resume check looked for names that never existed.
+    sys.path.insert(0, os.path.join(ROOT, "main"))
+    import extract_graph_llm as E
+    import run_grid as R
+
+    for cell in R.cells():
+        kind = "llm" if E.MODELS[cell["model"]]["kind"] == "text" else "vlm"
+        want = R.cell_tag(cell)
+        got = E.output_tag(
+            os.path.join("dataset/synthetic_data", cell["corpus"]),
+            kind, cell["model"], cell["modality"], cell["mask"])
+        if want != got:
+            ok(f"tag disagreement: run_grid={want!r} harness={got!r}", False)
+            return
+    ok(f"all {len(R.cells())} grid cells agree between writer and resume check",
+       True)
+
+    # And every cell must have a DISTINCT stem, or two cells share a file and
+    # one silently overwrites the other.
+    tags = [R.cell_tag(c) for c in R.cells()]
+    dupes = {t for t in tags if tags.count(t) > 1}
+    ok(f"every cell has a distinct output stem ({len(set(tags))}/{len(tags)})",
+       not dupes)
+    if dupes:
+        for t in sorted(dupes)[:5]:
+            print(f"         duplicated stem: {t}")
+
+
 def main() -> int:
     test_parse_failures()
     test_think_traces()
@@ -493,6 +525,7 @@ def main() -> int:
     test_empty_prediction_scores_zero_not_perfect()
     test_prompts()
     test_set_of_mark()
+    test_output_tag_agreement()
     print()
     return failures
 
