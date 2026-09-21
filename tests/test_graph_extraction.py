@@ -390,6 +390,36 @@ def test_prompts() -> None:
        "vertically_connected" not in X.EXTRACT_RELATIONS
        and set(X.EXTRACT_RELATIONS) == {"connected_by_door", "open_passage"})
 
+    print("\n-- the text condition is not handed the rooms it must recover --")
+    # The sidecars mix the pipeline's own recovered rooms into `spaces`, tagged
+    # source="inferred". Leaking those solves the room-recovery half of the
+    # task and flattens the damage axis: measured on synth150_L2, an
+    # unfiltered reading saw 500 spaces where the IFC declares 261.
+    leaky = {
+        "name": "Ground Floor", "elevation_m": 0.0,
+        "spaces": [
+            {"global_id": "declared-1", "name": "OFFICE", "source": "ifc",
+             "area_m2": 12.0, "centroid": [1.0, 1.0]},
+            {"global_id": "recovered-1", "name": "Corridor",
+             "source": "inferred", "area_m2": 8.0, "centroid": [5.0, 1.0]},
+        ],
+        "elements": [], "transform": None,
+    }
+    txt = X.storey_text(leaky)
+    ok("an IFC-declared space is shown", "declared-1" in txt)
+    ok("a pipeline-recovered room is NOT shown",
+       "recovered-1" not in txt)
+    ok("...and its name does not leak either", "Corridor" not in txt)
+    ok(f"the stated count is the declared count, not the recovered total "
+       f"({'(1)' in txt})", "Spaces declared in the file (1)" in txt)
+    # A sidecar with no `source` field at all must not silently lose every
+    # room -- absent means "as declared", not "inferred".
+    bare = {"name": "S", "spaces": [{"global_id": "x1", "name": "OFFICE",
+                                     "area_m2": 9.0, "centroid": [0, 0]}],
+            "elements": []}
+    ok("a space with no source field is still shown",
+       "x1" in X.storey_text(bare))
+
     try:
         X.build_prompt("interpretive-dance", storey)
         ok("an unknown modality raises", False)

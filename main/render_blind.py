@@ -142,6 +142,50 @@ def render_plan_png(storey: dict, path: str, tr: dict, ss: int = 2) -> str:
 # occupancy condition
 # --------------------------------------------------------------------------
 
+def occupancy_transform(storey: dict, res: float = OCC_RES,
+                        min_side: int = OCC_MIN_SIDE) -> dict | None:
+    """World metres -> occupancy-raster pixels: px = s*x + tx, py = -s*y + ty.
+
+    The occupancy raster does **not** share the plan render's pixel grid. The
+    plan fits a fixed 1800 px width to the storey (`render_floorplan.
+    view_transform`, ~89.6 px/m on a typical synthetic storey); this raster is
+    metric, at `1/res` = 10 px/m, with its own origin, and is then enlarged by
+    an integer NEAREST factor to reach `min_side`.
+
+    This function exists because those two transforms were briefly conflated:
+    the extraction harness lifted a model's occupancy-image pixel answer with
+    the *plan* transform, which is a factor of ~9 out. Nothing would have
+    caught it -- the rooms still land somewhere, so the prediction looks
+    scorable and simply reads 0.000. Both the renderer and the harness now take
+    the grid from here, so there is one definition and no drift.
+    """
+    b = storey.get("bounds") or {}
+    lo, hi = b.get("min"), b.get("max")
+    if not lo or not hi or len(lo) < 2 or len(hi) < 2:
+        return None
+    x0, y0 = float(lo[0]), float(lo[1])
+    x1, y1 = float(hi[0]), float(hi[1])
+    if not (x1 > x0 and y1 > y0):
+        return None
+    pad = 0.5
+    x0 -= pad; x1 += pad; y0 -= pad; y1 += pad
+    nx = int(np.ceil((x1 - x0) / res))
+    ny = int(np.ceil((y1 - y0) / res))
+    if nx < 2 or ny < 2 or nx * ny > OCC_MAX_CELLS:
+        return None
+
+    s = 1.0 / res
+    tx = -x0 * s
+    ty = y1 * s          # image row 0 is the top, i.e. max y
+    k = 1
+    if min_side and min(nx, ny) < min_side:
+        k = int(np.ceil(min_side / min(nx, ny)))
+    return {"px_per_m": s * k, "tx": tx * k, "ty": ty * k,
+            "width": nx * k, "height": ny * k,
+            "base_px_per_m": s, "base_tx": tx, "base_ty": ty,
+            "base_width": nx, "base_height": ny, "upscale": k}
+
+
 def render_occupancy_png(storey: dict, path: str, res: float = OCC_RES,
                          min_side: int = OCC_MIN_SIDE) -> str | None:
     """Binary raster: black where a solid sits at the cut plane, white elsewhere.
@@ -179,24 +223,13 @@ def render_occupancy_png(storey: dict, path: str, res: float = OCC_RES,
     if not HAVE_PIL:
         raise RuntimeError("Pillow is required (pip install Pillow)")
 
-    b = storey.get("bounds") or {}
-    lo, hi = b.get("min"), b.get("max")
-    if not lo or not hi or len(lo) < 2 or len(hi) < 2:
+    tr = occupancy_transform(storey, res=res, min_side=min_side)
+    if tr is None:
         return None
-    x0, y0 = float(lo[0]), float(lo[1])
-    x1, y1 = float(hi[0]), float(hi[1])
-    if not (x1 > x0 and y1 > y0):
-        return None
-    pad = 0.5
-    x0 -= pad; x1 += pad; y0 -= pad; y1 += pad
-    nx = int(np.ceil((x1 - x0) / res))
-    ny = int(np.ceil((y1 - y0) / res))
-    if nx < 2 or ny < 2 or nx * ny > OCC_MAX_CELLS:
-        return None
-
-    s = 1.0 / res
-    tx = -x0 * s
-    ty = y1 * s          # image row 0 is the top, i.e. max y
+    # Before any upscale: the polygons are drawn on the base grid and the
+    # result is enlarged afterwards, so drawing uses the base scale.
+    s, tx, ty = tr["base_px_per_m"], tr["base_tx"], tr["base_ty"]
+    nx, ny = tr["base_width"], tr["base_height"]
 
     # "L" mode with polygon fill: Pillow does not antialias, so the result stays
     # strictly two-valued. A grey edge pixel in an occupancy map would be a lie

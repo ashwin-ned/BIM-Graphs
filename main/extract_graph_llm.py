@@ -60,9 +60,68 @@ from evaluation import matching as MATCH
 from evaluation import schema as SCHEMA
 from evaluation import scoring as SCORE
 from evaluation.manifest import RunManifest
-from render_blind import storey_slug
+from render_blind import occupancy_transform, storey_slug
 
 MODALITIES = ("text", "plan", "occ", "text+plan")
+
+# The grid's model list, declared in one place so a cell is identified by a
+# short name rather than by a repo path spelled slightly differently in four
+# scripts. `kind` selects the backend; `pairs_with` records where a text and a
+# vision model share a language backbone, which is what makes a text-vs-vision
+# comparison a modality result rather than a model-family result.
+MODELS = {
+    # -- text --------------------------------------------------------------
+    "glm-9b":     {"id": "zai-org/GLM-4-9B-0414", "kind": "text",
+                   "pairs_with": "glm-9b-v"},
+    "qwen25-7b":  {"id": "Qwen/Qwen2.5-7B-Instruct", "kind": "text",
+                   "pairs_with": "qwen25-vl-7b"},
+    # Third text model. Llama-3.1-8B-Instruct and gemma-2-9b-it were the
+    # obvious choices and are both gated on the Hub (HTTP 401 without a
+    # token), so this is the strongest ungated model in the same weight class.
+    # It also gives a within-family generation comparison against
+    # Qwen2.5-7B on the same task.
+    "qwen3-8b":   {"id": "Qwen/Qwen3-8B", "kind": "text", "pairs_with": None},
+    # -- vision ------------------------------------------------------------
+    "glm-9b-v":   {"id": "zai-org/GLM-4.1V-9B-Thinking", "kind": "vision",
+                   "pairs_with": "glm-9b"},
+    "qwen25-vl-7b": {"id": "Qwen/Qwen2.5-VL-7B-Instruct", "kind": "vision",
+                     "pairs_with": "qwen25-7b"},
+    # InternVL3-8B's language tower is Qwen2.5-7B, so its text counterpart is
+    # already in the list rather than being a fourth download.
+    "internvl3-8b": {"id": "OpenGVLab/InternVL3-8B", "kind": "vision",
+                     "pairs_with": "qwen25-7b"},
+}
+
+
+def resolve_model(name_or_id: str, kind: str) -> str:
+    """A registry short name, or a bare repo id passed straight through."""
+    if name_or_id in MODELS:
+        entry = MODELS[name_or_id]
+        if entry["kind"] != kind:
+            raise ValueError(
+                f"{name_or_id!r} is a {entry['kind']} model; --backend "
+                f"{'llm' if kind == 'text' else 'vlm'} expects a {kind} one")
+        return entry["id"]
+    return name_or_id
+
+
+def transform_for(modality: str, storey: dict) -> dict | None:
+    """The pixel grid of the image this modality actually shows the model.
+
+    `plan` and `text+plan` show the 1800 px plan render, whose transform the
+    sidecar stores. `occ` shows the metric occupancy raster, which has a
+    completely different grid (~30 px/m against the plan's ~89.6, and its own
+    origin and size). Lifting an occupancy answer with the plan transform is a
+    factor-of-three error that still produces coordinates, so it reads as a
+    legitimate 0.000 rather than as a fault -- `matching._diagnose` cannot see
+    it, because the rooms do carry centroids. Hence one function, used by both
+    the scorer path and the oracle.
+    """
+    if modality == "occ":
+        return occupancy_transform(storey)
+    if modality in ("plan", "text+plan"):
+        return storey.get("transform")
+    return None
 
 
 # --------------------------------------------------------------------------
@@ -115,7 +174,7 @@ def find_units(corpus: str, modality: str, images: str | None,
                     u["skip"] = f"no {kind} render at {p}"
                 else:
                     u["image"] = p
-            if modality in ("plan", "text+plan") and not st.get("transform"):
+            if u["image"] and not u["skip"] and not transform_for(modality, st):
                 # Without the transform a pixel answer cannot be lifted into
                 # metres, so it could never match. Refusing the unit is right;
                 # running it would produce a 0.000 that means nothing.
@@ -169,13 +228,13 @@ class OracleBackend:
             if self.anchor != "identity" and r.bbox:
                 cx = (r.bbox[0] + r.bbox[2]) / 2
                 cy = (r.bbox[1] + r.bbox[3]) / 2
-                if self.anchor == "pixels":
-                    if not transform:
-                        continue
+                if self.anchor == "pixels" and transform:
                     s = transform["px_per_m"]
                     room["centroid_px"] = [round(s * cx + transform["tx"], 2),
                                            round(-s * cy + transform["ty"], 2)]
                 else:
+                    # `metres` -- and also `pixels` on a modality that shows no
+                    # image, where there is no pixel frame to answer in.
                     room["centroid_m"] = [round(cx, 3), round(cy, 3)]
             rooms.append(room)
         inv = {"connected_by_door": "door", "open_passage": "open"}
@@ -283,7 +342,8 @@ class VisionBackend:
         msgs = [{"role": "system", "content": [{"type": "text", "text": system}]},
                 {"role": "user", "content": [{"type": "image"},
                                              {"type": "text", "text": user}]}]
-        text = self.proc.apply_chat_template(msgs, add_generation_prompt=True)
+        text = self.proc.apply_chat_template(msgs, tokenize=False,
+                                             add_generation_prompt=True)
         inp = self.proc(text=text, images=img, return_tensors="pt").to(
             self.model.device)
         t0 = time.time()
@@ -334,10 +394,10 @@ def run(args) -> int:
             return 1
         backend = ReplayBackend(args.replay)
     elif args.backend == "llm":
-        backend = TextBackend(args.model_id or "zai-org/GLM-4-9B-0414")
+        backend = TextBackend(resolve_model(args.model_id or "glm-9b", "text"))
     else:
-        backend = VisionBackend(args.model_id
-                                or "zai-org/GLM-4.1V-9B-Thinking")
+        backend = VisionBackend(
+            resolve_model(args.model_id or "glm-9b-v", "vision"))
 
     rows, provenance = [], []
     status_n, t_start = {}, time.time()
@@ -371,14 +431,34 @@ def run(args) -> int:
             continue
         gt = gt_full.restrict(rids, reason=f"storey {key}")
 
+        tr = transform_for(args.modality, u["storey"])
+        if u["image"] and tr:
+            # The transform must describe THIS image. If it does not, every
+            # pixel answer is lifted on the wrong grid and the cell reads
+            # 0.000 while looking perfectly scorable -- the occupancy raster
+            # (~30 px/m, 579x396) against the plan render (~89.6 px/m,
+            # 1800x1262) is exactly that mistake, and an oracle cannot catch
+            # it because it projects and lifts through the same function.
+            from PIL import Image as _Im
+            with _Im.open(u["image"]) as _im:
+                real = _im.size
+            if real != (tr["width"], tr["height"]):
+                man.failed(u["unit"],
+                           reason=f"transform/image mismatch: transform "
+                                  f"describes {tr['width']}x{tr['height']} but "
+                                  f"{os.path.basename(u['image'])} is "
+                                  f"{real[0]}x{real[1]}; a pixel answer would "
+                                  f"be lifted on the wrong grid")
+                continue
         system, user, wants_img = X.build_prompt(
-            args.modality, u["storey"], mask_labels=args.mask_labels)
+            args.modality, u["storey"], mask_labels=args.mask_labels,
+            image_size=((tr["width"], tr["height"]) if tr else None))
         phash = hashlib.sha256((system + "\x00" + user).encode()).hexdigest()[:16]
 
         try:
             kw = {}
             if args.backend == "oracle":
-                kw["transform"] = u["storey"].get("transform")
+                kw["transform"] = transform_for(args.modality, u["storey"])
             raw, hit_cap, meta = backend.generate(
                 system, user, image=u["image"], unit=u["unit"], gt=gt,
                 max_new_tokens=args.max_new_tokens, **kw)
@@ -391,7 +471,7 @@ def run(args) -> int:
 
         ex = X.parse_response(raw, hit_cap=hit_cap)
         status_n[ex.status] = status_n.get(ex.status, 0) + 1
-        g = X.to_graph(ex, transform=u["storey"].get("transform"),
+        g = X.to_graph(ex, transform=transform_for(args.modality, u["storey"]),
                        elevation=u["storey"].get("elevation_m"),
                        storey_gid=f"ST-{u['storey_index']}")
         m = MATCH.match_rooms(g, gt)
@@ -509,7 +589,9 @@ def main(argv=None) -> int:
     ap.add_argument("--modality", default="text", choices=MODALITIES)
     ap.add_argument("--backend", default="oracle",
                     choices=("oracle", "replay", "llm", "vlm"))
-    ap.add_argument("--model-id", default=None)
+    ap.add_argument("--model-id", default=None,
+                    help="a registry short name (" + ", ".join(MODELS)
+                         + ") or a bare HuggingFace repo id")
     ap.add_argument("--oracle-anchor", default="identity",
                     choices=("identity", "metres", "pixels"),
                     help="which matching path the oracle exercises. 'identity' "

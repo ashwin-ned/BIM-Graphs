@@ -154,7 +154,9 @@ Rules:
 _ROOM_EXTRA_PX = ', "centroid_px": [<x>, <y>]'
 _ROOM_EXTRA_M = ', "centroid_m": [<x>, <y>]'
 _ANCHOR_PX = ('- "centroid_px" is the pixel coordinate of the room\'s '
-              'approximate centre in the image you were shown.')
+              'approximate centre in the image you were shown. The image is '
+              '{w} pixels wide and {h} pixels tall, with (0, 0) at the '
+              'TOP-LEFT corner; use that full range.')
 _ANCHOR_M = ('- "centroid_m" is the room\'s approximate centre in metres, in '
              'the same coordinate system as the coordinates you were given.')
 
@@ -205,7 +207,19 @@ def storey_text(storey: dict, mask_labels: bool = False,
     if el is not None:
         lines.append(f"Elevation: {el} m")
 
-    spaces = storey.get("spaces") or storey.get("rooms") or []
+    # ONLY spaces the IFC file itself declares. The `*_floorplans.json`
+    # sidecars also carry the pipeline's *recovered* rooms in this same list,
+    # tagged `source: "inferred"`, and including them hands the model the
+    # answer to the half of the task it is being asked to perform.
+    #
+    # This is not hypothetical. On synth150_L2, 40 buildings' sidecars hold 261
+    # `ifc` spaces and 239 `inferred` ones, so an unfiltered reading showed the
+    # text losing only 535 -> 500 spaces from L1 to L2 while the IFC itself
+    # loses 535 -> 261. The damage axis -- the entire controlled experiment --
+    # would have been flattened by a leak, in the same way the original 984
+    # floor-plan renders leaked room names into the vision condition.
+    all_spaces = storey.get("spaces") or storey.get("rooms") or []
+    spaces = [s for s in all_spaces if (s.get("source") or "ifc") == "ifc"]
     lines.append(f"\nSpaces declared in the file ({len(spaces)}):")
     if not spaces:
         lines.append("  (none -- the file declares no spaces on this storey)")
@@ -270,13 +284,28 @@ def _fmt_poly(poly, limit: int = 12) -> str:
 
 
 def build_prompt(modality: str, storey: dict | None = None,
-                 mask_labels: bool = False) -> tuple:
-    """(system_prompt, user_prompt, wants_image) for one modality."""
+                 mask_labels: bool = False,
+                 image_size: tuple | None = None) -> tuple:
+    """(system_prompt, user_prompt, wants_image) for one modality.
+
+    `image_size` is stated in the prompt for the pixel modalities. Without it
+    the frame is ambiguous: a vision model resizes internally, and a probe of
+    GLM-4.1V-9B-Thinking on an 1800x1262 plan came back with every centroid on
+    a round 50 px grid inside the left 40% of the image, which is consistent
+    both with guessing and with answering in some smaller frame it had seen.
+    Those two readings support opposite conclusions about the model, so the
+    ambiguity is removed rather than argued about.
+    """
     pixel = modality in ("plan", "occ", "text+plan")
+    anchor = _ANCHOR_M
+    if pixel:
+        w, h = image_size or (0, 0)
+        anchor = (_ANCHOR_PX.format(w=w, h=h) if image_size else
+                  _ANCHOR_PX.format(w="<width>", h="<height>"))
     contract = OUTPUT_CONTRACT.format(
         taxonomy=", ".join(L.CLASSES),
         extra_room=_ROOM_EXTRA_PX if pixel else _ROOM_EXTRA_M,
-        anchor_rule=_ANCHOR_PX if pixel else _ANCHOR_M)
+        anchor_rule=anchor)
 
     if modality == "text":
         return (SYSTEM_TEXT,
