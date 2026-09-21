@@ -23,23 +23,40 @@ Scope, stated rather than discovered:
   (`bimsg.graph_extract.Extraction.status`), and a failed extraction scores as
   an empty prediction rather than a partial one.
 
-Four backends. Two of them exist to keep the harness honest:
+Seven modalities. `text` serialises the storey; `plan` and `occ` show a bare
+render and ask for pixel coordinates; `plan_som`, `occ_som` and
+`text+plan_som` show the same render with a numbered disc on each declared
+room, so the model names rooms by number and never has to localise anything.
+The set-of-mark conditions are the primary vision ones -- asking for bare
+coordinates measures coordinate regression, not plan reading. See
+`render_blind.render_som_png` for what the marks give away.
+
+Four backend kinds, two of which exist only to keep the harness honest:
 
     oracle   emits the reference itself, through the real parser and the real
              scorer. It must score 1.000. When it does not, the harness is
              broken, not the model -- and every model number taken through a
-             broken harness would have been unfalsifiable. Run it first.
+             broken harness would have been unfalsifiable. Run it first, and
+             with `--oracle-anchor pixels`: the default `identity` anchor
+             touches no geometry and passed against a sign-flipped lift.
     replay   re-scores raw responses from an earlier run's provenance log, so a
              scorer fix does not cost the GPU hours again.
     llm      a text model (default GLM-4-9B-0414)
-    vlm      a vision model (default GLM-4.1V-9B-Thinking)
+    vlm      a vision model (default GLM-4.1V-9B-Thinking). InternVL3 is
+             routed to `InternVLBackend`, which is the one model of the six
+             that does not speak the generic image-text-to-text API.
+
+Use `--max-new-tokens 4096` or more for any vision cell: a whole storey's
+JSON after a thinking model's trace does not fit in 2048, where two thirds of
+a probe truncated.
 
     # verify the harness before spending anything on it
     python main/extract_graph_llm.py --corpus dataset/synthetic_data/synth150 \\
-        --backend oracle --modality text --limit 10
+        --backend oracle --oracle-anchor pixels --modality plan_som
 
     python main/extract_graph_llm.py --corpus dataset/synthetic_data/synth150 \\
-        --backend vlm --modality plan --limit 20 --out results/extract/
+        --backend vlm --model-id glm-9b-v --modality plan_som \\
+        --max-new-tokens 4096 --out results/extract/
 """
 
 from __future__ import annotations
@@ -447,6 +464,105 @@ class VisionBackend:
                  "seconds": round(time.time() - t0, 2)})
 
 
+class InternVLBackend:
+    """InternVL3, which does not speak the `AutoModelForImageTextToText` API.
+
+    Checked before planning around it, per the rule this project earned the
+    hard way, and it is the one model of the six that needed its own path:
+    `AutoProcessor.from_pretrained` hands back a bare `Qwen2Tokenizer` with no
+    image handling at all, the architecture is the custom `InternVLChatModel`,
+    and the chat template rejects the list-of-parts content the other two
+    vision models take ("can only concatenate str (not list) to str").
+
+    So images go through InternVL's own documented preprocessing -- a dynamic
+    tiling into 448 px patches whose aspect ratio is chosen per image -- and
+    generation goes through `model.chat`.
+
+    One accounting compromise, stated because it affects a reported number:
+    `model.chat` returns a decoded string and not token ids, so the generated
+    length is recovered by re-tokenising the reply. That is exact for the
+    truncation test's purpose (it asks whether the model ran out of budget),
+    but it is a re-count rather than the generator's own, and it can read one
+    or two tokens low where the reply ends mid-multi-byte-character.
+    """
+
+    IMAGENET_MEAN = (0.485, 0.456, 0.406)
+    IMAGENET_STD = (0.229, 0.224, 0.225)
+
+    def __init__(self, model_id="OpenGVLab/InternVL3-8B", device="cuda",
+                 max_tiles: int = 12, tile: int = 448):
+        from transformers import AutoModel, AutoTokenizer
+        import torch
+        self.name = f"vlm:{model_id.split('/')[-1]}"
+        self.model_id = model_id
+        self.tile = tile
+        self.max_tiles = max_tiles
+        self.tok = AutoTokenizer.from_pretrained(
+            model_id, trust_remote_code=True, use_fast=False)
+        self.model = AutoModel.from_pretrained(
+            model_id, dtype=torch.bfloat16, trust_remote_code=True,
+            low_cpu_mem_usage=True).eval().to(device)
+        self._torch = torch
+        self.revision = getattr(self.model.config, "_commit_hash", None)
+
+    def _transform(self):
+        import torchvision.transforms as T
+        from torchvision.transforms.functional import InterpolationMode
+        return T.Compose([
+            T.Lambda(lambda im: im.convert("RGB")),
+            T.Resize((self.tile, self.tile),
+                     interpolation=InterpolationMode.BICUBIC),
+            T.ToTensor(),
+            T.Normalize(mean=self.IMAGENET_MEAN, std=self.IMAGENET_STD)])
+
+    def _tiles(self, image):
+        """InternVL's dynamic tiling: pick the aspect ratio, then cut."""
+        w, h = image.size
+        ar = w / h
+        best, best_diff = (1, 1), float("inf")
+        for n in range(1, self.max_tiles + 1):
+            for i in range(1, n + 1):
+                if n % i:
+                    continue
+                j = n // i
+                diff = abs(ar - i / j)
+                if diff < best_diff:
+                    best_diff, best = diff, (i, j)
+        cols, rows = best
+        resized = image.resize((self.tile * cols, self.tile * rows))
+        out = []
+        for k in range(cols * rows):
+            box = ((k % cols) * self.tile, (k // cols) * self.tile,
+                   ((k % cols) + 1) * self.tile, ((k // cols) + 1) * self.tile)
+            out.append(resized.crop(box))
+        if len(out) != 1:
+            out.append(image.resize((self.tile, self.tile)))   # thumbnail
+        return out
+
+    def generate(self, system, user, image=None, unit=None, gt=None,
+                 max_new_tokens=2048):
+        from PIL import Image
+        img = Image.open(image).convert("RGB")
+        tf = self._transform()
+        pv = self._torch.stack([tf(t) for t in self._tiles(img)])
+        pv = pv.to(self._torch.bfloat16).to(self.model.device)
+        # The system prompt is folded into the question: `model.chat` takes a
+        # single string, and setting `model.system_message` would mutate shared
+        # state across units.
+        question = f"<image>\n{system}\n\n{user}"
+        t0 = time.time()
+        with self._torch.no_grad():
+            reply = self.model.chat(
+                self.tok, pv, question,
+                dict(max_new_tokens=max_new_tokens, do_sample=False))
+        n_gen = len(self.tok(reply).input_ids)
+        return (reply, n_gen >= max_new_tokens - 2,
+                {"generated_tokens": n_gen, "tiles": int(pv.shape[0]),
+                 "seconds": round(time.time() - t0, 2),
+                 "token_count": "re-tokenised from the reply; model.chat "
+                                "returns no ids"})
+
+
 # --------------------------------------------------------------------------
 # Run
 # --------------------------------------------------------------------------
@@ -483,8 +599,11 @@ def run(args) -> int:
     elif args.backend == "llm":
         backend = TextBackend(resolve_model(args.model_id or "glm-9b", "text"))
     else:
-        backend = VisionBackend(
-            resolve_model(args.model_id or "glm-9b-v", "vision"))
+        vid = resolve_model(args.model_id or "glm-9b-v", "vision")
+        # InternVL3 needs its own path -- see InternVLBackend for why the
+        # generic AutoModelForImageTextToText route does not work for it.
+        backend = (InternVLBackend(vid) if "InternVL" in vid
+                   else VisionBackend(vid))
 
     rows, provenance = [], []
     status_n, t_start = {}, time.time()
