@@ -55,16 +55,29 @@ Graphs: Benchmarking Multimodal Extraction of Building Topology and Semantics*.
 > **[VERIFIED]** exactly invariant to four levels of graduated IFC damage that
 > remove up to half of a building's stated rooms, giving a controlled axis
 > along which to measure what vision contributes when text degrades. On this
-> axis, **[TODO]** we compare N open-weights text and vision-language models
-> against the deterministic baseline, and show **[TODO]**. We repair
+> axis, **[VERIFIED]** we compare six open-weights text and vision-language
+> models against the deterministic baseline and find none reaches even the
+> weakest deterministic method (best model $F_1$ 0.610 against 0.997), that
+> removing localisation from the vision task by marking each declared room is
+> worth 3--18$\times$, and that vision does **not** compensate when text
+> degrades --- it is merely invariant, and far worse in absolute terms, so the
+> damage axis we built cannot be answered by the marked conditions at all. We
+> repair
 > **[TODO]** the geometric root cause common to both the method's connectivity
 > errors and the evaluation reference's own residual noise, closing a gap that
 > improves both simultaneously. We release the benchmark, the annotation tool,
 > the corpus, and the evaluation harness.
 
-The three **[TODO]** clauses are the paper's outstanding empirical content —
-the model comparison, its outcome, and the repair. Nothing else in the
-abstract is a placeholder.
+**One [TODO] clause remains** in the abstract: the geometric repair (A01/A04).
+The model comparison and its outcome closed on 21 September 2026 — see §4.5
+and `results/grid/_tables.txt`. Nothing else in the abstract is a placeholder.
+
+The outcome is not the one the design anticipated, and the draft above says so
+deliberately. The damage axis was built to show vision compensating for text
+damage; it shows vision is merely invariant and much worse, and that the
+marked conditions cannot address the question at all because the marks derive
+from the declarations the damage removes. That is a real methodological
+finding and the abstract leads with it rather than burying it.
 
 ---
 
@@ -100,8 +113,10 @@ abstract is a placeholder.
    controlled axis for measuring what vision adds when text degrades.
    **[VERIFIED]** `main/render_blind.py`, `tests/test_blind_render.py`.
 
-5. **A multimodal model comparison on that axis.** **[TODO]** — the grid has
-   not been run. See `todo.md` P3.
+5. **A multimodal model comparison on that axis.** **[VERIFIED]** — 46/48
+   cells, 12.8 GPU-hours, §4.5. Includes a methodological negative result: the
+   damage axis cannot be answered by the marked vision conditions, because the
+   marks derive from the very declarations the damage removes.
 
 6. **A hybrid extraction method** that is deterministic where the error
    decomposition shows nothing can be improved, and learned only where
@@ -324,27 +339,60 @@ which never substitutes a prior. Rerun: 590/592 answered (99.7%, 2 truncated,
 0 unparseable); accuracy over answered rooms only (0.498) is within noise of
 the headline (0.497), confirming the fix didn't just relocate the defect.
 
-### 4.5 Multimodal extraction grid — **harness [BUILT], results [TODO]**
+### 4.5 Multimodal extraction grid — **[VERIFIED], run 21 Sep 2026**
 
-The paper's core empirical gap. The harness is built and verified (Method
-§3.5); no model has been run through it yet, so every number in this section
-is still outstanding.
+46 of 48 cells, **12.8 GPU-hours**, 6 open-weights models × 7 modalities × 4
+damage levels × {labels given, masked}, 30 buildings (60 units) per cell. All
+figures printed by `main/grid_tables.py` → `results/grid/_tables.txt`.
 
-Grid: **[TODO — finalise model list against cached weights]** open-weights
-text models × open-weights VLMs × {text, plan image, occupancy image,
-text+plan} × 4 damage levels × {labels given, labels masked}. Primary corpus
-synth150, where specificity is computable; the real corpus secondary, and
-**text-only there** until the derived reference carries room extents.
+**(a) The deterministic method wins decisively.** On the identical restricted
+task (one storey, `connected_by_door` + `open_passage`):
+`ours` **0.997**, `door_near` 0.907, best model **0.610**
+(Qwen2.5-VL-7B `plan_som`), best text 0.579 (GLM-4-9B). No model reaches even
+the weakest deterministic baseline. **[VERIFIED]**
 
-The headline the grid is built to produce: the plan and occupancy renders are
-**byte-identical across L1–L4** while the text loses half its `IfcSpace`
-declarations, so the modality gap as a function of text damage is measurable
-directly rather than inferred. That is the controlled experiment the whole
-damage axis was for. `todo.md` Phase C.
+**(b) Set-of-mark is worth 3–18×.** Unmarked → marked: Qwen2.5-VL `plan`
+0.110 → 0.610 (5.6×), InternVL3 `plan` 0.020 → 0.356 (17.6×), and similarly
+for occupancy. Asking a VLM for pixel centroids measures coordinate
+regression, not plan reading. **[VERIFIED]**
 
-Run the `oracle` backend on each new corpus before spending GPU time on it —
-it costs seconds and it is the only thing standing between a harness bug and
-an unfalsifiable model number.
+**(c) Given the room set, the plan beats the text** within one family:
+Qwen2.5-VL `plan_som` 0.610 against Qwen2.5-7B `text` 0.562. **[VERIFIED]**
+
+**(d) Both invariance controls passed exactly** — unmarked `plan` 0.110 at L1
+and L4 to three decimals; `plan_som` 0.602 at L2 and L3. **[VERIFIED]**
+
+**(e) The damage axis does not work as designed. This is the section's main
+negative result and it must be reported as one.** The pooled numbers look like
+the intended finding (text 0.579 → 0.415 from L1 to L2 while marked vision
+holds flat), but the flatness is a **selection effect**. Set-of-mark marks
+*declared* rooms and damage removes declared rooms, so at L2 exactly half the
+storeys carry no marks and leave the condition — the 37 surviving units are
+precisely the undamaged storeys. Restricted to those same 37 units nothing
+moves in any condition (text −0.010/+0.023/+0.026, `plan_som` 0.000). The
+marked conditions therefore **structurally cannot answer the damage
+question**. The unmarked conditions can, are invariant by construction, and
+score 0.110–0.211 against text's 0.415 at the same level. **Vision does not
+compensate when text degrades; it is unaffected and far worse in absolute
+terms.** **[VERIFIED]**
+
+**(f) Labelling measures the corpus, not the models.** Masked label accuracy
+is 0.066–0.130 across every model and modality; the high text figures (0.791
+–0.952) are transcription and collapse when names are withheld. synth150
+contains only `IfcWall`/`IfcDoor`/`IfcStair` — no furniture, no windows — so
+there is no functional cue to infer from. **Do not report vision labelling on
+synth150.** **[VERIFIED as a corpus property]**
+
+**(g) Extraction reliability is a result.** Parse rates: GLM-4-9B 100%,
+Qwen2.5-VL 99.8%, Qwen3-8B 99.8%, Qwen2.5-7B 99.6%, **InternVL3-8B 73.4%**
+(106 invalid JSON). InternVL3's unmarked `plan` 0.020 is a parsing failure,
+not a vision failure. **[VERIFIED]**
+
+**Two cells incomplete, and they stay in the denominator:** both
+GLM-4.1V-9B-Thinking `plan_som`, killed by the 90-minute cap at 161 s/unit.
+Its trace is 92–100% of output and cannot be suppressed, so it costs 21× a
+non-thinking model of the same size and finishes less — the paper's "does a
+reasoning trace help structured extraction" answer, which is no.
 
 ### 4.6 Ablation ladder (method repairs) — **[TODO]**
 

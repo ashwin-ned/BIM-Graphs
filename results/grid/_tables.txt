@@ -1,0 +1,64 @@
+==============================================================================
+A. THE TASK, L1: deterministic method against every model
+   (per storey, connected_by_door + open_passage only)
+
+## text
+  glm-9b                             n= 60  F1=0.579  P=0.567  R=0.590  spec=0.426  lbl=0.791
+  qwen25-7b                          n= 60  F1=0.562  P=0.568  R=0.556  spec=0.461  lbl=0.875
+  qwen3-8b                           n= 60  F1=0.529  P=0.564  R=0.498  spec=0.509  lbl=0.952
+
+## vision, marked (set-of-mark)
+  qwen25-vl-7b plan_som              n= 60  F1=0.610  P=0.594  R=0.628  spec=0.452  lbl=0.132
+  qwen25-vl-7b occ_som               n= 60  F1=0.586  P=0.569  R=0.604  spec=0.417  lbl=0.117
+  qwen25-vl-7b text+plan_som         n= 60  F1=0.603  P=0.585  R=0.621  spec=0.439  lbl=0.321
+  internvl3-8b plan_som              n= 60  F1=0.356  P=0.624  R=0.249  spec=0.809  lbl=0.046
+  internvl3-8b occ_som               n= 60  F1=0.334  P=0.575  R=0.235  spec=0.778  lbl=0.071
+  internvl3-8b text+plan_som         n= 60  F1=0.483  P=0.550  R=0.430  spec=0.552  lbl=0.193
+
+## vision, unmarked
+  qwen25-vl-7b plan                  n= 60  F1=0.110  P=0.358  R=0.065  spec=0.852  lbl=0.051
+  qwen25-vl-7b occ                   n= 60  F1=0.211  P=0.567  R=0.130  spec=0.874  lbl=0.051
+  internvl3-8b plan                  n= 60  F1=0.020  P=1.000  R=0.010  spec=1.000  lbl=0.000
+  internvl3-8b occ                   n= 60  F1=0.107  P=0.654  R=0.058  spec=0.961  lbl=0.031
+
+==============================================================================
+B. SET-OF-MARK LIFT (same model, same corpus, marks vs none)
+  qwen25-vl-7b   plan  0.110 -> plan_som  0.610   (5.6x)
+  qwen25-vl-7b   occ   0.211 -> occ_som   0.586   (2.8x)
+  internvl3-8b   plan  0.020 -> plan_som  0.356   (17.6x)
+  internvl3-8b   occ   0.107 -> occ_som   0.334   (3.1x)
+
+==============================================================================
+C. DAMAGE. Full corpus, identical 60 units at every level.
+   Only the text modality can be measured on damaged storeys at all.
+  glm-9b       0.579  0.415  0.451  0.457     (L1, L2, L3, L4)
+  qwen25-7b    0.562  0.461  0.464  0.494     (L1, L2, L3, L4)
+  qwen3-8b     0.529  0.460  0.416  0.434     (L1, L2, L3, L4)
+
+   Unmarked vision is invariant by construction (byte-identical renders):
+     qwen25-vl plan L1: F1 0.110
+     qwen25-vl plan L4: F1 0.110
+
+   THE SELECTION EFFECT. Set-of-mark needs marks; damage removes them.
+   Units where set-of-mark is scorable at L2: 37 of 60.
+   On those SAME units, L1 -> L2:
+     text glm-9b            0.562 -> 0.552  (-0.010)  n=37
+     text qwen25-7b         0.544 -> 0.567  (+0.023)  n=37
+     text qwen3-8b          0.529 -> 0.556  (+0.026)  n=37
+     plan_som qwen25-vl     0.602 -> 0.602  (+0.000)  n=37
+
+==============================================================================
+D. LABELS: given vs masked (the masked column is the real test)
+  text   glm-9b         given 0.791   masked 0.107
+  text   qwen25-7b      given 0.875   masked 0.084
+  text   qwen3-8b       given 0.952   masked 0.097
+  vision qwen25-vl-7b   given 0.321   masked 0.130
+  vision internvl3-8b   given 0.193   masked 0.066
+
+==============================================================================
+E. EXTRACTION RELIABILITY (parse outcome per model, all its cells)
+  glm-9b         100.0% parsed   {'ok': 480}
+  internvl3-8b    73.4% parsed   {'ok': 373, 'invalid_json': 106, 'truncated': 7, 'no_json': 22}
+  qwen25-7b       99.6% parsed   {'ok': 478, 'no_json': 2}
+  qwen25-vl-7b    99.8% parsed   {'ok': 604, 'truncated': 1}
+  qwen3-8b        99.8% parsed   {'ok': 479, 'truncated': 1}

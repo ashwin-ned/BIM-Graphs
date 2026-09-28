@@ -479,6 +479,116 @@ which invents its own room ids — has nothing to match against. Those units are
 recorded as `unscorable` and leave the average rather than contributing a
 0.000 that would describe the reference instead of the model.
 
+### Model results — the 48-cell grid, 21 September 2026
+
+`main/run_grid.py --buildings 30`, 46 of 48 cells, **12.8 GPU-hours**. Six
+open-weights models, seven modalities, four damage levels, 60 units per cell.
+Every figure below is printed by `python main/grid_tables.py`
+([results/grid/_tables.txt](results/grid/_tables.txt)); do not transcribe them
+by hand.
+
+**The deterministic method wins by a wide margin.** Scored on the *identical*
+restricted task — one storey at a time, `connected_by_door` + `open_passage`
+only, which is what the models are asked for:
+
+| | F1 (L1) |
+|---|---|
+| **`ours`** | **0.997** |
+| `door_near` | 0.907 |
+| best model — Qwen2.5-VL-7B `plan_som` | **0.610** |
+| best text model — GLM-4-9B | 0.579 |
+
+No model reaches even the weakest deterministic baseline. Every model sits near
+precision 0.55–0.62 with recall varying, so the gap is not a threshold choice.
+
+**Set-of-mark is worth 3–18×.** Asking a model for pixel centroids measures
+coordinate regression, not plan reading; marking each declared room with a
+numbered disc removes localisation from the task:
+
+| model | unmarked | marked | |
+|---|---|---|---|
+| Qwen2.5-VL-7B `plan` | 0.110 | **0.610** | 5.6× |
+| Qwen2.5-VL-7B `occ` | 0.211 | **0.586** | 2.8× |
+| InternVL3-8B `plan` | 0.020 | **0.356** | 17.6× |
+| InternVL3-8B `occ` | 0.107 | **0.334** | 3.1× |
+
+Given the room set, **reading the plan beats reading the text** within one
+model family: Qwen2.5-VL `plan_som` 0.610 against Qwen2.5-7B `text` 0.562.
+
+**Both invariance controls passed exactly.** Unmarked `plan` scores 0.110 at
+L1 and 0.110 at L4 — identical to three decimals, which is what byte-identical
+renders plus greedy decoding should produce. `plan_som` scores 0.602 at both L2
+and L3, confirming the two-regime finding.
+
+#### The damage axis does not work as designed, and this is the main negative result
+
+The pooled numbers look like the intended finding — text falls while vision
+holds flat:
+
+| text model | L1 | L2 | L3 | L4 |
+|---|---|---|---|---|
+| GLM-4-9B | 0.579 | 0.415 | 0.451 | 0.457 |
+| Qwen2.5-7B | 0.562 | 0.461 | 0.464 | 0.494 |
+| Qwen3-8B | 0.529 | 0.460 | 0.416 | 0.434 |
+
+**That reading is wrong, and the flatness is a selection effect.** Set-of-mark
+marks *declared* rooms; damage removes declared rooms. At L2 exactly half the
+storeys lose every `IfcSpace`, so they carry no marks and leave the condition
+entirely — 37 of 60 units remain, and they are precisely the storeys that were
+not damaged. Restricted to those same 37 units, nothing moves:
+
+| condition | L1 | L2 | Δ |
+|---|---|---|---|
+| text GLM-4-9B | 0.562 | 0.552 | −0.010 |
+| text Qwen2.5-7B | 0.544 | 0.567 | +0.023 |
+| `plan_som` Qwen2.5-VL | 0.602 | 0.602 | 0.000 |
+
+So **the marked conditions structurally cannot answer the damage question**:
+they need marks, and damage is exactly what removes them. The conditions that
+*can* be measured on a damaged storey are the unmarked ones, and they are
+invariant by construction while scoring 0.110–0.211 — far below text's 0.415 at
+the same level. **Vision does not compensate when text degrades. It is
+unaffected, and much worse in absolute terms.**
+
+#### Labelling is a property of this corpus, not of these models
+
+Masked label accuracy is **0.066–0.130 across every model and every modality**.
+The high text figures are transcription, not inference — they collapse the
+moment the architect's names are withheld:
+
+| | names given | names masked |
+|---|---|---|
+| GLM-4-9B text | 0.791 | 0.107 |
+| Qwen2.5-7B text | 0.875 | 0.084 |
+| Qwen3-8B text | 0.952 | 0.097 |
+| Qwen2.5-VL `text+plan_som` | 0.321 | 0.130 |
+
+The synthetic buildings contain only `IfcWall`, `IfcDoor` and `IfcStair` — no
+furniture and no windows — so a render carries almost no functional cue and
+there is nothing to infer from. **Do not report vision labelling on synth150.**
+The real corpus carries windows, columns and railings and is where this belongs.
+
+#### Extraction reliability is itself a result
+
+| model | parsed | failures |
+|---|---|---|
+| GLM-4-9B | 100.0% | — |
+| Qwen2.5-VL-7B | 99.8% | 1 truncated |
+| Qwen3-8B | 99.8% | 1 truncated |
+| Qwen2.5-7B | 99.6% | 2 no JSON |
+| **InternVL3-8B** | **73.4%** | 106 invalid JSON, 22 no JSON, 7 truncated |
+
+InternVL3's unmarked `plan` score of 0.020 is a parsing failure, not a vision
+failure: 47 of 60 responses were invalid JSON. Quote it as such.
+
+**Two cells are missing and stay in the denominator.** Both are
+GLM-4.1V-9B-Thinking `plan_som`, killed by the 90-minute per-cell cap at its
+measured 161 s/unit. Its `<think>` trace is 92–100% of its output and cannot be
+suppressed — a prefilled closed `</think>` makes it reason in prose and emit
+nothing parseable — so it costs 21× a non-thinking model of the same size and
+finishes less. That is the paper's "does a reasoning trace help structured
+extraction" data point, and the answer is no.
+
 ## Layout
 
 ```

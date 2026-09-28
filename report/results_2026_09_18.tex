@@ -721,6 +721,172 @@ rule backend's own hypothesis for a non-answer. Both now return an explicit
 \code{status} and never substitute; the VLM row above (0.497, 21 September
 2026) is the corrected, regression-guarded measurement.
 
+\section{Multimodal extraction: the 48-cell grid}
+
+Run 21 September 2026. 46 of 48 cells, 12.8 GPU-hours, six open-weights models
+$\times$ seven modalities $\times$ four damage levels $\times$ \{labels given,
+masked\}, 30 buildings (60 units) per cell. Every figure here is printed by
+\code{main/grid\_tables.py}; none is transcribed.
+
+\subsection{The deterministic method against every model}
+
+Scored on the \emph{identical} restricted task the models are set: one storey
+at a time, \code{connected\_by\_door} and \code{open\_passage} only.
+
+\begin{table}[ht]
+\centering
+\small
+\begin{tabular}{llrrrr}
+\toprule
+Condition & Model & $F_1$ & $P$ & $R$ & Spec. \\
+\midrule
+\textbf{deterministic} & \textbf{\code{ours}} & \textbf{0.997} & 0.995 & 1.000 & --- \\
+deterministic & \code{door\_near} & 0.907 & 1.000 & 0.830 & --- \\
+\midrule
+text & GLM-4-9B & 0.579 & 0.567 & 0.590 & 0.426 \\
+text & Qwen2.5-7B & 0.562 & 0.568 & 0.556 & 0.461 \\
+text & Qwen3-8B & 0.529 & 0.564 & 0.498 & 0.509 \\
+\midrule
+\textbf{plan\_som} & \textbf{Qwen2.5-VL-7B} & \textbf{0.610} & 0.594 & 0.628 & 0.452 \\
+text+plan\_som & Qwen2.5-VL-7B & 0.603 & 0.585 & 0.621 & 0.439 \\
+occ\_som & Qwen2.5-VL-7B & 0.586 & 0.569 & 0.604 & 0.417 \\
+text+plan\_som & InternVL3-8B & 0.483 & 0.550 & 0.430 & 0.552 \\
+plan\_som & InternVL3-8B & 0.356 & 0.624 & 0.249 & 0.809 \\
+occ\_som & InternVL3-8B & 0.334 & 0.575 & 0.235 & 0.778 \\
+\midrule
+occ & Qwen2.5-VL-7B & 0.211 & 0.567 & 0.130 & 0.874 \\
+plan & Qwen2.5-VL-7B & 0.110 & 0.358 & 0.065 & 0.852 \\
+occ & InternVL3-8B & 0.107 & 0.654 & 0.058 & 0.961 \\
+plan & InternVL3-8B & 0.020 & 1.000 & 0.010 & 1.000 \\
+\bottomrule
+\end{tabular}
+\caption{No model reaches even the weakest deterministic baseline. InternVL3's
+\code{plan} figure is a parsing failure, not a vision failure --- 47 of its 60
+responses were invalid JSON.}
+\end{table}
+
+\subsection{Set-of-mark is worth 3--18$\times$}
+
+Asking a vision model for pixel centroids measures coordinate regression rather
+than plan reading. Marking each IFC-declared room with a numbered disc removes
+localisation from the task; the model answers with the number.
+
+\begin{table}[ht]
+\centering
+\small
+\begin{tabular}{llrrr}
+\toprule
+Model & Base & Unmarked & Marked & Factor \\
+\midrule
+Qwen2.5-VL-7B & plan & 0.110 & \textbf{0.610} & 5.6$\times$ \\
+Qwen2.5-VL-7B & occ  & 0.211 & \textbf{0.586} & 2.8$\times$ \\
+InternVL3-8B  & plan & 0.020 & \textbf{0.356} & 17.6$\times$ \\
+InternVL3-8B  & occ  & 0.107 & \textbf{0.334} & 3.1$\times$ \\
+\bottomrule
+\end{tabular}
+\caption{What the marks give away must be quoted with any of these numbers:
+they reveal the room partition, so room recovery is \textbf{not} measured in
+the marked conditions and room recall is 1.000 there by construction.}
+\end{table}
+
+Within one model family, \emph{given the room set the plan beats the text}:
+Qwen2.5-VL-7B \code{plan\_som} 0.610 against Qwen2.5-7B \code{text} 0.562.
+
+\subsection{Both invariance controls passed exactly}
+
+Unmarked \code{plan} scores \textbf{0.110 at L1 and 0.110 at L4}, identical to
+three decimals --- which is what byte-identical renders and greedy decoding
+should produce, and is the empirical demonstration that the earlier claim of
+render invariance was not merely asserted. \code{plan\_som} scores
+\textbf{0.602 at both L2 and L3}, confirming the two-regime finding.
+
+\subsection{The damage axis does not work, and that is the finding}
+
+\noindent
+The pooled numbers appear to show the intended result:
+
+\begin{table}[ht]
+\centering
+\small
+\begin{tabular}{lrrrr}
+\toprule
+Text model & L1 & L2 & L3 & L4 \\
+\midrule
+GLM-4-9B   & 0.579 & 0.415 & 0.451 & 0.457 \\
+Qwen2.5-7B & 0.562 & 0.461 & 0.464 & 0.494 \\
+Qwen3-8B   & 0.529 & 0.460 & 0.416 & 0.434 \\
+\bottomrule
+\end{tabular}
+\caption{Text degrades under damage, over an identical 60 units at every level.}
+\end{table}
+
+\noindent
+\textbf{The apparent flatness of the marked vision conditions beside this is a
+selection effect, not a result.} Set-of-mark marks \emph{declared} rooms, and
+damage removes declared rooms. At L2 exactly half the storeys lose every
+\code{IfcSpace}, carry no marks, and leave the condition --- 37 of 60 units
+survive, and they are precisely the storeys that were \emph{not} damaged.
+Restricted to those same 37 units, nothing moves in any condition:
+
+\begin{table}[ht]
+\centering
+\small
+\begin{tabular}{lrrr}
+\toprule
+Condition (same 37 units) & L1 & L2 & $\Delta$ \\
+\midrule
+text GLM-4-9B          & 0.562 & 0.552 & $-0.010$ \\
+text Qwen2.5-7B        & 0.544 & 0.567 & $+0.023$ \\
+text Qwen3-8B          & 0.529 & 0.556 & $+0.026$ \\
+\code{plan\_som} Qwen2.5-VL & 0.602 & 0.602 & $0.000$ \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\noindent
+So the marked conditions \textbf{structurally cannot answer the damage
+question}: they require marks, and damage is exactly what removes them. The
+conditions that \emph{can} be measured on a damaged storey are the unmarked
+ones; they are invariant by construction and score 0.110--0.211 against text's
+0.415 at the same level. \textbf{Vision does not compensate when text degrades.
+It is unaffected, and far worse in absolute terms.}
+
+\subsection{Labelling measures the corpus, not the models}
+
+Masked label accuracy is \textbf{0.066--0.130 across every model and every
+modality}. The high text figures are transcription and collapse when the
+architect's names are withheld: GLM-4-9B 0.791$\to$0.107, Qwen2.5-7B
+0.875$\to$0.084, Qwen3-8B 0.952$\to$0.097. \code{synth150} contains only
+\code{IfcWall}, \code{IfcDoor} and \code{IfcStair} --- no furniture and no
+windows --- so a render carries almost no functional cue. \textbf{Vision
+labelling must not be reported on this corpus.}
+
+\subsection{Extraction reliability}
+
+\begin{table}[ht]
+\centering
+\small
+\begin{tabular}{lrl}
+\toprule
+Model & Parsed & Failures \\
+\midrule
+GLM-4-9B       & 100.0\% & --- \\
+Qwen2.5-VL-7B  & 99.8\%  & 1 truncated \\
+Qwen3-8B       & 99.8\%  & 1 truncated \\
+Qwen2.5-7B     & 99.6\%  & 2 no JSON \\
+\textbf{InternVL3-8B} & \textbf{73.4\%} & 106 invalid JSON, 22 no JSON, 7 truncated \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\noindent
+Two cells are incomplete and remain in the denominator: both
+GLM-4.1V-9B-Thinking \code{plan\_som}, killed by a 90-minute per-cell cap at a
+measured 161\,s/unit. Its \code{<think>} trace is 92--100\% of its output and
+cannot be suppressed --- a prefilled closed \code{</think>} makes it reason in
+prose and emit nothing parseable --- so it costs 21$\times$ a non-thinking
+model of the same size and finishes less.
+
 \section{What the evidence currently supports}
 
 \begin{enumerate}

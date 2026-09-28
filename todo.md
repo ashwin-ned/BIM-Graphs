@@ -137,14 +137,18 @@ Decisions taken (all approved). `main/run_grid.py` enumerates **56 cells**;
 - [x] **Set-of-mark is the primary vision condition** — see Phase B's closing
       notes and `render_blind.render_som_png`. Unmarked `plan`/`occ` are still
       run, as the honest strict condition and the localisation result.
-- [ ] **Load-test `qwen25-vl-7b`, `internvl3-8b` and `qwen3-8b` in this
-      harness before planning around them.** Only the GLM pair has been run
-      end to end. `VisionBackend` uses `AutoModelForImageTextToText` with a
-      `{"type": "image"}` message part; InternVL historically wants its own
-      `model.chat()` interface, so this is the likeliest breakage.
-- [ ] Run the grid (`main/run_grid.py --buildings 30`), then the headline
-      cells at 150.
-- [ ] Produce the comparison table and the modality-ablation result.
+- [x] **Load-tested all six models.** InternVL3-8B needed its own backend
+      (`AutoProcessor` returns a bare tokenizer; custom `InternVLChatModel`;
+      chat template rejects list-of-parts content), two undeclared
+      dependencies (`einops`, `timm --no-deps`), and a `transformers` 5.16.1
+      API shim (`all_tied_weights_keys`). Qwen3-8B needed `enable_thinking=
+      False` — at a 6144 cap every unit truncated.
+- [x] **Grid run 21 Sep 2026: 46/48 cells, 12.8 GPU-hours.** Results in §4.5
+      of `paper_plan.md`, the README, and `results/grid/_tables.txt`
+      (regenerate with `python main/grid_tables.py`).
+- [x] **Comparison table and modality ablation produced.** Headline: `ours`
+      0.997 against best model 0.610; set-of-mark worth 3–18×; both invariance
+      controls exact; damage axis unanswerable by the marked conditions.
 
 ### Measured on 21 Sep 2026 — use these, not estimates
 
