@@ -1,0 +1,1593 @@
+{
+  "config": {
+    "corpus": "dataset/synthetic_data/synth150_L2",
+    "gt_glob": null,
+    "plans": null,
+    "modality": "text+plan_som",
+    "backend": "vlm",
+    "model_id": "internvl3-8b",
+    "oracle_anchor": null,
+    "mask_labels": false,
+    "no_think_template": false,
+    "max_new_tokens": 3072,
+    "relations_scored": [
+      "connected_by_door",
+      "open_passage"
+    ],
+    "scope": "one storey per call; vertical links out of scope on both the prediction and the reference",
+    "backend_name": "vlm:InternVL3-8B",
+    "model_revision": "853e3a797a661694b1b8ece0cb72dc2b23e3dac9"
+  },
+  "predictions": [
+    {
+      "unit": "synth_0000/00_level_0",
+      "prompt_sha256": "b08df8453ad9b94f",
+      "extraction": {
+        "status": "ok",
+        "detail": null,
+        "rooms": 8,
+        "edges": 6,
+        "dropped_rooms": {},
+        "dropped_edges": {},
+        "dropped_rooms_total": 0,
+        "dropped_edges_total": 0
+      },
+      "raw": "```json\n{\n  \"rooms\": [\n    {\"id\": \"1\", \"label\": \"storage\"},\n    {\"id\": \"2\", \"label\": \"meeting\"},\n    {\"id\": \"3\", \"label\": \"storage\"},\n    {\"id\": \"4\", \"label\": \"circulation\"},\n    {\"id\": \"5\", \"label\": \"office\"},\n    {\"id\": \"6\", \"label\": \"living\"},\n    {\"id\": \"7\", \"label\": \"bedroom\"},\n    {\"id\": \"8\", \"label\": \"bedroom\"}\n  ],\n  \"edges\": [\n    {\"a\": \"1\", \"b\": \"4\", \"type\": \"door\"},\n    {\"a\": \"2\", \"b\": \"4\", \"type\": \"door\"},\n    {\"a\": \"5\", \"b\": \"4\", \"type\": \"door\"},\n    {\"a\": \"6\", \"b\": \"4\", \"type\": \"door\"},\n    {\"a\": \"7\", \"b\": \"4\", \"type\": \"door\"},\n    {\"a\": \"8\", \"b\": \"4\", \"type\": \"door\"}\n  ]\n}\n```",
+      "hit_cap": false,
+      "connectivity": {
+        "tp": 0,
+        "fn": 6,
+        "fp_on_reference_negative": 2,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0
+      },
+      "labels": {
+        "scored": 8,
+        "correct": 1,
+        "accuracy": 0.125
+      },
+      "gt_scope": {
+        "negatives": "every adjacent pair the generator did not join",
+        "coverage": "complete: the generator knows every pair",
+        "restricted_to": "storey 0; 8 marked rooms",
+        "rooms_before": 8,
+        "rooms_after": 8,
+        "dropped_straddling": 0,
+        "dropped_outside": 0
+      },
+      "generated_tokens": 241,
+      "tiles": 7,
+      "seconds": 9.01,
+      "token_count": "re-tokenised from the reply; model.chat returns no ids"
+    },
+    {
+      "unit": "synth_0002/01_level_1",
+      "prompt_sha256": "69102e6cde636ed8",
+      "extraction": {
+        "status": "ok",
+        "detail": null,
+        "rooms": 8,
+        "edges": 8,
+        "dropped_rooms": {},
+        "dropped_edges": {},
+        "dropped_rooms_total": 0,
+        "dropped_edges_total": 0
+      },
+      "raw": "```json\n{\n  \"rooms\": [\n    {\"id\": \"1\", \"label\": \"office\"},\n    {\"id\": \"2\", \"label\": \"office\"},\n    {\"id\": \"3\", \"label\": \"bathroom\"},\n    {\"id\": \"4\", \"label\": \"corridor\"},\n    {\"id\": \"5\", \"label\": \"storage\"},\n    {\"id\": \"6\", \"label\": \"storage\"},\n    {\"id\": \"7\", \"label\": \"kitchen\"},\n    {\"id\": \"8\", \"label\": \"living\"}\n  ],\n  \"edges\": [\n    {\"a\": \"1\", \"b\": \"4\", \"type\": \"door\"},\n    {\"a\": \"2\", \"b\": \"4\", \"type\": \"door\"},\n    {\"a\": \"4\", \"b\": \"5\", \"type\": \"open\"},\n    {\"a\": \"4\", \"b\": \"6\", \"type\": \"open\"},\n    {\"a\": \"5\", \"b\": \"7\", \"type\": \"door\"},\n    {\"a\": \"6\", \"b\": \"7\", \"type\": \"door\"},\n    {\"a\": \"4\", \"b\": \"8\", \"type\": \"door\"},\n    {\"a\": \"8\", \"b\": \"5\", \"type\": \"open\"}\n  ]\n}\n```",
+      "hit_cap": false,
+      "connectivity": {
+        "tp": 1,
+        "fn": 5,
+        "fp_on_reference_negative": 2,
+        "precision": 0.333,
+        "recall": 0.167,
+        "f1": 0.222
+      },
+      "labels": {
+        "scored": 8,
+        "correct": 2,
+        "accuracy": 0.25
+      },
+      "gt_scope": {
+        "negatives": "every adjacent pair the generator did not join",
+        "coverage": "complete: the generator knows every pair",
+        "restricted_to": "storey 1; 8 marked rooms",
+        "rooms_before": 8,
+        "rooms_after": 8,
+        "dropped_straddling": 0,
+        "dropped_outside": 0
+      },
+      "generated_tokens": 279,
+      "tiles": 7,
+      "seconds": 9.73,
+      "token_count": "re-tokenised from the reply; model.chat returns no ids"
+    },
+    {
+      "unit": "synth_0005/00_level_0",
+      "prompt_sha256": "9a61910c204642aa",
+      "extraction": {
+        "status": "ok",
+        "detail": null,
+        "rooms": 6,
+        "edges": 5,
+        "dropped_rooms": {},
+        "dropped_edges": {},
+        "dropped_rooms_total": 0,
+        "dropped_edges_total": 0
+      },
+      "raw": "```json\n{\n  \"rooms\": [\n    {\"id\": \"1\", \"label\": \"circulation\"},\n    {\"id\": \"2\", \"label\": \"living\"},\n    {\"id\": \"3\", \"label\": \"circulation\"},\n    {\"id\": \"4\", \"label\": \"meeting\"},\n    {\"id\": \"5\", \"label\": \"office\"},\n    {\"id\": \"6\", \"label\": \"stair\"}\n  ],\n  \"edges\": [\n    {\"a\": \"1\", \"b\": \"2\", \"type\": \"door\"},\n    {\"a\": \"1\", \"b\": \"3\", \"type\": \"open\"},\n    {\"a\": \"2\", \"b\": \"4\", \"type\": \"door\"},\n    {\"a\": \"4\", \"b\": \"5\", \"type\": \"door\"},\n    {\"a\": \"3\", \"b\": \"6\", \"type\": \"door\"}\n  ]\n}\n```",
+      "hit_cap": false,
+      "connectivity": {
+        "tp": 1,
+        "fn": 3,
+        "fp_on_reference_negative": 4,
+        "precision": 0.2,
+        "recall": 0.25,
+        "f1": 0.222
+      },
+      "labels": {
+        "scored": 6,
+        "correct": 0,
+        "accuracy": 0.0
+      },
+      "gt_scope": {
+        "negatives": "every adjacent pair the generator did not join",
+        "coverage": "complete: the generator knows every pair",
+        "restricted_to": "storey 0; 6 marked rooms",
+        "rooms_before": 6,
+        "rooms_after": 6,
+        "dropped_straddling": 0,
+        "dropped_outside": 0
+      },
+      "generated_tokens": 196,
+      "tiles": 7,
+      "seconds": 6.81,
+      "token_count": "re-tokenised from the reply; model.chat returns no ids"
+    },
+    {
+      "unit": "synth_0022/01_level_1",
+      "prompt_sha256": "17cd80c1355e65e0",
+      "extraction": {
+        "status": "invalid_json",
+        "detail": "JSONDecodeError: Expecting ',' delimiter: line 7 column 3 (char 164)",
+        "rooms": 0,
+        "edges": 0,
+        "dropped_rooms": {},
+        "dropped_edges": {},
+        "dropped_rooms_total": 0,
+        "dropped_edges_total": 0
+      },
+      "raw": "```json\n{\n  \"rooms\": [\n    {\"id\": \"1\", \"label\": \"bedroom\"},\n    {\"id\": \"2\", \"label\": \"kitchen\"},\n    {\"id\": \"3\", \"label\": \"stair\"},\n    {\"id\": \"4\", \"label\": \"reception\"}\n  },\n  \"edges\": [\n    {\"a\": \"1\", \"b\": \"2\", \"type\": \"open\"},\n    {\"a\": \"1\", \"b\": \"3\", \"type\": \"open\"},\n    {\"a\": \"2\", \"b\": \"3\", \"type\": \"door\"},\n    {\"a\": \"3\", \"b\": \"4\", \"type\": \"door\"}\n  ]\n}\n```",
+      "hit_cap": false,
+      "connectivity": {
+        "tp": 0,
+        "fn": 3,
+        "fp_on_reference_negative": 0,
+        "precision": null,
+        "recall": 0.0,
+        "f1": 0.0
+      },
+      "labels": {
+        "scored": 4,
+        "correct": 0,
+        "accuracy": 0.0
+      },
+      "gt_scope": {
+        "negatives": "every adjacent pair the generator did not join",
+        "coverage": "complete: the generator knows every pair",
+        "restricted_to": "storey 1; 4 marked rooms",
+        "rooms_before": 4,
+        "rooms_after": 4,
+        "dropped_straddling": 0,
+        "dropped_outside": 0
+      },
+      "generated_tokens": 152,
+      "tiles": 7,
+      "seconds": 5.23,
+      "token_count": "re-tokenised from the reply; model.chat returns no ids"
+    },
+    {
+      "unit": "synth_0025/00_level_0",
+      "prompt_sha256": "4b66d2b9d9dbf008",
+      "extraction": {
+        "status": "ok",
+        "detail": null,
+        "rooms": 7,
+        "edges": 6,
+        "dropped_rooms": {},
+        "dropped_edges": {},
+        "dropped_rooms_total": 0,
+        "dropped_edges_total": 0
+      },
+      "raw": "```json\n{\n  \"rooms\": [\n    {\"id\": \"1\", \"label\": \"storage\"},\n    {\"id\": \"2\", \"label\": \"circulation\"},\n    {\"id\": \"3\", \"label\": \"stair\"},\n    {\"id\": \"4\", \"label\": \"circulation\"},\n    {\"id\": \"5\", \"label\": \"storage\"},\n    {\"id\": \"6\", \"label\": \"office\"},\n    {\"id\": \"7\", \"label\": \"retail\"}\n  ],\n  \"edges\": [\n    {\"a\": \"1\", \"b\": \"2\", \"type\": \"open\"},\n    {\"a\": \"1\", \"b\": \"3\", \"type\": \"door\"},\n    {\"a\": \"2\", \"b\": \"4\", \"type\": \"door\"},\n    {\"a\": \"4\", \"b\": \"5\", \"type\": \"open\"},\n    {\"a\": \"4\", \"b\": \"6\", \"type\": \"door\"},\n    {\"a\": \"6\", \"b\": \"7\", \"type\": \"door\"}\n  ]\n}\n```",
+      "hit_cap": false,
+      "connectivity": {
+        "tp": 4,
+        "fn": 1,
+        "fp_on_reference_negative": 2,
+        "precision": 0.667,
+        "recall": 0.8,
+        "f1": 0.727
+      },
+      "labels": {
+        "scored": 7,
+        "correct": 1,
+        "accuracy": 0.14285714285714285
+      },
+      "gt_scope": {
+        "negatives": "every adjacent pair the generator did not join",
+        "coverage": "complete: the generator knows every pair",
+        "restricted_to": "storey 0; 7 marked rooms",
+        "rooms_before": 7,
+        "rooms_after": 7,
+        "dropped_straddling": 0,
+        "dropped_outside": 0
+      },
+      "generated_tokens": 229,
+      "tiles": 7,
+      "seconds": 7.97,
+      "token_count": "re-tokenised from the reply; model.chat returns no ids"
+    },
+    {
+      "unit": "synth_0030/00_level_0",
+      "prompt_sha256": "f80803b7fcee6ce9",
+      "extraction": {
+        "status": "ok",
+        "detail": null,
+        "rooms": 5,
+        "edges": 3,
+        "dropped_rooms": {},
+        "dropped_edges": {
+          "self_loop": 2
+        },
+        "dropped_rooms_total": 0,
+        "dropped_edges_total": 2
+      },
+      "raw": "```json\n{\n  \"rooms\": [\n    {\"id\": \"1\", \"label\": \"office\"},\n    {\"id\": \"2\", \"label\": \"stair\"},\n    {\"id\": \"3\", \"label\": \"corridor\"},\n    {\"id\": \"4\", \"label\": \"lab\"},\n    {\"id\": \"5\", \"label\": \"office\"}\n  ],\n  \"edges\": [\n    {\"a\": \"1\", \"b\": \"3\", \"type\": \"open\"},\n    {\"a\": \"2\", \"b\": \"3\", \"type\": \"open\"},\n    {\"a\": \"2\", \"b\": \"3\", \"type\": \"open\"},\n    {\"a\": \"3\", \"b\": \"3\", \"type\": \"open\"},\n    {\"a\": \"3\", \"b\": \"3\", \"type\": \"open\"}\n  ]\n}\n```",
+      "hit_cap": false,
+      "connectivity": {
+        "tp": 1,
+        "fn": 3,
+        "fp_on_reference_negative": 0,
+        "precision": 1.0,
+        "recall": 0.25,
+        "f1": 0.4
+      },
+      "labels": {
+        "scored": 5,
+        "correct": 3,
+        "accuracy": 0.6
+      },
+      "gt_scope": {
+        "negatives": "every adjacent pair the generator did not join",
+        "coverage": "complete: the generator knows every pair",
+        "restricted_to": "storey 0; 5 marked rooms",
+        "rooms_before": 5,
+        "rooms_after": 5,
+        "dropped_straddling": 0,
+        "dropped_outside": 0
+      },
+      "generated_tokens": 182,
+      "tiles": 7,
+      "seconds": 6.2,
+      "token_count": "re-tokenised from the reply; model.chat returns no ids"
+    },
+    {
+      "unit": "synth_0032/01_level_1",
+      "prompt_sha256": "a4a32877199e2936",
+      "extraction": {
+        "status": "invalid_json",
+        "detail": "JSONDecodeError: Expecting ',' delimiter: line 8 column 3 (char 198)",
+        "rooms": 0,
+        "edges": 0,
+        "dropped_rooms": {},
+        "dropped_edges": {},
+        "dropped_rooms_total": 0,
+        "dropped_edges_total": 0
+      },
+      "raw": "```json\n{\n  \"rooms\": [\n    {\"id\": \"1\", \"label\": \"bedroom\"},\n    {\"id\": \"2\", \"label\": \"kitchen\"},\n    {\"id\": \"3\", \"label\": \"stair\"},\n    {\"id\": \"4\", \"label\": \"living\"},\n    {\"id\": \"5\", \"label\": \"meeting\"}\n  },\n  \"edges\": [\n    {\"a\": \"1\", \"b\": \"2\", \"type\": \"open\"},\n    {\"a\": \"2\", \"b\": \"3\", \"type\": \"door\"},\n    {\"a\": \"3\", \"b\": \"4\", \"type\": \"open\"},\n    {\"a\": \"4, \"b\": \"5\", \"type\": \"door\"}\n  ]\n}\n```",
+      "hit_cap": false,
+      "connectivity": {
+        "tp": 0,
+        "fn": 3,
+        "fp_on_reference_negative": 0,
+        "precision": null,
+        "recall": 0.0,
+        "f1": 0.0
+      },
+      "labels": {
+        "scored": 5,
+        "correct": 0,
+        "accuracy": 0.0
+      },
+      "gt_scope": {
+        "negatives": "every adjacent pair the generator did not join",
+        "coverage": "complete: the generator knows every pair",
+        "restricted_to": "storey 1; 5 marked rooms",
+        "rooms_before": 5,
+        "rooms_after": 5,
+        "dropped_straddling": 0,
+        "dropped_outside": 0
+      },
+      "generated_tokens": 164,
+      "tiles": 7,
+      "seconds": 5.63,
+      "token_count": "re-tokenised from the reply; model.chat returns no ids"
+    },
+    {
+      "unit": "synth_0035/00_level_0",
+      "prompt_sha256": "3718948203c86f09",
+      "extraction": {
+        "status": "ok",
+        "detail": null,
+        "rooms": 8,
+        "edges": 11,
+        "dropped_rooms": {},
+        "dropped_edges": {},
+        "dropped_rooms_total": 0,
+        "dropped_edges_total": 0
+      },
+      "raw": "```json\n{\n  \"rooms\": [\n    {\"id\": \"1\", \"label\": \"storage\"},\n    {\"id\": \"2\", \"label\": \"office\"},\n    {\"id\": \"3\", \"label\": \"storage\"},\n    {\"id\": \"4\", \"label\": \"office\"},\n    {\"id\": \"5\", \"label\": \"bathroom\"},\n    {\"id\": \"6\", \"label\": \"meeting\"},\n    {\"id\": \"7\", \"label\": \"kitchen\"},\n    {\"id\": \"8\", \"label\": \"kitchen\"}\n  ],\n  \"edges\": [\n    {\"a\": \"1\", \"b\": \"2\", \"type\": \"door\"},\n    {\"a\": \"1\", \"b\": \"3\", \"type\": \"open\"},\n    {\"a\": \"2\", \"b\": \"4\", \"type\": \"door\"},\n    {\"a\": \"2\", \"b\": \"5\", \"type\": \"door\"},\n    {\"a\": \"4\", \"b\": \"7\", \"type\": \"door\"},\n    {\"a\": \"4\", \"b\": \"8\", \"type\": \"door\"},\n    {\"a\": \"5\", \"b\": \"6\", \"type\": \"door\"},\n    {\"a\": \"5\", \"b\": \"7\", \"type\": \"open\"},\n    {\"a\": \"6\", \"b\": \"7\", \"type\": \"door\"},\n    {\"a\": \"6\", \"b\": \"8\", \"type\": \"open\"},\n    {\"a\": \"7\", \"b\": \"8\", \"type\": \"door\"}\n  ]\n}\n```",
+      "hit_cap": false,
+      "connectivity": {
+        "tp": 5,
+        "fn": 1,
+        "fp_on_reference_negative": 4,
+        "precision": 0.556,
+        "recall": 0.833,
+        "f1": 0.667
+      },
+      "labels": {
+        "scored": 8,
+        "correct": 2,
+        "accuracy": 0.25
+      },
+      "gt_scope": {
+        "negatives": "every adjacent pair the generator did not join",
+        "coverage": "complete: the generator knows every pair",
+        "restricted_to": "storey 0; 8 marked rooms",
+        "rooms_before": 8,
+        "rooms_after": 8,
+        "dropped_straddling": 0,
+        "dropped_outside": 0
+      },
+      "generated_tokens": 336,
+      "tiles": 7,
+      "seconds": 11.37,
+      "token_count": "re-tokenised from the reply; model.chat returns no ids"
+    },
+    {
+      "unit": "synth_0037/01_level_1",
+      "prompt_sha256": "2fd30b2a6fe82afb",
+      "extraction": {
+        "status": "ok",
+        "detail": null,
+        "rooms": 3,
+        "edges": 3,
+        "dropped_rooms": {
+          "duplicate_id": 3
+        },
+        "dropped_edges": {
+          "self_loop": 1
+        },
+        "dropped_rooms_total": 3,
+        "dropped_edges_total": 1
+      },
+      "raw": "```json\n{\n  \"rooms\": [\n    {\"id\": \"1\", \"label\": \"bedroom\"},\n    {\"id\": \"2\", \"label\": \"stair\"},\n    {\"id\": \"3\", \"label\": \"bedroom\"},\n    {\"id\": \"3\", \"label\": \"lab\"},\n    {\"id\": \"1\", \"label\": \"bathroom\"},\n    {\"id\": \"1\", \"label\": \"store\"}\n  ],\n  \"edges\": [\n    {\"a\": \"1\", \"b\": \"2\", \"type\": \"door\"},\n    {\"a\": \"1\", \"b\": \"3\", \"type\": \"door\"},\n    {\"a\": \"1\", \"b\": \"3\", \"type\": \"door\"},\n    {\"a\": \"1\", \"b\": \"1\", \"type\": \"door\"}\n  ]\n}\n```",
+      "hit_cap": false,
+      "connectivity": {
+        "tp": 1,
+        "fn": 3,
+        "fp_on_reference_negative": 1,
+        "precision": 0.5,
+        "recall": 0.25,
+        "f1": 0.333
+      },
+      "labels": {
+        "scored": 6,
+        "correct": 1,
+        "accuracy": 0.3333333333333333
+      },
+      "gt_scope": {
+        "negatives": "every adjacent pair the generator did not join",
+        "coverage": "complete: the generator knows every pair",
+        "restricted_to": "storey 1; 6 marked rooms",
+        "rooms_before": 6,
+        "rooms_after": 6,
+        "dropped_straddling": 0,
+        "dropped_outside": 0
+      },
+      "generated_tokens": 178,
+      "tiles": 7,
+      "seconds": 6.28,
+      "token_count": "re-tokenised from the reply; model.chat returns no ids"
+    },
+    {
+      "unit": "synth_0040/00_level_0",
+      "prompt_sha256": "b7a93e829567d16a",
+      "extraction": {
+        "status": "ok",
+        "detail": null,
+        "rooms": 5,
+        "edges": 5,
+        "dropped_rooms": {},
+        "dropped_edges": {},
+        "dropped_rooms_total": 0,
+        "dropped_edges_total": 0
+      },
+      "raw": "```json\n{\n  \"rooms\": [\n    {\"id\": \"1\", \"label\": \"office\"},\n    {\"id\": \"2\", \"label\": \"corridor\"},\n    {\"id\": \"3\", \"label\": \"store\"},\n    {\"id\": \"4\", \"label\": \"stair\"},\n    {\"id\": \"5\", \"label\": \"office\"}\n  ],\n  \"edges\": [\n    {\"a\": \"1\", \"b\": \"2\", \"type\": \"open\"},\n    {\"a\": \"2\", \"b\": \"3\", \"type\": \"open\"},\n    {\"a\": \"2\", \"b\": \"5\", \"type\": \"door\"},\n    {\"a\": \"1\", \"b\": \"4\", \"type\": \"open\"},\n    {\"a\": \"4\", \"b\": \"5\", \"type\": \"open\"}\n  ]\n}\n```",
+      "hit_cap": false,
+      "connectivity": {
+        "tp": 3,
+        "fn": 1,
+        "fp_on_reference_negative": 1,
+        "precision": 0.75,
+        "recall": 0.75,
+        "f1": 0.75
+      },
+      "labels": {
+        "scored": 5,
+        "correct": 1,
+        "accuracy": 0.2
+      },
+      "gt_scope": {
+        "negatives": "every adjacent pair the generator did not join",
+        "coverage": "complete: the generator knows every pair",
+        "restricted_to": "storey 0; 5 marked rooms",
+        "rooms_before": 5,
+        "rooms_after": 5,
+        "dropped_straddling": 0,
+        "dropped_outside": 0
+      },
+      "generated_tokens": 182,
+      "tiles": 7,
+      "seconds": 6.3,
+      "token_count": "re-tokenised from the reply; model.chat returns no ids"
+    },
+    {
+      "unit": "synth_0042/01_level_1",
+      "prompt_sha256": "c61d34028be23f83",
+      "extraction": {
+        "status": "ok",
+        "detail": null,
+        "rooms": 5,
+        "edges": 6,
+        "dropped_rooms": {},
+        "dropped_edges": {
+          "self_loop": 1
+        },
+        "dropped_rooms_total": 0,
+        "dropped_edges_total": 1
+      },
+      "raw": "```json\n{\n  \"rooms\": [\n    {\"id\": \"1\", \"label\": \"office\"},\n    {\"id\": \"2\", \"label\": \"meeting\"},\n    {\"id\": \"3\", \"label\": \"lab\"},\n    {\"id\": \"4\", \"label\": \"stair\"},\n    {\"id\": \"5\", \"label\": \"reception\"}\n  ],\n  \"edges\": [\n    {\"a\": \"1\", \"b\": \"2\", \"type\": \"open\"},\n    {\"a\": \"1\", \"b\": \"4\", \"type\": \"open\"},\n    {\"a\": \"2\", \"b\": \"3\", \"type\": \"open\"},\n    {\"a\": \"2\", \"b\": \"5\", \"type\": \"door\"},\n    {\"a\": \"3\", \"b\": \"3\", \"type\": \"open\"},\n    {\"a\": \"3\", \"b\": \"5\", \"type\": \"open\"},\n    {\"a\": \"4\", \"b\": \"5\", \"type\": \"open\"}\n  ]\n}\n```",
+      "hit_cap": false,
+      "connectivity": {
+        "tp": 2,
+        "fn": 2,
+        "fp_on_reference_negative": 3,
+        "precision": 0.4,
+        "recall": 0.5,
+        "f1": 0.444
+      },
+      "labels": {
+        "scored": 5,
+        "correct": 1,
+        "accuracy": 0.2
+      },
+      "gt_scope": {
+        "negatives": "every adjacent pair the generator did not join",
+        "coverage": "complete: the generator knows every pair",
+        "restricted_to": "storey 1; 5 marked rooms",
+        "rooms_before": 5,
+        "rooms_after": 5,
+        "dropped_straddling": 0,
+        "dropped_outside": 0
+      },
+      "generated_tokens": 220,
+      "tiles": 7,
+      "seconds": 7.37,
+      "token_count": "re-tokenised from the reply; model.chat returns no ids"
+    },
+    {
+      "unit": "synth_0045/00_level_0",
+      "prompt_sha256": "b259485900419081",
+      "extraction": {
+        "status": "invalid_json",
+        "detail": "JSONDecodeError: Expecting ',' delimiter: line 7 column 3 (char 163)",
+        "rooms": 0,
+        "edges": 0,
+        "dropped_rooms": {},
+        "dropped_edges": {},
+        "dropped_rooms_total": 0,
+        "dropped_edges_total": 0
+      },
+      "raw": "```json\n{\n  \"rooms\": [\n    {\"id\": \"1\", \"label\": \"stair\"},\n    {\"id\": \"2\", \"label\": \"office\"},\n    {\"id\": \"3\", \"label\": \"utility\"},\n    {\"id\": \"4\", \"label\": \"reception\"}\n  },\n  \"edges\": [\n    {\"a\": \"1\", \"b\": \"3\",, \"type\": \"door\"},\n    {\"a\": \"1\", \"b\": \"2\",\", \"type\": \"open\"},\n    {\"a\": \"2\", \"b\": \"3\", \"type\": \"door\"},\n    {\"a\": \"3\", \"b\": \"4\", \"type\": \"door\"}\n  ]\n}\n```",
+      "hit_cap": false,
+      "connectivity": {
+        "tp": 0,
+        "fn": 3,
+        "fp_on_reference_negative": 0,
+        "precision": null,
+        "recall": 0.0,
+        "f1": 0.0
+      },
+      "labels": {
+        "scored": 4,
+        "correct": 0,
+        "accuracy": 0.0
+      },
+      "gt_scope": {
+        "negatives": "every adjacent pair the generator did not join",
+        "coverage": "complete: the generator knows every pair",
+        "restricted_to": "storey 0; 4 marked rooms",
+        "rooms_before": 4,
+        "rooms_after": 4,
+        "dropped_straddling": 0,
+        "dropped_outside": 0
+      },
+      "generated_tokens": 152,
+      "tiles": 7,
+      "seconds": 5.24,
+      "token_count": "re-tokenised from the reply; model.chat returns no ids"
+    },
+    {
+      "unit": "synth_0050/00_level_0",
+      "prompt_sha256": "79d8f5612963fa88",
+      "extraction": {
+        "status": "ok",
+        "detail": null,
+        "rooms": 6,
+        "edges": 6,
+        "dropped_rooms": {},
+        "dropped_edges": {},
+        "dropped_rooms_total": 0,
+        "dropped_edges_total": 0
+      },
+      "raw": "```json\n{\n  \"rooms\": [\n    {\"id\": \"1\", \"label\": \"lab\"},\n    {\"id\": \"2\", \"label\": \"lab\"},\n    {\"id\": \"3\", \"label\": \"stair\"},\n    {\"id\": \"4\", \"label\": \"meeting\"},\n    {\"id\": \"5\", \"label\": \"kitchen\"},\n    {\"id\": \"6\", \"label\": \"office\"}\n  ],\n  \"edges\": [\n    {\"a\": \"1\", \"b\": \"3\", \"type\": \"door\"},\n    {\"a\": \"1\", \"b\": \"2\", \"type\": \"open\"},\n    {\"a\": \"2\", \"b\": \"4\", \"type\": \"open\"},\n    {\"a\": \"3\", \"b\": \"5\", \"type\": \"open\"},\n    {\"a\": \"5\", \"b\": \"6\", \"type\": \"door\"},\n    {\"a\": \"4\", \"b\": \"6\", \"type\": \"open\"}\n  ]\n}\n```",
+      "hit_cap": false,
+      "connectivity": {
+        "tp": 3,
+        "fn": 2,
+        "fp_on_reference_negative": 3,
+        "precision": 0.5,
+        "recall": 0.6,
+        "f1": 0.545
+      },
+      "labels": {
+        "scored": 6,
+        "correct": 0,
+        "accuracy": 0.0
+      },
+      "gt_scope": {
+        "negatives": "every adjacent pair the generator did not join",
+        "coverage": "complete: the generator knows every pair",
+        "restricted_to": "storey 0; 6 marked rooms",
+        "rooms_before": 6,
+        "rooms_after": 6,
+        "dropped_straddling": 0,
+        "dropped_outside": 0
+      },
+      "generated_tokens": 214,
+      "tiles": 7,
+      "seconds": 7.45,
+      "token_count": "re-tokenised from the reply; model.chat returns no ids"
+    },
+    {
+      "unit": "synth_0057/01_level_1",
+      "prompt_sha256": "82965911f0af0580",
+      "extraction": {
+        "status": "invalid_json",
+        "detail": "JSONDecodeError: Expecting property name enclosed in double quotes: line 4 column 16 (char 68)",
+        "rooms": 0,
+        "edges": 0,
+        "dropped_rooms": {},
+        "dropped_edges": {},
+        "dropped_rooms_total": 0,
+        "dropped_edges_total": 0
+      },
+      "raw": "```json\n{\n  \"rooms\": [\n    {\"id\": \"1\", \"label\": \"bathroom\"},\n    {\"id\": \"2\",, \"label\": \"bathroom\"},\n    {\"id\": \"3\", \"label\": \"bathroom\"},\n    {\"id\": \"4\", \"label\": \"office\"},\n    {\"id\": \"5\", \"label\": \"storage\"},\n    {\"id\": \"6\", \"label\": \"storage\"},\n    {\"id\": \"7\", \"label\": \"circulation\"},\n    {\"id\": \"8\", \"label\": \"office\"}\n  ],\n  \"edges\": [\n    {\"a\": \"1\", \"b\": \"2\", \"type\": \"open\"},\n    {\"a\": \"1\", \"b\": \"4\", \"type\": \"door\"},\n    {\"a\": \"2\", \"b\": \"4\", \"type\": \"open\"},\n    {\"a\": \"4\", \"b\": \"5\", \"type\": \"door\"},\n    {\"a\": \"5\", \"b\": \"6\", \"type\": \"open\"},\n    {\"a\": \"6\", \"b\": \"7\", \"type\": \"door\"},\n    {\"a\": \"7\", \"b\": \"8\", \"type\": \"open\"},\n    {\"a\": \"8\", \"b\": \"5\", \"type\": \"open\"}\n  ]\n}\n```",
+      "hit_cap": false,
+      "connectivity": {
+        "tp": 0,
+        "fn": 7,
+        "fp_on_reference_negative": 0,
+        "precision": null,
+        "recall": 0.0,
+        "f1": 0.0
+      },
+      "labels": {
+        "scored": 8,
+        "correct": 0,
+        "accuracy": 0.0
+      },
+      "gt_scope": {
+        "negatives": "every adjacent pair the generator did not join",
+        "coverage": "complete: the generator knows every pair",
+        "restricted_to": "storey 1; 8 marked rooms",
+        "rooms_before": 8,
+        "rooms_after": 8,
+        "dropped_straddling": 0,
+        "dropped_outside": 0
+      },
+      "generated_tokens": 281,
+      "tiles": 7,
+      "seconds": 9.89,
+      "token_count": "re-tokenised from the reply; model.chat returns no ids"
+    },
+    {
+      "unit": "synth_0060/00_level_0",
+      "prompt_sha256": "68b6e3f53e5cdf4c",
+      "extraction": {
+        "status": "ok",
+        "detail": null,
+        "rooms": 8,
+        "edges": 10,
+        "dropped_rooms": {},
+        "dropped_edges": {},
+        "dropped_rooms_total": 0,
+        "dropped_edges_total": 0
+      },
+      "raw": "```json\n{\n  \"rooms\": [\n    {\"id\": \"1\", \"label\": \"storage\"},\n    {\"id\": \"2\", \"label\": \"storage\"},\n    {\"id\": \"3\", \"label\": \"stair\"},\n    {\"id\": \"4\", \"label\": \"living\"},\n    {\"id\": \"5\", \"label\": \"service\"},\n    {\"id\": \"6\", \"label\": \"service\"},\n    {\"id\": \"7\", \"label\": \"retail\"},\n    {\"id\": \"8\", \"label\": \"office\"}\n  ],\n  \"edges\": [\n    {\"a\": \"1\", \"b\": \"2\", \"type\": \"open\"},\n    {\"a\": \"1\", \"b\": \"3\", \"type\": \"door\"},\n    {\"a\": \"1\", \"b\": \"4\", \"type\": \"open\"},\n    {\"a\": \"2\", \"b\": \"4\", \"type\": \"open\"},\n    {\"a\": \"4\", \"b\": \"5\", \"type\": \"door\"},\n    {\"a\": \"5\", \"b\": \"6\", \"type\": \"door\"},\n    {\"a\": \"5\", \"b\": \"8\", \"type\": \"open\"},\n    {\"a\": \"6\", \"b\": \"8\", \"type\": \"open\"},\n    {\"a\": \"3\", \"b\": \"6\", \"type\": \"open\"},\n    {\"a\": \"3\", \"b\": \"8\", \"type\": \"open\"}\n  ]\n}\n```",
+      "hit_cap": false,
+      "connectivity": {
+        "tp": 2,
+        "fn": 4,
+        "fp_on_reference_negative": 3,
+        "precision": 0.4,
+        "recall": 0.333,
+        "f1": 0.364
+      },
+      "labels": {
+        "scored": 8,
+        "correct": 0,
+        "accuracy": 0.0
+      },
+      "gt_scope": {
+        "negatives": "every adjacent pair the generator did not join",
+        "coverage": "complete: the generator knows every pair",
+        "restricted_to": "storey 0; 8 marked rooms",
+        "rooms_before": 8,
+        "rooms_after": 8,
+        "dropped_straddling": 0,
+        "dropped_outside": 0
+      },
+      "generated_tokens": 316,
+      "tiles": 7,
+      "seconds": 10.68,
+      "token_count": "re-tokenised from the reply; model.chat returns no ids"
+    },
+    {
+      "unit": "synth_0062/01_level_1",
+      "prompt_sha256": "42a2859d7cc3469b",
+      "extraction": {
+        "status": "ok",
+        "detail": null,
+        "rooms": 5,
+        "edges": 4,
+        "dropped_rooms": {},
+        "dropped_edges": {},
+        "dropped_rooms_total": 0,
+        "dropped_edges_total": 0
+      },
+      "raw": "```json\n{\n  \"rooms\": [\n    {\"id\": \"1\", \"label\": \"circulation\"},\n    {\"id\": \"2\", \"label\": \"bedroom\"},\n    {\"id\": \"3\", \"label\": \"lab\"},\n    {\"id\": \"4\", \"label\": \"kitchen\"},\n    {\"id\": \"5\", \"label\": \"reception\"}\n  ],\n  \"edges\": [\n    {\"a\": \"1\", \"b\": \"2\", \"type\": \"open\"},\n    {\"a\": \"1\", \"b\": \"4\", \"type\": \"open\"},\n    {\"a\": \"2\", \"b\": \"5\", \"type\": \"door\"},\n    {\"a\": \"4\", \"b\": \"5\", \"type\": \"door\"}\n  ]\n}\n```",
+      "hit_cap": false,
+      "connectivity": {
+        "tp": 1,
+        "fn": 2,
+        "fp_on_reference_negative": 2,
+        "precision": 0.333,
+        "recall": 0.333,
+        "f1": 0.333
+      },
+      "labels": {
+        "scored": 5,
+        "correct": 4,
+        "accuracy": 0.8
+      },
+      "gt_scope": {
+        "negatives": "every adjacent pair the generator did not join",
+        "coverage": "complete: the generator knows every pair",
+        "restricted_to": "storey 1; 5 marked rooms",
+        "rooms_before": 5,
+        "rooms_after": 5,
+        "dropped_straddling": 0,
+        "dropped_outside": 0
+      },
+      "generated_tokens": 165,
+      "tiles": 7,
+      "seconds": 5.73,
+      "token_count": "re-tokenised from the reply; model.chat returns no ids"
+    },
+    {
+      "unit": "synth_0065/00_level_0",
+      "prompt_sha256": "9c597763ff70f8a6",
+      "extraction": {
+        "status": "ok",
+        "detail": null,
+        "rooms": 8,
+        "edges": 10,
+        "dropped_rooms": {},
+        "dropped_edges": {},
+        "dropped_rooms_total": 0,
+        "dropped_edges_total": 0
+      },
+      "raw": "```json\n{\n  \"rooms\": [\n    {\"id\": \"1\", \"label\": \"storage\"},\n    {\"id\": \"2\", \"label\": \"corridor\"},\n    {\"id\": \"3\", \"label\": \"storage\"},\n    {\"id\": \"4\", \"label\": \"meeting\"},\n    {\"id\": \"5\", \"label\": \"service\"},\n    {\"id\": \"6\", \"label\": \"retail\"},\n    {\"id\": \"7\", \"label\": \"circulation\"},\n    {\"id\": \"8\", \"label\": \"office\"}\n  ],\n  \"edges\": [\n    {\"a\": \"1\", \"b\": \"2\", \"type\": \"door\"},\n    {\"a\": \"1\", \"b\": \"4\", \"type\": \"open\"},\n    {\"a\": \"2\", \"b\": \"3\", \"type\": \"door\"},\n    {\"a\": \"2\", \"b\": \"5\", \"type\": \"door\"},\n    {\"a\": \"4\", \"b\": \"6\", \"type\": \"open\"},\n    {\"a\": \"5\", \"b\": \"7\", \"type\": \"door\"},\n    {\"a\": \"5\", \"b\": \"7\", \"type\": \"door\"},\n    {\"a\": \"5\", \"b\": \"7\", \"type\": \"door\"},\n    {\"a\": \"6\", \"b\": \"7\", \"type\": \"door\"},\n    {\"a\": \"7\", \"b\": \"8\", \"type\": \"door\"}\n  ]\n}\n```",
+      "hit_cap": false,
+      "connectivity": {
+        "tp": 3,
+        "fn": 3,
+        "fp_on_reference_negative": 1,
+        "precision": 0.75,
+        "recall": 0.5,
+        "f1": 0.6
+      },
+      "labels": {
+        "scored": 8,
+        "correct": 0,
+        "accuracy": 0.0
+      },
+      "gt_scope": {
+        "negatives": "every adjacent pair the generator did not join",
+        "coverage": "complete: the generator knows every pair",
+        "restricted_to": "storey 0; 8 marked rooms",
+        "rooms_before": 8,
+        "rooms_after": 8,
+        "dropped_straddling": 0,
+        "dropped_outside": 0
+      },
+      "generated_tokens": 317,
+      "tiles": 7,
+      "seconds": 10.64,
+      "token_count": "re-tokenised from the reply; model.chat returns no ids"
+    },
+    {
+      "unit": "synth_0067/01_level_1",
+      "prompt_sha256": "f833ccbfb1ff9c11",
+      "extraction": {
+        "status": "invalid_json",
+        "detail": "JSONDecodeError: Expecting property name enclosed in double quotes: line 4 column 16 (char 71)",
+        "rooms": 0,
+        "edges": 0,
+        "dropped_rooms": {},
+        "dropped_edges": {},
+        "dropped_rooms_total": 0,
+        "dropped_edges_total": 0
+      },
+      "raw": "```json\n{\n  \"rooms\": [\n    {\"id\": \"1\", \"label\": \"circulation\"},\n    {\"id\": \"2\",, \"label\": \"storage\"},\n    {\"id\": \"3\", \"label\": \"lab\"},\n    {\"id\": \"4\", \"label\": \"bathroom\"},\n    {\"id\": \"5\", \"label\": \"stair\"}\n  ],\n  \"edges\": [\n    {\"a\": \"1\", \"b\": \"2\", \"type\": \"open\"},\n    {\"a\": \"2\", \"b\": \"3\", \"type\": \"door\"},\n    {\"a\": \"2\", \"b\": \"4\", \"type\": \"open\"},\n    {\"a\": \"3\", \"b\": \"4\", \"type\": \"open\"},\n    {\"a\": \"4\", \"b\": \"5\", \"type\": \"open\"}\n  ]\n}\n```",
+      "hit_cap": false,
+      "connectivity": {
+        "tp": 0,
+        "fn": 3,
+        "fp_on_reference_negative": 0,
+        "precision": null,
+        "recall": 0.0,
+        "f1": 0.0
+      },
+      "labels": {
+        "scored": 5,
+        "correct": 0,
+        "accuracy": 0.0
+      },
+      "gt_scope": {
+        "negatives": "every adjacent pair the generator did not join",
+        "coverage": "complete: the generator knows every pair",
+        "restricted_to": "storey 1; 5 marked rooms",
+        "rooms_before": 5,
+        "rooms_after": 5,
+        "dropped_straddling": 0,
+        "dropped_outside": 0
+      },
+      "generated_tokens": 184,
+      "tiles": 7,
+      "seconds": 6.19,
+      "token_count": "re-tokenised from the reply; model.chat returns no ids"
+    },
+    {
+      "unit": "synth_0072/01_level_1",
+      "prompt_sha256": "eae97fd69e2f2823",
+      "extraction": {
+        "status": "ok",
+        "detail": null,
+        "rooms": 7,
+        "edges": 1,
+        "dropped_rooms": {
+          "unresolved_mark": 5
+        },
+        "dropped_edges": {
+          "undeclared_endpoint": 6
+        },
+        "dropped_rooms_total": 5,
+        "dropped_edges_total": 6
+      },
+      "raw": "```json\n{\n  \"rooms\": [\n    {\"id\": \"1\", \"label\": \"circulation\"},\n    {\"id\": \"2\", \"label\": \"bedroom\"},\n    {\"id\": \"336MrnYSnX0VvJ4fzWXTOao\", \"label\": \"stair\"},\n    {\"id\": \"3PrGesijTEoOrR8TsfLBF0\", \"label\": \"circulation\"},\n    {\"id\": \"b41pojoz4xxUL86PpLf_Y\", \"label\": \"bathroom\"},\n    {\"id\": \"0UYlMUz2v0TAjd22nnDy\", \"label\": \"living\"},\n    {\"id\": \"0xoDrcIJrCOg5oafUvdmi\", \"label\": \"lab\"}\n  ],\n  \"edges\": [\n    {\"a\": \"1\", \"b\": \"2\", \"type\": \"open\"},\n    {\"a\": \"1\", \"b\": \"3\", \"type\": \"door\"},\n    {\"a\": \"1\", \"b\": \"3PrGesijTEoOr8TsfLBF0\", \"type\": \"open\"},\n    {\"a\": \"1PrGesijTEoOr8TsfLBF0\", \"b\": \"b41pojoz4xxUL86PpLf_Y\", \"type\": \"door\"},\n    {\"a\": \"b41pojoz4xxUL86PpLf_Y\", \"b\": \"0UYyMUz2v0TAjd22nnDy\", \"type\": \"door\"},\n    {\"a\": \"0UYyMUz2v0TAjd22nnDy\", \"b\": \"0xoDrcIJrCOg5oafUvdmi\", \"type\": \"door\"},\n    {\"a\": \"0xoDrcIJrCOg5oafUvdmi\", \"b\": \"0DEv05poP6LeDBFd0gbRO$\", \"type\": \"door\"}\n  ]\n}\n```",
+      "hit_cap": false,
+      "connectivity": {
+        "tp": 1,
+        "fn": 3,
+        "fp_on_reference_negative": 0,
+        "precision": 1.0,
+        "recall": 0.25,
+        "f1": 0.4
+      },
+      "labels": {
+        "scored": 6,
+        "correct": 0,
+        "accuracy": 0.0
+      },
+      "gt_scope": {
+        "negatives": "every adjacent pair the generator did not join",
+        "coverage": "complete: the generator knows every pair",
+        "restricted_to": "storey 1; 6 marked rooms",
+        "rooms_before": 6,
+        "rooms_after": 6,
+        "dropped_straddling": 0,
+        "dropped_outside": 0
+      },
+      "generated_tokens": 442,
+      "tiles": 7,
+      "seconds": 13.56,
+      "token_count": "re-tokenised from the reply; model.chat returns no ids"
+    },
+    {
+      "unit": "synth_0075/00_level_0",
+      "prompt_sha256": "d226eca4069d37e4",
+      "extraction": {
+        "status": "ok",
+        "detail": null,
+        "rooms": 5,
+        "edges": 4,
+        "dropped_rooms": {},
+        "dropped_edges": {},
+        "dropped_rooms_total": 0,
+        "dropped_edges_total": 0
+      },
+      "raw": "```json\n{\n  \"rooms\": [\n    {\"id\": \"1\", \"label\": \"bedroom\"},\n    {\"id\": \"2\", \"label\": \"kitchen\"},\n    {\"id\": \"3\", \"label\": \"living\"},\n    {\"id\": \"4\", \"label\": \"storage\"},\n    {\"id\": \"5\", \"label\": \"stair\"}\n  ],\n  \"edges\": [\n    {\"a\": \"2\", \"b\": \"3\", \"type\": \"door\"},\n    {\"a\": \"3\", \"b\": \"2\", \"type\": \"open\"},\n    {\"a\": \"4\", \"b\": \"3\", \"type\": \"open\"},\n    {\"a\": \"5\", \"b\": \"3\", \"type\": \"open\"}\n  ]\n}\n```",
+      "hit_cap": false,
+      "connectivity": {
+        "tp": 1,
+        "fn": 2,
+        "fp_on_reference_negative": 1,
+        "precision": 0.5,
+        "recall": 0.333,
+        "f1": 0.4
+      },
+      "labels": {
+        "scored": 5,
+        "correct": 0,
+        "accuracy": 0.0
+      },
+      "gt_scope": {
+        "negatives": "every adjacent pair the generator did not join",
+        "coverage": "complete: the generator knows every pair",
+        "restricted_to": "storey 0; 5 marked rooms",
+        "rooms_before": 5,
+        "rooms_after": 5,
+        "dropped_straddling": 0,
+        "dropped_outside": 0
+      },
+      "generated_tokens": 164,
+      "tiles": 7,
+      "seconds": 5.63,
+      "token_count": "re-tokenised from the reply; model.chat returns no ids"
+    },
+    {
+      "unit": "synth_0080/00_level_0",
+      "prompt_sha256": "878c34462ccca306",
+      "extraction": {
+        "status": "ok",
+        "detail": null,
+        "rooms": 7,
+        "edges": 7,
+        "dropped_rooms": {},
+        "dropped_edges": {},
+        "dropped_rooms_total": 0,
+        "dropped_edges_total": 0
+      },
+      "raw": "```json\n{\n  \"rooms\": [\n    {\"id\": \"1\", \"label\": \"storage\"},\n    {\"id\": \"2\", \"label\": \"corridor\"},\n    {\"id\": \"3\", \"label\": \"stair\"},\n    {\"id\": \"4\", \"label\": \"office\"},\n    {\"id\": \"5\", \"label\": \"bathroom\"},\n    {\"id\": \"6\", \"label\": \"storage\"},\n    {\"id\": \"7\", \"label\": \"retail\"}\n  ],\n  \"edges\": [\n    {\"a\": \"2\", \"b\": \"3\", \"type\": \"door\"},\n    {\"a\": \"2\", \"b\": \"4\", \"type\": \"door\"},\n    {\"a\": \"2\", \"b\": \"5\", \"type\": \"door\"},\n    {\"a\": \"2\", \"b\": \"6\", \"type\": \"door\"},\n    {\"a\": \"4\", \"b\": \"7\", \"type\": \"open\"},\n    {\"a\": \"5\", \"b\": \"7\", \"type\": \"open\"},\n    {\"a\": \"6\", \"b\": \"7\", \"type\": \"open\"}\n  ]\n}\n```",
+      "hit_cap": false,
+      "connectivity": {
+        "tp": 2,
+        "fn": 3,
+        "fp_on_reference_negative": 3,
+        "precision": 0.4,
+        "recall": 0.4,
+        "f1": 0.4
+      },
+      "labels": {
+        "scored": 7,
+        "correct": 1,
+        "accuracy": 0.14285714285714285
+      },
+      "gt_scope": {
+        "negatives": "every adjacent pair the generator did not join",
+        "coverage": "complete: the generator knows every pair",
+        "restricted_to": "storey 0; 7 marked rooms",
+        "rooms_before": 7,
+        "rooms_after": 7,
+        "dropped_straddling": 0,
+        "dropped_outside": 0
+      },
+      "generated_tokens": 248,
+      "tiles": 7,
+      "seconds": 8.44,
+      "token_count": "re-tokenised from the reply; model.chat returns no ids"
+    },
+    {
+      "unit": "synth_0082/01_level_1",
+      "prompt_sha256": "c9880acadd4553b2",
+      "extraction": {
+        "status": "ok",
+        "detail": null,
+        "rooms": 7,
+        "edges": 5,
+        "dropped_rooms": {},
+        "dropped_edges": {},
+        "dropped_rooms_total": 0,
+        "dropped_edges_total": 0
+      },
+      "raw": "```json\n{\n  \"rooms\": [\n    {\"id\": \"1\", \"label\": \"storage\"},\n    {\"id\": \"2\", \"label\": \"storage\"},\n    {\"id\": \"3\", \"label\": \"stair\"},\n    {\"id\": \"4\", \"label\": \"circulation\"},\n    {\"id\": \"5\", \"label\": \"service\"},\n    {\"id\": \"6\", \"label\": \"bathroom\"},\n    {\"id\": \"7\", \"label\": \"office\"}\n  ],\n  \"edges\": [\n    {\"a\": \"1\", \"b\": \"3\", \"type\": \"door\"},\n    {\"a\": \"1\", \"b\": \"4\", \"type\": \"open\"},\n    {\"a\": \"4\", \"b\": \"5\", \"type\": \"door\"},\n    {\"a\": \"4\", \"b\": \"7\", \"type\": \"door\"},\n    {\"a\": \"5\", \"b\": \"6\", \"type\": \"door\"}\n  ]\n}\n```",
+      "hit_cap": false,
+      "connectivity": {
+        "tp": 2,
+        "fn": 3,
+        "fp_on_reference_negative": 1,
+        "precision": 0.667,
+        "recall": 0.4,
+        "f1": 0.5
+      },
+      "labels": {
+        "scored": 7,
+        "correct": 0,
+        "accuracy": 0.0
+      },
+      "gt_scope": {
+        "negatives": "every adjacent pair the generator did not join",
+        "coverage": "complete: the generator knows every pair",
+        "restricted_to": "storey 1; 7 marked rooms",
+        "rooms_before": 7,
+        "rooms_after": 7,
+        "dropped_straddling": 0,
+        "dropped_outside": 0
+      },
+      "generated_tokens": 209,
+      "tiles": 7,
+      "seconds": 7.3,
+      "token_count": "re-tokenised from the reply; model.chat returns no ids"
+    },
+    {
+      "unit": "synth_0087/01_level_1",
+      "prompt_sha256": "f7efafdd8b50f829",
+      "extraction": {
+        "status": "ok",
+        "detail": null,
+        "rooms": 7,
+        "edges": 10,
+        "dropped_rooms": {},
+        "dropped_edges": {},
+        "dropped_rooms_total": 0,
+        "dropped_edges_total": 0
+      },
+      "raw": "```json\n{\n  \"rooms\": [\n    {\"id\": \"1\", \"label\": \"bedroom\"},\n    {\"id\": \"2\", \"label\": \"bedroom\"},\n    {\"id\": \"3\", \"label\": \"stair\"},\n    {\"id\": \"4\", \"label\": \"bathroom\"},\n    {\"id\": \"5\", \"label\": \"living\"},\n    {\"id\": \"6\", \"label\": \"lab\"},\n    {\"id\": \"7\", \"label\": \"utility\"}\n  ],\n  \"edges\": [\n    {\"a\": \"1\", \"b\": \"2\", \"type\": \"open\"},\n    {\"a\": \"1\", \"b\": \"3\", \"type\": \"door\"},\n    {\"a\": \"2\", \"b\": \"5\", \"type\": \"door\"},\n    {\"a\": \"3\", \"b\": \"4\", \"type\": \"door\"},\n    {\"a\": \"4\", \"b\": \"6\", \"type\": \"open\"},\n    {\"a\": \"4\", \"b\": \"7\", \"type\": \"open\"},\n    {\"a\": \"5\", \"b\": \"6\", \"type\": \"open\"},\n    {\"a\": \"5\", \"b\": \"7\", \"type\": \"open\"},\n    {\"a\": \"6\", \"b\": \"7\", \"type\": \"open\"},\n    {\"a\": \"7\", \"b\": \"2\", \"type\": \"open\"}\n  ]\n}\n```",
+      "hit_cap": false,
+      "connectivity": {
+        "tp": 4,
+        "fn": 1,
+        "fp_on_reference_negative": 4,
+        "precision": 0.5,
+        "recall": 0.8,
+        "f1": 0.615
+      },
+      "labels": {
+        "scored": 7,
+        "correct": 1,
+        "accuracy": 0.14285714285714285
+      },
+      "gt_scope": {
+        "negatives": "every adjacent pair the generator did not join",
+        "coverage": "complete: the generator knows every pair",
+        "restricted_to": "storey 1; 7 marked rooms",
+        "rooms_before": 7,
+        "rooms_after": 7,
+        "dropped_straddling": 0,
+        "dropped_outside": 0
+      },
+      "generated_tokens": 305,
+      "tiles": 7,
+      "seconds": 10.1,
+      "token_count": "re-tokenised from the reply; model.chat returns no ids"
+    },
+    {
+      "unit": "synth_0097/01_level_1",
+      "prompt_sha256": "6e3a2b3f51ce296b",
+      "extraction": {
+        "status": "ok",
+        "detail": null,
+        "rooms": 7,
+        "edges": 6,
+        "dropped_rooms": {},
+        "dropped_edges": {},
+        "dropped_rooms_total": 0,
+        "dropped_edges_total": 0
+      },
+      "raw": "```json\n{\n  \"rooms\": [\n    {\"id\": \"1\", \"label\": \"bathroom\"},\n    {\"id\": \"2\", \"label\": \"office\"},\n    {\"id\": \"3\", \"label\": \"stair\"},\n    {\"id\": \"4\", \"label\": \"corridor\"},\n    {\"id\": \"5\", \"label\": \"living\"},\n    {\"id\": \"6\", \"label\": \"corridor\"},\n    {\"id\": \"7\", \"label\": \"meeting\"}\n  ],\n  \"edges\": [\n    {\"a\": \"1\", \"b\": \"2\", \"type\": \"open\"},\n    {\"a\": \"1\", \"b\": \"3\", \"type\": \"door\"},\n    {\"a\": \"2\", \"b\": \"4\", \"type\": \"door\"},\n    {\"a\": \"4\", \"b\": \"5\", \"type\": \"door\"},\n    {\"a\": \"4\", \"b\": \"6\", \"type\": \"door\"},\n    {\"a\": \"5\", \"b\": \"7\", \"type\": \"door\"}\n  ]\n}\n```",
+      "hit_cap": false,
+      "connectivity": {
+        "tp": 3,
+        "fn": 3,
+        "fp_on_reference_negative": 2,
+        "precision": 0.6,
+        "recall": 0.5,
+        "f1": 0.545
+      },
+      "labels": {
+        "scored": 7,
+        "correct": 0,
+        "accuracy": 0.0
+      },
+      "gt_scope": {
+        "negatives": "every adjacent pair the generator did not join",
+        "coverage": "complete: the generator knows every pair",
+        "restricted_to": "storey 1; 7 marked rooms",
+        "rooms_before": 7,
+        "rooms_after": 7,
+        "dropped_straddling": 0,
+        "dropped_outside": 0
+      },
+      "generated_tokens": 229,
+      "tiles": 7,
+      "seconds": 8.0,
+      "token_count": "re-tokenised from the reply; model.chat returns no ids"
+    },
+    {
+      "unit": "synth_0102/01_level_1",
+      "prompt_sha256": "ebcbbc91992e0ba7",
+      "extraction": {
+        "status": "ok",
+        "detail": null,
+        "rooms": 5,
+        "edges": 6,
+        "dropped_rooms": {},
+        "dropped_edges": {},
+        "dropped_rooms_total": 0,
+        "dropped_edges_total": 0
+      },
+      "raw": "```json\n{\n  \"rooms\": [\n    {\"id\": \"1\", \"label\": \"kitchen\"},\n    {\"id\": \"2\", \"label\": \"lab\"},\n    {\"id\": \"3\", \"label\": \"stair\"},\n    {\"id\": \"4\", \"label\": \"living\"},\n    {\"id\": \"5\", \"label\": \"storage\"}\n  ],\n  \"edges\": [\n    {\"a\": \"1\", \"b\": \"3\", \"type\": \"open\"},\n    {\"a\": \"1\", \"b\": \"4\", \"type\": \"open\"},\n    {\"a\": \"2\", \"b\": \"3\", \"type\": \"open\"},\n    {\"a\": \"2\", \"b\": \"4\", \"type\": \"open\"},\n    {\"a\": \"3\", \"b\": \"5\", \"type\": \"door\"},\n    {\"a\": \"4\", \"b\": \"5\", \"type\": \"open\"}\n  ]\n}\n```",
+      "hit_cap": false,
+      "connectivity": {
+        "tp": 2,
+        "fn": 1,
+        "fp_on_reference_negative": 1,
+        "precision": 0.667,
+        "recall": 0.667,
+        "f1": 0.667
+      },
+      "labels": {
+        "scored": 5,
+        "correct": 1,
+        "accuracy": 0.2
+      },
+      "gt_scope": {
+        "negatives": "every adjacent pair the generator did not join",
+        "coverage": "complete: the generator knows every pair",
+        "restricted_to": "storey 1; 5 marked rooms",
+        "rooms_before": 5,
+        "rooms_after": 5,
+        "dropped_straddling": 0,
+        "dropped_outside": 0
+      },
+      "generated_tokens": 201,
+      "tiles": 7,
+      "seconds": 6.69,
+      "token_count": "re-tokenised from the reply; model.chat returns no ids"
+    },
+    {
+      "unit": "synth_0105/00_level_0",
+      "prompt_sha256": "ffd027cb8fbab555",
+      "extraction": {
+        "status": "ok",
+        "detail": null,
+        "rooms": 8,
+        "edges": 7,
+        "dropped_rooms": {},
+        "dropped_edges": {
+          "self_loop": 1
+        },
+        "dropped_rooms_total": 0,
+        "dropped_edges_total": 1
+      },
+      "raw": "```json\n{\n  \"rooms\": [\n    {\"id\": \"1\", \"label\": \"storage\"},\n    {\"id\": \"2\", \"label\": \"living\"},\n    {\"id\": \"3\", \"label\": \"storage\"},\n    {\"id\": \"4\", \"label\": \"office\"},\n    {\"id\": \"5\", \"label\": \"lab\"},\n    {\"id\": \"6\", \"label\": \"utility\"},\n    {\"id\": \"7\", \"label\": \"bathroom\"},\n    {\"id\": \"8\", \"label\": \"reception\"}\n  ],\n  \"edges\": [\n{\"a\": \"2\", \"b\": \"1\", \"type\": \"door\"}, {\"a\": \"2\", \"b\": \"4\", \"type\": \"open\"}, {\"a\": \"4\", \"b\": \"5\", \"type\": \"open\"}, {\"a\": \"5\", \"b\": \"6\", \"type\": \"open\"}, {\"a\": \"6\", \"b\": \"7\", \"type\": \"open\"}, {\"a\": \"7\", \"b\": \"8\", \"type\": \"open\"}, {\"a\": \"1\", \"b\": \"3\", \"type\": \"open\"}, {\"a\": \"2\", \"b\": \"2\", \"type\": \"open\"}\n]\n}\n```",
+      "hit_cap": false,
+      "connectivity": {
+        "tp": 4,
+        "fn": 3,
+        "fp_on_reference_negative": 1,
+        "precision": 0.8,
+        "recall": 0.571,
+        "f1": 0.667
+      },
+      "labels": {
+        "scored": 8,
+        "correct": 1,
+        "accuracy": 0.125
+      },
+      "gt_scope": {
+        "negatives": "every adjacent pair the generator did not join",
+        "coverage": "complete: the generator knows every pair",
+        "restricted_to": "storey 0; 8 marked rooms",
+        "rooms_before": 8,
+        "rooms_after": 8,
+        "dropped_straddling": 0,
+        "dropped_outside": 0
+      },
+      "generated_tokens": 269,
+      "tiles": 7,
+      "seconds": 9.77,
+      "token_count": "re-tokenised from the reply; model.chat returns no ids"
+    },
+    {
+      "unit": "synth_0107/01_level_1",
+      "prompt_sha256": "9cc2cff351ce3cc8",
+      "extraction": {
+        "status": "ok",
+        "detail": null,
+        "rooms": 5,
+        "edges": 5,
+        "dropped_rooms": {},
+        "dropped_edges": {},
+        "dropped_rooms_total": 0,
+        "dropped_edges_total": 0
+      },
+      "raw": "```json\n{\n  \"rooms\": [\n    {\"id\": \"1\", \"label\": \"stair\"},\n    {\"id\": \"2\", \"label\": \"lab\"},\n    {\"id\": \"3\", \"label\": \"utility\"},\n    {\"id\": \"4\", \"label\": \"bathroom\"},\n    {\"id\": \"5\", \"label\": \"reception\"}\n  ],\n  \"edges\": [\n    {\"a\": \"1\", \"b\": \"5\", \"type\": \"door\"},\n    {\"a\": \"1\", \"b\": \"2\", \"type\": \"open\"},\n    {\"a\": \"2\", \"b\": \"3\", \"type\": \"open\"},\n    {\"a\": \"4\", \"b\": \"5\", \"type\": \"open\"},\n    {\"a\": \"3\", \"b\": \"4\", \"type\": \"open\"}\n  ]\n}\n```",
+      "hit_cap": false,
+      "connectivity": {
+        "tp": 3,
+        "fn": 1,
+        "fp_on_reference_negative": 1,
+        "precision": 0.75,
+        "recall": 0.75,
+        "f1": 0.75
+      },
+      "labels": {
+        "scored": 5,
+        "correct": 1,
+        "accuracy": 0.2
+      },
+      "gt_scope": {
+        "negatives": "every adjacent pair the generator did not join",
+        "coverage": "complete: the generator knows every pair",
+        "restricted_to": "storey 1; 5 marked rooms",
+        "rooms_before": 5,
+        "rooms_after": 5,
+        "dropped_straddling": 0,
+        "dropped_outside": 0
+      },
+      "generated_tokens": 183,
+      "tiles": 7,
+      "seconds": 6.33,
+      "token_count": "re-tokenised from the reply; model.chat returns no ids"
+    },
+    {
+      "unit": "synth_0110/00_level_0",
+      "prompt_sha256": "e26e013f81718d28",
+      "extraction": {
+        "status": "ok",
+        "detail": null,
+        "rooms": 7,
+        "edges": 9,
+        "dropped_rooms": {},
+        "dropped_edges": {},
+        "dropped_rooms_total": 0,
+        "dropped_edges_total": 0
+      },
+      "raw": "```json\n{\n  \"rooms\": [\n    {\"id\": \"1\", \"label\": \"bathroom\"},\n    {\"id\": \"2\", \"label\": \"utility\"},\n    {\"id\": \"3\", \"label\": \"stair\"},\n    {\"id\": \"4\", \"label\": \"corridor\"},\n    {\"id\": \"5\", \"label\": \"office\"},\n    {\"id\": \"6\", \"label\": \"living\"},\n    {\"id\": \"7\", \"label\": \"reception\"}\n  ],\n  \"edges\": [\n    {\"a\": \"1\", \"b\": \"3\", \"type\": \"door\"},\n    {\"a\": \"1\", \"b\": \"4\", \"type\": \"open\"},\n    {\"a\": \"2\", \"b\": \"4\", \"type\": \"open\"},\n    {\"a\": \"3\", \"b\": \"4\", \"type\": \"door\"},\n    {\"a\": \"4\", \"b\": \"5\", \"type\": \"door\"},\n    {\"a\": \"4\", \"b\": \"6\", \"type\": \"door\"},\n    {\"a\": \"4\", \"b\": \"7\", \"type\": \"door\"},\n    {\"a\": \"5\", \"b\": \"6\", \"type\": \"open\"},\n    {\"a\": \"6\", \"b\": \"7\", \"type\": \"open\"}\n  ]\n}\n```",
+      "hit_cap": false,
+      "connectivity": {
+        "tp": 3,
+        "fn": 2,
+        "fp_on_reference_negative": 3,
+        "precision": 0.5,
+        "recall": 0.6,
+        "f1": 0.545
+      },
+      "labels": {
+        "scored": 7,
+        "correct": 2,
+        "accuracy": 0.2857142857142857
+      },
+      "gt_scope": {
+        "negatives": "every adjacent pair the generator did not join",
+        "coverage": "complete: the generator knows every pair",
+        "restricted_to": "storey 0; 7 marked rooms",
+        "rooms_before": 7,
+        "rooms_after": 7,
+        "dropped_straddling": 0,
+        "dropped_outside": 0
+      },
+      "generated_tokens": 286,
+      "tiles": 7,
+      "seconds": 9.48,
+      "token_count": "re-tokenised from the reply; model.chat returns no ids"
+    },
+    {
+      "unit": "synth_0115/00_level_0",
+      "prompt_sha256": "163b45767bd24ccd",
+      "extraction": {
+        "status": "invalid_json",
+        "detail": "JSONDecodeError: Invalid control character at: line 14 column 16 (char 162)",
+        "rooms": 0,
+        "edges": 0,
+        "dropped_rooms": {},
+        "dropped_edges": {},
+        "dropped_rooms_total": 0,
+        "dropped_edges_total": 0
+      },
+      "raw": "```json\n{\n  \"rooms\": [\n    {\n      \"id\": \"11\",\n      \"label\": \"bedroom\"\n    },\n    {\n      \"id\": \"2\",\n      \"label\": \"stair\"\n    }\n  ],\n  \"edges\": [\n    {\n      \"a\": \"11,\n      \"b\": \"2,\n      \"type\": \"open\"\n    }\n  ]\n}\n```",
+      "hit_cap": false,
+      "connectivity": {
+        "tp": 0,
+        "fn": 0,
+        "fp_on_reference_negative": 0,
+        "precision": null,
+        "recall": null,
+        "f1": 0.0
+      },
+      "labels": {
+        "scored": 2,
+        "correct": 0,
+        "accuracy": 0.0
+      },
+      "gt_scope": {
+        "negatives": "every adjacent pair the generator did not join",
+        "coverage": "complete: the generator knows every pair",
+        "restricted_to": "storey 0; 2 marked rooms",
+        "rooms_before": 2,
+        "rooms_after": 2,
+        "dropped_straddling": 0,
+        "dropped_outside": 0
+      },
+      "generated_tokens": 85,
+      "tiles": 7,
+      "seconds": 2.96,
+      "token_count": "re-tokenised from the reply; model.chat returns no ids"
+    },
+    {
+      "unit": "synth_0117/01_level_1",
+      "prompt_sha256": "969b2d62866f5613",
+      "extraction": {
+        "status": "ok",
+        "detail": null,
+        "rooms": 7,
+        "edges": 8,
+        "dropped_rooms": {},
+        "dropped_edges": {},
+        "dropped_rooms_total": 0,
+        "dropped_edges_total": 0
+      },
+      "raw": "```json\n{\n  \"rooms\": [\n    {\"id\": \"1\", \"label\": \"stair\"},\n    {\"id\": \"2\", \"label\": \"kitchen\"},\n    {\"id\": \"3\", \"label\": \"bathroom\"},\n    {\"id\": \"4\", \"label\": \"office\"},\n    {\"id\": \"5\", \"label\": \"bedroom\"},\n    {\"id\": \"6\", \"label\": \"bathroom\"},\n    {\"id\": \"7\", \"label\": \"office\"}\n  ],\n  \"edges\": [\n    {\"a\": \"1\", \"b\": \"2\", \"type\": \"open\"},\n    {\"a\": \"1\", \"b\": \"3\", \"type\": \"open\"},\n    {\"a\": \"2\", \"b\": \"4\", \"type\": \"door\"},\n    {\"a\": \"3\", \"b\": \"6\", \"type\": \"open\"},\n    {\"a\": \"4\", \"b\": \"5\", \"type\": \"open\"},\n    {\"a\": \"4\", \"b\": \"7\", \"type\": \"open\"},\n    {\"a\": \"5\", \"b\": \"6\", \"type\": \"open\"},\n    {\"a\": \"6\", \"b\": \"7\", \"type\": \"open\"}\n  ]\n}\n```",
+      "hit_cap": false,
+      "connectivity": {
+        "tp": 2,
+        "fn": 4,
+        "fp_on_reference_negative": 4,
+        "precision": 0.333,
+        "recall": 0.333,
+        "f1": 0.333
+      },
+      "labels": {
+        "scored": 7,
+        "correct": 5,
+        "accuracy": 0.7142857142857143
+      },
+      "gt_scope": {
+        "negatives": "every adjacent pair the generator did not join",
+        "coverage": "complete: the generator knows every pair",
+        "restricted_to": "storey 1; 7 marked rooms",
+        "rooms_before": 7,
+        "rooms_after": 7,
+        "dropped_straddling": 0,
+        "dropped_outside": 0
+      },
+      "generated_tokens": 268,
+      "tiles": 7,
+      "seconds": 9.08,
+      "token_count": "re-tokenised from the reply; model.chat returns no ids"
+    },
+    {
+      "unit": "synth_0122/01_level_1",
+      "prompt_sha256": "c0ccc80fc1285dc3",
+      "extraction": {
+        "status": "invalid_json",
+        "detail": "JSONDecodeError: Expecting ',' delimiter: line 7 column 3 (char 156)",
+        "rooms": 0,
+        "edges": 0,
+        "dropped_rooms": {},
+        "dropped_edges": {},
+        "dropped_rooms_total": 0,
+        "dropped_edges_total": 0
+      },
+      "raw": "```json\n{\n  \"rooms\": [\n    {\"id\": \"1\", \"label\": \"office\"},\n    {\"id\": \"2\", \"label\": \"office\"},\n    {\"id\": \"3\", \"label\": \"stair\"},\n    {\"id\": \"4\", \"label\": \"lab\"}\n  },\n  \"edges\": [\n    {\"a\": \"1\", \"b\": \"2\", \"type\": \"door\"},\n    {\"a\": \"1\", \"b\": \"3\", \"type\": \"door\"},\n    {\"a\": \"2\", \"b\": \"3\", \"type\": \"door\"},\n    {\"a\": \"3\", \"b\": \"4\", \"type\": \"open\"}\n  ]\n}\n```",
+      "hit_cap": false,
+      "connectivity": {
+        "tp": 0,
+        "fn": 3,
+        "fp_on_reference_negative": 0,
+        "precision": null,
+        "recall": 0.0,
+        "f1": 0.0
+      },
+      "labels": {
+        "scored": 4,
+        "correct": 0,
+        "accuracy": 0.0
+      },
+      "gt_scope": {
+        "negatives": "every adjacent pair the generator did not join",
+        "coverage": "complete: the generator knows every pair",
+        "restricted_to": "storey 1; 4 marked rooms",
+        "rooms_before": 4,
+        "rooms_after": 4,
+        "dropped_straddling": 0,
+        "dropped_outside": 0
+      },
+      "generated_tokens": 149,
+      "tiles": 7,
+      "seconds": 5.1,
+      "token_count": "re-tokenised from the reply; model.chat returns no ids"
+    },
+    {
+      "unit": "synth_0127/01_level_1",
+      "prompt_sha256": "158989b10218b140",
+      "extraction": {
+        "status": "ok",
+        "detail": null,
+        "rooms": 8,
+        "edges": 9,
+        "dropped_rooms": {},
+        "dropped_edges": {},
+        "dropped_rooms_total": 0,
+        "dropped_edges_total": 0
+      },
+      "raw": "```json\n{\n  \"rooms\": [\n    {\"id\": \"1\", \"label\": \"storage\"},\n    {\"id\": \"2\", \"label\": \"circulation\"},\n    {\"id\": \"3\", \"label\": \"bathroom\"},\n    {\"id\": \"4\", \"label\": \"living\"},\n    {\"id\": \"5\", \"label\": \"office\"},\n    {\"id\": \"6\", \"label\": \"service\"},\n    {\"id\": \"7\", \"label\": \"bathroom\"},\n    {\"id\": \"8\", \"label\": \"retail\"}\n  ],\n  \"edges\": [\n    {\"a\": \"1\", \"b\": \"2\", \"type\": \"door\"},\n    {\"a\": \"1\", \"b\": \"3\", \"type\": \"door\"},\n    {\"a\": \"1\", \"b\": \"4\", \"type\": \"open\"},\n    {\"a\": \"2\", \"b\": \"5\", \"type\": \"door\"},\n    {\"a\": \"2\", \"b\": \"6\", \"type\": \"door\"},\n    {\"a\": \"4\", \"b\": \"5\", \"type\": \"door\"},\n    {\"a\": \"5\", \"b\": \"6\", \"type\": \"door\"},\n    {\"a\": \"6\", \"b\": \"8\", \"type\": \"door\"},\n    {\"a\": \"1\", \"b\": \"8\", \"type\": \"open\"}\n  ]\n}\n```",
+      "hit_cap": false,
+      "connectivity": {
+        "tp": 3,
+        "fn": 3,
+        "fp_on_reference_negative": 3,
+        "precision": 0.5,
+        "recall": 0.5,
+        "f1": 0.5
+      },
+      "labels": {
+        "scored": 8,
+        "correct": 0,
+        "accuracy": 0.0
+      },
+      "gt_scope": {
+        "negatives": "every adjacent pair the generator did not join",
+        "coverage": "complete: the generator knows every pair",
+        "restricted_to": "storey 1; 8 marked rooms",
+        "rooms_before": 8,
+        "rooms_after": 8,
+        "dropped_straddling": 0,
+        "dropped_outside": 0
+      },
+      "generated_tokens": 299,
+      "tiles": 7,
+      "seconds": 10.26,
+      "token_count": "re-tokenised from the reply; model.chat returns no ids"
+    },
+    {
+      "unit": "synth_0130/00_level_0",
+      "prompt_sha256": "5bb73e47c822a0c3",
+      "extraction": {
+        "status": "invalid_json",
+        "detail": "JSONDecodeError: Expecting property name enclosed in double quotes: line 4 column 16 (char 66)",
+        "rooms": 0,
+        "edges": 0,
+        "dropped_rooms": {},
+        "dropped_edges": {},
+        "dropped_rooms_total": 0,
+        "dropped_edges_total": 0
+      },
+      "raw": "```json\n{\n  \"rooms\": [\n    {\"id\": \"1\", \"label\": \"office\"},\n    {\"id\": \"2\",, \"label\": \"lab\"},\n    {\"id\": \"3\", \"label\": \"kitchen\"},\n    {\"id\": \"4\",, \"label\": \"utility\"},\n    {\"id\": \"5\",, \"label\": \"stair\"},\n    {\"id\": \"6\",, \"label\": \"office\"},\n    {\"id\": \"7\", \"label\": \"living room\"}\n  ],\n  \"edges\": [\n    {\"a\": \"1\", \"b\": \"2\", \"type\": \"open\"},\n    {\"a\": \"1\", \"b\": \"4\", \"type\": \"door\"},\n    {\"a\": \"2\", \"b\": \"5\", \"type\": \"open\"},\n    {\"a\": \"4\", \"b\": \"5\", \"type\": \"door\"},\n    {\"a\": \"5\", \"b\": \"6\", \"type\": \"door\"},\n    {\"a\": \"5\", \"b\": \"7\", \"type\": \"open\"},\n    {\"a\": \"6\", \"b\": \"7\", \"type\": \"open\"}\n  ]\n}\n```",
+      "hit_cap": false,
+      "connectivity": {
+        "tp": 0,
+        "fn": 5,
+        "fp_on_reference_negative": 0,
+        "precision": null,
+        "recall": 0.0,
+        "f1": 0.0
+      },
+      "labels": {
+        "scored": 7,
+        "correct": 0,
+        "accuracy": 0.0
+      },
+      "gt_scope": {
+        "negatives": "every adjacent pair the generator did not join",
+        "coverage": "complete: the generator knows every pair",
+        "restricted_to": "storey 0; 7 marked rooms",
+        "rooms_before": 7,
+        "rooms_after": 7,
+        "dropped_straddling": 0,
+        "dropped_outside": 0
+      },
+      "generated_tokens": 251,
+      "tiles": 7,
+      "seconds": 8.55,
+      "token_count": "re-tokenised from the reply; model.chat returns no ids"
+    },
+    {
+      "unit": "synth_0135/00_level_0",
+      "prompt_sha256": "6e8ea44a54730733",
+      "extraction": {
+        "status": "ok",
+        "detail": null,
+        "rooms": 8,
+        "edges": 9,
+        "dropped_rooms": {},
+        "dropped_edges": {},
+        "dropped_rooms_total": 0,
+        "dropped_edges_total": 0
+      },
+      "raw": "```json\n{\n  \"rooms\": [\n    {\"id\": \"1\", \"label\": \"office\"},\n    {\"id\": \"2\", \"label\": \"bedroom\"},\n    {\"id\": \"3\", \"label\": \"office\"},\n    {\"id\": \"4\", \"label\": \"bedroom\"},\n    {\"id\": \"5\", \"label\": \"bedroom\"},\n    {\"id\": \"6\", \"label\": \"office\"},\n    {\"id\": \"7\", \"label\": \"lab\"},\n    {\"id\": \"8\", \"label\": \"bedroom\"}\n  ],\n  \"edges\": [\n    {\"a\": \"1\", \"b\": \"2\", \"type\": \"door\"},\n    {\"a\": \"2\", \"b\": \"4\", \"type\": \"open\"},\n    {\"a\": \"4\", \"b\": \"5\", \"type\": \"open\"},\n    {\"a\": \"5\", \"b\": \"6\", \"type\": \"door\"},\n    {\"a\": \"6\", \"b\": \"8\", \"type\": \"open\"},\n    {\"a\": \"1\", \"b\": \"3\", \"type\": \"door\"},\n    {\"a\": \"3\", \"b\": \"4\", \"type\": \"open\"},\n    {\"a\": \"4\", \"b\": \"7\", \"type\": \"open\"},\n    {\"a\": \"7\", \"b\": \"8\", \"type\": \"open\"}\n  ]\n}\n```",
+      "hit_cap": false,
+      "connectivity": {
+        "tp": 5,
+        "fn": 1,
+        "fp_on_reference_negative": 3,
+        "precision": 0.625,
+        "recall": 0.833,
+        "f1": 0.714
+      },
+      "labels": {
+        "scored": 8,
+        "correct": 3,
+        "accuracy": 0.375
+      },
+      "gt_scope": {
+        "negatives": "every adjacent pair the generator did not join",
+        "coverage": "complete: the generator knows every pair",
+        "restricted_to": "storey 0; 8 marked rooms",
+        "rooms_before": 8,
+        "rooms_after": 8,
+        "dropped_straddling": 0,
+        "dropped_outside": 0
+      },
+      "generated_tokens": 299,
+      "tiles": 7,
+      "seconds": 10.13,
+      "token_count": "re-tokenised from the reply; model.chat returns no ids"
+    },
+    {
+      "unit": "synth_0137/01_level_1",
+      "prompt_sha256": "0125c9a7a679505f",
+      "extraction": {
+        "status": "ok",
+        "detail": null,
+        "rooms": 8,
+        "edges": 10,
+        "dropped_rooms": {},
+        "dropped_edges": {
+          "self_loop": 1
+        },
+        "dropped_rooms_total": 0,
+        "dropped_edges_total": 1
+      },
+      "raw": "```json\n{\n  \"rooms\": [\n    {\"id\": \"1\", \"label\": \"bedroom\"},\n    {\"id\": \"2\", \"label\": \"bedroom\"},\n    {\"id\": \"3\", \"label\": \"stair\"},\n    {\"id\": \"4\", \"label\": \"living\"},\n    {\"id\": \"5\", \"label\": \"lab\"},\n    {\"id\": \"6\", \"label\": \"bathroom\"},\n    {\"id\": \"7\", \"label\": \"storage\"},\n    {\"id\": \"8\", \"label\": \"reception\"}\n  ],\n  \"edges\": [\n    {\"a\": \"1\", \"b\": \"2\", \"type\": \"open\"},\n    {\"a\": \"1\", \"b\": \"3\", \"type\": \"open\"},\n    {\"a\": \"2\", \"b\": \"4\", \"type\": \"open\"},\n    {\"a\": \"3\", \"b\": \"4\", \"type\": \"open\"},\n    {\"a\": \"4\", \"b\": \"7\", \"type\": \"open\"},\n    {\"a\": \"4\", \"b\": \"8\", \"type\": \"open\"},\n    {\"a\": \"5\", \"b\": \"6\", \"type\": \"open\"},\n    {\"a\": \"7\", \"b\": \"8\", \"type\": \"open\"},\n    {\"a\": \"7\", \"b\": \"5\", \"type\": \"open\"},\n    {\"a\": \"7\", \"b\": \"6\", \"type\": \"open\"},\n    {\"a\": \"7\", \"b\": \"7\", \"type\": \"open\"}\n  ]\n}\n```",
+      "hit_cap": false,
+      "connectivity": {
+        "tp": 5,
+        "fn": 1,
+        "fp_on_reference_negative": 3,
+        "precision": 0.625,
+        "recall": 0.833,
+        "f1": 0.714
+      },
+      "labels": {
+        "scored": 8,
+        "correct": 3,
+        "accuracy": 0.375
+      },
+      "gt_scope": {
+        "negatives": "every adjacent pair the generator did not join",
+        "coverage": "complete: the generator knows every pair",
+        "restricted_to": "storey 1; 8 marked rooms",
+        "rooms_before": 8,
+        "rooms_after": 8,
+        "dropped_straddling": 0,
+        "dropped_outside": 0
+      },
+      "generated_tokens": 338,
+      "tiles": 7,
+      "seconds": 11.2,
+      "token_count": "re-tokenised from the reply; model.chat returns no ids"
+    },
+    {
+      "unit": "synth_0145/00_level_0",
+      "prompt_sha256": "d58c09d4a2994cfa",
+      "extraction": {
+        "status": "ok",
+        "detail": null,
+        "rooms": 7,
+        "edges": 6,
+        "dropped_rooms": {},
+        "dropped_edges": {},
+        "dropped_rooms_total": 0,
+        "dropped_edges_total": 0
+      },
+      "raw": "```json\n{\n  \"rooms\": [\n    {\"id\": \"1\", \"label\": \"stair\"},\n    {\"id\": \"2\", \"label\": \"office\"},\n    {\"id\": \"3\", \"label\": \"office\"},\n    {\"id\": \"4\", \"label\": \"reception\"},\n    {\"id\": \"5\", \"label\": \"reception\"},\n    {\"id\": \"6\", \"label\": \"bathroom\"},\n    {\"id\": \"7\", \"label\": \"kitchen\"}\n  ],\n  \"edges\": [\n    {\"a\": \"1\", \"b\": \"2\", \"type\": \"open\"},\n    {\"a\": \"1\", \"b\": \"3\", \"type\": \"open\"},\n    {\"a\": \"2\", \"b\": \"6\", \"type\": \"door\"},\n    {\"a\": \"3\", \"b\": \"7\", \"type\": \"door\"},\n    {\"a\": \"6\", \"b\": \"4\", \"type\": \"door\"},\n    {\"a\": \"4\", \"b\": \"5\", \"type\": \"door\"}\n  ]\n}\n```",
+      "hit_cap": false,
+      "connectivity": {
+        "tp": 4,
+        "fn": 2,
+        "fp_on_reference_negative": 0,
+        "precision": 1.0,
+        "recall": 0.667,
+        "f1": 0.8
+      },
+      "labels": {
+        "scored": 7,
+        "correct": 2,
+        "accuracy": 0.2857142857142857
+      },
+      "gt_scope": {
+        "negatives": "every adjacent pair the generator did not join",
+        "coverage": "complete: the generator knows every pair",
+        "restricted_to": "storey 0; 7 marked rooms",
+        "rooms_before": 7,
+        "rooms_after": 7,
+        "dropped_straddling": 0,
+        "dropped_outside": 0
+      },
+      "generated_tokens": 230,
+      "tiles": 7,
+      "seconds": 8.11,
+      "token_count": "re-tokenised from the reply; model.chat returns no ids"
+    },
+    {
+      "unit": "synth_0147/01_level_1",
+      "prompt_sha256": "890dd465c042b211",
+      "extraction": {
+        "status": "ok",
+        "detail": null,
+        "rooms": 7,
+        "edges": 7,
+        "dropped_rooms": {},
+        "dropped_edges": {},
+        "dropped_rooms_total": 0,
+        "dropped_edges_total": 0
+      },
+      "raw": "```json\n{\n  \"rooms\": [\n    {\"id\": \"1\", \"label\": \"kitchen\"},\n    {\"id\": \"2\", \"label\": \"bathroom\"},\n    {\"id\": \"3\", \"label\": \"kitchen\"},\n    {\"id\": \"4\", \"label\": \"lab\"},\n    {\"id\": \"5\", \"label\": \"storage\"},\n    {\"id\": \"6\", \"label\": \"meeting\"},\n    {\"id\": \"7\", \"label\": \"office\"}\n  ],\n  \"edges\": [\n    {\"a\": \"1\", \"b\": \"2\", \"type\": \"door\"},\n    {\"a\": \"1\", \"b\": \"3\", \"type\": \"door\"},\n    {\"a\": \"1\", \"b\": \"4\", \"type\": \"open\"},\n    {\"a\": \"2\", \"b\": \"5\", \"type\": \"door\"},\n    {\"a\": \"4\", \"b\": \"6\", \"type\": \"open\"},\n    {\"a\": \"5\", \"b\": \"6\", \"type\": \"door\"},\n    {\"a\": \"6\", \"b\": \"7\", \"type\": \"door\"}\n  ]\n}\n```",
+      "hit_cap": false,
+      "connectivity": {
+        "tp": 3,
+        "fn": 3,
+        "fp_on_reference_negative": 1,
+        "precision": 0.75,
+        "recall": 0.5,
+        "f1": 0.6
+      },
+      "labels": {
+        "scored": 7,
+        "correct": 1,
+        "accuracy": 0.14285714285714285
+      },
+      "gt_scope": {
+        "negatives": "every adjacent pair the generator did not join",
+        "coverage": "complete: the generator knows every pair",
+        "restricted_to": "storey 1; 7 marked rooms",
+        "rooms_before": 7,
+        "rooms_after": 7,
+        "dropped_straddling": 0,
+        "dropped_outside": 0
+      },
+      "generated_tokens": 247,
+      "tiles": 7,
+      "seconds": 8.56,
+      "token_count": "re-tokenised from the reply; model.chat returns no ids"
+    }
+  ]
+}

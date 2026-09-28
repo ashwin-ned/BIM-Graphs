@@ -1,0 +1,516 @@
+{
+  "manifest_version": 1,
+  "run": "extract:llm:text",
+  "started": "2026-09-23T13:44:40Z",
+  "finished": "2026-09-23T13:55:53Z",
+  "python": "3.11.16",
+  "platform": "Linux-6.14.0-37-generic-x86_64-with-glibc2.41",
+  "git_revision": "ca0b051071ec960ed415815c639acc1d93de69ee",
+  "config": {
+    "corpus": "dataset/synthetic_data/synth150_L3",
+    "gt_glob": null,
+    "plans": null,
+    "modality": "text",
+    "backend": "llm",
+    "model_id": "qwen25-7b",
+    "oracle_anchor": null,
+    "mask_labels": true,
+    "no_think_template": false,
+    "max_new_tokens": 3072,
+    "relations_scored": [
+      "connected_by_door",
+      "open_passage"
+    ],
+    "scope": "one storey per call; vertical links out of scope on both the prediction and the reference"
+  },
+  "counts": {
+    "ok": 60,
+    "missing": 0,
+    "failed": 0,
+    "excluded": 0
+  },
+  "complete": true,
+  "denominator": 60,
+  "units": [
+    {
+      "unit": "synth_0000/00_level_0",
+      "state": "ok",
+      "reason": null,
+      "extraction_status": "ok",
+      "rooms_pred": 8,
+      "rooms_ref": 8
+    },
+    {
+      "unit": "synth_0002/01_level_1",
+      "state": "ok",
+      "reason": null,
+      "extraction_status": "ok",
+      "rooms_pred": 8,
+      "rooms_ref": 8
+    },
+    {
+      "unit": "synth_0005/00_level_0",
+      "state": "ok",
+      "reason": null,
+      "extraction_status": "ok",
+      "rooms_pred": 6,
+      "rooms_ref": 6
+    },
+    {
+      "unit": "synth_0007/01_level_1",
+      "state": "ok",
+      "reason": null,
+      "extraction_status": "ok",
+      "rooms_pred": 3,
+      "rooms_ref": 7
+    },
+    {
+      "unit": "synth_0010/00_level_0",
+      "state": "ok",
+      "reason": null,
+      "extraction_status": "ok",
+      "rooms_pred": 6,
+      "rooms_ref": 8
+    },
+    {
+      "unit": "synth_0012/01_level_1",
+      "state": "ok",
+      "reason": null,
+      "extraction_status": "ok",
+      "rooms_pred": 4,
+      "rooms_ref": 7
+    },
+    {
+      "unit": "synth_0015/00_level_0",
+      "state": "ok",
+      "reason": null,
+      "extraction_status": "ok",
+      "rooms_pred": 3,
+      "rooms_ref": 8
+    },
+    {
+      "unit": "synth_0017/01_level_1",
+      "state": "ok",
+      "reason": null,
+      "extraction_status": "ok",
+      "rooms_pred": 3,
+      "rooms_ref": 7
+    },
+    {
+      "unit": "synth_0020/00_level_0",
+      "state": "ok",
+      "reason": null,
+      "extraction_status": "ok",
+      "rooms_pred": 4,
+      "rooms_ref": 7
+    },
+    {
+      "unit": "synth_0022/01_level_1",
+      "state": "ok",
+      "reason": null,
+      "extraction_status": "ok",
+      "rooms_pred": 4,
+      "rooms_ref": 4
+    },
+    {
+      "unit": "synth_0025/00_level_0",
+      "state": "ok",
+      "reason": null,
+      "extraction_status": "ok",
+      "rooms_pred": 7,
+      "rooms_ref": 7
+    },
+    {
+      "unit": "synth_0027/01_level_1",
+      "state": "ok",
+      "reason": null,
+      "extraction_status": "ok",
+      "rooms_pred": 3,
+      "rooms_ref": 5
+    },
+    {
+      "unit": "synth_0030/00_level_0",
+      "state": "ok",
+      "reason": null,
+      "extraction_status": "ok",
+      "rooms_pred": 5,
+      "rooms_ref": 5
+    },
+    {
+      "unit": "synth_0032/01_level_1",
+      "state": "ok",
+      "reason": null,
+      "extraction_status": "ok",
+      "rooms_pred": 5,
+      "rooms_ref": 5
+    },
+    {
+      "unit": "synth_0035/00_level_0",
+      "state": "ok",
+      "reason": null,
+      "extraction_status": "ok",
+      "rooms_pred": 8,
+      "rooms_ref": 8
+    },
+    {
+      "unit": "synth_0037/01_level_1",
+      "state": "ok",
+      "reason": null,
+      "extraction_status": "ok",
+      "rooms_pred": 6,
+      "rooms_ref": 6
+    },
+    {
+      "unit": "synth_0040/00_level_0",
+      "state": "ok",
+      "reason": null,
+      "extraction_status": "ok",
+      "rooms_pred": 5,
+      "rooms_ref": 5
+    },
+    {
+      "unit": "synth_0042/01_level_1",
+      "state": "ok",
+      "reason": null,
+      "extraction_status": "ok",
+      "rooms_pred": 5,
+      "rooms_ref": 5
+    },
+    {
+      "unit": "synth_0045/00_level_0",
+      "state": "ok",
+      "reason": null,
+      "extraction_status": "ok",
+      "rooms_pred": 4,
+      "rooms_ref": 4
+    },
+    {
+      "unit": "synth_0047/01_level_1",
+      "state": "ok",
+      "reason": null,
+      "extraction_status": "ok",
+      "rooms_pred": 5,
+      "rooms_ref": 8
+    },
+    {
+      "unit": "synth_0050/00_level_0",
+      "state": "ok",
+      "reason": null,
+      "extraction_status": "ok",
+      "rooms_pred": 6,
+      "rooms_ref": 6
+    },
+    {
+      "unit": "synth_0052/01_level_1",
+      "state": "ok",
+      "reason": null,
+      "extraction_status": "ok",
+      "rooms_pred": 4,
+      "rooms_ref": 7
+    },
+    {
+      "unit": "synth_0055/00_level_0",
+      "state": "ok",
+      "reason": null,
+      "extraction_status": "ok",
+      "rooms_pred": 5,
+      "rooms_ref": 8
+    },
+    {
+      "unit": "synth_0057/01_level_1",
+      "state": "ok",
+      "reason": null,
+      "extraction_status": "ok",
+      "rooms_pred": 8,
+      "rooms_ref": 8
+    },
+    {
+      "unit": "synth_0060/00_level_0",
+      "state": "ok",
+      "reason": null,
+      "extraction_status": "ok",
+      "rooms_pred": 8,
+      "rooms_ref": 8
+    },
+    {
+      "unit": "synth_0062/01_level_1",
+      "state": "ok",
+      "reason": null,
+      "extraction_status": "ok",
+      "rooms_pred": 5,
+      "rooms_ref": 5
+    },
+    {
+      "unit": "synth_0065/00_level_0",
+      "state": "ok",
+      "reason": null,
+      "extraction_status": "ok",
+      "rooms_pred": 8,
+      "rooms_ref": 8
+    },
+    {
+      "unit": "synth_0067/01_level_1",
+      "state": "ok",
+      "reason": null,
+      "extraction_status": "ok",
+      "rooms_pred": 5,
+      "rooms_ref": 5
+    },
+    {
+      "unit": "synth_0070/00_level_0",
+      "state": "ok",
+      "reason": null,
+      "extraction_status": "ok",
+      "rooms_pred": 3,
+      "rooms_ref": 7
+    },
+    {
+      "unit": "synth_0072/01_level_1",
+      "state": "ok",
+      "reason": null,
+      "extraction_status": "ok",
+      "rooms_pred": 6,
+      "rooms_ref": 6
+    },
+    {
+      "unit": "synth_0075/00_level_0",
+      "state": "ok",
+      "reason": null,
+      "extraction_status": "ok",
+      "rooms_pred": 5,
+      "rooms_ref": 5
+    },
+    {
+      "unit": "synth_0077/01_level_1",
+      "state": "ok",
+      "reason": null,
+      "extraction_status": "ok",
+      "rooms_pred": 4,
+      "rooms_ref": 7
+    },
+    {
+      "unit": "synth_0080/00_level_0",
+      "state": "ok",
+      "reason": null,
+      "extraction_status": "ok",
+      "rooms_pred": 7,
+      "rooms_ref": 7
+    },
+    {
+      "unit": "synth_0082/01_level_1",
+      "state": "ok",
+      "reason": null,
+      "extraction_status": "ok",
+      "rooms_pred": 7,
+      "rooms_ref": 7
+    },
+    {
+      "unit": "synth_0085/00_level_0",
+      "state": "ok",
+      "reason": null,
+      "extraction_status": "ok",
+      "rooms_pred": 2,
+      "rooms_ref": 5
+    },
+    {
+      "unit": "synth_0087/01_level_1",
+      "state": "ok",
+      "reason": null,
+      "extraction_status": "ok",
+      "rooms_pred": 7,
+      "rooms_ref": 7
+    },
+    {
+      "unit": "synth_0090/00_level_0",
+      "state": "ok",
+      "reason": null,
+      "extraction_status": "ok",
+      "rooms_pred": 3,
+      "rooms_ref": 8
+    },
+    {
+      "unit": "synth_0092/01_level_1",
+      "state": "ok",
+      "reason": null,
+      "extraction_status": "ok",
+      "rooms_pred": 3,
+      "rooms_ref": 8
+    },
+    {
+      "unit": "synth_0095/00_level_0",
+      "state": "ok",
+      "reason": null,
+      "extraction_status": "ok",
+      "rooms_pred": 3,
+      "rooms_ref": 5
+    },
+    {
+      "unit": "synth_0097/01_level_1",
+      "state": "ok",
+      "reason": null,
+      "extraction_status": "ok",
+      "rooms_pred": 7,
+      "rooms_ref": 7
+    },
+    {
+      "unit": "synth_0100/00_level_0",
+      "state": "ok",
+      "reason": null,
+      "extraction_status": "ok",
+      "rooms_pred": 2,
+      "rooms_ref": 5
+    },
+    {
+      "unit": "synth_0102/01_level_1",
+      "state": "ok",
+      "reason": null,
+      "extraction_status": "ok",
+      "rooms_pred": 5,
+      "rooms_ref": 5
+    },
+    {
+      "unit": "synth_0105/00_level_0",
+      "state": "ok",
+      "reason": null,
+      "extraction_status": "ok",
+      "rooms_pred": 8,
+      "rooms_ref": 8
+    },
+    {
+      "unit": "synth_0107/01_level_1",
+      "state": "ok",
+      "reason": null,
+      "extraction_status": "ok",
+      "rooms_pred": 5,
+      "rooms_ref": 5
+    },
+    {
+      "unit": "synth_0110/00_level_0",
+      "state": "ok",
+      "reason": null,
+      "extraction_status": "ok",
+      "rooms_pred": 7,
+      "rooms_ref": 7
+    },
+    {
+      "unit": "synth_0112/01_level_1",
+      "state": "ok",
+      "reason": null,
+      "extraction_status": "ok",
+      "rooms_pred": 4,
+      "rooms_ref": 8
+    },
+    {
+      "unit": "synth_0115/00_level_0",
+      "state": "ok",
+      "reason": null,
+      "extraction_status": "ok",
+      "rooms_pred": 2,
+      "rooms_ref": 2
+    },
+    {
+      "unit": "synth_0117/01_level_1",
+      "state": "ok",
+      "reason": null,
+      "extraction_status": "ok",
+      "rooms_pred": 7,
+      "rooms_ref": 7
+    },
+    {
+      "unit": "synth_0120/00_level_0",
+      "state": "ok",
+      "reason": null,
+      "extraction_status": "ok",
+      "rooms_pred": 6,
+      "rooms_ref": 7
+    },
+    {
+      "unit": "synth_0122/01_level_1",
+      "state": "ok",
+      "reason": null,
+      "extraction_status": "ok",
+      "rooms_pred": 4,
+      "rooms_ref": 4
+    },
+    {
+      "unit": "synth_0125/00_level_0",
+      "state": "ok",
+      "reason": null,
+      "extraction_status": "ok",
+      "rooms_pred": 3,
+      "rooms_ref": 5
+    },
+    {
+      "unit": "synth_0127/01_level_1",
+      "state": "ok",
+      "reason": null,
+      "extraction_status": "ok",
+      "rooms_pred": 8,
+      "rooms_ref": 8
+    },
+    {
+      "unit": "synth_0130/00_level_0",
+      "state": "ok",
+      "reason": null,
+      "extraction_status": "ok",
+      "rooms_pred": 7,
+      "rooms_ref": 7
+    },
+    {
+      "unit": "synth_0132/01_level_1",
+      "state": "ok",
+      "reason": null,
+      "extraction_status": "ok",
+      "rooms_pred": 5,
+      "rooms_ref": 8
+    },
+    {
+      "unit": "synth_0135/00_level_0",
+      "state": "ok",
+      "reason": null,
+      "extraction_status": "ok",
+      "rooms_pred": 8,
+      "rooms_ref": 8
+    },
+    {
+      "unit": "synth_0137/01_level_1",
+      "state": "ok",
+      "reason": null,
+      "extraction_status": "ok",
+      "rooms_pred": 8,
+      "rooms_ref": 8
+    },
+    {
+      "unit": "synth_0140/00_level_0",
+      "state": "ok",
+      "reason": null,
+      "extraction_status": "no_json",
+      "rooms_pred": 0,
+      "rooms_ref": 7
+    },
+    {
+      "unit": "synth_0142/01_level_1",
+      "state": "ok",
+      "reason": null,
+      "extraction_status": "ok",
+      "rooms_pred": 5,
+      "rooms_ref": 8
+    },
+    {
+      "unit": "synth_0145/00_level_0",
+      "state": "ok",
+      "reason": null,
+      "extraction_status": "ok",
+      "rooms_pred": 7,
+      "rooms_ref": 7
+    },
+    {
+      "unit": "synth_0147/01_level_1",
+      "state": "ok",
+      "reason": null,
+      "extraction_status": "ok",
+      "rooms_pred": 7,
+      "rooms_ref": 7
+    }
+  ]
+}

@@ -1,0 +1,2497 @@
+{
+  "config": {
+    "corpus": "dataset/synthetic_data/synth150_L4",
+    "gt_glob": null,
+    "plans": null,
+    "modality": "text",
+    "backend": "llm",
+    "model_id": "qwen25-7b",
+    "oracle_anchor": null,
+    "mask_labels": false,
+    "no_think_template": false,
+    "max_new_tokens": 3072,
+    "relations_scored": [
+      "connected_by_door",
+      "open_passage"
+    ],
+    "scope": "one storey per call; vertical links out of scope on both the prediction and the reference",
+    "backend_name": "llm:Qwen2.5-7B-Instruct",
+    "model_revision": "a09a35458c702b33eeacc393d103063234e8bc28"
+  },
+  "predictions": [
+    {
+      "unit": "synth_0000/00_level_0",
+      "prompt_sha256": "1dbc47cc2c8da3ba",
+      "extraction": {
+        "status": "ok",
+        "detail": null,
+        "rooms": 8,
+        "edges": 11,
+        "dropped_rooms": {},
+        "dropped_edges": {},
+        "dropped_rooms_total": 0,
+        "dropped_edges_total": 0
+      },
+      "raw": "{\"rooms\": [{\"id\": \"12OmXEmaH0ogUE8a8T7g1E\", \"label\": \"stair\", \"centroid_m\": [2.41, 2.65]}, {\"id\": \"1rwzobGqL3tx6cb6baHg8g\", \"label\": \"bedroom\", \"centroid_m\": [7.47, 2.65]}, {\"id\": \"374d1Y4kb4$98I28AxQdWA\", \"label\": \"corridor\", \"centroid_m\": [2.29, 8.65]}, {\"id\": \"2yNJr$3rvFxedruUgoE40a\", \"label\": \"reception\", \"centroid_m\": [7.35, 8.65]}, {\"id\": \"3HVEEt20H15vVAtULEI0yb\", \"label\": \"store\", \"centroid_m\": [12.09, 3.12]}, {\"id\": \"03coKqLbj8q9olQHbdNIPv\", \"label\": \"bedroom\", \"centroid_m\": [16.03, 3.12]}, {\"id\": \"2dXyc_uM9BDOTclEZ40rFz\", \"label\": \"meeting room\", \"centroid_m\": [12.33, 9.12]}, {\"id\": \"0vZqR09BHEHht_C_rw9Umi\", \"label\": \"meeting room\", \"centroid_m\": [16.27, 9.12]}], \"edges\": [{\"a\": \"374d1Y4kb4$98I28AxQdWA\", \"b\": \"12OmXEmaH0ogUE8a8T7g1E\", \"type\": \"door\"}, {\"a\": \"374d1Y4kb4$98I28AxQdWA\", \"b\": \"1rwzobGqL3tx6cb6baHg8g\", \"type\": \"open\"}, {\"a\": \"2yNJr$3rvFxedruUgoE40a\", \"b\": \"374d1Y4kb4$98I28AxQdWA\", \"type\": \"door\"}, {\"a\": \"3HVEEt20H15vVAtULEI0yb\", \"b\": \"12OmXEmaH0ogUE8a8T7g1E\", \"type\": \"door\"}, {\"a\": \"03coKqLbj8q9olQHbdNIPv\", \"b\": \"12OmXEmaH0ogUE8a8T7g1E\", \"type\": \"door\"}, {\"a\": \"2dXyc_uM9BDOTclEZ40rFz\", \"b\": \"12OmXEmaH0ogUE8a8T7g1E\", \"type\": \"door\"}, {\"a\": \"0vZqR09BHEHht_C_rw9Umi\", \"b\": \"12OmXEmaH0ogUE8a8T7g1E\", \"type\": \"door\"}, {\"a\": \"3HVEEt20H15vVAtULEI0yb\", \"b\": \"2yNJr$3rvFxedruUgoE40a\", \"type\": \"open\"}, {\"a\": \"03coKqLbj8q9olQHbdNIPv\", \"b\": \"2yNJr$3rvFxedruUgoE40a\", \"type\": \"open\"}, {\"a\": \"2dXyc_uM9BDOTclEZ40rFz\", \"b\": \"2yNJr$3rvFxedruUgoE40a\", \"type\": \"open\"}, {\"a\": \"0vZqR09BHEHht_C_rw9Umi\", \"b\": \"2yNJr$3rvFxedruUgoE40a\", \"type\": \"open\"}]}",
+      "hit_cap": false,
+      "connectivity": {
+        "tp": 1,
+        "fn": 5,
+        "fp_on_reference_negative": 2,
+        "precision": 0.333,
+        "recall": 0.167,
+        "f1": 0.222
+      },
+      "labels": {
+        "scored": 8,
+        "correct": 8,
+        "accuracy": 1.0
+      },
+      "gt_scope": {
+        "negatives": "every adjacent pair the generator did not join",
+        "coverage": "complete: the generator knows every pair",
+        "restricted_to": "storey 0",
+        "rooms_before": 16,
+        "rooms_after": 8,
+        "dropped_straddling": 1,
+        "dropped_outside": 11
+      },
+      "prompt_tokens": 3533,
+      "generated_tokens": 912,
+      "seconds": 22.45
+    },
+    {
+      "unit": "synth_0002/01_level_1",
+      "prompt_sha256": "f70ca90220aef4e5",
+      "extraction": {
+        "status": "ok",
+        "detail": null,
+        "rooms": 7,
+        "edges": 6,
+        "dropped_rooms": {},
+        "dropped_edges": {},
+        "dropped_rooms_total": 0,
+        "dropped_edges_total": 0
+      },
+      "raw": "{\"rooms\": [{\"id\": \"2nhS6XsYv5QhuA42PpQm2X\", \"label\": \"office\", \"centroid_m\": [2.46, 2.33]}, {\"id\": \"0f7JB2L5XAsx2Lw5svP4rx\", \"label\": \"kitchen\", \"centroid_m\": [6.42, 2.33]}, {\"id\": \"2OWThpxtf57u4SGiWQwUrm\", \"label\": \"bathroom\", \"centroid_m\": [2.27, 8.33]}, {\"id\": \"1ox6D6XN5B1ODQtERrmyDS\", \"label\": \"living\", \"centroid_m\": [10.97, 3.01]}, {\"id\": \"3q56kdIhL6G9PCdbIKtydG\", \"label\": \"living\", \"centroid_m\": [16.01, 3.01]}, {\"id\": \"1we_bbDhjBHwysd0zPqmON\", \"label\": \"corridor\", \"centroid_m\": [10.93, 9.01]}, {\"id\": \"3gH6NWpAnB78cNZkLCsajr\", \"label\": \"storage\", \"centroid_m\": [15.97, 9.01]}], \"edges\": [{\"a\": \"2nhS6XsYv5QhuA42PpQm2X\", \"b\": \"0f7JB2L5XAsx2Lw5svP4rx\", \"type\": \"door\"}, {\"a\": \"2nhS6XsYv5QhuA42PpQm2X\", \"b\": \"2OWThpxtf57u4SGiWQwUrm\", \"type\": \"door\"}, {\"a\": \"2nhS6XsYv5QhuA42PpQm2X\", \"b\": \"1we_bbDhjBHwysd0zPqmON\", \"type\": \"open\"}, {\"a\": \"0f7JB2L5XAsx2Lw5svP4rx\", \"b\": \"1we_bbDhjBHwysd0zPqmON\", \"type\": \"door\"}, {\"a\": \"2OWThpxtf57u4SGiWQwUrm\", \"b\": \"1we_bbDhjBHwysd0zPqmON\", \"type\": \"door\"}, {\"a\": \"1we_bbDhjBHwysd0zPqmON\", \"b\": \"3gH6NWpAnB78cNZkLCsajr\", \"type\": \"door\"}]}",
+      "hit_cap": false,
+      "connectivity": {
+        "tp": 1,
+        "fn": 5,
+        "fp_on_reference_negative": 2,
+        "precision": 0.333,
+        "recall": 0.167,
+        "f1": 0.222
+      },
+      "labels": {
+        "scored": 8,
+        "correct": 7,
+        "accuracy": 1.0
+      },
+      "gt_scope": {
+        "negatives": "every adjacent pair the generator did not join",
+        "coverage": "complete: the generator knows every pair",
+        "restricted_to": "storey 1",
+        "rooms_before": 10,
+        "rooms_after": 8,
+        "dropped_straddling": 1,
+        "dropped_outside": 1
+      },
+      "prompt_tokens": 3678,
+      "generated_tokens": 625,
+      "seconds": 15.42
+    },
+    {
+      "unit": "synth_0005/00_level_0",
+      "prompt_sha256": "b90302757e73252d",
+      "extraction": {
+        "status": "ok",
+        "detail": null,
+        "rooms": 6,
+        "edges": 8,
+        "dropped_rooms": {},
+        "dropped_edges": {},
+        "dropped_rooms_total": 0,
+        "dropped_edges_total": 0
+      },
+      "raw": "{\"rooms\": [{\"id\": \"Stair\", \"label\": \"stair\", \"centroid_m\": [3.02, 3.64]}, {\"id\": \"Lab\", \"label\": \"lab\", \"centroid_m\": [8.04, 3.64]}, {\"id\": \"Living Room\", \"label\": \"living\", \"centroid_m\": [5.02, 9.64]}, {\"id\": \"Corridor\", \"label\": \"circulation\", \"centroid_m\": [12.42, 3.64]}, {\"id\": \"Meeting Room\", \"label\": \"meeting\", \"centroid_m\": [16.39, 3.64]}, {\"id\": \"Reception\", \"label\": \"retail\", \"centroid_m\": [14.02, 9.64]}], \"edges\": [{\"a\": \"Stair\", \"b\": \"Lab\", \"type\": \"door\"}, {\"a\": \"Stair\", \"b\": \"Living Room\", \"type\": \"open\"}, {\"a\": \"Stair\", \"b\": \"Corridor\", \"type\": \"open\"}, {\"a\": \"Lab\", \"b\": \"Corridor\", \"type\": \"door\"}, {\"a\": \"Living Room\", \"b\": \"Corridor\", \"type\": \"door\"}, {\"a\": \"Living Room\", \"b\": \"Reception\", \"type\": \"door\"}, {\"a\": \"Corridor\", \"b\": \"Meeting Room\", \"type\": \"door\"}, {\"a\": \"Corridor\", \"b\": \"Reception\", \"type\": \"open\"}]}",
+      "hit_cap": false,
+      "connectivity": {
+        "tp": 2,
+        "fn": 2,
+        "fp_on_reference_negative": 4,
+        "precision": 0.333,
+        "recall": 0.5,
+        "f1": 0.4
+      },
+      "labels": {
+        "scored": 6,
+        "correct": 5,
+        "accuracy": 0.8333333333333334
+      },
+      "gt_scope": {
+        "negatives": "every adjacent pair the generator did not join",
+        "coverage": "complete: the generator knows every pair",
+        "restricted_to": "storey 0",
+        "rooms_before": 14,
+        "rooms_after": 6,
+        "dropped_straddling": 1,
+        "dropped_outside": 11
+      },
+      "prompt_tokens": 2814,
+      "generated_tokens": 346,
+      "seconds": 8.4
+    },
+    {
+      "unit": "synth_0007/01_level_1",
+      "prompt_sha256": "fcd487abd77a095d",
+      "extraction": {
+        "status": "ok",
+        "detail": null,
+        "rooms": 5,
+        "edges": 6,
+        "dropped_rooms": {},
+        "dropped_edges": {},
+        "dropped_rooms_total": 0,
+        "dropped_edges_total": 0
+      },
+      "raw": "{\"rooms\": [{\"id\": \"A\", \"label\": \"office\", \"centroid_m\": [9.26, 4.96]}, {\"id\": \"B\", \"label\": \"storage\", \"centroid_m\": [6.15, 4.86]}, {\"id\": \"C\", \"label\": \"meeting\", \"centroid_m\": [14.21, 6.19]}, {\"id\": \"D\", \"label\": \"kitchen\", \"centroid_m\": [7.05, 4.86]}, {\"id\": \"E\", \"label\": \"bedroom\", \"centroid_m\": [15.66, 6.09]}], \"edges\": [{\"a\": \"A\", \"b\": \"B\", \"type\": \"door\"}, {\"a\": \"A\", \"b\": \"C\", \"type\": \"open\"}, {\"a\": \"A\", \"b\": \"D\", \"type\": \"door\"}, {\"a\": \"A\", \"b\": \"E\", \"type\": \"door\"}, {\"a\": \"B\", \"b\": \"D\", \"type\": \"open\"}, {\"a\": \"C\", \"b\": \"E\", \"type\": \"open\"}]}",
+      "hit_cap": false,
+      "connectivity": {
+        "tp": 0,
+        "fn": 6,
+        "fp_on_reference_negative": 0,
+        "precision": null,
+        "recall": 0.0,
+        "f1": 0.0
+      },
+      "labels": {
+        "scored": 7,
+        "correct": 1,
+        "accuracy": 0.3333333333333333
+      },
+      "gt_scope": {
+        "negatives": "every adjacent pair the generator did not join",
+        "coverage": "complete: the generator knows every pair",
+        "restricted_to": "storey 1",
+        "rooms_before": 13,
+        "rooms_after": 7,
+        "dropped_straddling": 1,
+        "dropped_outside": 8
+      },
+      "prompt_tokens": 2450,
+      "generated_tokens": 261,
+      "seconds": 6.34
+    },
+    {
+      "unit": "synth_0010/00_level_0",
+      "prompt_sha256": "40b2ff44e21ff442",
+      "extraction": {
+        "status": "ok",
+        "detail": null,
+        "rooms": 6,
+        "edges": 8,
+        "dropped_rooms": {},
+        "dropped_edges": {},
+        "dropped_rooms_total": 0,
+        "dropped_edges_total": 0
+      },
+      "raw": "{\"rooms\": [{\"id\": \"0P_SrNGnr6kReRKWa5ZlyH\", \"label\": \"circulation\", \"centroid_m\": [1.37, 5.12]}, {\"id\": \"0USM7yAUH6bu$Tff4jEOac\", \"label\": \"circulation\", \"centroid_m\": [5.12, 2.13]}, {\"id\": \"0J8jTHIXjDQe12KC87I3Yn\", \"label\": \"circulation\", \"centroid_m\": [10.01, 5.5]}, {\"id\": \"1CMmZz2k5FmeZO9gp6kyil\", \"label\": \"circulation\", \"centroid_m\": [13.79, 5.5]}, {\"id\": \"0Lh$$YmVnC_Ae6rG0EaBfH\", \"label\": \"circulation\", \"centroid_m\": [8.79, 8.75]}, {\"id\": \"13mUS34h12LevznrIV$fEC\", \"label\": \"circulation\", \"centroid_m\": [12.33, 8.75]}], \"edges\": [{\"a\": \"0P_SrNGnr6kReRKWa5ZlyH\", \"b\": \"0USM7yAUH6bu$Tff4jEOac\", \"type\": \"door\"}, {\"a\": \"0P_SrNGnr6kReRKWa5ZlyH\", \"b\": \"0J8jTHIXjDQe12KC87I3Yn\", \"type\": \"door\"}, {\"a\": \"0P_SrNGnr6kReRKWa5ZlyH\", \"b\": \"0Lh$$YmVnC_Ae6rG0EaBfH\", \"type\": \"door\"}, {\"a\": \"0USM7yAUH6bu$Tff4jEOac\", \"b\": \"0J8jTHIXjDQe12KC87I3Yn\", \"type\": \"door\"}, {\"a\": \"0USM7yAUH6bu$Tff4jEOac\", \"b\": \"13mUS34h12LevznrIV$fEC\", \"type\": \"door\"}, {\"a\": \"0J8jTHIXjDQe12KC87I3Yn\", \"b\": \"1CMmZz2k5FmeZO9gp6kyil\", \"type\": \"door\"}, {\"a\": \"0J8jTHIXjDQe12KC87I3Yn\", \"b\": \"13mUS34h12LevznrIV$fEC\", \"type\": \"door\"}, {\"a\": \"0Lh$$YmVnC_Ae6rG0EaBfH\", \"b\": \"13mUS34h12LevznrIV$fEC\", \"type\": \"door\"}]}",
+      "hit_cap": false,
+      "connectivity": {
+        "tp": 3,
+        "fn": 4,
+        "fp_on_reference_negative": 1,
+        "precision": 0.75,
+        "recall": 0.429,
+        "f1": 0.545
+      },
+      "labels": {
+        "scored": 8,
+        "correct": 1,
+        "accuracy": 0.2
+      },
+      "gt_scope": {
+        "negatives": "every adjacent pair the generator did not join",
+        "coverage": "complete: the generator knows every pair",
+        "restricted_to": "storey 0",
+        "rooms_before": 13,
+        "rooms_after": 8,
+        "dropped_straddling": 1,
+        "dropped_outside": 7
+      },
+      "prompt_tokens": 2983,
+      "generated_tokens": 681,
+      "seconds": 16.36
+    },
+    {
+      "unit": "synth_0012/01_level_1",
+      "prompt_sha256": "0f2e3840595a7fec",
+      "extraction": {
+        "status": "ok",
+        "detail": null,
+        "rooms": 2,
+        "edges": 1,
+        "dropped_rooms": {},
+        "dropped_edges": {},
+        "dropped_rooms_total": 0,
+        "dropped_edges_total": 0
+      },
+      "raw": "{\"rooms\": [{\"id\": \"room1\", \"label\": \"circulation\", \"centroid_m\": [4.75, 3.5]}, {\"id\": \"room2\", \"label\": \"storage\", \"centroid_m\": [11.12, 5.77]}], \"edges\": [{\"a\": \"room1\", \"b\": \"room2\", \"type\": \"door\"}]}",
+      "hit_cap": false,
+      "connectivity": {
+        "tp": 0,
+        "fn": 5,
+        "fp_on_reference_negative": 0,
+        "precision": null,
+        "recall": 0.0,
+        "f1": 0.0
+      },
+      "labels": {
+        "scored": 7,
+        "correct": 0,
+        "accuracy": 0.0
+      },
+      "gt_scope": {
+        "negatives": "every adjacent pair the generator did not join",
+        "coverage": "complete: the generator knows every pair",
+        "restricted_to": "storey 1",
+        "rooms_before": 14,
+        "rooms_after": 7,
+        "dropped_straddling": 1,
+        "dropped_outside": 10
+      },
+      "prompt_tokens": 2419,
+      "generated_tokens": 88,
+      "seconds": 2.24
+    },
+    {
+      "unit": "synth_0015/00_level_0",
+      "prompt_sha256": "febc66649ece74d8",
+      "extraction": {
+        "status": "ok",
+        "detail": null,
+        "rooms": 5,
+        "edges": 9,
+        "dropped_rooms": {},
+        "dropped_edges": {},
+        "dropped_rooms_total": 0,
+        "dropped_edges_total": 0
+      },
+      "raw": "{\"rooms\": [{\"id\": \"0\", \"label\": \"circulation\", \"centroid_m\": [1.37, 4.51]}, {\"id\": \"1\", \"label\": \"circulation\", \"centroid_m\": [3.32, 4.97]}, {\"id\": \"2\", \"label\": \"circulation\", \"centroid_m\": [1.37, 8.81]}, {\"id\": \"3\", \"label\": \"circulation\", \"centroid_m\": [6.89, 5.78]}, {\"id\": \"4\", \"label\": \"circulation\", \"centroid_m\": [14.56, 7.34]}], \"edges\": [{\"a\": \"0\", \"b\": \"1\", \"type\": \"door\"}, {\"a\": \"0\", \"b\": \"2\", \"type\": \"door\"}, {\"a\": \"1\", \"b\": \"3\", \"type\": \"door\"}, {\"a\": \"2\", \"b\": \"3\", \"type\": \"door\"}, {\"a\": \"3\", \"b\": \"4\", \"type\": \"door\"}, {\"a\": \"0\", \"b\": \"1\", \"type\": \"open\"}, {\"a\": \"1\", \"b\": \"2\", \"type\": \"open\"}, {\"a\": \"2\", \"b\": \"3\", \"type\": \"open\"}, {\"a\": \"3\", \"b\": \"4\", \"type\": \"open\"}]}",
+      "hit_cap": false,
+      "connectivity": {
+        "tp": 3,
+        "fn": 4,
+        "fp_on_reference_negative": 0,
+        "precision": 1.0,
+        "recall": 0.429,
+        "f1": 0.6
+      },
+      "labels": {
+        "scored": 8,
+        "correct": 0,
+        "accuracy": 0.0
+      },
+      "gt_scope": {
+        "negatives": "every adjacent pair the generator did not join",
+        "coverage": "complete: the generator knows every pair",
+        "restricted_to": "storey 0",
+        "rooms_before": 16,
+        "rooms_after": 8,
+        "dropped_straddling": 1,
+        "dropped_outside": 13
+      },
+      "prompt_tokens": 2878,
+      "generated_tokens": 317,
+      "seconds": 7.71
+    },
+    {
+      "unit": "synth_0017/01_level_1",
+      "prompt_sha256": "f5b22d5ceddd5d0b",
+      "extraction": {
+        "status": "ok",
+        "detail": null,
+        "rooms": 3,
+        "edges": 2,
+        "dropped_rooms": {},
+        "dropped_edges": {},
+        "dropped_rooms_total": 0,
+        "dropped_edges_total": 0
+      },
+      "raw": "{\"rooms\": [{\"id\": \"1\", \"label\": \"circulation\", \"centroid_m\": [1.74, 5.51]}, {\"id\": \"2\", \"label\": \"circulation\", \"centroid_m\": [11.05, 6.02]}, {\"id\": \"3\", \"label\": \"circulation\", \"centroid_m\": [14.45, 6.02]}], \"edges\": [{\"a\": \"1\", \"b\": \"2\", \"type\": \"door\"}, {\"a\": \"2\", \"b\": \"3\", \"type\": \"door\"}]}",
+      "hit_cap": false,
+      "connectivity": {
+        "tp": 0,
+        "fn": 5,
+        "fp_on_reference_negative": 1,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0
+      },
+      "labels": {
+        "scored": 7,
+        "correct": 0,
+        "accuracy": 0.0
+      },
+      "gt_scope": {
+        "negatives": "every adjacent pair the generator did not join",
+        "coverage": "complete: the generator knows every pair",
+        "restricted_to": "storey 1",
+        "rooms_before": 12,
+        "rooms_after": 7,
+        "dropped_straddling": 1,
+        "dropped_outside": 7
+      },
+      "prompt_tokens": 2362,
+      "generated_tokens": 134,
+      "seconds": 3.32
+    },
+    {
+      "unit": "synth_0020/00_level_0",
+      "prompt_sha256": "2e5371718fc280d0",
+      "extraction": {
+        "status": "ok",
+        "detail": null,
+        "rooms": 3,
+        "edges": 2,
+        "dropped_rooms": {},
+        "dropped_edges": {},
+        "dropped_rooms_total": 0,
+        "dropped_edges_total": 0
+      },
+      "raw": "{\"rooms\": [{\"id\": \"1\", \"label\": \"circulation\", \"centroid_m\": [5.2, 3.6]}, {\"id\": \"2\", \"label\": \"circulation\", \"centroid_m\": [9.8, 6.6]}, {\"id\": \"3\", \"label\": \"circulation\", \"centroid_m\": [14.8, 2.1]}], \"edges\": [{\"a\": \"1\", \"b\": \"2\", \"type\": \"door\"}, {\"a\": \"2\", \"b\": \"3\", \"type\": \"door\"}]}",
+      "hit_cap": false,
+      "connectivity": {
+        "tp": 1,
+        "fn": 5,
+        "fp_on_reference_negative": 1,
+        "precision": 0.5,
+        "recall": 0.167,
+        "f1": 0.25
+      },
+      "labels": {
+        "scored": 7,
+        "correct": 0,
+        "accuracy": 0.0
+      },
+      "gt_scope": {
+        "negatives": "every adjacent pair the generator did not join",
+        "coverage": "complete: the generator knows every pair",
+        "restricted_to": "storey 0",
+        "rooms_before": 12,
+        "rooms_after": 7,
+        "dropped_straddling": 1,
+        "dropped_outside": 6
+      },
+      "prompt_tokens": 2558,
+      "generated_tokens": 127,
+      "seconds": 3.17
+    },
+    {
+      "unit": "synth_0022/01_level_1",
+      "prompt_sha256": "16be775460d1067d",
+      "extraction": {
+        "status": "ok",
+        "detail": null,
+        "rooms": 4,
+        "edges": 6,
+        "dropped_rooms": {},
+        "dropped_edges": {},
+        "dropped_rooms_total": 0,
+        "dropped_edges_total": 0
+      },
+      "raw": "{\"rooms\": [{\"id\": \"3dMvvuEU15D8fCF6vq340k\", \"label\": \"circulation\", \"centroid_m\": [3.81, 6.00]}, {\"id\": \"2iA05dGTvAyecwj7Jbmlu_\", \"label\": \"reception\", \"centroid_m\": [10.78, 3.33]}, {\"id\": \"2KNDMy5UL1xBXNAuG4ZaVI\", \"label\": \"kitchen\", \"centroid_m\": [15.97, 3.33]}, {\"id\": \"1$dfjC9d9Et8J33TsCXe$Q\", \"label\": \"bedroom\", \"centroid_m\": [12.81, 9.33]}], \"edges\": [{\"a\": \"2iA05dGTvAyecwj7Jbmlu_\", \"b\": \"2KNDMy5UL1xBXNAuG4ZaVI\", \"type\": \"open\"}, {\"a\": \"2iA05dGTvAyecwj7Jbmlu_\", \"b\": \"1$dfjC9d9Et8J33TsCXe$Q\", \"type\": \"door\"}, {\"a\": \"2KNDMy5UL1xBXNAuG4ZaVI\", \"b\": \"1$dfjC9d9Et8J33TsCXe$Q\", \"type\": \"open\"}, {\"a\": \"3dMvvuEU15D8fCF6vq340k\", \"b\": \"2iA05dGTvAyecwj7Jbmlu_\", \"type\": \"open\"}, {\"a\": \"3dMvvuEU15D8fCF6vq340k\", \"b\": \"2KNDMy5UL1xBXNAuG4ZaVI\", \"type\": \"open\"}, {\"a\": \"3dMvvuEU15D8fCF6vq340k\", \"b\": \"1$dfjC9d9Et8J33TsCXe$Q\", \"type\": \"open\"}]}",
+      "hit_cap": false,
+      "connectivity": {
+        "tp": 3,
+        "fn": 0,
+        "fp_on_reference_negative": 2,
+        "precision": 0.6,
+        "recall": 1.0,
+        "f1": 0.75
+      },
+      "labels": {
+        "scored": 4,
+        "correct": 3,
+        "accuracy": 0.75
+      },
+      "gt_scope": {
+        "negatives": "every adjacent pair the generator did not join",
+        "coverage": "complete: the generator knows every pair",
+        "restricted_to": "storey 1",
+        "rooms_before": 9,
+        "rooms_after": 4,
+        "dropped_straddling": 1,
+        "dropped_outside": 6
+      },
+      "prompt_tokens": 2049,
+      "generated_tokens": 496,
+      "seconds": 11.8
+    },
+    {
+      "unit": "synth_0025/00_level_0",
+      "prompt_sha256": "88873e09bff3431e",
+      "extraction": {
+        "status": "ok",
+        "detail": null,
+        "rooms": 7,
+        "edges": 5,
+        "dropped_rooms": {},
+        "dropped_edges": {},
+        "dropped_rooms_total": 0,
+        "dropped_edges_total": 0
+      },
+      "raw": "{\"rooms\": [{\"id\": \"3iafPxMHr58O2y79ZJTp0A\", \"label\": \"stair\", \"centroid_m\": [2.89, 2.59]}, {\"id\": \"3afT8jyRLBhAAXqNiimqBl\", \"label\": \"lab\", \"centroid_m\": [8.31, 2.59]}, {\"id\": \"0K9qdzDqTE1hWFx2IFzA3y\", \"label\": \"reception\", \"centroid_m\": [12.57, 2.65]}, {\"id\": \"1fuGu6Duz4VPlGMCBKJDnf\", \"label\": \"kitchen\", \"centroid_m\": [16.15, 2.65]}, {\"id\": \"3j17uImFj80fP7ARVb2X71\", \"label\": \"corridor\", \"centroid_m\": [5.42, 8.59]}, {\"id\": \"3iU3_fZDn2evOdPlokw9_5\", \"label\": \"store\", \"centroid_m\": [12.31, 8.65]}, {\"id\": \"2QjqXsYEfEwOe1KaQYov8s\", \"label\": \"corridor\", \"centroid_m\": [15.89, 8.65]}], \"edges\": [{\"a\": \"3iafPxMHr58O2y79ZJTp0A\", \"b\": \"3afT8jyRLBhAAXqNiimqBl\", \"type\": \"door\"}, {\"a\": \"3afT8jyRLBhAAXqNiimqBl\", \"b\": \"0K9qdzDqTE1hWFx2IFzA3y\", \"type\": \"open\"}, {\"a\": \"3afT8jyRLBhAAXqNiimqBl\", \"b\": \"1fuGu6Duz4VPlGMCBKJDnf\", \"type\": \"open\"}, {\"a\": \"0K9qdzDqTE1hWFx2IFzA3y\", \"b\": \"3iU3_fZDn2evOdPlokw9_5\", \"type\": \"door\"}, {\"a\": \"3iU3_fZDn2evOdPlokw9_5\", \"b\": \"2QjqXsYEfEwOe1KaQYov8s\", \"type\": \"door\"}]}",
+      "hit_cap": false,
+      "connectivity": {
+        "tp": 3,
+        "fn": 2,
+        "fp_on_reference_negative": 1,
+        "precision": 0.75,
+        "recall": 0.6,
+        "f1": 0.667
+      },
+      "labels": {
+        "scored": 7,
+        "correct": 7,
+        "accuracy": 1.0
+      },
+      "gt_scope": {
+        "negatives": "every adjacent pair the generator did not join",
+        "coverage": "complete: the generator knows every pair",
+        "restricted_to": "storey 0",
+        "rooms_before": 15,
+        "rooms_after": 7,
+        "dropped_straddling": 1,
+        "dropped_outside": 12
+      },
+      "prompt_tokens": 3195,
+      "generated_tokens": 576,
+      "seconds": 13.89
+    },
+    {
+      "unit": "synth_0027/01_level_1",
+      "prompt_sha256": "c0b670b7cce21259",
+      "extraction": {
+        "status": "ok",
+        "detail": null,
+        "rooms": 2,
+        "edges": 1,
+        "dropped_rooms": {},
+        "dropped_edges": {},
+        "dropped_rooms_total": 0,
+        "dropped_edges_total": 0
+      },
+      "raw": "{\"rooms\": [{\"id\": \"room1\", \"label\": \"office\", \"centroid_m\": [10.28, 6.375]}, {\"id\": \"room2\", \"label\": \"storage\", \"centroid_m\": [13.49, 3.3]}], \"edges\": [{\"a\": \"room1\", \"b\": \"room2\", \"type\": \"door\"}]}",
+      "hit_cap": false,
+      "connectivity": {
+        "tp": 0,
+        "fn": 3,
+        "fp_on_reference_negative": 1,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0
+      },
+      "labels": {
+        "scored": 5,
+        "correct": 0,
+        "accuracy": 0.0
+      },
+      "gt_scope": {
+        "negatives": "every adjacent pair the generator did not join",
+        "coverage": "complete: the generator knows every pair",
+        "restricted_to": "storey 1",
+        "rooms_before": 12,
+        "rooms_after": 5,
+        "dropped_straddling": 1,
+        "dropped_outside": 11
+      },
+      "prompt_tokens": 1851,
+      "generated_tokens": 89,
+      "seconds": 2.21
+    },
+    {
+      "unit": "synth_0030/00_level_0",
+      "prompt_sha256": "4b278c42182bd51d",
+      "extraction": {
+        "status": "ok",
+        "detail": null,
+        "rooms": 5,
+        "edges": 2,
+        "dropped_rooms": {},
+        "dropped_edges": {},
+        "dropped_rooms_total": 0,
+        "dropped_edges_total": 0
+      },
+      "raw": "{\"rooms\": [{\"id\": \"20Gxp9xPH6v8iPhKWIpK$X\", \"label\": \"stair\", \"centroid_m\": [4.04, 6.0]}, {\"id\": \"1K_X3fb2X29hxj1TPf0y3d\", \"label\": \"office\", \"centroid_m\": [10.44, 2.58]}, {\"id\": \"2vPXL5n4jAQPnJjZK0p$v1\", \"label\": \"corridor\", \"centroid_m\": [15.4, 2.58]}, {\"id\": \"3pMZmuqQHETwv6YTT4Dk_x\", \"label\": \"lab\", \"centroid_m\": [11.15, 8.58]}, {\"id\": \"0baxg2gBDExgh_devNhcuj\", \"label\": \"office\", \"centroid_m\": [16.1, 8.58]}], \"edges\": [{\"a\": \"1K_X3fb2X29hxj1TPf0y3d\", \"b\": \"2vPXL5n4jAQPnJjZK0p$v1\", \"type\": \"door\"}, {\"a\": \"3pMZmuqQHETwv6YTT4Dk_x\", \"b\": \"0baxg2gBDExgh_devNhcuj\", \"type\": \"door\"}]}",
+      "hit_cap": false,
+      "connectivity": {
+        "tp": 2,
+        "fn": 2,
+        "fp_on_reference_negative": 0,
+        "precision": 1.0,
+        "recall": 0.5,
+        "f1": 0.667
+      },
+      "labels": {
+        "scored": 5,
+        "correct": 5,
+        "accuracy": 1.0
+      },
+      "gt_scope": {
+        "negatives": "every adjacent pair the generator did not join",
+        "coverage": "complete: the generator knows every pair",
+        "restricted_to": "storey 0",
+        "rooms_before": 12,
+        "rooms_after": 5,
+        "dropped_straddling": 1,
+        "dropped_outside": 11
+      },
+      "prompt_tokens": 2327,
+      "generated_tokens": 330,
+      "seconds": 7.93
+    },
+    {
+      "unit": "synth_0032/01_level_1",
+      "prompt_sha256": "74d5b76672092473",
+      "extraction": {
+        "status": "ok",
+        "detail": null,
+        "rooms": 5,
+        "edges": 5,
+        "dropped_rooms": {},
+        "dropped_edges": {},
+        "dropped_rooms_total": 0,
+        "dropped_edges_total": 0
+      },
+      "raw": "{\"rooms\": [{\"id\": \"3CIJ$2ZiT0eR8q6W19EX$N\", \"label\": \"circulation\", \"centroid_m\": [2.26, 3.05]}, {\"id\": \"1ATF12aWj8weAX7tdVf0x$\", \"label\": \"lab\", \"centroid_m\": [7.25, 3.05]}, {\"id\": \"1hJmOApVDCvAgWV83hVLxF\", \"label\": \"bedroom\", \"centroid_m\": [2.0, 9.05]}, {\"id\": \"0WT25mgP93FBhgKXP$zGXO\", \"label\": \"kitchen\", \"centroid_m\": [6.99, 9.05]}, {\"id\": \"03wNh1MNv0ZeEORrKRjZHr\", \"label\": \"meeting\", \"centroid_m\": [13.99, 6.0]}], \"edges\": [{\"a\": \"03wNh1MNv0ZeEORrKRjZHr\", \"b\": \"0WT25mgP93FBhgKXP$zGXO\", \"type\": \"door\"}, {\"a\": \"0WT25mgP93FBhgKXP$zGXO\", \"b\": \"1hJmOApVDCvAgWV83hVLxF\", \"type\": \"open\"}, {\"a\": \"1hJmOApVDCvAgWV83hVLxF\", \"b\": \"3CIJ$2ZiT0eR8q6W19EX$N\", \"type\": \"open\"}, {\"a\": \"1ATF12aWj8weAX7tdVf0x$\", \"b\": \"3CIJ$2ZiT0eR8q6W19EX$N\", \"type\": \"open\"}, {\"a\": \"0WT25mgP93FBhgKXP$zGXO\", \"b\": \"1ATF12aWj8weAX7tdVf0x$\", \"type\": \"open\"}]}",
+      "hit_cap": false,
+      "connectivity": {
+        "tp": 3,
+        "fn": 0,
+        "fp_on_reference_negative": 2,
+        "precision": 0.6,
+        "recall": 1.0,
+        "f1": 0.75
+      },
+      "labels": {
+        "scored": 5,
+        "correct": 4,
+        "accuracy": 0.8
+      },
+      "gt_scope": {
+        "negatives": "every adjacent pair the generator did not join",
+        "coverage": "complete: the generator knows every pair",
+        "restricted_to": "storey 1",
+        "rooms_before": 12,
+        "rooms_after": 5,
+        "dropped_straddling": 1,
+        "dropped_outside": 10
+      },
+      "prompt_tokens": 2210,
+      "generated_tokens": 481,
+      "seconds": 11.49
+    },
+    {
+      "unit": "synth_0035/00_level_0",
+      "prompt_sha256": "d4eb5736b7f33ba0",
+      "extraction": {
+        "status": "ok",
+        "detail": null,
+        "rooms": 8,
+        "edges": 27,
+        "dropped_rooms": {},
+        "dropped_edges": {},
+        "dropped_rooms_total": 0,
+        "dropped_edges_total": 0
+      },
+      "raw": "{\"rooms\": [{\"id\": \"2e5y9qk6DBs8BsQMTB4EUr\", \"label\": \"stair\", \"centroid_m\": [3.08, 3.53]}, {\"id\": \"08Hxu6E3X8QvJEKQS7rg3Z\", \"label\": \"kitchen\", \"centroid_m\": [8.12, 3.53]}, {\"id\": \"3I5zLtxZLDyOADPReCcpIl\", \"label\": \"office\", \"centroid_m\": [2.82, 9.53]}, {\"id\": \"3dB9hDO6X7XBwvL7JIjmYl\", \"label\": \"corridor\", \"centroid_m\": [7.86, 9.53]}, {\"id\": \"2rLhTDOKTA5xMR87V376cA\", \"label\": \"office\", \"centroid_m\": [11.94, 3.62]}, {\"id\": \"1rc70vly5EAfT62zORBDb_\", \"label\": \"meeting room\", \"centroid_m\": [15.89, 3.62]}, {\"id\": \"3DuGYVZlrBJPghAcSpzGCO\", \"label\": \"bathroom\", \"centroid_m\": [12.14, 9.62]}, {\"id\": \"1e6y9nr1L1$vC491xTvAKR\", \"label\": \"kitchen\", \"centroid_m\": [16.1, 9.62]}], \"edges\": [{\"a\": \"2e5y9qk6DBs8BsQMTB4EUr\", \"b\": \"08Hxu6E3X8QvJEKQS7rg3Z\", \"type\": \"door\"}, {\"a\": \"2e5y9qk6DBs8BsQMTB4EUr\", \"b\": \"3I5zLtxZLDyOADPReCcpIl\", \"type\": \"door\"}, {\"a\": \"2e5y9qk6DBs8BsQMTB4EUr\", \"b\": \"3dB9hDO6X7XBwvL7JIjmYl\", \"type\": \"door\"}, {\"a\": \"2e5y9qk6DBs8BsQMTB4EUr\", \"b\": \"2rLhTDOKTA5xMR87V376cA\", \"type\": \"door\"}, {\"a\": \"2e5y9qk6DBs8BsQMTB4EUr\", \"b\": \"1rc70vly5EAfT62zORBDb_\", \"type\": \"door\"}, {\"a\": \"2e5y9qk6DBs8BsQMTB4EUr\", \"b\": \"3DuGYVZlrBJPghAcSpzGCO\", \"type\": \"door\"}, {\"a\": \"2e5y9qk6DBs8BsQMTB4EUr\", \"b\": \"1e6y9nr1L1$vC491xTvAKR\", \"type\": \"door\"}, {\"a\": \"08Hxu6E3X8QvJEKQS7rg3Z\", \"b\": \"3dB9hDO6X7XBwvL7JIjmYl\", \"type\": \"open\"}, {\"a\": \"08Hxu6E3X8QvJEKQS7rg3Z\", \"b\": \"2rLhTDOKTA5xMR87V376cA\", \"type\": \"door\"}, {\"a\": \"08Hxu6E3X8QvJEKQS7rg3Z\", \"b\": \"1rc70vly5EAfT62zORBDb_\", \"type\": \"door\"}, {\"a\": \"08Hxu6E3X8QvJEKQS7rg3Z\", \"b\": \"3DuGYVZlrBJPghAcSpzGCO\", \"type\": \"door\"}, {\"a\": \"08Hxu6E3X8QvJEKQS7rg3Z\", \"b\": \"1e6y9nr1L1$vC491xTvAKR\", \"type\": \"door\"}, {\"a\": \"3I5zLtxZLDyOADPReCcpIl\", \"b\": \"3dB9hDO6X7XBwvL7JIjmYl\", \"type\": \"open\"}, {\"a\": \"3I5zLtxZLDyOADPReCcpIl\", \"b\": \"2rLhTDOKTA5xMR87V376cA\", \"type\": \"door\"}, {\"a\": \"3I5zLtxZLDyOADPReCcpIl\", \"b\": \"1rc70vly5EAfT62zORBDb_\", \"type\": \"door\"}, {\"a\": \"3I5zLtxZLDyOADPReCcpIl\", \"b\": \"3DuGYVZlrBJPghAcSpzGCO\", \"type\": \"door\"}, {\"a\": \"3I5zLtxZLDyOADPReCcpIl\", \"b\": \"1e6y9nr1L1$vC491xTvAKR\", \"type\": \"door\"}, {\"a\": \"3dB9hDO6X7XBwvL7JIjmYl\", \"b\": \"2rLhTDOKTA5xMR87V376cA\", \"type\": \"open\"}, {\"a\": \"3dB9hDO6X7XBwvL7JIjmYl\", \"b\": \"1rc70vly5EAfT62zORBDb_\", \"type\": \"door\"}, {\"a\": \"3dB9hDO6X7XBwvL7JIjmYl\", \"b\": \"3DuGYVZlrBJPghAcSpzGCO\", \"type\": \"door\"}, {\"a\": \"3dB9hDO6X7XBwvL7JIjmYl\", \"b\": \"1e6y9nr1L1$vC491xTvAKR\", \"type\": \"door\"}, {\"a\": \"2rLhTDOKTA5xMR87V376cA\", \"b\": \"1rc70vly5EAfT62zORBDb_\", \"type\": \"open\"}, {\"a\": \"2rLhTDOKTA5xMR87V376cA\", \"b\": \"3DuGYVZlrBJPghAcSpzGCO\", \"type\": \"door\"}, {\"a\": \"2rLhTDOKTA5xMR87V376cA\", \"b\": \"1e6y9nr1L1$vC491xTvAKR\", \"type\": \"door\"}, {\"a\": \"1rc70vly5EAfT62zORBDb_\", \"b\": \"3DuGYVZlrBJPghAcSpzGCO\", \"type\": \"open\"}, {\"a\": \"1rc70vly5EAfT62zORBDb_\", \"b\": \"1e6y9nr1L1$vC491xTvAKR\", \"type\": \"door\"}, {\"a\": \"3DuGYVZlrBJPghAcSpzGCO\", \"b\": \"1e6y9nr1L1$vC491xTvAKR\", \"type\": \"open\"}]}",
+      "hit_cap": false,
+      "connectivity": {
+        "tp": 6,
+        "fn": 0,
+        "fp_on_reference_negative": 4,
+        "precision": 0.6,
+        "recall": 1.0,
+        "f1": 0.75
+      },
+      "labels": {
+        "scored": 8,
+        "correct": 8,
+        "accuracy": 1.0
+      },
+      "gt_scope": {
+        "negatives": "every adjacent pair the generator did not join",
+        "coverage": "complete: the generator knows every pair",
+        "restricted_to": "storey 0",
+        "rooms_before": 15,
+        "rooms_after": 8,
+        "dropped_straddling": 1,
+        "dropped_outside": 9
+      },
+      "prompt_tokens": 3659,
+      "generated_tokens": 1704,
+      "seconds": 41.12
+    },
+    {
+      "unit": "synth_0037/01_level_1",
+      "prompt_sha256": "4007b2fff7c0da39",
+      "extraction": {
+        "status": "ok",
+        "detail": null,
+        "rooms": 6,
+        "edges": 5,
+        "dropped_rooms": {},
+        "dropped_edges": {},
+        "dropped_rooms_total": 0,
+        "dropped_edges_total": 0
+      },
+      "raw": "{\"rooms\": [{\"id\": \"1vNHKSjcvFShVWSC_cpLqP\", \"label\": \"stair\", \"centroid_m\": [4.12, 3.46]}, {\"id\": \"17Ni4FqVb4IgXOkEe8zpP9\", \"label\": \"bedroom\", \"centroid_m\": [4.12, 9.46]}, {\"id\": \"2xe8jwbj54t9RvqWO2Fkvb\", \"label\": \"bedroom\", \"centroid_m\": [10.36, 3.34]}, {\"id\": \"0CbM3jN690_wh2mtaLi6wc\", \"label\": \"lab\", \"centroid_m\": [15.24, 3.34]}, {\"id\": \"1tcSraG7L1VvxndOIh3UXn\", \"label\": \"bathroom\", \"centroid_m\": [10.45, 9.34]}, {\"id\": \"3oKrvs4oz87QxznoQvNP_Y\", \"label\": \"store\", \"centroid_m\": [15.33, 9.34]}], \"edges\": [{\"a\": \"1vNHKSjcvFShVWSC_cpLqP\", \"b\": \"17Ni4FqVb4IgXOkEe8zpP9\", \"type\": \"door\"}, {\"a\": \"1vNHKSjcvFShVWSC_cpLqP\", \"b\": \"2xe8jwbj54t9RvqWO2Fkvb\", \"type\": \"door\"}, {\"a\": \"17Ni4FqVb4IgXOkEe8zpP9\", \"b\": \"1tcSraG7L1VvxndOIh3UXn\", \"type\": \"open\"}, {\"a\": \"2xe8jwbj54t9RvqWO2Fkvb\", \"b\": \"0CbM3jN690_wh2mtaLi6wc\", \"type\": \"open\"}, {\"a\": \"1tcSraG7L1VvxndOIh3UXn\", \"b\": \"3oKrvs4oz87QxznoQvNP_Y\", \"type\": \"open\"}]}",
+      "hit_cap": false,
+      "connectivity": {
+        "tp": 3,
+        "fn": 1,
+        "fp_on_reference_negative": 2,
+        "precision": 0.6,
+        "recall": 0.75,
+        "f1": 0.667
+      },
+      "labels": {
+        "scored": 6,
+        "correct": 6,
+        "accuracy": 1.0
+      },
+      "gt_scope": {
+        "negatives": "every adjacent pair the generator did not join",
+        "coverage": "complete: the generator knows every pair",
+        "restricted_to": "storey 1",
+        "rooms_before": 14,
+        "rooms_after": 6,
+        "dropped_straddling": 1,
+        "dropped_outside": 11
+      },
+      "prompt_tokens": 2675,
+      "generated_tokens": 524,
+      "seconds": 12.57
+    },
+    {
+      "unit": "synth_0040/00_level_0",
+      "prompt_sha256": "0fe110abd4591c05",
+      "extraction": {
+        "status": "ok",
+        "detail": null,
+        "rooms": 5,
+        "edges": 4,
+        "dropped_rooms": {},
+        "dropped_edges": {},
+        "dropped_rooms_total": 0,
+        "dropped_edges_total": 0
+      },
+      "raw": "{\"rooms\": [{\"id\": \"0PV0qAVyj01xtWaSZEnDF6\", \"label\": \"stair\", \"centroid_m\": [5.32, 6.00]}, {\"id\": \"2LG2_aTyz5MuJWsnJW_PWk\", \"label\": \"office\", \"centroid_m\": [12.15, 3.67]}, {\"id\": \"2Fw7$f$o56N9TjkTyTmQx1\", \"label\": \"corridor\", \"centroid_m\": [15.83, 3.67]}, {\"id\": \"1uOav5GT9EiQs19vMBt1Nb\", \"label\": \"store\", \"centroid_m\": [12.81, 9.66]}, {\"id\": \"1KoWNGIzTEZQ6FyWGLDppp\", \"label\": \"office\", \"centroid_m\": [16.49, 9.66]}], \"edges\": [{\"a\": \"2LG2_aTyz5MuJWsnJW_PWk\", \"b\": \"2Fw7$f$o56N9TjkTyTmQx1\", \"type\": \"door\"}, {\"a\": \"2Fw7$f$o56N9TjkTyTmQx1\", \"b\": \"1uOav5GT9EiQs19vMBt1Nb\", \"type\": \"open\"}, {\"a\": \"2Fw7$f$o56N9TjkTyTmQx1\", \"b\": \"1KoWNGIzTEZQ6FyWGLDppp\", \"type\": \"door\"}, {\"a\": \"1uOav5GT9EiQs19vMBt1Nb\", \"b\": \"1KoWNGIzTEZQ6FyWGLDppp\", \"type\": \"open\"}]}",
+      "hit_cap": false,
+      "connectivity": {
+        "tp": 2,
+        "fn": 2,
+        "fp_on_reference_negative": 2,
+        "precision": 0.5,
+        "recall": 0.5,
+        "f1": 0.5
+      },
+      "labels": {
+        "scored": 5,
+        "correct": 5,
+        "accuracy": 1.0
+      },
+      "gt_scope": {
+        "negatives": "every adjacent pair the generator did not join",
+        "coverage": "complete: the generator knows every pair",
+        "restricted_to": "storey 0",
+        "rooms_before": 13,
+        "rooms_after": 5,
+        "dropped_straddling": 1,
+        "dropped_outside": 11
+      },
+      "prompt_tokens": 2546,
+      "generated_tokens": 439,
+      "seconds": 10.57
+    },
+    {
+      "unit": "synth_0042/01_level_1",
+      "prompt_sha256": "72e81db61195c4eb",
+      "extraction": {
+        "status": "ok",
+        "detail": null,
+        "rooms": 5,
+        "edges": 5,
+        "dropped_rooms": {},
+        "dropped_edges": {},
+        "dropped_rooms_total": 0,
+        "dropped_edges_total": 0
+      },
+      "raw": "{\"rooms\": [{\"id\": \"0ot$au1Mj3Ze6LsLFJKpD\", \"label\": \"circulation\", \"centroid_m\": [3.99, 6.00]}, {\"id\": \"3LF1pGmvL3JOM8awqfw2iK\", \"label\": \"reception\", \"centroid_m\": [9.98, 2.46]}, {\"id\": \"1yKDV$kC93BQD$ozWR7ZzP\", \"label\": \"lab\", \"centroid_m\": [14.99, 2.46]}, {\"id\": \"3SHgUQ_EzCFx26awdN$7nI\", \"label\": \"meeting\", \"centroid_m\": [10.64, 8.46]}, {\"id\": \"0nd6nkxRz8kuxA8cJYV36K\", \"label\": \"office\", \"centroid_m\": [15.65, 8.46]}], \"edges\": [{\"a\": \"0ot$au1Mj3Ze6LsLFJKpD\", \"b\": \"3LF1pGmvL3JOM8awqfw2iK\", \"type\": \"door\"}, {\"a\": \"0ot$au1Mj3Ze6LsLFJKpD\", \"b\": \"1yKDV$kC93BQD$ozWR7ZzP\", \"type\": \"door\"}, {\"a\": \"0ot$au1Mj3Ze6LsLFJKpD\", \"b\": \"3SHgUQ_EzCFx26awdN$7nI\", \"type\": \"door\"}, {\"a\": \"0ot$au1Mj3Ze6LsLFJKpD\", \"b\": \"0nd6nkxRz8kuxA8cJYV36K\", \"type\": \"door\"}, {\"a\": \"3SHgUQ_EzCFx26awdN$7nI\", \"b\": \"0nd6nkxRz8kuxA8cJYV36K\", \"type\": \"open\"}]}",
+      "hit_cap": false,
+      "connectivity": {
+        "tp": 2,
+        "fn": 2,
+        "fp_on_reference_negative": 1,
+        "precision": 0.667,
+        "recall": 0.5,
+        "f1": 0.571
+      },
+      "labels": {
+        "scored": 5,
+        "correct": 4,
+        "accuracy": 0.8
+      },
+      "gt_scope": {
+        "negatives": "every adjacent pair the generator did not join",
+        "coverage": "complete: the generator knows every pair",
+        "restricted_to": "storey 1",
+        "rooms_before": 12,
+        "rooms_after": 5,
+        "dropped_straddling": 1,
+        "dropped_outside": 9
+      },
+      "prompt_tokens": 2553,
+      "generated_tokens": 490,
+      "seconds": 11.73
+    },
+    {
+      "unit": "synth_0045/00_level_0",
+      "prompt_sha256": "4dbf1f9de568b598",
+      "extraction": {
+        "status": "ok",
+        "detail": null,
+        "rooms": 4,
+        "edges": 4,
+        "dropped_rooms": {},
+        "dropped_edges": {},
+        "dropped_rooms_total": 0,
+        "dropped_edges_total": 0
+      },
+      "raw": "{\"rooms\": [{\"id\": \"Stair\", \"label\": \"circulation\", \"centroid_m\": [4.47, 6.00]}, {\"id\": \"Utility\", \"label\": \"storage\", \"centroid_m\": [13.47, 2.38]}, {\"id\": \"Office\", \"label\": \"office\", \"centroid_m\": [10.80, 8.38]}, {\"id\": \"Reception\", \"label\": \"circulation\", \"centroid_m\": [15.32, 8.38]}], \"edges\": [{\"a\": \"Stair\", \"b\": \"Office\", \"type\": \"open\"}, {\"a\": \"Stair\", \"b\": \"Reception\", \"type\": \"open\"}, {\"a\": \"Utility\", \"b\": \"Office\", \"type\": \"door\"}, {\"a\": \"Utility\", \"b\": \"Reception\", \"type\": \"door\"}]}",
+      "hit_cap": false,
+      "connectivity": {
+        "tp": 2,
+        "fn": 1,
+        "fp_on_reference_negative": 1,
+        "precision": 0.667,
+        "recall": 0.667,
+        "f1": 0.667
+      },
+      "labels": {
+        "scored": 4,
+        "correct": 2,
+        "accuracy": 0.5
+      },
+      "gt_scope": {
+        "negatives": "every adjacent pair the generator did not join",
+        "coverage": "complete: the generator knows every pair",
+        "restricted_to": "storey 0",
+        "rooms_before": 9,
+        "rooms_after": 4,
+        "dropped_straddling": 1,
+        "dropped_outside": 7
+      },
+      "prompt_tokens": 2073,
+      "generated_tokens": 204,
+      "seconds": 4.94
+    },
+    {
+      "unit": "synth_0047/01_level_1",
+      "prompt_sha256": "d84c6f940f489268",
+      "extraction": {
+        "status": "ok",
+        "detail": null,
+        "rooms": 5,
+        "edges": 5,
+        "dropped_rooms": {},
+        "dropped_edges": {},
+        "dropped_rooms_total": 0,
+        "dropped_edges_total": 0
+      },
+      "raw": "{\"rooms\": [{\"id\": \"0Ardcs1ef8998RZtr9hvGE\", \"label\": \"circulation\", \"centroid_m\": [1.47, 6.98]}, {\"id\": \"2k7EuziBzDaPEyHy8igMdS\", \"label\": \"circulation\", \"centroid_m\": [2.04, 3.49]}, {\"id\": \"3ZvcPekNXFwxeCG2oyGvxg\", \"label\": \"circulation\", \"centroid_m\": [10.13, 9.54]}, {\"id\": \"0ywikHLBL6gQASND$vEZeB\", \"label\": \"circulation\", \"centroid_m\": [16.44, 6.12]}, {\"id\": \"0yrFMPzmf4WvzIJad$j$kM\", \"label\": \"circulation\", \"centroid_m\": [14.35, 2.56]}], \"edges\": [{\"a\": \"0Ardcs1ef8998RZtr9hvGE\", \"b\": \"2k7EuziBzDaPEyHy8igMdS\", \"type\": \"door\"}, {\"a\": \"2k7EuziBzDaPEyHy8igMdS\", \"b\": \"3ZvcPekNXFwxeCG2oyGvxg\", \"type\": \"open\"}, {\"a\": \"3ZvcPekNXFwxeCG2oyGvxg\", \"b\": \"0ywikHLBL6gQASND$vEZeB\", \"type\": \"open\"}, {\"a\": \"0ywikHLBL6gQASND$vEZeB\", \"b\": \"0yrFMPzmf4WvzIJad$j$kM\", \"type\": \"door\"}, {\"a\": \"0yrFMPzmf4WvzIJad$j$kM\", \"b\": \"0Ardcs1ef8998RZtr9hvGE\", \"type\": \"door\"}]}",
+      "hit_cap": false,
+      "connectivity": {
+        "tp": 1,
+        "fn": 5,
+        "fp_on_reference_negative": 0,
+        "precision": 1.0,
+        "recall": 0.167,
+        "f1": 0.286
+      },
+      "labels": {
+        "scored": 8,
+        "correct": 1,
+        "accuracy": 0.25
+      },
+      "gt_scope": {
+        "negatives": "every adjacent pair the generator did not join",
+        "coverage": "complete: the generator knows every pair",
+        "restricted_to": "storey 1",
+        "rooms_before": 14,
+        "rooms_after": 8,
+        "dropped_straddling": 1,
+        "dropped_outside": 8
+      },
+      "prompt_tokens": 2746,
+      "generated_tokens": 460,
+      "seconds": 11.07
+    },
+    {
+      "unit": "synth_0050/00_level_0",
+      "prompt_sha256": "94cac38e24861846",
+      "extraction": {
+        "status": "ok",
+        "detail": null,
+        "rooms": 4,
+        "edges": 5,
+        "dropped_rooms": {
+          "duplicate_id": 2
+        },
+        "dropped_edges": {
+          "self_loop": 1
+        },
+        "dropped_rooms_total": 2,
+        "dropped_edges_total": 1
+      },
+      "raw": "{\"rooms\": [{\"id\": \"Stair\", \"label\": \"stair\", \"centroid_m\": [2.45, 2.63]}, {\"id\": \"Kitchen\", \"label\": \"kitchen\", \"centroid_m\": [6.44, 2.63]}, {\"id\": \"Lab\", \"label\": \"lab\", \"centroid_m\": [3.99, 8.63]}, {\"id\": \"Lab\", \"label\": \"lab\", \"centroid_m\": [12.99, 3.25]}, {\"id\": \"Meeting Room\", \"label\": \"meeting\", \"centroid_m\": [10.88, 9.25]}, {\"id\": \"Kitchen\", \"label\": \"kitchen\", \"centroid_m\": [15.89, 9.25]}], \"edges\": [{\"a\": \"Stair\", \"b\": \"Kitchen\", \"type\": \"door\"}, {\"a\": \"Stair\", \"b\": \"Lab\", \"type\": \"open\"}, {\"a\": \"Kitchen\", \"b\": \"Lab\", \"type\": \"door\"}, {\"a\": \"Kitchen\", \"b\": \"Meeting Room\", \"type\": \"door\"}, {\"a\": \"Kitchen\", \"b\": \"Kitchen\", \"type\": \"open\"}, {\"a\": \"Lab\", \"b\": \"Meeting Room\", \"type\": \"door\"}]}",
+      "hit_cap": false,
+      "connectivity": {
+        "tp": 1,
+        "fn": 4,
+        "fp_on_reference_negative": 3,
+        "precision": 0.25,
+        "recall": 0.2,
+        "f1": 0.222
+      },
+      "labels": {
+        "scored": 6,
+        "correct": 4,
+        "accuracy": 1.0
+      },
+      "gt_scope": {
+        "negatives": "every adjacent pair the generator did not join",
+        "coverage": "complete: the generator knows every pair",
+        "restricted_to": "storey 0",
+        "rooms_before": 14,
+        "rooms_after": 6,
+        "dropped_straddling": 1,
+        "dropped_outside": 12
+      },
+      "prompt_tokens": 2887,
+      "generated_tokens": 297,
+      "seconds": 7.22
+    },
+    {
+      "unit": "synth_0052/01_level_1",
+      "prompt_sha256": "82eafdf0c985ae49",
+      "extraction": {
+        "status": "ok",
+        "detail": null,
+        "rooms": 3,
+        "edges": 3,
+        "dropped_rooms": {},
+        "dropped_edges": {},
+        "dropped_rooms_total": 0,
+        "dropped_edges_total": 0
+      },
+      "raw": "{\"rooms\": [{\"id\": \"A\", \"label\": \"office\", \"centroid_m\": [9.13, 4.73]}, {\"id\": \"B\", \"label\": \"storage\", \"centroid_m\": [10.93, 4.54]}, {\"id\": \"C\", \"label\": \"meeting\", \"centroid_m\": [13.63, 11.9]}], \"edges\": [{\"a\": \"A\", \"b\": \"B\", \"type\": \"door\"}, {\"a\": \"A\", \"b\": \"C\", \"type\": \"door\"}, {\"a\": \"B\", \"b\": \"C\", \"type\": \"door\"}]}",
+      "hit_cap": false,
+      "connectivity": {
+        "tp": 0,
+        "fn": 5,
+        "fp_on_reference_negative": 2,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0
+      },
+      "labels": {
+        "scored": 7,
+        "correct": 1,
+        "accuracy": 0.3333333333333333
+      },
+      "gt_scope": {
+        "negatives": "every adjacent pair the generator did not join",
+        "coverage": "complete: the generator knows every pair",
+        "restricted_to": "storey 1",
+        "rooms_before": 15,
+        "rooms_after": 7,
+        "dropped_straddling": 1,
+        "dropped_outside": 10
+      },
+      "prompt_tokens": 2381,
+      "generated_tokens": 149,
+      "seconds": 3.67
+    },
+    {
+      "unit": "synth_0055/00_level_0",
+      "prompt_sha256": "90f1e0bd204f4171",
+      "extraction": {
+        "status": "ok",
+        "detail": null,
+        "rooms": 3,
+        "edges": 3,
+        "dropped_rooms": {},
+        "dropped_edges": {},
+        "dropped_rooms_total": 0,
+        "dropped_edges_total": 0
+      },
+      "raw": "{\"rooms\": [{\"id\": \"1\", \"label\": \"office\", \"centroid_m\": [6.05, 6.64]}, {\"id\": \"2\", \"label\": \"storage\", \"centroid_m\": [2.54, 6.69]}, {\"id\": \"3\", \"label\": \"meeting\", \"centroid_m\": [8.53, 6.64]}], \"edges\": [{\"a\": \"1\", \"b\": \"2\", \"type\": \"door\"}, {\"a\": \"1\", \"b\": \"3\", \"type\": \"door\"}, {\"a\": \"2\", \"b\": \"3\", \"type\": \"open\"}]}",
+      "hit_cap": false,
+      "connectivity": {
+        "tp": 1,
+        "fn": 5,
+        "fp_on_reference_negative": 1,
+        "precision": 0.5,
+        "recall": 0.167,
+        "f1": 0.25
+      },
+      "labels": {
+        "scored": 8,
+        "correct": 0,
+        "accuracy": 0.0
+      },
+      "gt_scope": {
+        "negatives": "every adjacent pair the generator did not join",
+        "coverage": "complete: the generator knows every pair",
+        "restricted_to": "storey 0",
+        "rooms_before": 16,
+        "rooms_after": 8,
+        "dropped_straddling": 1,
+        "dropped_outside": 10
+      },
+      "prompt_tokens": 2810,
+      "generated_tokens": 147,
+      "seconds": 3.67
+    },
+    {
+      "unit": "synth_0057/01_level_1",
+      "prompt_sha256": "03eca18bb87a5926",
+      "extraction": {
+        "status": "ok",
+        "detail": null,
+        "rooms": 8,
+        "edges": 7,
+        "dropped_rooms": {},
+        "dropped_edges": {},
+        "dropped_rooms_total": 0,
+        "dropped_edges_total": 0
+      },
+      "raw": "{\"rooms\": [{\"id\": \"3Xl0Apcfn2rAYoOAsVWCwp\", \"label\": \"lab\", \"centroid_m\": [1.79, 2.5]}, {\"id\": \"18PqKJb6z1rPWXPkt7C3ve\", \"label\": \"living\", \"centroid_m\": [5.52, 2.5]}, {\"id\": \"1_jW4RU05Dfw_9ly$K1m_p\", \"label\": \"bathroom\", \"centroid_m\": [1.94, 8.5]}, {\"id\": \"0vNpVCklD06u_oXWKAsEj1\", \"label\": \"stair\", \"centroid_m\": [5.66, 8.5]}, {\"id\": \"0Rt$xQMkj6kwrVZ381lOxA\", \"label\": \"utility\", \"centroid_m\": [10.69, 3.03]}, {\"id\": \"2PI1yRzQH4_Q6kkLV4FQdE\", \"label\": \"bathroom\", \"centroid_m\": [15.97, 3.03]}, {\"id\": \"078OGRKsbFj99Mzmg$kb6W\", \"label\": \"bathroom\", \"centroid_m\": [9.95, 9.03]}, {\"id\": \"1e6gJIj5f9YO88DSdcr87m\", \"label\": \"office\", \"centroid_m\": [15.23, 9.03]}], \"edges\": [{\"a\": \"3Xl0Apcfn2rAYoOAsVWCwp\", \"b\": \"18PqKJb6z1rPWXPkt7C3ve\", \"type\": \"door\"}, {\"a\": \"1_jW4RU05Dfw_9ly$K1m_p\", \"b\": \"0vNpVCklD06u_oXWKAsEj1\", \"type\": \"open\"}, {\"a\": \"1_jW4RU05Dfw_9ly$K1m_p\", \"b\": \"078OGRKsbFj99Mzmg$kb6W\", \"type\": \"open\"}, {\"a\": \"0vNpVCklD06u_oXWKAsEj1\", \"b\": \"1e6gJIj5f9YO88DSdcr87m\", \"type\": \"open\"}, {\"a\": \"0Rt$xQMkj6kwrVZ381lOxA\", \"b\": \"2PI1yRzQH4_Q6kkLV4FQdE\", \"type\": \"open\"}, {\"a\": \"078OGRKsbFj99Mzmg$kb6W\", \"b\": \"1e6gJIj5f9YO88DSdcr87m\", \"type\": \"open\"}, {\"a\": \"1e6gJIj5f9YO88DSdcr87m\", \"b\": \"2PI1yRzQH4_Q6kkLV4FQdE\", \"type\": \"open\"}]}",
+      "hit_cap": false,
+      "connectivity": {
+        "tp": 3,
+        "fn": 4,
+        "fp_on_reference_negative": 2,
+        "precision": 0.6,
+        "recall": 0.429,
+        "f1": 0.5
+      },
+      "labels": {
+        "scored": 8,
+        "correct": 8,
+        "accuracy": 1.0
+      },
+      "gt_scope": {
+        "negatives": "every adjacent pair the generator did not join",
+        "coverage": "complete: the generator knows every pair",
+        "restricted_to": "storey 1",
+        "rooms_before": 13,
+        "rooms_after": 8,
+        "dropped_straddling": 1,
+        "dropped_outside": 6
+      },
+      "prompt_tokens": 3767,
+      "generated_tokens": 724,
+      "seconds": 17.53
+    },
+    {
+      "unit": "synth_0060/00_level_0",
+      "prompt_sha256": "41456829e4407246",
+      "extraction": {
+        "status": "ok",
+        "detail": null,
+        "rooms": 8,
+        "edges": 7,
+        "dropped_rooms": {},
+        "dropped_edges": {},
+        "dropped_rooms_total": 0,
+        "dropped_edges_total": 0
+      },
+      "raw": "{\"rooms\": [{\"id\": \"2KWNX6blf9$wS7MmMVVDWO\", \"label\": \"stair\", \"centroid_m\": [2.15, 3.44]}, {\"id\": \"3g7fcdrRf2HPdFM2941l2V\", \"label\": \"living\", \"centroid_m\": [6.81, 3.44]}, {\"id\": \"3hsuf7ErD8rvGsXwQKj7sP\", \"label\": \"storage\", \"centroid_m\": [2.66, 9.44]}, {\"id\": \"2tkfkucyz15wp1hMZ_BVJ3\", \"label\": \"storage\", \"centroid_m\": [7.33, 9.44]}, {\"id\": \"13CH8gaQz4Sx5sfFZuuzHb\", \"label\": \"bedroom\", \"centroid_m\": [11.39, 3.24]}, {\"id\": \"3e4kgjN$HAqeXDJsXDvlbk\", \"label\": \"reception\", \"centroid_m\": [15.72, 3.24]}, {\"id\": \"01coYsBov8UwqPDa2Rv6kf\", \"label\": \"utility\", \"centroid_m\": [11.81, 9.24]}, {\"id\": \"1SspUb5NXArfKdJGPEd0aM\", \"label\": \"utility\", \"centroid_m\": [16.14, 9.24]}], \"edges\": [{\"a\": \"2KWNX6blf9$wS7MmMVVDWO\", \"b\": \"3g7fcdrRf2HPdFM2941l2V\", \"type\": \"door\"}, {\"a\": \"3g7fcdrRf2HPdFM2941l2V\", \"b\": \"13CH8gaQz4Sx5sfFZuuzHb\", \"type\": \"open\"}, {\"a\": \"3g7fcdrRf2HPdFM2941l2V\", \"b\": \"3e4kgjN$HAqeXDJsXDvlbk\", \"type\": \"open\"}, {\"a\": \"3hsuf7ErD8rvGsXwQKj7sP\", \"b\": \"2tkfkucyz15wp1hMZ_BVJ3\", \"type\": \"open\"}, {\"a\": \"13CH8gaQz4Sx5sfFZuuzHb\", \"b\": \"01coYsBov8UwqPDa2Rv6kf\", \"type\": \"open\"}, {\"a\": \"13CH8gaQz4Sx5sfFZuuzHb\", \"b\": \"1SspUb5NXArfKdJGPEd0aM\", \"type\": \"open\"}, {\"a\": \"01coYsBov8UwqPDa2Rv6kf\", \"b\": \"1SspUb5NXArfKdJGPEd0aM\", \"type\": \"open\"}]}",
+      "hit_cap": false,
+      "connectivity": {
+        "tp": 3,
+        "fn": 3,
+        "fp_on_reference_negative": 2,
+        "precision": 0.6,
+        "recall": 0.5,
+        "f1": 0.545
+      },
+      "labels": {
+        "scored": 8,
+        "correct": 8,
+        "accuracy": 1.0
+      },
+      "gt_scope": {
+        "negatives": "every adjacent pair the generator did not join",
+        "coverage": "complete: the generator knows every pair",
+        "restricted_to": "storey 0",
+        "rooms_before": 15,
+        "rooms_after": 8,
+        "dropped_straddling": 1,
+        "dropped_outside": 10
+      },
+      "prompt_tokens": 3546,
+      "generated_tokens": 719,
+      "seconds": 17.38
+    },
+    {
+      "unit": "synth_0062/01_level_1",
+      "prompt_sha256": "815ec478304817d5",
+      "extraction": {
+        "status": "ok",
+        "detail": null,
+        "rooms": 5,
+        "edges": 4,
+        "dropped_rooms": {},
+        "dropped_edges": {},
+        "dropped_rooms_total": 0,
+        "dropped_edges_total": 0
+      },
+      "raw": "{\"rooms\": [{\"id\": \"0DvDTbNy52SvYL8YpFbJHT\", \"label\": \"stair\", \"centroid_m\": [4.71, 6.00]}, {\"id\": \"2yKBkL4eX0IPM161Ffd_5j\", \"label\": \"bedroom\", \"centroid_m\": [11.20, 2.57]}, {\"id\": \"21A2$v6lL4KhNaAk7hDfbp\", \"label\": \"lab\", \"centroid_m\": [15.48, 2.57]}, {\"id\": \"1W5tjz2lj1zQNfIZ53_lAV\", \"label\": \"kitchen\", \"centroid_m\": [11.52, 8.57]}, {\"id\": \"1ZVX22AIjAseqT2$g109JV\", \"label\": \"reception\", \"centroid_m\": [15.80, 8.57]}], \"edges\": [{\"a\": \"2yKBkL4eX0IPM161Ffd_5j\", \"b\": \"0DvDTbNy52SvYL8YpFbJHT\", \"type\": \"door\"}, {\"a\": \"21A2$v6lL4KhNaAk7hDfbp\", \"b\": \"0DvDTbNy52SvYL8YpFbJHT\", \"type\": \"door\"}, {\"a\": \"1W5tjz2lj1zQNfIZ53_lAV\", \"b\": \"0DvDTbNy52SvYL8YpFbJHT\", \"type\": \"door\"}, {\"a\": \"1ZVX22AIjAseqT2$g109JV\", \"b\": \"0DvDTbNy52SvYL8YpFbJHT\", \"type\": \"door\"}]}",
+      "hit_cap": false,
+      "connectivity": {
+        "tp": 1,
+        "fn": 2,
+        "fp_on_reference_negative": 1,
+        "precision": 0.5,
+        "recall": 0.333,
+        "f1": 0.4
+      },
+      "labels": {
+        "scored": 5,
+        "correct": 5,
+        "accuracy": 1.0
+      },
+      "gt_scope": {
+        "negatives": "every adjacent pair the generator did not join",
+        "coverage": "complete: the generator knows every pair",
+        "restricted_to": "storey 1",
+        "rooms_before": 13,
+        "rooms_after": 5,
+        "dropped_straddling": 1,
+        "dropped_outside": 11
+      },
+      "prompt_tokens": 2351,
+      "generated_tokens": 448,
+      "seconds": 10.78
+    },
+    {
+      "unit": "synth_0065/00_level_0",
+      "prompt_sha256": "1f4e67a8cb3dcce6",
+      "extraction": {
+        "status": "ok",
+        "detail": null,
+        "rooms": 8,
+        "edges": 15,
+        "dropped_rooms": {},
+        "dropped_edges": {},
+        "dropped_rooms_total": 0,
+        "dropped_edges_total": 0
+      },
+      "raw": "{\"rooms\": [{\"id\": \"20jmiz8f507egf7tNUHCHm\", \"label\": \"stair\", \"centroid_m\": [2.07, 2.92]}, {\"id\": \"0q$LI7gq16$fPWhGlFREJa\", \"label\": \"bedroom\", \"centroid_m\": [6.11, 2.92]}, {\"id\": \"0V8A3ZydLFTPHgp46G9NXP\", \"label\": \"meeting\", \"centroid_m\": [2.16, 8.92]}, {\"id\": \"1tS0lzmtnCmwr3a0Cpon4E\", \"label\": \"store\", \"centroid_m\": [6.2, 8.92]}, {\"id\": \"1LYyY8HvH4rhXUisvBEt7L\", \"label\": \"corridor\", \"centroid_m\": [10.28, 2.38]}, {\"id\": \"1ncA0eTiH24v9i07$0M$V$\", \"label\": \"store\", \"centroid_m\": [15.24, 2.38]}, {\"id\": \"39iqYYudf2rOuOzpi7tgPI\", \"label\": \"utility\", \"centroid_m\": [10.71, 8.38]}, {\"id\": \"2O9jyhXOP59QHL1Ul4slp9\", \"label\": \"meeting\", \"centroid_m\": [15.67, 8.38]}], \"edges\": [{\"a\": \"20jmiz8f507egf7tNUHCHm\", \"b\": \"0q$LI7gq16$fPWhGlFREJa\", \"type\": \"door\"}, {\"a\": \"20jmiz8f507egf7tNUHCHm\", \"b\": \"0V8A3ZydLFTPHgp46G9NXP\", \"type\": \"door\"}, {\"a\": \"20jmiz8f507egf7tNUHCHm\", \"b\": \"1LYyY8HvH4rhXUisvBEt7L\", \"type\": \"door\"}, {\"a\": \"20jmiz8f507egf7tNUHCHm\", \"b\": \"39iqYYudf2rOuOzpi7tgPI\", \"type\": \"door\"}, {\"a\": \"20jmiz8f507egf7tNUHCHm\", \"b\": \"2O9jyhXOP59QHL1Ul4slp9\", \"type\": \"door\"}, {\"a\": \"0q$LI7gq16$fPWhGlFREJa\", \"b\": \"1LYyY8HvH4rhXUisvBEt7L\", \"type\": \"open\"}, {\"a\": \"0q$LI7gq16$fPWhGlFREJa\", \"b\": \"1ncA0eTiH24v9i07$0M$V$\", \"type\": \"open\"}, {\"a\": \"0V8A3ZydLFTPHgp46G9NXP\", \"b\": \"1LYyY8HvH4rhXUisvBEt7L\", \"type\": \"open\"}, {\"a\": \"0V8A3ZydLFTPHgp46G9NXP\", \"b\": \"1ncA0eTiH24v9i07$0M$V$\", \"type\": \"open\"}, {\"a\": \"1LYyY8HvH4rhXUisvBEt7L\", \"b\": \"1ncA0eTiH24v9i07$0M$V$\", \"type\": \"door\"}, {\"a\": \"1LYyY8HvH4rhXUisvBEt7L\", \"b\": \"39iqYYudf2rOuOzpi7tgPI\", \"type\": \"open\"}, {\"a\": \"1LYyY8HvH4rhXUisvBEt7L\", \"b\": \"2O9jyhXOP59QHL1Ul4slp9\", \"type\": \"open\"}, {\"a\": \"1ncA0eTiH24v9i07$0M$V$\", \"b\": \"39iqYYudf2rOuOzpi7tgPI\", \"type\": \"open\"}, {\"a\": \"1ncA0eTiH24v9i07$0M$V$\", \"b\": \"2O9jyhXOP59QHL1Ul4slp9\", \"type\": \"open\"}, {\"a\": \"39iqYYudf2rOuOzpi7tgPI\", \"b\": \"2O9jyhXOP59QHL1Ul4slp9\", \"type\": \"open\"}]}",
+      "hit_cap": false,
+      "connectivity": {
+        "tp": 5,
+        "fn": 1,
+        "fp_on_reference_negative": 2,
+        "precision": 0.714,
+        "recall": 0.833,
+        "f1": 0.769
+      },
+      "labels": {
+        "scored": 8,
+        "correct": 8,
+        "accuracy": 1.0
+      },
+      "gt_scope": {
+        "negatives": "every adjacent pair the generator did not join",
+        "coverage": "complete: the generator knows every pair",
+        "restricted_to": "storey 0",
+        "rooms_before": 16,
+        "rooms_after": 8,
+        "dropped_straddling": 1,
+        "dropped_outside": 12
+      },
+      "prompt_tokens": 3468,
+      "generated_tokens": 1127,
+      "seconds": 27.16
+    },
+    {
+      "unit": "synth_0067/01_level_1",
+      "prompt_sha256": "a0120dbe5fc372ff",
+      "extraction": {
+        "status": "ok",
+        "detail": null,
+        "rooms": 5,
+        "edges": 7,
+        "dropped_rooms": {},
+        "dropped_edges": {},
+        "dropped_rooms_total": 0,
+        "dropped_edges_total": 0
+      },
+      "raw": "{\"rooms\": [{\"id\": \"087cprcmbDNA9Mlsi9IuZ_\", \"label\": \"stair\", \"centroid_m\": [3.72, 6.0]}, {\"id\": \"3xzsY71Nn9TPqCeT28UwPA\", \"label\": \"bathroom\", \"centroid_m\": [9.54, 2.63]}, {\"id\": \"1TRE591Sj4YvmYkLcEVoti\", \"label\": \"storage\", \"centroid_m\": [14.82, 2.63]}, {\"id\": \"2ewNiaOLDD0hLZZVGuajvK\", \"label\": \"lab\", \"centroid_m\": [9.77, 8.63]}, {\"id\": \"3P7SwmJu1AoO2OXvY4OgF6\", \"label\": \"corridor\", \"centroid_m\": [15.05, 8.63]}], \"edges\": [{\"a\": \"3xzsY71Nn9TPqCeT28UwPA\", \"b\": \"087cprcmbDNA9Mlsi9IuZ_\", \"type\": \"door\"}, {\"a\": \"2ewNiaOLDD0hLZZVGuajvK\", \"b\": \"087cprcmbDNA9Mlsi9IuZ_\", \"type\": \"door\"}, {\"a\": \"3P7SwmJu1AoO2OXvY4OgF6\", \"b\": \"087cprcmbDNA9Mlsi9IuZ_\", \"type\": \"door\"}, {\"a\": \"3P7SwmJu1AoO2OXvY4OgF6\", \"b\": \"3xzsY71Nn9TPqCeT28UwPA\", \"type\": \"open\"}, {\"a\": \"3P7SwmJu1AoO2OXvY4OgF6\", \"b\": \"1TRE591Sj4YvmYkLcEVoti\", \"type\": \"open\"}, {\"a\": \"3P7SwmJu1AoO2OXvY4OgF6\", \"b\": \"2ewNiaOLDD0hLZZVGuajvK\", \"type\": \"open\"}, {\"a\": \"3P7SwmJu1AoO2OXvY4OgF6\", \"b\": \"3xzsY71Nn9TPqCeT28UwPA\", \"type\": \"open\"}]}",
+      "hit_cap": false,
+      "connectivity": {
+        "tp": 2,
+        "fn": 1,
+        "fp_on_reference_negative": 2,
+        "precision": 0.5,
+        "recall": 0.667,
+        "f1": 0.571
+      },
+      "labels": {
+        "scored": 5,
+        "correct": 5,
+        "accuracy": 1.0
+      },
+      "gt_scope": {
+        "negatives": "every adjacent pair the generator did not join",
+        "coverage": "complete: the generator knows every pair",
+        "restricted_to": "storey 1",
+        "rooms_before": 13,
+        "rooms_after": 5,
+        "dropped_straddling": 1,
+        "dropped_outside": 12
+      },
+      "prompt_tokens": 2256,
+      "generated_tokens": 575,
+      "seconds": 13.71
+    },
+    {
+      "unit": "synth_0070/00_level_0",
+      "prompt_sha256": "42a1c4201000c634",
+      "extraction": {
+        "status": "ok",
+        "detail": null,
+        "rooms": 3,
+        "edges": 4,
+        "dropped_rooms": {},
+        "dropped_edges": {},
+        "dropped_rooms_total": 0,
+        "dropped_edges_total": 0
+      },
+      "raw": "{\"rooms\": [{\"id\": \"1\", \"label\": \"circulation\", \"centroid_m\": [4.34, 3.98]}, {\"id\": \"2\", \"label\": \"circulation\", \"centroid_m\": [8.11, 3.98]}, {\"id\": \"3\", \"label\": \"circulation\", \"centroid_m\": [12.82, 5.74]}], \"edges\": [{\"a\": \"1\", \"b\": \"2\", \"type\": \"door\"}, {\"a\": \"2\", \"b\": \"3\", \"type\": \"door\"}, {\"a\": \"1\", \"b\": \"2\", \"type\": \"open\"}, {\"a\": \"2\", \"b\": \"3\", \"type\": \"open\"}]}",
+      "hit_cap": false,
+      "connectivity": {
+        "tp": 0,
+        "fn": 5,
+        "fp_on_reference_negative": 0,
+        "precision": null,
+        "recall": 0.0,
+        "f1": 0.0
+      },
+      "labels": {
+        "scored": 7,
+        "correct": 0,
+        "accuracy": 0.0
+      },
+      "gt_scope": {
+        "negatives": "every adjacent pair the generator did not join",
+        "coverage": "complete: the generator knows every pair",
+        "restricted_to": "storey 0",
+        "rooms_before": 9,
+        "rooms_after": 7,
+        "dropped_straddling": 1,
+        "dropped_outside": 1
+      },
+      "prompt_tokens": 2372,
+      "generated_tokens": 169,
+      "seconds": 4.15
+    },
+    {
+      "unit": "synth_0072/01_level_1",
+      "prompt_sha256": "fe7a6291fe00b679",
+      "extraction": {
+        "status": "ok",
+        "detail": null,
+        "rooms": 6,
+        "edges": 3,
+        "dropped_rooms": {},
+        "dropped_edges": {},
+        "dropped_rooms_total": 0,
+        "dropped_edges_total": 0
+      },
+      "raw": "{\"rooms\": [{\"id\": \"16MrnYSnX0V9J4FzWXTOao\", \"label\": \"stair\", \"centroid_m\": [3.75, 2.59]}, {\"id\": \"1PrGesijTEoOrF8TsxfLB7\", \"label\": \"corridor\", \"centroid_m\": [1.77, 8.59]}, {\"id\": \"1b49pojoz4xxUL86PpLf_Y\", \"label\": \"bathroom\", \"centroid_m\": [5.52, 8.59]}, {\"id\": \"0UYlMUz7v0TAjd7N22nnDy\", \"label\": \"corridor\", \"centroid_m\": [9.55, 8.49]}, {\"id\": \"0xoDrcIJrCOg5oAtfUvdmi\", \"label\": \"living\", \"centroid_m\": [9.55, 8.49]}, {\"id\": \"0DEv05poP6LeDBFd0gbRO$\", \"label\": \"lab\", \"centroid_m\": [14.8, 8.49]}], \"edges\": [{\"a\": \"1PrGesijTEoOrF8TsxfLB7\", \"b\": \"1b49pojoz4xxUL86PpLf_Y\", \"type\": \"door\"}, {\"a\": \"1b49pojoz4xxUL86PpLf_Y\", \"b\": \"0UYlMUz7v0TAjd7N22nnDy\", \"type\": \"open\"}, {\"a\": \"0UYlMUz7v0TAjd7N22nnDy\", \"b\": \"0DEv05poP6LeDBFd0gbRO$\", \"type\": \"open\"}]}",
+      "hit_cap": false,
+      "connectivity": {
+        "tp": 1,
+        "fn": 3,
+        "fp_on_reference_negative": 2,
+        "precision": 0.333,
+        "recall": 0.25,
+        "f1": 0.286
+      },
+      "labels": {
+        "scored": 6,
+        "correct": 4,
+        "accuracy": 0.8
+      },
+      "gt_scope": {
+        "negatives": "every adjacent pair the generator did not join",
+        "coverage": "complete: the generator knows every pair",
+        "restricted_to": "storey 1",
+        "rooms_before": 14,
+        "rooms_after": 6,
+        "dropped_straddling": 1,
+        "dropped_outside": 11
+      },
+      "prompt_tokens": 2705,
+      "generated_tokens": 410,
+      "seconds": 9.89
+    },
+    {
+      "unit": "synth_0075/00_level_0",
+      "prompt_sha256": "7f9c51ccda19c14b",
+      "extraction": {
+        "status": "ok",
+        "detail": null,
+        "rooms": 5,
+        "edges": 5,
+        "dropped_rooms": {},
+        "dropped_edges": {},
+        "dropped_rooms_total": 0,
+        "dropped_edges_total": 0
+      },
+      "raw": "{\"rooms\": [{\"id\": \"25xZzEa3j5LfTEKduBjOwV\", \"label\": \"circulation\", \"centroid_m\": [4.36, 6.00]}, {\"id\": \"0S$57F8xX1S8P0p66IrmVm\", \"label\": \"meeting\", \"centroid_m\": [11.01, 3.25]}, {\"id\": \"0Gy_iifWv57hNa6Lp7B8R8\", \"label\": \"kitchen\", \"centroid_m\": [15.65, 3.25]}, {\"id\": \"26NFzyBtr9jh_K83g_zuXo\", \"label\": \"meeting\", \"centroid_m\": [11.47, 9.25]}, {\"id\": \"1qrnz7KEP8OBe5sbVtUAcK\", \"label\": \"bedroom\", \"centroid_m\": [16.11, 9.25]}], \"edges\": [{\"a\": \"25xZzEa3j5LfTEKduBjOwV\", \"b\": \"0S$57F8xX1S8P0p66IrmVm\", \"type\": \"door\"}, {\"a\": \"25xZzEa3j5LfTEKduBjOwV\", \"b\": \"0Gy_iifWv57hNa6Lp7B8R8\", \"type\": \"door\"}, {\"a\": \"0S$57F8xX1S8P0p66IrmVm\", \"b\": \"0Gy_iifWv57hNa6Lp7B8R8\", \"type\": \"open\"}, {\"a\": \"0S$57F8xX1S8P0p66IrmVm\", \"b\": \"26NFzyBtr9jh_K83g_zuXo\", \"type\": \"door\"}, {\"a\": \"0Gy_iifWv57hNa6Lp7B8R8\", \"b\": \"1qrnz7KEP8OBe5sbVtUAcK\", \"type\": \"open\"}]}",
+      "hit_cap": false,
+      "connectivity": {
+        "tp": 2,
+        "fn": 1,
+        "fp_on_reference_negative": 2,
+        "precision": 0.5,
+        "recall": 0.667,
+        "f1": 0.571
+      },
+      "labels": {
+        "scored": 5,
+        "correct": 4,
+        "accuracy": 0.8
+      },
+      "gt_scope": {
+        "negatives": "every adjacent pair the generator did not join",
+        "coverage": "complete: the generator knows every pair",
+        "restricted_to": "storey 0",
+        "rooms_before": 12,
+        "rooms_after": 5,
+        "dropped_straddling": 1,
+        "dropped_outside": 9
+      },
+      "prompt_tokens": 2266,
+      "generated_tokens": 508,
+      "seconds": 12.12
+    },
+    {
+      "unit": "synth_0077/01_level_1",
+      "prompt_sha256": "ec4d291238830896",
+      "extraction": {
+        "status": "ok",
+        "detail": null,
+        "rooms": 3,
+        "edges": 3,
+        "dropped_rooms": {},
+        "dropped_edges": {},
+        "dropped_rooms_total": 0,
+        "dropped_edges_total": 0
+      },
+      "raw": "{\"rooms\": [{\"id\": \"A\", \"label\": \"circulation\", \"centroid_m\": [4.46, 3.85]}, {\"id\": \"B\", \"label\": \"circulation\", \"centroid_m\": [11.08, 6.75]}, {\"id\": \"C\", \"label\": \"circulation\", \"centroid_m\": [15.00, 6.11]}], \"edges\": [{\"a\": \"A\", \"b\": \"B\", \"type\": \"door\"}, {\"a\": \"A\", \"b\": \"C\", \"type\": \"door\"}, {\"a\": \"B\", \"b\": \"C\", \"type\": \"door\"}]}",
+      "hit_cap": false,
+      "connectivity": {
+        "tp": 1,
+        "fn": 4,
+        "fp_on_reference_negative": 0,
+        "precision": 1.0,
+        "recall": 0.2,
+        "f1": 0.333
+      },
+      "labels": {
+        "scored": 7,
+        "correct": 1,
+        "accuracy": 0.3333333333333333
+      },
+      "gt_scope": {
+        "negatives": "every adjacent pair the generator did not join",
+        "coverage": "complete: the generator knows every pair",
+        "restricted_to": "storey 1",
+        "rooms_before": 14,
+        "rooms_after": 7,
+        "dropped_straddling": 1,
+        "dropped_outside": 11
+      },
+      "prompt_tokens": 2430,
+      "generated_tokens": 152,
+      "seconds": 3.75
+    },
+    {
+      "unit": "synth_0080/00_level_0",
+      "prompt_sha256": "6acff46f570f5075",
+      "extraction": {
+        "status": "ok",
+        "detail": null,
+        "rooms": 7,
+        "edges": 6,
+        "dropped_rooms": {},
+        "dropped_edges": {},
+        "dropped_rooms_total": 0,
+        "dropped_edges_total": 0
+      },
+      "raw": "{\"rooms\": [{\"id\": \"2ELXTh1pL6s9OVLphqkRVT\", \"label\": \"stair\", \"centroid_m\": [2.33, 3.66]}, {\"id\": \"3udiFRsUz5OOZ5xnj0ueFg\", \"label\": \"storage\", \"centroid_m\": [6.92, 3.66]}, {\"id\": \"2kG4_2xk55lQtUppOLcxS9\", \"label\": \"corridor\", \"centroid_m\": [2.35, 9.66]}, {\"id\": \"1$EU0yZOD8Xh8ebYDfE2Cp\", \"label\": \"reception\", \"centroid_m\": [6.94, 9.66]}, {\"id\": \"2hiFiGqX52Yg0IaOYqtdYn\", \"label\": \"office\", \"centroid_m\": [11.85, 3.71]}, {\"id\": \"0jUNI_Eaj8rRUrd7xtfjLO\", \"label\": \"storage\", \"centroid_m\": [16.26, 3.71]}, {\"id\": \"3QhdrLkNj10RShoWf7Hqh2\", \"label\": \"bathroom\", \"centroid_m\": [13.59, 9.71]}], \"edges\": [{\"a\": \"2ELXTh1pL6s9OVLphqkRVT\", \"b\": \"3udiFRsUz5OOZ5xnj0ueFg\", \"type\": \"door\"}, {\"a\": \"2ELXTh1pL6s9OVLphqkRVT\", \"b\": \"2kG4_2xk55lQtUppOLcxS9\", \"type\": \"open\"}, {\"a\": \"2kG4_2xk55lQtUppOLcxS9\", \"b\": \"1$EU0yZOD8Xh8ebYDfE2Cp\", \"type\": \"door\"}, {\"a\": \"1$EU0yZOD8Xh8ebYDfE2Cp\", \"b\": \"2hiFiGqX52Yg0IaOYqtdYn\", \"type\": \"open\"}, {\"a\": \"1$EU0yZOD8Xh8ebYDfE2Cp\", \"b\": \"0jUNI_Eaj8rRUrd7xtfjLO\", \"type\": \"open\"}, {\"a\": \"2hiFiGqX52Yg0IaOYqtdYn\", \"b\": \"3QhdrLkNj10RShoWf7Hqh2\", \"type\": \"open\"}]}",
+      "hit_cap": false,
+      "connectivity": {
+        "tp": 2,
+        "fn": 3,
+        "fp_on_reference_negative": 2,
+        "precision": 0.5,
+        "recall": 0.4,
+        "f1": 0.444
+      },
+      "labels": {
+        "scored": 7,
+        "correct": 7,
+        "accuracy": 1.0
+      },
+      "gt_scope": {
+        "negatives": "every adjacent pair the generator did not join",
+        "coverage": "complete: the generator knows every pair",
+        "restricted_to": "storey 0",
+        "rooms_before": 14,
+        "rooms_after": 7,
+        "dropped_straddling": 1,
+        "dropped_outside": 9
+      },
+      "prompt_tokens": 3186,
+      "generated_tokens": 637,
+      "seconds": 15.35
+    },
+    {
+      "unit": "synth_0082/01_level_1",
+      "prompt_sha256": "1155ea5f9fabb0fc",
+      "extraction": {
+        "status": "ok",
+        "detail": null,
+        "rooms": 7,
+        "edges": 8,
+        "dropped_rooms": {},
+        "dropped_edges": {},
+        "dropped_rooms_total": 0,
+        "dropped_edges_total": 0
+      },
+      "raw": "{\"rooms\": [{\"id\": \"39j_rkZLrBDOOPhFMMaeMr\", \"label\": \"stair\", \"centroid_m\": [1.85, 2.79]}, {\"id\": \"2hQyrhhsr2BQ7CHgKqH9oZ\", \"label\": \"corridor\", \"centroid_m\": [5.37, 2.79]}, {\"id\": \"1XIElSypn5u9gG52L1Wx8e\", \"label\": \"lab\", \"centroid_m\": [2.14, 8.79]}, {\"id\": \"3MyillGtH4hxdrMuCdXTLz\", \"label\": \"utility\", \"centroid_m\": [5.66, 8.79]}, {\"id\": \"3vghtSx_15LBzhCXFDYhxu\", \"label\": \"utility\", \"centroid_m\": [9.66, 2.86]}, {\"id\": \"1OIW$7uODDUgv4qcIXJMQo\", \"label\": \"meeting\", \"centroid_m\": [15.15, 2.86]}, {\"id\": \"1FFjODMZ55iBBDmjKH0t6E\", \"label\": \"bathroom\", \"centroid_m\": [12.52, 8.86]}], \"edges\": [{\"a\": \"39j_rkZLrBDOOPhFMMaeMr\", \"b\": \"2hQyrhhsr2BQ7CHgKqH9oZ\", \"type\": \"door\"}, {\"a\": \"2hQyrhhsr2BQ7CHgKqH9oZ\", \"b\": \"1XIElSypn5u9gG52L1Wx8e\", \"type\": \"open\"}, {\"a\": \"2hQyrhhsr2BQ7CHgKqH9oZ\", \"b\": \"3MyillGtH4hxdrMuCdXTLz\", \"type\": \"open\"}, {\"a\": \"2hQyrhhsr2BQ7CHgKqH9oZ\", \"b\": \"3vghtSx_15LBzhCXFDYhxu\", \"type\": \"open\"}, {\"a\": \"2hQyrhhsr2BQ7CHgKqH9oZ\", \"b\": \"1FFjODMZ55iBBDmjKH0t6E\", \"type\": \"open\"}, {\"a\": \"1FFjODMZ55iBBDmjKH0t6E\", \"b\": \"1XIElSypn5u9gG52L1Wx8e\", \"type\": \"door\"}, {\"a\": \"1FFjODMZ55iBBDmjKH0t6E\", \"b\": \"3MyillGtH4hxdrMuCdXTLz\", \"type\": \"door\"}, {\"a\": \"1FFjODMZ55iBBDmjKH0t6E\", \"b\": \"3vghtSx_15LBzhCXFDYhxu\", \"type\": \"door\"}]}",
+      "hit_cap": false,
+      "connectivity": {
+        "tp": 3,
+        "fn": 2,
+        "fp_on_reference_negative": 2,
+        "precision": 0.6,
+        "recall": 0.6,
+        "f1": 0.6
+      },
+      "labels": {
+        "scored": 7,
+        "correct": 7,
+        "accuracy": 1.0
+      },
+      "gt_scope": {
+        "negatives": "every adjacent pair the generator did not join",
+        "coverage": "complete: the generator knows every pair",
+        "restricted_to": "storey 1",
+        "rooms_before": 15,
+        "rooms_after": 7,
+        "dropped_straddling": 1,
+        "dropped_outside": 13
+      },
+      "prompt_tokens": 3090,
+      "generated_tokens": 719,
+      "seconds": 17.28
+    },
+    {
+      "unit": "synth_0085/00_level_0",
+      "prompt_sha256": "b1a75006dd9a126f",
+      "extraction": {
+        "status": "ok",
+        "detail": null,
+        "rooms": 1,
+        "edges": 0,
+        "dropped_rooms": {},
+        "dropped_edges": {
+          "self_loop": 1
+        },
+        "dropped_rooms_total": 0,
+        "dropped_edges_total": 1
+      },
+      "raw": "{\"rooms\": [{\"id\": \"0\", \"label\": \"circulation\", \"centroid_m\": [9.5, 6.05]}], \"edges\": [{\"a\": \"0\", \"b\": \"0\", \"type\": \"open\"}]}",
+      "hit_cap": false,
+      "connectivity": {
+        "tp": 0,
+        "fn": 3,
+        "fp_on_reference_negative": 0,
+        "precision": null,
+        "recall": 0.0,
+        "f1": 0.0
+      },
+      "labels": {
+        "scored": 5,
+        "correct": 1,
+        "accuracy": 1.0
+      },
+      "gt_scope": {
+        "negatives": "every adjacent pair the generator did not join",
+        "coverage": "complete: the generator knows every pair",
+        "restricted_to": "storey 0",
+        "rooms_before": 10,
+        "rooms_after": 5,
+        "dropped_straddling": 1,
+        "dropped_outside": 6
+      },
+      "prompt_tokens": 1644,
+      "generated_tokens": 55,
+      "seconds": 1.39
+    },
+    {
+      "unit": "synth_0087/01_level_1",
+      "prompt_sha256": "8ac23df8cac68c77",
+      "extraction": {
+        "status": "ok",
+        "detail": null,
+        "rooms": 6,
+        "edges": 22,
+        "dropped_rooms": {
+          "duplicate_id": 1
+        },
+        "dropped_edges": {
+          "self_loop": 2
+        },
+        "dropped_rooms_total": 1,
+        "dropped_edges_total": 2
+      },
+      "raw": "{\"rooms\": [{\"id\": \"Stair\", \"label\": \"circulation\", \"centroid_m\": [1.94, 3.48]}, {\"id\": \"Bedroom\", \"label\": \"bedroom\", \"centroid_m\": [5.58, 3.48]}, {\"id\": \"Bathroom\", \"label\": \"bathroom\", \"centroid_m\": [1.8, 9.48]}, {\"id\": \"Lab\", \"label\": \"office\", \"centroid_m\": [5.45, 9.48]}, {\"id\": \"Utility\", \"label\": \"storage\", \"centroid_m\": [12.65, 3.64]}, {\"id\": \"Living Room\", \"label\": \"living\", \"centroid_m\": [9.48, 9.64]}, {\"id\": \"Bedroom\", \"label\": \"bedroom\", \"centroid_m\": [14.83, 9.64]}], \"edges\": [{\"a\": \"Stair\", \"b\": \"Bedroom\", \"type\": \"door\"}, {\"a\": \"Stair\", \"b\": \"Bathroom\", \"type\": \"door\"}, {\"a\": \"Stair\", \"b\": \"Lab\", \"type\": \"door\"}, {\"a\": \"Stair\", \"b\": \"Utility\", \"type\": \"open\"}, {\"a\": \"Stair\", \"b\": \"Living Room\", \"type\": \"open\"}, {\"a\": \"Stair\", \"b\": \"Bedroom\", \"type\": \"open\"}, {\"a\": \"Bedroom\", \"b\": \"Lab\", \"type\": \"door\"}, {\"a\": \"Bedroom\", \"b\": \"Living Room\", \"type\": \"door\"}, {\"a\": \"Bedroom\", \"b\": \"Bedroom\", \"type\": \"open\"}, {\"a\": \"Bathroom\", \"b\": \"Lab\", \"type\": \"door\"}, {\"a\": \"Bathroom\", \"b\": \"Utility\", \"type\": \"open\"}, {\"a\": \"Bathroom\", \"b\": \"Living Room\", \"type\": \"open\"}, {\"a\": \"Bathroom\", \"b\": \"Bedroom\", \"type\": \"open\"}, {\"a\": \"Lab\", \"b\": \"Utility\", \"type\": \"open\"}, {\"a\": \"Lab\", \"b\": \"Living Room\", \"type\": \"door\"}, {\"a\": \"Lab\", \"b\": \"Bedroom\", \"type\": \"open\"}, {\"a\": \"Utility\", \"b\": \"Living Room\", \"type\": \"door\"}, {\"a\": \"Utility\", \"b\": \"Bedroom\", \"type\": \"open\"}, {\"a\": \"Utility\", \"b\": \"Bathroom\", \"type\": \"open\"}, {\"a\": \"Living Room\", \"b\": \"Bedroom\", \"type\": \"open\"}, {\"a\": \"Living Room\", \"b\": \"Bathroom\", \"type\": \"open\"}, {\"a\": \"Living Room\", \"b\": \"Lab\", \"type\": \"open\"}, {\"a\": \"Living Room\", \"b\": \"Utility\", \"type\": \"open\"}, {\"a\": \"Bedroom\", \"b\": \"Bedroom\", \"type\": \"open\"}]}",
+      "hit_cap": false,
+      "connectivity": {
+        "tp": 3,
+        "fn": 2,
+        "fp_on_reference_negative": 4,
+        "precision": 0.429,
+        "recall": 0.6,
+        "f1": 0.5
+      },
+      "labels": {
+        "scored": 7,
+        "correct": 4,
+        "accuracy": 0.6666666666666666
+      },
+      "gt_scope": {
+        "negatives": "every adjacent pair the generator did not join",
+        "coverage": "complete: the generator knows every pair",
+        "restricted_to": "storey 1",
+        "rooms_before": 15,
+        "rooms_after": 7,
+        "dropped_straddling": 1,
+        "dropped_outside": 12
+      },
+      "prompt_tokens": 3201,
+      "generated_tokens": 681,
+      "seconds": 16.4
+    },
+    {
+      "unit": "synth_0090/00_level_0",
+      "prompt_sha256": "ad76f04ee516e20f",
+      "extraction": {
+        "status": "ok",
+        "detail": null,
+        "rooms": 3,
+        "edges": 2,
+        "dropped_rooms": {},
+        "dropped_edges": {},
+        "dropped_rooms_total": 0,
+        "dropped_edges_total": 0
+      },
+      "raw": "{\"rooms\": [{\"id\": \"A\", \"label\": \"circulation\", \"centroid_m\": [3.7, 3.2]}, {\"id\": \"B\", \"label\": \"circulation\", \"centroid_m\": [7.25, 4.7]}, {\"id\": \"C\", \"label\": \"circulation\", \"centroid_m\": [11.5, 4.3]}], \"edges\": [{\"a\": \"A\", \"b\": \"B\", \"type\": \"door\"}, {\"a\": \"B\", \"b\": \"C\", \"type\": \"door\"}]}",
+      "hit_cap": false,
+      "connectivity": {
+        "tp": 0,
+        "fn": 6,
+        "fp_on_reference_negative": 0,
+        "precision": null,
+        "recall": 0.0,
+        "f1": 0.0
+      },
+      "labels": {
+        "scored": 8,
+        "correct": 0,
+        "accuracy": 0.0
+      },
+      "gt_scope": {
+        "negatives": "every adjacent pair the generator did not join",
+        "coverage": "complete: the generator knows every pair",
+        "restricted_to": "storey 0",
+        "rooms_before": 16,
+        "rooms_after": 8,
+        "dropped_straddling": 1,
+        "dropped_outside": 10
+      },
+      "prompt_tokens": 2547,
+      "generated_tokens": 128,
+      "seconds": 3.19
+    },
+    {
+      "unit": "synth_0092/01_level_1",
+      "prompt_sha256": "0b6a129c2c4b2e4b",
+      "extraction": {
+        "status": "ok",
+        "detail": null,
+        "rooms": 4,
+        "edges": 4,
+        "dropped_rooms": {},
+        "dropped_edges": {},
+        "dropped_rooms_total": 0,
+        "dropped_edges_total": 0
+      },
+      "raw": "{\"rooms\": [{\"id\": \"A\", \"label\": \"circulation\", \"centroid_m\": [3.96, 3.51]}, {\"id\": \"B\", \"label\": \"circulation\", \"centroid_m\": [7.62, 3.51]}, {\"id\": \"C\", \"label\": \"circulation\", \"centroid_m\": [3.96, 9.74]}, {\"id\": \"D\", \"label\": \"circulation\", \"centroid_m\": [7.62, 9.74]}], \"edges\": [{\"a\": \"A\", \"b\": \"B\", \"type\": \"door\"}, {\"a\": \"A\", \"b\": \"C\", \"type\": \"door\"}, {\"a\": \"B\", \"b\": \"D\", \"type\": \"door\"}, {\"a\": \"C\", \"b\": \"D\", \"type\": \"door\"}]}",
+      "hit_cap": false,
+      "connectivity": {
+        "tp": 3,
+        "fn": 3,
+        "fp_on_reference_negative": 1,
+        "precision": 0.75,
+        "recall": 0.5,
+        "f1": 0.6
+      },
+      "labels": {
+        "scored": 8,
+        "correct": 1,
+        "accuracy": 0.25
+      },
+      "gt_scope": {
+        "negatives": "every adjacent pair the generator did not join",
+        "coverage": "complete: the generator knows every pair",
+        "restricted_to": "storey 1",
+        "rooms_before": 16,
+        "rooms_after": 8,
+        "dropped_straddling": 1,
+        "dropped_outside": 10
+      },
+      "prompt_tokens": 2814,
+      "generated_tokens": 197,
+      "seconds": 4.86
+    },
+    {
+      "unit": "synth_0095/00_level_0",
+      "prompt_sha256": "674701a8aec32618",
+      "extraction": {
+        "status": "ok",
+        "detail": null,
+        "rooms": 3,
+        "edges": 3,
+        "dropped_rooms": {},
+        "dropped_edges": {},
+        "dropped_rooms_total": 0,
+        "dropped_edges_total": 0
+      },
+      "raw": "{\"rooms\": [{\"id\": \"1\", \"label\": \"circulation\", \"centroid_m\": [4.48, 3.31]}, {\"id\": \"2\", \"label\": \"circulation\", \"centroid_m\": [9.06, 4.61]}, {\"id\": \"3\", \"label\": \"circulation\", \"centroid_m\": [1.91, 2.61]}], \"edges\": [{\"a\": \"1\", \"b\": \"2\", \"type\": \"door\"}, {\"a\": \"1\", \"b\": \"3\", \"type\": \"door\"}, {\"a\": \"2\", \"b\": \"3\", \"type\": \"open\"}]}",
+      "hit_cap": false,
+      "connectivity": {
+        "tp": 2,
+        "fn": 1,
+        "fp_on_reference_negative": 0,
+        "precision": 1.0,
+        "recall": 0.667,
+        "f1": 0.8
+      },
+      "labels": {
+        "scored": 5,
+        "correct": 0,
+        "accuracy": 0.0
+      },
+      "gt_scope": {
+        "negatives": "every adjacent pair the generator did not join",
+        "coverage": "complete: the generator knows every pair",
+        "restricted_to": "storey 0",
+        "rooms_before": 12,
+        "rooms_after": 5,
+        "dropped_straddling": 1,
+        "dropped_outside": 9
+      },
+      "prompt_tokens": 1757,
+      "generated_tokens": 150,
+      "seconds": 3.64
+    },
+    {
+      "unit": "synth_0097/01_level_1",
+      "prompt_sha256": "c972374365abe662",
+      "extraction": {
+        "status": "ok",
+        "detail": null,
+        "rooms": 7,
+        "edges": 9,
+        "dropped_rooms": {},
+        "dropped_edges": {},
+        "dropped_rooms_total": 0,
+        "dropped_edges_total": 0
+      },
+      "raw": "{\"rooms\": [{\"id\": \"1Qpoy4IFTAEetgSFEQLI2G\", \"label\": \"stair\", \"centroid_m\": [1.98, 2.39]}, {\"id\": \"3Wee53DYr939nlYJU9HR$R\", \"label\": \"corridor\", \"centroid_m\": [6.49, 2.39]}, {\"id\": \"24IJ26SLL96gNNg3Uvs1DI\", \"label\": \"bathroom\", \"centroid_m\": [2.78, 8.39]}, {\"id\": \"2735VqotD6sfodURkDc_5V\", \"label\": \"living\", \"centroid_m\": [7.29, 8.39]}, {\"id\": \"3Pngl4Gvz52BmwfAyiC08Q\", \"label\": \"meeting\", \"centroid_m\": [13.51, 2.50]}, {\"id\": \"22pk25tIHCy8DJNKAN63$K\", \"label\": \"office\", \"centroid_m\": [11.24, 8.50]}, {\"id\": \"2I9c$d2Kz9KAjTqPLTU55C\", \"label\": \"corridor\", \"centroid_m\": [15.73, 8.50]}], \"edges\": [{\"a\": \"3Wee53DYr939nlYJU9HR$R\", \"b\": \"24IJ26SLL96gNNg3Uvs1DI\", \"type\": \"door\"}, {\"a\": \"3Wee53DYr939nlYJU9HR$R\", \"b\": \"2735VqotD6sfodURkDc_5V\", \"type\": \"door\"}, {\"a\": \"3Wee53DYr939nlYJU9HR$R\", \"b\": \"3Pngl4Gvz52BmwfAyiC08Q\", \"type\": \"door\"}, {\"a\": \"3Wee53DYr939nlYJU9HR$R\", \"b\": \"2I9c$d2Kz9KAjTqPLTU55C\", \"type\": \"open\"}, {\"a\": \"24IJ26SLL96gNNg3Uvs1DI\", \"b\": \"2735VqotD6sfodURkDc_5V\", \"type\": \"open\"}, {\"a\": \"2735VqotD6sfodURkDc_5V\", \"b\": \"3Pngl4Gvz52BmwfAyiC08Q\", \"type\": \"door\"}, {\"a\": \"2735VqotD6sfodURkDc_5V\", \"b\": \"2I9c$d2Kz9KAjTqPLTU55C\", \"type\": \"open\"}, {\"a\": \"3Pngl4Gvz52BmwfAyiC08Q\", \"b\": \"22pk25tIHCy8DJNKAN63$K\", \"type\": \"door\"}, {\"a\": \"22pk25tIHCy8DJNKAN63$K\", \"b\": \"2I9c$d2Kz9KAjTqPLTU55C\", \"type\": \"open\"}]}",
+      "hit_cap": false,
+      "connectivity": {
+        "tp": 3,
+        "fn": 3,
+        "fp_on_reference_negative": 3,
+        "precision": 0.5,
+        "recall": 0.5,
+        "f1": 0.5
+      },
+      "labels": {
+        "scored": 7,
+        "correct": 7,
+        "accuracy": 1.0
+      },
+      "gt_scope": {
+        "negatives": "every adjacent pair the generator did not join",
+        "coverage": "complete: the generator knows every pair",
+        "restricted_to": "storey 1",
+        "rooms_before": 15,
+        "rooms_after": 7,
+        "dropped_straddling": 1,
+        "dropped_outside": 12
+      },
+      "prompt_tokens": 3232,
+      "generated_tokens": 791,
+      "seconds": 19.02
+    },
+    {
+      "unit": "synth_0100/00_level_0",
+      "prompt_sha256": "842e5e55c6a76698",
+      "extraction": {
+        "status": "ok",
+        "detail": null,
+        "rooms": 2,
+        "edges": 1,
+        "dropped_rooms": {},
+        "dropped_edges": {},
+        "dropped_rooms_total": 0,
+        "dropped_edges_total": 0
+      },
+      "raw": "{\"rooms\": [{\"id\": \"room1\", \"label\": \"circulation\", \"centroid_m\": [2.28, 3.29]}, {\"id\": \"room2\", \"label\": \"circulation\", \"centroid_m\": [6.81, 3.29]}], \"edges\": [{\"a\": \"room1\", \"b\": \"room2\", \"type\": \"door\"}]}",
+      "hit_cap": false,
+      "connectivity": {
+        "tp": 1,
+        "fn": 2,
+        "fp_on_reference_negative": 0,
+        "precision": 1.0,
+        "recall": 0.333,
+        "f1": 0.5
+      },
+      "labels": {
+        "scored": 5,
+        "correct": 0,
+        "accuracy": 0.0
+      },
+      "gt_scope": {
+        "negatives": "every adjacent pair the generator did not join",
+        "coverage": "complete: the generator knows every pair",
+        "restricted_to": "storey 0",
+        "rooms_before": 13,
+        "rooms_after": 5,
+        "dropped_straddling": 1,
+        "dropped_outside": 10
+      },
+      "prompt_tokens": 1684,
+      "generated_tokens": 89,
+      "seconds": 2.2
+    },
+    {
+      "unit": "synth_0102/01_level_1",
+      "prompt_sha256": "dbba15338aff51a3",
+      "extraction": {
+        "status": "ok",
+        "detail": null,
+        "rooms": 5,
+        "edges": 5,
+        "dropped_rooms": {},
+        "dropped_edges": {},
+        "dropped_rooms_total": 0,
+        "dropped_edges_total": 0
+      },
+      "raw": "{\"rooms\": [{\"id\": \"3eIJWALqf3dekOrVyPOkkm\", \"label\": \"stair\", \"centroid_m\": [2.67, 3.31]}, {\"id\": \"39TciULzLCYfxFd$xSuLrC\", \"label\": \"meeting\", \"centroid_m\": [8.03, 3.31]}, {\"id\": \"0HBJs2oEjBpfZv96rcO7At\", \"label\": \"kitchen\", \"centroid_m\": [2.65, 9.31]}, {\"id\": \"0XHVN33m5Cnul$pOvyk4FN\", \"label\": \"living\", \"centroid_m\": [8.01, 9.31]}, {\"id\": \"0zEuV5v9r1c8GyQTpVtODP\", \"label\": \"lab\", \"centroid_m\": [14.36, 6.00]}], \"edges\": [{\"a\": \"3eIJWALqf3dekOrVyPOkkm\", \"b\": \"39TciULzLCYfxFd$xSuLrC\", \"type\": \"door\"}, {\"a\": \"39TciULzLCYfxFd$xSuLrC\", \"b\": \"0HBJs2oEjBpfZv96rcO7At\", \"type\": \"open\"}, {\"a\": \"39TciULzLCYfxFd$xSuLrC\", \"b\": \"0XHVN33m5Cnul$pOvyk4FN\", \"type\": \"open\"}, {\"a\": \"0HBJs2oEjBpfZv96rcO7At\", \"b\": \"0XHVN33m5Cnul$pOvyk4FN\", \"type\": \"open\"}, {\"a\": \"0zEuV5v9r1c8GyQTpVtODP\", \"b\": \"0XHVN33m5Cnul$pOvyk4FN\", \"type\": \"open\"}]}",
+      "hit_cap": false,
+      "connectivity": {
+        "tp": 2,
+        "fn": 1,
+        "fp_on_reference_negative": 2,
+        "precision": 0.5,
+        "recall": 0.667,
+        "f1": 0.571
+      },
+      "labels": {
+        "scored": 5,
+        "correct": 5,
+        "accuracy": 1.0
+      },
+      "gt_scope": {
+        "negatives": "every adjacent pair the generator did not join",
+        "coverage": "complete: the generator knows every pair",
+        "restricted_to": "storey 1",
+        "rooms_before": 10,
+        "rooms_after": 5,
+        "dropped_straddling": 1,
+        "dropped_outside": 6
+      },
+      "prompt_tokens": 2305,
+      "generated_tokens": 475,
+      "seconds": 11.38
+    },
+    {
+      "unit": "synth_0105/00_level_0",
+      "prompt_sha256": "431f715fc669e9fa",
+      "extraction": {
+        "status": "ok",
+        "detail": null,
+        "rooms": 8,
+        "edges": 7,
+        "dropped_rooms": {},
+        "dropped_edges": {},
+        "dropped_rooms_total": 0,
+        "dropped_edges_total": 0
+      },
+      "raw": "{\"rooms\": [{\"id\": \"2xKnFMk_f6mfL1$o75urBK\", \"label\": \"stair\", \"centroid_m\": [2.36, 3.65]}, {\"id\": \"0CKnwl3vHCefyFLVDfDeVE\", \"label\": \"reception\", \"centroid_m\": [6.53, 3.65]}, {\"id\": \"2YDFbTQg10Zw$FX0Tyv2bG\", \"label\": \"living\", \"centroid_m\": [1.75, 9.65]}, {\"id\": \"3j2ckuESnCRPYeb1C9o1Hz\", \"label\": \"bathroom\", \"centroid_m\": [5.92, 9.65]}, {\"id\": \"3jJ59kctfFwBHJNP8Kp2oU\", \"label\": \"bathroom\", \"centroid_m\": [10.95, 3.36]}, {\"id\": \"3Fd3kwKS55S8M4dz$GkZ9k\", \"label\": \"utility\", \"centroid_m\": [15.77, 3.36]}, {\"id\": \"257z_Zu0LBXhxVIIasdhTU\", \"label\": \"lab\", \"centroid_m\": [10.38, 9.36]}, {\"id\": \"2rMsRJs3j75ARbnDjnDWpK\", \"label\": \"store\", \"centroid_m\": [15.2, 9.36]}], \"edges\": [{\"a\": \"2xKnFMk_f6mfL1$o75urBK\", \"b\": \"0CKnwl3vHCefyFLVDfDeVE\", \"type\": \"door\"}, {\"a\": \"2YDFbTQg10Zw$FX0Tyv2bG\", \"b\": \"3j2ckuESnCRPYeb1C9o1Hz\", \"type\": \"open\"}, {\"a\": \"3j2ckuESnCRPYeb1C9o1Hz\", \"b\": \"3jJ59kctfFwBHJNP8Kp2oU\", \"type\": \"door\"}, {\"a\": \"3jJ59kctfFwBHJNP8Kp2oU\", \"b\": \"3Fd3kwKS55S8M4dz$GkZ9k\", \"type\": \"open\"}, {\"a\": \"3Fd3kwKS55S8M4dz$GkZ9k\", \"b\": \"2rMsRJs3j75ARbnDjnDWpK\", \"type\": \"door\"}, {\"a\": \"257z_Zu0LBXhxVIIasdhTU\", \"b\": \"3j2ckuESnCRPYeb1C9o1Hz\", \"type\": \"open\"}, {\"a\": \"2rMsRJs3j75ARbnDjnDWpK\", \"b\": \"257z_Zu0LBXhxVIIasdhTU\", \"type\": \"open\"}]}",
+      "hit_cap": false,
+      "connectivity": {
+        "tp": 4,
+        "fn": 3,
+        "fp_on_reference_negative": 2,
+        "precision": 0.667,
+        "recall": 0.571,
+        "f1": 0.615
+      },
+      "labels": {
+        "scored": 8,
+        "correct": 8,
+        "accuracy": 1.0
+      },
+      "gt_scope": {
+        "negatives": "every adjacent pair the generator did not join",
+        "coverage": "complete: the generator knows every pair",
+        "restricted_to": "storey 0",
+        "rooms_before": 16,
+        "rooms_after": 8,
+        "dropped_straddling": 1,
+        "dropped_outside": 10
+      },
+      "prompt_tokens": 3819,
+      "generated_tokens": 708,
+      "seconds": 17.18
+    },
+    {
+      "unit": "synth_0107/01_level_1",
+      "prompt_sha256": "ba0bcb6d4afbe75f",
+      "extraction": {
+        "status": "ok",
+        "detail": null,
+        "rooms": 5,
+        "edges": 6,
+        "dropped_rooms": {},
+        "dropped_edges": {},
+        "dropped_rooms_total": 0,
+        "dropped_edges_total": 0
+      },
+      "raw": "{\"rooms\": [{\"id\": \"1begzO$TP5NQm2IVpJqRgd\", \"label\": \"circulation\", \"centroid_m\": [5.41, 6.00]}, {\"id\": \"3IEspOilfAsvbg52S8QeD6\", \"label\": \"reception\", \"centroid_m\": [14.41, 2.24]}, {\"id\": \"0nsuXVvdn3C8PQ5DI1Hf5s\", \"label\": \"bathroom\", \"centroid_m\": [14.41, 5.93]}, {\"id\": \"2XesAWSkPD9AlN8MPekpkk\", \"label\": \"lab\", \"centroid_m\": [12.38, 9.70]}, {\"id\": \"1f02IIu2b758Z7X_6mMxa7\", \"label\": \"utility\", \"centroid_m\": [15.96, 9.70]}], \"edges\": [{\"a\": \"1begzO$TP5NQm2IVpJqRgd\", \"b\": \"3IEspOilfAsvbg52S8QeD6\", \"type\": \"door\"}, {\"a\": \"1begzO$TP5NQm2IVpJqRgd\", \"b\": \"0nsuXVvdn3C8PQ5DI1Hf5s\", \"type\": \"door\"}, {\"a\": \"1begzO$TP5NQm2IVpJqRgd\", \"b\": \"2XesAWSkPD9AlN8MPekpkk\", \"type\": \"open\"}, {\"a\": \"1begzO$TP5NQm2IVpJqRgd\", \"b\": \"1f02IIu2b758Z7X_6mMxa7\", \"type\": \"open\"}, {\"a\": \"3IEspOilfAsvbg52S8QeD6\", \"b\": \"0nsuXVvdn3C8PQ5DI1Hf5s\", \"type\": \"door\"}, {\"a\": \"2XesAWSkPD9AlN8MPekpkk\", \"b\": \"1f02IIu2b758Z7X_6mMxa7\", \"type\": \"open\"}]}",
+      "hit_cap": false,
+      "connectivity": {
+        "tp": 3,
+        "fn": 1,
+        "fp_on_reference_negative": 2,
+        "precision": 0.6,
+        "recall": 0.75,
+        "f1": 0.667
+      },
+      "labels": {
+        "scored": 5,
+        "correct": 4,
+        "accuracy": 0.8
+      },
+      "gt_scope": {
+        "negatives": "every adjacent pair the generator did not join",
+        "coverage": "complete: the generator knows every pair",
+        "restricted_to": "storey 1",
+        "rooms_before": 13,
+        "rooms_after": 5,
+        "dropped_straddling": 1,
+        "dropped_outside": 12
+      },
+      "prompt_tokens": 2541,
+      "generated_tokens": 539,
+      "seconds": 12.97
+    },
+    {
+      "unit": "synth_0110/00_level_0",
+      "prompt_sha256": "ea43b82284a27e7a",
+      "extraction": {
+        "status": "ok",
+        "detail": null,
+        "rooms": 7,
+        "edges": 6,
+        "dropped_rooms": {},
+        "dropped_edges": {},
+        "dropped_rooms_total": 0,
+        "dropped_edges_total": 0
+      },
+      "raw": "{\"rooms\": [{\"id\": \"Stair\", \"label\": \"stair\", \"centroid_m\": [1.9, 2.64]}, {\"id\": \"Bathroom\", \"label\": \"bathroom\", \"centroid_m\": [6.16, 2.64]}, {\"id\": \"Utility\", \"label\": \"storage\", \"centroid_m\": [1.69, 8.64]}, {\"id\": \"Office\", \"label\": \"office\", \"centroid_m\": [5.95, 8.64]}, {\"id\": \"Corridor\", \"label\": \"circulation\", \"centroid_m\": [13.26, 2.74]}, {\"id\": \"Living Room\", \"label\": \"living\", \"centroid_m\": [11.36, 8.74]}, {\"id\": \"Reception\", \"label\": \"meeting\", \"centroid_m\": [16.1, 8.74]}], \"edges\": [{\"a\": \"Stair\", \"b\": \"Corridor\", \"type\": \"door\"}, {\"a\": \"Bathroom\", \"b\": \"Corridor\", \"type\": \"door\"}, {\"a\": \"Utility\", \"b\": \"Corridor\", \"type\": \"door\"}, {\"a\": \"Office\", \"b\": \"Corridor\", \"type\": \"door\"}, {\"a\": \"Corridor\", \"b\": \"Living Room\", \"type\": \"door\"}, {\"a\": \"Corridor\", \"b\": \"Reception\", \"type\": \"door\"}]}",
+      "hit_cap": false,
+      "connectivity": {
+        "tp": 1,
+        "fn": 4,
+        "fp_on_reference_negative": 2,
+        "precision": 0.333,
+        "recall": 0.2,
+        "f1": 0.25
+      },
+      "labels": {
+        "scored": 7,
+        "correct": 5,
+        "accuracy": 0.7142857142857143
+      },
+      "gt_scope": {
+        "negatives": "every adjacent pair the generator did not join",
+        "coverage": "complete: the generator knows every pair",
+        "restricted_to": "storey 0",
+        "rooms_before": 15,
+        "rooms_after": 7,
+        "dropped_straddling": 1,
+        "dropped_outside": 11
+      },
+      "prompt_tokens": 3116,
+      "generated_tokens": 332,
+      "seconds": 8.11
+    },
+    {
+      "unit": "synth_0112/01_level_1",
+      "prompt_sha256": "80023bcac15020e4",
+      "extraction": {
+        "status": "ok",
+        "detail": null,
+        "rooms": 4,
+        "edges": 4,
+        "dropped_rooms": {},
+        "dropped_edges": {},
+        "dropped_rooms_total": 0,
+        "dropped_edges_total": 0
+      },
+      "raw": "{\"rooms\": [{\"id\": \"A\", \"label\": \"circulation\", \"centroid_m\": [3.5, 3.6]}, {\"id\": \"B\", \"label\": \"circulation\", \"centroid_m\": [11.65, 6.45]}, {\"id\": \"C\", \"label\": \"circulation\", \"centroid_m\": [9.75, 6.45]}, {\"id\": \"D\", \"label\": \"circulation\", \"centroid_m\": [12.65, 8.75]}], \"edges\": [{\"a\": \"A\", \"b\": \"B\", \"type\": \"door\"}, {\"a\": \"A\", \"b\": \"C\", \"type\": \"door\"}, {\"a\": \"B\", \"b\": \"D\", \"type\": \"door\"}, {\"a\": \"C\", \"b\": \"D\", \"type\": \"door\"}]}",
+      "hit_cap": false,
+      "connectivity": {
+        "tp": 1,
+        "fn": 5,
+        "fp_on_reference_negative": 0,
+        "precision": 1.0,
+        "recall": 0.167,
+        "f1": 0.286
+      },
+      "labels": {
+        "scored": 8,
+        "correct": 0,
+        "accuracy": 0.0
+      },
+      "gt_scope": {
+        "negatives": "every adjacent pair the generator did not join",
+        "coverage": "complete: the generator knows every pair",
+        "restricted_to": "storey 1",
+        "rooms_before": 16,
+        "rooms_after": 8,
+        "dropped_straddling": 1,
+        "dropped_outside": 11
+      },
+      "prompt_tokens": 2627,
+      "generated_tokens": 197,
+      "seconds": 4.84
+    },
+    {
+      "unit": "synth_0115/00_level_0",
+      "prompt_sha256": "efd0526e7ce04b16",
+      "extraction": {
+        "status": "ok",
+        "detail": null,
+        "rooms": 2,
+        "edges": 1,
+        "dropped_rooms": {},
+        "dropped_edges": {},
+        "dropped_rooms_total": 0,
+        "dropped_edges_total": 0
+      },
+      "raw": "{\"rooms\": [{\"id\": \"36OiUjpd18luTHo00u2rPx\", \"label\": \"stair\", \"centroid_m\": [3.85, 6.0]}, {\"id\": \"0hA9r5GOzBvPYzeXXZdY4Q\", \"label\": \"bedroom\", \"centroid_m\": [12.85, 6.0]}], \"edges\": [{\"a\": \"36OiUjpd18luTHo00u2rPx\", \"b\": \"0hA9r5GOzBvPYzeXXZdY4Q\", \"type\": \"open\"}]}",
+      "hit_cap": false,
+      "connectivity": {
+        "tp": 0,
+        "fn": 0,
+        "fp_on_reference_negative": 1,
+        "precision": 0.0,
+        "recall": null,
+        "f1": 0.0
+      },
+      "labels": {
+        "scored": 2,
+        "correct": 2,
+        "accuracy": 1.0
+      },
+      "gt_scope": {
+        "negatives": "every adjacent pair the generator did not join",
+        "coverage": "complete: the generator knows every pair",
+        "restricted_to": "storey 0",
+        "rooms_before": 9,
+        "rooms_after": 2,
+        "dropped_straddling": 1,
+        "dropped_outside": 10
+      },
+      "prompt_tokens": 939,
+      "generated_tokens": 150,
+      "seconds": 3.57
+    },
+    {
+      "unit": "synth_0117/01_level_1",
+      "prompt_sha256": "c674490aaa289ad0",
+      "extraction": {
+        "status": "ok",
+        "detail": null,
+        "rooms": 7,
+        "edges": 15,
+        "dropped_rooms": {},
+        "dropped_edges": {},
+        "dropped_rooms_total": 0,
+        "dropped_edges_total": 0
+      },
+      "raw": "{\"rooms\": [{\"id\": \"1opiWSeQ979e0FZdqjHfQG\", \"label\": \"stair\", \"centroid_m\": [1.76, 2.87]}, {\"id\": \"1YRZPf33n37g1W6v3MR4Se\", \"label\": \"bathroom\", \"centroid_m\": [5.63, 2.87]}, {\"id\": \"2gm6TyZU5EzwD4r1xEybUg\", \"label\": \"kitchen\", \"centroid_m\": [2.32, 8.87]}, {\"id\": \"018PHzufz2nu7HaSihXdkY\", \"label\": \"office\", \"centroid_m\": [6.2, 8.87]}, {\"id\": \"06u_V1ZJb4AQj1eGyAMPdB\", \"label\": \"bedroom\", \"centroid_m\": [12.87, 3.63]}, {\"id\": \"0sLNZcKEv3qvfSx8MD2gHP\", \"label\": \"bathroom\", \"centroid_m\": [10.79, 9.63]}, {\"id\": \"3zaJAkFlz9wxje0Gu8kuIA\", \"label\": \"office\", \"centroid_m\": [15.92, 9.63]}], \"edges\": [{\"a\": \"1opiWSeQ979e0FZdqjHfQG\", \"b\": \"1YRZPf33n37g1W6v3MR4Se\", \"type\": \"door\"}, {\"a\": \"1opiWSeQ979e0FZdqjHfQG\", \"b\": \"2gm6TyZU5EzwD4r1xEybUg\", \"type\": \"door\"}, {\"a\": \"1opiWSeQ979e0FZdqjHfQG\", \"b\": \"018PHzufz2nu7HaSihXdkY\", \"type\": \"door\"}, {\"a\": \"1opiWSeQ979e0FZdqjHfQG\", \"b\": \"06u_V1ZJb4AQj1eGyAMPdB\", \"type\": \"door\"}, {\"a\": \"1opiWSeQ979e0FZdqjHfQG\", \"b\": \"0sLNZcKEv3qvfSx8MD2gHP\", \"type\": \"door\"}, {\"a\": \"1opiWSeQ979e0FZdqjHfQG\", \"b\": \"3zaJAkFlz9wxje0Gu8kuIA\", \"type\": \"door\"}, {\"a\": \"1YRZPf33n37g1W6v3MR4Se\", \"b\": \"06u_V1ZJb4AQj1eGyAMPdB\", \"type\": \"open\"}, {\"a\": \"1YRZPf33n37g1W6v3MR4Se\", \"b\": \"0sLNZcKEv3qvfSx8MD2gHP\", \"type\": \"open\"}, {\"a\": \"2gm6TyZU5EzwD4r1xEybUg\", \"b\": \"018PHzufz2nu7HaSihXdkY\", \"type\": \"door\"}, {\"a\": \"018PHzufz2nu7HaSihXdkY\", \"b\": \"06u_V1ZJb4AQj1eGyAMPdB\", \"type\": \"open\"}, {\"a\": \"018PHzufz2nu7HaSihXdkY\", \"b\": \"0sLNZcKEv3qvfSx8MD2gHP\", \"type\": \"open\"}, {\"a\": \"018PHzufz2nu7HaSihXdkY\", \"b\": \"3zaJAkFlz9wxje0Gu8kuIA\", \"type\": \"open\"}, {\"a\": \"06u_V1ZJb4AQj1eGyAMPdB\", \"b\": \"0sLNZcKEv3qvfSx8MD2gHP\", \"type\": \"open\"}, {\"a\": \"06u_V1ZJb4AQj1eGyAMPdB\", \"b\": \"3zaJAkFlz9wxje0Gu8kuIA\", \"type\": \"open\"}, {\"a\": \"0sLNZcKEv3qvfSx8MD2gHP\", \"b\": \"3zaJAkFlz9wxje0Gu8kuIA\", \"type\": \"open\"}]}",
+      "hit_cap": false,
+      "connectivity": {
+        "tp": 6,
+        "fn": 0,
+        "fp_on_reference_negative": 3,
+        "precision": 0.667,
+        "recall": 1.0,
+        "f1": 0.8
+      },
+      "labels": {
+        "scored": 7,
+        "correct": 7,
+        "accuracy": 1.0
+      },
+      "gt_scope": {
+        "negatives": "every adjacent pair the generator did not join",
+        "coverage": "complete: the generator knows every pair",
+        "restricted_to": "storey 1",
+        "rooms_before": 14,
+        "rooms_after": 7,
+        "dropped_straddling": 1,
+        "dropped_outside": 10
+      },
+      "prompt_tokens": 3258,
+      "generated_tokens": 1072,
+      "seconds": 25.78
+    },
+    {
+      "unit": "synth_0120/00_level_0",
+      "prompt_sha256": "1509363331e46904",
+      "extraction": {
+        "status": "ok",
+        "detail": null,
+        "rooms": 3,
+        "edges": 3,
+        "dropped_rooms": {},
+        "dropped_edges": {},
+        "dropped_rooms_total": 0,
+        "dropped_edges_total": 0
+      },
+      "raw": "{\"rooms\": [{\"id\": \"1\", \"label\": \"office\", \"centroid_m\": [7.72, 5.3]}, {\"id\": \"2\", \"label\": \"storage\", \"centroid_m\": [10.48, 5.2]}, {\"id\": \"3\", \"label\": \"bathroom\", \"centroid_m\": [7.72, 8.74]}], \"edges\": [{\"a\": \"1\", \"b\": \"2\", \"type\": \"door\"}, {\"a\": \"1\", \"b\": \"3\", \"type\": \"door\"}, {\"a\": \"2\", \"b\": \"3\", \"type\": \"open\"}]}",
+      "hit_cap": false,
+      "connectivity": {
+        "tp": 1,
+        "fn": 5,
+        "fp_on_reference_negative": 0,
+        "precision": 1.0,
+        "recall": 0.167,
+        "f1": 0.286
+      },
+      "labels": {
+        "scored": 7,
+        "correct": 1,
+        "accuracy": 0.5
+      },
+      "gt_scope": {
+        "negatives": "every adjacent pair the generator did not join",
+        "coverage": "complete: the generator knows every pair",
+        "restricted_to": "storey 0",
+        "rooms_before": 13,
+        "rooms_after": 7,
+        "dropped_straddling": 1,
+        "dropped_outside": 8
+      },
+      "prompt_tokens": 2655,
+      "generated_tokens": 147,
+      "seconds": 3.68
+    },
+    {
+      "unit": "synth_0122/01_level_1",
+      "prompt_sha256": "5aaced67ce220ca6",
+      "extraction": {
+        "status": "ok",
+        "detail": null,
+        "rooms": 4,
+        "edges": 3,
+        "dropped_rooms": {},
+        "dropped_edges": {},
+        "dropped_rooms_total": 0,
+        "dropped_edges_total": 0
+      },
+      "raw": "{\"rooms\": [{\"id\": \"3Jd08vwwDFNOse04sww9$\", \"label\": \"stair\", \"centroid_m\": [2.48, 2.91]}, {\"id\": \"2R3waduEj0rOidpCRnvabG\", \"label\": \"office\", \"centroid_m\": [7.77, 2.91]}, {\"id\": \"1j9ipx4hb4UeERkjvxJc3k\", \"label\": \"office\", \"centroid_m\": [5.29, 8.91]}, {\"id\": \"1bzsyopgTFYwTvckD1AECa\", \"label\": \"lab\", \"centroid_m\": [14.29, 6.00]}], \"edges\": [{\"a\": \"3Jd08vwwDFNOse04sww9$\", \"b\": \"2R3waduEj0rOidpCRnvabG\", \"type\": \"door\"}, {\"a\": \"3Jd08vwwDFNOse04sww9$\", \"b\": \"1j9ipx4hb4UeERkjvxJc3k\", \"type\": \"open\"}, {\"a\": \"2R3waduEj0rOidpCRnvabG\", \"b\": \"1j9ipx4hb4UeERkjvxJc3k\", \"type\": \"door\"}]}",
+      "hit_cap": false,
+      "connectivity": {
+        "tp": 3,
+        "fn": 0,
+        "fp_on_reference_negative": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      },
+      "labels": {
+        "scored": 4,
+        "correct": 4,
+        "accuracy": 1.0
+      },
+      "gt_scope": {
+        "negatives": "every adjacent pair the generator did not join",
+        "coverage": "complete: the generator knows every pair",
+        "restricted_to": "storey 1",
+        "rooms_before": 11,
+        "rooms_after": 4,
+        "dropped_straddling": 1,
+        "dropped_outside": 9
+      },
+      "prompt_tokens": 2015,
+      "generated_tokens": 329,
+      "seconds": 7.88
+    },
+    {
+      "unit": "synth_0125/00_level_0",
+      "prompt_sha256": "3d6488991d63f2a4",
+      "extraction": {
+        "status": "ok",
+        "detail": null,
+        "rooms": 3,
+        "edges": 3,
+        "dropped_rooms": {},
+        "dropped_edges": {},
+        "dropped_rooms_total": 0,
+        "dropped_edges_total": 0
+      },
+      "raw": "{\"rooms\": [{\"id\": \"1\", \"label\": \"circulation\", \"centroid_m\": [2.26, 2.93]}, {\"id\": \"2\", \"label\": \"circulation\", \"centroid_m\": [4.12, 6.79]}, {\"id\": \"3\", \"label\": \"circulation\", \"centroid_m\": [7.8, 4.28]}], \"edges\": [{\"a\": \"1\", \"b\": \"2\", \"type\": \"open\"}, {\"a\": \"2\", \"b\": \"3\", \"type\": \"open\"}, {\"a\": \"1\", \"b\": \"3\", \"type\": \"open\"}]}",
+      "hit_cap": false,
+      "connectivity": {
+        "tp": 0,
+        "fn": 3,
+        "fp_on_reference_negative": 2,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0
+      },
+      "labels": {
+        "scored": 5,
+        "correct": 1,
+        "accuracy": 0.3333333333333333
+      },
+      "gt_scope": {
+        "negatives": "every adjacent pair the generator did not join",
+        "coverage": "complete: the generator knows every pair",
+        "restricted_to": "storey 0",
+        "rooms_before": 13,
+        "rooms_after": 5,
+        "dropped_straddling": 1,
+        "dropped_outside": 11
+      },
+      "prompt_tokens": 1752,
+      "generated_tokens": 149,
+      "seconds": 3.62
+    },
+    {
+      "unit": "synth_0127/01_level_1",
+      "prompt_sha256": "86bd5754ed4470cd",
+      "extraction": {
+        "status": "ok",
+        "detail": null,
+        "rooms": 8,
+        "edges": 10,
+        "dropped_rooms": {},
+        "dropped_edges": {},
+        "dropped_rooms_total": 0,
+        "dropped_edges_total": 0
+      },
+      "raw": "{\"rooms\": [{\"id\": \"3x4ADCwLn2Sg7QpqzUy5MT\", \"label\": \"bathroom\", \"centroid_m\": [1.69, 2.56]}, {\"id\": \"0H0IY8TWH3lO_nrfWaTEsS\", \"label\": \"stair\", \"centroid_m\": [6.03, 2.56]}, {\"id\": \"2MjUxWobb1JhgFMDlCjJpl\", \"label\": \"living\", \"centroid_m\": [1.82, 8.56]}, {\"id\": \"1Rb3q9dWvBPwtUvBbVI7_3\", \"label\": \"storage\", \"centroid_m\": [6.17, 8.56]}, {\"id\": \"1zZWCtEbH5QO5FxTo2nI39\", \"label\": \"meeting\", \"centroid_m\": [11.23, 3.45]}, {\"id\": \"3qVK6IaqDF8QbZlqsh6OPg\", \"label\": \"bathroom\", \"centroid_m\": [15.88, 3.45]}, {\"id\": \"2czmYtzYnA2P5P3bSK6SH2\", \"label\": \"corridor\", \"centroid_m\": [11.46, 9.45]}, {\"id\": \"0xw$wPJMH7Av4PYs349fj8\", \"label\": \"lab\", \"centroid_m\": [16.11, 9.45]}], \"edges\": [{\"a\": \"3x4ADCwLn2Sg7QpqzUy5MT\", \"b\": \"0H0IY8TWH3lO_nrfWaTEsS\", \"type\": \"door\"}, {\"a\": \"0H0IY8TWH3lO_nrfWaTEsS\", \"b\": \"2MjUxWobb1JhgFMDlCjJpl\", \"type\": \"open\"}, {\"a\": \"0H0IY8TWH3lO_nrfWaTEsS\", \"b\": \"1Rb3q9dWvBPwtUvBbVI7_3\", \"type\": \"open\"}, {\"a\": \"2MjUxWobb1JhgFMDlCjJpl\", \"b\": \"1Rb3q9dWvBPwtUvBbVI7_3\", \"type\": \"open\"}, {\"a\": \"1zZWCtEbH5QO5FxTo2nI39\", \"b\": \"2czmYtzYnA2P5P3bSK6SH2\", \"type\": \"door\"}, {\"a\": \"2czmYtzYnA2P5P3bSK6SH2\", \"b\": \"0xw$wPJMH7Av4PYs349fj8\", \"type\": \"open\"}, {\"a\": \"1Rb3q9dWvBPwtUvBbVI7_3\", \"b\": \"0xw$wPJMH7Av4PYs349fj8\", \"type\": \"open\"}, {\"a\": \"3qVK6IaqDF8QbZlqsh6OPg\", \"b\": \"1zZWCtEbH5QO5FxTo2nI39\", \"type\": \"open\"}, {\"a\": \"3qVK6IaqDF8QbZlqsh6OPg\", \"b\": \"2czmYtzYnA2P5P3bSK6SH2\", \"type\": \"open\"}, {\"a\": \"2czmYtzYnA2P5P3bSK6SH2\", \"b\": \"0xw$wPJMH7Av4PYs349fj8\", \"type\": \"open\"}]}",
+      "hit_cap": false,
+      "connectivity": {
+        "tp": 5,
+        "fn": 1,
+        "fp_on_reference_negative": 1,
+        "precision": 0.833,
+        "recall": 0.833,
+        "f1": 0.833
+      },
+      "labels": {
+        "scored": 8,
+        "correct": 8,
+        "accuracy": 1.0
+      },
+      "gt_scope": {
+        "negatives": "every adjacent pair the generator did not join",
+        "coverage": "complete: the generator knows every pair",
+        "restricted_to": "storey 1",
+        "rooms_before": 15,
+        "rooms_after": 8,
+        "dropped_straddling": 1,
+        "dropped_outside": 10
+      },
+      "prompt_tokens": 3619,
+      "generated_tokens": 889,
+      "seconds": 21.53
+    },
+    {
+      "unit": "synth_0130/00_level_0",
+      "prompt_sha256": "8d46ba2c875d8c02",
+      "extraction": {
+        "status": "ok",
+        "detail": null,
+        "rooms": 7,
+        "edges": 11,
+        "dropped_rooms": {},
+        "dropped_edges": {},
+        "dropped_rooms_total": 0,
+        "dropped_edges_total": 0
+      },
+      "raw": "{\"rooms\": [{\"id\": \"3tu6w48$96_QhglFMHJ3Dn\", \"label\": \"circulation\", \"centroid_m\": [1.55, 3.43]}, {\"id\": \"0kiSrUC9zBNBUVLtQSUN83\", \"label\": \"storage\", \"centroid_m\": [5.56, 3.43]}, {\"id\": \"2EnS2CZxL4fQ54cS8PETaC\", \"label\": \"lab\", \"centroid_m\": [1.85, 9.43]}, {\"id\": \"3vltimUrDEyvayatUq9gdU\", \"label\": \"kitchen\", \"centroid_m\": [5.86, 9.43]}, {\"id\": \"0W_V$fS1H2Pv_NG0UVJgJM\", \"label\": \"office\", \"centroid_m\": [10.72, 3.23]}, {\"id\": \"3MzBosPDT6FOIdGWFdM6rE\", \"label\": \"living\", \"centroid_m\": [15.71, 3.23]}, {\"id\": \"2mBhTQdKHEluP0prI6Svv$\", \"label\": \"office\", \"centroid_m\": [13.01, 9.23]}], \"edges\": [{\"a\": \"3tu6w48$96_QhglFMHJ3Dn\", \"b\": \"0kiSrUC9zBNBUVLtQSUN83\", \"type\": \"door\"}, {\"a\": \"0kiSrUC9zBNBUVLtQSUN83\", \"b\": \"2EnS2CZxL4fQ54cS8PETaC\", \"type\": \"open\"}, {\"a\": \"0kiSrUC9zBNBUVLtQSUN83\", \"b\": \"3vltimUrDEyvayatUq9gdU\", \"type\": \"door\"}, {\"a\": \"2EnS2CZxL4fQ54cS8PETaC\", \"b\": \"3vltimUrDEyvayatUq9gdU\", \"type\": \"open\"}, {\"a\": \"0W_V$fS1H2Pv_NG0UVJgJM\", \"b\": \"3tu6w48$96_QhglFMHJ3Dn\", \"type\": \"door\"}, {\"a\": \"3MzBosPDT6FOIdGWFdM6rE\", \"b\": \"2mBhTQdKHEluP0prI6Svv$\", \"type\": \"open\"}, {\"a\": \"2mBhTQdKHEluP0prI6Svv$\", \"b\": \"3MzBosPDT6FOIdGWFdM6rE\", \"type\": \"open\"}, {\"a\": \"2mBhTQdKHEluP0prI6Svv$\", \"b\": \"0W_V$fS1H2Pv_NG0UVJgJM\", \"type\": \"door\"}, {\"a\": \"2mBhTQdKHEluP0prI6Svv$\", \"b\": \"3MzBosPDT6FOIdGWFdM6rE\", \"type\": \"open\"}, {\"a\": \"2mBhTQdKHEluP0prI6Svv$\", \"b\": \"0W_V$fS1H2Pv_NG0UVJgJM\", \"type\": \"open\"}, {\"a\": \"2mBhTQdKHEluP0prI6Svv$\", \"b\": \"3MzBosPDT6FOIdGWFdM6rE\", \"type\": \"open\"}]}",
+      "hit_cap": false,
+      "connectivity": {
+        "tp": 2,
+        "fn": 3,
+        "fp_on_reference_negative": 3,
+        "precision": 0.4,
+        "recall": 0.4,
+        "f1": 0.4
+      },
+      "labels": {
+        "scored": 7,
+        "correct": 5,
+        "accuracy": 0.7142857142857143
+      },
+      "gt_scope": {
+        "negatives": "every adjacent pair the generator did not join",
+        "coverage": "complete: the generator knows every pair",
+        "restricted_to": "storey 0",
+        "rooms_before": 14,
+        "rooms_after": 7,
+        "dropped_straddling": 1,
+        "dropped_outside": 10
+      },
+      "prompt_tokens": 3189,
+      "generated_tokens": 863,
+      "seconds": 20.73
+    },
+    {
+      "unit": "synth_0132/01_level_1",
+      "prompt_sha256": "a8b481612797ccb5",
+      "extraction": {
+        "status": "ok",
+        "detail": null,
+        "rooms": 3,
+        "edges": 2,
+        "dropped_rooms": {},
+        "dropped_edges": {},
+        "dropped_rooms_total": 0,
+        "dropped_edges_total": 0
+      },
+      "raw": "{\"rooms\": [{\"id\": \"0\", \"label\": \"circulation\", \"centroid_m\": [2.68, 6.87]}, {\"id\": \"1\", \"label\": \"circulation\", \"centroid_m\": [10.22, 3.57]}, {\"id\": \"2\", \"label\": \"circulation\", \"centroid_m\": [14.57, 3.35]}], \"edges\": [{\"a\": \"0\", \"b\": \"1\", \"type\": \"door\"}, {\"a\": \"1\", \"b\": \"2\", \"type\": \"door\"}]}",
+      "hit_cap": false,
+      "connectivity": {
+        "tp": 0,
+        "fn": 6,
+        "fp_on_reference_negative": 0,
+        "precision": null,
+        "recall": 0.0,
+        "f1": 0.0
+      },
+      "labels": {
+        "scored": 8,
+        "correct": 0,
+        "accuracy": 0.0
+      },
+      "gt_scope": {
+        "negatives": "every adjacent pair the generator did not join",
+        "coverage": "complete: the generator knows every pair",
+        "restricted_to": "storey 1",
+        "rooms_before": 13,
+        "rooms_after": 8,
+        "dropped_straddling": 1,
+        "dropped_outside": 6
+      },
+      "prompt_tokens": 2809,
+      "generated_tokens": 134,
+      "seconds": 3.37
+    },
+    {
+      "unit": "synth_0135/00_level_0",
+      "prompt_sha256": "2b7b87f36e7e8c62",
+      "extraction": {
+        "status": "ok",
+        "detail": null,
+        "rooms": 8,
+        "edges": 28,
+        "dropped_rooms": {},
+        "dropped_edges": {},
+        "dropped_rooms_total": 0,
+        "dropped_edges_total": 0
+      },
+      "raw": "{\"rooms\": [{\"id\": \"2HbVR1sO16Sw7vhSgcRnk2\", \"label\": \"stair\", \"centroid_m\": [1.95, 2.98]}, {\"id\": \"28f1tYfJvFlujSa8uLN0La\", \"label\": \"bedroom\", \"centroid_m\": [6.72, 2.98]}, {\"id\": \"3jd8IfXM15a9DG4Ay9Wfij\", \"label\": \"bedroom\", \"centroid_m\": [2.49, 8.98]}, {\"id\": \"0uLdzIYiz12hXxpr5KEMEf\", \"label\": \"office\", \"centroid_m\": [7.26, 8.98]}, {\"id\": \"25UTKP2Sb20fctHKHLjAkL\", \"label\": \"lab\", \"centroid_m\": [12.0, 3.2]}, {\"id\": \"165F$0rEP9N9ZWtOgeEkHT\", \"label\": \"bedroom\", \"centroid_m\": [16.23, 3.2]}, {\"id\": \"3UatMsH7r76xeUbHi$DI9N\", \"label\": \"office\", \"centroid_m\": [12.0, 9.2]}, {\"id\": \"3Sfy0cbFX1YOgiYN69gdcx\", \"label\": \"bedroom\", \"centroid_m\": [16.23, 9.2]}], \"edges\": [{\"a\": \"2HbVR1sO16Sw7vhSgcRnk2\", \"b\": \"28f1tYfJvFlujSa8uLN0La\", \"type\": \"door\"}, {\"a\": \"2HbVR1sO16Sw7vhSgcRnk2\", \"b\": \"3jd8IfXM15a9DG4Ay9Wfij\", \"type\": \"door\"}, {\"a\": \"2HbVR1sO16Sw7vhSgcRnk2\", \"b\": \"0uLdzIYiz12hXxpr5KEMEf\", \"type\": \"door\"}, {\"a\": \"2HbVR1sO16Sw7vhSgcRnk2\", \"b\": \"25UTKP2Sb20fctHKHLjAkL\", \"type\": \"door\"}, {\"a\": \"2HbVR1sO16Sw7vhSgcRnk2\", \"b\": \"165F$0rEP9N9ZWtOgeEkHT\", \"type\": \"door\"}, {\"a\": \"2HbVR1sO16Sw7vhSgcRnk2\", \"b\": \"3UatMsH7r76xeUbHi$DI9N\", \"type\": \"door\"}, {\"a\": \"2HbVR1sO16Sw7vhSgcRnk2\", \"b\": \"3Sfy0cbFX1YOgiYN69gdcx\", \"type\": \"door\"}, {\"a\": \"28f1tYfJvFlujSa8uLN0La\", \"b\": \"3jd8IfXM15a9DG4Ay9Wfij\", \"type\": \"open\"}, {\"a\": \"28f1tYfJvFlujSa8uLN0La\", \"b\": \"0uLdzIYiz12hXxpr5KEMEf\", \"type\": \"open\"}, {\"a\": \"28f1tYfJvFlujSa8uLN0La\", \"b\": \"25UTKP2Sb20fctHKHLjAkL\", \"type\": \"open\"}, {\"a\": \"28f1tYfJvFlujSa8uLN0La\", \"b\": \"165F$0rEP9N9ZWtOgeEkHT\", \"type\": \"open\"}, {\"a\": \"28f1tYfJvFlujSa8uLN0La\", \"b\": \"3UatMsH7r76xeUbHi$DI9N\", \"type\": \"open\"}, {\"a\": \"28f1tYfJvFlujSa8uLN0La\", \"b\": \"3Sfy0cbFX1YOgiYN69gdcx\", \"type\": \"open\"}, {\"a\": \"3jd8IfXM15a9DG4Ay9Wfij\", \"b\": \"0uLdzIYiz12hXxpr5KEMEf\", \"type\": \"open\"}, {\"a\": \"3jd8IfXM15a9DG4Ay9Wfij\", \"b\": \"25UTKP2Sb20fctHKHLjAkL\", \"type\": \"open\"}, {\"a\": \"3jd8IfXM15a9DG4Ay9Wfij\", \"b\": \"165F$0rEP9N9ZWtOgeEkHT\", \"type\": \"open\"}, {\"a\": \"3jd8IfXM15a9DG4Ay9Wfij\", \"b\": \"3UatMsH7r76xeUbHi$DI9N\", \"type\": \"open\"}, {\"a\": \"3jd8IfXM15a9DG4Ay9Wfij\", \"b\": \"3Sfy0cbFX1YOgiYN69gdcx\", \"type\": \"open\"}, {\"a\": \"0uLdzIYiz12hXxpr5KEMEf\", \"b\": \"25UTKP2Sb20fctHKHLjAkL\", \"type\": \"open\"}, {\"a\": \"0uLdzIYiz12hXxpr5KEMEf\", \"b\": \"165F$0rEP9N9ZWtOgeEkHT\", \"type\": \"open\"}, {\"a\": \"0uLdzIYiz12hXxpr5KEMEf\", \"b\": \"3UatMsH7r76xeUbHi$DI9N\", \"type\": \"open\"}, {\"a\": \"0uLdzIYiz12hXxpr5KEMEf\", \"b\": \"3Sfy0cbFX1YOgiYN69gdcx\", \"type\": \"open\"}, {\"a\": \"25UTKP2Sb20fctHKHLjAkL\", \"b\": \"165F$0rEP9N9ZWtOgeEkHT\", \"type\": \"open\"}, {\"a\": \"25UTKP2Sb20fctHKHLjAkL\", \"b\": \"3UatMsH7r76xeUbHi$DI9N\", \"type\": \"open\"}, {\"a\": \"25UTKP2Sb20fctHKHLjAkL\", \"b\": \"3Sfy0cbFX1YOgiYN69gdcx\", \"type\": \"open\"}, {\"a\": \"165F$0rEP9N9ZWtOgeEkHT\", \"b\": \"3UatMsH7r76xeUbHi$DI9N\", \"type\": \"open\"}, {\"a\": \"165F$0rEP9N9ZWtOgeEkHT\", \"b\": \"3Sfy0cbFX1YOgiYN69gdcx\", \"type\": \"open\"}, {\"a\": \"3UatMsH7r76xeUbHi$DI9N\", \"b\": \"3Sfy0cbFX1YOgiYN69gdcx\", \"type\": \"open\"}]}",
+      "hit_cap": false,
+      "connectivity": {
+        "tp": 6,
+        "fn": 0,
+        "fp_on_reference_negative": 5,
+        "precision": 0.545,
+        "recall": 1.0,
+        "f1": 0.706
+      },
+      "labels": {
+        "scored": 8,
+        "correct": 8,
+        "accuracy": 1.0
+      },
+      "gt_scope": {
+        "negatives": "every adjacent pair the generator did not join",
+        "coverage": "complete: the generator knows every pair",
+        "restricted_to": "storey 0",
+        "rooms_before": 15,
+        "rooms_after": 8,
+        "dropped_straddling": 1,
+        "dropped_outside": 10
+      },
+      "prompt_tokens": 3480,
+      "generated_tokens": 1724,
+      "seconds": 41.55
+    },
+    {
+      "unit": "synth_0137/01_level_1",
+      "prompt_sha256": "93bbe6a3133e3688",
+      "extraction": {
+        "status": "ok",
+        "detail": null,
+        "rooms": 7,
+        "edges": 6,
+        "dropped_rooms": {
+          "duplicate_id": 1
+        },
+        "dropped_edges": {
+          "self_loop": 1
+        },
+        "dropped_rooms_total": 1,
+        "dropped_edges_total": 1
+      },
+      "raw": "{\"rooms\": [{\"id\": \"Stair\", \"label\": \"circulation\", \"centroid_m\": [2.39, 2.77]}, {\"id\": \"Store\", \"label\": \"storage\", \"centroid_m\": [7.03, 2.77]}, {\"id\": \"Reception\", \"label\": \"office\", \"centroid_m\": [2.5, 8.77]}, {\"id\": \"Living Room\", \"label\": \"living\", \"centroid_m\": [7.14, 8.77]}, {\"id\": \"Lab\", \"label\": \"service\", \"centroid_m\": [11.28, 3.28]}, {\"id\": \"Bathroom\", \"label\": \"bathroom\", \"centroid_m\": [15.64, 3.28]}, {\"id\": \"Bedroom\", \"label\": \"bedroom\", \"centroid_m\": [11.5, 9.28]}, {\"id\": \"Bedroom\", \"label\": \"bedroom\", \"centroid_m\": [15.86, 9.28]}], \"edges\": [{\"a\": \"Stair\", \"b\": \"Store\", \"type\": \"door\"}, {\"a\": \"Stair\", \"b\": \"Reception\", \"type\": \"open\"}, {\"a\": \"Stair\", \"b\": \"Living Room\", \"type\": \"open\"}, {\"a\": \"Reception\", \"b\": \"Living Room\", \"type\": \"open\"}, {\"a\": \"Lab\", \"b\": \"Bathroom\", \"type\": \"door\"}, {\"a\": \"Bedroom\", \"b\": \"Bathroom\", \"type\": \"door\"}, {\"a\": \"Bedroom\", \"b\": \"Bedroom\", \"type\": \"open\"}]}",
+      "hit_cap": false,
+      "connectivity": {
+        "tp": 4,
+        "fn": 2,
+        "fp_on_reference_negative": 0,
+        "precision": 1.0,
+        "recall": 0.667,
+        "f1": 0.8
+      },
+      "labels": {
+        "scored": 8,
+        "correct": 4,
+        "accuracy": 0.5714285714285714
+      },
+      "gt_scope": {
+        "negatives": "every adjacent pair the generator did not join",
+        "coverage": "complete: the generator knows every pair",
+        "restricted_to": "storey 1",
+        "rooms_before": 16,
+        "rooms_after": 8,
+        "dropped_straddling": 1,
+        "dropped_outside": 11
+      },
+      "prompt_tokens": 3393,
+      "generated_tokens": 383,
+      "seconds": 9.35
+    },
+    {
+      "unit": "synth_0140/00_level_0",
+      "prompt_sha256": "b7239625b0bd7c77",
+      "extraction": {
+        "status": "ok",
+        "detail": null,
+        "rooms": 5,
+        "edges": 5,
+        "dropped_rooms": {},
+        "dropped_edges": {},
+        "dropped_rooms_total": 0,
+        "dropped_edges_total": 0
+      },
+      "raw": "{\"rooms\": [{\"id\": \"2rlHAPj8jBzQGnTRahjvgF\", \"label\": \"circulation\", \"centroid_m\": [7.35, 8.775]}, {\"id\": \"3SViEcJIL5$h3PEzemCvh3\", \"label\": \"circulation\", \"centroid_m\": [7.35, 2.6]}, {\"id\": \"2FP3lo2NbAzu3o$85YccwP\", \"label\": \"office\", \"centroid_m\": [5.02, 6.09]}, {\"id\": \"3xpsuiR4L7v9wTLAmPAuA9\", \"label\": \"circulation\", \"centroid_m\": [13.74, 8.775]}, {\"id\": \"19Vd7HVgHDyvmuYHpAb8AW\", \"label\": \"storage\", \"centroid_m\": [12.54, 6.6]}], \"edges\": [{\"a\": \"2rlHAPj8jBzQGnTRahjvgF\", \"b\": \"3SViEcJIL5$h3PEzemCvh3\", \"type\": \"door\"}, {\"a\": \"2rlHAPj8jBzQGnTRahjvgF\", \"b\": \"2FP3lo2NbAzu3o$85YccwP\", \"type\": \"open\"}, {\"a\": \"2rlHAPj8jBzQGnTRahjvgF\", \"b\": \"3xpsuiR4L7v9wTLAmPAuA9\", \"type\": \"door\"}, {\"a\": \"3SViEcJIL5$h3PEzemCvh3\", \"b\": \"19Vd7HVgHDyvmuYHpAb8AW\", \"type\": \"open\"}, {\"a\": \"3xpsuiR4L7v9wTLAmPAuA9\", \"b\": \"19Vd7HVgHDyvmuYHpAb8AW\", \"type\": \"open\"}]}",
+      "hit_cap": false,
+      "connectivity": {
+        "tp": 1,
+        "fn": 5,
+        "fp_on_reference_negative": 1,
+        "precision": 0.5,
+        "recall": 0.167,
+        "f1": 0.25
+      },
+      "labels": {
+        "scored": 7,
+        "correct": 0,
+        "accuracy": 0.0
+      },
+      "gt_scope": {
+        "negatives": "every adjacent pair the generator did not join",
+        "coverage": "complete: the generator knows every pair",
+        "restricted_to": "storey 0",
+        "rooms_before": 12,
+        "rooms_after": 7,
+        "dropped_straddling": 1,
+        "dropped_outside": 6
+      },
+      "prompt_tokens": 2594,
+      "generated_tokens": 472,
+      "seconds": 11.33
+    },
+    {
+      "unit": "synth_0142/01_level_1",
+      "prompt_sha256": "39ae331046293188",
+      "extraction": {
+        "status": "ok",
+        "detail": null,
+        "rooms": 4,
+        "edges": 4,
+        "dropped_rooms": {},
+        "dropped_edges": {},
+        "dropped_rooms_total": 0,
+        "dropped_edges_total": 0
+      },
+      "raw": "{\"rooms\": [{\"id\": \"1\", \"label\": \"storage\", \"centroid_m\": [11.15, 2.54]}, {\"id\": \"2\", \"label\": \"storage\", \"centroid_m\": [11.15, 10.17]}, {\"id\": \"3\", \"label\": \"office\", \"centroid_m\": [13.11, 5.09]}, {\"id\": \"4\", \"label\": \"meeting\", \"centroid_m\": [17.95, 5.09]}], \"edges\": [{\"a\": \"1\", \"b\": \"2\", \"type\": \"open\"}, {\"a\": \"1\", \"b\": \"3\", \"type\": \"door\"}, {\"a\": \"2\", \"b\": \"4\", \"type\": \"door\"}, {\"a\": \"3\", \"b\": \"4\", \"type\": \"door\"}]}",
+      "hit_cap": false,
+      "connectivity": {
+        "tp": 1,
+        "fn": 5,
+        "fp_on_reference_negative": 0,
+        "precision": 1.0,
+        "recall": 0.167,
+        "f1": 0.286
+      },
+      "labels": {
+        "scored": 8,
+        "correct": 1,
+        "accuracy": 0.3333333333333333
+      },
+      "gt_scope": {
+        "negatives": "every adjacent pair the generator did not join",
+        "coverage": "complete: the generator knows every pair",
+        "restricted_to": "storey 1",
+        "rooms_before": 15,
+        "rooms_after": 8,
+        "dropped_straddling": 1,
+        "dropped_outside": 10
+      },
+      "prompt_tokens": 2837,
+      "generated_tokens": 198,
+      "seconds": 4.92
+    },
+    {
+      "unit": "synth_0145/00_level_0",
+      "prompt_sha256": "920def447314858e",
+      "extraction": {
+        "status": "ok",
+        "detail": null,
+        "rooms": 7,
+        "edges": 19,
+        "dropped_rooms": {},
+        "dropped_edges": {},
+        "dropped_rooms_total": 0,
+        "dropped_edges_total": 0
+      },
+      "raw": "{\"rooms\": [{\"id\": \"1k6XLdtdX3ohlH9SVsEiIK\", \"label\": \"stair\", \"centroid_m\": [5.16, 2.28]}, {\"id\": \"288OSel3n0_h2_R2kLq3Cp\", \"label\": \"office\", \"centroid_m\": [2.94, 8.28]}, {\"id\": \"3ibZClROz34wiL4e7XEQ9u\", \"label\": \"reception\", \"centroid_m\": [8.11, 8.28]}, {\"id\": \"0ggfrnc7b28vCpwtPS0wNX\", \"label\": \"kitchen\", \"centroid_m\": [12.21, 3.61]}, {\"id\": \"0ofhGroIH7FRGzy2qxdike\", \"label\": \"bathroom\", \"centroid_m\": [16.05, 3.61]}, {\"id\": \"1KsXulQ_nD3hLXwnqWufUp\", \"label\": \"office\", \"centroid_m\": [11.88, 9.61]}, {\"id\": \"2lO62wQOjCcg0x1fOXRymd\", \"label\": \"reception\", \"centroid_m\": [15.72, 9.61]}], \"edges\": [{\"a\": \"1k6XLdtdX3ohlH9SVsEiIK\", \"b\": \"288OSel3n0_h2_R2kLq3Cp\", \"type\": \"open\"}, {\"a\": \"1k6XLdtdX3ohlH9SVsEiIK\", \"b\": \"3ibZClROz34wiL4e7XEQ9u\", \"type\": \"open\"}, {\"a\": \"1k6XLdtdX3ohlH9SVsEiIK\", \"b\": \"0ggfrnc7b28vCpwtPS0wNX\", \"type\": \"open\"}, {\"a\": \"1k6XLdtdX3ohlH9SVsEiIK\", \"b\": \"0ofhGroIH7FRGzy2qxdike\", \"type\": \"open\"}, {\"a\": \"1k6XLdtdX3ohlH9SVsEiIK\", \"b\": \"1KsXulQ_nD3hLXwnqWufUp\", \"type\": \"open\"}, {\"a\": \"1k6XLdtdX3ohlH9SVsEiIK\", \"b\": \"2lO62wQOjCcg0x1fOXRymd\", \"type\": \"open\"}, {\"a\": \"288OSel3n0_h2_R2kLq3Cp\", \"b\": \"3ibZClROz34wiL4e7XEQ9u\", \"type\": \"door\"}, {\"a\": \"288OSel3n0_h2_R2kLq3Cp\", \"b\": \"1KsXulQ_nD3hLXwnqWufUp\", \"type\": \"open\"}, {\"a\": \"288OSel3n0_h2_R2kLq3Cp\", \"b\": \"2lO62wQOjCcg0x1fOXRymd\", \"type\": \"open\"}, {\"a\": \"3ibZClROz34wiL4e7XEQ9u\", \"b\": \"0ggfrnc7b28vCpwtPS0wNX\", \"type\": \"open\"}, {\"a\": \"3ibZClROz34wiL4e7XEQ9u\", \"b\": \"0ofhGroIH7FRGzy2qxdike\", \"type\": \"open\"}, {\"a\": \"3ibZClROz34wiL4e7XEQ9u\", \"b\": \"1KsXulQ_nD3hLXwnqWufUp\", \"type\": \"open\"}, {\"a\": \"3ibZClROz34wiL4e7XEQ9u\", \"b\": \"2lO62wQOjCcg0x1fOXRymd\", \"type\": \"open\"}, {\"a\": \"0ggfrnc7b28vCpwtPS0wNX\", \"b\": \"0ofhGroIH7FRGzy2qxdike\", \"type\": \"open\"}, {\"a\": \"0ggfrnc7b28vCpwtPS0wNX\", \"b\": \"1KsXulQ_nD3hLXwnqWufUp\", \"type\": \"open\"}, {\"a\": \"0ggfrnc7b28vCpwtPS0wNX\", \"b\": \"2lO62wQOjCcg0x1fOXRymd\", \"type\": \"open\"}, {\"a\": \"0ofhGroIH7FRGzy2qxdike\", \"b\": \"1KsXulQ_nD3hLXwnqWufUp\", \"type\": \"open\"}, {\"a\": \"0ofhGroIH7FRGzy2qxdike\", \"b\": \"2lO62wQOjCcg0x1fOXRymd\", \"type\": \"open\"}, {\"a\": \"1KsXulQ_nD3hLXwnqWufUp\", \"b\": \"2lO62wQOjCcg0x1fOXRymd\", \"type\": \"open\"}]}",
+      "hit_cap": false,
+      "connectivity": {
+        "tp": 6,
+        "fn": 0,
+        "fp_on_reference_negative": 4,
+        "precision": 0.6,
+        "recall": 1.0,
+        "f1": 0.75
+      },
+      "labels": {
+        "scored": 7,
+        "correct": 7,
+        "accuracy": 1.0
+      },
+      "gt_scope": {
+        "negatives": "every adjacent pair the generator did not join",
+        "coverage": "complete: the generator knows every pair",
+        "restricted_to": "storey 0",
+        "rooms_before": 15,
+        "rooms_after": 7,
+        "dropped_straddling": 1,
+        "dropped_outside": 11
+      },
+      "prompt_tokens": 3337,
+      "generated_tokens": 1258,
+      "seconds": 30.23
+    },
+    {
+      "unit": "synth_0147/01_level_1",
+      "prompt_sha256": "8a565b01865b69d2",
+      "extraction": {
+        "status": "ok",
+        "detail": null,
+        "rooms": 7,
+        "edges": 8,
+        "dropped_rooms": {},
+        "dropped_edges": {},
+        "dropped_rooms_total": 0,
+        "dropped_edges_total": 0
+      },
+      "raw": "{\"rooms\": [{\"id\": \"3KSWH$2Rr8h9UDC3ryJ4P0\", \"label\": \"stair\", \"centroid_m\": [2.26, 2.41]}, {\"id\": \"1pxWhjCTv6dAdrdQuuctzq\", \"label\": \"meeting\", \"centroid_m\": [6.57, 2.41]}, {\"id\": \"1OezKawrD1Pwm_eX2yvUrF\", \"label\": \"kitchen\", \"centroid_m\": [4.31, 8.41]}, {\"id\": \"2Zm0Fpt8D78gS8GMMF_fSV\", \"label\": \"bathroom\", \"centroid_m\": [10.8, 3.44]}, {\"id\": \"3v893FsPz96RD$SpEKq9vq\", \"label\": \"lab\", \"centroid_m\": [15.49, 3.44]}, {\"id\": \"1BWroX3WHFQgOjN9EcWLqm\", \"label\": \"kitchen\", \"centroid_m\": [10.66, 9.44]}, {\"id\": \"2SVfj2zEP00h7en8DsRM6T\", \"label\": \"store\", \"centroid_m\": [15.34, 9.44]}], \"edges\": [{\"a\": \"3KSWH$2Rr8h9UDC3ryJ4P0\", \"b\": \"1pxWhjCTv6dAdrdQuuctzq\", \"type\": \"door\"}, {\"a\": \"1pxWhjCTv6dAdrdQuuctzq\", \"b\": \"1OezKawrD1Pwm_eX2yvUrF\", \"type\": \"open\"}, {\"a\": \"1OezKawrD1Pwm_eX2yvUrF\", \"b\": \"2Zm0Fpt8D78gS8GMMF_fSV\", \"type\": \"open\"}, {\"a\": \"2Zm0Fpt8D78gS8GMMF_fSV\", \"b\": \"3v893FsPz96RD$SpEKq9vq\", \"type\": \"open\"}, {\"a\": \"3v893FsPz96RD$SpEKq9vq\", \"b\": \"1BWroX3WHFQgOjN9EcWLqm\", \"type\": \"open\"}, {\"a\": \"1BWroX3WHFQgOjN9EcWLqm\", \"b\": \"2SVfj2zEP00h7en8DsRM6T\", \"type\": \"open\"}, {\"a\": \"1OezKawrD1Pwm_eX2yvUrF\", \"b\": \"1BWroX3WHFQgOjN9EcWLqm\", \"type\": \"open\"}, {\"a\": \"2Zm0Fpt8D78gS8GMMF_fSV\", \"b\": \"2SVfj2zEP00h7en8DsRM6T\", \"type\": \"open\"}]}",
+      "hit_cap": false,
+      "connectivity": {
+        "tp": 4,
+        "fn": 2,
+        "fp_on_reference_negative": 2,
+        "precision": 0.667,
+        "recall": 0.667,
+        "f1": 0.667
+      },
+      "labels": {
+        "scored": 7,
+        "correct": 7,
+        "accuracy": 1.0
+      },
+      "gt_scope": {
+        "negatives": "every adjacent pair the generator did not join",
+        "coverage": "complete: the generator knows every pair",
+        "restricted_to": "storey 1",
+        "rooms_before": 15,
+        "rooms_after": 7,
+        "dropped_straddling": 1,
+        "dropped_outside": 11
+      },
+      "prompt_tokens": 3308,
+      "generated_tokens": 722,
+      "seconds": 17.4
+    }
+  ]
+}

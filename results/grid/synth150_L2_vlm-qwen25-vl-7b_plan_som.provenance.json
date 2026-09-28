@@ -1,0 +1,1540 @@
+{
+  "config": {
+    "corpus": "dataset/synthetic_data/synth150_L2",
+    "gt_glob": null,
+    "plans": null,
+    "modality": "plan_som",
+    "backend": "vlm",
+    "model_id": "qwen25-vl-7b",
+    "oracle_anchor": null,
+    "mask_labels": false,
+    "no_think_template": false,
+    "max_new_tokens": 3072,
+    "relations_scored": [
+      "connected_by_door",
+      "open_passage"
+    ],
+    "scope": "one storey per call; vertical links out of scope on both the prediction and the reference",
+    "backend_name": "vlm:Qwen2.5-VL-7B-Instruct",
+    "model_revision": "cc594898137f460bfe9f0759e9844b3ce807cfb5"
+  },
+  "predictions": [
+    {
+      "unit": "synth_0000/00_level_0",
+      "prompt_sha256": "60db8ec3de7f9980",
+      "extraction": {
+        "status": "ok",
+        "detail": null,
+        "rooms": 8,
+        "edges": 10,
+        "dropped_rooms": {},
+        "dropped_edges": {},
+        "dropped_rooms_total": 0,
+        "dropped_edges_total": 0
+      },
+      "raw": "{\n  \"rooms\": [\n    {\"id\": \"1\", \"label\": \"bathroom\"},\n    {\"id\": \"2\", \"label\": \"living\"},\n    {\"id\": \"3\", \"label\": \"office\"},\n    {\"id\": \"4\", \"label\": \"office\"},\n    {\"id\": \"5\", \"label\": \"office\"},\n    {\"id\": \"6\", \"label\": \"office\"},\n    {\"id\": \"7\", \"label\": \"office\"},\n    {\"id\": \"8\", \"label\": \"office\"}\n  ],\n  \"edges\": [\n    {\"a\": \"1\", \"b\": \"2\", \"type\": \"open\"},\n    {\"a\": \"2\", \"b\": \"3\", \"type\": \"door\"},\n    {\"a\": \"2\", \"b\": \"4\", \"type\": \"open\"},\n    {\"a\": \"2\", \"b\": \"5\", \"type\": \"open\"},\n    {\"a\": \"2\", \"b\": \"6\", \"type\": \"open\"},\n    {\"a\": \"3\", \"b\": \"4\", \"type\": \"open\"},\n    {\"a\": \"4\", \"b\": \"7\", \"type\": \"open\"},\n    {\"a\": \"5\", \"b\": \"6\", \"type\": \"open\"},\n    {\"a\": \"6\", \"b\": \"7\", \"type\": \"open\"},\n    {\"a\": \"6\", \"b\": \"8\", \"type\": \"open\"}\n  ]\n}",
+      "hit_cap": false,
+      "connectivity": {
+        "tp": 5,
+        "fn": 1,
+        "fp_on_reference_negative": 2,
+        "precision": 0.714,
+        "recall": 0.833,
+        "f1": 0.769
+      },
+      "labels": {
+        "scored": 8,
+        "correct": 0,
+        "accuracy": 0.0
+      },
+      "gt_scope": {
+        "negatives": "every adjacent pair the generator did not join",
+        "coverage": "complete: the generator knows every pair",
+        "restricted_to": "storey 0; 8 marked rooms",
+        "rooms_before": 8,
+        "rooms_after": 8,
+        "dropped_straddling": 0,
+        "dropped_outside": 0
+      },
+      "prompt_tokens": 3197,
+      "generated_tokens": 312,
+      "seconds": 9.07
+    },
+    {
+      "unit": "synth_0002/01_level_1",
+      "prompt_sha256": "60db8ec3de7f9980",
+      "extraction": {
+        "status": "ok",
+        "detail": null,
+        "rooms": 8,
+        "edges": 9,
+        "dropped_rooms": {},
+        "dropped_edges": {},
+        "dropped_rooms_total": 0,
+        "dropped_edges_total": 0
+      },
+      "raw": "{\n  \"rooms\": [\n    {\"id\": \"1\", \"label\": \"living\"},\n    {\"id\": \"2\", \"label\": \"circulation\"},\n    {\"id\": \"3\", \"label\": \"office\"},\n    {\"id\": \"4\", \"label\": \"office\"},\n    {\"id\": \"5\", \"label\": \"office\"},\n    {\"id\": \"6\", \"label\": \"office\"},\n    {\"id\": \"7\", \"label\": \"office\"},\n    {\"id\": \"8\", \"label\": \"office\"}\n  ],\n  \"edges\": [\n    {\"a\": \"1\", \"b\": \"2\", \"type\": \"open\"},\n    {\"a\": \"2\", \"b\": \"3\", \"type\": \"door\"},\n    {\"a\": \"2\", \"b\": \"4\", \"type\": \"door\"},\n    {\"a\": \"2\", \"b\": \"5\", \"type\": \"open\"},\n    {\"a\": \"2\", \"b\": \"6\", \"type\": \"open\"},\n    {\"a\": \"3\", \"b\": \"4\", \"type\": \"open\"},\n    {\"a\": \"4\", \"b\": \"5\", \"type\": \"open\"},\n    {\"a\": \"5\", \"b\": \"6\", \"type\": \"open\"},\n    {\"a\": \"7\", \"b\": \"8\", \"type\": \"open\"}\n  ]\n}",
+      "hit_cap": false,
+      "connectivity": {
+        "tp": 3,
+        "fn": 3,
+        "fp_on_reference_negative": 4,
+        "precision": 0.429,
+        "recall": 0.5,
+        "f1": 0.462
+      },
+      "labels": {
+        "scored": 8,
+        "correct": 0,
+        "accuracy": 0.0
+      },
+      "gt_scope": {
+        "negatives": "every adjacent pair the generator did not join",
+        "coverage": "complete: the generator knows every pair",
+        "restricted_to": "storey 1; 8 marked rooms",
+        "rooms_before": 8,
+        "rooms_after": 8,
+        "dropped_straddling": 0,
+        "dropped_outside": 0
+      },
+      "prompt_tokens": 3197,
+      "generated_tokens": 293,
+      "seconds": 8.13
+    },
+    {
+      "unit": "synth_0005/00_level_0",
+      "prompt_sha256": "60db8ec3de7f9980",
+      "extraction": {
+        "status": "ok",
+        "detail": null,
+        "rooms": 6,
+        "edges": 5,
+        "dropped_rooms": {},
+        "dropped_edges": {},
+        "dropped_rooms_total": 0,
+        "dropped_edges_total": 0
+      },
+      "raw": "{\n  \"rooms\": [\n    {\"id\": \"1\", \"label\": \"bathroom\"},\n    {\"id\": \"2\", \"label\": \"bedroom\"},\n    {\"id\": \"3\", \"label\": \"living\"},\n    {\"id\": \"4\", \"label\": \"office\"},\n    {\"id\": \"5\", \"label\": \"office\"},\n    {\"id\": \"6\", \"label\": \"meeting\"}\n  ],\n  \"edges\": [\n    {\"a\": \"1\", \"b\": \"2\", \"type\": \"open\"},\n    {\"a\": \"2\", \"b\": \"3\", \"type\": \"open\"},\n    {\"a\": \"2\", \"b\": \"4\", \"type\": \"door\"},\n    {\"a\": \"3\", \"b\": \"6\", \"type\": \"open\"},\n    {\"a\": \"4\", \"b\": \"5\", \"type\": \"open\"}\n  ]\n}",
+      "hit_cap": false,
+      "connectivity": {
+        "tp": 2,
+        "fn": 2,
+        "fp_on_reference_negative": 3,
+        "precision": 0.4,
+        "recall": 0.5,
+        "f1": 0.444
+      },
+      "labels": {
+        "scored": 6,
+        "correct": 1,
+        "accuracy": 0.16666666666666666
+      },
+      "gt_scope": {
+        "negatives": "every adjacent pair the generator did not join",
+        "coverage": "complete: the generator knows every pair",
+        "restricted_to": "storey 0; 6 marked rooms",
+        "rooms_before": 6,
+        "rooms_after": 6,
+        "dropped_straddling": 0,
+        "dropped_outside": 0
+      },
+      "prompt_tokens": 3197,
+      "generated_tokens": 192,
+      "seconds": 5.55
+    },
+    {
+      "unit": "synth_0022/01_level_1",
+      "prompt_sha256": "60db8ec3de7f9980",
+      "extraction": {
+        "status": "ok",
+        "detail": null,
+        "rooms": 4,
+        "edges": 4,
+        "dropped_rooms": {},
+        "dropped_edges": {},
+        "dropped_rooms_total": 0,
+        "dropped_edges_total": 0
+      },
+      "raw": "{\n  \"rooms\": [\n    {\"id\": \"1\", \"label\": \"living\"},\n    {\"id\": \"2\", \"label\": \"kitchen\"},\n    {\"id\": \"3\", \"label\": \"office\"},\n    {\"id\": \"4\", \"label\": \"meeting\"}\n  ],\n  \"edges\": [\n    {\"a\": \"1\", \"b\": \"2\", \"type\": \"open\"},\n    {\"a\": \"2\", \"b\": \"3\", \"type\": \"door\"},\n    {\"a\": \"2\", \"b\": \"4\", \"type\": \"door\"},\n    {\"a\": \"3\", \"b\": \"4\", \"type\": \"open\"}\n  ]\n}",
+      "hit_cap": false,
+      "connectivity": {
+        "tp": 3,
+        "fn": 0,
+        "fp_on_reference_negative": 1,
+        "precision": 0.75,
+        "recall": 1.0,
+        "f1": 0.857
+      },
+      "labels": {
+        "scored": 4,
+        "correct": 0,
+        "accuracy": 0.0
+      },
+      "gt_scope": {
+        "negatives": "every adjacent pair the generator did not join",
+        "coverage": "complete: the generator knows every pair",
+        "restricted_to": "storey 1; 4 marked rooms",
+        "rooms_before": 4,
+        "rooms_after": 4,
+        "dropped_straddling": 0,
+        "dropped_outside": 0
+      },
+      "prompt_tokens": 3197,
+      "generated_tokens": 146,
+      "seconds": 4.35
+    },
+    {
+      "unit": "synth_0025/00_level_0",
+      "prompt_sha256": "60db8ec3de7f9980",
+      "extraction": {
+        "status": "ok",
+        "detail": null,
+        "rooms": 7,
+        "edges": 6,
+        "dropped_rooms": {},
+        "dropped_edges": {},
+        "dropped_rooms_total": 0,
+        "dropped_edges_total": 0
+      },
+      "raw": "{\n  \"rooms\": [\n    {\"id\": \"1\", \"label\": \"bathroom\"},\n    {\"id\": \"2\", \"label\": \"living\"},\n    {\"id\": \"3\", \"label\": \"kitchen\"},\n    {\"id\": \"4\", \"label\": \"office\"},\n    {\"id\": \"5\", \"label\": \"office\"},\n    {\"id\": \"6\", \"label\": \"meeting\"},\n    {\"id\": \"7\", \"label\": \"circulation\"}\n  ],\n  \"edges\": [\n    {\"a\": \"1\", \"b\": \"2\", \"type\": \"open\"},\n    {\"a\": \"2\", \"b\": \"3\", \"type\": \"open\"},\n    {\"a\": \"3\", \"b\": \"4\", \"type\": \"open\"},\n    {\"a\": \"4\", \"b\": \"5\", \"type\": \"open\"},\n    {\"a\": \"4\", \"b\": \"6\", \"type\": \"open\"},\n    {\"a\": \"6\", \"b\": \"7\", \"type\": \"open\"}\n  ]\n}",
+      "hit_cap": false,
+      "connectivity": {
+        "tp": 3,
+        "fn": 2,
+        "fp_on_reference_negative": 2,
+        "precision": 0.6,
+        "recall": 0.6,
+        "f1": 0.6
+      },
+      "labels": {
+        "scored": 7,
+        "correct": 1,
+        "accuracy": 0.14285714285714285
+      },
+      "gt_scope": {
+        "negatives": "every adjacent pair the generator did not join",
+        "coverage": "complete: the generator knows every pair",
+        "restricted_to": "storey 0; 7 marked rooms",
+        "rooms_before": 7,
+        "rooms_after": 7,
+        "dropped_straddling": 0,
+        "dropped_outside": 0
+      },
+      "prompt_tokens": 3197,
+      "generated_tokens": 225,
+      "seconds": 6.4
+    },
+    {
+      "unit": "synth_0030/00_level_0",
+      "prompt_sha256": "60db8ec3de7f9980",
+      "extraction": {
+        "status": "ok",
+        "detail": null,
+        "rooms": 5,
+        "edges": 4,
+        "dropped_rooms": {},
+        "dropped_edges": {},
+        "dropped_rooms_total": 0,
+        "dropped_edges_total": 0
+      },
+      "raw": "{\n  \"rooms\": [\n    {\"id\": \"1\", \"label\": \"office\"},\n    {\"id\": \"2\", \"label\": \"living\"},\n    {\"id\": \"3\", \"label\": \"circulation\"},\n    {\"id\": \"4\", \"label\": \"bathroom\"},\n    {\"id\": \"5\", \"label\": \"storage\"}\n  ],\n  \"edges\": [\n    {\"a\": \"1\", \"b\": \"2\", \"type\": \"open\"},\n    {\"a\": \"2\", \"b\": \"3\", \"type\": \"open\"},\n    {\"a\": \"3\", \"b\": \"4\", \"type\": \"open\"},\n    {\"a\": \"4\", \"b\": \"5\", \"type\": \"open\"}\n  ]\n}",
+      "hit_cap": false,
+      "connectivity": {
+        "tp": 2,
+        "fn": 2,
+        "fp_on_reference_negative": 2,
+        "precision": 0.5,
+        "recall": 0.5,
+        "f1": 0.5
+      },
+      "labels": {
+        "scored": 5,
+        "correct": 1,
+        "accuracy": 0.2
+      },
+      "gt_scope": {
+        "negatives": "every adjacent pair the generator did not join",
+        "coverage": "complete: the generator knows every pair",
+        "restricted_to": "storey 0; 5 marked rooms",
+        "rooms_before": 5,
+        "rooms_after": 5,
+        "dropped_straddling": 0,
+        "dropped_outside": 0
+      },
+      "prompt_tokens": 3197,
+      "generated_tokens": 160,
+      "seconds": 4.7
+    },
+    {
+      "unit": "synth_0032/01_level_1",
+      "prompt_sha256": "60db8ec3de7f9980",
+      "extraction": {
+        "status": "ok",
+        "detail": null,
+        "rooms": 5,
+        "edges": 3,
+        "dropped_rooms": {},
+        "dropped_edges": {},
+        "dropped_rooms_total": 0,
+        "dropped_edges_total": 0
+      },
+      "raw": "{\n  \"rooms\": [\n    {\"id\": \"1\", \"label\": \"circulation\"},\n    {\"id\": \"2\", \"label\": \"circulation\"},\n    {\"id\": \"3\", \"label\": \"office\"},\n    {\"id\": \"4\", \"label\": \"office\"},\n    {\"id\": \"5\", \"label\": \"office\"}\n  ],\n  \"edges\": [\n    {\"a\": \"1\", \"b\": \"2\", \"type\": \"open\"},\n    {\"a\": \"3\", \"b\": \"4\", \"type\": \"door\"},\n    {\"a\": \"4\", \"b\": \"5\", \"type\": \"door\"}\n  ]\n}",
+      "hit_cap": false,
+      "connectivity": {
+        "tp": 3,
+        "fn": 0,
+        "fp_on_reference_negative": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      },
+      "labels": {
+        "scored": 5,
+        "correct": 0,
+        "accuracy": 0.0
+      },
+      "gt_scope": {
+        "negatives": "every adjacent pair the generator did not join",
+        "coverage": "complete: the generator knows every pair",
+        "restricted_to": "storey 1; 5 marked rooms",
+        "rooms_before": 5,
+        "rooms_after": 5,
+        "dropped_straddling": 0,
+        "dropped_outside": 0
+      },
+      "prompt_tokens": 3197,
+      "generated_tokens": 141,
+      "seconds": 4.22
+    },
+    {
+      "unit": "synth_0035/00_level_0",
+      "prompt_sha256": "60db8ec3de7f9980",
+      "extraction": {
+        "status": "ok",
+        "detail": null,
+        "rooms": 8,
+        "edges": 11,
+        "dropped_rooms": {},
+        "dropped_edges": {},
+        "dropped_rooms_total": 0,
+        "dropped_edges_total": 0
+      },
+      "raw": "{\n  \"rooms\": [\n    {\"id\": \"1\", \"label\": \"circulation\"},\n    {\"id\": \"2\", \"label\": \"living\"},\n    {\"id\": \"3\", \"label\": \"office\"},\n    {\"id\": \"4\", \"label\": \"office\"},\n    {\"id\": \"5\", \"label\": \"office\"},\n    {\"id\": \"6\", \"label\": \"office\"},\n    {\"id\": \"7\", \"label\": \"office\"},\n    {\"id\": \"8\", \"label\": \"office\"}\n  ],\n  \"edges\": [\n    {\"a\": \"1\", \"b\": \"2\", \"type\": \"open\"},\n    {\"a\": \"2\", \"b\": \"3\", \"type\": \"door\"},\n    {\"a\": \"2\", \"b\": \"4\", \"type\": \"open\"},\n    {\"a\": \"2\", \"b\": \"5\", \"type\": \"open\"},\n    {\"a\": \"2\", \"b\": \"6\", \"type\": \"open\"},\n    {\"a\": \"3\", \"b\": \"4\", \"type\": \"open\"},\n    {\"a\": \"4\", \"b\": \"7\", \"type\": \"open\"},\n    {\"a\": \"4\", \"b\": \"8\", \"type\": \"open\"},\n    {\"a\": \"5\", \"b\": \"6\", \"type\": \"open\"},\n    {\"a\": \"5\", \"b\": \"7\", \"type\": \"open\"},\n    {\"a\": \"5\", \"b\": \"8\", \"type\": \"open\"}\n  ]\n}",
+      "hit_cap": false,
+      "connectivity": {
+        "tp": 4,
+        "fn": 2,
+        "fp_on_reference_negative": 3,
+        "precision": 0.571,
+        "recall": 0.667,
+        "f1": 0.615
+      },
+      "labels": {
+        "scored": 8,
+        "correct": 2,
+        "accuracy": 0.25
+      },
+      "gt_scope": {
+        "negatives": "every adjacent pair the generator did not join",
+        "coverage": "complete: the generator knows every pair",
+        "restricted_to": "storey 0; 8 marked rooms",
+        "rooms_before": 8,
+        "rooms_after": 8,
+        "dropped_straddling": 0,
+        "dropped_outside": 0
+      },
+      "prompt_tokens": 3197,
+      "generated_tokens": 331,
+      "seconds": 9.12
+    },
+    {
+      "unit": "synth_0037/01_level_1",
+      "prompt_sha256": "60db8ec3de7f9980",
+      "extraction": {
+        "status": "ok",
+        "detail": null,
+        "rooms": 6,
+        "edges": 7,
+        "dropped_rooms": {},
+        "dropped_edges": {},
+        "dropped_rooms_total": 0,
+        "dropped_edges_total": 0
+      },
+      "raw": "{\n  \"rooms\": [\n    {\"id\": \"1\", \"label\": \"living\"},\n    {\"id\": \"2\", \"label\": \"office\"},\n    {\"id\": \"3\", \"label\": \"circulation\"},\n    {\"id\": \"4\", \"label\": \"storage\"},\n    {\"id\": \"5\", \"label\": \"meeting\"},\n    {\"id\": \"6\", \"label\": \"office\"}\n  ],\n  \"edges\": [\n    {\"a\": \"1\", \"b\": \"3\", \"type\": \"open\"},\n    {\"a\": \"2\", \"b\": \"1\", \"type\": \"open\"},\n    {\"a\": \"2\", \"b\": \"5\", \"type\": \"door\"},\n    {\"a\": \"3\", \"b\": \"4\", \"type\": \"open\"},\n    {\"a\": \"3\", \"b\": \"5\", \"type\": \"open\"},\n    {\"a\": \"4\", \"b\": \"6\", \"type\": \"open\"},\n    {\"a\": \"5\", \"b\": \"6\", \"type\": \"open\"}\n  ]\n}",
+      "hit_cap": false,
+      "connectivity": {
+        "tp": 4,
+        "fn": 0,
+        "fp_on_reference_negative": 3,
+        "precision": 0.571,
+        "recall": 1.0,
+        "f1": 0.727
+      },
+      "labels": {
+        "scored": 6,
+        "correct": 0,
+        "accuracy": 0.0
+      },
+      "gt_scope": {
+        "negatives": "every adjacent pair the generator did not join",
+        "coverage": "complete: the generator knows every pair",
+        "restricted_to": "storey 1; 6 marked rooms",
+        "rooms_before": 6,
+        "rooms_after": 6,
+        "dropped_straddling": 0,
+        "dropped_outside": 0
+      },
+      "prompt_tokens": 3197,
+      "generated_tokens": 229,
+      "seconds": 6.48
+    },
+    {
+      "unit": "synth_0040/00_level_0",
+      "prompt_sha256": "60db8ec3de7f9980",
+      "extraction": {
+        "status": "ok",
+        "detail": null,
+        "rooms": 5,
+        "edges": 5,
+        "dropped_rooms": {},
+        "dropped_edges": {},
+        "dropped_rooms_total": 0,
+        "dropped_edges_total": 0
+      },
+      "raw": "{\n  \"rooms\": [\n    {\"id\": \"1\", \"label\": \"living\"},\n    {\"id\": \"2\", \"label\": \"bedroom\"},\n    {\"id\": \"3\", \"label\": \"bedroom\"},\n    {\"id\": \"4\", \"label\": \"bathroom\"},\n    {\"id\": \"5\", \"label\": \"bathroom\"}\n  ],\n  \"edges\": [\n    {\"a\": \"1\", \"b\": \"2\", \"type\": \"open\"},\n    {\"a\": \"2\", \"b\": \"3\", \"type\": \"open\"},\n    {\"a\": \"2\", \"b\": \"4\", \"type\": \"door\"},\n    {\"a\": \"2\", \"b\": \"5\", \"type\": \"door\"},\n    {\"a\": \"3\", \"b\": \"5\", \"type\": \"open\"}\n  ]\n}",
+      "hit_cap": false,
+      "connectivity": {
+        "tp": 3,
+        "fn": 1,
+        "fp_on_reference_negative": 1,
+        "precision": 0.75,
+        "recall": 0.75,
+        "f1": 0.75
+      },
+      "labels": {
+        "scored": 5,
+        "correct": 0,
+        "accuracy": 0.0
+      },
+      "gt_scope": {
+        "negatives": "every adjacent pair the generator did not join",
+        "coverage": "complete: the generator knows every pair",
+        "restricted_to": "storey 0; 5 marked rooms",
+        "rooms_before": 5,
+        "rooms_after": 5,
+        "dropped_straddling": 0,
+        "dropped_outside": 0
+      },
+      "prompt_tokens": 3197,
+      "generated_tokens": 181,
+      "seconds": 5.24
+    },
+    {
+      "unit": "synth_0042/01_level_1",
+      "prompt_sha256": "60db8ec3de7f9980",
+      "extraction": {
+        "status": "ok",
+        "detail": null,
+        "rooms": 5,
+        "edges": 4,
+        "dropped_rooms": {},
+        "dropped_edges": {},
+        "dropped_rooms_total": 0,
+        "dropped_edges_total": 0
+      },
+      "raw": "{\n  \"rooms\": [\n    {\"id\": \"1\", \"label\": \"living\"},\n    {\"id\": \"2\", \"label\": \"circulation\"},\n    {\"id\": \"3\", \"label\": \"circulation\"},\n    {\"id\": \"4\", \"label\": \"office\"},\n    {\"id\": \"5\", \"label\": \"office\"}\n  ],\n  \"edges\": [\n    {\"a\": \"1\", \"b\": \"2\", \"type\": \"open\"},\n    {\"a\": \"2\", \"b\": \"3\", \"type\": \"open\"},\n    {\"a\": \"4\", \"b\": \"2\", \"type\": \"door\"},\n    {\"a\": \"5\", \"b\": \"2\", \"type\": \"door\"}\n  ]\n}",
+      "hit_cap": false,
+      "connectivity": {
+        "tp": 2,
+        "fn": 2,
+        "fp_on_reference_negative": 1,
+        "precision": 0.667,
+        "recall": 0.5,
+        "f1": 0.571
+      },
+      "labels": {
+        "scored": 5,
+        "correct": 2,
+        "accuracy": 0.4
+      },
+      "gt_scope": {
+        "negatives": "every adjacent pair the generator did not join",
+        "coverage": "complete: the generator knows every pair",
+        "restricted_to": "storey 1; 5 marked rooms",
+        "rooms_before": 5,
+        "rooms_after": 5,
+        "dropped_straddling": 0,
+        "dropped_outside": 0
+      },
+      "prompt_tokens": 3197,
+      "generated_tokens": 160,
+      "seconds": 4.71
+    },
+    {
+      "unit": "synth_0045/00_level_0",
+      "prompt_sha256": "60db8ec3de7f9980",
+      "extraction": {
+        "status": "ok",
+        "detail": null,
+        "rooms": 4,
+        "edges": 3,
+        "dropped_rooms": {},
+        "dropped_edges": {},
+        "dropped_rooms_total": 0,
+        "dropped_edges_total": 0
+      },
+      "raw": "{\n  \"rooms\": [\n    {\"id\": \"1\", \"label\": \"living\"},\n    {\"id\": \"2\", \"label\": \"circulation\"},\n    {\"id\": \"3\", \"label\": \"office\"},\n    {\"id\": \"4\", \"label\": \"office\"}\n  ],\n  \"edges\": [\n    {\"a\": \"1\", \"b\": \"2\", \"type\": \"open\"},\n    {\"a\": \"2\", \"b\": \"3\", \"type\": \"door\"},\n    {\"a\": \"2\", \"b\": \"4\", \"type\": \"door\"}\n  ]\n}",
+      "hit_cap": false,
+      "connectivity": {
+        "tp": 2,
+        "fn": 1,
+        "fp_on_reference_negative": 1,
+        "precision": 0.667,
+        "recall": 0.667,
+        "f1": 0.667
+      },
+      "labels": {
+        "scored": 4,
+        "correct": 1,
+        "accuracy": 0.25
+      },
+      "gt_scope": {
+        "negatives": "every adjacent pair the generator did not join",
+        "coverage": "complete: the generator knows every pair",
+        "restricted_to": "storey 0; 4 marked rooms",
+        "rooms_before": 4,
+        "rooms_after": 4,
+        "dropped_straddling": 0,
+        "dropped_outside": 0
+      },
+      "prompt_tokens": 3197,
+      "generated_tokens": 127,
+      "seconds": 3.86
+    },
+    {
+      "unit": "synth_0050/00_level_0",
+      "prompt_sha256": "60db8ec3de7f9980",
+      "extraction": {
+        "status": "ok",
+        "detail": null,
+        "rooms": 6,
+        "edges": 6,
+        "dropped_rooms": {},
+        "dropped_edges": {},
+        "dropped_rooms_total": 0,
+        "dropped_edges_total": 0
+      },
+      "raw": "{\n  \"rooms\": [\n    {\"id\": \"1\", \"label\": \"bathroom\"},\n    {\"id\": \"2\", \"label\": \"bedroom\"},\n    {\"id\": \"3\", \"label\": \"living\"},\n    {\"id\": \"4\", \"label\": \"retail\"},\n    {\"id\": \"5\", \"label\": \"office\"},\n    {\"id\": \"6\", \"label\": \"office\"}\n  ],\n  \"edges\": [\n    {\"a\": \"1\", \"b\": \"2\", \"type\": \"open\"},\n    {\"a\": \"2\", \"b\": \"3\", \"type\": \"open\"},\n    {\"a\": \"2\", \"b\": \"4\", \"type\": \"open\"},\n    {\"a\": \"3\", \"b\": \"5\", \"type\": \"open\"},\n    {\"a\": \"4\", \"b\": \"5\", \"type\": \"open\"},\n    {\"a\": \"5\", \"b\": \"6\", \"type\": \"open\"}\n  ]\n}",
+      "hit_cap": false,
+      "connectivity": {
+        "tp": 3,
+        "fn": 2,
+        "fp_on_reference_negative": 3,
+        "precision": 0.5,
+        "recall": 0.6,
+        "f1": 0.545
+      },
+      "labels": {
+        "scored": 6,
+        "correct": 0,
+        "accuracy": 0.0
+      },
+      "gt_scope": {
+        "negatives": "every adjacent pair the generator did not join",
+        "coverage": "complete: the generator knows every pair",
+        "restricted_to": "storey 0; 6 marked rooms",
+        "rooms_before": 6,
+        "rooms_after": 6,
+        "dropped_straddling": 0,
+        "dropped_outside": 0
+      },
+      "prompt_tokens": 3197,
+      "generated_tokens": 212,
+      "seconds": 6.05
+    },
+    {
+      "unit": "synth_0057/01_level_1",
+      "prompt_sha256": "60db8ec3de7f9980",
+      "extraction": {
+        "status": "ok",
+        "detail": null,
+        "rooms": 8,
+        "edges": 9,
+        "dropped_rooms": {},
+        "dropped_edges": {},
+        "dropped_rooms_total": 0,
+        "dropped_edges_total": 0
+      },
+      "raw": "{\n  \"rooms\": [\n    {\"id\": \"1\", \"label\": \"bedroom\"},\n    {\"id\": \"2\", \"label\": \"bedroom\"},\n    {\"id\": \"3\", \"label\": \"office\"},\n    {\"id\": \"4\", \"label\": \"office\"},\n    {\"id\": \"5\", \"label\": \"circulation\"},\n    {\"id\": \"6\", \"label\": \"circulation\"},\n    {\"id\": \"7\", \"label\": \"meeting\"},\n    {\"id\": \"8\", \"label\": \"meeting\"}\n  ],\n  \"edges\": [\n    {\"a\": \"1\", \"b\": \"2\", \"type\": \"open\"},\n    {\"a\": \"2\", \"b\": \"3\", \"type\": \"door\"},\n    {\"a\": \"2\", \"b\": \"4\", \"type\": \"door\"},\n    {\"a\": \"3\", \"b\": \"4\", \"type\": \"open\"},\n    {\"a\": \"4\", \"b\": \"5\", \"type\": \"open\"},\n    {\"a\": \"5\", \"b\": \"6\", \"type\": \"open\"},\n    {\"a\": \"6\", \"b\": \"7\", \"type\": \"open\"},\n    {\"a\": \"6\", \"b\": \"8\", \"type\": \"open\"},\n    {\"a\": \"7\", \"b\": \"8\", \"type\": \"open\"}\n  ]\n}",
+      "hit_cap": false,
+      "connectivity": {
+        "tp": 4,
+        "fn": 3,
+        "fp_on_reference_negative": 3,
+        "precision": 0.571,
+        "recall": 0.571,
+        "f1": 0.571
+      },
+      "labels": {
+        "scored": 8,
+        "correct": 0,
+        "accuracy": 0.0
+      },
+      "gt_scope": {
+        "negatives": "every adjacent pair the generator did not join",
+        "coverage": "complete: the generator knows every pair",
+        "restricted_to": "storey 1; 8 marked rooms",
+        "rooms_before": 8,
+        "rooms_after": 8,
+        "dropped_straddling": 0,
+        "dropped_outside": 0
+      },
+      "prompt_tokens": 3197,
+      "generated_tokens": 296,
+      "seconds": 8.2
+    },
+    {
+      "unit": "synth_0060/00_level_0",
+      "prompt_sha256": "60db8ec3de7f9980",
+      "extraction": {
+        "status": "ok",
+        "detail": null,
+        "rooms": 8,
+        "edges": 10,
+        "dropped_rooms": {},
+        "dropped_edges": {},
+        "dropped_rooms_total": 0,
+        "dropped_edges_total": 0
+      },
+      "raw": "{\n  \"rooms\": [\n    {\"id\": \"1\", \"label\": \"bathroom\"},\n    {\"id\": \"2\", \"label\": \"living\"},\n    {\"id\": \"3\", \"label\": \"office\"},\n    {\"id\": \"4\", \"label\": \"office\"},\n    {\"id\": \"5\", \"label\": \"office\"},\n    {\"id\": \"6\", \"label\": \"office\"},\n    {\"id\": \"7\", \"label\": \"office\"},\n    {\"id\": \"8\", \"label\": \"office\"}\n  ],\n  \"edges\": [\n    {\"a\": \"1\", \"b\": \"2\", \"type\": \"open\"},\n    {\"a\": \"2\", \"b\": \"3\", \"type\": \"door\"},\n    {\"a\": \"2\", \"b\": \"4\", \"type\": \"door\"},\n    {\"a\": \"2\", \"b\": \"5\", \"type\": \"door\"},\n    {\"a\": \"2\", \"b\": \"6\", \"type\": \"door\"},\n    {\"a\": \"3\", \"b\": \"4\", \"type\": \"open\"},\n    {\"a\": \"4\", \"b\": \"7\", \"type\": \"open\"},\n    {\"a\": \"5\", \"b\": \"6\", \"type\": \"open\"},\n    {\"a\": \"6\", \"b\": \"7\", \"type\": \"open\"},\n    {\"a\": \"7\", \"b\": \"8\", \"type\": \"open\"}\n  ]\n}",
+      "hit_cap": false,
+      "connectivity": {
+        "tp": 4,
+        "fn": 2,
+        "fp_on_reference_negative": 3,
+        "precision": 0.571,
+        "recall": 0.667,
+        "f1": 0.615
+      },
+      "labels": {
+        "scored": 8,
+        "correct": 1,
+        "accuracy": 0.125
+      },
+      "gt_scope": {
+        "negatives": "every adjacent pair the generator did not join",
+        "coverage": "complete: the generator knows every pair",
+        "restricted_to": "storey 0; 8 marked rooms",
+        "rooms_before": 8,
+        "rooms_after": 8,
+        "dropped_straddling": 0,
+        "dropped_outside": 0
+      },
+      "prompt_tokens": 3197,
+      "generated_tokens": 312,
+      "seconds": 8.61
+    },
+    {
+      "unit": "synth_0062/01_level_1",
+      "prompt_sha256": "60db8ec3de7f9980",
+      "extraction": {
+        "status": "ok",
+        "detail": null,
+        "rooms": 5,
+        "edges": 5,
+        "dropped_rooms": {},
+        "dropped_edges": {},
+        "dropped_rooms_total": 0,
+        "dropped_edges_total": 0
+      },
+      "raw": "{\n  \"rooms\": [\n    {\"id\": \"1\", \"label\": \"living\"},\n    {\"id\": \"2\", \"label\": \"circulation\"},\n    {\"id\": \"3\", \"label\": \"storage\"},\n    {\"id\": \"4\", \"label\": \"office\"},\n    {\"id\": \"5\", \"label\": \"office\"}\n  ],\n  \"edges\": [\n    {\"a\": \"1\", \"b\": \"2\", \"type\": \"open\"},\n    {\"a\": \"2\", \"b\": \"3\", \"type\": \"open\"},\n    {\"a\": \"2\", \"b\": \"4\", \"type\": \"door\"},\n    {\"a\": \"2\", \"b\": \"5\", \"type\": \"door\"},\n    {\"a\": \"4\", \"b\": \"5\", \"type\": \"open\"}\n  ]\n}",
+      "hit_cap": false,
+      "connectivity": {
+        "tp": 2,
+        "fn": 1,
+        "fp_on_reference_negative": 2,
+        "precision": 0.5,
+        "recall": 0.667,
+        "f1": 0.571
+      },
+      "labels": {
+        "scored": 5,
+        "correct": 0,
+        "accuracy": 0.0
+      },
+      "gt_scope": {
+        "negatives": "every adjacent pair the generator did not join",
+        "coverage": "complete: the generator knows every pair",
+        "restricted_to": "storey 1; 5 marked rooms",
+        "rooms_before": 5,
+        "rooms_after": 5,
+        "dropped_straddling": 0,
+        "dropped_outside": 0
+      },
+      "prompt_tokens": 3197,
+      "generated_tokens": 178,
+      "seconds": 5.38
+    },
+    {
+      "unit": "synth_0065/00_level_0",
+      "prompt_sha256": "60db8ec3de7f9980",
+      "extraction": {
+        "status": "ok",
+        "detail": null,
+        "rooms": 8,
+        "edges": 10,
+        "dropped_rooms": {},
+        "dropped_edges": {},
+        "dropped_rooms_total": 0,
+        "dropped_edges_total": 0
+      },
+      "raw": "{\n  \"rooms\": [\n    {\"id\": \"1\", \"label\": \"bathroom\"},\n    {\"id\": \"2\", \"label\": \"living\"},\n    {\"id\": \"3\", \"label\": \"office\"},\n    {\"id\": \"4\", \"label\": \"office\"},\n    {\"id\": \"5\", \"label\": \"office\"},\n    {\"id\": \"6\", \"label\": \"office\"},\n    {\"id\": \"7\", \"label\": \"office\"},\n    {\"id\": \"8\", \"label\": \"office\"}\n  ],\n  \"edges\": [\n    {\"a\": \"1\", \"b\": \"2\", \"type\": \"open\"},\n    {\"a\": \"2\", \"b\": \"3\", \"type\": \"door\"},\n    {\"a\": \"2\", \"b\": \"4\", \"type\": \"door\"},\n    {\"a\": \"2\", \"b\": \"5\", \"type\": \"door\"},\n    {\"a\": \"2\", \"b\": \"6\", \"type\": \"door\"},\n    {\"a\": \"3\", \"b\": \"7\", \"type\": \"door\"},\n    {\"a\": \"4\", \"b\": \"7\", \"type\": \"door\"},\n    {\"a\": \"5\", \"b\": \"7\", \"type\": \"door\"},\n    {\"a\": \"6\", \"b\": \"7\", \"type\": \"door\"},\n    {\"a\": \"7\", \"b\": \"8\", \"type\": \"door\"}\n  ]\n}",
+      "hit_cap": false,
+      "connectivity": {
+        "tp": 4,
+        "fn": 2,
+        "fp_on_reference_negative": 2,
+        "precision": 0.667,
+        "recall": 0.667,
+        "f1": 0.667
+      },
+      "labels": {
+        "scored": 8,
+        "correct": 0,
+        "accuracy": 0.0
+      },
+      "gt_scope": {
+        "negatives": "every adjacent pair the generator did not join",
+        "coverage": "complete: the generator knows every pair",
+        "restricted_to": "storey 0; 8 marked rooms",
+        "rooms_before": 8,
+        "rooms_after": 8,
+        "dropped_straddling": 0,
+        "dropped_outside": 0
+      },
+      "prompt_tokens": 3197,
+      "generated_tokens": 312,
+      "seconds": 8.64
+    },
+    {
+      "unit": "synth_0067/01_level_1",
+      "prompt_sha256": "60db8ec3de7f9980",
+      "extraction": {
+        "status": "ok",
+        "detail": null,
+        "rooms": 5,
+        "edges": 4,
+        "dropped_rooms": {},
+        "dropped_edges": {},
+        "dropped_rooms_total": 0,
+        "dropped_edges_total": 0
+      },
+      "raw": "{\n  \"rooms\": [\n    {\"id\": \"1\", \"label\": \"living\"},\n    {\"id\": \"2\", \"label\": \"circulation\"},\n    {\"id\": \"3\", \"label\": \"circulation\"},\n    {\"id\": \"4\", \"label\": \"office\"},\n    {\"id\": \"5\", \"label\": \"office\"}\n  ],\n  \"edges\": [\n    {\"a\": \"1\", \"b\": \"2\", \"type\": \"open\"},\n    {\"a\": \"2\", \"b\": \"3\", \"type\": \"open\"},\n    {\"a\": \"4\", \"b\": \"2\", \"type\": \"door\"},\n    {\"a\": \"5\", \"b\": \"2\", \"type\": \"door\"}\n  ]\n}",
+      "hit_cap": false,
+      "connectivity": {
+        "tp": 1,
+        "fn": 2,
+        "fp_on_reference_negative": 2,
+        "precision": 0.333,
+        "recall": 0.333,
+        "f1": 0.333
+      },
+      "labels": {
+        "scored": 5,
+        "correct": 1,
+        "accuracy": 0.2
+      },
+      "gt_scope": {
+        "negatives": "every adjacent pair the generator did not join",
+        "coverage": "complete: the generator knows every pair",
+        "restricted_to": "storey 1; 5 marked rooms",
+        "rooms_before": 5,
+        "rooms_after": 5,
+        "dropped_straddling": 0,
+        "dropped_outside": 0
+      },
+      "prompt_tokens": 3197,
+      "generated_tokens": 160,
+      "seconds": 4.71
+    },
+    {
+      "unit": "synth_0072/01_level_1",
+      "prompt_sha256": "60db8ec3de7f9980",
+      "extraction": {
+        "status": "ok",
+        "detail": null,
+        "rooms": 6,
+        "edges": 6,
+        "dropped_rooms": {},
+        "dropped_edges": {},
+        "dropped_rooms_total": 0,
+        "dropped_edges_total": 0
+      },
+      "raw": "{\n  \"rooms\": [\n    {\"id\": \"1\", \"label\": \"living\"},\n    {\"id\": \"2\", \"label\": \"bedroom\"},\n    {\"id\": \"3\", \"label\": \"bedroom\"},\n    {\"id\": \"4\", \"label\": \"living\"},\n    {\"id\": \"5\", \"label\": \"office\"},\n    {\"id\": \"6\", \"label\": \"office\"}\n  ],\n  \"edges\": [\n    {\"a\": \"1\", \"b\": \"2\", \"type\": \"open\"},\n    {\"a\": \"1\", \"b\": \"3\", \"type\": \"open\"},\n    {\"a\": \"1\", \"b\": \"4\", \"type\": \"open\"},\n    {\"a\": \"2\", \"b\": \"5\", \"type\": \"door\"},\n    {\"a\": \"3\", \"b\": \"5\", \"type\": \"door\"},\n    {\"a\": \"5\", \"b\": \"6\", \"type\": \"open\"}\n  ]\n}",
+      "hit_cap": false,
+      "connectivity": {
+        "tp": 3,
+        "fn": 1,
+        "fp_on_reference_negative": 2,
+        "precision": 0.6,
+        "recall": 0.75,
+        "f1": 0.667
+      },
+      "labels": {
+        "scored": 6,
+        "correct": 1,
+        "accuracy": 0.16666666666666666
+      },
+      "gt_scope": {
+        "negatives": "every adjacent pair the generator did not join",
+        "coverage": "complete: the generator knows every pair",
+        "restricted_to": "storey 1; 6 marked rooms",
+        "rooms_before": 6,
+        "rooms_after": 6,
+        "dropped_straddling": 0,
+        "dropped_outside": 0
+      },
+      "prompt_tokens": 3197,
+      "generated_tokens": 211,
+      "seconds": 6.01
+    },
+    {
+      "unit": "synth_0075/00_level_0",
+      "prompt_sha256": "60db8ec3de7f9980",
+      "extraction": {
+        "status": "ok",
+        "detail": null,
+        "rooms": 5,
+        "edges": 4,
+        "dropped_rooms": {},
+        "dropped_edges": {},
+        "dropped_rooms_total": 0,
+        "dropped_edges_total": 0
+      },
+      "raw": "{\n  \"rooms\": [\n    {\"id\": \"1\", \"label\": \"living\"},\n    {\"id\": \"2\", \"label\": \"circulation\"},\n    {\"id\": \"3\", \"label\": \"office\"},\n    {\"id\": \"4\", \"label\": \"meeting\"},\n    {\"id\": \"5\", \"label\": \"storage\"}\n  ],\n  \"edges\": [\n    {\"a\": \"1\", \"b\": \"2\", \"type\": \"open\"},\n    {\"a\": \"2\", \"b\": \"3\", \"type\": \"door\"},\n    {\"a\": \"2\", \"b\": \"4\", \"type\": \"open\"},\n    {\"a\": \"4\", \"b\": \"5\", \"type\": \"open\"}\n  ]\n}",
+      "hit_cap": false,
+      "connectivity": {
+        "tp": 1,
+        "fn": 2,
+        "fp_on_reference_negative": 3,
+        "precision": 0.25,
+        "recall": 0.333,
+        "f1": 0.286
+      },
+      "labels": {
+        "scored": 5,
+        "correct": 1,
+        "accuracy": 0.2
+      },
+      "gt_scope": {
+        "negatives": "every adjacent pair the generator did not join",
+        "coverage": "complete: the generator knows every pair",
+        "restricted_to": "storey 0; 5 marked rooms",
+        "rooms_before": 5,
+        "rooms_after": 5,
+        "dropped_straddling": 0,
+        "dropped_outside": 0
+      },
+      "prompt_tokens": 3197,
+      "generated_tokens": 159,
+      "seconds": 4.69
+    },
+    {
+      "unit": "synth_0080/00_level_0",
+      "prompt_sha256": "60db8ec3de7f9980",
+      "extraction": {
+        "status": "ok",
+        "detail": null,
+        "rooms": 7,
+        "edges": 10,
+        "dropped_rooms": {},
+        "dropped_edges": {},
+        "dropped_rooms_total": 0,
+        "dropped_edges_total": 0
+      },
+      "raw": "{\n  \"rooms\": [\n    {\"id\": \"1\", \"label\": \"bathroom\"},\n    {\"id\": \"2\", \"label\": \"living\"},\n    {\"id\": \"3\", \"label\": \"office\"},\n    {\"id\": \"4\", \"label\": \"office\"},\n    {\"id\": \"5\", \"label\": \"office\"},\n    {\"id\": \"6\", \"label\": \"office\"},\n    {\"id\": \"7\", \"label\": \"office\"}\n  ],\n  \"edges\": [\n    {\"a\": \"1\", \"b\": \"2\", \"type\": \"open\"},\n    {\"a\": \"2\", \"b\": \"3\", \"type\": \"door\"},\n    {\"a\": \"2\", \"b\": \"4\", \"type\": \"door\"},\n    {\"a\": \"2\", \"b\": \"5\", \"type\": \"door\"},\n    {\"a\": \"2\", \"b\": \"6\", \"type\": \"door\"},\n    {\"a\": \"2\", \"b\": \"7\", \"type\": \"door\"},\n    {\"a\": \"3\", \"b\": \"4\", \"type\": \"open\"},\n    {\"a\": \"4\", \"b\": \"5\", \"type\": \"open\"},\n    {\"a\": \"5\", \"b\": \"6\", \"type\": \"open\"},\n    {\"a\": \"5\", \"b\": \"7\", \"type\": \"open\"}\n  ]\n}",
+      "hit_cap": false,
+      "connectivity": {
+        "tp": 4,
+        "fn": 1,
+        "fp_on_reference_negative": 2,
+        "precision": 0.667,
+        "recall": 0.8,
+        "f1": 0.727
+      },
+      "labels": {
+        "scored": 7,
+        "correct": 1,
+        "accuracy": 0.14285714285714285
+      },
+      "gt_scope": {
+        "negatives": "every adjacent pair the generator did not join",
+        "coverage": "complete: the generator knows every pair",
+        "restricted_to": "storey 0; 7 marked rooms",
+        "rooms_before": 7,
+        "rooms_after": 7,
+        "dropped_straddling": 0,
+        "dropped_outside": 0
+      },
+      "prompt_tokens": 3197,
+      "generated_tokens": 299,
+      "seconds": 8.27
+    },
+    {
+      "unit": "synth_0082/01_level_1",
+      "prompt_sha256": "60db8ec3de7f9980",
+      "extraction": {
+        "status": "ok",
+        "detail": null,
+        "rooms": 7,
+        "edges": 6,
+        "dropped_rooms": {},
+        "dropped_edges": {},
+        "dropped_rooms_total": 0,
+        "dropped_edges_total": 0
+      },
+      "raw": "{\n  \"rooms\": [\n    {\"id\": \"1\", \"label\": \"bedroom\"},\n    {\"id\": \"2\", \"label\": \"bedroom\"},\n    {\"id\": \"3\", \"label\": \"bedroom\"},\n    {\"id\": \"4\", \"label\": \"bedroom\"},\n    {\"id\": \"5\", \"label\": \"bedroom\"},\n    {\"id\": \"6\", \"label\": \"bedroom\"},\n    {\"id\": \"7\", \"label\": \"bedroom\"}\n  ],\n  \"edges\": [\n    {\"a\": \"1\", \"b\": \"2\", \"type\": \"open\"},\n    {\"a\": \"2\", \"b\": \"3\", \"type\": \"open\"},\n    {\"a\": \"2\", \"b\": \"4\", \"type\": \"open\"},\n    {\"a\": \"4\", \"b\": \"5\", \"type\": \"open\"},\n    {\"a\": \"5\", \"b\": \"6\", \"type\": \"open\"},\n    {\"a\": \"6\", \"b\": \"7\", \"type\": \"open\"}\n  ]\n}",
+      "hit_cap": false,
+      "connectivity": {
+        "tp": 2,
+        "fn": 3,
+        "fp_on_reference_negative": 2,
+        "precision": 0.5,
+        "recall": 0.4,
+        "f1": 0.444
+      },
+      "labels": {
+        "scored": 7,
+        "correct": 0,
+        "accuracy": 0.0
+      },
+      "gt_scope": {
+        "negatives": "every adjacent pair the generator did not join",
+        "coverage": "complete: the generator knows every pair",
+        "restricted_to": "storey 1; 7 marked rooms",
+        "rooms_before": 7,
+        "rooms_after": 7,
+        "dropped_straddling": 0,
+        "dropped_outside": 0
+      },
+      "prompt_tokens": 3197,
+      "generated_tokens": 229,
+      "seconds": 6.49
+    },
+    {
+      "unit": "synth_0087/01_level_1",
+      "prompt_sha256": "60db8ec3de7f9980",
+      "extraction": {
+        "status": "ok",
+        "detail": null,
+        "rooms": 7,
+        "edges": 5,
+        "dropped_rooms": {},
+        "dropped_edges": {},
+        "dropped_rooms_total": 0,
+        "dropped_edges_total": 0
+      },
+      "raw": "{\n  \"rooms\": [\n    {\"id\": \"1\", \"label\": \"bedroom\"},\n    {\"id\": \"2\", \"label\": \"bedroom\"},\n    {\"id\": \"3\", \"label\": \"office\"},\n    {\"id\": \"4\", \"label\": \"office\"},\n    {\"id\": \"5\", \"label\": \"circulation\"},\n    {\"id\": \"6\", \"label\": \"office\"},\n    {\"id\": \"7\", \"label\": \"office\"}\n  ],\n  \"edges\": [\n    {\"a\": \"1\", \"b\": \"2\", \"type\": \"open\"},\n    {\"a\": \"2\", \"b\": \"5\", \"type\": \"open\"},\n    {\"a\": \"3\", \"b\": \"4\", \"type\": \"open\"},\n    {\"a\": \"4\", \"b\": \"5\", \"type\": \"open\"},\n    {\"a\": \"6\", \"b\": \"7\", \"type\": \"open\"}\n  ]\n}",
+      "hit_cap": false,
+      "connectivity": {
+        "tp": 3,
+        "fn": 2,
+        "fp_on_reference_negative": 1,
+        "precision": 0.75,
+        "recall": 0.6,
+        "f1": 0.667
+      },
+      "labels": {
+        "scored": 7,
+        "correct": 2,
+        "accuracy": 0.2857142857142857
+      },
+      "gt_scope": {
+        "negatives": "every adjacent pair the generator did not join",
+        "coverage": "complete: the generator knows every pair",
+        "restricted_to": "storey 1; 7 marked rooms",
+        "rooms_before": 7,
+        "rooms_after": 7,
+        "dropped_straddling": 0,
+        "dropped_outside": 0
+      },
+      "prompt_tokens": 3197,
+      "generated_tokens": 206,
+      "seconds": 5.88
+    },
+    {
+      "unit": "synth_0097/01_level_1",
+      "prompt_sha256": "60db8ec3de7f9980",
+      "extraction": {
+        "status": "ok",
+        "detail": null,
+        "rooms": 7,
+        "edges": 8,
+        "dropped_rooms": {},
+        "dropped_edges": {},
+        "dropped_rooms_total": 0,
+        "dropped_edges_total": 0
+      },
+      "raw": "{\n  \"rooms\": [\n    {\"id\": \"1\", \"label\": \"living\"},\n    {\"id\": \"2\", \"label\": \"circulation\"},\n    {\"id\": \"3\", \"label\": \"office\"},\n    {\"id\": \"4\", \"label\": \"office\"},\n    {\"id\": \"5\", \"label\": \"storage\"},\n    {\"id\": \"6\", \"label\": \"office\"},\n    {\"id\": \"7\", \"label\": \"office\"}\n  ],\n  \"edges\": [\n    {\"a\": \"1\", \"b\": \"2\", \"type\": \"open\"},\n    {\"a\": \"2\", \"b\": \"3\", \"type\": \"door\"},\n    {\"a\": \"2\", \"b\": \"4\", \"type\": \"door\"},\n    {\"a\": \"2\", \"b\": \"5\", \"type\": \"open\"},\n    {\"a\": \"3\", \"b\": \"6\", \"type\": \"open\"},\n    {\"a\": \"4\", \"b\": \"6\", \"type\": \"open\"},\n    {\"a\": \"5\", \"b\": \"6\", \"type\": \"open\"},\n    {\"a\": \"6\", \"b\": \"7\", \"type\": \"open\"}\n  ]\n}",
+      "hit_cap": false,
+      "connectivity": {
+        "tp": 3,
+        "fn": 3,
+        "fp_on_reference_negative": 4,
+        "precision": 0.429,
+        "recall": 0.5,
+        "f1": 0.462
+      },
+      "labels": {
+        "scored": 7,
+        "correct": 2,
+        "accuracy": 0.2857142857142857
+      },
+      "gt_scope": {
+        "negatives": "every adjacent pair the generator did not join",
+        "coverage": "complete: the generator knows every pair",
+        "restricted_to": "storey 1; 7 marked rooms",
+        "rooms_before": 7,
+        "rooms_after": 7,
+        "dropped_straddling": 0,
+        "dropped_outside": 0
+      },
+      "prompt_tokens": 3197,
+      "generated_tokens": 261,
+      "seconds": 7.31
+    },
+    {
+      "unit": "synth_0102/01_level_1",
+      "prompt_sha256": "60db8ec3de7f9980",
+      "extraction": {
+        "status": "ok",
+        "detail": null,
+        "rooms": 5,
+        "edges": 5,
+        "dropped_rooms": {},
+        "dropped_edges": {},
+        "dropped_rooms_total": 0,
+        "dropped_edges_total": 0
+      },
+      "raw": "{\n  \"rooms\": [\n    {\"id\": \"1\", \"label\": \"living\"},\n    {\"id\": \"2\", \"label\": \"living\"},\n    {\"id\": \"3\", \"label\": \"office\"},\n    {\"id\": \"4\", \"label\": \"office\"},\n    {\"id\": \"5\", \"label\": \"storage\"}\n  ],\n  \"edges\": [\n    {\"a\": \"1\", \"b\": \"2\", \"type\": \"open\"},\n    {\"a\": \"2\", \"b\": \"3\", \"type\": \"open\"},\n    {\"a\": \"2\", \"b\": \"4\", \"type\": \"open\"},\n    {\"a\": \"3\", \"b\": \"4\", \"type\": \"open\"},\n    {\"a\": \"4\", \"b\": \"5\", \"type\": \"open\"}\n  ]\n}",
+      "hit_cap": false,
+      "connectivity": {
+        "tp": 2,
+        "fn": 1,
+        "fp_on_reference_negative": 2,
+        "precision": 0.5,
+        "recall": 0.667,
+        "f1": 0.571
+      },
+      "labels": {
+        "scored": 5,
+        "correct": 0,
+        "accuracy": 0.0
+      },
+      "gt_scope": {
+        "negatives": "every adjacent pair the generator did not join",
+        "coverage": "complete: the generator knows every pair",
+        "restricted_to": "storey 1; 5 marked rooms",
+        "rooms_before": 5,
+        "rooms_after": 5,
+        "dropped_straddling": 0,
+        "dropped_outside": 0
+      },
+      "prompt_tokens": 3197,
+      "generated_tokens": 177,
+      "seconds": 5.15
+    },
+    {
+      "unit": "synth_0105/00_level_0",
+      "prompt_sha256": "60db8ec3de7f9980",
+      "extraction": {
+        "status": "ok",
+        "detail": null,
+        "rooms": 8,
+        "edges": 7,
+        "dropped_rooms": {},
+        "dropped_edges": {},
+        "dropped_rooms_total": 0,
+        "dropped_edges_total": 0
+      },
+      "raw": "{\n  \"rooms\": [\n    {\"id\": \"1\", \"label\": \"bathroom\"},\n    {\"id\": \"2\", \"label\": \"circulation\"},\n    {\"id\": \"3\", \"label\": \"office\"},\n    {\"id\": \"4\", \"label\": \"office\"},\n    {\"id\": \"5\", \"label\": \"office\"},\n    {\"id\": \"6\", \"label\": \"office\"},\n    {\"id\": \"7\", \"label\": \"office\"},\n    {\"id\": \"8\", \"label\": \"office\"}\n  ],\n  \"edges\": [\n    {\"a\": \"1\", \"b\": \"2\", \"type\": \"open\"},\n    {\"a\": \"2\", \"b\": \"3\", \"type\": \"door\"},\n    {\"a\": \"2\", \"b\": \"4\", \"type\": \"door\"},\n    {\"a\": \"2\", \"b\": \"5\", \"type\": \"door\"},\n    {\"a\": \"2\", \"b\": \"6\", \"type\": \"door\"},\n    {\"a\": \"2\", \"b\": \"7\", \"type\": \"door\"},\n    {\"a\": \"2\", \"b\": \"8\", \"type\": \"door\"}\n  ]\n}",
+      "hit_cap": false,
+      "connectivity": {
+        "tp": 1,
+        "fn": 6,
+        "fp_on_reference_negative": 2,
+        "precision": 0.333,
+        "recall": 0.143,
+        "f1": 0.2
+      },
+      "labels": {
+        "scored": 8,
+        "correct": 2,
+        "accuracy": 0.25
+      },
+      "gt_scope": {
+        "negatives": "every adjacent pair the generator did not join",
+        "coverage": "complete: the generator knows every pair",
+        "restricted_to": "storey 0; 8 marked rooms",
+        "rooms_before": 8,
+        "rooms_after": 8,
+        "dropped_straddling": 0,
+        "dropped_outside": 0
+      },
+      "prompt_tokens": 3197,
+      "generated_tokens": 256,
+      "seconds": 7.16
+    },
+    {
+      "unit": "synth_0107/01_level_1",
+      "prompt_sha256": "60db8ec3de7f9980",
+      "extraction": {
+        "status": "ok",
+        "detail": null,
+        "rooms": 5,
+        "edges": 4,
+        "dropped_rooms": {},
+        "dropped_edges": {},
+        "dropped_rooms_total": 0,
+        "dropped_edges_total": 0
+      },
+      "raw": "{\n  \"rooms\": [\n    {\"id\": \"1\", \"label\": \"living\"},\n    {\"id\": \"2\", \"label\": \"storage\"},\n    {\"id\": \"3\", \"label\": \"office\"},\n    {\"id\": \"4\", \"label\": \"bathroom\"},\n    {\"id\": \"5\", \"label\": \"bathroom\"}\n  ],\n  \"edges\": [\n    {\"a\": \"1\", \"b\": \"3\", \"type\": \"open\"},\n    {\"a\": \"3\", \"b\": \"2\", \"type\": \"open\"},\n    {\"a\": \"3\", \"b\": \"4\", \"type\": \"door\"},\n    {\"a\": \"3\", \"b\": \"5\", \"type\": \"door\"}\n  ]\n}",
+      "hit_cap": false,
+      "connectivity": {
+        "tp": 2,
+        "fn": 2,
+        "fp_on_reference_negative": 2,
+        "precision": 0.5,
+        "recall": 0.5,
+        "f1": 0.5
+      },
+      "labels": {
+        "scored": 5,
+        "correct": 0,
+        "accuracy": 0.0
+      },
+      "gt_scope": {
+        "negatives": "every adjacent pair the generator did not join",
+        "coverage": "complete: the generator knows every pair",
+        "restricted_to": "storey 1; 5 marked rooms",
+        "rooms_before": 5,
+        "rooms_after": 5,
+        "dropped_straddling": 0,
+        "dropped_outside": 0
+      },
+      "prompt_tokens": 3197,
+      "generated_tokens": 160,
+      "seconds": 4.7
+    },
+    {
+      "unit": "synth_0110/00_level_0",
+      "prompt_sha256": "60db8ec3de7f9980",
+      "extraction": {
+        "status": "ok",
+        "detail": null,
+        "rooms": 7,
+        "edges": 7,
+        "dropped_rooms": {},
+        "dropped_edges": {},
+        "dropped_rooms_total": 0,
+        "dropped_edges_total": 0
+      },
+      "raw": "{\n  \"rooms\": [\n    {\"id\": \"1\", \"label\": \"bathroom\"},\n    {\"id\": \"2\", \"label\": \"circulation\"},\n    {\"id\": \"3\", \"label\": \"office\"},\n    {\"id\": \"4\", \"label\": \"office\"},\n    {\"id\": \"5\", \"label\": \"retail\"},\n    {\"id\": \"6\", \"label\": \"office\"},\n    {\"id\": \"7\", \"label\": \"office\"}\n  ],\n  \"edges\": [\n    {\"a\": \"1\", \"b\": \"2\", \"type\": \"open\"},\n    {\"a\": \"2\", \"b\": \"3\", \"type\": \"door\"},\n    {\"a\": \"2\", \"b\": \"4\", \"type\": \"door\"},\n    {\"a\": \"2\", \"b\": \"5\", \"type\": \"open\"},\n    {\"a\": \"3\", \"b\": \"6\", \"type\": \"open\"},\n    {\"a\": \"4\", \"b\": \"6\", \"type\": \"open\"},\n    {\"a\": \"6\", \"b\": \"7\", \"type\": \"open\"}\n  ]\n}",
+      "hit_cap": false,
+      "connectivity": {
+        "tp": 3,
+        "fn": 2,
+        "fp_on_reference_negative": 2,
+        "precision": 0.6,
+        "recall": 0.6,
+        "f1": 0.6
+      },
+      "labels": {
+        "scored": 7,
+        "correct": 1,
+        "accuracy": 0.14285714285714285
+      },
+      "gt_scope": {
+        "negatives": "every adjacent pair the generator did not join",
+        "coverage": "complete: the generator knows every pair",
+        "restricted_to": "storey 0; 7 marked rooms",
+        "rooms_before": 7,
+        "rooms_after": 7,
+        "dropped_straddling": 0,
+        "dropped_outside": 0
+      },
+      "prompt_tokens": 3197,
+      "generated_tokens": 244,
+      "seconds": 6.88
+    },
+    {
+      "unit": "synth_0115/00_level_0",
+      "prompt_sha256": "60db8ec3de7f9980",
+      "extraction": {
+        "status": "ok",
+        "detail": null,
+        "rooms": 2,
+        "edges": 1,
+        "dropped_rooms": {},
+        "dropped_edges": {},
+        "dropped_rooms_total": 0,
+        "dropped_edges_total": 0
+      },
+      "raw": "{\n  \"rooms\": [\n    {\n      \"id\": \"1\",\n      \"label\": \"office\"\n    },\n    {\n      \"id\": \"2\",\n      \"label\": \"office\"\n    }\n  ],\n  \"edges\": [\n    {\n      \"a\": \"1\",\n      \"b\": \"2\",\n      \"type\": \"open\"\n    }\n  ]\n}",
+      "hit_cap": false,
+      "connectivity": {
+        "tp": 0,
+        "fn": 0,
+        "fp_on_reference_negative": 1,
+        "precision": 0.0,
+        "recall": null,
+        "f1": 0.0
+      },
+      "labels": {
+        "scored": 2,
+        "correct": 0,
+        "accuracy": 0.0
+      },
+      "gt_scope": {
+        "negatives": "every adjacent pair the generator did not join",
+        "coverage": "complete: the generator knows every pair",
+        "restricted_to": "storey 0; 2 marked rooms",
+        "rooms_before": 2,
+        "rooms_after": 2,
+        "dropped_straddling": 0,
+        "dropped_outside": 0
+      },
+      "prompt_tokens": 3197,
+      "generated_tokens": 78,
+      "seconds": 2.6
+    },
+    {
+      "unit": "synth_0117/01_level_1",
+      "prompt_sha256": "60db8ec3de7f9980",
+      "extraction": {
+        "status": "ok",
+        "detail": null,
+        "rooms": 7,
+        "edges": 6,
+        "dropped_rooms": {},
+        "dropped_edges": {},
+        "dropped_rooms_total": 0,
+        "dropped_edges_total": 0
+      },
+      "raw": "{\n  \"rooms\": [\n    {\"id\": \"1\", \"label\": \"bedroom\"},\n    {\"id\": \"2\", \"label\": \"bedroom\"},\n    {\"id\": \"3\", \"label\": \"bathroom\"},\n    {\"id\": \"4\", \"label\": \"bathroom\"},\n    {\"id\": \"5\", \"label\": \"living\"},\n    {\"id\": \"6\", \"label\": \"office\"},\n    {\"id\": \"7\", \"label\": \"office\"}\n  ],\n  \"edges\": [\n    {\"a\": \"1\", \"b\": \"2\", \"type\": \"open\"},\n    {\"a\": \"2\", \"b\": \"4\", \"type\": \"open\"},\n    {\"a\": \"4\", \"b\": \"3\", \"type\": \"door\"},\n    {\"a\": \"4\", \"b\": \"6\", \"type\": \"open\"},\n    {\"a\": \"6\", \"b\": \"7\", \"type\": \"open\"},\n    {\"a\": \"7\", \"b\": \"5\", \"type\": \"open\"}\n  ]\n}",
+      "hit_cap": false,
+      "connectivity": {
+        "tp": 3,
+        "fn": 3,
+        "fp_on_reference_negative": 3,
+        "precision": 0.5,
+        "recall": 0.5,
+        "f1": 0.5
+      },
+      "labels": {
+        "scored": 7,
+        "correct": 1,
+        "accuracy": 0.14285714285714285
+      },
+      "gt_scope": {
+        "negatives": "every adjacent pair the generator did not join",
+        "coverage": "complete: the generator knows every pair",
+        "restricted_to": "storey 1; 7 marked rooms",
+        "rooms_before": 7,
+        "rooms_after": 7,
+        "dropped_straddling": 0,
+        "dropped_outside": 0
+      },
+      "prompt_tokens": 3197,
+      "generated_tokens": 226,
+      "seconds": 6.4
+    },
+    {
+      "unit": "synth_0122/01_level_1",
+      "prompt_sha256": "60db8ec3de7f9980",
+      "extraction": {
+        "status": "ok",
+        "detail": null,
+        "rooms": 4,
+        "edges": 4,
+        "dropped_rooms": {},
+        "dropped_edges": {},
+        "dropped_rooms_total": 0,
+        "dropped_edges_total": 0
+      },
+      "raw": "{\n  \"rooms\": [\n    {\"id\": \"1\", \"label\": \"living\"},\n    {\"id\": \"2\", \"label\": \"living\"},\n    {\"id\": \"3\", \"label\": \"office\"},\n    {\"id\": \"4\", \"label\": \"office\"}\n  ],\n  \"edges\": [\n    {\"a\": \"1\", \"b\": \"2\", \"type\": \"open\"},\n    {\"a\": \"2\", \"b\": \"3\", \"type\": \"door\"},\n    {\"a\": \"2\", \"b\": \"4\", \"type\": \"open\"},\n    {\"a\": \"3\", \"b\": \"4\", \"type\": \"open\"}\n  ]\n}",
+      "hit_cap": false,
+      "connectivity": {
+        "tp": 2,
+        "fn": 1,
+        "fp_on_reference_negative": 2,
+        "precision": 0.5,
+        "recall": 0.667,
+        "f1": 0.571
+      },
+      "labels": {
+        "scored": 4,
+        "correct": 2,
+        "accuracy": 0.5
+      },
+      "gt_scope": {
+        "negatives": "every adjacent pair the generator did not join",
+        "coverage": "complete: the generator knows every pair",
+        "restricted_to": "storey 1; 4 marked rooms",
+        "rooms_before": 4,
+        "rooms_after": 4,
+        "dropped_straddling": 0,
+        "dropped_outside": 0
+      },
+      "prompt_tokens": 3197,
+      "generated_tokens": 145,
+      "seconds": 4.33
+    },
+    {
+      "unit": "synth_0127/01_level_1",
+      "prompt_sha256": "60db8ec3de7f9980",
+      "extraction": {
+        "status": "ok",
+        "detail": null,
+        "rooms": 8,
+        "edges": 8,
+        "dropped_rooms": {},
+        "dropped_edges": {},
+        "dropped_rooms_total": 0,
+        "dropped_edges_total": 0
+      },
+      "raw": "{\n  \"rooms\": [\n    {\"id\": \"1\", \"label\": \"bathroom\"},\n    {\"id\": \"2\", \"label\": \"circulation\"},\n    {\"id\": \"3\", \"label\": \"office\"},\n    {\"id\": \"4\", \"label\": \"office\"},\n    {\"id\": \"5\", \"label\": \"office\"},\n    {\"id\": \"6\", \"label\": \"office\"},\n    {\"id\": \"7\", \"label\": \"office\"},\n    {\"id\": \"8\", \"label\": \"office\"}\n  ],\n  \"edges\": [\n    {\"a\": \"1\", \"b\": \"2\", \"type\": \"open\"},\n    {\"a\": \"2\", \"b\": \"3\", \"type\": \"door\"},\n    {\"a\": \"2\", \"b\": \"4\", \"type\": \"door\"},\n    {\"a\": \"3\", \"b\": \"5\", \"type\": \"open\"},\n    {\"a\": \"4\", \"b\": \"5\", \"type\": \"open\"},\n    {\"a\": \"5\", \"b\": \"6\", \"type\": \"open\"},\n    {\"a\": \"6\", \"b\": \"7\", \"type\": \"open\"},\n    {\"a\": \"7\", \"b\": \"8\", \"type\": \"open\"}\n  ]\n}",
+      "hit_cap": false,
+      "connectivity": {
+        "tp": 5,
+        "fn": 1,
+        "fp_on_reference_negative": 0,
+        "precision": 1.0,
+        "recall": 0.833,
+        "f1": 0.909
+      },
+      "labels": {
+        "scored": 8,
+        "correct": 2,
+        "accuracy": 0.25
+      },
+      "gt_scope": {
+        "negatives": "every adjacent pair the generator did not join",
+        "coverage": "complete: the generator knows every pair",
+        "restricted_to": "storey 1; 8 marked rooms",
+        "rooms_before": 8,
+        "rooms_after": 8,
+        "dropped_straddling": 0,
+        "dropped_outside": 0
+      },
+      "prompt_tokens": 3197,
+      "generated_tokens": 275,
+      "seconds": 7.66
+    },
+    {
+      "unit": "synth_0130/00_level_0",
+      "prompt_sha256": "60db8ec3de7f9980",
+      "extraction": {
+        "status": "ok",
+        "detail": null,
+        "rooms": 7,
+        "edges": 10,
+        "dropped_rooms": {},
+        "dropped_edges": {},
+        "dropped_rooms_total": 0,
+        "dropped_edges_total": 0
+      },
+      "raw": "{\n  \"rooms\": [\n    {\"id\": \"1\", \"label\": \"bathroom\"},\n    {\"id\": \"2\", \"label\": \"living\"},\n    {\"id\": \"3\", \"label\": \"office\"},\n    {\"id\": \"4\", \"label\": \"office\"},\n    {\"id\": \"5\", \"label\": \"office\"},\n    {\"id\": \"6\", \"label\": \"office\"},\n    {\"id\": \"7\", \"label\": \"office\"}\n  ],\n  \"edges\": [\n    {\"a\": \"1\", \"b\": \"2\", \"type\": \"open\"},\n    {\"a\": \"2\", \"b\": \"3\", \"type\": \"open\"},\n    {\"a\": \"2\", \"b\": \"4\", \"type\": \"open\"},\n    {\"a\": \"2\", \"b\": \"5\", \"type\": \"open\"},\n    {\"a\": \"2\", \"b\": \"6\", \"type\": \"open\"},\n    {\"a\": \"2\", \"b\": \"7\", \"type\": \"open\"},\n    {\"a\": \"3\", \"b\": \"4\", \"type\": \"open\"},\n    {\"a\": \"4\", \"b\": \"5\", \"type\": \"open\"},\n    {\"a\": \"5\", \"b\": \"6\", \"type\": \"open\"},\n    {\"a\": \"5\", \"b\": \"7\", \"type\": \"open\"}\n  ]\n}",
+      "hit_cap": false,
+      "connectivity": {
+        "tp": 4,
+        "fn": 1,
+        "fp_on_reference_negative": 2,
+        "precision": 0.667,
+        "recall": 0.8,
+        "f1": 0.727
+      },
+      "labels": {
+        "scored": 7,
+        "correct": 3,
+        "accuracy": 0.42857142857142855
+      },
+      "gt_scope": {
+        "negatives": "every adjacent pair the generator did not join",
+        "coverage": "complete: the generator knows every pair",
+        "restricted_to": "storey 0; 7 marked rooms",
+        "rooms_before": 7,
+        "rooms_after": 7,
+        "dropped_straddling": 0,
+        "dropped_outside": 0
+      },
+      "prompt_tokens": 3197,
+      "generated_tokens": 299,
+      "seconds": 8.27
+    },
+    {
+      "unit": "synth_0135/00_level_0",
+      "prompt_sha256": "60db8ec3de7f9980",
+      "extraction": {
+        "status": "ok",
+        "detail": null,
+        "rooms": 8,
+        "edges": 16,
+        "dropped_rooms": {},
+        "dropped_edges": {},
+        "dropped_rooms_total": 0,
+        "dropped_edges_total": 0
+      },
+      "raw": "{\n  \"rooms\": [\n    {\"id\": \"1\", \"label\": \"bathroom\"},\n    {\"id\": \"2\", \"label\": \"living\"},\n    {\"id\": \"3\", \"label\": \"office\"},\n    {\"id\": \"4\", \"label\": \"office\"},\n    {\"id\": \"5\", \"label\": \"office\"},\n    {\"id\": \"6\", \"label\": \"office\"},\n    {\"id\": \"7\", \"label\": \"office\"},\n    {\"id\": \"8\", \"label\": \"office\"}\n  ],\n  \"edges\": [\n    {\"a\": \"1\", \"b\": \"2\", \"type\": \"open\"},\n    {\"a\": \"2\", \"b\": \"4\", \"type\": \"open\"},\n    {\"a\": \"2\", \"b\": \"5\", \"type\": \"open\"},\n    {\"a\": \"2\", \"b\": \"6\", \"type\": \"open\"},\n    {\"a\": \"2\", \"b\": \"7\", \"type\": \"open\"},\n    {\"a\": \"2\", \"b\": \"8\", \"type\": \"open\"},\n    {\"a\": \"3\", \"b\": \"4\", \"type\": \"open\"},\n    {\"a\": \"4\", \"b\": \"5\", \"type\": \"open\"},\n    {\"a\": \"4\", \"b\": \"6\", \"type\": \"open\"},\n    {\"a\": \"4\", \"b\": \"7\", \"type\": \"open\"},\n    {\"a\": \"4\", \"b\": \"8\", \"type\": \"open\"},\n    {\"a\": \"5\", \"b\": \"6\", \"type\": \"open\"},\n    {\"a\": \"5\", \"b\": \"7\", \"type\": \"open\"},\n    {\"a\": \"5\", \"b\": \"8\", \"type\": \"open\"},\n    {\"a\": \"6\", \"b\": \"7\", \"type\": \"open\"},\n    {\"a\": \"6\", \"b\": \"8\", \"type\": \"open\"}\n  ]\n}",
+      "hit_cap": false,
+      "connectivity": {
+        "tp": 5,
+        "fn": 1,
+        "fp_on_reference_negative": 3,
+        "precision": 0.625,
+        "recall": 0.833,
+        "f1": 0.714
+      },
+      "labels": {
+        "scored": 8,
+        "correct": 3,
+        "accuracy": 0.375
+      },
+      "gt_scope": {
+        "negatives": "every adjacent pair the generator did not join",
+        "coverage": "complete: the generator knows every pair",
+        "restricted_to": "storey 0; 8 marked rooms",
+        "rooms_before": 8,
+        "rooms_after": 8,
+        "dropped_straddling": 0,
+        "dropped_outside": 0
+      },
+      "prompt_tokens": 3197,
+      "generated_tokens": 426,
+      "seconds": 11.55
+    },
+    {
+      "unit": "synth_0137/01_level_1",
+      "prompt_sha256": "60db8ec3de7f9980",
+      "extraction": {
+        "status": "ok",
+        "detail": null,
+        "rooms": 8,
+        "edges": 8,
+        "dropped_rooms": {},
+        "dropped_edges": {},
+        "dropped_rooms_total": 0,
+        "dropped_edges_total": 0
+      },
+      "raw": "{\n  \"rooms\": [\n    {\"id\": \"1\", \"label\": \"bedroom\"},\n    {\"id\": \"2\", \"label\": \"living\"},\n    {\"id\": \"3\", \"label\": \"office\"},\n    {\"id\": \"4\", \"label\": \"office\"},\n    {\"id\": \"5\", \"label\": \"office\"},\n    {\"id\": \"6\", \"label\": \"office\"},\n    {\"id\": \"7\", \"label\": \"office\"},\n    {\"id\": \"8\", \"label\": \"office\"}\n  ],\n  \"edges\": [\n    {\"a\": \"1\", \"b\": \"2\", \"type\": \"open\"},\n    {\"a\": \"2\", \"b\": \"3\", \"type\": \"open\"},\n    {\"a\": \"2\", \"b\": \"4\", \"type\": \"open\"},\n    {\"a\": \"3\", \"b\": \"4\", \"type\": \"open\"},\n    {\"a\": \"4\", \"b\": \"5\", \"type\": \"open\"},\n    {\"a\": \"5\", \"b\": \"6\", \"type\": \"open\"},\n    {\"a\": \"6\", \"b\": \"7\", \"type\": \"open\"},\n    {\"a\": \"7\", \"b\": \"8\", \"type\": \"open\"}\n  ]\n}",
+      "hit_cap": false,
+      "connectivity": {
+        "tp": 4,
+        "fn": 2,
+        "fp_on_reference_negative": 1,
+        "precision": 0.8,
+        "recall": 0.667,
+        "f1": 0.727
+      },
+      "labels": {
+        "scored": 8,
+        "correct": 1,
+        "accuracy": 0.125
+      },
+      "gt_scope": {
+        "negatives": "every adjacent pair the generator did not join",
+        "coverage": "complete: the generator knows every pair",
+        "restricted_to": "storey 1; 8 marked rooms",
+        "rooms_before": 8,
+        "rooms_after": 8,
+        "dropped_straddling": 0,
+        "dropped_outside": 0
+      },
+      "prompt_tokens": 3197,
+      "generated_tokens": 274,
+      "seconds": 7.63
+    },
+    {
+      "unit": "synth_0145/00_level_0",
+      "prompt_sha256": "60db8ec3de7f9980",
+      "extraction": {
+        "status": "ok",
+        "detail": null,
+        "rooms": 7,
+        "edges": 9,
+        "dropped_rooms": {},
+        "dropped_edges": {},
+        "dropped_rooms_total": 0,
+        "dropped_edges_total": 0
+      },
+      "raw": "{\n  \"rooms\": [\n    {\"id\": \"1\", \"label\": \"circulation\"},\n    {\"id\": \"2\", \"label\": \"bedroom\"},\n    {\"id\": \"3\", \"label\": \"living\"},\n    {\"id\": \"4\", \"label\": \"office\"},\n    {\"id\": \"5\", \"label\": \"office\"},\n    {\"id\": \"6\", \"label\": \"office\"},\n    {\"id\": \"7\", \"label\": \"office\"}\n  ],\n  \"edges\": [\n    {\"a\": \"1\", \"b\": \"2\", \"type\": \"open\"},\n    {\"a\": \"1\", \"b\": \"3\", \"type\": \"open\"},\n    {\"a\": \"2\", \"b\": \"3\", \"type\": \"open\"},\n    {\"a\": \"3\", \"b\": \"4\", \"type\": \"door\"},\n    {\"a\": \"3\", \"b\": \"5\", \"type\": \"open\"},\n    {\"a\": \"4\", \"b\": \"5\", \"type\": \"open\"},\n    {\"a\": \"4\", \"b\": \"6\", \"type\": \"open\"},\n    {\"a\": \"5\", \"b\": \"6\", \"type\": \"open\"},\n    {\"a\": \"6\", \"b\": \"7\", \"type\": \"open\"}\n  ]\n}",
+      "hit_cap": false,
+      "connectivity": {
+        "tp": 4,
+        "fn": 2,
+        "fp_on_reference_negative": 3,
+        "precision": 0.571,
+        "recall": 0.667,
+        "f1": 0.615
+      },
+      "labels": {
+        "scored": 7,
+        "correct": 1,
+        "accuracy": 0.14285714285714285
+      },
+      "gt_scope": {
+        "negatives": "every adjacent pair the generator did not join",
+        "coverage": "complete: the generator knows every pair",
+        "restricted_to": "storey 0; 7 marked rooms",
+        "rooms_before": 7,
+        "rooms_after": 7,
+        "dropped_straddling": 0,
+        "dropped_outside": 0
+      },
+      "prompt_tokens": 3197,
+      "generated_tokens": 281,
+      "seconds": 7.82
+    },
+    {
+      "unit": "synth_0147/01_level_1",
+      "prompt_sha256": "60db8ec3de7f9980",
+      "extraction": {
+        "status": "ok",
+        "detail": null,
+        "rooms": 7,
+        "edges": 7,
+        "dropped_rooms": {},
+        "dropped_edges": {},
+        "dropped_rooms_total": 0,
+        "dropped_edges_total": 0
+      },
+      "raw": "{\n  \"rooms\": [\n    {\"id\": \"1\", \"label\": \"circulation\"},\n    {\"id\": \"2\", \"label\": \"circulation\"},\n    {\"id\": \"3\", \"label\": \"living\"},\n    {\"id\": \"4\", \"label\": \"office\"},\n    {\"id\": \"5\", \"label\": \"office\"},\n    {\"id\": \"6\", \"label\": \"office\"},\n    {\"id\": \"7\", \"label\": \"office\"}\n  ],\n  \"edges\": [\n    {\"a\": \"1\", \"b\": \"2\", \"type\": \"open\"},\n    {\"a\": \"2\", \"b\": \"3\", \"type\": \"door\"},\n    {\"a\": \"2\", \"b\": \"4\", \"type\": \"door\"},\n    {\"a\": \"3\", \"b\": \"6\", \"type\": \"open\"},\n    {\"a\": \"4\", \"b\": \"5\", \"type\": \"open\"},\n    {\"a\": \"5\", \"b\": \"6\", \"type\": \"open\"},\n    {\"a\": \"6\", \"b\": \"7\", \"type\": \"open\"}\n  ]\n}",
+      "hit_cap": false,
+      "connectivity": {
+        "tp": 3,
+        "fn": 3,
+        "fp_on_reference_negative": 3,
+        "precision": 0.5,
+        "recall": 0.5,
+        "f1": 0.5
+      },
+      "labels": {
+        "scored": 7,
+        "correct": 1,
+        "accuracy": 0.14285714285714285
+      },
+      "gt_scope": {
+        "negatives": "every adjacent pair the generator did not join",
+        "coverage": "complete: the generator knows every pair",
+        "restricted_to": "storey 1; 7 marked rooms",
+        "rooms_before": 7,
+        "rooms_after": 7,
+        "dropped_straddling": 0,
+        "dropped_outside": 0
+      },
+      "prompt_tokens": 3197,
+      "generated_tokens": 243,
+      "seconds": 6.85
+    }
+  ]
+}
