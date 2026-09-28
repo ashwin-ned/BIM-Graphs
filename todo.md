@@ -1,11 +1,103 @@
 # TODO — everything required to complete `paper_plan.md`
 
-56 days to submission (21 Sep → 16 Nov 2026 AoE). Ordered by dependency, not by
-section number — items are grouped into phases where later phases genuinely
-need earlier ones, and unrelated items within a phase can run in parallel.
+**49 days to submission** (28 Sep → 16 Nov 2026 AoE). Ordered by dependency,
+not by section number.
 
 Checkbox = not started. Every item names the `paper_plan.md` section it
 unblocks, so nothing here is busywork disconnected from the paper.
+
+---
+
+## Where the paper stands, 28 September 2026
+
+Closed: the evaluation contract (§4.1–4.3), the leak-free multimodal corpus,
+the extraction harness, and **the model grid (§4.5, 46/48 cells)**. Of the
+abstract's three `[TODO]` clauses, two are closed; only the geometric repair
+remains.
+
+**The one empty table left is §4.6, the ablation ladder** — the paper's method
+contribution. That is now the critical path.
+
+**And one experiment needs redesigning, not just reporting.** The grid showed
+the damage axis cannot be answered by the marked vision conditions, because
+the marks derive from the IFC declarations the damage removes. It is written
+up honestly as a negative result, but there is a concrete fix (P2 below) that
+would let the experiment answer its original question.
+
+---
+
+## P1 — the method repairs and the ablation ladder (§4.6) — **critical path**
+
+The largest remaining hole in the paper and the one nothing else substitutes
+for. §4.6's table is currently empty.
+
+- [ ] **A04 repair** at the call site that matters: the axis-aligned bounding
+      box at `main/bimsg/topology.py:359-360`, which admits a 15.74 m
+      "doorway". Higher yield than the tracked `_door_width` site, which
+      affects 0.2% of doors.
+- [ ] **A01 repair**: wire `_section_segments` (`main/render_floorplan.py:83-
+      122`, already correct and already used for rendering) into the recovery
+      path in place of the XY projection, so a lintel stops sealing a doorway.
+- [ ] After each repair, **flip its assertion** in
+      `tests/test_m0_regressions.py` — the suite asserts these findings still
+      reproduce, on purpose, so a real fix must update the test deliberately.
+- [ ] Re-score synth150 × 4 after each repair for the before / A04 / A01 /
+      both ladder. This is §4.6's table.
+- [ ] **Re-score the derived real reference too.** A01 is diagnosed to improve
+      the method *and* the reference simultaneously (the reference's own
+      flood-fill seals the same doorways). Confirm that, do not assume it —
+      it is the paper's specific claim that one repair helps two things.
+- [ ] Re-run `main/significance.py` and refresh
+      `docs/SYNTH_BENCHMARK_2026_09_18.md` and the compiled report.
+
+## P2 — rescue the damage axis with geometry-derived marks (§4.5)
+
+The marked conditions fail the damage question because marks come from
+`IfcSpace`. **Marks derived from the occupancy flood-fill instead would be
+invariant to IFC text damage**, because the geometry is. That restores the
+comparison the whole damage corpus was built for: *given a damage-invariant
+room partition, does vision recover topology where degraded text cannot?*
+
+- [ ] Derive marks from the geometric region partition (`main/bimsg/spaces.py`
+      already flood-fills; the occupancy raster already exists) rather than
+      from declared spaces.
+- [ ] Verify the marks are **byte-identical across L1–L4**, the same gate the
+      renders already pass. If they are not, the axis is still broken.
+- [ ] Re-run the marked cells at L1 and L2 only (2 models × 2 modalities ×
+      2 levels ≈ 8 cells, ~1 GPU-hour at Qwen2.5-VL's 7.7 s/unit).
+- [ ] State plainly what this condition gives away: the room partition, again.
+      Room recovery is still not measured; topology is.
+
+## P3 — cheap and high value, do alongside P1
+
+- [ ] **Real-corpus vision run.** Set-of-mark works there (oracle 1.000 over
+      60 units, 268/268 marks resolve by GlobalId) and has never been run with
+      a model. It is the only corpus where **labelling** can be measured at
+      all, since synth150 has no furniture and no windows. ~1–2 GPU-hours.
+- [ ] **Significance testing on the model comparison.** `main/significance.py`
+      has only been run on the deterministic methods. The model numbers are
+      currently point estimates with no interval.
+- [ ] **Headline cells at n=150** for the final table — the paired Wilcoxon
+      wants the full corpus. Qwen2.5 pair only; ~4 GPU-hours.
+
+## P4 — harden the latent seams (low risk, low urgency)
+
+Found by the salvaged audit recon. All verified **latent** against current
+data, but each becomes live the moment a new corpus or dialect arrives.
+
+- [ ] `schema.pair()` degenerates on a self-pair, and `restrict` then raises
+      on unpacking. 0 self-pairs across all 325 reference files today.
+- [ ] `detect_dialect` falls through to the generator branch for an
+      unrecognised `source` **with** room extents, loading the wrong identity
+      and a `None` label rather than raising.
+- [ ] `rooms_on_storey(None)` returns every room in a derived building
+      (`str(None) == 'None'`). Guarded at the only call site today.
+- [ ] `manifest.record` is last-write-wins with no history.
+- [ ] `matching` keys identity matches by node object and geometry matches by
+      `str(n)`; non-string node ids produce a plausible wrong number.
+- [ ] `verdicts.link_outcome` non-strict returns `unjudged` for the retired
+      `correct` vocabulary. Callers use strict, which raises; no real
+      annotation contains retired link verdicts.
 
 ---
 
